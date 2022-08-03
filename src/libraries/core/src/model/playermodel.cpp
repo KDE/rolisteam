@@ -1,4 +1,4 @@
-﻿/*************************************************************************
+/*************************************************************************
  *     Copyright (C) 2011 by Joseph Boudou                               *
  *     Copyright (C) 2014 by Renaud Guezennec                            *
  *                                                                       *
@@ -461,7 +461,7 @@ void PlayerModel::addPlayer(Player* player)
 
     if(it != m_players.end())
     {
-        qWarning() << tr("Dupplicated player or uuid");
+        qWarning() << tr("Duplicated player or uuid");
         return;
     }
 
