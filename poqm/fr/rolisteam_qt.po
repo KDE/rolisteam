@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2025-03-11 08:44+0100\n"
+"PO-Revision-Date: 2025-03-25 09:04+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -490,7 +490,7 @@ msgstr "Propriétés de feuille"
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr ""
+msgstr "Largeur de remplissage par défaut"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
@@ -3736,12 +3736,9 @@ msgid "All"
 msgstr "Tous"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:46
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Load Image"
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Charger une image"
+msgstr "Aucune image"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:56
 msgctxt "PersonEdit|"
@@ -3930,6 +3927,8 @@ msgstr "Enregistrer les profils"
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
 msgstr ""
+"S'il vous plaît, veuillez saisir des données là où vous voyez des bordures "
+"rouges."
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:322
 msgctxt "ConnectionForm|"
