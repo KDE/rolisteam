@@ -60,7 +60,7 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
     if(!m_pdfCtrl)
         return;
 
-    if(!m_pdfCtrl->remote())
+    if(m_pdfCtrl->staticData().isValid() && !m_pdfCtrl->staticData().isEmpty())
     {
         m_document->load(m_pdfCtrl->staticData().toLocalFile());
     }
