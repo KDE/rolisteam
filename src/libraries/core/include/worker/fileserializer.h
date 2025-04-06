@@ -42,7 +42,6 @@ struct CORE_EXPORT CampaignInfo
     bool status;
     QJsonObject data;
     QJsonArray assets;
-    QJsonObject theme;
     QJsonArray dices;
     QJsonArray states;
     QJsonArray npcs;

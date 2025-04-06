@@ -83,9 +83,9 @@ CharacterStateModel* Campaign::stateModel() const
     return m_stateModel.get();
 }
 
-RolisteamTheme* Campaign::currentTheme() const
+QString Campaign::currentTheme() const
 {
-    return m_theme.get();
+    return m_theme;
 }
 
 Campaign::State Campaign::state() const
@@ -211,9 +211,9 @@ QString Campaign::directory(Place place) const
     case Place::THIRD_AUDIO_PLAYER_FILE:
         res= QString("%1/%2").arg(rootDirectory(), THIRD_AUDIO_PLAYER_FILE);
         break;
-    case Place::THEME_FILE:
-        res= QString("%1/%2").arg(rootDirectory(), THEME_FILE);
-        break;
+        /*    case Place::THEME_FILE:
+                res= QString("%1/%2").arg(rootDirectory(), THEME_FILE);
+                break;*/
     case Place::DICE_3D_FILE:
         res= QString("%1/%2").arg(rootDirectory(), DICE3D_CONTROLLER);
         break;
@@ -243,11 +243,11 @@ void Campaign::setCurrentChapter(const QString& chapter)
     emit currentChapterChanged();
 }
 
-void Campaign::setCurrentTheme(RolisteamTheme* themeuri)
+void Campaign::setCurrentTheme(const QString& themeId)
 {
-    if(themeuri == m_theme.get())
+    if(themeId == m_theme)
         return;
-    m_theme.reset(themeuri);
+    m_theme= themeId;
     emit currentThemeChanged();
 }
 

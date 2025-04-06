@@ -235,21 +235,21 @@ ContentController::~ContentController()= default;
 void ContentController::setGameController(GameController* game)
 {
     m_preferences= game->preferencesManager();
+    m_preferences->registerListener("shortNameInTabMode", this);
+    m_preferences->registerListener("MaxLengthTabName", this);
     m_preferences->registerListener("BackGroundPositioning", this);
     m_preferences->registerListener("PathOfBackgroundImage", this);
     m_preferences->registerListener("BackGroundColor", this);
-    m_preferences->registerListener("shortNameInTabMode", this);
-    m_preferences->registerListener("MaxLengthTabName", this);
 }
 
 void ContentController::preferencesHasChanged(const QString& key)
 {
     if(key == QStringLiteral("BackGroundPositioning"))
-        emit workspacePositioningChanged();
+        emit currentThemeChanged();
     else if(key == QStringLiteral("PathOfBackgroundImage"))
-        emit workspaceFilenameChanged();
+        emit currentThemeChanged();
     else if(key == QStringLiteral("BackGroundColor"))
-        emit workspaceColorChanged();
+        emit currentThemeChanged();
     else if(key == QStringLiteral("shortNameInTabMode"))
         emit shortTitleTabChanged();
     else if(key == QStringLiteral("MaxLengthTabName"))
@@ -379,15 +379,17 @@ bool ContentController::shortTitleTab() const
 }
 QString ContentController::workspaceFilename() const
 {
-    return m_preferences->value(QStringLiteral("PathOfBackgroundImage"), 20).toString();
+    return m_currentTheme ? m_currentTheme->getBackgroundImage() : ":/resources/rolistheme/workspacebackground.jpg";
+    // return m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/").toString();
 }
 QColor ContentController::workspaceColor() const
 {
-    return m_preferences->value(QStringLiteral("BackGroundColor"), QColor(191, 191, 191)).value<QColor>();
+    return m_currentTheme ? m_currentTheme->getBackgroundColor() : QColor(191, 191, 191);
+    // return m_preferences->value(QStringLiteral("BackGroundColor"), QColor(191, 191, 191)).value<QColor>();
 }
 int ContentController::workspacePositioning() const
 {
-    return m_preferences->value(QStringLiteral("BackGroundPositioning"), 0).toInt();
+    return m_currentTheme ? m_currentTheme->getBackgroundPosition() : 0;
 }
 
 NetWorkReceiver::SendType ContentController::processMessage(NetworkMessageReader* msg)
@@ -543,4 +545,17 @@ QStringList ContentController::readData() const
 {
     return campaign::FileSerializer::readContentModel(
         m_campaign->placeDirectory(campaign::Campaign::Place::CONTENT_ROOT));
+}
+
+RolisteamTheme* ContentController::currentTheme() const
+{
+    return m_currentTheme;
+}
+
+void ContentController::setCurrentTheme(RolisteamTheme* newCurrentTheme)
+{
+    if(m_currentTheme == newCurrentTheme)
+        return;
+    m_currentTheme= newCurrentTheme;
+    emit currentThemeChanged();
 }

@@ -51,7 +51,7 @@ void readCampaignInfo(const CampaignInfo& info, Campaign* manager)
     manager->setName(info.data[Core::JsonKey::JSON_NAME].toString());
     manager->setLoadSession(info.data[Core::JsonKey::JSON_SESSION].toBool());
     manager->setCurrentChapter(info.data[Core::JsonKey::JSON_CURRENT_CHAPTER].toString());
-    manager->setCurrentTheme(IOHelper::jsonToTheme(info.theme));
+    manager->setCurrentTheme(info.data[Core::JsonKey::JSON_THEME_ID].toString());
 }
 } // namespace
 CampaignEditor::CampaignEditor(QObject* parent) : QObject(parent), m_campaign(new Campaign)

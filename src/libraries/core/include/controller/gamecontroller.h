@@ -128,6 +128,7 @@ signals:
     void dataLoaded(const QStringList missingFiles, const QStringList unmanagedFiles);
 
     void dicePhysicControllerChanged();
+    void themeChanged(const QString& theme);
 
 public slots:
     void addErrorLog(const QString& message, const QString& cat);

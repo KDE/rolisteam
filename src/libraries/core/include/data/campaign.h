@@ -24,7 +24,6 @@
 #include <QString>
 #include <memory>
 
-#include "data/rolisteamtheme.h"
 #include "media/mediatype.h"
 #include <core_global.h>
 
@@ -40,7 +39,7 @@ class Media;
 class NonPlayableCharacterModel;
 constexpr auto TRASH_FOLDER{".trash"};
 constexpr auto MODEL_FILE{"data.json"};
-constexpr auto THEME_FILE{"theme.json"};
+// constexpr auto THEME_FILE{"theme.json"};
 constexpr auto FIRST_AUDIO_PLAYER_FILE{"audioplayer1.json"};
 constexpr auto SECOND_AUDIO_PLAYER_FILE{"audioplayer2.json"};
 constexpr auto THIRD_AUDIO_PLAYER_FILE{"audioplayer3.json"};
@@ -64,7 +63,7 @@ class CORE_EXPORT Campaign : public QObject
     Q_PROPERTY(DiceAliasModel* diceAliases READ diceAliases NOTIFY diceAliasesChanged)
     Q_PROPERTY(CharacterStateModel* stateModel READ stateModel NOTIFY stateModelChanged)
     Q_PROPERTY(NonPlayableCharacterModel* npcModel READ npcModel NOTIFY npcModelChanged)
-    Q_PROPERTY(RolisteamTheme* currentTheme READ currentTheme WRITE setCurrentTheme NOTIFY currentThemeChanged)
+    Q_PROPERTY(QString currentTheme READ currentTheme WRITE setCurrentTheme NOTIFY currentThemeChanged)
     Q_PROPERTY(State state READ state WRITE setState NOTIFY stateChanged)
     Q_PROPERTY(qint64 diskUsage READ diskUsage NOTIFY diskUsageChanged)
     Q_PROPERTY(int fileCount READ fileCount NOTIFY fileCountChanged)
@@ -95,7 +94,7 @@ public:
         TRASH_ROOT,
         NPC_ROOT,
         NPC_MODEL,
-        THEME_FILE,
+        // THEME_FILE,
         IM_FILE,
         DICE_MODEL,
         FIRST_AUDIO_PLAYER_FILE,
@@ -112,7 +111,7 @@ public:
     QString currentChapter() const;
     DiceAliasModel* diceAliases() const;
     CharacterStateModel* stateModel() const;
-    RolisteamTheme* currentTheme() const;
+    QString currentTheme() const;
     NonPlayableCharacterModel* npcModel() const;
     State state() const;
     qint64 diskUsage() const;
@@ -135,7 +134,7 @@ public:
 public slots:
     void setRootDirectory(const QString& root);
     void setCurrentChapter(const QString& chapter);
-    void setCurrentTheme(RolisteamTheme* themeuri);
+    void setCurrentTheme(const QString& themeId);
     void setName(const QString& name);
     void postError(const QString& msg);
     void renameMedia(const QString& id, const QString& name);
@@ -187,7 +186,7 @@ private:
     QString m_name;
     QString m_root;
     QString m_currentChapter;
-    std::unique_ptr<RolisteamTheme> m_theme;
+    QString m_theme;
     State m_state= State::None;
     bool m_loadSession{false};
 };

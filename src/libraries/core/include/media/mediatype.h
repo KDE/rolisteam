@@ -448,6 +448,7 @@ constexpr auto JSON_MEDIA_CREATIONTIME{"ctime"};
 constexpr auto JSON_MEDIA_ID{"uuid"};
 constexpr auto JSON_MEDIA_DATA{"mediaData"};
 constexpr auto JSON_SESSION{"session"};
+constexpr auto JSON_THEME_ID{"CurrentTheme"};
 
 constexpr auto JSON_NPC_ID{"uuid"};
 constexpr auto JSON_NPC_NAME{"name"};

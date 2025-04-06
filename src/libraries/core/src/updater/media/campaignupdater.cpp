@@ -159,7 +159,7 @@ void CampaignUpdater::save()
 
 void CampaignUpdater::saveDataInto(const QString& path)
 {
-    if(path.isEmpty())
+    if(path.isEmpty() || !m_ready)
         return;
     // Dice Aliases
     const auto& newAliases= m_campaign->diceAliases()->aliases();
@@ -246,4 +246,18 @@ bool CampaignUpdater::canForward()
 {
     return !m_updatingModel && m_localIsGm;
 }
+
+bool CampaignUpdater::ready() const
+{
+    return m_ready;
+}
+
+void CampaignUpdater::setReady(bool newReady)
+{
+    if(m_ready == newReady)
+        return;
+    m_ready= newReady;
+    emit readyChanged();
+}
+
 } // namespace campaign

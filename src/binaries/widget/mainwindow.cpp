@@ -106,11 +106,11 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     : QMainWindow()
     , m_gameController(game)
 #ifndef NULL_PLAYER
-    , m_audioPlayer(new AudioPlayer(m_gameController->audioController(), this))
+    , m_sideTabs(new QTabWidget())
 #endif
+    , m_audioPlayer(new AudioPlayer(m_gameController->audioController(), this))
     , m_dockLogUtil(new NotificationZone(game->logController(), this))
     , m_systemTray(new QSystemTrayIcon)
-    , m_sideTabs(new QTabWidget())
     , m_ui(new Ui::MainWindow)
 {
     parseCommandLineArguments(args);
@@ -337,8 +337,35 @@ void MainWindow::setupUi()
     ///////////////////
     // Audio Player
     ///////////////////
+    auto prefCtrl= m_gameController->preferencesController();
+    m_preferencesDialog= new PreferencesDialog(prefCtrl, this);
+    auto updateUI= [this]()
+    {
+        auto prefCtrl= m_gameController->preferencesController();
+        auto theme= prefCtrl->currentTheme();
+        if(!theme)
+            return;
 
-    m_preferencesDialog= new PreferencesDialog(m_gameController->preferencesController(), this);
+        qApp->setStyle(theme->getStyle());
+        qApp->setPalette(theme->getPalette());
+        qApp->setStyleSheet(theme->getCss());
+    };
+
+    connect(prefCtrl, &PreferencesController::currentThemeIndexChanged, this, updateUI);
+    connect(prefCtrl, &PreferencesController::currentThemeChanged, this, updateUI);
+    connect(m_gameController, &GameController::themeChanged, this,
+            [this](const QString& uuid)
+            {
+                auto prefCtrl= m_gameController->preferencesController();
+                auto theme= prefCtrl->theme(uuid);
+                if(!theme)
+                    return;
+
+                qApp->setStyle(theme->getStyle());
+                qApp->setPalette(theme->getPalette());
+                qApp->setStyleSheet(theme->getCss());
+            });
+
     linkActionToMenu();
     createTabs();
 }
@@ -449,7 +476,7 @@ void MainWindow::createTabs()
     auto vBox= new QVBoxLayout();
     wid->setLayout(vBox);
 
-    for(auto tool : m_gmToolBoxList)
+    for(auto tool : std::as_const(m_gmToolBoxList))
     {
         auto wid= dynamic_cast<QWidget*>(tool);
         if(!wid)
@@ -733,11 +760,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent* event)
 {
     if(isFullScreen())
     {
-        if(qFuzzyCompare(event->windowPos().y(), 0.0))
+        if(qFuzzyCompare(event->scenePosition().y(), 0.0))
         {
             menuBar()->setVisible(true);
         }
-        else if(event->windowPos().y() > 100)
+        else if(event->scenePosition().y() > 100)
         {
             menuBar()->setVisible(false);
         }

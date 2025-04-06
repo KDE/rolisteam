@@ -42,6 +42,7 @@ CampaignManager::CampaignManager(DiceRoller* diceparser, QObject* parent)
     connect(m_editor.get(), &CampaignEditor::importedFile, this, &CampaignManager::fileImported);
     connect(m_editor.get(), &CampaignEditor::campaignLoaded, this, &CampaignManager::campaignLoaded);
     connect(this, &CampaignManager::campaignLoaded, m_campaignUpdater.get(), &CampaignUpdater::updateDiceAliases);
+    connect(this, &CampaignManager::campaignLoaded, this, [this]() { m_campaignUpdater->setReady(true); });
     connect(m_campaignUpdater.get(), &CampaignUpdater::dataSaved, this, &CampaignManager::autoSavedNeeded);
 }
 
@@ -251,9 +252,9 @@ void CampaignManager::importDataFrom(const QString& source, const QVector<Core::
                                  placeDirectory(Campaign::Place::STATE_MODEL),
                                  placeDirectory(Campaign::Place::STATE_ROOT));
             break;
-        case Core::CampaignDataCategory::Themes:
-            m_editor->copyTheme(makeSource(THEME_FILE), placeDirectory(Campaign::Place::THEME_FILE));
-            break;
+            /*case Core::CampaignDataCategory::Themes:
+                m_editor->copyTheme(makeSource(THEME_FILE), placeDirectory(Campaign::Place::THEME_FILE));
+                break;*/
         }
         //, Maps, MindMaps, Notes, WebLink, PDFDoc, DiceAlias, CharacterStates, Themes, CharacterSheets,
     }

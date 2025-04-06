@@ -35,6 +35,7 @@
 #include "preferences/preferenceslistener.h"
 #include <core_global.h>
 
+#include "data/rolisteamtheme.h"
 #include "model/contentmodel.h"
 #include "model/historymodel.h"
 
@@ -66,9 +67,9 @@ class CORE_EXPORT ContentController : public AbstractControllerInterface,
     Q_PROPERTY(QFileSystemModel* sessionModel READ sessionModel CONSTANT)
     Q_PROPERTY(ContentModel* contentModel READ contentModel CONSTANT)
     Q_PROPERTY(history::HistoryModel* historyModel READ historyModel CONSTANT)
-    Q_PROPERTY(QString workspaceFilename READ workspaceFilename NOTIFY workspaceFilenameChanged)
-    Q_PROPERTY(QColor workspaceColor READ workspaceColor NOTIFY workspaceColorChanged)
-    Q_PROPERTY(int workspacePositioning READ workspacePositioning NOTIFY workspacePositioningChanged)
+    Q_PROPERTY(QString workspaceFilename READ workspaceFilename NOTIFY currentThemeChanged)
+    Q_PROPERTY(QColor workspaceColor READ workspaceColor NOTIFY currentThemeChanged)
+    Q_PROPERTY(int workspacePositioning READ workspacePositioning NOTIFY currentThemeChanged)
     Q_PROPERTY(bool shortTitleTab READ shortTitleTab NOTIFY shortTitleTabChanged)
     Q_PROPERTY(int maxLengthTabName READ maxLengthTabName NOTIFY maxLengthTabNameChanged)
     Q_PROPERTY(QString gameMasterId READ gameMasterId WRITE setGameMasterId NOTIFY gameMasterIdChanged)
@@ -76,6 +77,7 @@ class CORE_EXPORT ContentController : public AbstractControllerInterface,
     Q_PROPERTY(QColor localColor READ localColor WRITE setLocalColor NOTIFY localColorChanged)
     Q_PROPERTY(QString mediaRoot READ mediaRoot WRITE setMediaRoot NOTIFY mediaRootChanged)
     Q_PROPERTY(bool canPaste READ canPaste NOTIFY canPasteChanged)
+    Q_PROPERTY(RolisteamTheme* currentTheme READ currentTheme WRITE setCurrentTheme NOTIFY currentThemeChanged FINAL)
 
 public:
     explicit ContentController(campaign::CampaignManager* campaign, PlayerModel* playerModel,
@@ -117,10 +119,10 @@ public:
 
     QStringList readData() const;
 
+    RolisteamTheme* currentTheme() const;
+    void setCurrentTheme(RolisteamTheme* newCurrentTheme);
+
 signals:
-    void workspaceFilenameChanged();
-    void workspaceColorChanged();
-    void workspacePositioningChanged();
     void shortTitleTabChanged();
     void maxLengthTabNameChanged();
     void mediaRootChanged();
@@ -135,6 +137,8 @@ signals:
     void canPasteChanged(bool);
 
     void localColorChanged();
+
+    void currentThemeChanged();
 
 public slots:
     // Session API
@@ -162,6 +166,7 @@ private:
     QString m_gameMasterId;
     QString m_localId;
     QColor m_localColor;
+    RolisteamTheme* m_currentTheme{nullptr};
 };
 
 #endif // CONTENTCONTROLLER_H

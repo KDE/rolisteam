@@ -58,14 +58,13 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
 {
     connect(m_ctrl, &ContentController::maxLengthTabNameChanged, this, &Workspace::updateTitleTab);
     connect(m_ctrl, &ContentController::shortTitleTabChanged, this, &Workspace::updateTitleTab);
-    connect(m_ctrl, &ContentController::workspaceFilenameChanged, this,
+    connect(m_ctrl, &ContentController::currentThemeChanged, this,
             [this]()
             {
                 m_backgroundPicture= QPixmap(m_ctrl->workspaceFilename());
                 updateBackGround();
             });
-    connect(m_ctrl, &ContentController::workspaceColorChanged, this, &Workspace::updateBackGround);
-    connect(m_ctrl, &ContentController::workspacePositioningChanged, this, &Workspace::updateBackGround);
+    connect(m_ctrl, &ContentController::currentThemeChanged, this, &Workspace::updateBackGround);
 
     connect(m_ctrl, &ContentController::mediaControllerCreated, this, &Workspace::addMedia);
     connect(this, &Workspace::subWindowActivated, this, &Workspace::updateActiveMediaContainer);

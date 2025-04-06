@@ -52,6 +52,7 @@ public:
 private:
     Ui::CampaignProperties* ui;
     QPointer<campaign::Campaign> m_campaign;
+    QPointer<ThemeModel> m_themes;
 };
 
 inline uint qHash(const CampaignProperties::Tab& key, uint seed)

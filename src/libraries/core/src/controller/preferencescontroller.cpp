@@ -38,18 +38,18 @@
 void initializeThemeModel(ThemeModel* model)
 {
     // normal
-    model->addTheme(new RolisteamTheme(QPalette(), ThemeModel::tr("default"), "", QStyleFactory::create("fusion"),
-                                       ":/resources/rolistheme/workspacebackground.jpg", 0,
-                                       QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
+    model->addTheme(new RolisteamTheme(
+        "default", QPalette(), ThemeModel::tr("default"), "", QStyleFactory::create("fusion"),
+        ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
 
     // DarkOrange
     QFile styleFile(":/stylesheet/resources/stylesheet/darkorange.qss");
     styleFile.open(QFile::ReadOnly);
     QByteArray bytes= styleFile.readAll();
     QString css(bytes);
-    model->addTheme(new RolisteamTheme(QPalette(), ThemeModel::tr("darkorange"), css, QStyleFactory::create("fusion"),
-                                       ":/resources/rolistheme/workspacebackground.jpg", 0,
-                                       QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
+    model->addTheme(new RolisteamTheme(
+        "darkorange", QPalette(), ThemeModel::tr("darkorange"), css, QStyleFactory::create("fusion"),
+        ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
 
     // DarkFusion
     QPalette palette;
@@ -69,9 +69,9 @@ void initializeThemeModel(ThemeModel* model)
     palette.setColor(QPalette::Disabled, QPalette::Text, Qt::darkGray);
     palette.setColor(QPalette::Disabled, QPalette::ButtonText, Qt::darkGray);
 
-    model->addTheme(new RolisteamTheme(palette, ThemeModel::tr("darkfusion"), "", QStyleFactory::create("fusion"),
-                                       ":/resources/rolistheme/workspacebackground.jpg", 0,
-                                       QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
+    model->addTheme(new RolisteamTheme(
+        "darkfusion", palette, ThemeModel::tr("darkfusion"), "", QStyleFactory::create("fusion"),
+        ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
 }
 
 /*appendAlias(new DiceAlias("l5r", "D10k"));
@@ -153,6 +153,7 @@ ThemeModel* PreferencesController::themeModel() const
 void PreferencesController::savePreferences()
 { // paths
     m_preferences->registerValue("ThemeNumber", m_themeModel->rowCount(QModelIndex()));
+    m_preferences->registerValue("currentThemeIndex", static_cast<int>(m_currentThemeIndex));
 
     // i18n
     m_preferences->registerValue("i18n_system", systemLang());
@@ -169,6 +170,7 @@ void PreferencesController::savePreferences()
         var.setValue<QPalette>(tmp->getPalette());
         m_preferences->registerValue(QStringLiteral("Theme_%1_palette").arg(i), var);
         m_preferences->registerValue(QStringLiteral("Theme_%1_stylename").arg(i), tmp->getStyleName());
+        m_preferences->registerValue(QStringLiteral("Theme_%1_uuid").arg(i), tmp->uuid());
         m_preferences->registerValue(QStringLiteral("Theme_%1_bgColor").arg(i), tmp->getBackgroundColor());
         m_preferences->registerValue(QStringLiteral("Theme_%1_bgPath").arg(i), tmp->getBackgroundImage());
         m_preferences->registerValue(QStringLiteral("Theme_%1_bgPosition").arg(i), tmp->getBackgroundPosition());
@@ -197,6 +199,7 @@ void PreferencesController::loadPreferences()
         QString name= preferences->value(QStringLiteral("Theme_%1_name").arg(i), QString()).toString();
         QPalette pal= preferences->value(QStringLiteral("Theme_%1_palette").arg(i), QPalette()).value<QPalette>();
         QString style= preferences->value(QStringLiteral("Theme_%1_stylename").arg(i), "fusion").toString();
+        QString uuid= preferences->value(QStringLiteral("Theme_%1_uuid").arg(i), "").toString();
         QColor color
             = preferences->value(QStringLiteral("Theme_%1_bgColor").arg(i), QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE))
                   .value<QColor>();
@@ -207,7 +210,7 @@ void PreferencesController::loadPreferences()
         QString css= preferences->value(QStringLiteral("Theme_%1_css").arg(i), "").toString();
         bool isRemovable= preferences->value(QStringLiteral("Theme_%1_removable").arg(i), false).toBool();
         RolisteamTheme* tmp
-            = new RolisteamTheme(pal, name, css, QStyleFactory::create(style), path, pos, color, isRemovable);
+            = new RolisteamTheme(uuid, pal, name, css, QStyleFactory::create(style), path, pos, color, isRemovable);
         tmp->setDiceHighlightColor(hlDice);
         m_themeModel->addTheme(tmp);
         // m_preferences->registerValue(QString("Theme_%1_css").arg(i),tmp->getName());
@@ -296,6 +299,11 @@ RolisteamTheme* PreferencesController::currentTheme() const
     return m_themeModel->theme(static_cast<int>(m_currentThemeIndex));
 }
 
+RolisteamTheme* PreferencesController::theme(const QString& uuid) const
+{
+    return m_themeModel->theme(uuid);
+}
+
 void PreferencesController::exportTheme(const QString& filename, int pos)
 {
     if(filename.isEmpty())
@@ -347,9 +355,9 @@ void PreferencesController::dupplicateTheme(int pos, bool selectNew)
 
     QString str= theme->getName();
     str.append(tr(" (copy)"));
-    RolisteamTheme* newTheme
-        = new RolisteamTheme(theme->getPalette(), str, theme->getCss(), theme->getStyle(), theme->getBackgroundImage(),
-                             theme->getBackgroundPosition(), theme->getBackgroundColor(), true);
+    RolisteamTheme* newTheme= new RolisteamTheme(QString(), theme->getPalette(), str, theme->getCss(),
+                                                 theme->getStyle(), theme->getBackgroundImage(),
+                                                 theme->getBackgroundPosition(), theme->getBackgroundColor(), true);
 
     m_themeModel->addTheme(newTheme);
     if(selectNew)
@@ -469,6 +477,7 @@ void PreferencesController::setCurrentThemeStyle(QStyle* style)
         return;
 
     theme->setStyle(style);
+    emit currentThemeChanged();
 }
 
 void PreferencesController::setCurrentThemeBackground(const QString& path, int pos, const QColor& color)
@@ -485,6 +494,8 @@ void PreferencesController::setCurrentThemeBackground(const QString& path, int p
     preferences->registerValue("PathOfBackgroundImage", path);
     preferences->registerValue("BackGroundColor", color);
     preferences->registerValue("BackGroundPositioning", pos);
+
+    emit currentThemeChanged();
 }
 
 void PreferencesController::setColorCurrentTheme(const QColor& color, int palettePos)
@@ -496,6 +507,7 @@ void PreferencesController::setColorCurrentTheme(const QColor& color, int palett
 
     model->setColor(palettePos, color);
     theme->setPalette(model->getPalette());
+    emit currentThemeChanged();
 }
 
 void PreferencesController::setDiceHighLightColor(const QColor& color)
@@ -503,6 +515,7 @@ void PreferencesController::setDiceHighLightColor(const QColor& color)
     auto theme= currentEditableTheme();
     theme->setDiceHighlightColor(color);
     m_preferences->registerValue("DiceHighlightColor", color);
+    emit currentThemeChanged();
 }
 
 void PreferencesController::setCurrentThemeCss(const QString& css)
@@ -512,6 +525,7 @@ void PreferencesController::setCurrentThemeCss(const QString& css)
         return;
 
     theme->setCss(css);
+    emit currentThemeChanged();
 }
 
 void PreferencesController::setCurrentThemeTitle(const QString& title)
@@ -521,4 +535,5 @@ void PreferencesController::setCurrentThemeTitle(const QString& title)
         return;
 
     theme->setName(title);
+    emit currentThemeChanged();
 }

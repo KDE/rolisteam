@@ -42,8 +42,8 @@ public:
      * @param name
      * @param css
      */
-    RolisteamTheme(QPalette pal, QString name, QString css, QStyle* style, QString bgPath, int pos, QColor bgColor,
-                   bool);
+    RolisteamTheme(QString id, QPalette pal, QString name, QString css, QStyle* style, QString bgPath, int pos,
+                   QColor bgColor, bool);
     /**
      * @brief ~RolisteamTheme
      */
@@ -91,6 +91,7 @@ public:
      * @return
      */
     QStyle* getStyle() const;
+    QString uuid() const;
     /**
      * @brief setStyle
      * @param style
@@ -122,6 +123,7 @@ private:
     QColor m_diceHighlightColor;
     QColor m_gmColor;
     QString m_styleName;
+    QString m_uuid;
 };
 // Q_DECLARE_METATYPE(RolisteamTheme)
 // Q_DECLARE_METATYPE(RolisteamTheme*)

@@ -80,15 +80,26 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
     load();
 
     ui->m_themeComboBox->setModel(m_ctrl->themeModel());
+    ui->m_themeComboBox->setCurrentIndex(m_ctrl->currentThemeIndex());
     connect(ui->m_themeComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this,
             [this](int pos) { m_ctrl->setCurrentThemeIndex(static_cast<std::size_t>(pos)); });
-    // m_paletteModel->setPalette(palette());
-    connect(m_ctrl, &PreferencesController::currentThemeIndexChanged, this,
-            [this]()
-            {
-                if(m_ctrl->currentTheme())
-                    ui->m_paletteTableView->setModel(m_ctrl->currentTheme()->paletteModel());
-            });
+
+    auto updateUI= [this]()
+    {
+        auto theme= m_ctrl->currentTheme();
+        if(!theme)
+            return;
+
+        ui->m_paletteTableView->setModel(theme->paletteModel());
+        auto horizontalHeader= ui->m_paletteTableView->horizontalHeader();
+        horizontalHeader->setSectionResizeMode(0, QHeaderView::Stretch);
+    };
+
+    connect(m_ctrl, &PreferencesController::currentThemeIndexChanged, this, updateUI);
+
+    auto updateDialogUI= [this]() { updateTheme(); };
+    connect(m_ctrl, &PreferencesController::currentThemeIndexChanged, this, updateDialogUI);
+    connect(m_ctrl, &PreferencesController::currentThemeChanged, this, updateUI);
 
     if(m_ctrl->currentTheme())
     {
@@ -166,10 +177,10 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
 
     connect(ui->m_paletteTableView, &QTableView::doubleClicked, this, &PreferencesDialog::editColor);
 
-    connect(ui->m_cssEdit, SIGNAL(clicked()), this, SLOT(editCss()));
-    connect(ui->m_exportBtn, SIGNAL(clicked()), this, SLOT(exportTheme()));
-    connect(ui->m_importBtn, SIGNAL(clicked()), this, SLOT(importTheme()));
-    connect(ui->m_deleteTheme, SIGNAL(clicked()), this, SLOT(deleteTheme()));
+    connect(ui->m_cssEdit, &QPushButton::clicked, this, &PreferencesDialog::editCss);
+    connect(ui->m_exportBtn, &QPushButton::clicked, this, &PreferencesDialog::exportTheme);
+    connect(ui->m_importBtn, &QPushButton::clicked, this, &PreferencesDialog::importTheme);
+    connect(ui->m_deleteTheme, &QPushButton::clicked, this, &PreferencesDialog::deleteTheme);
 
     connect(m_ctrl, &PreferencesController::currentLangIndexChanged, this,
             [this]() { ui->m_translationSelector->setCurrentIndex(m_ctrl->currentLangIndex()); });
@@ -332,6 +343,19 @@ void PreferencesDialog::load()
     ui->m_textEditorPath->setUrl(m_preferences->value("textEditorPath", path).toString());
     ui->m_textEditorPath->setMode(FileDirChooser::OpenExistingFile);
     ui->m_textEditorParam->setText(m_preferences->value("textEditorParam", "%1").toString());
+
+    ui->m_styleCombo->clear();
+    ui->m_styleCombo->addItems(QStyleFactory::keys());
+    qDebug() << "keys style: " << QStyleFactory::keys();
+    if(m_ctrl->currentTheme())
+    {
+        qDebug() << "setInedx 2: stlye:" << m_ctrl->currentTheme()->getStyleName();
+        qDebug() << "currentindex before:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
+        ui->m_styleCombo->setCurrentIndex(
+            ui->m_styleCombo->findText(m_ctrl->currentTheme()->getStyleName(), Qt::MatchContains));
+        qDebug() << "currentindex after:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
+    }
+    connect(ui->m_styleCombo, &QComboBox::activated, this, &PreferencesDialog::setStyle);
 }
 
 void PreferencesDialog::editColor(const QModelIndex& index)
@@ -360,17 +384,28 @@ void PreferencesDialog::updateTheme()
 
     QString defaultStyle= theme->getStyleName();
 
-    ui->m_styleCombo->blockSignals(true);
-    ui->m_styleCombo->setCurrentIndex(ui->m_styleCombo->findText(defaultStyle.toUpper(), Qt::MatchContains));
-    ui->m_styleCombo->blockSignals(false);
+    // ui->m_styleCombo->blockSignals(true);
+    qDebug() << "setIndex Style:" << ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains) << defaultStyle;
+    qDebug() << "before:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count()
+             << ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains);
+    ui->m_styleCombo->setCurrentIndex(ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains));
+    qDebug() << "after:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
+    // ui->m_styleCombo->blockSignals(false);
 
     ui->m_diceHighlightColorBtn->setColor(theme->getDiceHighlightColor());
+
+    qApp->setStyle(theme->getStyle());
+    qApp->setPalette(theme->getPalette());
+    qApp->setStyleSheet(theme->getCss());
 }
 void PreferencesDialog::setStyle()
 {
+    if(ui->m_styleCombo->count() == 0)
+        return;
     auto style= QStyleFactory::create(ui->m_styleCombo->currentText());
+    if(!style)
+        return;
     m_ctrl->setCurrentThemeStyle(style);
-    // qApp->setStyle(style);
 }
 void PreferencesDialog::editCss()
 {

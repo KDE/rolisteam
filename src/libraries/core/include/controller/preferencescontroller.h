@@ -69,6 +69,7 @@ public:
     // theme
     QString themeName(int i) const;
     RolisteamTheme* currentTheme() const;
+    RolisteamTheme* theme(const QString& uuid) const;
     std::size_t currentThemeIndex() const;
     RolisteamTheme* currentEditableTheme();
 
@@ -85,6 +86,7 @@ signals:
     void customFileChanged();
     void preferencesChanged();
     void externalToolChanged();
+    void currentThemeChanged();
 
 public slots:
     void savePreferences();

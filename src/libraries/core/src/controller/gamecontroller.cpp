@@ -84,20 +84,32 @@ GameController::GameController(const QString& appname, const QString& version, Q
                 emit connectedChanged(b);
             });
 
-    connect(m_campaignManager.get(), &campaign::CampaignManager::campaignChanged, this,
-            [this]()
-            {
-                auto cm= m_campaignManager->campaign();
-                m_contentCtrl->setMediaRoot(cm->directory(campaign::Campaign::Place::MEDIA_ROOT));
-                m_logController->setCurrentPath(QString("%1/rolisteam.log").arg(cm->rootDirectory()));
-            });
-    connect(m_campaignManager->campaign(), &campaign::Campaign::rootDirectoryChanged, this,
-            [this]()
-            {
-                auto cm= m_campaignManager->campaign();
-                m_contentCtrl->setMediaRoot(cm->directory(campaign::Campaign::Place::MEDIA_ROOT));
-                emit campaignRootChanged();
-            });
+    auto updateCampaign= [this]()
+    {
+        auto cm= m_campaignManager->campaign();
+        m_contentCtrl->setMediaRoot(cm->directory(campaign::Campaign::Place::MEDIA_ROOT));
+        m_logController->setCurrentPath(QString("%1/rolisteam.log").arg(cm->rootDirectory()));
+        connect(cm, &campaign::Campaign::currentThemeChanged, this,
+                [this]()
+                {
+                    if(!m_campaignManager)
+                        return;
+
+                    auto cm= m_campaignManager->campaign();
+                    if(cm)
+                        emit themeChanged(cm->currentTheme());
+                });
+
+        connect(cm, &campaign::Campaign::rootDirectoryChanged, this,
+                [this]()
+                {
+                    auto cm= m_campaignManager->campaign();
+                    m_contentCtrl->setMediaRoot(cm->directory(campaign::Campaign::Place::MEDIA_ROOT));
+                    emit campaignRootChanged();
+                });
+    };
+    updateCampaign();
+    connect(m_campaignManager.get(), &campaign::CampaignManager::campaignChanged, this, updateCampaign);
     connect(m_campaignManager->editor(), &campaign::CampaignEditor::performCommand, this, &GameController::addCommand);
 
     // clang-format off
@@ -148,6 +160,12 @@ GameController::GameController(const QString& appname, const QString& version, Q
                 if(list.contains(uuid))
                     openInternalResources(uuid, path, helper::utils::extensionToContentType(path));
         });
+
+        emit themeChanged(c->currentTheme());
+    });
+    connect(this, &GameController::themeChanged, this, [this](const QString& uuid){
+        auto theme= m_preferencesDialogController->theme(uuid);
+        m_contentCtrl->setCurrentTheme(theme);
     });
     // clang-format on
 
@@ -285,6 +303,7 @@ void GameController::save()
 
     m_campaignManager->saveCampaign();
     m_imUpdater->save(m_campaignManager->placeDirectory(campaign::Campaign::Place::IM_FILE));
+    m_preferencesDialogController->savePreferences();
 }
 
 void GameController::saveAs(const QString& path)

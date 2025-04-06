@@ -136,7 +136,7 @@ CampaignInfo FileSerializer::readCampaignDirectory(const QString& directory)
     info.assets= info.data[Core::JsonKey::JSON_MEDIAS].toArray();
 
     // read themes.json
-    info.theme= IOHelper::loadJsonFileIntoObject(QStringLiteral("%1/%2").arg(directory, campaign::THEME_FILE), ok);
+    // info.theme= IOHelper::loadJsonFileIntoObject(QStringLiteral("%1/%2").arg(directory, campaign::THEME_FILE), ok);
 
     // read dices.json
     info.dices= IOHelper::loadJsonFileIntoArray(QStringLiteral("%1/%2").arg(directory, campaign::DICE_ALIAS_MODEL), ok);
@@ -201,6 +201,7 @@ QJsonObject FileSerializer::campaignToObject(Campaign* campaign)
     root[Core::JsonKey::JSON_MEDIAS]= array;
     root[Core::JsonKey::JSON_NAME]= campaign->name();
     root[Core::JsonKey::JSON_SESSION]= campaign->loadSession();
+    root[Core::JsonKey::JSON_THEME_ID]= campaign->currentTheme();
     return root;
 }
 
@@ -375,6 +376,10 @@ bool FileSerializer::isValidCampaignDirectory(const QString& path, bool acceptEm
         return false;
 
     QDir direct(path);
+
+    if(!direct.isAbsolute())
+        return false;
+
     auto entrylist= direct.entryList(QDir::NoDotAndDotDot);
 
     if(acceptEmpty && entrylist.isEmpty()) // empty directory is valid.
@@ -430,9 +435,9 @@ bool FileSerializer::hasContent(const QString& path, Core::CampaignDataCategory 
     case Core::CampaignDataCategory::CharacterStates:
         list.append(campaign::STATE_MODEL);
         break;
-    case Core::CampaignDataCategory::Themes:
+    /*case Core::CampaignDataCategory::Themes:
         list.append(campaign::THEME_FILE);
-        break;
+        break;*/
     case Core::CampaignDataCategory::AntagonistList:
         list.append(campaign::CHARACTER_ROOT);
         list.append(campaign::CHARACTER_MODEL);

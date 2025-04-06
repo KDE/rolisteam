@@ -22,6 +22,7 @@
 
 #include <QHeaderView>
 
+#include "data/rolisteamtheme.h"
 #include "delegates/checkboxdelegate.h"
 #include "delegates/colordelegate.h"
 #include "delegates/imagepathdelegateitem.h"
@@ -31,7 +32,7 @@
 #include "model/thememodel.h"
 
 CampaignProperties::CampaignProperties(campaign::Campaign* capm, ThemeModel* themeModel, QWidget* parent)
-    : QDialog(parent), ui(new Ui::CampaignProperties), m_campaign(capm)
+    : QDialog(parent), ui(new Ui::CampaignProperties), m_campaign(capm), m_themes(themeModel)
 {
     ui->setupUi(this);
     Q_ASSERT(m_campaign);
@@ -55,10 +56,20 @@ CampaignProperties::CampaignProperties(campaign::Campaign* capm, ThemeModel* the
     ui->m_tableViewAlias->setItemDelegateForColumn(DiceAliasModel::DISABLE, new rwidgets::CheckBoxDelegate());
 
     connect(ui->m_nameEdit, &QLineEdit::textEdited, m_campaign, &campaign::Campaign::setName);
-    if(themeModel)
+    auto updateThemeCombo= [this]()
     {
-        ui->m_currentTheme->setModel(themeModel);
-        auto idx= themeModel->indexOf(m_campaign->currentTheme());
+        if(!m_themes)
+            return;
+        auto theme= m_themes->theme(ui->m_currentTheme->currentIndex());
+        if(!theme)
+            return;
+        m_campaign->setCurrentTheme(theme->uuid());
+    };
+    connect(ui->m_currentTheme, &QComboBox::activated, m_campaign, updateThemeCombo);
+    if(m_themes)
+    {
+        ui->m_currentTheme->setModel(m_themes);
+        auto idx= m_themes->indexOf(m_campaign->currentTheme());
         ui->m_currentTheme->setCurrentIndex(idx);
     }
     ui->m_diskUsageLbl->setText(QLocale::system().formattedDataSize(m_campaign->diskUsage()));

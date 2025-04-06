@@ -50,6 +50,16 @@ int ThemeModel::indexOf(RolisteamTheme* theme) const
     return std::distance(std::begin(m_themeList), it);
 }
 
+int ThemeModel::indexOf(const QString& uuid) const
+{
+    auto it= std::find_if(std::begin(m_themeList), std::end(m_themeList),
+                          [uuid](const std::unique_ptr<RolisteamTheme>& itTheme) { return itTheme->uuid() == uuid; });
+
+    if(it == std::end(m_themeList))
+        return -1;
+    return std::distance(std::begin(m_themeList), it);
+}
+
 QVariant ThemeModel::data(const QModelIndex& index, int role) const
 {
     if(!index.isValid())
@@ -122,4 +132,19 @@ RolisteamTheme* ThemeModel::theme(int pos) const
 
     const auto& it= m_themeList.at(idx);
     return it.get();
+}
+RolisteamTheme* ThemeModel::theme(const QString& uuid) const
+{
+    qDebug() << "CAMPAIGN::" << m_themeList.size();
+    auto it= std::find_if(std::begin(m_themeList), std::end(m_themeList),
+                          [uuid](const std::unique_ptr<RolisteamTheme>& theme)
+                          {
+                              qDebug() << "CAMPAIGN:: theme" << theme->uuid();
+                              return uuid == theme->uuid();
+                          });
+
+    if(it == std::end(m_themeList))
+        return nullptr;
+
+    return (*it).get();
 }

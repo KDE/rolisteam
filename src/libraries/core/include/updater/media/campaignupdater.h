@@ -34,6 +34,7 @@ class CORE_EXPORT CampaignUpdater : public QObject, public NetWorkReceiver
 {
     Q_OBJECT
     Q_PROPERTY(bool localIsGM READ localIsGM WRITE setLocalIsGM NOTIFY localIsGMChanged)
+    Q_PROPERTY(bool ready READ ready WRITE setReady NOTIFY readyChanged FINAL)
 public:
     explicit CampaignUpdater(DiceRoller* dice, Campaign* manager, QObject* parent= nullptr);
 
@@ -43,6 +44,9 @@ public:
     bool localIsGM();
 
     void setCampaign(Campaign* campaign);
+
+    bool ready() const;
+    void setReady(bool newReady);
 
 public slots:
     void updateDiceModel();
@@ -57,6 +61,8 @@ signals:
     void localIsGMChanged();
     void dataSaved();
 
+    void readyChanged();
+
 private:
     void setUpdating(bool b);
     bool canForward();
@@ -67,6 +73,7 @@ private:
     QPointer<DiceRoller> m_dice;
     bool m_localIsGm= true;
     bool m_updatingModel= false;
+    bool m_ready{false};
 };
 } // namespace campaign
 #endif // CAMPAIGN_CAMPAIGNUPDATER_H

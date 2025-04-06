@@ -20,10 +20,13 @@
 #include "data/rolisteamtheme.h"
 
 #include <QStyleFactory>
-RolisteamTheme::RolisteamTheme() : m_paletteModel(new PaletteModel()) {}
+RolisteamTheme::RolisteamTheme()
+    : m_paletteModel(new PaletteModel()), m_uuid(QUuid::createUuid().toString(QUuid::WithoutBraces))
+{
+}
 
-RolisteamTheme::RolisteamTheme(QPalette pal, QString name, QString css, QStyle* style, QString bgPath, int pos,
-                               QColor bgColor, bool isRemovable)
+RolisteamTheme::RolisteamTheme(QString uuid, QPalette pal, QString name, QString css, QStyle* style, QString bgPath,
+                               int pos, QColor bgColor, bool isRemovable)
     : m_paletteModel(new PaletteModel())
     , m_name(name)
     , m_css(css)
@@ -31,6 +34,7 @@ RolisteamTheme::RolisteamTheme(QPalette pal, QString name, QString css, QStyle* 
     , m_bgPath(bgPath)
     , m_bgColor(bgColor)
     , m_position(pos)
+    , m_uuid(uuid.isEmpty() ? QUuid::createUuid().toString(QUuid::WithoutBraces) : uuid)
 {
     setStyle(style);
     m_paletteModel->setPalette(pal);
@@ -78,11 +82,16 @@ QStyle* RolisteamTheme::getStyle() const
 {
     return QStyleFactory::create(m_styleName);
 }
+
+QString RolisteamTheme::uuid() const
+{
+    return m_uuid;
+}
 void RolisteamTheme::setStyle(QStyle* style)
 {
     if(nullptr != style)
     {
-        m_styleName= style->objectName();
+        m_styleName= style->name();
     }
 }
 void RolisteamTheme::setBackgroundColor(QColor c)
