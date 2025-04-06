@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-02-23 09:04+0100\n"
+"PO-Revision-Date: 2025-04-05 14:12+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -488,7 +488,7 @@ msgstr "Bladegenskaper"
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr ""
+msgstr "Fyll bredd enligt standardvärde"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
@@ -1251,17 +1251,11 @@ msgid "Hidden Field (for intermediate calculations)"
 msgstr "Dold fält (för mellanliggande beräkningar)"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:37
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Directory to save QML file"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Directory to save QML file"
 msgstr "Katalog för att spara QML-fil"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:37
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Place to save Generated files"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Place to save Generated files"
 msgstr "Plats att spara generade filer"
@@ -1696,17 +1690,14 @@ msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "Bidragssidan för %1 finns på nätet:<br> <a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:785
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign ?"
-msgstr "Vill du radera nuvarande QML-kod?"
+msgstr "Vill du spara kampanjen?"
 
 #: src/binaries/widget/mainwindow.cpp:785
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam ?"
-msgstr ""
+msgstr "Vill du verkligen avsluta Rolisteam?"
 
 #: src/binaries/widget/mainwindow.cpp:791
 #, qt-format
@@ -3376,12 +3367,12 @@ msgstr "Tärningskommando:"
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
-msgstr ""
+msgstr "Dölj tredimensionell tärning efter: %1 s"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:206
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
-msgstr ""
+msgstr "Tredimensionell tärningspanel försvinner efter en viss tid."
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
@@ -3612,12 +3603,9 @@ msgid "Link label visible:"
 msgstr "Länkbeteckning synlig:"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:54
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Hide Side Panel"
 msgctxt "SideMenu|"
 msgid "Hide empty label"
-msgstr "Dölj sidopanel"
+msgstr "Dölj tom beteckning"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
@@ -3733,12 +3721,9 @@ msgid "All"
 msgstr "Alla"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:46
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Load Image"
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Läs in bild"
+msgstr "Ingen bild"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:56
 msgctxt "PersonEdit|"
@@ -3926,7 +3911,7 @@ msgstr "Spara profiler"
 #: src/libraries/qml_views/views/ConnectionForm.qml:315
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
-msgstr ""
+msgstr "Ange data där röda kanter visas."
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:322
 msgctxt "ConnectionForm|"
@@ -4511,17 +4496,6 @@ msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Röd: %1, Grön: %2, Blå: %3"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
-#, fuzzy
-#| msgctxt "AboutRolisteam|"
-#| msgid ""
-#| "Rolisteam helps you to manage a tabletop role playing game with remote "
-#| "friends/players. It provides many features to share maps, pictures and it "
-#| "also includes tool to communicate with your friends/players. The goal is "
-#| "to make Rolisteam-managed RPG games as good as RPG games around your "
-#| "table. To achieve it, we are working hard to provide you more and more "
-#| "features. Existing features : Map sharing (with permission management), "
-#| "Image sharing, background music, dice roll and so on. Rolisteam is "
-#| "written in Qt5"
 msgctxt "AboutRolisteam|"
 msgid ""
 "Rolisteam helps you to manage a tabletop role playing game with remote "
@@ -4538,7 +4512,7 @@ msgstr ""
 "är att göra rollspel hanterade av Rolisteam lika bra som bordsspel. För att "
 "uppnå det arbetar vi hårt för att ge dig fler och fler funktioner. "
 "Befintliga funktioner: kartdelning (med behörighetshantering), bilddelning, "
-"bakgrundsmusik, tärningskast och så vidare. Rolisteam är skrivet i Qt5."
+"bakgrundsmusik, tärningskast och så vidare. Rolisteam är skrivet med Qt."
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
 msgctxt "AboutRolisteam|"
@@ -4571,12 +4545,9 @@ msgid "Bug Tracker"
 msgstr "Felspårare"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
-#, fuzzy
-#| msgctxt "CampaignManager|"
-#| msgid "Impossible to create campaign template at %1"
 msgctxt "AboutRolisteam|"
 msgid "Impossible to read the template."
-msgstr "Omöjligt att skapa kampanjmall i %1"
+msgstr "Omöjligt att läsa mallen."
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.ui:17
 msgctxt "AboutRolisteam|"
