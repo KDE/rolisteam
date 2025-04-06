@@ -133,7 +133,7 @@ protected:
     QPointer<PreferencesManager> m_preferences{nullptr};
     Core::DataType m_dataType{Core::DataType::DynamicData};
     QUrl m_staticData;
-    bool m_sharing{true};
+    bool m_sharing{false};
 };
 
 #endif // ABSTRACTMEDIACONTROLLER_H

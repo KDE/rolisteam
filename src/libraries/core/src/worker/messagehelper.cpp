@@ -1633,7 +1633,7 @@ void readNodeFromMsg(MindMapController* ctrl, NetworkMessageReader* msg)
     auto x= msg->real();
     auto y= msg->real();
     auto text= msg->string32();
-    auto uri= msg->string8();
+    // auto uri= msg->string8();
     auto parentId= msg->string8();
     auto indx= msg->uint64();
 

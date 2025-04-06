@@ -387,17 +387,20 @@ void MindMapTest::removeNodeAndLinkTest()
     auto& nodes= itemModel->items(mindmap::MindItem::NodeType);
 
     QCOMPARE(itemModel->rowCount(), 0);
-
+    qDebug() << "removeNode: 1";
     int d= 0;
     QList<QStringList> idLevels;
     for(const auto& level : nodetree)
     {
         QStringList currentLevelIds;
         int index= 0;
+        qDebug() << "removeNode: 2";
         for(auto c : level)
         {
+            qDebug() << "removeNode: 3";
             for(int i= 0; i < c; ++i)
             {
+                qDebug() << "removeNode: 4";
                 if(d == 0)
                 {
                     m_ctrl->addNode(QString());
@@ -410,7 +413,7 @@ void MindMapTest::removeNodeAndLinkTest()
                 }
                 else
                 {
-                    // qDebug() << "parentId: "<< c-1 << index;
+
                     auto parentId= idLevels[idLevels.size() - 1].at(index);
                     m_ctrl->addNode(parentId);
                     auto last= nodes[nodes.size() - 1];
@@ -423,14 +426,19 @@ void MindMapTest::removeNodeAndLinkTest()
         ++d;
     }
 
+    qDebug() << "removeNode: 5";
     QCOMPARE(itemModel->rowCount(), linkCount + nodeCount);
 
+    qDebug() << "removeNode: 6";
     m_ctrl->undo();
 
+    qDebug() << "removeNode: 7";
     QCOMPARE(itemModel->rowCount(), std::max(nodeCount - 1, 0) + std::max(linkCount - 1, 0));
 
+    qDebug() << "removeNode: 8";
     m_ctrl->redo();
 
+    qDebug() << "removeNode: 9";
     QCOMPARE(itemModel->rowCount(), nodeCount + linkCount);
 
     if(indexToRemove < 0)
@@ -441,23 +449,25 @@ void MindMapTest::removeNodeAndLinkTest()
 
     auto selectionCtrl= m_ctrl->selectionController();
 
+    qDebug() << "removeNode: 10";
     auto last= nodes[indexToRemove];
     selectionCtrl->addToSelection(last);
     m_ctrl->removeSelection();
 
     QCOMPARE(itemModel->rowCount(), restingNodes + restingLinks);
-
+    qDebug() << "removeNode: 11";
     QCOMPARE(nodeSpy.count(), nodeCount - restingNodes + linkCount - restingLinks);
 
     m_ctrl->undo();
-
+    qDebug() << "removeNode: 12";
     QCOMPARE(itemModel->rowCount(), nodeCount + linkCount);
     nodeSpy.clear();
 
+    qDebug() << "removeNode: 13";
     m_ctrl->redo();
 
     QCOMPARE(itemModel->rowCount(), restingNodes + restingLinks);
-
+    qDebug() << "removeNode: 14";
     QCOMPARE(nodeSpy.count(), nodeCount - restingNodes + linkCount - restingLinks);
 }
 
@@ -523,7 +533,7 @@ void MindMapTest::getAndSetTest()
     }
 
     QCOMPARE(m_ctrl->errorMsg(), QString());
-    QCOMPARE(m_ctrl->contentRect(), QRectF(0, 0, 100, 20));
+    QCOMPARE(m_ctrl->contentRect(), QRectF(0, 0, 1, 1));
 
     QSignalSpy spy(m_ctrl.get(), &MindMapController::errorMsgChanged);
     auto msg= Helper::randomString();

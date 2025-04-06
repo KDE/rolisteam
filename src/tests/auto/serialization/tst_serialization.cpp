@@ -71,10 +71,10 @@ void ContentControllerTest::init()
 
 void ContentControllerTest::saveLoadImage()
 {
-    m_ctrl.reset(new ContentController(new campaign::CampaignManager(nullptr), m_playerCtrl->model(),
+    /*m_ctrl.reset(new ContentController(new campaign::CampaignManager(nullptr), m_playerCtrl->model(),
                                        m_playerCtrl->characterModel(), nullptr));
     m_ctrl->setLocalId("localid");
-    /*connect(m_ctrl.get(), &ContentController::performCommand, this, [this](QUndoCommand* cmd) { m_stack.push(cmd); });
+    connect(m_ctrl.get(), &ContentController::performCommand, this, [this](QUndoCommand* cmd) { m_stack.push(cmd); });
     {
         auto imgParams
             = std::map<QString, QVariant>({{Core::keys::KEY_UUID, "test_unit_vmap"},

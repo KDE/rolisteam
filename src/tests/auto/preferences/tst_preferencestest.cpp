@@ -80,16 +80,18 @@ void PreferencesTest::initTestCase()
 void PreferencesTest::testLambdaFunction()
 {
     m_count= 0;
-    m_preferences->registerValue("key", 300);
-    auto func= [this](QVariant value)
+    auto expected= 300;
+    m_preferences->registerValue("key", expected);
+    auto func= [this, &expected](QVariant value)
     {
-        QCOMPARE(value.toInt(), 25);
+        QCOMPARE(value.toInt(), expected);
         m_count++;
     };
     m_preferences->registerLambda("key", func);
-    m_preferences->registerValue("key", 25);
+    expected= 25;
+    m_preferences->registerValue("key", expected);
 
-    QCOMPARE(m_count, 1);
+    QCOMPARE(m_count, 2);
 }
 
 void PreferencesTest::testListener()

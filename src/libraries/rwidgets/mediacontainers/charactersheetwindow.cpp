@@ -88,8 +88,11 @@ CharacterSheetWindow::CharacterSheetWindow(CharacterSheetController* ctrl, QWidg
     auto button= new QToolButton(this); // tr("Actions")
     button->setDefaultAction(m_ui->m_menuAct);
     m_ui->m_tabwidget->setCornerWidget(button);
-    button->setEnabled(m_sheetCtrl->cornerEnabled());
-    connect(m_sheetCtrl, &CharacterSheetController::cornerEnabledChanged, button, &QToolButton::setEnabled);
+    if(m_sheetCtrl)
+    {
+        button->setEnabled(m_sheetCtrl->cornerEnabled());
+        connect(m_sheetCtrl, &CharacterSheetController::cornerEnabledChanged, button, &QToolButton::setEnabled);
+    }
     connect(button, &QToolButton::clicked, this,
             [button, this]()
             {

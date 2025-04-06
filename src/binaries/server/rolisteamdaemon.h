@@ -26,7 +26,7 @@ public slots:
     void createEmptyConfigFile(QString filepath);
 
 private:
-    RServer m_server;
+    std::unique_ptr<RServer> m_server;
     QMap<QString, QVariant> m_parameters;
     bool m_restart= false;
     LogController* m_logController= nullptr;

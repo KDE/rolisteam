@@ -137,7 +137,7 @@ void PdfControllorTest::shareAsPdf()
 {
     QSignalSpy spy(m_ctrl.get(), &PdfController::sharingChanged);
 
-    m_ctrl->setSharing(true);
+    m_ctrl->setSharing(false);
 
     QCOMPARE(spy.count(), 0);
 
@@ -145,7 +145,7 @@ void PdfControllorTest::shareAsPdf()
     path= path.arg(tests::root_path);
     m_ctrl->setData(utils::IOHelper::loadFile(path));
 
-    m_ctrl->setSharing(false);
+    m_ctrl->setSharing(true);
 
     QCOMPARE(spy.count(), 1);
 }

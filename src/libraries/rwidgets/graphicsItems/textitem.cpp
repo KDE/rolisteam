@@ -193,9 +193,11 @@ TextItem::TextItem(vmap::TextController* ctrl)
     m_textItem->setPos(QPointF(0, 0));
     m_textItem->setTextWidth(100);
     m_textItem->setTextInteractionFlags(Qt::TextEditorInteraction);
-    m_textItem->setEnabled(m_textCtrl->editable());
     if(m_textCtrl)
+    {
+        m_textItem->setEnabled(m_textCtrl->editable());
         m_textItem->setDefaultTextColor(m_textCtrl->color());
+    }
     m_doc->setPlainText(tr("Text"));
 }
 

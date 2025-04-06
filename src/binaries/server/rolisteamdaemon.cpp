@@ -7,9 +7,9 @@
 #include <QFileInfo>
 #include <QSettings>
 
-RolisteamDaemon::RolisteamDaemon(QObject* parent)
-    : QObject(parent), m_server(m_parameters, false), m_logController(new LogController(true, this))
+RolisteamDaemon::RolisteamDaemon(QObject* parent) : QObject(parent), m_logController(new LogController(true, this))
 {
+    m_server.reset(new RServer(m_parameters, false));
     qRegisterMetaType<RServer::ServerState>();
 }
 
@@ -60,7 +60,7 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
 
     if(deepInspectionLog)
     {
-        m_logController->listenObjects(&m_server);
+        m_logController->listenObjects(m_server.get());
     }
     m_logController->setLogLevel(static_cast<LogController::LogLevel>(logLevel));
 
@@ -97,24 +97,30 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
 
 void RolisteamDaemon::start()
 {
-    connect(&m_thread, &QThread::started, &m_server, &RServer::listen);
-    connect(&m_server, &RServer::eventOccured, m_logController, [this](const QString& msg,  LogController::LogLevel type){
-        m_logController->manageMessage(msg, QStringLiteral("Server"), type);
-    }, Qt::QueuedConnection);
-    connect(&m_server, &RServer::completed, &m_thread, &QThread::quit);
-    connect(&m_server, &RServer::stateChanged, this, [this]() {
-        if(m_server.state() == RServer::Stopped)
-            m_thread.quit();
-    });
-    connect(&m_thread, &QThread::finished, this, [this]() {
-        if(m_restart)
-        {
-            qApp->exit(0);
-        }
-        m_restart= false;
-    });
+    connect(&m_thread, &QThread::started, m_server.get(), &RServer::listen);
+    connect(
+        m_server.get(), &RServer::eventOccured, m_logController,
+        [this](const QString& msg, LogController::LogLevel type)
+        { m_logController->manageMessage(msg, QStringLiteral("Server"), type); },
+        Qt::QueuedConnection);
+    connect(m_server.get(), &RServer::completed, &m_thread, &QThread::quit);
+    connect(m_server.get(), &RServer::stateChanged, this,
+            [this]()
+            {
+                if(m_server->state() == RServer::Stopped)
+                    m_thread.quit();
+            });
+    connect(&m_thread, &QThread::finished, this,
+            [this]()
+            {
+                if(m_restart)
+                {
+                    qApp->exit(0);
+                }
+                m_restart= false;
+            });
 
-    m_server.moveToThread(&m_thread);
+    m_server->moveToThread(&m_thread);
 
     m_thread.start();
 }
@@ -147,10 +153,10 @@ void RolisteamDaemon::createEmptyConfigFile(QString filepath)
 void RolisteamDaemon::restart()
 {
     m_restart= true;
-    QMetaObject::invokeMethod(&m_server, &RServer::close, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(m_server.get(), &RServer::close, Qt::QueuedConnection);
 }
 
 void RolisteamDaemon::stop()
 {
-    QMetaObject::invokeMethod(&m_server, &RServer::close, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(m_server.get(), &RServer::close, Qt::QueuedConnection);
 }

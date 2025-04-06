@@ -218,7 +218,7 @@ bool CampaignUpdater::createCampaignTemplate(const QString& dirPath)
 
 void CampaignUpdater::updateDiceAliases()
 {
-    if(!canForward())
+    if(!canForward() || !m_dice)
         return;
     auto aliases= m_dice->aliases();
     if(!aliases)

@@ -82,6 +82,8 @@ CampaignDock::CampaignDock(CampaignEditor* ctrl, PreferencesController* prefs, Q
 
     auto func= [this]()
     {
+        if(!m_preferences)
+            return;
         m_ui->m_view->setRcseAvailable(
             QFileInfo::exists(m_preferences->externalEditorFor(Core::MediaType::CharacterSheetFile)));
         m_ui->m_view->setMindmapAvailable(
