@@ -126,7 +126,7 @@ public slots:
     void setErrorMsg(const QString& val);
     void setCampaignPath(const QString& val);
     void setInfoMsg(const QString& newInfoMsg);
-    void setPassword(const QByteArray &newPassword);
+    void setPassword(const QByteArray& newPassword);
 
     // action slots
     // profile models
@@ -193,7 +193,6 @@ private:
 
 private:
     QPointer<ProfileModel> m_profileModel;
-    std::unique_ptr<CharacterDataModel> m_characterModel;
     int m_currentProfileIndex= -1;
     QString m_error;
     QString m_infoMsg;

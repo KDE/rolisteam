@@ -24,68 +24,30 @@
 
 #include "network/characterdatamodel.h"
 #include "network/connectionprofile.h"
-#include "worker/fileserializer.h"
+
 #include "worker/utilshelper.h"
 
 SelectConnProfileController::SelectConnProfileController(ProfileModel* model, QObject* parent)
-    : QObject{parent}, m_profileModel{model}, m_characterModel{new CharacterDataModel}
+    : QObject{parent}, m_profileModel{model}
 {
 
-    auto connectProfile= [this](ConnectionProfile* prof)
-    {
-        if(prof == nullptr)
-            return;
+    // connect(m_profileModel, &ProfileModel::profileAdded, this, connectProfile);
+    connect(m_profileModel, &ProfileModel::profileRemoved, this,
+            [this]()
+            {
+                setCurrentProfileIndex(-1);
+                if(m_profileModel->rowCount() > 0)
+                    setCurrentProfileIndex(0);
+            });
 
-        connect(prof, &ConnectionProfile::gmChanged, this,
-                [prof, this]()
-                {
-                    if(!prof->isGM() && (prof->characterCount() == 0))
-                    {
-                        connection::CharacterData data({QUuid::createUuid().toString(),
-                                                        QObject::tr("Unknown Character"), Qt::red, "",
-                                                        QHash<QString, QVariant>()});
-                        m_characterModel->addCharacter(data);
-                    }
-                });
-
-        auto updateCharacters= [prof]()
-        { prof->setCharactersValid(helper::utils::hasValidCharacter(prof->characters(), prof->isGM())); };
-        connect(prof, &ConnectionProfile::characterCountChanged, this, updateCharacters);
-        connect(prof, &ConnectionProfile::characterChanged, this, updateCharacters);
-        connect(prof, &ConnectionProfile::gmChanged, this, updateCharacters);
-
-        auto updatePlayerInfo= [prof]()
-        {
-            prof->setPlayerInfoValid(prof->playerColor().isValid() && !prof->playerName().isEmpty()
-                                     && helper::utils::isSquareImage(prof->playerAvatar()));
-        };
-        connect(prof, &ConnectionProfile::playerAvatarChanged, this, updatePlayerInfo);
-        connect(prof, &ConnectionProfile::playerColorChanged, this, updatePlayerInfo);
-        connect(prof, &ConnectionProfile::playerNameChanged, this, updatePlayerInfo);
-
-        auto updateCampaign= [prof]()
-        {
-            prof->setCampaignInfoValid(
-                prof->isGM() ? campaign::FileSerializer::isValidCampaignDirectory(prof->campaignPath()) : true);
-        };
-        connect(prof, &ConnectionProfile::gmChanged, this, updateCampaign);
-        connect(prof, &ConnectionProfile::campaignPathChanged, this, updateCampaign);
-
-        updateCharacters();
-        updateCampaign();
-        updatePlayerInfo();
-    };
-
-    connect(m_profileModel, &ProfileModel::profileAdded, this, connectProfile);
-
-    if(m_profileModel)
+    /*if(m_profileModel)
     {
         for(int i= 0; i < m_profileModel->rowCount(); ++i)
         {
             auto prof= m_profileModel->getProfile(i);
             connectProfile(prof);
         }
-    }
+    }*/
     connect(this, &SelectConnProfileController::connectionStateChanged, this,
             [this](ConnectionState newState, ConnectionState oldState)
             {
@@ -136,7 +98,7 @@ QByteArray SelectConnProfileController::playerAvatar() const
 
 CharacterDataModel* SelectConnProfileController::characterModel() const
 {
-    return m_characterModel.get();
+    return m_profileModel->characterModel();
 }
 QString SelectConnProfileController::campaignPath() const
 {
@@ -207,7 +169,7 @@ void SelectConnProfileController::setCurrentProfileIndex(int i)
         connect(prof, &ConnectionProfile::passwordChanged, this, &SelectConnProfileController::passwordChanged);
         connect(prof, &ConnectionProfile::campaignPathChanged, this, &SelectConnProfileController::campaignPathChanged);
         connect(prof, &ConnectionProfile::validChanged, this, &SelectConnProfileController::canConnectChanged);
-        m_characterModel->setProfile(prof);
+        m_profileModel->characterModel()->setProfile(prof);
     }
     setConnectionState(ConnectionState::IDLE);
     emit currentProfileIndexChanged();
@@ -290,27 +252,27 @@ void SelectConnProfileController::setCampaignPath(const QString& val)
 
 void SelectConnProfileController::addCharacter()
 {
-    m_characterModel->insertCharacter();
+    m_profileModel->characterModel()->insertCharacter();
 }
 
 void SelectConnProfileController::removeCharacter(int idx)
 {
-    m_characterModel->removeCharacter(idx);
+    m_profileModel->characterModel()->removeCharacter(idx);
 }
 
 void SelectConnProfileController::editCharacterName(int idx, const QString& data)
 {
-    m_characterModel->setName(idx, data);
+    m_profileModel->characterModel()->setName(idx, data);
 }
 
 void SelectConnProfileController::editCharacterColor(int idx, const QColor& color)
 {
-    m_characterModel->setColor(idx, color);
+    m_profileModel->characterModel()->setColor(idx, color);
 }
 
 void SelectConnProfileController::editCharacterAvatar(int idx, const QByteArray& array)
 {
-    m_characterModel->setAvatar(idx, array);
+    m_profileModel->characterModel()->setAvatar(idx, array);
 }
 
 void SelectConnProfileController::addProfile()

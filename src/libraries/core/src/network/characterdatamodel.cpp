@@ -185,6 +185,8 @@ void CharacterDataModel::setAvatar(int i, const QByteArray& img)
     }
 
     auto& character= m_profile->character(i);
+    if(character.m_avatarData == img)
+        return;
     character.m_avatarData= img;
     emit dataChanged(index(i, 0), index(i, 0), {Avatar, AvatarData});
     m_profile->characterHasChanged();

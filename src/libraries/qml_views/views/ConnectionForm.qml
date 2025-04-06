@@ -132,7 +132,7 @@ Item {
                         RequiredTextField {
                             Layout.fillWidth: true
                             text: ProfileController.address
-                            validInput: (text && ProfileController.address)
+                            validInput: (text && ProfileController.address || ProfileController.isServer)
                             enabled: !ProfileController.isServer
                             onEditingFinished: ProfileController.address = text
                         }
@@ -201,6 +201,13 @@ Item {
                                 validInput: (text && ProfileController.campaignPath)
                                 enabled: ProfileController.isGameMaster
                                 opacity: enabled ? 1.0 : 0.4
+                                onEditingFinished: {
+                                    if(text !== ProfileController.campaignPath) {
+                                        ProfileController.campaignPath = text
+                                    }
+                                    text = Qt.binding(function(){return ProfileController.campaignPath})
+                                }
+
                             }
                             ToolButton {
                                 icon.name: "folder"
@@ -250,12 +257,14 @@ Item {
                                 property bool editAvatar: false
                                 validInput: model.name && isSquare
                                 onClicked:{
+                                    console.log("Person:: On clickd")
                                     _itemLyt.editAvatar = true
                                     ProfileController.selectCharacterAvatar(model.index)
                                 }
                                 onNameEdited: ProfileController.editCharacterName(model.index,_itemLyt.characterName)
                                 onColorEdited: (color)=>ProfileController.editCharacterColor(model.index,color)
                                 onImageDataChanged: {
+                                    console.log("Person:: ImageDatachanged")
                                     if(_itemLyt.editAvatar){
                                         ProfileController.editCharacterAvatar(model.index, _itemLyt.imageData)
                                         _itemLyt.editAvatar = false
@@ -326,19 +335,12 @@ Item {
                         opacity: enabled ? 1.0 : 0.4
                         icon.name: _connectBtn.enabled ? "checked" : "close-circle"
                         icon.color: _connectBtn.enabled ? "green" : "red"
-                        /*background: Rectangle {
-
-                            color: Theme.nightMode ? _connectBtn.down ? "darkgreen" : _connectBtn.enabled ? "green" : "darkgray"
-                        }*/
                     }
                     Button {
                         id: _cancelBtn
                         Layout.alignment: Qt.AlignRight
                         text: qsTr("Cancel")
                         onClicked: ProfileController.reject()
-                        /*background: Rectangle {
-                            color: _cancelBtn.down ? "darkgray" : "gray"
-                        }*/
                     }
                 }
             }

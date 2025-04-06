@@ -19,16 +19,19 @@
  ***************************************************************************/
 #include "model/profilemodel.h"
 
+#include <QDebug>
 #include <QFileInfo>
 #include <QSettings>
+#include <QUuid>
 
-#include "data/character.h"
-#include "data/player.h"
+// #include "data/character.h"
+// #include "data/player.h"
+#include "network/characterdatamodel.h"
 #include "network/connectionprofile.h"
+#include "worker/fileserializer.h"
+#include "worker/utilshelper.h"
 
-#include <QDebug>
-
-ProfileModel::ProfileModel() {}
+ProfileModel::ProfileModel() : m_characterModel{new CharacterDataModel} {}
 
 ProfileModel::~ProfileModel()
 {
@@ -83,16 +86,72 @@ void ProfileModel::appendProfile(ConnectionProfile* profile)
 
     auto idx= static_cast<int>(m_connectionProfileList.size());
 
-    connect(profile, &ConnectionProfile::titleChanged, profile, [this, profile](){
-        auto idx = indexOf(profile);
-        emit dataChanged(index(idx,0),index(idx,0),{NameRole});
-    });
+    connect(profile, &ConnectionProfile::titleChanged, profile,
+            [this, profile]()
+            {
+                auto idx= indexOf(profile);
+                emit dataChanged(index(idx, 0), index(idx, 0), {NameRole});
+            });
 
     beginInsertRows(QModelIndex(), idx, idx);
     m_connectionProfileList.push_back(std::unique_ptr<ConnectionProfile>(std::move(profile)));
     endInsertRows();
 
     emit profileAdded(profile);
+    checkProfile(profile);
+}
+
+void ProfileModel::checkProfile(ConnectionProfile* prof)
+{
+    qDebug() << "connect Profile " << prof;
+    if(prof == nullptr)
+        return;
+
+    connect(prof, &ConnectionProfile::gmChanged, this,
+            [prof, this]()
+            {
+                qDebug() << "Update gm changed" << prof->isGM();
+                if(!prof->isGM() && (prof->characterCount() == 0))
+                {
+                    connection::CharacterData data({QUuid::createUuid().toString(), QObject::tr("Unknown Character"),
+                                                    Qt::red, "", QHash<QString, QVariant>()});
+                    m_characterModel->addCharacter(data);
+                }
+            });
+
+    auto updateCharacters= [prof]()
+    {
+        qDebug() << "Update updateCharacters" << helper::utils::hasValidCharacter(prof->characters(), prof->isGM());
+        prof->setCharactersValid(helper::utils::hasValidCharacter(prof->characters(), prof->isGM()));
+    };
+    connect(prof, &ConnectionProfile::characterCountChanged, this, updateCharacters);
+    connect(prof, &ConnectionProfile::characterChanged, this, updateCharacters);
+    connect(prof, &ConnectionProfile::gmChanged, this, updateCharacters);
+
+    auto updatePlayerInfo= [prof]()
+    {
+        qDebug() << "Update playerInfos" << prof->playerColor().isValid() << "name" << prof->playerName().isEmpty()
+                 << "avatar" << helper::utils::isSquareImage(prof->playerAvatar());
+        prof->setPlayerInfoValid(prof->playerColor().isValid() && !prof->playerName().isEmpty()
+                                 && helper::utils::isSquareImage(prof->playerAvatar()));
+    };
+    connect(prof, &ConnectionProfile::playerAvatarChanged, this, updatePlayerInfo);
+    connect(prof, &ConnectionProfile::playerColorChanged, this, updatePlayerInfo);
+    connect(prof, &ConnectionProfile::playerNameChanged, this, updatePlayerInfo);
+
+    auto updateCampaign= [prof]()
+    {
+        qDebug() << "Update Campaign path: gm:" << prof->isGM()
+                 << campaign::FileSerializer::isValidCampaignDirectory(prof->campaignPath());
+        prof->setCampaignInfoValid(
+            prof->isGM() ? campaign::FileSerializer::isValidCampaignDirectory(prof->campaignPath()) : true);
+    };
+    connect(prof, &ConnectionProfile::gmChanged, this, updateCampaign);
+    connect(prof, &ConnectionProfile::campaignPathChanged, this, updateCampaign);
+
+    updateCharacters();
+    updateCampaign();
+    updatePlayerInfo();
 }
 
 ConnectionProfile* ProfileModel::getProfile(const QModelIndex& index)
@@ -155,6 +214,8 @@ void ProfileModel::removeProfile(int index)
     beginRemoveRows(QModelIndex(), index, index);
     m_connectionProfileList.erase(pos);
     endRemoveRows();
+
+    emit profileRemoved(index);
 }
 
 Qt::ItemFlags ProfileModel::flags(const QModelIndex& index) const
@@ -163,4 +224,9 @@ Qt::ItemFlags ProfileModel::flags(const QModelIndex& index) const
         return Qt::NoItemFlags;
 
     return Qt::ItemIsSelectable | Qt::ItemIsEnabled;
+}
+
+CharacterDataModel* ProfileModel::characterModel() const
+{
+    return m_characterModel.get();
 }

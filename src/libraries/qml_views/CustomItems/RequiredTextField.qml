@@ -4,12 +4,13 @@ import Customization 1.0
 
 TextField {
     id: _root
+    objectName: "RequiredTextField"
     property QtObject style: Theme.styleSheet("ValidField")
     property bool validInput
 
     background: Rectangle {
         border.color: !_root.enabled ? "darkgray" : _root.activeFocus ? _root.style.inputColor : _root.validInput ? _root.style.validColor : _root.style.invalidColor
-        border.width: 1
+        border.width: _root.validInput ? 1 : 3
         implicitWidth: 100
         implicitHeight: 20
     }

@@ -2,16 +2,12 @@
 
 #include <QCryptographicHash>
 #include <QDebug>
+#include <QFileInfo>
 
 ConnectionProfile::ConnectionProfile()
     : m_title(QObject::tr("Unknown")), m_playerName(QObject::tr("Player")), m_playerColor(Qt::red)
 {
-    // binding
-
-    auto updateValid= [this]()
-    {
-        // qDebug() << "connection info" << m_validConnectionInfo << "player info" << m_validPlayerInfo << "character:"
-        // << m_validCharacter << "campaign:"<<m_validCampaign;
+    auto updateValid= [this]() {
         setValid(m_validConnectionInfo && m_validPlayerInfo && m_validCharacter && m_validCampaign
                  && !m_title.isEmpty());
     };
@@ -20,6 +16,7 @@ ConnectionProfile::ConnectionProfile()
     connect(this, &ConnectionProfile::charactersValidChanged, this, updateValid);
     connect(this, &ConnectionProfile::campaignInfoValidChanged, this, updateValid);
     connect(this, &ConnectionProfile::connectionInfoValidChanged, this, updateValid);
+    connect(this, &ConnectionProfile::titleChanged, this, updateValid);
 
     auto updateConnectionInfo
         = [this]() { setConnectionInfoValid(m_port > 0 && m_server ? m_server : !m_address.isEmpty()); };
@@ -30,17 +27,6 @@ ConnectionProfile::ConnectionProfile()
 
     updateConnectionInfo();
     updateValid();
-
-    // Signals
-    /*m_handlers.push_back(std::make_optional(m_valid.onValueChanged(StdFunc([this]() { emit validChanged(); }))));
-    m_handlers.push_back(std::make_optional(
-        m_validConnectionInfo.onValueChanged(StdFunc([this]() { emit connectionInfoValidChanged(); }))));
-    m_handlers.push_back(
-        std::make_optional(m_validPlayerInfo.onValueChanged(StdFunc([this]() { emit playerInfoValidChanged(); }))));
-    m_handlers.push_back(
-        std::make_optional(m_validCharacter.onValueChanged(StdFunc([this]() { emit charactersValidChanged(); }))));
-    m_handlers.push_back(
-        std::make_optional(m_validCampaign.onValueChanged(StdFunc([this]() { emit campaignInfoValidChanged(); }))));*/
 }
 ConnectionProfile::~ConnectionProfile() {}
 void ConnectionProfile::setProfileTitle(const QString& str)

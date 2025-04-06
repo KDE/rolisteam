@@ -25,9 +25,11 @@
 #include <core_global.h>
 #include <memory>
 class ConnectionProfile;
+class CharacterDataModel;
 class CORE_EXPORT ProfileModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(CharacterDataModel* characterModel READ characterModel CONSTANT)
 public:
     enum CustomRole
     {
@@ -74,6 +76,7 @@ public:
 
     int indexOf(ConnectionProfile* tmp);
     ConnectionProfile* getProfile(int index);
+    CharacterDataModel* characterModel() const;
 
     QHash<int, QByteArray> roleNames() const override;
 public slots:
@@ -87,11 +90,16 @@ public slots:
      */
     void appendProfile(ConnectionProfile* profile);
 
+private slots:
+    void checkProfile(ConnectionProfile* profile);
+
 signals:
     void profileAdded(ConnectionProfile* prof);
+    void profileRemoved(int i);
 
 private:
     std::vector<std::unique_ptr<ConnectionProfile>> m_connectionProfileList;
+    std::unique_ptr<CharacterDataModel> m_characterModel;
 };
 
 #endif // CONNECTIONPROFILEMODEL_H

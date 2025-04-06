@@ -22,6 +22,7 @@ GridLayout {
    // implicitHeight: childrenRect.height//Math.max(_img.height,_nameField.height+_colorLine.implicitHeight)
     ImageSelector {
         id: _img
+        objectName: "avatarSelect"
         Layout.rowSpan: 2
         Layout.preferredHeight: 80
         Layout.preferredWidth: 80
@@ -32,7 +33,7 @@ GridLayout {
             width: parent.width+2
             height: parent.height+2
             color: "transparent"
-            border.width: 1
+            border.width: 3
             border.color: "red"
             visible: !_img.isSquare
             Image {
