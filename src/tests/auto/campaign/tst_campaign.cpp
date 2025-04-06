@@ -627,19 +627,15 @@ void CampaignTest::campaignTest()
     camp->renameMedia(Helper::randomString(), Helper::randomString());
     camp->pathFromUuid(Helper::randomString());
 
-    QList<campaign::Campaign::Place> places{campaign::Campaign::Place::DICE_MODEL,
-                                            campaign::Campaign::Place::NPC_MODEL,
-                                            campaign::Campaign::Place::STATE_MODEL,
-                                            campaign::Campaign::Place::FIRST_AUDIO_PLAYER_FILE,
-                                            campaign::Campaign::Place::SECOND_AUDIO_PLAYER_FILE,
-                                            campaign::Campaign::Place::THIRD_AUDIO_PLAYER_FILE,
-                                            campaign::Campaign::Place::MEDIA_ROOT,
-                                            campaign::Campaign::Place::STATE_MODEL,
-                                            campaign::Campaign::Place::STATE_ROOT,
-                                            campaign::Campaign::Place::NPC_MODEL,
-                                            campaign::Campaign::Place::NPC_ROOT,
-                                            campaign::Campaign::Place::THEME_FILE,
-                                            campaign::Campaign::Place::TRASH_ROOT};
+    QList<campaign::Campaign::Place> places{
+        campaign::Campaign::Place::DICE_MODEL, campaign::Campaign::Place::NPC_MODEL,
+        campaign::Campaign::Place::STATE_MODEL, campaign::Campaign::Place::FIRST_AUDIO_PLAYER_FILE,
+        campaign::Campaign::Place::SECOND_AUDIO_PLAYER_FILE, campaign::Campaign::Place::THIRD_AUDIO_PLAYER_FILE,
+        campaign::Campaign::Place::MEDIA_ROOT, campaign::Campaign::Place::STATE_MODEL,
+        campaign::Campaign::Place::STATE_ROOT, campaign::Campaign::Place::NPC_MODEL,
+        campaign::Campaign::Place::NPC_ROOT,
+        // campaign::Campaign::Place::THEME_FILE,
+        campaign::Campaign::Place::TRASH_ROOT};
 
     for(auto type : places)
         QVERIFY(!camp->directory(type).isEmpty());

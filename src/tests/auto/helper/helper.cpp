@@ -5,6 +5,7 @@
 #include "controller/view_controller/sharednotecontroller.h"
 #include "controller/view_controller/webpagecontroller.h"
 #include "data/charactervision.h"
+#include "data/rolisteamtheme.h"
 #include "media/mediatype.h"
 #include "mindmap/data/linkcontroller.h"
 #include "mindmap/data/mindnode.h"
