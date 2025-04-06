@@ -369,9 +369,9 @@ void VisualItem::setChildrenVisible(bool b)
     {
         bool isVision= item->control() == ChildPointItem::Control::Vision;
         bool hasFog= m_ctrl->visibility() == Core::FOGOFWAR;
+        auto characterVision= m_ctrl->characterVisionEnabled();
         bool isGeometry= item->control() == ChildPointItem::Control::Geometry;
-
-        item->setVisible(isGeometry || (isVision && hasFog));
+        item->setVisible(isGeometry || (isVision && hasFog && characterVision));
     }
 }
 

@@ -95,6 +95,7 @@ public:
     qreal rotation() const;
     bool localIsGM() const;
     bool initialized() const;
+    bool characterVisionEnabled() const;
     Core::VisibilityMode visibility() const;
     Core::SelectableTool tool() const;
     virtual QColor color() const;

@@ -108,6 +108,11 @@ bool VisualItemController::initialized() const
     return m_initialized;
 }
 
+bool VisualItemController::characterVisionEnabled() const
+{
+    return m_ctrl->characterVision();
+}
+
 Core::SelectableTool VisualItemController::tool() const
 {
     return m_tool;
