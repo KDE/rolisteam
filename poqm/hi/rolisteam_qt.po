@@ -1044,7 +1044,7 @@ msgstr "संस्करण"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:687
+#: src/binaries/widget/mainwindow.cpp:714
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "मदद"
@@ -1203,13 +1203,13 @@ msgid "Check Validity"
 msgstr "वैधता जांचें"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:637
+#: src/binaries/widget/mainwindow.cpp:664
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&पूर्ववत करें"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:636
+#: src/binaries/widget/mainwindow.cpp:663
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&फिर से करें"
@@ -1445,7 +1445,7 @@ msgid "Previous Page Button"
 msgstr "पिछला पृष्ठ बटन"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -1606,96 +1606,96 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "पासवर्ड पूछें और उसकी हैश कुंजी लौटाएं।"
 
-#: src/binaries/widget/mainwindow.cpp:425
+#: src/binaries/widget/mainwindow.cpp:452
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "साइड पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:430
+#: src/binaries/widget/mainwindow.cpp:457
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "साइड पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:440
+#: src/binaries/widget/mainwindow.cpp:467
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "खिलाड़ियों की सूची"
 
-#: src/binaries/widget/mainwindow.cpp:441
+#: src/binaries/widget/mainwindow.cpp:468
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "सभी अभियान दस्तावेज़"
 
-#: src/binaries/widget/mainwindow.cpp:442
+#: src/binaries/widget/mainwindow.cpp:469
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "प्रतिपक्षियों की सूची"
 
-#: src/binaries/widget/mainwindow.cpp:443
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "संगीत बजाने वाला"
 
-#: src/binaries/widget/mainwindow.cpp:444
+#: src/binaries/widget/mainwindow.cpp:471
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "सर्वर पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:445
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "अधिसूचना क्षेत्र"
 
-#: src/binaries/widget/mainwindow.cpp:460
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "जीएम उपकरण"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "वेबपेज खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "वेबपेज यूआरएल:"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "मानचित्र खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "मानचित्र:"
 
-#: src/binaries/widget/mainwindow.cpp:539
-#: src/binaries/widget/mainwindow.cpp:578
-#: src/binaries/widget/mainwindow.cpp:801 src/binaries/widget/mainwindow.ui:285
+#: src/binaries/widget/mainwindow.cpp:566
+#: src/binaries/widget/mainwindow.cpp:605
+#: src/binaries/widget/mainwindow.cpp:828 src/binaries/widget/mainwindow.ui:285
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "खुला अभियान"
 
-#: src/binaries/widget/mainwindow.cpp:688
+#: src/binaries/widget/mainwindow.cpp:715
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "%1 का दस्तावेज़ीकरण ऑनलाइन यहां पाया जा सकता है:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "सहायता"
 
-#: src/binaries/widget/mainwindow.cpp:724
+#: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "%1 दान पृष्ठ ऑनलाइन यहां पाया जा सकता है:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 #, fuzzy
 #| msgctxt "rcse::MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
@@ -1703,23 +1703,23 @@ msgctxt "MainWindow|"
 msgid "Do you want to save the campaign ?"
 msgstr "क्या आप वर्तमान QML कोड मिटाना चाहते हैं?"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam ?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:791
+#: src/binaries/widget/mainwindow.cpp:818
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "%1छोड़ो"
 
-#: src/binaries/widget/mainwindow.cpp:868
+#: src/binaries/widget/mainwindow.cpp:895
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "अद्यतन अधिसूचना"
 
-#: src/binaries/widget/mainwindow.cpp:869
+#: src/binaries/widget/mainwindow.cpp:896
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -1729,101 +1729,101 @@ msgstr ""
 "%1 संस्करण जारी कर दिया गया है। कृपया अधिक जानकारी के लिए <a href=\"https://www."
 "rolisteam.org/download\">डाउनलोड पृष्ठ</a> देखें"
 
-#: src/binaries/widget/mainwindow.cpp:879
+#: src/binaries/widget/mainwindow.cpp:906
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 अभी खेल में शामिल हुआ है."
 
-#: src/binaries/widget/mainwindow.cpp:883
+#: src/binaries/widget/mainwindow.cpp:910
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 का सही संस्करण नहीं है: %2."
 
-#: src/binaries/widget/mainwindow.cpp:889
+#: src/binaries/widget/mainwindow.cpp:916
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 बस खेल छोड़ देता है."
 
-#: src/binaries/widget/mainwindow.cpp:972
+#: src/binaries/widget/mainwindow.cpp:999
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "कनेक्शन के लिए <port> का उपयोग करने के लिए rolisteam सेट करें"
 
-#: src/binaries/widget/mainwindow.cpp:975
+#: src/binaries/widget/mainwindow.cpp:1002
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "rolisteam को <server> से कनेक्ट करने के लिए सेट करें."
 
-#: src/binaries/widget/mainwindow.cpp:978
+#: src/binaries/widget/mainwindow.cpp:1005
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "<भूमिका> परिभाषित करें: gm या pc"
 
-#: src/binaries/widget/mainwindow.cpp:980
+#: src/binaries/widget/mainwindow.cpp:1007
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "सेटिंग्स मिटाएँ और डिफ़ॉल्ट पैरामीटर का उपयोग करें"
 
-#: src/binaries/widget/mainwindow.cpp:983
+#: src/binaries/widget/mainwindow.cpp:1010
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "<उपयोगकर्ता नाम> परिभाषित करें"
 
-#: src/binaries/widget/mainwindow.cpp:986
+#: src/binaries/widget/mainwindow.cpp:1013
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "पीडीएफ फाइल आकार की सीमा हटाएँ"
 
-#: src/binaries/widget/mainwindow.cpp:989
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "अनुवाद फ़ाइल का पथ: <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:992
+#: src/binaries/widget/mainwindow.cpp:1019
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "सर्वर से कनेक्ट करने के लिए URL निर्धारित करें: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1085
+#: src/binaries/widget/mainwindow.cpp:1112
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "%1खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "जुड़े हुए"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "जुड़े नहीं हैं"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "सर्वर"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "ग्राहक"
 
-#: src/binaries/widget/mainwindow.cpp:1190
+#: src/binaries/widget/mainwindow.cpp:1217
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "जीएम"
 
-#: src/binaries/widget/mainwindow.cpp:1196
+#: src/binaries/widget/mainwindow.cpp:1223
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "खिलाड़ी"
 
-#: src/binaries/widget/mainwindow.cpp:1225
+#: src/binaries/widget/mainwindow.cpp:1252
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "अज्ञात"
@@ -2515,7 +2515,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "यह फ़ाइल रोलिस्टीम डेवलपर्स को उपलब्ध कराएं"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:460
+#: src/libraries/core/src/controller/contentcontroller.cpp:462
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "कॉपी की गई छवि"
@@ -2530,22 +2530,22 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "मूलपाठ"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:41
+#: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "गलती करना"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:50
+#: src/libraries/core/src/controller/preferencescontroller.cpp:51
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "अँधेरा"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:72
+#: src/libraries/core/src/controller/preferencescontroller.cpp:73
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "डार्कफ्यूजन"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:349
+#: src/libraries/core/src/controller/preferencescontroller.cpp:357
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr "(प्रतिलिपि)"
@@ -2554,12 +2554,6 @@ msgstr "(प्रतिलिपि)"
 msgctxt "MediaControllerBase|"
 msgid "Unknown"
 msgstr "अज्ञात"
-
-#: src/libraries/core/src/controller/view_controller/selectconnprofilecontroller.cpp:45
-#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
-msgctxt "QObject|"
-msgid "Unknown Character"
-msgstr "अज्ञात चरित्र"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:41
@@ -2606,13 +2600,13 @@ msgctxt "Campaign|"
 msgid "Comment"
 msgstr "टिप्पणी"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:55
+#: src/libraries/core/src/data/campaignmanager.cpp:56
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Impossible to create campaign template at %1"
 msgstr "%1 पर अभियान टेम्पलेट बनाना असंभव है"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:142
+#: src/libraries/core/src/data/campaignmanager.cpp:143
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Campaign Template creation failed on this location: %1"
@@ -2942,7 +2936,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "डुप्लिकेट प्लेयर या uuid"
 
-#: src/libraries/core/src/model/profilemodel.cpp:113
+#: src/libraries/core/src/model/profilemodel.cpp:116
+#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
+msgctxt "QObject|"
+msgid "Unknown Character"
+msgstr "अज्ञात चरित्र"
+
+#: src/libraries/core/src/model/profilemodel.cpp:172
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr "(क्लोन)"
@@ -3013,7 +3013,7 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "सर्वर से कनेक्शन बंद कर दिया गया है."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 msgctxt "QObject|"
 msgid "Player"
 msgstr "खिलाड़ी"
@@ -3745,7 +3745,7 @@ msgctxt "PermissionFrame|"
 msgid "All"
 msgstr "सभी"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:46
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:47
 #, fuzzy
 #| msgctxt "rcse::MainWindow|"
 #| msgid "Load Image"
@@ -3753,12 +3753,12 @@ msgctxt "PersonEdit|"
 msgid "No Image"
 msgstr "छवि लोड करें"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:56
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:57
 msgctxt "PersonEdit|"
 msgid "Name:"
 msgstr "नाम:"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:64
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:65
 msgctxt "PersonEdit|"
 msgid "Color:"
 msgstr "रंग:"
@@ -3935,27 +3935,27 @@ msgctxt "ConnectionForm|"
 msgid "Campaign Root:"
 msgstr "अभियान मूल:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:220
+#: src/libraries/qml_views/views/ConnectionForm.qml:227
 msgctxt "ConnectionForm|"
 msgid "Characters"
 msgstr "वर्ण"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:307
+#: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
 msgstr "प्रोफाइल सहेजें"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:315
+#: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
 msgstr ""
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:322
+#: src/libraries/qml_views/views/ConnectionForm.qml:331
 msgctxt "ConnectionForm|"
 msgid "Connect"
 msgstr "जोड़ना"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:337
+#: src/libraries/qml_views/views/ConnectionForm.qml:342
 msgctxt "ConnectionForm|"
 msgid "Cancel"
 msgstr "रद्द करना"
@@ -4610,12 +4610,12 @@ msgctxt "CampaignIntegrityDialog|"
 msgid "Integrity Check"
 msgstr "सत्यनिष्ठा जाँच"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:39
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:40
 msgctxt "CampaignProperties|"
 msgid "Campaign Properties"
 msgstr "अभियान गुण"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:65
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:76
 #, qt-format
 msgctxt "CampaignProperties|"
 msgid "%n file(s)"
@@ -5019,76 +5019,76 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "पीसी सभी"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:145
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "प्राथमिकताएं"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:305
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:316
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "छवियां (*.png*.xpm*.jpg*.gif*.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "सीएसएस संपादक"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "सीएसएस"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:414
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format : %1 value %2</li>"
 msgstr "<li>छवि प्रारूप : %1 मान %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:415
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>समर्थित छवि प्रारूप:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:422
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:457
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>छवि प्रारूप का अंत"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:425
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>फ़ॉन्ट परिवार:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:467
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>फ़ॉन्ट परिवारों का अंत"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:435
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>ऑडियो फ़ाइल स्वरूप समर्थन:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:505
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>समर्थित ऑडियो फ़ाइल स्वरूपों का अंत"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:487
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "रोलिस्टीम थीम निर्यात करें"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:498
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:524
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:533
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "रोलिस्टीम थीम: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:497
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:532
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "रोलिस्टीम थीम आयात करें"
@@ -7746,12 +7746,12 @@ msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "सामग्री के अनुकूल बनें"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:199
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:201
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "मूलपाठ"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:312
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:314
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "फ़ॉन्ट आकार"
@@ -7771,30 +7771,30 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "नियम"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (CharacterSheet Viewer)"
 msgstr "%1 - (कैरेक्टरशीट व्यूअर)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 msgctxt "CharacterSheetWindow|"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:218
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:221
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
 msgstr "%1 - (वर्ण पत्रक दर्शक)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:230
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:301
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:233
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:304
 msgctxt "CharacterSheetWindow|"
 msgid "Share To"
 msgstr "साझा करें"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:283
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:286
 msgctxt "CharacterSheetWindow|"
 msgid "To all"
 msgstr "सेवा में, सभी ग्"

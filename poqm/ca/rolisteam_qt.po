@@ -1051,7 +1051,7 @@ msgstr "Edició"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:687
+#: src/binaries/widget/mainwindow.cpp:714
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Ajuda"
@@ -1210,13 +1210,13 @@ msgid "Check Validity"
 msgstr "Comprova la validesa"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:637
+#: src/binaries/widget/mainwindow.cpp:664
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&Desfés"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:636
+#: src/binaries/widget/mainwindow.cpp:663
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Refés"
@@ -1446,7 +1446,7 @@ msgid "Previous Page Button"
 msgstr "Botó de pàgina anterior"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -1608,119 +1608,119 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Demana una contrasenya i retorna la seva clau de resum."
 
-#: src/binaries/widget/mainwindow.cpp:425
+#: src/binaries/widget/mainwindow.cpp:452
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "Plafons laterals"
 
-#: src/binaries/widget/mainwindow.cpp:430
+#: src/binaries/widget/mainwindow.cpp:457
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Plafons laterals"
 
-#: src/binaries/widget/mainwindow.cpp:440
+#: src/binaries/widget/mainwindow.cpp:467
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Llista de jugadors"
 
-#: src/binaries/widget/mainwindow.cpp:441
+#: src/binaries/widget/mainwindow.cpp:468
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Documents de totes les campanyes"
 
-#: src/binaries/widget/mainwindow.cpp:442
+#: src/binaries/widget/mainwindow.cpp:469
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Llista d'antagonistes"
 
-#: src/binaries/widget/mainwindow.cpp:443
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Reproductor musical"
 
-#: src/binaries/widget/mainwindow.cpp:444
+#: src/binaries/widget/mainwindow.cpp:471
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Plafó del servidor"
 
-#: src/binaries/widget/mainwindow.cpp:445
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona de notificacions"
 
-#: src/binaries/widget/mainwindow.cpp:460
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Eines del DJ"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Obre la pàgina web"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "URL de la pàgina web:"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Obre un mapa"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Mapa:"
 
-#: src/binaries/widget/mainwindow.cpp:539
-#: src/binaries/widget/mainwindow.cpp:578
-#: src/binaries/widget/mainwindow.cpp:801 src/binaries/widget/mainwindow.ui:285
+#: src/binaries/widget/mainwindow.cpp:566
+#: src/binaries/widget/mainwindow.cpp:605
+#: src/binaries/widget/mainwindow.cpp:828 src/binaries/widget/mainwindow.ui:285
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Obre una campanya"
 
-#: src/binaries/widget/mainwindow.cpp:688
+#: src/binaries/widget/mainwindow.cpp:715
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "La documentació del %1 es pot trobar en línia a:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Assistència"
 
-#: src/binaries/widget/mainwindow.cpp:724
+#: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "La pàgina de donació a %1 es pot trobar en línia a:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign ?"
 msgstr "Voleu desar la campanya?"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam ?"
 msgstr "Realment voleu sortir del Rolisteam?"
 
-#: src/binaries/widget/mainwindow.cpp:791
+#: src/binaries/widget/mainwindow.cpp:818
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Surt del %1 "
 
-#: src/binaries/widget/mainwindow.cpp:868
+#: src/binaries/widget/mainwindow.cpp:895
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Notificació d'actualització"
 
-#: src/binaries/widget/mainwindow.cpp:869
+#: src/binaries/widget/mainwindow.cpp:896
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -1730,102 +1730,102 @@ msgstr ""
 "S'ha publicat la versió %1. Doneu una ullada a la <a href=\"https://www."
 "rolisteam.org/download\">pàgina de baixades</a> per a més informació"
 
-#: src/binaries/widget/mainwindow.cpp:879
+#: src/binaries/widget/mainwindow.cpp:906
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 acaba d'unir-se al joc."
 
-#: src/binaries/widget/mainwindow.cpp:883
+#: src/binaries/widget/mainwindow.cpp:910
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 no té la versió correcta: %2."
 
-#: src/binaries/widget/mainwindow.cpp:889
+#: src/binaries/widget/mainwindow.cpp:916
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 acaba de sortir del joc."
 
-#: src/binaries/widget/mainwindow.cpp:972
+#: src/binaries/widget/mainwindow.cpp:999
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Estableix que el Rolisteam usi <port> per a la connexió"
 
-#: src/binaries/widget/mainwindow.cpp:975
+#: src/binaries/widget/mainwindow.cpp:1002
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Estableix que el Rolisteam es connecti a <servidor>."
 
-#: src/binaries/widget/mainwindow.cpp:978
+#: src/binaries/widget/mainwindow.cpp:1005
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Estableix el <rol>: dj o pj"
 
-#: src/binaries/widget/mainwindow.cpp:980
+#: src/binaries/widget/mainwindow.cpp:1007
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Esborra la configuració i usa els paràmetres predeterminats"
 
-#: src/binaries/widget/mainwindow.cpp:983
+#: src/binaries/widget/mainwindow.cpp:1010
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Defineix el <nom_usuari>"
 
-#: src/binaries/widget/mainwindow.cpp:986
+#: src/binaries/widget/mainwindow.cpp:1013
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Elimina el límit de la mida del fitxer PDF"
 
-#: src/binaries/widget/mainwindow.cpp:989
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "camí al fitxer de traducció: <fitxer_traducció>"
 
-#: src/binaries/widget/mainwindow.cpp:992
+#: src/binaries/widget/mainwindow.cpp:1019
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Defineix un URL per a connectar al servidor: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1085
+#: src/binaries/widget/mainwindow.cpp:1112
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Obre %1"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connectat"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "No connectat"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Servidor"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
 # Traducció GM (Game Master) = DJ (Director de joc)
-#: src/binaries/widget/mainwindow.cpp:1190
+#: src/binaries/widget/mainwindow.cpp:1217
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "DJ"
 
-#: src/binaries/widget/mainwindow.cpp:1196
+#: src/binaries/widget/mainwindow.cpp:1223
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Jugador"
 
-#: src/binaries/widget/mainwindow.cpp:1225
+#: src/binaries/widget/mainwindow.cpp:1252
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Desconegut"
@@ -2520,7 +2520,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Proporcioneu aquest fitxer als desenvolupadors del Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:460
+#: src/libraries/core/src/controller/contentcontroller.cpp:462
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Imatge copiada"
@@ -2535,22 +2535,22 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:41
+#: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "predeterminat"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:50
+#: src/libraries/core/src/controller/preferencescontroller.cpp:51
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "darkorange"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:72
+#: src/libraries/core/src/controller/preferencescontroller.cpp:73
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "darkfusion"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:349
+#: src/libraries/core/src/controller/preferencescontroller.cpp:357
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr " (còpia)"
@@ -2559,12 +2559,6 @@ msgstr " (còpia)"
 msgctxt "MediaControllerBase|"
 msgid "Unknown"
 msgstr "Desconegut"
-
-#: src/libraries/core/src/controller/view_controller/selectconnprofilecontroller.cpp:45
-#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
-msgctxt "QObject|"
-msgid "Unknown Character"
-msgstr "Personatge desconegut"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:41
@@ -2611,13 +2605,13 @@ msgctxt "Campaign|"
 msgid "Comment"
 msgstr "Comentari"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:55
+#: src/libraries/core/src/data/campaignmanager.cpp:56
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Impossible to create campaign template at %1"
 msgstr "No és possible crear una plantilla de campanya a %1"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:142
+#: src/libraries/core/src/data/campaignmanager.cpp:143
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Campaign Template creation failed on this location: %1"
@@ -2952,7 +2946,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "Jugador o UUID duplicat"
 
-#: src/libraries/core/src/model/profilemodel.cpp:113
+#: src/libraries/core/src/model/profilemodel.cpp:116
+#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
+msgctxt "QObject|"
+msgid "Unknown Character"
+msgstr "Personatge desconegut"
+
+#: src/libraries/core/src/model/profilemodel.cpp:172
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (clon)"
@@ -3023,7 +3023,7 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "S'ha tancat la connexió amb el servidor."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 msgctxt "QObject|"
 msgid "Player"
 msgstr "Jugador"
@@ -3741,17 +3741,17 @@ msgctxt "PermissionFrame|"
 msgid "All"
 msgstr "Tot"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:46
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:47
 msgctxt "PersonEdit|"
 msgid "No Image"
 msgstr "Sense imatge"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:56
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:57
 msgctxt "PersonEdit|"
 msgid "Name:"
 msgstr "Nom:"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:64
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:65
 msgctxt "PersonEdit|"
 msgid "Color:"
 msgstr "Color:"
@@ -3919,27 +3919,27 @@ msgctxt "ConnectionForm|"
 msgid "Campaign Root:"
 msgstr "Arrel de campanya:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:220
+#: src/libraries/qml_views/views/ConnectionForm.qml:227
 msgctxt "ConnectionForm|"
 msgid "Characters"
 msgstr "Personatges"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:307
+#: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
 msgstr "Desa els perfils"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:315
+#: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
 msgstr "Establiu les dades on es veuen vores vermelles."
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:322
+#: src/libraries/qml_views/views/ConnectionForm.qml:331
 msgctxt "ConnectionForm|"
 msgid "Connect"
 msgstr "Connecta"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:337
+#: src/libraries/qml_views/views/ConnectionForm.qml:342
 msgctxt "ConnectionForm|"
 msgid "Cancel"
 msgstr "Cancel·la"
@@ -4582,12 +4582,12 @@ msgctxt "CampaignIntegrityDialog|"
 msgid "Integrity Check"
 msgstr "Comprovació de la integritat"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:39
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:40
 msgctxt "CampaignProperties|"
 msgid "Campaign Properties"
 msgstr "Propietats de la campanya"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:65
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:76
 #, qt-format
 msgctxt "CampaignProperties|"
 msgid "%n file(s)"
@@ -4991,76 +4991,76 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "Tot PJ"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:145
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Preferències"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:305
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:316
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Imatges (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Editor de CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:414
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format : %1 value %2</li>"
 msgstr "<li>Format d'imatge: %1 valor %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:415
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Formats d'imatge admesos:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:422
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:457
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Final de format d'imatge"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:425
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Famílies de lletres:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:467
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Final de famílies de lletres"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:435
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Formats de fitxer d'àudio admesos:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:505
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Formats de fitxer d'àudio admesos"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:487
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Exporta un tema del Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:498
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:524
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:533
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Tema del Rolisteam: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:497
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:532
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importa un tema del Rolisteam"
@@ -7718,12 +7718,12 @@ msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "Adapta al contingut"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:199
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:201
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:312
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:314
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "Mida de la lletra"
@@ -7743,30 +7743,30 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regla"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (CharacterSheet Viewer)"
 msgstr "%1 - (Visualitzador de full de personatge)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 msgctxt "CharacterSheetWindow|"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:218
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:221
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
 msgstr "%1 - (Visualitzador de full de personatge)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:230
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:301
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:233
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:304
 msgctxt "CharacterSheetWindow|"
 msgid "Share To"
 msgstr "Comparteix a"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:283
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:286
 msgctxt "CharacterSheetWindow|"
 msgid "To all"
 msgstr "A tot"

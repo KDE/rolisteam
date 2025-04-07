@@ -1050,7 +1050,7 @@ msgstr "Édition"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:687
+#: src/binaries/widget/mainwindow.cpp:714
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Aide"
@@ -1209,13 +1209,13 @@ msgid "Check Validity"
 msgstr "Contrôler la validité"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:637
+#: src/binaries/widget/mainwindow.cpp:664
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "Ann&uler"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:636
+#: src/binaries/widget/mainwindow.cpp:663
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Refaire"
@@ -1445,7 +1445,7 @@ msgid "Previous Page Button"
 msgstr "Bouton de page précédente"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -1606,79 +1606,79 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Demandez un mot de passe et retournez sa clé de hachage."
 
-#: src/binaries/widget/mainwindow.cpp:425
+#: src/binaries/widget/mainwindow.cpp:452
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "Panneaux latéraux"
 
-#: src/binaries/widget/mainwindow.cpp:430
+#: src/binaries/widget/mainwindow.cpp:457
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Panneaux latéraux"
 
-#: src/binaries/widget/mainwindow.cpp:440
+#: src/binaries/widget/mainwindow.cpp:467
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Nombre de joueurs"
 
-#: src/binaries/widget/mainwindow.cpp:441
+#: src/binaries/widget/mainwindow.cpp:468
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Totalité des documents de la partie"
 
-#: src/binaries/widget/mainwindow.cpp:442
+#: src/binaries/widget/mainwindow.cpp:469
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Liste des antagonistes"
 
-#: src/binaries/widget/mainwindow.cpp:443
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Lecteur de musique"
 
-#: src/binaries/widget/mainwindow.cpp:444
+#: src/binaries/widget/mainwindow.cpp:471
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Panneau de serveur"
 
-#: src/binaries/widget/mainwindow.cpp:445
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zone de notifications"
 
-#: src/binaries/widget/mainwindow.cpp:460
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Outils GM"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Ouvrir une page Internet"
 
-#: src/binaries/widget/mainwindow.cpp:517
+#: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "URL de la page Internet :"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Ouvrir une carte"
 
-#: src/binaries/widget/mainwindow.cpp:525
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Carte :"
 
-#: src/binaries/widget/mainwindow.cpp:539
-#: src/binaries/widget/mainwindow.cpp:578
-#: src/binaries/widget/mainwindow.cpp:801 src/binaries/widget/mainwindow.ui:285
+#: src/binaries/widget/mainwindow.cpp:566
+#: src/binaries/widget/mainwindow.cpp:605
+#: src/binaries/widget/mainwindow.cpp:828 src/binaries/widget/mainwindow.ui:285
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Ouvrir une campagne"
 
-#: src/binaries/widget/mainwindow.cpp:688
+#: src/binaries/widget/mainwindow.cpp:715
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -1686,12 +1686,12 @@ msgstr ""
 "La documentation de %1 est disponible en ligne à l'adresse :<br><a href="
 "\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Prise en charge"
 
-#: src/binaries/widget/mainwindow.cpp:724
+#: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -1699,28 +1699,28 @@ msgstr ""
 "La page %1 de donations peut être trouvée en ligne à l'adresse :<br> <a href="
 "\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign ?"
 msgstr "Voulez-vous enregistrer la session ?"
 
-#: src/binaries/widget/mainwindow.cpp:785
+#: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam ?"
 msgstr "Voulez-vous vraiment quitter Rolisteam ?"
 
-#: src/binaries/widget/mainwindow.cpp:791
+#: src/binaries/widget/mainwindow.cpp:818
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Quitter %1 "
 
-#: src/binaries/widget/mainwindow.cpp:868
+#: src/binaries/widget/mainwindow.cpp:895
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Notification de mise à jour"
 
-#: src/binaries/widget/mainwindow.cpp:869
+#: src/binaries/widget/mainwindow.cpp:896
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -1731,101 +1731,101 @@ msgstr ""
 "\"http://www.rolisteam.org/download\">page de téléchargement</a> pour plus "
 "d'informations."
 
-#: src/binaries/widget/mainwindow.cpp:879
+#: src/binaries/widget/mainwindow.cpp:906
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 vient de rejoindre la partie."
 
-#: src/binaries/widget/mainwindow.cpp:883
+#: src/binaries/widget/mainwindow.cpp:910
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 ne possède par la bonne version : %2."
 
-#: src/binaries/widget/mainwindow.cpp:889
+#: src/binaries/widget/mainwindow.cpp:916
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 vient de quitter la partie."
 
-#: src/binaries/widget/mainwindow.cpp:972
+#: src/binaries/widget/mainwindow.cpp:999
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Configurer Rolisteam pour utiliser <port> pour la connexion"
 
-#: src/binaries/widget/mainwindow.cpp:975
+#: src/binaries/widget/mainwindow.cpp:1002
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Configurer Rolisteam pour se connecter à <server>."
 
-#: src/binaries/widget/mainwindow.cpp:978
+#: src/binaries/widget/mainwindow.cpp:1005
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Définir le <role>: gm ou pc"
 
-#: src/binaries/widget/mainwindow.cpp:980
+#: src/binaries/widget/mainwindow.cpp:1007
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Effacer les paramètres et utiliser les paramètres par défaut"
 
-#: src/binaries/widget/mainwindow.cpp:983
+#: src/binaries/widget/mainwindow.cpp:1010
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Définir l'<username>"
 
-#: src/binaries/widget/mainwindow.cpp:986
+#: src/binaries/widget/mainwindow.cpp:1013
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Supprimer la limite pour la taille du fichier « PDF »"
 
-#: src/binaries/widget/mainwindow.cpp:989
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "emplacement pour le fichier de traduction : <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:992
+#: src/binaries/widget/mainwindow.cpp:1019
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Définir l'URL de connexion au serveur : <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1085
+#: src/binaries/widget/mainwindow.cpp:1112
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Ouvrir %1"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connecté"
 
-#: src/binaries/widget/mainwindow.cpp:1182
+#: src/binaries/widget/mainwindow.cpp:1209
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Non connecté"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Serveur"
 
-#: src/binaries/widget/mainwindow.cpp:1183
+#: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
-#: src/binaries/widget/mainwindow.cpp:1190
+#: src/binaries/widget/mainwindow.cpp:1217
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "GM"
 
-#: src/binaries/widget/mainwindow.cpp:1196
+#: src/binaries/widget/mainwindow.cpp:1223
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Joueur"
 
-#: src/binaries/widget/mainwindow.cpp:1225
+#: src/binaries/widget/mainwindow.cpp:1252
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -2517,7 +2517,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Fournir ce fichier à l'équipe de développement de Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:460
+#: src/libraries/core/src/controller/contentcontroller.cpp:462
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Image copiée"
@@ -2532,22 +2532,22 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Texte"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:41
+#: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "Par défaut"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:50
+#: src/libraries/core/src/controller/preferencescontroller.cpp:51
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "orange-sombre"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:72
+#: src/libraries/core/src/controller/preferencescontroller.cpp:73
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "darkfusion"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:349
+#: src/libraries/core/src/controller/preferencescontroller.cpp:357
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr " (Copier)"
@@ -2556,12 +2556,6 @@ msgstr " (Copier)"
 msgctxt "MediaControllerBase|"
 msgid "Unknown"
 msgstr "Inconnu"
-
-#: src/libraries/core/src/controller/view_controller/selectconnprofilecontroller.cpp:45
-#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
-msgctxt "QObject|"
-msgid "Unknown Character"
-msgstr "Personnage inconnu"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:41
@@ -2608,13 +2602,13 @@ msgctxt "Campaign|"
 msgid "Comment"
 msgstr "Commentaire"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:55
+#: src/libraries/core/src/data/campaignmanager.cpp:56
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Impossible to create campaign template at %1"
 msgstr "Impossible de créer un modèle de campagne à %1"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:142
+#: src/libraries/core/src/data/campaignmanager.cpp:143
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Campaign Template creation failed on this location: %1"
@@ -2944,7 +2938,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "Joueur ou UUID dupliqué"
 
-#: src/libraries/core/src/model/profilemodel.cpp:113
+#: src/libraries/core/src/model/profilemodel.cpp:116
+#: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
+msgctxt "QObject|"
+msgid "Unknown Character"
+msgstr "Personnage inconnu"
+
+#: src/libraries/core/src/model/profilemodel.cpp:172
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (cloner)"
@@ -3015,7 +3015,7 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "La connexion au serveur a été fermée."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:8
 msgctxt "QObject|"
 msgid "Player"
 msgstr "Joueur"
@@ -3735,17 +3735,17 @@ msgctxt "PermissionFrame|"
 msgid "All"
 msgstr "Tous"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:46
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:47
 msgctxt "PersonEdit|"
 msgid "No Image"
 msgstr "Aucune image"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:56
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:57
 msgctxt "PersonEdit|"
 msgid "Name:"
 msgstr "Nom :"
 
-#: src/libraries/qml_views/CustomItems/PersonEdit.qml:64
+#: src/libraries/qml_views/CustomItems/PersonEdit.qml:65
 msgctxt "PersonEdit|"
 msgid "Color:"
 msgstr "Couleur :"
@@ -3913,29 +3913,29 @@ msgctxt "ConnectionForm|"
 msgid "Campaign Root:"
 msgstr "Racine de la campagne :"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:220
+#: src/libraries/qml_views/views/ConnectionForm.qml:227
 msgctxt "ConnectionForm|"
 msgid "Characters"
 msgstr "Caractères"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:307
+#: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
 msgstr "Enregistrer les profils"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:315
+#: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
 msgstr ""
 "S'il vous plaît, veuillez saisir des données là où vous voyez des bordures "
 "rouges."
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:322
+#: src/libraries/qml_views/views/ConnectionForm.qml:331
 msgctxt "ConnectionForm|"
 msgid "Connect"
 msgstr "Connecter"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:337
+#: src/libraries/qml_views/views/ConnectionForm.qml:342
 msgctxt "ConnectionForm|"
 msgid "Cancel"
 msgstr "Annuler"
@@ -4582,12 +4582,12 @@ msgctxt "CampaignIntegrityDialog|"
 msgid "Integrity Check"
 msgstr "Vérification d'intégrité"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:39
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:40
 msgctxt "CampaignProperties|"
 msgid "Campaign Properties"
 msgstr "Propriétés de campagnes"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:65
+#: src/libraries/rwidgets/dialogs/campaignproperties.cpp:76
 #, qt-format
 msgctxt "CampaignProperties|"
 msgid "%n file(s)"
@@ -4993,76 +4993,76 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "Totalité des PC"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:145
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:305
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:316
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Éditeur « CSS »"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:383
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:414
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format : %1 value %2</li>"
 msgstr "<li>Format d'image : %1 Valeur %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:415
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Formats d'images pris en charge :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:422
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:457
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Fin du format d'images"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:425
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Familles de polices :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:467
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Fin des familles de polices"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:435
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Prise en charge des formats de fichiers Audio :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:505
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Fin des formats pris en charge de fichiers audio"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:487
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Exporter un thème de Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:498
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:524
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:533
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Thème de Rolisteam : %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:497
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:532
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importer un thème de Rolisteam"
@@ -7722,12 +7722,12 @@ msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "Adapter au contenu"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:199
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:201
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "Texte"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:312
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:314
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "Taille de la police"
@@ -7747,30 +7747,30 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Règle"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (CharacterSheet Viewer)"
 msgstr "%1 - (Afficheur de fiche de personnage)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:106
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 msgctxt "CharacterSheetWindow|"
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:218
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:221
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
 msgstr "%1 - (Afficheur de fiche de personnage)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:230
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:301
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:233
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:304
 msgctxt "CharacterSheetWindow|"
 msgid "Share To"
 msgstr "Partager vers"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:283
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:286
 msgctxt "CharacterSheetWindow|"
 msgid "To all"
 msgstr "Pour tous"
