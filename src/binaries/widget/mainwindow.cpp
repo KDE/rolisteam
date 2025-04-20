@@ -1245,7 +1245,6 @@ void MainWindow::dropEvent(QDropEvent* event)
 
     if(data->hasImage())
     {
-        auto contentCtrl= m_gameController->contentController();
         auto img= qvariant_cast<QImage>(data->imageData());
         qDebug() << img.isNull() << img;
 
@@ -1257,7 +1256,7 @@ void MainWindow::dropEvent(QDropEvent* event)
 
         if(!img.isNull())
         {
-            contentCtrl->openMedia(
+            m_gameController->openMedia(
                 {{Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
                  {Core::keys::KEY_DATA, IOHelper::imageToData(img)},
                  {Core::keys::KEY_NAME, name},
@@ -1267,8 +1266,7 @@ void MainWindow::dropEvent(QDropEvent* event)
     else if(data->hasUrls())
     {
         QList<QUrl> list= data->urls();
-        auto contentCtrl= m_gameController->contentController();
-        for(const auto& url : list)
+        for(const auto& url : std::as_const(list))
         {
             auto path= url.toLocalFile();
             if(!path.isEmpty()) // local file
@@ -1279,8 +1277,9 @@ void MainWindow::dropEvent(QDropEvent* event)
                     continue;
                 qCInfo(WidgetClient)
                     << QStringLiteral("MainWindow: dropEvent for %1").arg(helper::utils::typeToString(type));
-                contentCtrl->openMedia(
+                m_gameController->openMedia(
                     {{Core::keys::KEY_URL, url},
+                     {Core::keys::KEY_DATA, utils::IOHelper::loadFile(path)},
                      {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
                      {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
                      {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()}});
@@ -1296,9 +1295,9 @@ void MainWindow::dropEvent(QDropEvent* event)
                 auto downloader= new NetworkDownloader(url);
                 connect(
                     downloader, &NetworkDownloader::finished, this,
-                    [this, contentCtrl, type, url, urltext, downloader](const QByteArray& data)
+                    [this, type, url, urltext, downloader](const QByteArray& data)
                     {
-                        contentCtrl->openMedia(
+                        m_gameController->openMedia(
                             {{Core::keys::KEY_URL, urltext},
                              {Core::keys::KEY_PATH, urltext},
                              {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
