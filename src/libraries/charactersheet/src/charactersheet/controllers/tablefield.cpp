@@ -249,7 +249,7 @@ TreeSheetItem* TableFieldController::childAt(int index) const
     auto r= index / m_model->columnCount();
     auto c= index % m_model->columnCount();
 
-    if(c >= m_model->rowCount() || c >= m_model->columnCount())
+    if(r >= m_model->rowCount() || c >= m_model->columnCount())
         return nullptr;
 
     return m_model->cellData(r, c);
