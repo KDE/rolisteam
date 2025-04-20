@@ -241,7 +241,7 @@ void RolisteamApplication::setTranslator(const QList<QPair<QString, bool>>& list
 
         if(!success)
         {
-            qDebug() << "error loading translator:" << pair.first;
+            qDebug() << "error loading translator:" << pair.first << list;
             delete trans;
             continue;
         }

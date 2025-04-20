@@ -163,17 +163,28 @@ void CharacterSheetController::shareCharacterSheetToAll(int idx)
 
 void CharacterSheetController::stopSharing(const QString& uuid)
 {
-    qDebug() << "Charactershsett controller: stopSharing" << uuid;
-    auto it= std::find_if(std::begin(m_sheetData), std::end(m_sheetData),
-                          [uuid](const CharacterSheetInfo& info) { return info.m_sheetId == uuid; });
+    qDebug() << "Charactersheet controller: stopSharing" << uuid;
+    do
+    {
+        auto it= std::find_if(std::begin(m_sheetData), std::end(m_sheetData),
+                              [uuid](const CharacterSheetInfo& info)
+                              {
+                                  qDebug() << info.m_sheetId;
+                                  return info.m_sheetId == uuid;
+                              });
 
-    if(it == std::end(m_sheetData))
-        return;
+        if(it == std::end(m_sheetData))
+            return;
 
-    emit removedSheet(it->m_sheetId, this->uuid(), it->m_characterId);
+        auto characterId= it->m_characterId;
+        emit removedSheet(it->m_sheetId, this->uuid(), it->m_characterId);
 
-    m_sheetData.erase(it);
-    setModified();
+        m_sheetData.erase(it);
+        setModified();
+        auto character= m_characterModel->character(characterId);
+        if(character)
+            character->setSheet(nullptr);
+    } while(!m_sheetData.isEmpty());
 }
 
 void CharacterSheetController::shareCharacterSheetTo(const CharacterSheetInfo& info)
@@ -215,10 +226,10 @@ void CharacterSheetController::shareCharacterSheetTo(Character* character, Chara
         return;
     auto dest= player->uuid();
 
-    bool hasSheet= (character->getSheet() == sheet);
-    bool alreadyShared= alreadySharing(character->uuid(), sheet->uuid());
+    if(character->getSheet() == sheet)
+        return;
 
-    qDebug() << "already shared:" << hasSheet << alreadyShared;
+    stopSharing(sheet->uuid());
 
     sheet->setName(character->name());
     character->setSheet(sheet);
