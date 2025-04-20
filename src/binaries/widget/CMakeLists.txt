@@ -29,7 +29,12 @@ set(UIS mainwindow.ui)
 
 set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rolisteam/logo/rolisteam.rc)
 
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools Scxml MultimediaWidgets Multimedia RemoteObjects)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools Scxml MultimediaWidgets Multimedia)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
+endif()
+
 
 set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/rolisteam.qrc  ${CMAKE_SOURCE_DIR}/resources/rolisteam/logo/logo.qrc)
 
@@ -42,9 +47,11 @@ qt6_add_statecharts(rolisteam applicationstate.scxml)
 target_include_directories(rolisteam PRIVATE ../../libraries ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 set_target_properties(rolisteam PROPERTIES WIN32_EXECUTABLE on MACOSX_BUNDLE on)
 
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 qt_add_repc_replicas(rolisteam
     maincontrollersource.rep
 )
+endif()
 
 target_link_libraries(rolisteam
     PUBLIC
@@ -55,7 +62,7 @@ target_link_libraries(rolisteam
         Qt6::Multimedia
         Qt6::Scxml
         Qt6::Quick3D
-        Qt6::RemoteObjects
+        $<$<CONFIG:Debug>:Qt6::RemoteObjects>
     PRIVATE
         core
         rwidgets

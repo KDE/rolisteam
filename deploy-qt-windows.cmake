@@ -2,10 +2,10 @@ set(WINDEPLOYQT "D:/Qt/6.8.2/msvc2022_64/bin/windeployqt.exe")
 
 set(COMPONENT_NAME_MAIN "rolisteamComp")
 set(package_install "")
-set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/rolisteam")
+set(CMAKE_INSTALL_PREFIX "C:/Users/renau/Documents/software")
 set(CMAKE_CURRENT_SOURCE_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam")
-set(CMAKE_BINARY_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug")
-set(PROJECT_BINARY_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Debug")
+set(CMAKE_BINARY_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Release")
+set(PROJECT_BINARY_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam/build/Desktop_Qt_6_8_2_MSVC2022_64bit-Release")
 set(CMAKE_CURRENT_BINARY_DIR "ON")
 set(PROJECT_SOURCE_DIR "C:/Users/renau/Documents/GitHub/kde/rolisteam")
 

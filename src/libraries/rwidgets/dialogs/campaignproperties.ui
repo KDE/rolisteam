@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="m_tabwidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="dicealias">
       <attribute name="title">
@@ -118,8 +118,17 @@
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_9">
+           <property name="sizeConstraint">
+            <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+           </property>
            <item>
             <widget class="QToolButton" name="m_addDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Add</string>
              </property>
@@ -129,10 +138,22 @@
              <property name="icon">
               <iconset theme="add"/>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="m_delDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Delete</string>
              </property>
@@ -142,10 +163,22 @@
              <property name="icon">
               <iconset theme="remove"/>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="m_topDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Top</string>
              </property>
@@ -155,10 +188,22 @@
              <property name="icon">
               <iconset theme="go-top"/>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="m_upDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Up</string>
              </property>
@@ -168,10 +213,22 @@
              <property name="icon">
               <iconset theme="go-up"/>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="m_downDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Down</string>
              </property>
@@ -181,10 +238,22 @@
              <property name="icon">
               <iconset theme="go-down"/>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="m_bottomDiceAliasAct">
+             <property name="minimumSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Bottom</string>
              </property>
@@ -193,6 +262,15 @@
              </property>
              <property name="icon">
               <iconset theme="go-bottom"/>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>32</width>
+               <height>32</height>
+              </size>
+             </property>
+             <property name="autoRaise">
+              <bool>false</bool>
              </property>
             </widget>
            </item>

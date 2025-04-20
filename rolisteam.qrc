@@ -150,5 +150,6 @@
         <file>resources/stylesheet/qml/theme.ini</file>
         <file>resources/rolistheme/pipette.svg</file>
         <file>resources/rolisteam/templates/about.template</file>
+        <file>resources/rolistheme/remove.svg</file>
     </qresource>
 </RCC>
