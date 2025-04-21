@@ -1823,7 +1823,7 @@ msgctxt "MainWindow|"
 msgid "Player"
 msgstr "खिलाड़ी"
 
-#: src/binaries/widget/mainwindow.cpp:1252
+#: src/binaries/widget/mainwindow.cpp:1251
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "अज्ञात"
@@ -4648,95 +4648,95 @@ msgctxt "CampaignProperties|"
 msgid "Converted"
 msgstr "परिवर्तित"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:124
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:127
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:240
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:243
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:133
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:136
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:318
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:321
 msgctxt "CampaignProperties|"
 msgid "Add"
 msgstr "जोड़ना"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:137
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:140
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:253
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:256
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:158
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:161
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:331
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:334
 msgctxt "CampaignProperties|"
 msgid "Delete"
 msgstr "मिटाना"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:150
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:153
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:266
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:269
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:183
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:186
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:344
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:347
 msgctxt "CampaignProperties|"
 msgid "Top"
 msgstr "शीर्ष"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:163
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:166
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:279
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:282
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:208
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:211
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:357
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:360
 msgctxt "CampaignProperties|"
 msgid "Up"
 msgstr "ऊपर"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:176
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:179
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:292
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:295
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:233
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:236
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:370
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:373
 msgctxt "CampaignProperties|"
 msgid "Down"
 msgstr "नीचे"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:189
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:192
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:305
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:308
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:258
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:261
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:383
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:386
 msgctxt "CampaignProperties|"
 msgid "Bottom"
 msgstr "तल"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:220
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:298
 msgctxt "CampaignProperties|"
 msgid "Character States"
 msgstr "चरित्र की स्थिति"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:336
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:414
 msgctxt "CampaignProperties|"
 msgid "Properties"
 msgstr "गुण"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:344
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:422
 msgctxt "CampaignProperties|"
 msgid "Name:"
 msgstr "नाम:"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:354
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:432
 msgctxt "CampaignProperties|"
 msgid "Root Directory:"
 msgstr "मूल निर्देशिका:"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:364
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:442
 msgctxt "CampaignProperties|"
 msgid "Theme*:"
 msgstr "विषय*:"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:374
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:452
 msgctxt "CampaignProperties|"
 msgid "File count:"
 msgstr "फ़ाइल संख्या:"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:388
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:466
 msgctxt "CampaignProperties|"
 msgid "Disk usage:"
 msgstr "डिस्क उपयोग:"
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:402
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:480
 msgctxt "CampaignProperties|"
 msgid "Load all open documents from last session."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/campaignproperties.ui:405
+#: src/libraries/rwidgets/dialogs/campaignproperties.ui:483
 msgctxt "CampaignProperties|"
 msgid "Restore session at startup"
 msgstr ""
