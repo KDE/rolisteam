@@ -27,7 +27,10 @@
 #include <iostream>
 
 #include "controller/networkcontroller.h"
+
+#ifdef QT_DEBUG
 #include "rep_maincontrollersource_replica.h"
+#endif
 
 QString eventToText(QKeyEvent* event)
 {
