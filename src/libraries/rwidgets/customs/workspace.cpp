@@ -64,7 +64,6 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
                 m_backgroundPicture= QPixmap(m_ctrl->workspaceFilename());
                 updateBackGround();
             });
-    connect(m_ctrl, &ContentController::currentThemeChanged, this, &Workspace::updateBackGround);
 
     connect(m_ctrl, &ContentController::mediaControllerCreated, this, &Workspace::addMedia);
     connect(this, &Workspace::subWindowActivated, this, &Workspace::updateActiveMediaContainer);

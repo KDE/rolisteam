@@ -135,9 +135,7 @@ signals:
     void localIdChanged(const QString& game);
     void mediaControllerCreated(MediaControllerBase* base);
     void canPasteChanged(bool);
-
     void localColorChanged();
-
     void currentThemeChanged();
 
 public slots:

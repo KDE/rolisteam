@@ -167,6 +167,9 @@ GameController::GameController(const QString& appname, const QString& version, Q
         auto theme= m_preferencesDialogController->theme(uuid);
         m_contentCtrl->setCurrentTheme(theme);
     });
+    connect(m_preferencesDialogController.get(), &PreferencesController::currentThemeIndexChanged, this, [this](){
+        m_contentCtrl->setCurrentTheme(m_preferencesDialogController->currentTheme());
+    });
     // clang-format on
 
     m_preferences->registerLambda("Messaging::SaveChatrooms",

@@ -379,7 +379,9 @@ bool ContentController::shortTitleTab() const
 }
 QString ContentController::workspaceFilename() const
 {
-    return m_currentTheme ? m_currentTheme->getBackgroundImage() : ":/resources/rolistheme/workspacebackground.jpg";
+    return m_currentTheme ? m_currentTheme->getBackgroundImage() :
+                            m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/")
+                                .toString(); //":/resources/rolistheme/workspacebackground.jpg";
     // return m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/").toString();
 }
 QColor ContentController::workspaceColor() const
@@ -389,7 +391,8 @@ QColor ContentController::workspaceColor() const
 }
 int ContentController::workspacePositioning() const
 {
-    return m_currentTheme ? m_currentTheme->getBackgroundPosition() : 0;
+    return m_currentTheme ? m_currentTheme->getBackgroundPosition() :
+                            m_preferences->value(QStringLiteral("BackGroundPositioning"), 0).toInt();
 }
 
 NetWorkReceiver::SendType ContentController::processMessage(NetworkMessageReader* msg)
