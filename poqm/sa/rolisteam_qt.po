@@ -2516,7 +2516,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Rolisteam विकासकानां कृते एतां सञ्चिकां प्रदातव्यम्"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:462
+#: src/libraries/core/src/controller/contentcontroller.cpp:465
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "प्रतिलिपिकृतं चित्रम्"

@@ -2526,7 +2526,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Hornitu fitxategi hori Rolisteam garatzaileei"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:462
+#: src/libraries/core/src/controller/contentcontroller.cpp:465
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Kopiatutako irudia"

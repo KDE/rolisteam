@@ -2543,7 +2543,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "提供這個檔案給 Rolisteam 開發團隊"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:462
+#: src/libraries/core/src/controller/contentcontroller.cpp:465
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "已複製影像"

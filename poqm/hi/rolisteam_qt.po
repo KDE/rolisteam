@@ -2515,7 +2515,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "यह फ़ाइल रोलिस्टीम डेवलपर्स को उपलब्ध कराएं"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:462
+#: src/libraries/core/src/controller/contentcontroller.cpp:465
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "कॉपी की गई छवि"
