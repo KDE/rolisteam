@@ -41,7 +41,12 @@ bool writeFile(const QUrl& url, const QByteArray& array)
     return IOHelper::writeByteArrayIntoFile(url.toLocalFile(), array);
 }
 
-MainController::MainController(QObject* parent) : mindmap::MindMapControllerBase{false, {"mindmap"}, parent} {}
+MainController::MainController(QObject* parent) : mindmap::MindMapControllerBase{false, {"mindmap"}, parent}
+{
+    connect(m_itemModel.get(), &mindmap::MindItemModel::itemAdded, this, &MainController::saveFile);
+    connect(&m_timer, &QTimer::timeout, this, &MainController::saveFile);
+    m_timer.setInterval(20 * 1000);
+}
 
 void MainController::openFile(const QUrl& file)
 {
@@ -50,11 +55,18 @@ void MainController::openFile(const QUrl& file)
     helper::utils::setContinuation<QJsonObject>(
         QtConcurrent::run([this, file]() { return ::openFile(file, this); }), this,
         [this](const QJsonObject& obj) { IOHelper::readMindmapControllerBase(this, obj); });
+
+    m_timer.start();
 }
 
 void MainController::saveFile()
 {
-    auto data = IOHelper::saveController(this);
-    auto fileName = url();
-    helper::utils::setContinuation<bool>(QtConcurrent::run([data, fileName]() { return ::writeFile(fileName, data); }), this, [](bool){});
+    auto data= IOHelper::saveController(this);
+    auto fileName= url();
+
+    if(!fileName.toLocalFile().endsWith(".rmap"))
+        fileName= QUrl::fromLocalFile(fileName.toLocalFile().append(".rmap"));
+
+    helper::utils::setContinuation<bool>(QtConcurrent::run([data, fileName]() { return ::writeFile(fileName, data); }),
+                                         this, [](bool) {});
 }

@@ -24,6 +24,7 @@
 #include <QObject>
 #include <QPointer>
 #include <QQmlEngine>
+#include <QTimer>
 
 class MainController : public mindmap::MindMapControllerBase
 {
@@ -35,5 +36,8 @@ public:
 public slots:
     void openFile(const QUrl& file);
     void saveFile();
+
+private:
+    QTimer m_timer;
 };
 #endif // MAINCONTROLLER_H
