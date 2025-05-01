@@ -18,10 +18,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "lineitem.h"
+#include "controller/item_controllers/visualitemcontroller.h"
 #include <QPainter>
 #include <QPainterPath>
 #include <QStyleOptionGraphicsItem>
-#include "controller/item_controllers/visualitemcontroller.h"
 
 #include "controller/item_controllers/linecontroller.h"
 #include <QDebug>
@@ -45,7 +45,6 @@ LineItem::LineItem(vmap::LineController* ctrl) : VisualItem(ctrl), m_lineCtrl(ct
         tmp->setMotion(ChildPointItem::MOVE);
         m_children.append(tmp);
     }
-    updateChildPosition();
 }
 
 void LineItem::setNewEnd(const QPointF& nend)
@@ -105,6 +104,10 @@ void LineItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, 
         painter->drawPath(shapePath);
         painter->restore();
     }
+
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 
 /*void LineItem::setRectSize(qreal x, qreal y, qreal w, qreal h)

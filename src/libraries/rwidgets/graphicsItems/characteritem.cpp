@@ -158,7 +158,6 @@ CharacterItem::CharacterItem(vmap::CharacterItemController* ctrl)
 
         m_children.append(tmp);
     }
-    updateChildPosition();
 }
 
 CharacterItem::~CharacterItem()
@@ -308,11 +307,33 @@ void CharacterItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* opt
             painter->restore();
         }
     }
+
+    painter->save();
+    painter->setBrush(Qt::red);
+    painter->drawRoundedRect(-5, -5, 10, 10, 5, 5);
+    painter->restore();
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 
 void CharacterItem::updateChildPosition()
 {
-    auto rect= m_itemCtrl->thumnailRect(); //(0, 0, m_itemCtrl->side(), m_itemCtrl->side());
+    auto rect= m_itemCtrl->thumnailRect();
+
+    if(!m_itemCtrl->networkUpdate())
+    {
+        auto oldScenePos= scenePos();
+        setTransformOriginPoint(m_itemCtrl->thumnailRect().center());
+        auto newScenePos= scenePos();
+        auto oldPos= pos();
+        m_ctrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                               oldPos.y() + (oldScenePos.y() - newScenePos.y())));
+    }
+    else // network update
+    {
+        updateScenePos();
+    }
 
     m_children.value(0)->setPos(rect.topLeft());
     m_children.value(0)->setPlacement(ChildPointItem::TopLeft);
@@ -323,7 +344,6 @@ void CharacterItem::updateChildPosition()
     m_children.value(3)->setPos(rect.bottomLeft());
     m_children.value(3)->setPlacement(ChildPointItem::ButtomLeft);
 
-    // setTransformOriginPoint(rect.center());
     if(m_itemCtrl->playableCharacter())
     {
         auto vision= m_itemCtrl->vision();
@@ -343,10 +363,7 @@ void CharacterItem::updateChildPosition()
         m_children[DIRECTION_RADIUS_HANDLE]->setVisible(false);
         m_children[ANGLE_HANDLE]->setVisible(false);
     }
-    // if(!m_itemCtrl->localIsGM())
-    //{
-    setTransformOriginPoint(m_itemCtrl->thumnailRect().center());
-    // }
+
     update();
 }
 void CharacterItem::addActionContextMenu(QMenu& menu)

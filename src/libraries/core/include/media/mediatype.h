@@ -345,6 +345,7 @@ constexpr auto KEY_PLAYABLECHARACTER{"playablecharacter"};
 constexpr auto KEY_POINTCOUNT{"pointCount"};
 constexpr auto KEY_POINTS{"points"};
 constexpr auto KEY_POS{"position"};
+constexpr auto KEY_SCENE_POS{"scenePos"};
 constexpr auto KEY_RADIUS{"radius"};
 constexpr auto KEY_RATIO{"ratio"};
 constexpr auto KEY_RECT{"rect"};
@@ -588,6 +589,8 @@ namespace vitem
 {
 constexpr auto JSON_ITEM_TYPE("ItemType");
 constexpr auto JSON_SELECTED("Selected");
+constexpr auto JSON_SCENE_POS_X("ScenePosX");
+constexpr auto JSON_SCENE_POS_Y("ScenePosY");
 constexpr auto JSON_VISIBLE("Visible");
 constexpr auto JSON_OPACITY("Opacity");
 constexpr auto JSON_ROTATION("Rotation");

@@ -92,7 +92,9 @@ bool TextControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
         var= QVariant::fromValue(QPointF(x, y));
     }
     m_updatingFromNetwork= true;
+    ctrl->setNetworkUpdate(true);
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);
+    ctrl->setNetworkUpdate(false);
     m_updatingFromNetwork= false;
     updatingCtrl= nullptr;
 

@@ -83,6 +83,7 @@ void VisualItemController::initializedVisualItem(const std::map<QString, QVarian
     hu::setParamIfAny<qreal>(Core::vmapkeys::KEY_ROTATION, params, std::bind(&VisualItemController::setRotation, this, _1));
     hu::setParamIfAny<Core::Layer>(Core::vmapkeys::KEY_LAYER, params, std::bind(&VisualItemController::setLayer, this, _1));
     hu::setParamIfAny<QPointF>(Core::vmapkeys::KEY_POS, params, std::bind(&VisualItemController::setPos, this, _1));
+    hu::setParamIfAny<QPointF>(Core::vmapkeys::KEY_SCENE_POS, params, std::bind(&VisualItemController::setScenePos, this, _1));
     hu::setParamIfAny<QColor>(Core::vmapkeys::KEY_COLOR, params, std::bind(&VisualItemController::setColor, this, _1));
     hu::setParamIfAny<bool>(Core::vmapkeys::KEY_LOCKED, params, std::bind(&VisualItemController::setLocked, this, _1));
     // clang-format on
@@ -286,10 +287,12 @@ void VisualItemController::setLayer(Core::Layer layer)
 
 void VisualItemController::setPos(const QPointF& pos)
 {
+    qDebug() << "set pos visual item" << pos;
     if(m_pos == pos)
         return;
     m_pos= pos;
-    m_posEditing= true;
+    if(!m_networkUpdate)
+        m_posEditing= true;
     emit posChanged(m_pos);
 }
 void VisualItemController::setLocked(bool locked)
@@ -368,6 +371,42 @@ void VisualItemController::setParentUuid(const QString& newParentUuid)
         return;
     m_parentUuid= newParentUuid;
     emit parentUuidChanged();
+}
+
+void VisualItemController::setMapToScene(const std::function<QPointF(QPointF)>& func)
+{
+    m_mapToScene= func;
+}
+
+bool VisualItemController::networkUpdate() const
+{
+    return m_networkUpdate;
+}
+
+void VisualItemController::setNetworkUpdate(bool newNetworkUpdate)
+{
+    if(m_networkUpdate == newNetworkUpdate)
+        return;
+    m_networkUpdate= newNetworkUpdate;
+    emit networkUpdateChanged();
+}
+
+bool VisualItemController::posEdited() const
+{
+    return m_posEditing;
+}
+
+QPointF VisualItemController::scenePos() const
+{
+    return m_scenePos;
+}
+
+void VisualItemController::setScenePos(QPointF newScenePos)
+{
+    if(m_scenePos == newScenePos)
+        return;
+    m_scenePos= newScenePos;
+    emit scenePosChanged();
 }
 
 } // namespace vmap

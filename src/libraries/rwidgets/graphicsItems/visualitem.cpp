@@ -18,17 +18,18 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "visualitem.h"
+
 #include <QActionGroup>
 #include <QCursor>
 #include <QDebug>
+#include <QGraphicsScene>
 #include <QGraphicsSceneHoverEvent>
 #include <QGuiApplication>
 #include <QKeyEvent>
 #include <QMenu>
+#include <QPainter>
 #include <QUuid>
 #include <cmath>
-
-#include <QGraphicsScene>
 
 #include "controller/item_controllers/visualitemcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
@@ -46,7 +47,19 @@ VisualItem::VisualItem(vmap::VisualItemController* ctrl) : QGraphicsObject(), m_
     if(!m_ctrl)
         return;
 
-    connect(m_ctrl, &vmap::VisualItemController::posChanged, this, [this]() { setPos(m_ctrl->pos()); });
+    std::function<QPointF(QPointF)> f= [this](const QPointF& pos) -> QPointF { return mapToScene(pos); };
+    m_ctrl->setMapToScene(f);
+
+    connect(m_ctrl, &vmap::VisualItemController::posChanged, this,
+            [this]()
+            {
+                qDebug() << "VisualItem posChanged setPos";
+                setPos(m_ctrl->pos());
+                updateScenePos();
+            });
+    connect(m_ctrl, &vmap::VisualItemController::rotationChanged, this, [this]() { updateScenePos(); });
+    connect(m_ctrl, &vmap::VisualItemController::scenePosChanged, this, [this]() { updateScenePos(); });
+
     connect(m_ctrl, &vmap::VisualItemController::removeItem, this,
             [this]()
             {
@@ -65,76 +78,61 @@ VisualItem::VisualItem(vmap::VisualItemController* ctrl) : QGraphicsObject(), m_
             });
     auto func= [this]()
     {
-        if(m_ctrl->editable())
+        if(m_ctrl->editable() && !m_ctrl->networkUpdate())
+        {
             m_ctrl->setPos(pos());
+        }
+        m_ctrl->setScenePos(scenePos());
     };
     connect(this, &VisualItem::xChanged, this, func);
     connect(this, &VisualItem::yChanged, this, func);
 
-    // connect(this, &VisualItem::rotationChanged, this, [this]() { m_ctrl->setRotation(rotation()); });
-
     connect(m_ctrl, &vmap::VisualItemController::colorChanged, this, [this]() { update(); });
     connect(m_ctrl, &vmap::VisualItemController::editableChanged, this, &VisualItem::updateItemFlags);
-    connect(m_ctrl, &vmap::VisualItemController::rotationChanged, this, [this]() { setRotation(m_ctrl->rotation()); });
+    connect(m_ctrl, &vmap::VisualItemController::rotationChanged, this,
+            [this]() { applyRotation(m_ctrl->rotation()); });
     connect(m_ctrl, &vmap::VisualItemController::selectedChanged, this, [this](bool b) { setSelected(b); });
     connect(m_ctrl, &vmap::VisualItemController::selectableChanged, this, &VisualItem::updateItemFlags);
 
     connect(m_ctrl, &vmap::VisualItemController::visibleChanged, this, &VisualItem::evaluateVisible);
     connect(m_ctrl, &vmap::VisualItemController::visibilityChanged, this, &VisualItem::evaluateVisible);
-    connect(m_ctrl, &vmap::VisualItemController::opacityChanged, this, [this]() { setOpacity(m_ctrl->opacity()); });
-    connect(m_ctrl, &vmap::VisualItemController::layerChanged, this,
-            [this]() { setOpacity(m_ctrl->layer() == Core::Layer::GAMEMASTER_LAYER ? 0.5 : 1.0); });
+    connect(m_ctrl, &vmap::VisualItemController::opacityChanged, this, [this]() { setOpacity(opacityValue()); });
+    connect(m_ctrl, &vmap::VisualItemController::layerChanged, this, [this]() { setOpacity(opacityValue()); });
 
     init();
 
     connect(m_ctrl, &vmap::VisualItemController::zOrderChanged, this, [this](qreal z) { setZValue(z); });
-
-    setPos(m_ctrl->pos());
-    evaluateVisible();
-
-    updateItemFlags();
-    setOpacity(m_ctrl->layer() == Core::Layer::GAMEMASTER_LAYER ? 0.5 : 1.0);
 }
 
 VisualItem::~VisualItem() {}
 
 void VisualItem::evaluateVisible()
 {
-    // qDebug() << "debug item visibility: Item is visible:" << m_ctrl->visible() << "local is gm:" <<
-    // m_ctrl->localIsGM()
-    //        << "visiblitiy:" << m_ctrl->visibility() << m_ctrl->tool() << m_ctrl->itemType();
     auto localIsGM= m_ctrl->localIsGM();
     auto visibleFromPermission= localIsGM || m_ctrl->visibility() != Core::HIDDEN;
-    auto visibleLayer= localIsGM || m_ctrl->layer() != Core::Layer::GAMEMASTER_LAYER;
-    setVisible(m_ctrl->visible() && visibleFromPermission && visibleLayer);
+    setVisible(m_ctrl->visible() && visibleFromPermission);
+}
+
+void VisualItem::updateScenePos()
+{
+    qDebug() << "updateScenePos" << scenePos() << m_ctrl->scenePos() << m_ctrl->networkUpdate();
+    if(m_ctrl->scenePos() != scenePos() && m_ctrl->networkUpdate())
+    {
+        auto rect= m_ctrl->rect();
+        qDebug() << "updateScenePos 2";
+        auto oldScenePos= m_ctrl->scenePos();
+        setTransformOriginPoint(rect.center());
+        auto newScenePos= scenePos();
+        auto oldPos= pos();
+        setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                       oldPos.y() + (oldScenePos.y() - newScenePos.y())));
+        qDebug() << "updateScenePos 3" << scenePos() << m_ctrl->scenePos() << m_ctrl->networkUpdate();
+    }
 }
 void VisualItem::init()
 {
-
     setAcceptHoverEvents(true);
     setFlag(QGraphicsItem::ItemUsesExtendedStyleOption, true);
-    /*QActionGroup* group= new QActionGroup(this);
-    m_putGroundLayer= new QAction(m_ctrl->getLayerText(Core::Layer::GROUND), this);
-    m_putGroundLayer->setData(static_cast<int>(Core::Layer::GROUND));
-    m_putObjectLayer= new QAction(m_ctrl->getLayerText(Core::Layer::OBJECT), this);
-    m_putObjectLayer->setData(static_cast<int>(Core::Layer::OBJECT));
-    m_putCharacterLayer= new QAction(m_ctrl->getLayerText(Core::Layer::CHARACTER_LAYER), this);
-    m_putCharacterLayer->setData(static_cast<int>(Core::Layer::CHARACTER_LAYER));
-
-    m_putGameMasterLayer= new QAction(m_ctrl->getLayerText(Core::Layer::GAMEMASTER_LAYER), this);
-    m_putGameMasterLayer->setData(static_cast<int>(Core::Layer::GAMEMASTER_LAYER));
-
-    m_putGroundLayer->setCheckable(true);
-    m_putObjectLayer->setCheckable(true);
-    m_putCharacterLayer->setCheckable(true);
-    m_putGameMasterLayer->setCheckable(true);
-
-    m_putGroundLayer->setChecked(true);
-
-    group->addAction(m_putGroundLayer);
-    group->addAction(m_putObjectLayer);
-    group->addAction(m_putCharacterLayer);
-    group->addAction(m_putGameMasterLayer);*/
 }
 vmap::VisualItemController* VisualItem::controller() const
 {
@@ -206,8 +204,8 @@ void VisualItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
         return;
     }
     QGraphicsItem::mouseReleaseEvent(event);
-    update();
     endOfGeometryChange(ChildPointItem::Moving);
+    update();
 }
 
 QVariant VisualItem::itemChange(GraphicsItemChange change, const QVariant& value)
@@ -221,6 +219,22 @@ QVariant VisualItem::itemChange(GraphicsItemChange change, const QVariant& value
         }
     }
     return QGraphicsItem::itemChange(change, value);
+}
+
+void VisualItem::initialize()
+{
+    qDebug() << "Initialize";
+    setPos(m_ctrl->pos());
+    setRotation(m_ctrl->rotation());
+    evaluateVisible();
+    setOpacity(opacityValue());
+
+    auto b= m_ctrl->networkUpdate();
+    m_ctrl->setNetworkUpdate(true);
+    updateScenePos();
+    m_ctrl->setNetworkUpdate(b);
+
+    updateChildPosition();
 }
 
 QString VisualItem::uuid() const
@@ -297,6 +311,17 @@ void VisualItem::promoteItem()
     }
 }
 
+qreal VisualItem::opacityValue()
+{
+    if(!m_ctrl)
+        return 1.0;
+
+    auto isGM= m_ctrl->localIsGM();
+    auto isGmLayer= m_ctrl->layer() == Core::Layer::GAMEMASTER_LAYER;
+
+    return isGM ? m_ctrl->opacity() : isGmLayer ? 0.0 : m_ctrl->opacity();
+}
+
 void VisualItem::addActionContextMenu(QMenu& menu) {}
 
 bool VisualItem::hasFocusOrChild()
@@ -328,12 +353,13 @@ bool VisualItem::isLocal() const
 
 void VisualItem::endOfGeometryChange(ChildPointItem::Change change)
 {
-    if(change == ChildPointItem::Resizing)
+    if(change != ChildPointItem::Moving)
     {
         auto oldScenePos= scenePos();
         setTransformOriginPoint(m_ctrl->rect().center());
         auto newScenePos= scenePos();
         auto oldPos= pos();
+        qDebug() << "VisualItem endOfGeometryChange setPos";
         m_ctrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
                                oldPos.y() + (oldScenePos.y() - newScenePos.y())));
     }
@@ -375,6 +401,15 @@ void VisualItem::setChildrenVisible(bool b)
     }
 }
 
+void VisualItem::applyRotation(qreal r)
+{
+    setRotation(r);
+    if(!m_ctrl->networkUpdate() && scenePos() != m_ctrl->scenePos())
+    {
+        m_ctrl->setScenePos(scenePos());
+    }
+}
+
 bool VisualItem::canBeMoved() const
 {
     return m_ctrl->editable();
@@ -390,6 +425,21 @@ void VisualItem::setHighlightColor(const QColor& highlightColor)
     m_highlightColor= highlightColor;
 }
 
+void VisualItem::paintCoord(QPainter* painter)
+{
+#ifdef QT_DEBUG
+    auto p= pos();
+    auto rect= boundingRect();
+    auto transformCenter= QString("Center: %1x%2").arg(transformOriginPoint().x()).arg(transformOriginPoint().y());
+    auto itemPos= QString("pos: %1x%2").arg(p.x()).arg(p.y());
+    auto scenePosStr= QString("ScenePos: %1x%2").arg(scenePos().x()).arg(scenePos().y());
+    auto itemRect= QString("rect: %1x%2 w:%3 - h:%4").arg(rect.x()).arg(rect.y()).arg(rect.width()).arg(rect.height());
+
+    auto text= QString("%1 %2 %3 %4").arg(transformCenter, itemPos, scenePosStr, itemRect);
+    painter->drawText(QPoint(0, 0), text);
+#endif
+}
+
 int VisualItem::getHighlightWidth()
 {
     return m_highlightWidth;
@@ -402,6 +452,7 @@ void VisualItem::setHighlightWidth(int highlightWidth)
 
 void VisualItem::setSize(QSizeF size)
 {
+    Q_UNUSED(size);
     updateChildPosition();
     update();
 }

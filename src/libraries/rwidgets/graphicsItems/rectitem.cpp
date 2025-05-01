@@ -34,20 +34,13 @@
 RectItem::RectItem(vmap::RectController* ctrl) : VisualItem(ctrl), m_rectCtrl(ctrl)
 {
     connect(m_rectCtrl, &vmap::RectController::rectChanged, this, [this]() { updateChildPosition(); });
+    connect(m_rectCtrl, &vmap::RectController::rotationChanged, this, [this]() { updateChildPosition(); });
 
     for(int i= 0; i <= vmap::RectController::BottomLeft; ++i)
     {
         ChildPointItem* tmp= new ChildPointItem(m_rectCtrl, i, this);
         tmp->setMotion(ChildPointItem::MOUSE);
         m_children.append(tmp);
-    }
-
-    updateChildPosition();
-
-    if(m_ctrl)
-    {
-        setTransformOriginPoint(m_ctrl->rotationOriginPoint());
-        setRotation(m_ctrl->rotation());
     }
 }
 
@@ -82,6 +75,7 @@ QPainterPath RectItem::shape() const
     path.lineTo(rect.topLeft().x() + off, rect.topLeft().y() + off);
     return path;
 }
+
 void RectItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     Q_UNUSED(option)
@@ -117,6 +111,9 @@ void RectItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, 
         painter->drawRect(m_rectCtrl->rect());
         painter->restore();
     }
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 void RectItem::setNewEnd(const QPointF& p)
 {
@@ -129,6 +126,21 @@ void RectItem::updateChildPosition()
         return;
 
     auto rect= m_rectCtrl->rect();
+
+    if(!m_rectCtrl->networkUpdate()) // manual edit
+    {
+        auto oldScenePos= scenePos();
+        setTransformOriginPoint(rect.center());
+        auto newScenePos= scenePos();
+        auto oldPos= pos();
+        m_ctrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                               oldPos.y() + (oldScenePos.y() - newScenePos.y())));
+    }
+    else // network update
+    {
+        updateScenePos();
+    }
+
     m_children.value(0)->setPos(rect.topLeft());
     m_children.value(0)->setPlacement(ChildPointItem::TopLeft);
     m_children.value(1)->setPos(rect.topRight());
@@ -138,11 +150,5 @@ void RectItem::updateChildPosition()
     m_children.value(3)->setPos(rect.bottomLeft());
     m_children.value(3)->setPlacement(ChildPointItem::ButtomLeft);
 
-    if(!m_ctrl->localIsGM())
-    {
-        setTransformOriginPoint(m_rectCtrl->rect().center());
-    }
-
     update();
 }
-

@@ -810,6 +810,9 @@ void addVisualItemController(const vmap::VisualItemController* ctrl, NetworkMess
     auto pos= ctrl->pos();
     msg.real(pos.x());
     msg.real(pos.y());
+    auto scenePos= ctrl->scenePos();
+    msg.real(scenePos.x());
+    msg.real(scenePos.y());
     msg.string8(ctrl->uuid());
     msg.rgb(ctrl->color().rgb());
     msg.uint8(ctrl->locked());
@@ -827,6 +830,9 @@ const std::map<QString, QVariant> readVisualItemController(NetworkMessageReader*
     QPointF pos;
     pos.setX(msg->real());
     pos.setY(msg->real());
+    QPointF scenePos;
+    scenePos.setX(msg->real());
+    scenePos.setY(msg->real());
     auto uuid= msg->string8();
     auto rgb= QColor(msg->rgb());
     auto locked= msg->uint8();
@@ -838,6 +844,7 @@ const std::map<QString, QVariant> readVisualItemController(NetworkMessageReader*
                                         {Core::vmapkeys::KEY_ROTATION, rotation},
                                         {Core::vmapkeys::KEY_LAYER, layer},
                                         {Core::vmapkeys::KEY_POS, pos},
+                                        {Core::vmapkeys::KEY_SCENE_POS, scenePos},
                                         {Core::vmapkeys::KEY_ITEMTYPE, itemtype},
                                         {Core::vmapkeys::KEY_UUID, uuid},
                                         {Core::vmapkeys::KEY_COLOR, rgb},

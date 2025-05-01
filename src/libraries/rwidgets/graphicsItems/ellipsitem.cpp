@@ -29,6 +29,7 @@
 
 EllipsItem::EllipsItem(vmap::EllipseController* ctrl) : VisualItem(ctrl), m_ellipseCtrl(ctrl)
 {
+    initChildPointItem();
     connect(m_ellipseCtrl, &vmap::EllipseController::rxChanged, this,
             [this]()
             {
@@ -42,8 +43,6 @@ EllipsItem::EllipsItem(vmap::EllipseController* ctrl) : VisualItem(ctrl), m_elli
                 updateChildPosition();
             });
     connect(m_ellipseCtrl, &vmap::EllipseController::filledChanged, this, [this]() { update(); });
-
-    initChildPointItem();
 }
 
 QRectF EllipsItem::boundingRect() const
@@ -103,6 +102,10 @@ void EllipsItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option
         painter->drawEllipse(QPointF(0, 0), m_ellipseCtrl->rx(), m_ellipseCtrl->ry());
         painter->restore();
     }
+
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 void EllipsItem::setNewEnd(const QPointF& p)
 {

@@ -33,7 +33,7 @@
 
 namespace vmap
 {
-
+constexpr int minimalSize{25};
 CharacterItemController::CharacterItemController(const std::map<QString, QVariant>& params,
                                                  VectorialMapController* ctrl, QObject* parent)
     : VisualItemController(VisualItemController::CHARACTER, params, ctrl, parent)
@@ -137,7 +137,22 @@ void CharacterItemController::endGeometryChange()
 {
     VisualItemController::endGeometryChange();
     if(m_changes & ChangedProperty::RECT)
+    {
+        auto offset= m_rect.topLeft();
+        if(!offset.isNull())
+        {
+            auto oldScenePos= m_mapToScene(m_rect.topLeft());
+            m_rect.translate(offset * -1);
+            auto newScenePos= m_mapToScene(m_rect.topLeft());
+            auto oldPos= m_pos;
+            m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                           oldPos.y() + (oldScenePos.y() - newScenePos.y()));
+            emit posChanged(m_pos);
+            emit posEditFinished();
+            emit thumnailRectChanged(m_rect);
+        }
         emit rectEditFinished();
+    }
 
     if(m_changes & ChangedProperty::SIDE)
         emit sideEdited();
@@ -230,9 +245,21 @@ void CharacterItemController::setCorner(const QPointF& move, int corner, Core::T
     break;
     }
 
+    if(std::abs(x2 - x) < minimalSize)
+    {
+        x2= x + minimalSize;
+    }
+    if(std::abs(y2 - y) < minimalSize)
+    {
+        y2= y + minimalSize;
+    }
+
+    qDebug() << "set corner:" << x << y << x2 << y2 << corner;
     rect.setCoords(x, y, x2, y2);
     if(!rect.isValid())
         rect= rect.normalized();
+
+    qDebug() << "set corner: normalized" << rect;
     setRect(rect);
     setSide(rect.width());
     refreshTextRect();

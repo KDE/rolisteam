@@ -28,6 +28,7 @@
 
 namespace vmap
 {
+constexpr int minimalSize{25};
 QByteArray readImage(const QString& path)
 {
     QFile file(path);
@@ -124,6 +125,16 @@ void ImageItemController::setCorner(const QPointF& move, int corner, Core::Trans
         y2+= move.y();
         break;
     }
+
+    if(std::abs(x2 - x) < minimalSize)
+    {
+        x2= x + minimalSize;
+    }
+    if(std::abs(y2 - y) < minimalSize)
+    {
+        y2= y + minimalSize;
+    }
+
     rect.setCoords(x, y, x2, y2);
     if(!rect.isValid())
         rect= rect.normalized();
@@ -196,6 +207,19 @@ void ImageItemController::endGeometryChange()
 
     if(m_editingRect)
     {
+        auto offset= m_rect.topLeft();
+        if(!offset.isNull())
+        {
+            auto oldScenePos= m_mapToScene(m_rect.topLeft());
+            m_rect.translate(offset * -1);
+            auto newScenePos= m_mapToScene(m_rect.topLeft());
+            auto oldPos= m_pos;
+            m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                           oldPos.y() + (oldScenePos.y() - newScenePos.y()));
+            emit posChanged(m_pos);
+            emit posEditFinished();
+            emit rectChanged();
+        }
         emit rectEditFinished();
         m_editingRect= false;
     }

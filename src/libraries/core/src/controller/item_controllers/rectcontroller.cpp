@@ -24,6 +24,7 @@
 
 namespace vmap
 {
+constexpr int minimalSize{25};
 RectController::RectController(const std::map<QString, QVariant>& params, VectorialMapController* ctrl, QObject* parent)
     : VisualItemController(VisualItemController::RECT, params, ctrl, parent)
 {
@@ -109,6 +110,16 @@ void RectController::setCorner(const QPointF& move, int corner, Core::TransformT
         y2+= move.y();
         break;
     }
+
+    if(std::abs(x2 - x) < minimalSize)
+    {
+        x2= x + minimalSize;
+    }
+    if(std::abs(y2 - y) < minimalSize)
+    {
+        y2= y + minimalSize;
+    }
+
     rect.setCoords(x, y, x2, y2);
     if(!rect.isValid())
         rect= rect.normalized();
@@ -125,6 +136,16 @@ void RectController::endGeometryChange()
     VisualItemController::endGeometryChange();
     if(m_rectEdited)
     {
+        auto offset= m_rect.topLeft();
+        auto oldScenePos= m_mapToScene(m_rect.topLeft());
+        m_rect.translate(offset * -1);
+        auto newScenePos= m_mapToScene(m_rect.topLeft());
+        auto oldPos= m_pos;
+        m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                       oldPos.y() + (oldScenePos.y() - newScenePos.y()));
+        emit posChanged(m_pos);
+        emit rectChanged();
+        emit posEditFinished();
         emit rectEditFinished();
         m_rectEdited= false;
     }

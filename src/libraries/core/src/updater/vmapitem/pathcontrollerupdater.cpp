@@ -130,7 +130,9 @@ bool PathControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
         var= QVariant::fromValue(points);
     }
     m_updatingFromNetwork= true;
+    ctrl->setNetworkUpdate(true);
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);
+    ctrl->setNetworkUpdate(false);
     m_updatingFromNetwork= false;
     updatingCtrl= nullptr;
 

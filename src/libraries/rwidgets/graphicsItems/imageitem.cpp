@@ -10,11 +10,6 @@
 #include "controller/item_controllers/imageitemcontroller.h"
 #include "controller/item_controllers/visualitemcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
-#include "network/networkmessagereader.h"
-#include "network/networkmessagewriter.h"
-
-#include "characteritem.h"
-#include "data/character.h"
 
 ImageItem::ImageItem(vmap::ImageItemController* ctrl) : VisualItem(ctrl), m_imgCtrl(ctrl)
 {
@@ -28,7 +23,6 @@ ImageItem::ImageItem(vmap::ImageItemController* ctrl) : VisualItem(ctrl), m_imgC
         tmp->setMotion(ChildPointItem::MOUSE);
         m_children.append(tmp);
     }
-    updateChildPosition();
 
     connect(m_imgCtrl, &vmap::ImageItemController::rectChanged, this, [this]() { updateChildPosition(); });
     connect(m_imgCtrl, &vmap::ImageItemController::pixmapChanged, this, [this]() { update(); });
@@ -61,6 +55,9 @@ void ImageItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
         painter->drawRect(m_imgCtrl->rect());
         painter->restore();
     }
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 void ImageItem::setNewEnd(const QPointF& p)
 {
@@ -73,6 +70,21 @@ void ImageItem::updateChildPosition()
         return;
 
     auto rect= m_imgCtrl->rect();
+
+    if(!m_imgCtrl->networkUpdate())
+    {
+        auto oldScenePos= scenePos();
+        setTransformOriginPoint(rect.center());
+        auto newScenePos= scenePos();
+        auto oldPos= pos();
+        m_ctrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                               oldPos.y() + (oldScenePos.y() - newScenePos.y())));
+    }
+    else // network update
+    {
+        updateScenePos();
+    }
+
     m_children.value(0)->setPos(rect.topLeft());
     m_children.value(0)->setPlacement(ChildPointItem::TopLeft);
     m_children.value(1)->setPos(rect.topRight());

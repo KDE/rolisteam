@@ -27,8 +27,6 @@
 #include "controller/item_controllers/rectcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "network/networkmessagereader.h"
-#include "network/networkmessagewriter.h"
-#include "worker/convertionhelper.h"
 #include "worker/messagehelper.h"
 
 RectControllerUpdater::RectControllerUpdater(QObject* parent) : VMapItemControllerUpdater(parent) {}
@@ -99,7 +97,9 @@ bool RectControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
     }
 
     m_updatingFromNetwork= true;
+    ctrl->setNetworkUpdate(true);
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);
+    ctrl->setNetworkUpdate(false);
     m_updatingFromNetwork= false;
     updatingCtrl= nullptr;
 

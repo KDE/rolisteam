@@ -58,7 +58,9 @@ public:
     virtual void setSize(QSizeF size);
     virtual void updateItemFlags();
     virtual bool isLocal() const;
+
     QVariant itemChange(GraphicsItemChange change, const QVariant& value);
+    void initialize();
 
     quint16 getPenWidth() const;
     void setPenWidth(const quint16& penWidth);
@@ -74,6 +76,8 @@ public:
     static QColor getHighlightColor();
     static void setHighlightColor(const QColor& highlightColor);
 
+    void paintCoord(QPainter* painter);
+
 signals:
     void itemGeometryChanged(VisualItem*);
     void itemRemoved(QString, bool, bool);
@@ -85,6 +89,9 @@ public slots:
     void setColor(QColor color);
     void evaluateVisible();
 
+protected slots:
+    void updateScenePos();
+
 protected:
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* event);
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
@@ -94,11 +101,13 @@ protected:
     virtual void updateChildPosition();
     virtual void setChildrenVisible(bool b);
     bool hasPermissionToMove(bool allowCharacter= true) const;
+    virtual void applyRotation(qreal r);
 
 protected:
     QPointF computeClosePoint(QPointF pos);
     void addPromoteItemMenu(QMenu*);
     void promoteItem();
+    qreal opacityValue();
 
 protected:
     QPointer<vmap::VisualItemController> m_ctrl;

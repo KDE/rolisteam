@@ -23,10 +23,7 @@
 #include <QAction>
 #include <QPointer>
 
-#include "data/characterstate.h"
-#include "data/charactervision.h"
 #include "data/person.h"
-#include "diceparser/diceparser.h"
 #include "rwidgets/rwidgets_global.h"
 #include "visualitem.h"
 #include <memory>

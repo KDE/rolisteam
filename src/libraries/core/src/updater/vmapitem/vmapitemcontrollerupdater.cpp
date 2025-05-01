@@ -49,11 +49,19 @@ void VMapItemControllerUpdater::addItemController(vmap::VisualItemController* ct
     connect(ctrl, &vmap::VisualItemController::opacityChanged, this,
             [this, ctrl]() { sendOffVMapChanges<qreal>(ctrl, QStringLiteral("opacity")); });
     connect(ctrl, &vmap::VisualItemController::rotationEditFinished, this,
-            [this, ctrl]() { sendOffVMapChanges<qreal>(ctrl, QStringLiteral("rotation")); });
+            [this, ctrl]()
+            {
+                sendOffVMapChanges<qreal>(ctrl, QStringLiteral("rotation"));
+                sendOffVMapChanges<QPointF>(ctrl, QStringLiteral("scenePos"));
+            });
     connect(ctrl, &vmap::VisualItemController::layerChanged, this,
             [this, ctrl]() { sendOffVMapChanges<Core::Layer>(ctrl, QStringLiteral("layer")); });
     connect(ctrl, &vmap::VisualItemController::posEditFinished, this,
-            [this, ctrl]() { sendOffVMapChanges<QPointF>(ctrl, QStringLiteral("pos")); });
+            [this, ctrl]()
+            {
+                sendOffVMapChanges<QPointF>(ctrl, QStringLiteral("pos"));
+                sendOffVMapChanges<QPointF>(ctrl, QStringLiteral("scenePos"));
+            });
     connect(ctrl, &vmap::VisualItemController::colorChanged, this,
             [this, ctrl]() { sendOffVMapChanges<QColor>(ctrl, QStringLiteral("color")); });
     connect(ctrl, &vmap::VisualItemController::lockedChanged, this,
@@ -75,7 +83,7 @@ bool VMapItemControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vm
     QSet<QString> boolProperties({QString("visible"), QString("locked")});
     QSet<QString> colorProperties({QString("color")});
     QSet<QString> uint8Properties({QString("layer")});
-    QSet<QString> pointProperties({QString("pos")});
+    QSet<QString> pointProperties({QString("pos"), QString("scenePos")});
     QSet<QString> realProperties({QString("opacity"), QString("rotation")});
 
     if(boolProperties.contains(property))
@@ -90,10 +98,12 @@ bool VMapItemControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vm
     {
         auto x= msg->real();
         auto y= msg->real();
+        qDebug() << "recived reseau" << QPointF(x, y) << property;
         var= QVariant::fromValue(QPointF(x, y));
     }
     else if(realProperties.contains(property))
     {
+        qDebug() << "recived reseau" << property;
         var= QVariant::fromValue(msg->real());
     }
     else if(uint8Properties.contains(property))
@@ -111,7 +121,9 @@ bool VMapItemControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vm
     }
 
     m_updatingFromNetwork= true;
+    ctrl->setNetworkUpdate(true);
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);
+    ctrl->setNetworkUpdate(false);
     m_updatingFromNetwork= false;
     updatingCtrl= nullptr;
 

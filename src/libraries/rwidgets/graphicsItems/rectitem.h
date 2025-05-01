@@ -21,6 +21,9 @@
 #define RECTITEM_H
 #include "rwidgets_global.h"
 #include "visualitem.h"
+
+#include <QGraphicsRotation>
+
 namespace vmap
 {
 class RectController;
@@ -56,8 +59,6 @@ public:
      * @return
      */
     virtual QPainterPath shape() const override;
-
-    // void endOfGeometryChange(ChildPointItem::Change change) override;
 
 protected:
     /**

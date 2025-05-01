@@ -129,6 +129,8 @@ void saveVisualItemController(const vmap::VisualItemController* ctrl, QJsonObjec
 
     obj[Core::jsonctrl::vmap::vitem::JSON_ITEM_TYPE]= ctrl->itemType();
     obj[Core::jsonctrl::vmap::vitem::JSON_SELECTED]= ctrl->selected();
+    obj[Core::jsonctrl::vmap::vitem::JSON_SCENE_POS_X]= ctrl->scenePos().x();
+    obj[Core::jsonctrl::vmap::vitem::JSON_SCENE_POS_Y]= ctrl->scenePos().y();
     obj[Core::jsonctrl::vmap::vitem::JSON_VISIBLE]= ctrl->visible();
     obj[Core::jsonctrl::vmap::vitem::JSON_OPACITY]= ctrl->opacity();
     obj[Core::jsonctrl::vmap::vitem::JSON_ROTATION]= ctrl->rotation();
@@ -155,6 +157,8 @@ vmap::VisualItemController::ItemType readVisualItemController(std::map<QString, 
                 QVariant::fromValue(static_cast<Core::Layer>(obj[Core::jsonctrl::vmap::vitem::JSON_LAYER].toInt()))});
     map.insert({Core::vmapkeys::KEY_POS, QPointF{obj[Core::jsonctrl::vmap::vitem::JSON_POSITION_X].toDouble(),
                                                  obj[Core::jsonctrl::vmap::vitem::JSON_POSITION_Y].toDouble()}});
+    map.insert({Core::vmapkeys::KEY_SCENE_POS, QPointF{obj[Core::jsonctrl::vmap::vitem::JSON_SCENE_POS_X].toDouble(),
+                                                       obj[Core::jsonctrl::vmap::vitem::JSON_SCENE_POS_Y].toDouble()}});
     map.insert({Core::vmapkeys::KEY_UUID, obj[Core::jsonctrl::vmap::vitem::JSON_UUID].toString()});
     map.insert({Core::vmapkeys::KEY_COLOR, QColor(obj[Core::jsonctrl::vmap::vitem::JSON_COLOR].toString())});
     map.insert({Core::vmapkeys::KEY_LOCKED, obj[Core::jsonctrl::vmap::vitem::JSON_LOCKED].toBool()});
@@ -507,6 +511,7 @@ void VectorialMapMessageHelper::fetchCharacter(const std::map<QString, QVariant>
 
     // clang-format off
     hu::setParamIfAny<bool>(cv::KEY_CHARAC_NPC, params, std::bind(&Character::setNpc, character, _1));
+    hu::setParamIfAny<QColor>(cv::KEY_COLOR, params, std::bind(&Character::setColor, character, _1));
     hu::setParamIfAny<QString>(cv::KEY_CHARAC_ID, params, std::bind(&Character::setUuid, character, _1));
     hu::setParamIfAny<QString>(cv::KEY_CHARAC_NAME, params, std::bind(&Character::setName, character, _1));
     hu::setParamIfAny<QByteArray>(cv::KEY_CHARAC_AVATAR, params, std::bind(&Character::setAvatar, character, _1));

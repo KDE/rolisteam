@@ -200,6 +200,10 @@ void PathItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, 
         painter->drawPath(scale.map(path));
         painter->restore();
     }
+
+#ifdef QT_DEBUG
+    paintCoord(painter);
+#endif
 }
 
 void PathItem::setNewEnd(const QPointF& p)

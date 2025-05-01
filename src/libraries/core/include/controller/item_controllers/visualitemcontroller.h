@@ -54,6 +54,8 @@ class CORE_EXPORT VisualItemController : public QObject
     Q_PROPERTY(int zOrder READ zOrder WRITE setZOrder NOTIFY zOrderChanged)
     Q_PROPERTY(bool removed READ removed WRITE setRemoved NOTIFY removedChanged)
     Q_PROPERTY(QString parentUuid READ parentUuid WRITE setParentUuid NOTIFY parentUuidChanged)
+    Q_PROPERTY(bool networkUpdate READ networkUpdate WRITE setNetworkUpdate NOTIFY networkUpdateChanged FINAL)
+    Q_PROPERTY(QPointF scenePos READ scenePos WRITE setScenePos NOTIFY scenePosChanged FINAL)
 
 public:
     enum ItemType
@@ -128,6 +130,15 @@ public:
     void setParentUuid(const QString& newParentUuid);
     QPointer<VectorialMapController> mapController() const;
 
+    void setMapToScene(const std::function<QPointF(QPointF)>& func);
+
+    bool networkUpdate() const;
+    void setNetworkUpdate(bool newNetworkUpdate);
+    bool posEdited() const;
+
+    QPointF scenePos() const;
+    void setScenePos(QPointF newScenePos);
+
 signals:
     void selectedChanged(bool b);
     void editableChanged();
@@ -150,8 +161,11 @@ signals:
     void modifiedChanged();
     void zOrderChanged(qreal);
     void removedChanged();
-
     void parentUuidChanged();
+
+    void networkUpdateChanged();
+
+    void scenePosChanged();
 
 public slots:
     void setSelected(bool b);
@@ -174,8 +188,6 @@ protected:
 private:
     void initializedVisualItem(const std::map<QString, QVariant>& params);
 
-    QString m_parentUuid;
-
 protected:
     QPointer<VectorialMapController> m_ctrl;
     bool m_selected= false;
@@ -197,6 +209,10 @@ protected:
     bool m_rotationEditing= false;
     bool m_remote= false;
     bool m_removed= false;
+    std::function<QPointF(QPointF)> m_mapToScene;
+    QString m_parentUuid;
+    bool m_networkUpdate{false};
+    QPointF m_scenePos;
 };
 } // namespace vmap
 #endif // VISUALITEMCONTROLLER_H

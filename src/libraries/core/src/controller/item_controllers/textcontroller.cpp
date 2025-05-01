@@ -157,6 +157,19 @@ void TextController::endGeometryChange()
     VisualItemController::endGeometryChange();
     if(m_editingBorderRect)
     {
+        auto offset= m_borderRect.topLeft();
+        if(!offset.isNull())
+        {
+            auto oldScenePos= m_mapToScene(m_borderRect.topLeft());
+            m_borderRect.translate(offset * -1);
+            auto newScenePos= m_mapToScene(m_borderRect.topLeft());
+            auto oldPos= m_pos;
+            m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                           oldPos.y() + (oldScenePos.y() - newScenePos.y()));
+            emit posChanged(m_pos);
+            emit posEditFinished();
+            emit borderRectChanged(m_borderRect);
+        }
         m_editingBorderRect= false;
         emit borderRectEditFinished();
     }
