@@ -24,6 +24,9 @@ TreeSheetItem* createField(TreeSheetItem::TreeItemType type, bool addCount)
     case TreeSheetItem::SliderItem:
         res= new SliderController(addCount);
         break;
+    case TreeSheetItem::CellValue:
+        Q_ASSERT(false);
+        break;
     }
     return res;
 }
