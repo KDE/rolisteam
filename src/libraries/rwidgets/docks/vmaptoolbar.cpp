@@ -63,7 +63,7 @@ void VmapTopBar::initActions()
     m_showSquareAct->setCheckable(true);
 
     m_showHexagonAct= new QAction(QIcon::fromTheme("hexa_grid"), tr("Hexagonal Grid"), this);
-    m_showSquareAct->setObjectName("grid_hexa");
+    m_showHexagonAct->setObjectName("grid_hexa");
     m_showHexagonAct->setCheckable(true);
 
     auto group= new QActionGroup(this);
@@ -258,6 +258,11 @@ void VmapTopBar::initActions()
     m_showState->setChecked(m_ctrl->stateLabelVisible());
     m_showHealthBar->setChecked(m_ctrl->healthBarVisible());
     m_showInit->setChecked(m_ctrl->initScoreVisible());
+
+    auto isSquare= m_ctrl->gridPattern() == Core::GridPattern::SQUARE;
+    auto isHexa= m_ctrl->gridPattern() == Core::GridPattern::HEXAGON;
+    m_showSquareAct->setChecked(isSquare && m_ctrl->gridVisibility());
+    m_showHexagonAct->setChecked(isHexa && m_ctrl->gridVisibility());
 }
 
 void VmapTopBar::setupUi()

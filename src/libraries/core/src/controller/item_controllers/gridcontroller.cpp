@@ -42,11 +42,11 @@ vmap::GridController::GridController(VectorialMapController* ctrl, QObject* pare
     connect(ctrl, &VectorialMapController::gridScaleChanged, this, &vmap::GridController::computePattern);
     connect(ctrl, &VectorialMapController::gridAboveChanged, this, &vmap::GridController::computePattern);
     connect(ctrl, &VectorialMapController::scaleUnitChanged, this, &vmap::GridController::computePattern);
+    connect(ctrl, &VectorialMapController::backgroundColorChanged, this, &vmap::GridController::computePattern);
 
     connect(m_ctrl, &VectorialMapController::visualRectChanged, this, &vmap::GridController::rectChanged);
     connect(this, &vmap::GridController::rectChanged, this, [this] { setModified(); });
     connect(this, &vmap::GridController::gridPatternChanged, this, [this] { setModified(); });
-
 
     computePattern();
 }
@@ -65,10 +65,7 @@ void GridController::aboutToBeRemoved()
     emit removeItem();
 }
 
-void GridController::setCorner(const QPointF& move, int corner,
-                               Core::TransformType tt)
-{
-}
+void GridController::setCorner(const QPointF& move, int corner, Core::TransformType tt) {}
 
 void GridController::endGeometryChange() {}
 
@@ -81,7 +78,7 @@ void GridController::setGm(bool gm)
     emit gmChanged(m_gm);
 }
 
-void GridController::setGridPattern(const QImage &gridPattern)
+void GridController::setGridPattern(const QImage& gridPattern)
 {
     if(m_gridPattern == gridPattern)
         return;

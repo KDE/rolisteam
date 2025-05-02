@@ -87,7 +87,11 @@ VMap::VMap(VectorialMapController* ctrl, QObject* parent) : QGraphicsScene(paren
 
     // connection to signal
     connect(m_ctrl, &VectorialMapController::backgroundColorChanged, this,
-            [this]() { setBackgroundBrush(m_ctrl->backgroundColor()); });
+            [this]()
+            {
+                setBackgroundBrush(m_ctrl->backgroundColor());
+                computePattern();
+            });
     connect(m_ctrl, &VectorialMapController::gridSizeChanged, this, &VMap::computePattern);
     connect(m_ctrl, &VectorialMapController::gridPatternChanged, this, &VMap::computePattern);
     connect(m_ctrl, &VectorialMapController::gridScaleChanged, this, &VMap::computePattern);
@@ -168,7 +172,12 @@ void VMap::addExistingItems()
 
 void VMap::addAndInit(QGraphicsItem* item)
 {
+    auto vItem= dynamic_cast<VisualItem*>(item);
+    if(vItem)
+        vItem->updateItemFlags();
     addItem(item);
+    if(vItem)
+        vItem->initialize();
 }
 void VMap::addVisualItem(vmap::VisualItemController* ctrl)
 {
@@ -333,6 +342,7 @@ void VMap::insertItem(const QPointF& pos)
 {
     std::map<QString, QVariant> params;
     params.insert({Core::vmapkeys::KEY_POS, pos});
+    params.insert({Core::vmapkeys::KEY_SCENE_POS, pos});
     params.insert({Core::vmapkeys::KEY_COLOR, m_ctrl->toolColor()});
     params.insert({Core::vmapkeys::KEY_PENWIDTH, m_ctrl->penSize()});
     params.insert({Core::vmapkeys::KEY_TOOL, m_ctrl->tool()});
