@@ -76,6 +76,8 @@ public:
     int defaultStyleIndex() const;
     void setDefaultStyleIndex(int newDefaultStyleIndex);
 
+    PositionedItem* parentNode(const QString& id);
+
 public slots:
     mindmap::MindItem* createItem(MindItem::Type type);
     bool removeItem(const mindmap::MindItem* node);

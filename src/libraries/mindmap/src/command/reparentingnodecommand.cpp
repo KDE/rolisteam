@@ -34,6 +34,9 @@ ReparentingNodeCommand::ReparentingNodeCommand(MindItemModel* nodeModel, Positio
     if(m_mindNode)
         m_oldParent= m_mindNode->parentNode();
 
+    if(!m_oldParent)
+        m_oldParent= m_nodeModel->parentNode(id);
+
     if(m_oldParent)
     {
         auto links= m_oldParent->subLinks();
@@ -62,7 +65,7 @@ void ReparentingNodeCommand::undo()
 
 void ReparentingNodeCommand::redo()
 {
-    qDebug() << "Reparenting redo:";
+    qDebug() << "Reparenting redo:" << m_mindNode.isNull() << m_oldLink.isNull();
     if(m_mindNode.isNull() || m_oldLink.isNull())
         return;
 

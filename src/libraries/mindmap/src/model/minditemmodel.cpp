@@ -571,4 +571,30 @@ void MindItemModel::setDefaultStyleIndex(int newDefaultStyleIndex)
     emit defaultStyleIndexChanged();
 }
 
+PositionedItem* MindItemModel::parentNode(const QString& id)
+{
+    PositionedItem* res= nullptr;
+    auto it= std::find_if(std::begin(m_links), std::end(m_links),
+                          [id](MindItem* item)
+                          {
+                              auto link= dynamic_cast<LinkController*>(item);
+                              if(!link)
+                                  return false;
+                              auto endPoint= link->end();
+                              if(!endPoint)
+                                  return false;
+
+                              return endPoint->id() == id;
+                          });
+
+    if(it != std::end(m_links))
+    {
+        auto found= dynamic_cast<LinkController*>((*it));
+        if(found)
+            res= found->start();
+    }
+
+    return res;
+}
+
 } // namespace mindmap

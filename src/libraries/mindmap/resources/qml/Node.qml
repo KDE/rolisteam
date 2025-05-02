@@ -19,6 +19,7 @@ Pane
     property QtObject currentNode
     property QtObject nodeStyle
     property alias foldingBtnVisible: control.visible
+    property string description
 
     property string ident: currentNode.id
     property bool isDragged: currentNode.isDragged
@@ -71,7 +72,8 @@ Pane
         delayed: true
     }
     Drag.keys: [ "rmindmap/reparenting", "text/x-reparenting"]
-
+    ToolTip.text: description
+    ToolTip.visible: description && dragMouse.containsMouse
     Drag.supportedActions: Qt.MoveAction
     Drag.mimeData: {
         "text/x-reparenting": root.ident,
@@ -85,11 +87,13 @@ Pane
             id: dragMouse
             anchors.fill: parent
             anchors.margins: -root.padding
+            hoverEnabled: true
             drag.target: root
             drag.axis: Drag.XAndYAxis
             drag.minimumX: 0
             drag.minimumY: 0
             preventStealing: true
+            onContainsMouseChanged: console.log("Contain mouse changed",dragMouse.containsMouse)
             onPressed:(mouse)=>{
                           root.clicked(mouse)
                           console.log("Node Mouse: ",root.width, root.height," ",root.Drag.active)

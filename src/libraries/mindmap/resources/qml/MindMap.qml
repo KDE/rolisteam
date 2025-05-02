@@ -136,9 +136,7 @@ Flickable {
                                _flick.ctrl.selectionCtrl.clearSelection()
                                _flick.ctrl.selectionCtrl.addToSelection(objectItem)
                            }
-
                        }
-
         }
     }
 
@@ -151,6 +149,7 @@ Flickable {
             nodeStyle: _flick.ctrl.style(objectItem.styleIndex)
             readWrite: _flick.ctrl.readWrite
             focus: true
+            description: objectItem.description
             text : objectItem.text
             source: hasPicture ? "image://nodeImages/%1".arg(objectItem.id) : ""
             visible: objectItem.visible
@@ -253,43 +252,6 @@ Flickable {
         anchors.centerIn: parent
         scale: _flick.zoomLevel
 
-        /*Timer {
-            running: true
-            repeat: true
-            onTriggered: console.log("Mindmap - w:",_flick.width," h:",_flick.height," i:",_flick.ctrl.contentRect.width)
-        }*/
-
-
-        // MouseAreau
-        /*MouseArea {
-            anchors.fill: parent
-            acceptedButtons:Qt.LeftButton
-            preventStealing: true
-
-            onClicked: {
-                console.log("is clicked!")
-            }
-
-            onPressed: (mouse)=>{
-                           console.log("On pressed")
-                           _flick.pressed(mouse)
-                           ctrl.selectionCtrl.clearSelection()
-                           _stylePopup.node = null
-                       }
-            onPositionChanged: (mouse)=> {
-                                   _flick.positionChanged(mouse)
-                               }
-            onReleased: (mouse)=>{
-                            _flick.released(mouse)
-                        }
-
-            Rectangle {
-                color: "red"
-                opacity: 0.2
-                anchors.fill: parent
-            }
-        }*/
-
         Repeater {
             id: itemLoop
             anchors.fill: parent
@@ -304,5 +266,14 @@ Flickable {
                 sourceComponent: type == MindItem.PackageType ? packComp : type == MindItem.LinkType ? linkComp : nodeComp
             }
         }
+
+        /*Rectangle {
+            anchors.fill: parent
+            opacity: 0.2
+            color: "red"
+            Label {
+                text: "%3 = Math.max(%1, %2)".arg(_flick.ctrl.contentRect.height).arg(_flick.height-_flick.marginW).arg(inner.height)
+            }
+        }*/
     }
 }
