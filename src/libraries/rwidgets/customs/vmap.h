@@ -79,6 +79,8 @@ public:
     VisualItem* getNormalItem(QGraphicsItem* item);
 
     GridItem* gridItem() const;
+    void hideGrid();
+    void restoreGrid();
 
 public slots:
     void computePattern();

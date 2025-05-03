@@ -490,7 +490,12 @@ void RGraphicsView::centerOnItem()
 
 void RGraphicsView::setRotation(const QList<vmap::VisualItemController*>& list, int value)
 {
-    std::for_each(list.begin(), list.end(), [value](vmap::VisualItemController* ctrl) { ctrl->setRotation(value); });
+    std::for_each(list.begin(), list.end(),
+                  [value](vmap::VisualItemController* ctrl)
+                  {
+                      ctrl->setRotation(value);
+                      ctrl->endGeometryChange();
+                  });
 }
 
 void RGraphicsView::lockItems(const QList<vmap::VisualItemController*>& list)

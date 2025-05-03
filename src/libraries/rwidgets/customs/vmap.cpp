@@ -649,6 +649,23 @@ void VMap::computePattern()
     }
 }
 
+void VMap::hideGrid()
+{
+    if(m_gridItem)
+        m_gridItem->setVisible(false);
+    if(m_ctrl)
+        setBackgroundBrush(m_ctrl->backgroundColor());
+}
+void VMap::restoreGrid()
+{
+    if(!m_ctrl)
+        return;
+    computePattern();
+    auto grid= m_ctrl->gridController();
+    if(m_gridItem)
+        m_gridItem->setVisible(grid->visible());
+}
+
 void VMap::promoteItemInType(VisualItem* item, vmap::VisualItemController::ItemType type)
 {
     if(nullptr != item)

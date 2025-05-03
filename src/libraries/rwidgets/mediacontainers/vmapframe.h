@@ -27,6 +27,7 @@
 #include <QPaintEvent>
 #include <QPoint>
 #include <QPointer>
+#include <QTimer>
 #include <QWidget>
 #include <memory>
 
@@ -36,6 +37,7 @@
 #include "rwidgets/customs/vmap.h"
 #include "rwidgets/rwidgets_global.h"
 #include "toolbars/vtoolbar.h"
+
 class VectorialMapController;
 
 /**
@@ -71,5 +73,6 @@ private:
     std::unique_ptr<RGraphicsView> m_graphicView;
     std::unique_ptr<ToolBox> m_toolbox;
     std::unique_ptr<VmapTopBar> m_topBar;
+    QTimer m_timer;
 };
 #endif

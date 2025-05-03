@@ -29,6 +29,7 @@
 #include "vmapframe.h"
 
 #include "controller/view_controller/vectorialmapcontroller.h"
+constexpr int updateTime{200};
 
 QString visibilityText(Core::VisibilityMode vis)
 {
@@ -80,6 +81,8 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     setWindowIcon(QIcon::fromTheme("maplogo"));
     m_graphicView->setScene(m_vmap.get());
 
+    m_timer.setInterval(updateTime);
+
     auto func= [this]()
     {
         setWindowTitle(tr("%1 - visibility: %2 - permission: %3 - layer: %4")
@@ -98,33 +101,45 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     {
         if(!m_ctrl)
             return;
-        int w= std::min(m_toolbox->width() - 10, 100);
+        int w= std::min(m_toolbox->width() - 10, 400);
         auto sceneRect= m_vmap->sceneRect();
+        auto origin= sceneRect.topLeft() * -1;
         qreal sw= sceneRect.width();
         qreal sh= sceneRect.height();
-        int h= static_cast<int>(w * sh / sw);
+        // int h= static_cast<int>(w * sh / sw);
 
-        QPixmap map{QSize{w, h}};
+        QPixmap map{QSizeF{sw, sh}.toSize()};
         auto viewPort= m_graphicView->viewport()->rect().toRectF();
         auto poly= m_graphicView->mapToScene(viewPort.toRect());
         QRectF visible= poly.boundingRect();
 
-        qreal ratioX= static_cast<qreal>(w) / sw;
-        qreal ratioY= static_cast<qreal>(h) / sh;
-
         {
             QPainter painter(&map);
+            m_vmap->hideGrid();
             m_vmap->render(&painter); //, m_vmap->sceneRect(), map.rect()
+            m_vmap->restoreGrid();
 
-            painter.setPen(Qt::blue);
-            painter.drawRect(QRectF{visible.x() * ratioX, visible.y() * ratioY, visible.width() * ratioX,
-                                    visible.height() * ratioY});
+            painter.save();
+            auto pen= painter.pen();
+            pen.setColor(Qt::blue);
+            pen.setWidth(30);
+            painter.setPen(pen);
+
+            /*painter.drawRect(QRectF{visible.x() * ratioX, visible.y() * ratioY, visible.width() * ratioX,
+                                    visible.height() * ratioY});*/
+            visible= visible.translated(origin);
+            qDebug() << "visible:" << visible << "viewport" << viewPort << "scene:" << sceneRect << origin;
+            painter.drawRect(QRectF{visible.x(), visible.y(), visible.width(), visible.height()});
+
+            painter.restore();
         }
 
-        m_toolbox->setImage(map);
+        m_toolbox->setImage(map.scaledToWidth(w));
     };
 
-    connect(m_vmap.get(), &VMap::changed, this, updateSmallImage);
+    // connect(m_vmap.get(), &VMap::changed, this, updateSmallImage);
+    connect(&m_timer, &QTimer::timeout, this, updateSmallImage);
+    m_timer.start();
 
     auto updateFrame= [this]()
     {
@@ -134,11 +149,11 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
 
         m_ctrl->setVisualRect(rect.united(poly));
     };
+
     connect(m_vmap.get(), &VMap::sceneRectChanged, m_ctrl, updateFrame);
 
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateFrame);
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateSmallImage);
-
     connect(m_graphicView->horizontalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage);
     connect(m_graphicView->verticalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage);
     connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateSmallImage);
