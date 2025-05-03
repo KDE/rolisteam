@@ -62,7 +62,6 @@ private:
     QRectF m_rect= QRectF(0, 0, 1, 1);
     bool m_filled;
     quint16 m_penWidth;
-
     bool m_rectEdited= false;
 };
 } // namespace vmap

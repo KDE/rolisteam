@@ -623,7 +623,7 @@ void VMap::manageAnchor()
             child= itemChild->controller();
     }
     QList<QGraphicsItem*> item2= items(m_parentItemAnchor->getEnd());
-    for(QGraphicsItem* item : item2)
+    for(QGraphicsItem* item : std::as_const(item2))
     {
         if(item == nullptr)
             continue;

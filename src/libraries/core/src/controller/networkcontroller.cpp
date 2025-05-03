@@ -96,7 +96,7 @@ void NetworkController::dispatchMessage(QByteArray array)
     if(ReceiveEvent::hasNetworkReceiverFor(data.category()))
     {
         QList<NetWorkReceiver*> tmpList= ReceiveEvent::getNetWorkReceiverFor(data.category());
-        for(NetWorkReceiver* tmp : tmpList)
+        for(NetWorkReceiver* tmp : std::as_const(tmpList))
         {
             tmp->processMessage(&data);
         }

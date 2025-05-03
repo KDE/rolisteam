@@ -381,7 +381,7 @@ void ToolBox::makeTools()
     m_zoomSpinBox->setMaximum(5.0);
 
     m_smallScene= std::make_unique<QLabel>();
-    /// m_smallScene->setScaledContents(true);
+    m_smallScene->setScaledContents(true);
 
     connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this,
             [this]()
