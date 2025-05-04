@@ -269,7 +269,7 @@ QHash<int, QList<int>> DiceModel::resultFromBytes(const QByteArray& data, QStrin
         val.append(obj[json::value].toInt());
         res.insert(obj[json::faces].toInt(), val);
 
-        comment= tr("# 3D Roll : Distance %1 - Time %2 - Rotation %3")
+        comment= tr("# 3D Roll: Distance %1 - Time %2 - Rotation %3")
                      .arg(obj[json::unstableDistance].toDouble())
                      .arg(obj[json::unstableTime].toInteger())
                      .arg(obj[json::unstableRot].toDouble());

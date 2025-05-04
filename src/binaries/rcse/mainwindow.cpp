@@ -375,7 +375,7 @@ MainWindow::MainWindow(QWidget* parent)
                 {
                     QMessageBox* msgBox= new QMessageBox(
                         QMessageBox::Information, tr("Support"),
-                        tr("The %1 donation page can be found online at :<br> <a "
+                        tr("The %1 donation page can be found online at:<br> <a "
                            "href=\"https://liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>")
                             .arg(m_preferences->value("Application_Name", "rolisteam").toString()),
                         QMessageBox::Ok);
@@ -488,7 +488,7 @@ void MainWindow::helpOnLine()
     if(!QDesktopServices::openUrl(QUrl(version::documation_site)))
     {
         QMessageBox* msgBox= new QMessageBox(QMessageBox::Information, tr("Help"),
-                                             tr("Documentation of Rcse can be found online at :<br> <a "
+                                             tr("Documentation of Rcse can be found online at:<br> <a "
                                                 "href=\"%1\">%1</a>")
                                                  .arg(version::documation_site));
         msgBox->exec();
@@ -727,9 +727,9 @@ void MainWindow::generateAndShowQML()
     if(m_mainCtrl->generatorCtrl()->textEdited())
     {
         QMessageBox::StandardButton btn= QMessageBox::question(
-            this, tr("Do you want to erase current QML code ?"),
+            this, tr("Do you want to erase current QML code?"),
             tr("Generate QML code will override any change you made in the QML.<br/>Do you really want to generate QML "
-               "code ?"),
+               "code?"),
             QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
         if(btn == QMessageBox::Cancel)

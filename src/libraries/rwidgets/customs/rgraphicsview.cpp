@@ -381,7 +381,7 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
     }
     else if(selectedAction == angleRotationAct)
     {
-        int angle= QInputDialog::getInt(this, tr("Rotation Value ?"),
+        int angle= QInputDialog::getInt(this, tr("Rotation Value?"),
                                         tr("Please, set the rotation angle you want [0-360]"), 0, 0, 360);
         setRotation(ctrls, angle);
     }

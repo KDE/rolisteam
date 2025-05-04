@@ -39,7 +39,7 @@
      <item>
       <widget class="QCheckBox" name="m_neverShowAgain">
        <property name="text">
-        <string>Never show it again !</string>
+        <string>Never show it again!</string>
        </property>
       </widget>
      </item>

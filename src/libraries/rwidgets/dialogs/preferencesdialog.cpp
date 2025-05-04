@@ -446,7 +446,7 @@ void PreferencesDialog::performDiag()
     QList<QByteArray> format(QImageReader::supportedImageFormats());
 
     QString htmlResult;
-    QString linePattern= tr("<li>Image Format : %1 value %2</li>");
+    QString linePattern= tr("<li>Image Format: %1 value %2</li>");
     htmlResult= tr("<h2>Supported Image Formats:</h2><ul>");
     QString result= "";
     for(int i= 0; i < format.size(); ++i)

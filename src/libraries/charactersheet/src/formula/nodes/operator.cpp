@@ -84,11 +84,11 @@ void OperatorFNode::absFunction()
 {
     if(m_parameters.size() > 1)
     {
-        m_result= QObject::tr("abs : too many arguments");
+        m_result= QObject::tr("abs: too many arguments");
     }
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("abs : too few arguments");
+        m_result= QObject::tr("abs: too few arguments");
     }
     else
     {
@@ -106,11 +106,11 @@ void OperatorFNode::ceilFunction()
 {
     if(m_parameters.size() > 1)
     {
-        m_result= QObject::tr("ceil : too many arguments");
+        m_result= QObject::tr("ceil: too many arguments");
     }
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("ceil : too few arguments");
+        m_result= QObject::tr("ceil: too few arguments");
     }
     else
     {
@@ -127,11 +127,11 @@ void OperatorFNode::floorFunction()
 {
     if(m_parameters.size() > 1)
     {
-        m_result= QObject::tr("floor : too many arguments");
+        m_result= QObject::tr("floor: too many arguments");
     }
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("floor : too few arguments");
+        m_result= QObject::tr("floor: too few arguments");
     }
     else
     {
@@ -148,7 +148,7 @@ void OperatorFNode::concatenate()
 {
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("concatenate : too few arguments");
+        m_result= QObject::tr("concatenate: too few arguments");
     }
     else
     {
@@ -171,7 +171,7 @@ void OperatorFNode::min()
 {
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("min : too few arguments");
+        m_result= QObject::tr("min: too few arguments");
     }
     else
     {
@@ -200,7 +200,7 @@ void OperatorFNode::max()
 {
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("max : too few arguments");
+        m_result= QObject::tr("max: too few arguments");
     }
     else
     {
@@ -229,7 +229,7 @@ void OperatorFNode::avg()
 {
     if(m_parameters.isEmpty())
     {
-        m_result= QObject::tr("avg : too few arguments");
+        m_result= QObject::tr("avg: too few arguments");
     }
     else
     {

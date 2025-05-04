@@ -712,7 +712,7 @@ void MainWindow::linkActionToMenu()
                 {
                     QMessageBox* msgBox
                         = new QMessageBox(QMessageBox::Information, tr("Help"),
-                                          tr("Documentation of %1 can be found online at :<br> <a "
+                                          tr("Documentation of %1 can be found online at:<br> <a "
                                              "href=\"%2\">%2</a>")
                                               .arg(m_preferences->value("Application_Name", "rolisteam").toString())
                                               .arg(version::documation_site),
@@ -809,7 +809,7 @@ int MainWindow::mayBeSaved()
 
     QString msg= m_preferences->value("Application_Name", "rolisteam").toString();
     auto isGM= m_gameController->localIsGM();
-    msgBox.setText(isGM ? tr("Do you want to save the campaign ?") : tr("Do you really want to quit Rolisteam ?"));
+    msgBox.setText(isGM ? tr("Do you want to save the campaign?") : tr("Do you really want to quit Rolisteam?"));
     msgBox.setIcon(QMessageBox::Question);
     msgBox.addButton(isGM ? QMessageBox::Save : QMessageBox::Yes);
     if(isGM)
