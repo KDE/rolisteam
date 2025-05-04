@@ -507,7 +507,7 @@ bool FileSerializer::hasContent(const QString& path, Core::CampaignDataCategory 
             res|= std::any_of(std::begin(subentrylist), std::end(subentrylist),
                               [](const QString& item)
                               {
-                                  // TODO check that ?
+                                  // TODO check that ?
                                   QSet<QString> noteExt{"txt", "md", "html"};
                                   return std::any_of(std::begin(noteExt), std::end(noteExt),
                                                      [item](const QString& ext) { return item.endsWith(ext); });

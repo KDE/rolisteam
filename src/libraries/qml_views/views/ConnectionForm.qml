@@ -93,7 +93,7 @@ Item {
                     icon.height: 32
                     icon.color: "transparent"
                     ToolTip.text: qsTr("Remove profile")
-                    enabled: _list.count > 1 && ProfileController.currentProfileIndex >= 0
+                    enabled: _list.count > 1 && ProfileController.currentProfileIndex >= 0
                 }
             }
         }

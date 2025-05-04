@@ -145,7 +145,7 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
             [this](const QString& uuid, const QString& ctrlId, const QString& characterId)
             {
                 Q_UNUSED(characterId)
-                qDebug() << "contentController stop SHaring" << uuid;
+                qDebug() << "contentController stop Sharing" << uuid;
                 auto media= m_contentModel->media(ctrlId);
                 auto sheetCtrl= dynamic_cast<CharacterSheetController*>(media);
 

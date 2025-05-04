@@ -135,7 +135,7 @@ Item {
                     id: listView
                     SplitView.fillWidth: true
                     SplitView.fillHeight: true
-                    model: root.chatRoom ? root.chatRoom.messageModel: 0
+                    model: root.chatRoom ? root.chatRoom.messageModel: 0
                     clip: true
                     spacing: 5
                     verticalLayoutDirection: ListView.BottomToTop

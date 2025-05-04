@@ -62,7 +62,7 @@ ColumnLayout {
                 background: Rectangle {
                     id: bubble
                     color: root.local ? root.styleSheet.localMsgColor : root.styleSheet.RemoteMsgColor
-                    opacity: 0.3
+                    opacity: 0.3
                     radius: root.styleSheet.radiusSize
                 }
             }
@@ -95,8 +95,8 @@ ColumnLayout {
 
 //implicitWidth: messageLyt.implicitWidth + root.styleSheet.textTopMargin
 //                implicitHeight: messageLyt.implicitHeight + root.styleSheet.textTopMargin
-//implicitHeight: messageId.implicitHeight + (root.imageLink? imagePanel.paintedHeight : 0)
-//implicitWidth: messageId.implicitWidth + (root.imageLink? imagePanel.paintedWidth : 0)
+//implicitHeight: messageId.implicitHeight + (root.imageLink? imagePanel.paintedHeight : 0)
+//implicitWidth: messageId.implicitWidth + (root.imageLink? imagePanel.paintedWidth : 0)
 //anchors.fill: parent
 //anchors.margins: root.styleSheet.textTopMargin
 //implicitWidth: Math.min(messageId.implicitWidth, messageRow.availableSpace)

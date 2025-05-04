@@ -68,7 +68,7 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
 
     ui->m_defaultMapModeCombo->addItem(tr("GM Only"), Core::PermissionMode::GM_ONLY);
     ui->m_defaultMapModeCombo->addItem(tr("PC Move"), Core::PermissionMode::PC_MOVE);
-    ui->m_defaultMapModeCombo->addItem(tr("PC All"), Core::PermissionMode::PC_ALL);
+    ui->m_defaultMapModeCombo->addItem(tr("PC All"), Core::PermissionMode::PC_ALL);
 
     connect(m_ctrl, &PreferencesController::preferencesChanged, this,
             [this]()

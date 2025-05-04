@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Export PDF background Dialog</string>
+   <string>Export PDF background Dialog</string>
   </property>
   <property name="windowIcon">
    <iconset theme="pdf">

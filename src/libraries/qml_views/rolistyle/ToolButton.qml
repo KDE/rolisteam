@@ -40,6 +40,6 @@ T.ToolButton {
 
         color: control.enabled && (control.highlighted || control.checked) ? control.style.button : "transparent"
 
-        opacity: control.down || control.hovered ? 1.0 : 0.4
+        opacity: control.down || control.hovered ? 1.0 : 0.4
     }
 }

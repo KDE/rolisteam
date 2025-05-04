@@ -84,7 +84,7 @@ Item {
         }
     }
     DelegateChooser {
-        id: delegate
+        id: delegate
 
     }
 }

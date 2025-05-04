@@ -14,7 +14,7 @@ Pane {
     property alias actions: _buttonGrid.actions
     required property MindMapController ctrl
     property bool darkMode: false
-    property int idx: 0
+    property int idx: 0
     property QtObject styleSheet: Theme.styleSheet("mindmap")
 
     signal saveMap

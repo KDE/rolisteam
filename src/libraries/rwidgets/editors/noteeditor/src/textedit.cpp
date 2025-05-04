@@ -106,7 +106,7 @@ TextEdit::TextEdit(NoteController* note, QWidget* parent)
     connect(m_textEdit->document(), &QTextDocument::contentsChanged, m_noteCtrl,
             [this]()
             {
-                qDebug() << "Text change from Note Controller";
+                qDebug() << "Text change from Note Controller";
                 m_noteCtrl->isHtml() ? m_noteCtrl->setText(m_textEdit->toHtml()) :
                                        m_noteCtrl->setText(m_textEdit->toPlainText());
             });

@@ -469,7 +469,7 @@ void MainWindow::createTabs()
     m_sideTabs->addTab(m_antagonistWidget.get(), QIcon::fromTheme("03_antagonist"), tr("List of antagonists"));
     m_sideTabs->addTab(m_audioPlayer.get(), QIcon::fromTheme("04_music"), tr("Music Player"));
     m_sideTabs->addTab(m_roomPanel, QIcon::fromTheme("05_rooms"), tr("Server Panel"));
-    m_sideTabs->addTab(m_dockLogUtil.get(), QIcon::fromTheme("06_logger"), tr("Notification Zone"));
+    m_sideTabs->addTab(m_dockLogUtil.get(), QIcon::fromTheme("06_logger"), tr("Notification Zone"));
 
     m_audioPlayer->setVisible(true);
     QWidget* wid= new QWidget(this);
@@ -484,7 +484,7 @@ void MainWindow::createTabs()
         vBox->addWidget(wid);
     }
 
-    m_sideTabs->addTab(wid, QIcon::fromTheme("07_tools"), tr("GM Tools"));
+    m_sideTabs->addTab(wid, QIcon::fromTheme("07_tools"), tr("GM Tools"));
 
     for(int i= 0; i < m_sideTabs->count(); ++i)
     {

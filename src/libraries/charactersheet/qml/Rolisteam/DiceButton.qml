@@ -28,7 +28,7 @@ T.AbstractButton {
         radius: 15
         gradient: Gradient {
             GradientStop { position: 0.0; color: root.down ? root.secondaryColor : root.backgroundColor }
-            GradientStop { position: 1.0; color: root.down ? root.backgroundColor : root.secondaryColor }
+            GradientStop { position: 1.0; color: root.down ? root.backgroundColor : root.secondaryColor }
         }
     }
 

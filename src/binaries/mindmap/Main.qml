@@ -8,7 +8,7 @@ import Utils
 import "qrc:/resources/qml"
 
 ApplicationWindow {
-    id: _app
+    id: _app
     width: 1920
     height: 1080
     visible: true
@@ -56,7 +56,7 @@ ApplicationWindow {
         }
 
         property Action openMap: Action {
-            text: qsTr("Open MindMap")
+            text: qsTr("Open MindMap")
             icon.source: _app.styleSheet.openIcon
             onTriggered: mapSelector.open()
         }

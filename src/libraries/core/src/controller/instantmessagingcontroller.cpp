@@ -39,7 +39,7 @@
 
 void registerType()
 {
-    // TODO Move that into view? or define module with Qt6/cmake syntax
+    // TODO Move that into view? or define module with Qt6/cmake syntax
     static bool registered= false;
 
     if(registered)
