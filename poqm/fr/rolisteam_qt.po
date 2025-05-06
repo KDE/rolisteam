@@ -1,17 +1,18 @@
 # SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2025 Renaud Guezennec <renaud.guezennec@gmail.com>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2025-03-25 09:04+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"PO-Revision-Date: 2025-04-21 02:40+0200\n"
+"Last-Translator: Renaud Guezennec <renaud.guezennec@gmail.com>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
@@ -25,6 +26,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "MindMap (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
 msgstr "Ouvrir MindMap"
@@ -85,7 +89,7 @@ msgstr "La valeur de ce personnage %1 a été définie à %2"
 #: src/binaries/rcse/controllers/rcseapplicationcontroller.cpp:38
 msgctxt "RcseApplicationController|"
 msgid "only the GM"
-msgstr "Uniquement le GM"
+msgstr "Uniquement le MJ"
 
 #: src/binaries/rcse/controllers/rcseapplicationcontroller.cpp:38
 msgctxt "RcseApplicationController|"
@@ -232,7 +236,7 @@ msgstr "Vue Internet"
 #: src/binaries/rcse/delegate/typedelegate.cpp:26
 msgctxt "TypeDelegate|"
 msgid "Slider"
-msgstr "Curseur"
+msgstr "Jauge"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
@@ -252,7 +256,7 @@ msgstr "Bouton de page précédente"
 #: src/binaries/rcse/dialog/aboutrcse.ui:14
 msgctxt "AboutRcse|"
 msgid "Rolisteam Character Sheet Editor"
-msgstr "Éditeur de feuille de caractères Rolisteam (*.rcs)"
+msgstr "Éditeur de fiche de personnage Rolisteam (*.rcs)"
 
 #: src/binaries/rcse/dialog/aboutrcse.ui:20
 msgctxt "AboutRcse|"
@@ -264,10 +268,10 @@ msgid ""
 "CharacterSheet\"><span style=\" text-decoration: underline; color:#007af4;"
 "\">wiki.rolisteam.org</span></a></p></body></html>"
 msgstr ""
-"<html><head/><body><p><span style=\" font-weight:600;\">Éditeur de feuille "
-"de caractères Rolisteam</span></p><p><br/></p><p>Ce logiciel est dédié à la "
-"création de feuille de caractères pour Rolisteam v1.8 et versions "
-"ultérieures. <br/>Veuillez consulter la documentation à l'adresse  : <a href="
+"<html><head/><body><p><span style=\" font-weight:600;\">Éditeur de fiche de "
+"personnage pour Rolisteam</span></p><p><br/></p><p>Ce logiciel est dédié à "
+"la création de fiche de personnages pour Rolisteam v1.8 et versions "
+"ultérieures. <br/>Veuillez consulter la documentation à l'adresse : <a href="
 "\"http://wiki.rolisteam.org/index.php/En:CharacterSheet\"><span style=\" "
 "text-decoration: underline; color:#007af4;\">wiki.rolisteam.org</span></a></"
 "p></body></html>"
@@ -427,6 +431,9 @@ msgid "PDF files (*.pdf)"
 msgstr "Fichiers PDF (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
+#, fuzzy
+#| msgctxt "PdfManager|"
+#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
 msgstr "Exporter la boîte de dialogue d'arrière-plan « PDF »"
@@ -485,12 +492,12 @@ msgstr "Ajouter un fichier de police"
 #: src/binaries/rcse/dialog/sheetproperties.ui:14
 msgctxt "SheetProperties|"
 msgid "Sheet Properties"
-msgstr "Propriétés de feuille"
+msgstr "Propriétés de la fiche"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr "Largeur de remplissage par défaut"
+msgstr "Remplir la largeur par défaut"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
@@ -521,7 +528,7 @@ msgstr "Fontes intégrées:"
 #: src/binaries/rcse/dialog/sheetproperties.ui:193
 msgctxt "SheetProperties|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/binaries/rcse/fieldmodel.cpp:62
 msgctxt "FieldModel|"
@@ -531,7 +538,7 @@ msgstr "Id"
 #: src/binaries/rcse/fieldmodel.cpp:62
 msgctxt "FieldModel|"
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Intitulé"
 
 #: src/binaries/rcse/fieldmodel.cpp:63
 msgctxt "FieldModel|"
@@ -586,7 +593,7 @@ msgstr "Police"
 #: src/binaries/rcse/fieldmodel.cpp:69
 msgctxt "FieldModel|"
 msgid "Text-align"
-msgstr "Aligner sur texte"
+msgstr "Alignement du texte"
 
 #: src/binaries/rcse/fieldmodel.cpp:70
 msgctxt "FieldModel|"
@@ -671,12 +678,12 @@ msgstr "Verrouiller un élément"
 #: src/binaries/rcse/itemeditor.cpp:63
 msgctxt "ItemEditor|"
 msgid "Align on Y"
-msgstr "Aligner sur les Y"
+msgstr "Aligner en Y"
 
 #: src/binaries/rcse/itemeditor.cpp:64
 msgctxt "ItemEditor|"
 msgid "Align on X"
-msgstr "Aligner sur les X"
+msgstr "Aligner en X"
 
 #: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
@@ -733,7 +740,7 @@ msgstr "&Refaire"
 #: src/binaries/rcse/mainwindow.cpp:377
 msgctxt "rcse::MainWindow|"
 msgid "Support"
-msgstr "Prise en charge"
+msgstr "Soutien"
 
 #: src/binaries/rcse/mainwindow.cpp:378
 #, qt-format
@@ -768,7 +775,7 @@ msgstr ""
 #: src/binaries/rcse/mainwindow.cpp:503
 msgctxt "rcse::MainWindow|"
 msgid "The charactersheet has unsaved changes."
-msgstr "La fiche de caractères possède des modifications non enregistrées."
+msgstr "La fiche de personnage possède des modifications non enregistrées."
 
 #: src/binaries/rcse/mainwindow.cpp:510
 #, qt-format
@@ -799,12 +806,12 @@ msgstr "Ouvrir une image"
 #: src/binaries/rcse/mainwindow.cpp:622 src/binaries/rcse/mainwindow.cpp:665
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet"
-msgstr "Enregistrer la feuille de caractères"
+msgstr "Enregistrer la fiche de personnage"
 
 #: src/binaries/rcse/mainwindow.cpp:623 src/binaries/rcse/mainwindow.cpp:666
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet (*.rcs)"
-msgstr "Feuille de caractères Rolisteam (*.rcs)"
+msgstr "Fiche de personnage pour Rolisteam (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
 msgctxt "rcse::MainWindow|"
@@ -824,12 +831,12 @@ msgstr ""
 #: src/binaries/rcse/mainwindow.cpp:796
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet View"
-msgstr "Enregistrer une vue de feuille de caractères"
+msgstr "Enregistrer une vue de fiche de personnage"
 
 #: src/binaries/rcse/mainwindow.cpp:797
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet View (*.qml)"
-msgstr "Vue de la feuille de caractères de Rolisteam (*.qml)"
+msgstr "Vue de la fiche de personnages de Rolisteam (*.qml)"
 
 #: src/binaries/rcse/mainwindow.cpp:922
 msgctxt "rcse::MainWindow|"
@@ -874,12 +881,12 @@ msgstr "Ajouter un personnage"
 #: src/binaries/rcse/mainwindow.cpp:954
 msgctxt "rcse::MainWindow|"
 msgid "Delete character"
-msgstr "Supprimer un caractère"
+msgstr "Supprimer un personnage"
 
 #: src/binaries/rcse/mainwindow.cpp:956
 msgctxt "rcse::MainWindow|"
 msgid "Character's Name"
-msgstr "Nom du caractère"
+msgstr "Nom du personnage"
 
 #: src/binaries/rcse/mainwindow.cpp:958
 msgctxt "rcse::MainWindow|"
@@ -889,12 +896,12 @@ msgstr "Appliquer à la sélection"
 #: src/binaries/rcse/mainwindow.cpp:959
 msgctxt "rcse::MainWindow|"
 msgid "Apply on all characters"
-msgstr "Appliquer à tous les caractères"
+msgstr "Appliquer à tous les personnages"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:14
 msgctxt "MainWindow|"
 msgid "Unknown[*] - Rolisteam Character Sheet Editor"
-msgstr "Inconnu [*] - Éditeur de feuilles de caractères de Rolisteam"
+msgstr "Inconnu [*] - Éditeur de Fiche de personnages de Rolisteam"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:29
 msgctxt "MainWindow|"
@@ -972,13 +979,13 @@ msgstr "Image"
 #: src/binaries/rcse/mainwindow_rcse.ui:736
 msgctxt "MainWindow|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:380
 #: src/binaries/rcse/mainwindow_rcse.ui:1130
 msgctxt "MainWindow|"
 msgid "WebView"
-msgstr "Vue Internet"
+msgstr "Page web"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:403
 #: src/binaries/rcse/mainwindow_rcse.ui:1142
@@ -1031,7 +1038,7 @@ msgstr "Affichage"
 #: src/binaries/rcse/mainwindow_rcse.ui:696
 msgctxt "MainWindow|"
 msgid "Characters"
-msgstr "Caractères"
+msgstr "Personnages"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:716
 msgctxt "MainWindow|"
@@ -1080,7 +1087,7 @@ msgstr "« CTRL » + « S »"
 #: src/binaries/rcse/mainwindow_rcse.ui:839
 msgctxt "MainWindow|"
 msgid "Save As..."
-msgstr "Enregistrer sous..."
+msgstr "Enregistrer sous…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:842
 msgctxt "MainWindow|"
@@ -1133,7 +1140,7 @@ msgstr "Charger une vue"
 #: src/binaries/rcse/mainwindow_rcse.ui:918
 msgctxt "MainWindow|"
 msgid "Generate Code and Sheet"
-msgstr "Générer du code et la feuille"
+msgstr "Générer du code et la fiche"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:921
 msgctxt "MainWindow|"
@@ -1143,7 +1150,7 @@ msgstr "« CTRL » + « R »"
 #: src/binaries/rcse/mainwindow_rcse.ui:930
 msgctxt "MainWindow|"
 msgid "Code To Sheet"
-msgstr "Code vers la feuille"
+msgstr "Code vers la fiche"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:933
 #: src/binaries/widget/mainwindow.ui:461
@@ -1154,7 +1161,7 @@ msgstr "« CTRL » + « D »"
 #: src/binaries/rcse/mainwindow_rcse.ui:986
 msgctxt "MainWindow|"
 msgid "Set image background…"
-msgstr "Définir une image de fond d'écran..."
+msgstr "Définir une image de fond d'écran…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1007
 msgctxt "MainWindow|"
@@ -1181,7 +1188,7 @@ msgstr "« CTRL » + « P »"
 #: src/binaries/rcse/mainwindow_rcse.ui:1033
 msgctxt "MainWindow|"
 msgid "Sheet Properties…"
-msgstr "Propriétés de feuille…"
+msgstr "Propriétés de la fiche…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1048
 msgctxt "MainWindow|"
@@ -1294,12 +1301,12 @@ msgstr "Sélectionner"
 #: src/binaries/rcse/tablecanvasfield.cpp:61
 msgctxt "TableCanvasField|"
 msgid "TextInput"
-msgstr "Zone de saisie de texte"
+msgstr "Saisie de texte"
 
 #: src/binaries/rcse/tablecanvasfield.cpp:61
 msgctxt "TableCanvasField|"
 msgid "TextField"
-msgstr "Zone de texte"
+msgstr "Champ de texte"
 
 #: src/binaries/rcse/tablecanvasfield.cpp:61
 msgctxt "TableCanvasField|"
@@ -1339,12 +1346,12 @@ msgstr "Bouton de fonction"
 #: src/binaries/rcse/tablecanvasfield.cpp:64
 msgctxt "TableCanvasField|"
 msgid "Web page"
-msgstr "Page Internet"
+msgstr "Page Web"
 
 #: src/binaries/rcse/tablecanvasfield.cpp:64
 msgctxt "TableCanvasField|"
 msgid "Slider"
-msgstr "Curseur"
+msgstr "Jauge"
 
 #: src/binaries/rcse/tablecanvasfield.cpp:322
 msgctxt "TableCanvasField|"
@@ -1403,7 +1410,7 @@ msgstr "Image"
 #: src/binaries/rcse/undo/addfieldcommand.cpp:85
 msgctxt "QObject|"
 msgid "Slider"
-msgstr "Curseur"
+msgstr "Jauge"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
 #: src/libraries/core/src/data/cleveruri.cpp:230
@@ -1432,7 +1439,7 @@ msgstr "Bouton de dés"
 #: src/binaries/rcse/undo/addfieldcommand.cpp:106
 msgctxt "QObject|"
 msgid "Web Page"
-msgstr "Page Internet"
+msgstr "Page Web"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:110
 msgctxt "QObject|"
@@ -1584,7 +1591,7 @@ msgstr "Afficher"
 #: src/binaries/rcse/widgets/fieldview.cpp:157
 msgctxt "FieldView|"
 msgid "Show/Hide"
-msgstr "Afficher / Masquer"
+msgstr "Afficher / Masquer"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:332
 msgctxt "FieldView|"
@@ -1642,11 +1649,17 @@ msgid "Server Panel"
 msgstr "Panneau de serveur"
 
 #: src/binaries/widget/mainwindow.cpp:472
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zone de notifications"
 
 #: src/binaries/widget/mainwindow.cpp:487
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Outils GM"
@@ -1654,12 +1667,12 @@ msgstr "Outils GM"
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Open Webpage"
-msgstr "Ouvrir une page Internet"
+msgstr "Ouvrir une page web"
 
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
 msgid "Webpage url:"
-msgstr "URL de la page Internet :"
+msgstr "URL de la page web :"
 
 #: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
@@ -1689,7 +1702,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Support"
-msgstr "Prise en charge"
+msgstr "Soutien"
 
 #: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
@@ -1741,7 +1754,7 @@ msgstr "%1 vient de rejoindre la partie."
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
-msgstr "%1 ne possède par la bonne version : %2."
+msgstr "%1 ne possède pas la bonne version : %2."
 
 #: src/binaries/widget/mainwindow.cpp:916
 #, qt-format
@@ -1762,7 +1775,7 @@ msgstr "Configurer Rolisteam pour se connecter à <server>."
 #: src/binaries/widget/mainwindow.cpp:1005
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
-msgstr "Définir le <role>: gm ou pc"
+msgstr "Définir le <role> : MJ ou PNJ"
 
 #: src/binaries/widget/mainwindow.cpp:1007
 msgctxt "MainWindow|"
@@ -1818,7 +1831,7 @@ msgstr "Client"
 #: src/binaries/widget/mainwindow.cpp:1217
 msgctxt "MainWindow|"
 msgid "GM"
-msgstr "GM"
+msgstr "MJ"
 
 #: src/binaries/widget/mainwindow.cpp:1223
 msgctxt "MainWindow|"
@@ -1903,7 +1916,7 @@ msgstr "« CTRL » + « Échap »"
 #: src/binaries/widget/mainwindow.ui:179
 msgctxt "MainWindow|"
 msgid "Preferences…"
-msgstr "Préférences..."
+msgstr "Préférences…"
 
 #: src/binaries/widget/mainwindow.ui:201
 msgctxt "MainWindow|"
@@ -1998,7 +2011,7 @@ msgstr "« CTRL » + « Maj » + « I »"
 #: src/binaries/widget/mainwindow.ui:310
 msgctxt "MainWindow|"
 msgid "Character List"
-msgstr "Liste de caractères"
+msgstr "Liste des personnages"
 
 #: src/binaries/widget/mainwindow.ui:321
 msgctxt "MainWindow|"
@@ -2038,12 +2051,12 @@ msgstr "F6"
 #: src/binaries/widget/mainwindow.ui:364
 msgctxt "MainWindow|"
 msgid "Change Profile…"
-msgstr "Modifier un profil..."
+msgstr "Modifier un profil…"
 
 #: src/binaries/widget/mainwindow.ui:373
 msgctxt "MainWindow|"
 msgid "Character Sheet"
-msgstr "Tableau de caractères"
+msgstr "Fiche de personnage"
 
 #: src/binaries/widget/mainwindow.ui:376
 msgctxt "MainWindow|"
@@ -2068,7 +2081,7 @@ msgstr "F10"
 #: src/binaries/widget/mainwindow.ui:407 src/binaries/widget/mainwindow.ui:419
 msgctxt "MainWindow|"
 msgid "Shared Note"
-msgstr "Note partagée"
+msgstr "Notes partagées"
 
 #: src/binaries/widget/mainwindow.ui:410
 msgctxt "MainWindow|"
@@ -2108,7 +2121,7 @@ msgstr "Fichier « PDF »"
 #: src/binaries/widget/mainwindow.ui:466
 msgctxt "MainWindow|"
 msgid "Copy Connection Link…"
-msgstr "Copier le lien de connexion..."
+msgstr "Copier le lien de connexion…"
 
 #: src/binaries/widget/mainwindow.ui:474
 msgctxt "MainWindow|"
@@ -2138,7 +2151,7 @@ msgstr "Titre des média dans la barre d'outils"
 #: src/binaries/widget/mainwindow.ui:513 src/binaries/widget/mainwindow.ui:525
 msgctxt "MainWindow|"
 msgid "Mindmap"
-msgstr "MindMap"
+msgstr "Carte heuristique"
 
 #: src/binaries/widget/mainwindow.ui:528
 msgctxt "MainWindow|"
@@ -2193,7 +2206,7 @@ msgstr "Alias de dé"
 #: src/binaries/widget/mainwindow.ui:589
 msgctxt "MainWindow|"
 msgid "Character States"
-msgstr "États de caractères"
+msgstr "États des personnages"
 
 #: src/binaries/widget/mainwindow.ui:594
 msgctxt "MainWindow|"
@@ -2218,7 +2231,7 @@ msgstr "Enregistrer une campagne sous…"
 #: src/binaries/widget/mainwindow.ui:614
 msgctxt "MainWindow|"
 msgid "Non Playable Characters"
-msgstr "Caractères non jouables"
+msgstr "Personnages non jouables"
 
 #: src/binaries/widget/mainwindow.ui:619
 msgctxt "MainWindow|"
@@ -2404,7 +2417,7 @@ msgstr "Nom de fichier"
 #: src/libraries/charactersheet/src/charactersheet/imagemodel.cpp:15
 msgctxt "ImageModel|"
 msgid "Is Background"
-msgstr "Est en arrière-plan"
+msgstr "Est un arrière-plan"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
 msgctxt "QObject|"
@@ -2562,7 +2575,7 @@ msgstr "Inconnu"
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
 msgctxt "QObject|"
 msgid "Character"
-msgstr "Caractère"
+msgstr "Personnages"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:55
@@ -2580,7 +2593,7 @@ msgstr "Objet"
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
 msgctxt "QObject|"
 msgid "GameMaster"
-msgstr "GameMaster"
+msgstr "Maître du jeu"
 
 #: src/libraries/core/src/data/campaign.cpp:56
 msgctxt "Campaign|"
@@ -2652,7 +2665,7 @@ msgstr "Touche"
 #: src/libraries/core/src/model/characterstatemodel.cpp:30
 msgctxt "CharacterStateModel|"
 msgid "Label"
-msgstr "Étiquette"
+msgstr "Intitulé"
 
 #: src/libraries/core/src/model/characterstatemodel.cpp:30
 msgctxt "CharacterStateModel|"
@@ -2737,12 +2750,12 @@ msgstr "Type"
 #: src/libraries/core/src/model/mediamodel.cpp:236
 msgctxt "MediaModel|"
 msgid "Date Added"
-msgstr "Date ajoutée"
+msgstr "Date d’ajout"
 
 #: src/libraries/core/src/model/mediamodel.cpp:236
 msgctxt "MediaModel|"
 msgid "Date Modified"
-msgstr "Date modifiée"
+msgstr "Date de modification"
 
 #: src/libraries/core/src/model/messagemodel.cpp:98
 #: src/libraries/core/src/model/messagemodel.cpp:104
@@ -2773,7 +2786,7 @@ msgstr "Description"
 #: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
 msgctxt "NonPlayableCharacterModel|"
 msgid "GM Details"
-msgstr "Détails « GM »"
+msgstr "Détails « MJ »"
 
 #: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
 msgctxt "NonPlayableCharacterModel|"
@@ -2912,8 +2925,8 @@ msgid ""
 "type: %7\n"
 msgstr ""
 "%1:\n"
-"HP : %2 / %3\n"
-"State : %4\n"
+"PV : %2 / %3\n"
+"État : %4\n"
 "Score d'initiative : %5\n"
 "Distance par tour : %6\n"
 "Type : %7\n"
@@ -2921,12 +2934,12 @@ msgstr ""
 #: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
 msgid "NPC"
-msgstr "NPC"
+msgstr "PNJ"
 
 #: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
 msgid "PC"
-msgstr "PC"
+msgstr "PJ"
 
 #: src/libraries/core/src/model/playermodel.cpp:263
 msgctxt "PlayerModel|"
@@ -2998,7 +3011,7 @@ msgstr "Nouveau personnage"
 #: src/libraries/core/src/network/clientconnection.cpp:91
 msgctxt "ClientConnection|"
 msgid "Socket is null"
-msgstr "Le socket est vide."
+msgstr "Le socket est vide"
 
 #: src/libraries/core/src/network/clientconnection.cpp:96
 msgctxt "ClientConnection|"
@@ -3088,7 +3101,7 @@ msgstr ""
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
 msgid "Error to read server IP."
-msgstr "Erreur de lire l'adresse IP du serveur."
+msgstr "Erreur de lecture d'adresse IP du serveur."
 
 #: src/libraries/core/src/session/sessionitemmodel.cpp:34
 msgctxt "SessionItemModel|"
@@ -3156,12 +3169,12 @@ msgstr "Texte avec bordure"
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "NPC Token"
-msgstr "Jeton de NPC"
+msgstr "Jeton de PNJ"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
 msgctxt "QObject|"
 msgid "PC Token"
-msgstr "Jeton de PC"
+msgstr "Jeton de PJ"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 msgctxt "QObject|"
@@ -3262,7 +3275,7 @@ msgstr "Erreur : %1 n'existe pas ou n'est pas lisible."
 #, qt-format
 msgctxt "QObject|"
 msgid "Character Sheets files  (%1)"
-msgstr "Fichiers de fiches de personnages (%1)"
+msgstr "Fiches de personnages (%1)"
 
 #: src/libraries/core/src/worker/utilshelper.cpp:169
 #, qt-format
@@ -3286,7 +3299,7 @@ msgstr "Formats pris en charge pour les notes partagées (%1)"
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported WebPage (%1)"
-msgstr "Page Internet prise en charge (%1)"
+msgstr "Page web prise en charge (%1)"
 
 #: src/libraries/core/src/worker/utilshelper.cpp:181
 #, qt-format
@@ -3841,7 +3854,7 @@ msgstr "Notification sonore"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:53
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Sélectionner une police..."
+msgstr "Sélectionner une police…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:60
 msgctxt "SideMenu|"
@@ -3906,7 +3919,7 @@ msgstr "Joueur"
 #: src/libraries/qml_views/views/ConnectionForm.qml:185
 msgctxt "ConnectionForm|"
 msgid "I'm the Game Master"
-msgstr "Je suis le Maître des jeux"
+msgstr "Je suis le Maître du jeu"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:195
 msgctxt "ConnectionForm|"
@@ -3916,7 +3929,7 @@ msgstr "Racine de la campagne :"
 #: src/libraries/qml_views/views/ConnectionForm.qml:227
 msgctxt "ConnectionForm|"
 msgid "Characters"
-msgstr "Caractères"
+msgstr "Personnages"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
@@ -3968,12 +3981,12 @@ msgstr "Supprimer"
 #: src/libraries/rwidgets/customs/colorselector.cpp:257
 msgctxt "ColorSelector|"
 msgid "Hide (GM only)"
-msgstr "Masquer (uniquement GM)"
+msgstr "Masquer (uniquement MJ)"
 
 #: src/libraries/rwidgets/customs/colorselector.cpp:258
 msgctxt "ColorSelector|"
 msgid "Unveil (GM only)"
-msgstr "Dévoiler (Uniquement les GM)"
+msgstr "Dévoiler (Uniquement le MJ)"
 
 #: src/libraries/rwidgets/customs/colorselector.cpp:265
 msgctxt "ColorSelector|"
@@ -4189,7 +4202,7 @@ msgstr "Dossiers de recherche :"
 #: src/libraries/rwidgets/customs/playerwidget.ui:278
 msgctxt "PlayerWidgetUI|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:305
 msgctxt "PlayerWidgetUI|"
@@ -4267,7 +4280,7 @@ msgstr "Gauche"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:257
 msgctxt "RGraphicsView|"
 msgid "Set Angle…"
-msgstr "Définir un angle..."
+msgstr "Définir un angle…"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:259
 msgctxt "RGraphicsView|"
@@ -4324,7 +4337,7 @@ msgstr ""
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:516
 msgctxt "RGraphicsView|"
 msgid "Zoom to Normal"
-msgstr "Zoom vers la taille normale"
+msgstr "Zoom neutre"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:517
 msgctxt "RGraphicsView|"
@@ -4432,13 +4445,13 @@ msgstr "Objet"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:647
 msgctxt "RGraphicsView|"
 msgid "Character"
-msgstr "Caractère"
+msgstr "Personnages"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:632
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:650
 msgctxt "RGraphicsView|"
 msgid "GameMaster"
-msgstr "GameMaster"
+msgstr "Maître de jeu"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:660
 msgctxt "RGraphicsView|"
@@ -4453,18 +4466,18 @@ msgstr "Masqué"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:667
 msgctxt "RGraphicsView|"
 msgid "Fog Of War"
-msgstr "Fog Of War"
+msgstr "Brouillard de guerre"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:679
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:694
 msgctxt "RGraphicsView|"
 msgid "All Npcs"
-msgstr "Tous les NPC"
+msgstr "Tous les PNJ"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:680
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on All Npcs"
-msgstr "Lancer une initiative sur tous les NPC"
+msgstr "Lancer une initiative sur tous les PNJ"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:684
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:699
@@ -4491,7 +4504,7 @@ msgstr "Lancer une initiative sur tous les personnages"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:695
 msgctxt "RGraphicsView|"
 msgid "Clear Initiative on All Npcs"
-msgstr "Supprimer une initiative sur tous les NPC"
+msgstr "Supprimer une initiative sur tous les PNJ"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:700
 msgctxt "RGraphicsView|"
@@ -4501,7 +4514,7 @@ msgstr "Supprimer une initiative sur la sélection"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:705
 msgctxt "RGraphicsView|"
 msgid "Clear Initiative on All Characters"
-msgstr "Supprimer une initiative sur tous les caractères"
+msgstr "Supprimer une initiative sur tous les personnages"
 
 #: src/libraries/rwidgets/customs/vcolorselector.cpp:101
 msgctxt "VColorSelector|"
@@ -4560,7 +4573,7 @@ msgstr "Site officiel de Rolisteam"
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:60
 msgctxt "AboutRolisteam|"
 msgid "Web Sites:"
-msgstr "Sites Internet :"
+msgstr "Sites web :"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
@@ -4642,7 +4655,7 @@ msgstr "Supprimer"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:347
 msgctxt "CampaignProperties|"
 msgid "Top"
-msgstr "Haut"
+msgstr "Tout en Haut"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:208
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:211
@@ -4650,7 +4663,7 @@ msgstr "Haut"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:360
 msgctxt "CampaignProperties|"
 msgid "Up"
-msgstr "Vers le haut"
+msgstr "Monter"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:233
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:236
@@ -4658,7 +4671,7 @@ msgstr "Vers le haut"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:373
 msgctxt "CampaignProperties|"
 msgid "Down"
-msgstr "Vers le bas"
+msgstr "Descendre"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:258
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:261
@@ -4666,12 +4679,12 @@ msgstr "Vers le bas"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:386
 msgctxt "CampaignProperties|"
 msgid "Bottom"
-msgstr "Bas"
+msgstr "Tout en Bas"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:298
 msgctxt "CampaignProperties|"
 msgid "Character States"
-msgstr "États de caractères"
+msgstr "États de personnages"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:414
 msgctxt "CampaignProperties|"
@@ -4734,7 +4747,7 @@ msgstr "Boîte de dialogue"
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:34
 msgctxt "HistoryViewerDialog|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:71
 msgctxt "HistoryViewerDialog|"
@@ -4775,7 +4788,7 @@ msgstr "télécharger"
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:79
 msgctxt "ImageSelectorDialog|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:113
 msgctxt "ImageSelectorDialog|"
@@ -4835,7 +4848,7 @@ msgstr "Données à importer"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:61
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Mindmaps"
-msgstr "Mindmaps"
+msgstr "Cartes mentales"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:68
 msgctxt "ImportDataFromCampaignDialog|"
@@ -4885,12 +4898,12 @@ msgstr "Liste antagoniste"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:131
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Character sheets"
-msgstr "Feuilles de caractères"
+msgstr "Fiches de personnages"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:138
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Character States"
-msgstr "États de caractères"
+msgstr "États des personnages"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:145
 msgctxt "ImportDataFromCampaignDialog|"
@@ -4981,14 +4994,17 @@ msgstr "Couleur :"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:69
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
-msgstr "GM uniquement"
+msgstr "MJ uniquement"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:70
 msgctxt "PreferencesDialog|"
 msgid "PC Move"
-msgstr "Déplacement PC"
+msgstr "Déplacement PJ"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
+#, fuzzy
+#| msgctxt "PreferencesDialog|"
+#| msgid "PC All"
 msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "Totalité des PC"
@@ -5085,7 +5101,7 @@ msgstr "Carte"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:41
 msgctxt "PreferencesDialogBox|"
 msgid "Fog Of War:"
-msgstr "Fog Of War :"
+msgstr "Brouillard de guerre :"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:72
 msgctxt "PreferencesDialogBox|"
@@ -5139,10 +5155,10 @@ msgid ""
 "don't send or receive any message. </p><p>This feature is sending heartbeat "
 "message to prevent that behaviour.</p></body></html>"
 msgstr ""
-"<html><head/><body><p> Certains utilisateurs ont rencontré des déconnexions "
+"<html><head/><body><p>Certains utilisateurs ont rencontré des déconnexions "
 "pendant qu'ils n'envoient ni ne reçoivent de messages.</p><p> Cette "
-"fonctionnalité envoie un message de présence pour empêcher ce comportement. "
-"</p> </body> </html>"
+"fonctionnalité envoie un message de présence pour empêcher ce comportement.</"
+"p> </body> </html>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:225
 msgctxt "PreferencesDialogBox|"
@@ -5152,7 +5168,7 @@ msgstr "Conserver la connexion active"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:247
 msgctxt "PreferencesDialogBox|"
 msgid "Every "
-msgstr "Chaque "
+msgstr "Chaque "
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:264
 msgctxt "PreferencesDialogBox|"
@@ -5209,7 +5225,7 @@ msgstr "Fichier de traduction :"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:406
 msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
-msgstr "Tableau de caractères"
+msgstr "Fiche de personnage"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:412
 msgctxt "PreferencesDialogBox|"
@@ -5278,7 +5294,7 @@ msgstr "Emplacement"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
-msgstr "Paramètres "
+msgstr "Paramètres "
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:566
 msgctxt "PreferencesDialogBox|"
@@ -5288,7 +5304,7 @@ msgstr "Éditeur de texte"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:572
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
-msgstr "Étiquette de texte"
+msgstr "Étiquette textuelle"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 #, qt-format
@@ -5339,7 +5355,7 @@ msgstr "CSS :"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
-msgstr "Modifier..."
+msgstr "Modifier…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:723
 msgctxt "PreferencesDialogBox|"
@@ -5419,12 +5435,12 @@ msgstr "* : nécessite un redémarrage"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:895
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
-msgstr "Importer..."
+msgstr "Importer…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:902
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
-msgstr "Exporter..."
+msgstr "Exporter…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:915
 msgctxt "PreferencesDialogBox|"
@@ -5454,7 +5470,7 @@ msgstr "Nouveau personnage"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:40
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Remove character"
-msgstr "Supprimer un caractère"
+msgstr "Supprimer le personnage"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:45
 msgctxt "SelectConnectionProfileDialog|"
@@ -5531,7 +5547,7 @@ msgstr "Masqué"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
 msgid "Fog of War"
-msgstr "Fog of War"
+msgstr "Brouillard de guerre"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
@@ -5666,7 +5682,7 @@ msgstr "Afficher les colonnes"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:14
 msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
-msgstr "NpcMaker"
+msgstr "La Forge des PNJ"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:29
 msgctxt "AntagonistBoard|"
@@ -5685,7 +5701,7 @@ msgstr "Rechercher :"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1012
 msgctxt "AntagonistBoard|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:54
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1135
@@ -5926,12 +5942,12 @@ msgstr "Supprimer une propriété"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1114
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
-msgstr "Ajouter un caractère"
+msgstr "Ajouter un personnage"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
-msgstr "Supprimer un caractère"
+msgstr "Supprimer le personnage"
 
 #: src/libraries/rwidgets/docks/audioPlayer.cpp:79
 msgctxt "AudioPlayer|"
@@ -5942,7 +5958,7 @@ msgstr "Musique de fond"
 #, qt-format
 msgctxt "AudioPlayer|"
 msgid "Show/hide Player %1"
-msgstr "Afficher / Masquer le joueur %1"
+msgstr "Afficher / Masquer le joueur %1"
 
 #: src/libraries/rwidgets/docks/campaigndock.cpp:52
 msgctxt "campaign::CampaignDock|"
@@ -6152,12 +6168,12 @@ msgstr "Grille au dessus"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:90
 msgctxt "VmapTopBar|"
 msgid "Permission: GM only"
-msgstr "Permission : uniquement « GM »"
+msgstr "Permission : uniquement « MJ »"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:96
 msgctxt "VmapTopBar|"
 msgid "Permission: PC Move"
-msgstr "Permission : déplacement d'ordinateur personnel"
+msgstr "Permission : déplacement de son PJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:102
 msgctxt "VmapTopBar|"
@@ -6197,7 +6213,7 @@ msgstr "Calque courante : personnage"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:180
 msgctxt "VmapTopBar|"
 msgid "Current Layer: GameMaster"
-msgstr "Calque courant : GameMaster"
+msgstr "Calque courant : Maitre du jeu"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:206
 msgctxt "VmapTopBar|"
@@ -6217,32 +6233,32 @@ msgstr "Afficher un élément transparent"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:220
 msgctxt "VmapTopBar|PC = playable character"
 msgid "Show/Hide PC name"
-msgstr "Afficher / Masquer un nom d'ordinateur personnel"
+msgstr "Afficher / Masquer le nom des PJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:224
 msgctxt "VmapTopBar|NPC = non-playable character"
 msgid "Show/Hide NPC name"
-msgstr "Afficher / Masquer un nom d'ordinateur personnel en réseau"
+msgstr "Afficher / Masquer le nom des PNJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:227
 msgctxt "VmapTopBar|"
 msgid "Show/Hide NPC number"
-msgstr "Afficher / Masquer un numéro d'ordinateur personnel en réseau"
+msgstr "Afficher / Masquer le numéro des PNJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:230
 msgctxt "VmapTopBar|"
 msgid "Show/Hide State"
-msgstr "Afficher / Masquer un état"
+msgstr "Afficher / Masquer un état"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:233
 msgctxt "VmapTopBar|"
 msgid "Show/Hide Health Bar"
-msgstr "Afficher / Masquer la barre de bonne santé"
+msgstr "Afficher / Masquer la barre de bonne santé"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:236
 msgctxt "VmapTopBar|"
 msgid "Show/Hide Initiative"
-msgstr "Afficher / Masquer une initiative"
+msgstr "Afficher / Masquer une initiative"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:295
 msgctxt "VmapTopBar|"
@@ -6268,22 +6284,22 @@ msgstr "Standard"
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:65
 msgctxt "MRichTextEdit|"
 msgid "Heading 1"
-msgstr "En-tête 1"
+msgstr "Titre 1"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:65
 msgctxt "MRichTextEdit|"
 msgid "Heading 2"
-msgstr "En-tête 2"
+msgstr "Titre 2"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:65
 msgctxt "MRichTextEdit|"
 msgid "Heading 3"
-msgstr "En-tête 3"
+msgstr "Titre 3"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:65
 msgctxt "MRichTextEdit|"
 msgid "Heading 4"
-msgstr "En-tête 4"
+msgstr "Titre 4"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:66
 msgctxt "MRichTextEdit|"
@@ -6293,7 +6309,7 @@ msgstr "Monospace"
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:122
 msgctxt "MRichTextEdit|"
 msgid "Remove character formatting"
-msgstr "Supprimer le formatage des personnages"
+msgstr "Supprimer le formatage des lettres"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:127
 msgctxt "MRichTextEdit|"
@@ -6329,7 +6345,7 @@ msgstr "Sélectionner une image"
 msgctxt "MRichTextEdit|"
 msgid "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"
 msgstr ""
-"JPEG (*.jpg) ; ; GIF (*.gif) ; ; PNG (*.png) ; ; BMP (*.bmp) ; ; Tous (*)"
+"JPEG (*.jpg) ; ; GIF (*.gif) ; ; PNG (*.png) ; ; BMP (*.bmp) ; ; Tous (*)"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:56
 msgctxt "MRichTextEdit|"
@@ -6527,7 +6543,7 @@ msgstr "Zoom arrière (« CTRL » + « - »)"
 #: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:94
 msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
-msgstr "Vérifier la syntaxe « XML» "
+msgstr "Vérifier la syntaxe « XML »"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:37
 #, qt-format
@@ -6553,17 +6569,17 @@ msgstr "Enregi&strer"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:189
 msgctxt "TextEdit|"
 msgid "&Print..."
-msgstr "Im&primer..."
+msgstr "Im&primer…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:195
 msgctxt "TextEdit|"
 msgid "Print Preview..."
-msgstr "Aperçu avant impression..."
+msgstr "Aperçu avant impression…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:199
 msgctxt "TextEdit|"
 msgid "&Export PDF..."
-msgstr "&Exporter en PDF..."
+msgstr "&Exporter en PDF…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:209
 msgctxt "TextEdit|"
@@ -6649,7 +6665,7 @@ msgstr "&Justifier"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:304
 msgctxt "TextEdit|"
 msgid "&Color..."
-msgstr "&Couleur ..."
+msgstr "&Couleur …"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:377
 msgctxt "TextEdit|"
@@ -6723,7 +6739,7 @@ msgstr "Se connecter à un document"
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:52
 msgctxt "ConnectToDocument|"
 msgid "New..."
-msgstr "Nouveau..."
+msgstr "Nouveau…"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:62
 msgctxt "ConnectToDocument|"
@@ -6763,7 +6779,7 @@ msgstr "Documents LAN Cahoots :"
 #: src/libraries/rwidgets/editors/sharededitor/document.cpp:295
 msgctxt "Document|"
 msgid "Cahoots"
-msgstr "Mèches"
+msgstr "Cahoots"
 
 #: src/libraries/rwidgets/editors/sharededitor/document.cpp:295
 msgctxt "Document|"
@@ -7016,7 +7032,7 @@ msgstr ""
 "font-weight:600; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:20pt;\">Bienvenue dans Cahoots  </span></p>\n"
+"size:20pt;\">Bienvenue dans Cahoots  </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:10pt;\"></p>\n"
@@ -7151,7 +7167,7 @@ msgstr "Modifier"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:77
 msgctxt "SharedNote|"
 msgid "Syntax Highlighting..."
-msgstr "Coloration syntaxique..."
+msgstr "Coloration syntaxique…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:97
 msgctxt "SharedNote|"
@@ -7216,7 +7232,7 @@ msgstr "« CTRL » + « V »"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:225
 msgctxt "SharedNote|"
 msgid "Find..."
-msgstr "Chercher..."
+msgstr "Chercher…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:228
 msgctxt "SharedNote|"
@@ -7266,7 +7282,7 @@ msgstr "« CTRL » + « / »"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:270
 msgctxt "SharedNote|"
 msgid "Save A Copy As..."
-msgstr "Enregistrer une copie sous..."
+msgstr "Enregistrer une copie sous…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:278
 msgctxt "SharedNote|"
@@ -7286,17 +7302,17 @@ msgstr "« CTRL » + « Maj » + « A »"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:294
 msgctxt "SharedNote|"
 msgid "Show/Hide Participants"
-msgstr "Afficher / Masquer les participants"
+msgstr "Afficher / Masquer les participants"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:299
 msgctxt "SharedNote|"
 msgid "Show/Hide Chat"
-msgstr "Afficher / Masquer un salon"
+msgstr "Afficher / Masquer un salon"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:304
 msgctxt "SharedNote|"
 msgid "Connect to Document..."
-msgstr "Se connecter à un document..."
+msgstr "Se connecter à un document…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:307
 msgctxt "SharedNote|"
@@ -7421,37 +7437,37 @@ msgstr "Raccourci de dé"
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
 msgctxt "NameGeneratorWidget|"
 msgid "Chinese Name"
-msgstr "Nom en Chinois"
+msgstr "Noms chinois"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
 msgctxt "NameGeneratorWidget|"
 msgid "Elve Name"
-msgstr "Nom d'elfe"
+msgstr "Noms elfiques"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
 msgctxt "NameGeneratorWidget|"
 msgid "English Name"
-msgstr "Nom en Anglais"
+msgstr "Noms anglais"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
 msgctxt "NameGeneratorWidget|"
 msgid "French Name"
-msgstr "Nom français"
+msgstr "Noms français"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
 msgctxt "NameGeneratorWidget|"
 msgid "Japanese Name"
-msgstr "Nom en Japonais"
+msgstr "Noms japonais"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Star Wars Name"
-msgstr "Nom de Star Wars"
+msgstr "Noms Star Wars"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Russian Name"
-msgstr "Nom en Russe"
+msgstr "Noms russes"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:14
 msgctxt "NameGeneratorWidget|"
@@ -7535,7 +7551,7 @@ msgstr "convertir"
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
 msgctxt "Convertor|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
 msgctxt "Convertor|"
@@ -7715,7 +7731,7 @@ msgstr "Diminuer la taille du texte"
 #: src/libraries/rwidgets/graphicsItems/textitem.cpp:143
 msgctxt "TextItem|"
 msgid "Edit Text…"
-msgstr "Modifier du texte..."
+msgstr "Modifier du texte…"
 
 #: src/libraries/rwidgets/graphicsItems/textitem.cpp:144
 msgctxt "TextItem|"
@@ -7798,7 +7814,7 @@ msgstr "Ajouter une ligne"
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:90
 msgctxt "CharacterSheetWindow|"
 msgid "Add CharacterSheet"
-msgstr "Ajouter un feuille de caractères"
+msgstr "Ajouter une fiche de personnage"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:95
 msgctxt "CharacterSheetWindow|"
@@ -8076,7 +8092,7 @@ msgstr "PdfViewer"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:182
 msgctxt "PdfViewer|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:139
 msgctxt "PdfViewer|"
@@ -8197,7 +8213,7 @@ msgstr "Masquer le panneau latéral"
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
 msgid "Fog Of War"
-msgstr "Fog Of War"
+msgstr "Brouillard de guerre"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
@@ -8260,12 +8276,12 @@ msgstr "Formulaire"
 #: src/libraries/rwidgets/mediacontainers/webview.ui:90
 msgctxt "WebView|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:100
 msgctxt "WebView|"
 msgid "Keep Sharing"
-msgstr "Conserver le partage"
+msgstr "Partage en continu"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:110
 msgctxt "WebView|"
@@ -8305,7 +8321,7 @@ msgstr "Partager en HTML"
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:25
 msgctxt "campaign::CampaignView|"
 msgid "Add directory…"
-msgstr "Ajouter un dossier..."
+msgstr "Ajouter un dossier…"
 
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:26
 msgctxt "campaign::CampaignView|"
@@ -8375,17 +8391,17 @@ msgstr "Ouvrir comme…"
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:195
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
-msgstr "Afficher / masquer une colonne"
+msgstr "Afficher / masquer une colonne"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:51
 msgctxt "UserListView|"
 msgid "Set Avatar..."
-msgstr "Définir un avatar..."
+msgstr "Définir un avatar…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:52
 msgctxt "UserListView|"
 msgid "Remove..."
-msgstr "Supprimer..."
+msgstr "Supprimer…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:53
 msgctxt "UserListView|"
@@ -8395,7 +8411,7 @@ msgstr "Modifier un nom"
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:54
 msgctxt "UserListView|"
 msgid "Change color…"
-msgstr "Modifier une couleur..."
+msgstr "Modifier une couleur…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:64
 msgctxt "UserListView|"
@@ -8515,7 +8531,7 @@ msgstr "Main"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:146
 msgctxt "ToolBox|"
 msgid "Add NPC"
-msgstr "Ajouter « NPC »"
+msgstr "Ajouter « PNJ »"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
 msgctxt "ToolBox|"
@@ -8555,17 +8571,17 @@ msgstr "Texte avec bordure"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
-msgstr "Réinitialiser le compteur « NPC »"
+msgstr "Réinitialiser le compteur « PNJ »"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
 msgctxt "ToolBox|"
 msgid "NPC Name"
-msgstr "Nom de NPC"
+msgstr "Nom de PNJ"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:318
 msgctxt "ToolBox|"
 msgid "NPC's number"
-msgstr "Numéro de NPC"
+msgstr "Numéro de PNJ"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:324
 msgctxt "ToolBox|"
