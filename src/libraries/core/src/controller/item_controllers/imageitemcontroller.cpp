@@ -98,6 +98,7 @@ void ImageItemController::setImage(QPixmap pix)
 
 void ImageItemController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
+    Q_UNUSED(tt);
     if(move.isNull())
         return;
 
@@ -205,23 +206,23 @@ void ImageItemController::endGeometryChange()
 {
     VisualItemController::endGeometryChange();
 
-    if(m_editingRect)
+    if(!m_editingRect)
+        return;
+
+    auto offset= m_rect.topLeft();
+    if(!offset.isNull())
     {
-        auto offset= m_rect.topLeft();
-        if(!offset.isNull())
-        {
-            auto oldScenePos= m_mapToScene(m_rect.topLeft());
-            m_rect.translate(offset * -1);
-            auto newScenePos= m_mapToScene(m_rect.topLeft());
-            auto oldPos= m_pos;
-            m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
-                           oldPos.y() + (oldScenePos.y() - newScenePos.y()));
-            emit posChanged(m_pos);
-            emit posEditFinished();
-            emit rectChanged();
-        }
-        emit rectEditFinished();
-        m_editingRect= false;
+        auto oldScenePos= m_mapToScene(m_rect.topLeft());
+        m_rect.translate(offset * -1);
+        auto newScenePos= m_mapToScene(m_rect.topLeft());
+        auto oldPos= m_pos;
+        m_pos= QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
+                       oldPos.y() + (oldScenePos.y() - newScenePos.y()));
+        emit posChanged(m_pos);
+        emit posEditFinished();
+        emit rectChanged();
     }
+    emit rectEditFinished();
+    m_editingRect= false;
 }
 } // namespace vmap

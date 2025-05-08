@@ -128,7 +128,7 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
             /*painter.drawRect(QRectF{visible.x() * ratioX, visible.y() * ratioY, visible.width() * ratioX,
                                     visible.height() * ratioY});*/
             visible= visible.translated(origin);
-            qDebug() << "visible:" << visible << "viewport" << viewPort << "scene:" << sceneRect << origin;
+            // qDebug() << "visible:" << visible << "viewport" << viewPort << "scene:" << sceneRect << origin;
             painter.drawRect(QRectF{visible.x(), visible.y(), visible.width(), visible.height()});
 
             painter.restore();

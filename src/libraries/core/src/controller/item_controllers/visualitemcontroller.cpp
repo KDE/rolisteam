@@ -287,7 +287,6 @@ void VisualItemController::setLayer(Core::Layer layer)
 
 void VisualItemController::setPos(const QPointF& pos)
 {
-    qDebug() << "set pos visual item" << pos;
     if(m_pos == pos)
         return;
     m_pos= pos;

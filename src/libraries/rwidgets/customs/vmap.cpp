@@ -259,6 +259,7 @@ void VMap::addImageItem(vmap::ImageItemController* imgCtrl)
     auto img= new ImageItem(imgCtrl);
     addAndInit(img);
     img->setPos(imgCtrl->pos());
+    imgCtrl->endGeometryChange();
 }
 
 void VMap::addRectItem(vmap::RectController* rectCtrl, bool editing)

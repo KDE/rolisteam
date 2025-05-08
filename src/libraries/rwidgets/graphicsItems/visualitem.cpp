@@ -53,7 +53,6 @@ VisualItem::VisualItem(vmap::VisualItemController* ctrl) : QGraphicsObject(), m_
     connect(m_ctrl, &vmap::VisualItemController::posChanged, this,
             [this]()
             {
-                qDebug() << "VisualItem posChanged setPos";
                 setPos(m_ctrl->pos());
                 updateScenePos();
             });
@@ -115,18 +114,15 @@ void VisualItem::evaluateVisible()
 
 void VisualItem::updateScenePos()
 {
-    qDebug() << "updateScenePos" << scenePos() << m_ctrl->scenePos() << m_ctrl->networkUpdate();
     if(m_ctrl->scenePos() != scenePos() && m_ctrl->networkUpdate())
     {
         auto rect= m_ctrl->rect();
-        qDebug() << "updateScenePos 2";
         auto oldScenePos= m_ctrl->scenePos();
         setTransformOriginPoint(rect.center());
         auto newScenePos= scenePos();
         auto oldPos= pos();
         setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
                        oldPos.y() + (oldScenePos.y() - newScenePos.y())));
-        qDebug() << "updateScenePos 3" << scenePos() << m_ctrl->scenePos() << m_ctrl->networkUpdate();
     }
 }
 void VisualItem::init()
