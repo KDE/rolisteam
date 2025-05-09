@@ -262,7 +262,7 @@ void SelectConnProfileController::removeCharacter(int idx)
 
 void SelectConnProfileController::editCharacterName(int idx, const QString& data)
 {
-    m_profileModel->characterModel()->setName(idx, data);
+    m_profileModel->characterModel()->setName(idx, data.trimmed());
 }
 
 void SelectConnProfileController::editCharacterColor(int idx, const QColor& color)
