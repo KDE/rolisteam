@@ -32,8 +32,11 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "MindMap (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Open MindMap"
 msgctxt "Main|"
-msgid "Open MindMap"
+msgid "Open MindMap"
 msgstr "Odpri miselni vzorec"
 
 #: src/binaries/mindmap/MindMap.qml:69
@@ -433,8 +436,11 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF datoteke (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
+#, fuzzy
+#| msgctxt "PdfManager|"
+#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
-msgid "Export PDF background Dialog"
+msgid "Export PDF background Dialog"
 msgstr "Izvozi PDF Dialog ozadja"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
@@ -742,11 +748,16 @@ msgid "Support"
 msgstr "Podpora"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "The %1 donation page can be found online at :<br> <a href=\"https://"
+#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
+#| "a>"
 msgctxt "rcse::MainWindow|"
 msgid ""
-"The %1 donation page can be found online at :<br> <a href=\"https://"
-"liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
+"The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
+"com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
 "Stran za donacije %1 je na voljo na spletni strani:<br><a href=\"https://"
 "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
@@ -762,10 +773,12 @@ msgid "Help"
 msgstr "Pomoč"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
 msgctxt "rcse::MainWindow|"
-msgid ""
-"Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 "Dokumentacijo za Rcse lahko najdete na spletu na:<br><a href=\"%1\">%1</a>"
 
@@ -811,15 +824,23 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Opis lika Rolisteam (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
-msgid "Do you want to erase current QML code ?"
+msgid "Do you want to erase current QML code?"
 msgstr "Ali želite izbrisati trenutno kodo QML?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "Generate QML code will override any change you made in the QML.<br/>Do "
+#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
-"really want to generate QML code ?"
+"really want to generate QML code?"
 msgstr ""
 "Generiranje kode QML bo prepisalo vse spremembe, ki ste jih opravili v QML."
 "<br/>Ali res želite generirati kodo QML?"
@@ -1649,13 +1670,19 @@ msgid "Server Panel"
 msgstr "Plošča strežnika"
 
 #: src/binaries/widget/mainwindow.cpp:472
+#, fuzzy
+#| msgctxt "NotificationZone|"
+#| msgid "Notification Zone"
 msgctxt "MainWindow|"
-msgid "Notification Zone"
+msgid "Notification Zone"
 msgstr "Cona obvestil"
 
 #: src/binaries/widget/mainwindow.cpp:487
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "GM Tools"
 msgctxt "MainWindow|"
-msgid "GM Tools"
+msgid "GM Tools"
 msgstr "Orodja GM"
 
 #: src/binaries/widget/mainwindow.cpp:544
@@ -1686,9 +1713,12 @@ msgid "Open Campaign"
 msgstr "Odpri bojni pohod"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "MainWindow|"
+#| msgid ""
+#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
 msgctxt "MainWindow|"
-msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "Dokumentacijo za %1 lahko najdete na spletu na:<br><a href=\"%2\">%2</a>"
 
@@ -1705,13 +1735,19 @@ msgstr ""
 "Stran za donacije %1 je na voljo na spletni strani:<br><a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you want to save the campaign ?"
 msgctxt "MainWindow|"
-msgid "Do you want to save the campaign ?"
+msgid "Do you want to save the campaign?"
 msgstr "Ali želite shraniti akcijo?"
 
 #: src/binaries/widget/mainwindow.cpp:812
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Do you really want to quit Rolisteam ?"
 msgctxt "MainWindow|"
-msgid "Do you really want to quit Rolisteam ?"
+msgid "Do you really want to quit Rolisteam?"
 msgstr "Ali res želite zapustiti Rolisteam?"
 
 #: src/binaries/widget/mainwindow.cpp:818
@@ -2411,53 +2447,83 @@ msgid "Is Background"
 msgstr "Je ozadje"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too many arguments"
 msgctxt "QObject|"
-msgid "abs : too many arguments"
+msgid "abs: too many arguments"
 msgstr "abs: preveč argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too few arguments"
 msgctxt "QObject|"
-msgid "abs : too few arguments"
+msgid "abs: too few arguments"
 msgstr "abs: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
-msgid "ceil : too many arguments"
+msgid "ceil: too many arguments"
 msgstr "ceil: preveč argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
-msgid "ceil : too few arguments"
+msgid "ceil: too few arguments"
 msgstr "ceil: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too many arguments"
 msgctxt "QObject|"
-msgid "floor : too many arguments"
+msgid "floor: too many arguments"
 msgstr "floor: preveč argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too few arguments"
 msgctxt "QObject|"
-msgid "floor : too few arguments"
+msgid "floor: too few arguments"
 msgstr "floor: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
-msgid "concatenate : too few arguments"
+msgid "concatenate: too few arguments"
 msgstr "concatenate: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "min : too few arguments"
 msgctxt "QObject|"
-msgid "min : too few arguments"
+msgid "min: too few arguments"
 msgstr "min: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "max : too few arguments"
 msgctxt "QObject|"
-msgid "max : too few arguments"
+msgid "max: too few arguments"
 msgstr "max: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "avg : too few arguments"
 msgctxt "QObject|"
-msgid "avg : too few arguments"
+msgid "avg: too few arguments"
 msgstr "avg: premalo argumentov"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
@@ -3010,8 +3076,11 @@ msgid "Socket is not writable"
 msgstr "Vtičnica ni zapisljiva"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
+#, fuzzy
+#| msgctxt "ClientConnection|"
+#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
-msgid "Transmission error :"
+msgid "Transmission error:"
 msgstr "Napaka pri prenosu:"
 
 #: src/libraries/core/src/network/clientmanager.cpp:130
@@ -3078,9 +3147,11 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Ni mogoče najti ustrezne vrste storitve: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "UpnpNat|"
+#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
 msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Dodajanje preslikave vrat je spodletelo (%1/%2) : napaka :%3\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
@@ -3345,9 +3416,11 @@ msgid "Webview"
 msgstr "Spletni pogled"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "DiceModel|"
+#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
 msgctxt "DiceModel|"
-msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll : Razdalja %1 - Čas %2 - Vrtenje %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:30
@@ -4310,8 +4383,11 @@ msgid "Zoom"
 msgstr "Povečava"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
+#, fuzzy
+#| msgctxt "RGraphicsView|"
+#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
-msgid "Rotation Value ?"
+msgid "Rotation Value?"
 msgstr "Vrednost vrtenja?"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:385
@@ -4985,8 +5061,8 @@ msgstr "PC premik"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
-msgid "PC All"
-msgstr "PC vsi"
+msgid "PC All"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5010,9 +5086,11 @@ msgid "Css"
 msgstr "Css"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "PreferencesDialog|"
+#| msgid "<li>Image Format : %1 value %2</li>"
 msgctxt "PreferencesDialog|"
-msgid "<li>Image Format : %1 value %2</li>"
+msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Vrsta slike: %1 vrednost %2</li>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
@@ -5497,8 +5575,11 @@ msgid "Dialog"
 msgstr "Dialog"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
+#, fuzzy
+#| msgctxt "TipOfDayViewer|"
+#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
-msgid "Never show it again !"
+msgid "Never show it again!"
 msgstr "Nikoli ne kaži več !"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
@@ -8610,6 +8691,14 @@ msgstr "V spanju"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Začarani"
+
+#~ msgctxt "MainWindow|"
+#~ msgid "Notification Zone"
+#~ msgstr "Cona obvestil"
+
+#~ msgctxt "PreferencesDialog|"
+#~ msgid "PC All"
+#~ msgstr "PC vsi"
 
 #~ msgctxt "MainWindow|"
 #~ msgid "&GM ToolBoxes"

@@ -31,7 +31,7 @@ msgstr "心智圖 (*.rmindmap *.rmap)"
 #| msgctxt "main|"
 #| msgid "Open MindMap"
 msgctxt "Main|"
-msgid "Open MindMap"
+msgid "Open MindMap"
 msgstr "開啟心智圖"
 
 #: src/binaries/mindmap/MindMap.qml:69
@@ -398,8 +398,11 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF 檔案 (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
+#, fuzzy
+#| msgctxt "PdfManager|"
+#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
-msgid "Export PDF background Dialog"
+msgid "Export PDF background Dialog"
 msgstr "匯出 PDF 背景對話框"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
@@ -713,8 +716,8 @@ msgstr "支援"
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
-"The %1 donation page can be found online at :<br> <a href=\"https://"
-"liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
+"The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
+"com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:453
@@ -730,8 +733,7 @@ msgstr "說明"
 #: src/binaries/rcse/mainwindow.cpp:491
 #, qt-format
 msgctxt "rcse::MainWindow|"
-msgid ""
-"Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:503
@@ -777,14 +779,14 @@ msgstr "Rolisteam 角色表 (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
 msgctxt "rcse::MainWindow|"
-msgid "Do you want to erase current QML code ?"
+msgid "Do you want to erase current QML code?"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:731
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
-"really want to generate QML code ?"
+"really want to generate QML code?"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:796
@@ -1658,10 +1660,10 @@ msgstr "伺服器"
 
 #: src/binaries/widget/mainwindow.cpp:472
 #, fuzzy
-#| msgctxt "MainWindow|"
+#| msgctxt "NotificationZone|"
 #| msgid "Notification Zone"
 msgctxt "MainWindow|"
-msgid "Notification Zone"
+msgid "Notification Zone"
 msgstr "通知區域"
 
 #: src/binaries/widget/mainwindow.cpp:487
@@ -1669,7 +1671,7 @@ msgstr "通知區域"
 #| msgctxt "MainWindow|"
 #| msgid "Tools"
 msgctxt "MainWindow|"
-msgid "GM Tools"
+msgid "GM Tools"
 msgstr "工具"
 
 #: src/binaries/widget/mainwindow.cpp:544
@@ -1705,7 +1707,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.cpp:715
 #, qt-format
 msgctxt "MainWindow|"
-msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:750
@@ -1721,12 +1723,12 @@ msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
-msgid "Do you want to save the campaign ?"
+msgid "Do you want to save the campaign?"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
-msgid "Do you really want to quit Rolisteam ?"
+msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:818
@@ -2433,53 +2435,83 @@ msgid "Is Background"
 msgstr "是背景"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too many arguments"
 msgctxt "QObject|"
-msgid "abs : too many arguments"
+msgid "abs: too many arguments"
 msgstr "abs : 太多參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too few arguments"
 msgctxt "QObject|"
-msgid "abs : too few arguments"
+msgid "abs: too few arguments"
 msgstr "abs : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
-msgid "ceil : too many arguments"
+msgid "ceil: too many arguments"
 msgstr "ceil : 太多參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
-msgid "ceil : too few arguments"
+msgid "ceil: too few arguments"
 msgstr "ceil : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too many arguments"
 msgctxt "QObject|"
-msgid "floor : too many arguments"
+msgid "floor: too many arguments"
 msgstr "floor : 太多參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too few arguments"
 msgctxt "QObject|"
-msgid "floor : too few arguments"
+msgid "floor: too few arguments"
 msgstr "floor : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
-msgid "concatenate : too few arguments"
+msgid "concatenate: too few arguments"
 msgstr "concatenate : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "min : too few arguments"
 msgctxt "QObject|"
-msgid "min : too few arguments"
+msgid "min: too few arguments"
 msgstr "min : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "max : too few arguments"
 msgctxt "QObject|"
-msgid "max : too few arguments"
+msgid "max: too few arguments"
 msgstr "max : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "avg : too few arguments"
 msgctxt "QObject|"
-msgid "avg : too few arguments"
+msgid "avg: too few arguments"
 msgstr "avg : 太少參數"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
@@ -3026,8 +3058,11 @@ msgid "Socket is not writable"
 msgstr "socket 無法寫入"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
+#, fuzzy
+#| msgctxt "ClientConnection|"
+#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
-msgid "Transmission error :"
+msgid "Transmission error:"
 msgstr "傳輸錯誤："
 
 #: src/libraries/core/src/network/clientmanager.cpp:130
@@ -3094,7 +3129,7 @@ msgstr ""
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
 #, qt-format
 msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr ""
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
@@ -3361,7 +3396,7 @@ msgstr ""
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
 #, qt-format
 msgctxt "DiceModel|"
-msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:30
@@ -4384,7 +4419,7 @@ msgstr "縮放"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
 msgctxt "RGraphicsView|"
-msgid "Rotation Value ?"
+msgid "Rotation Value?"
 msgstr ""
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:385
@@ -5045,7 +5080,7 @@ msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
-msgid "PC All"
+msgid "PC All"
 msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
@@ -5070,9 +5105,11 @@ msgid "Css"
 msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "PreferencesDialog|"
+#| msgid "<li>Image Format : %1 value %2</li>"
 msgctxt "PreferencesDialog|"
-msgid "<li>Image Format : %1 value %2</li>"
+msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>影像格式：%1 數值 %2</li>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
@@ -5574,8 +5611,11 @@ msgid "Dialog"
 msgstr "對話框"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
+#, fuzzy
+#| msgctxt "TipOfDayViewer|"
+#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
-msgid "Never show it again !"
+msgid "Never show it again!"
 msgstr "不要再顯示它！"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
@@ -8633,6 +8673,13 @@ msgstr "睡眠中"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
+
+#, fuzzy
+#~| msgctxt "MainWindow|"
+#~| msgid "Notification Zone"
+#~ msgctxt "MainWindow|"
+#~ msgid "Notification Zone"
+#~ msgstr "通知區域"
 
 #~ msgctxt "AboutRolisteam|"
 #~ msgid "Portuguese"

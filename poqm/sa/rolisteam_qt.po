@@ -24,8 +24,11 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "मनः मानचित्र (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Open MindMap"
 msgctxt "Main|"
-msgid "Open MindMap"
+msgid "Open MindMap"
 msgstr "MindMap उद्घाटयन्तु"
 
 #: src/binaries/mindmap/MindMap.qml:69
@@ -421,8 +424,11 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF सञ्चिकाः (*.pdf) ."
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
+#, fuzzy
+#| msgctxt "PdfManager|"
+#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
-msgid "Export PDF background Dialog"
+msgid "Export PDF background Dialog"
 msgstr "PDF पृष्ठभूमि Dialog निर्यातयन्तु"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
@@ -733,11 +739,16 @@ msgid "Support"
 msgstr "समर्थनम्‌"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "The %1 donation page can be found online at :<br> <a href=\"https://"
+#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
+#| "a>"
 msgctxt "rcse::MainWindow|"
 msgid ""
-"The %1 donation page can be found online at :<br> <a href=\"https://"
-"liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
+"The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
+"com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
 "%1 दानस्य पृष्ठं अत्र अन्तर्जालद्वारा प्राप्यते :<br> <a href=\"https://liberapay.com/"
 "Rolisteam/donate\">https://liberapay.com/Rolisteam/दानं कुर्वन्तु</a>"
@@ -753,10 +764,12 @@ msgid "Help"
 msgstr "साहाय्यम्‌"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
 msgctxt "rcse::MainWindow|"
-msgid ""
-"Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 "Rcse इत्यस्य दस्तावेजीकरणं अत्र अन्तर्जालद्वारा प्राप्यते :<br> <a href=\"%1\">%1</a>"
 
@@ -802,15 +815,23 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "रोलिस्टीम वर्णपत्रक (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
-msgid "Do you want to erase current QML code ?"
+msgid "Do you want to erase current QML code?"
 msgstr "किं भवान् वर्तमानं QML कोडं मेटयितुम् इच्छति ?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "Generate QML code will override any change you made in the QML.<br/>Do "
+#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
-"really want to generate QML code ?"
+"really want to generate QML code?"
 msgstr ""
 "QML कोड जनयन्तु भवता QML मध्ये कृतं किमपि परिवर्तनं अधिलिखति ।<br/> किं भवान् वास्तवमेव "
 "QML कोडं जनयितुम् इच्छति ?"
@@ -1642,13 +1663,19 @@ msgid "Server Panel"
 msgstr "सर्वर पटल"
 
 #: src/binaries/widget/mainwindow.cpp:472
+#, fuzzy
+#| msgctxt "NotificationZone|"
+#| msgid "Notification Zone"
 msgctxt "MainWindow|"
-msgid "Notification Zone"
+msgid "Notification Zone"
 msgstr "अधिसूचना क्षेत्र"
 
 #: src/binaries/widget/mainwindow.cpp:487
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "GM Tools"
 msgctxt "MainWindow|"
-msgid "GM Tools"
+msgid "GM Tools"
 msgstr "जीएम टूल्स"
 
 #: src/binaries/widget/mainwindow.cpp:544
@@ -1679,9 +1706,12 @@ msgid "Open Campaign"
 msgstr "खुला अभियान"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "MainWindow|"
+#| msgid ""
+#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
 msgctxt "MainWindow|"
-msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "%1 इत्यस्य दस्तावेजीकरणं अत्र अन्तर्जालद्वारा प्राप्यते :<br> <a href=\"%2\">%2</a>"
 
@@ -1701,12 +1731,12 @@ msgstr "%1 दानस्य पृष्ठं अत्र अन्तर्
 #| msgctxt "rcse::MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
 msgctxt "MainWindow|"
-msgid "Do you want to save the campaign ?"
+msgid "Do you want to save the campaign?"
 msgstr "किं भवान् वर्तमानं QML कोडं मेटयितुम् इच्छति ?"
 
 #: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
-msgid "Do you really want to quit Rolisteam ?"
+msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:818
@@ -2406,53 +2436,83 @@ msgid "Is Background"
 msgstr "पृष्ठभूमिः अस्ति"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too many arguments"
 msgctxt "QObject|"
-msgid "abs : too many arguments"
+msgid "abs: too many arguments"
 msgstr "abs : अत्यधिकं तर्कः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too few arguments"
 msgctxt "QObject|"
-msgid "abs : too few arguments"
+msgid "abs: too few arguments"
 msgstr "abs : अति अल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
-msgid "ceil : too many arguments"
+msgid "ceil: too many arguments"
 msgstr "ceil : अत्यधिकाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
-msgid "ceil : too few arguments"
+msgid "ceil: too few arguments"
 msgstr "ceil : अत्यल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too many arguments"
 msgctxt "QObject|"
-msgid "floor : too many arguments"
+msgid "floor: too many arguments"
 msgstr "तल : अत्यधिकं तर्कः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too few arguments"
 msgctxt "QObject|"
-msgid "floor : too few arguments"
+msgid "floor: too few arguments"
 msgstr "floor : अति अल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
-msgid "concatenate : too few arguments"
+msgid "concatenate: too few arguments"
 msgstr "concatenate : अत्यल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "min : too few arguments"
 msgctxt "QObject|"
-msgid "min : too few arguments"
+msgid "min: too few arguments"
 msgstr "min : अति अल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "max : too few arguments"
 msgctxt "QObject|"
-msgid "max : too few arguments"
+msgid "max: too few arguments"
 msgstr "max : अत्यल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "avg : too few arguments"
 msgctxt "QObject|"
-msgid "avg : too few arguments"
+msgid "avg: too few arguments"
 msgstr "avg : अत्यल्पाः तर्काः"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
@@ -3005,8 +3065,11 @@ msgid "Socket is not writable"
 msgstr "सॉकेट् लेखनीयं नास्ति"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
+#, fuzzy
+#| msgctxt "ClientConnection|"
+#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
-msgid "Transmission error :"
+msgid "Transmission error:"
 msgstr "संचरणदोषः :"
 
 #: src/libraries/core/src/network/clientmanager.cpp:130
@@ -3071,9 +3134,11 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "सम्यक् सेवाप्रकारं अन्वेष्टुं असफलम्: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "UpnpNat|"
+#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
 msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "पोर्ट् मैपिंग (%1/%2) योजयितुं असफलम् : error :%3\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
@@ -3338,9 +3403,11 @@ msgid "Webview"
 msgstr "जालदृश्यम्"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "DiceModel|"
+#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
 msgctxt "DiceModel|"
-msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D रोल : दूरी %1 - समय %2 - परिभ्रमण %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:30
@@ -4322,8 +4389,11 @@ msgid "Zoom"
 msgstr "जूम"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
+#, fuzzy
+#| msgctxt "RGraphicsView|"
+#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
-msgid "Rotation Value ?"
+msgid "Rotation Value?"
 msgstr "परिभ्रमणमूल्यम् ?"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:385
@@ -5008,8 +5078,8 @@ msgstr "PC Move"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
-msgid "PC All"
-msgstr "PC All"
+msgid "PC All"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5033,9 +5103,11 @@ msgid "Css"
 msgstr "Css"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "PreferencesDialog|"
+#| msgid "<li>Image Format : %1 value %2</li>"
 msgctxt "PreferencesDialog|"
-msgid "<li>Image Format : %1 value %2</li>"
+msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>चित्रस्वरूपम् : %1 मूल्यं %2</li>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
@@ -5540,8 +5612,11 @@ msgid "Dialog"
 msgstr "संवादः"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
+#, fuzzy
+#| msgctxt "TipOfDayViewer|"
+#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
-msgid "Never show it again !"
+msgid "Never show it again!"
 msgstr "पुनः कदापि न दर्शयतु !"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
@@ -8671,6 +8746,14 @@ msgstr "शयन"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "मोहितः"
+
+#~ msgctxt "MainWindow|"
+#~ msgid "Notification Zone"
+#~ msgstr "अधिसूचना क्षेत्र"
+
+#~ msgctxt "PreferencesDialog|"
+#~ msgid "PC All"
+#~ msgstr "PC All"
 
 #~ msgctxt "MainWindow|"
 #~ msgid "&GM ToolBoxes"

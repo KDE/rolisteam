@@ -24,8 +24,11 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "Miellekartta (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Open MindMap"
 msgctxt "Main|"
-msgid "Open MindMap"
+msgid "Open MindMap"
 msgstr "Avaa miellekartta"
 
 #: src/binaries/mindmap/MindMap.qml:69
@@ -390,9 +393,12 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF-tiedostot (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
+#, fuzzy
+#| msgctxt "MRichTextEdit|"
+#| msgid "Text background color"
 msgctxt "PdfManager|"
-msgid "Export PDF background Dialog"
-msgstr ""
+msgid "Export PDF background Dialog"
+msgstr "Tekstin taustaväri"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
 msgctxt "PdfManager|"
@@ -713,8 +719,8 @@ msgstr "Tuki"
 #| "a>"
 msgctxt "rcse::MainWindow|"
 msgid ""
-"The %1 donation page can be found online at :<br> <a href=\"https://"
-"liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
+"The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
+"com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
 "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
@@ -737,8 +743,7 @@ msgstr "Ohje"
 #| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
 #| "a>"
 msgctxt "rcse::MainWindow|"
-msgid ""
-"Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
@@ -788,15 +793,23 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:730
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
-msgid "Do you want to erase current QML code ?"
+msgid "Do you want to erase current QML code?"
 msgstr "Haluatko tyhjentää nykyisen QML-koodin?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid ""
+#| "Generate QML code will override any change you made in the QML.<br/>Do "
+#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
-"really want to generate QML code ?"
+"really want to generate QML code?"
 msgstr ""
 "Luotu QML-koodi ohittaa QML:ään tekemäsi muutokset.<br/>Haluatko varmasti "
 "luoda QML-koodin?"
@@ -1643,8 +1656,11 @@ msgid "Server Panel"
 msgstr "Palvelinpaneeli"
 
 #: src/binaries/widget/mainwindow.cpp:472
+#, fuzzy
+#| msgctxt "NotificationZone|"
+#| msgid "Notification Zone"
 msgctxt "MainWindow|"
-msgid "Notification Zone"
+msgid "Notification Zone"
 msgstr "Ilmoitusalue"
 
 #: src/binaries/widget/mainwindow.cpp:487
@@ -1652,7 +1668,7 @@ msgstr "Ilmoitusalue"
 #| msgctxt "ToolBox|"
 #| msgid "Tools"
 msgctxt "MainWindow|"
-msgid "GM Tools"
+msgid "GM Tools"
 msgstr "Työkalut"
 
 #: src/binaries/widget/mainwindow.cpp:544
@@ -1690,7 +1706,7 @@ msgstr "Avaa kampanja"
 #| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
 #| "a>"
 msgctxt "MainWindow|"
-msgid "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
@@ -1711,12 +1727,12 @@ msgstr "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"%2\">%2</a>"
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
 msgctxt "MainWindow|"
-msgid "Do you want to save the campaign ?"
+msgid "Do you want to save the campaign?"
 msgstr "Haluatko tyhjentää nykyisen QML-koodin?"
 
 #: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
-msgid "Do you really want to quit Rolisteam ?"
+msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:818
@@ -2426,53 +2442,83 @@ msgid "Is Background"
 msgstr "on tausta"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too many arguments"
 msgctxt "QObject|"
-msgid "abs : too many arguments"
+msgid "abs: too many arguments"
 msgstr "abs: liikaa parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "abs : too few arguments"
 msgctxt "QObject|"
-msgid "abs : too few arguments"
+msgid "abs: too few arguments"
 msgstr "abs: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
-msgid "ceil : too many arguments"
+msgid "ceil: too many arguments"
 msgstr "ceil: liikaa parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
-msgid "ceil : too few arguments"
+msgid "ceil: too few arguments"
 msgstr "ceil: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too many arguments"
 msgctxt "QObject|"
-msgid "floor : too many arguments"
+msgid "floor: too many arguments"
 msgstr "floor: liikaa parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "floor : too few arguments"
 msgctxt "QObject|"
-msgid "floor : too few arguments"
+msgid "floor: too few arguments"
 msgstr "floor: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
-msgid "concatenate : too few arguments"
+msgid "concatenate: too few arguments"
 msgstr "concatenate: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "min : too few arguments"
 msgctxt "QObject|"
-msgid "min : too few arguments"
+msgid "min: too few arguments"
 msgstr "min: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "max : too few arguments"
 msgctxt "QObject|"
-msgid "max : too few arguments"
+msgid "max: too few arguments"
 msgstr "max: liikaa parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "avg : too few arguments"
 msgctxt "QObject|"
-msgid "avg : too few arguments"
+msgid "avg: too few arguments"
 msgstr "avg: liian vähän parametreja"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
@@ -3022,8 +3068,11 @@ msgid "Socket is not writable"
 msgstr "Pistokkeeseen ei voi kirjoittaa"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
+#, fuzzy
+#| msgctxt "ClientConnection|"
+#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
-msgid "Transmission error :"
+msgid "Transmission error:"
 msgstr "Välitysvirhe:"
 
 #: src/libraries/core/src/network/clientmanager.cpp:130
@@ -3089,9 +3138,11 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Oikean palvelutyypin haku epäonnistui: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "UpnpNat|"
+#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
 msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Portinohjauksen (%1/%2) lisääminen epäonnistui: virhe: %3\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
@@ -3358,7 +3409,7 @@ msgstr ""
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
 #, qt-format
 msgctxt "DiceModel|"
-msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:30
@@ -4342,8 +4393,11 @@ msgid "Zoom"
 msgstr "Lähennä"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
+#, fuzzy
+#| msgctxt "RGraphicsView|"
+#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
-msgid "Rotation Value ?"
+msgid "Rotation Value?"
 msgstr "Kierron arvo?"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:385
@@ -5017,7 +5071,7 @@ msgstr "PC-siirto"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
-msgid "PC All"
+msgid "PC All"
 msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
@@ -5042,9 +5096,11 @@ msgid "Css"
 msgstr "CSS"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "PreferencesDialog|"
+#| msgid "<li>Image Format : %1 value %2</li>"
 msgctxt "PreferencesDialog|"
-msgid "<li>Image Format : %1 value %2</li>"
+msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Kuvatiedostomuoto: %1 arvo %2</li>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
@@ -5541,8 +5597,11 @@ msgid "Dialog"
 msgstr "Kyselyikkuna"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
+#, fuzzy
+#| msgctxt "TipOfDayViewer|"
+#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
-msgid "Never show it again !"
+msgid "Never show it again!"
 msgstr "Älä näytä enää koskaan!"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
@@ -8646,6 +8705,10 @@ msgstr "Unessa"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Noiduttu"
+
+#~ msgctxt "MainWindow|"
+#~ msgid "Notification Zone"
+#~ msgstr "Ilmoitusalue"
 
 #~ msgctxt "MindMapControllerBase|"
 #~ msgid "Root"
