@@ -68,11 +68,6 @@ bool EllipseControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vma
 
     auto datapos= msg->pos();
 
-    if(VMapItemControllerUpdater::updateItemProperty(msg, ctrl))
-        return true;
-
-    msg->resetToPos(datapos);
-
     updatingCtrl= ctrl;
 
     auto property= msg->string16();
@@ -97,7 +92,8 @@ bool EllipseControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vma
     }
     else
     {
-        return false;
+        msg->resetToPos(datapos);
+        return VMapItemControllerUpdater::updateItemProperty(msg, ctrl);
     }
 
     m_updatingFromNetwork= true;

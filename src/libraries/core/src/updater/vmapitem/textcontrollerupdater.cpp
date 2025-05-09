@@ -56,11 +56,6 @@ bool TextControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
 
     auto datapos= msg->pos();
 
-    if(VMapItemControllerUpdater::updateItemProperty(msg, ctrl))
-        return true;
-
-    msg->resetToPos(datapos);
-
     updatingCtrl= ctrl;
 
     auto property= msg->string16();
@@ -90,6 +85,11 @@ bool TextControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
         auto x= msg->real();
         auto y= msg->real();
         var= QVariant::fromValue(QPointF(x, y));
+    }
+    else
+    {
+        msg->resetToPos(datapos);
+        return VMapItemControllerUpdater::updateItemProperty(msg, ctrl);
     }
     m_updatingFromNetwork= true;
     ctrl->setNetworkUpdate(true);

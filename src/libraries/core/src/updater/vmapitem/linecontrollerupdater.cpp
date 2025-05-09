@@ -62,11 +62,6 @@ bool LineControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
 
     auto datapos= msg->pos();
 
-    if(VMapItemControllerUpdater::updateItemProperty(msg, ctrl))
-        return true;
-
-    msg->resetToPos(datapos);
-
     updatingCtrl= ctrl;
 
     auto property= msg->string16();
@@ -91,7 +86,8 @@ bool LineControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
     }
     else
     {
-        return false;
+        msg->resetToPos(datapos);
+        return VMapItemControllerUpdater::updateItemProperty(msg, ctrl);
     }
 
     m_updatingFromNetwork= true;

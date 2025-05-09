@@ -94,11 +94,6 @@ bool PathControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
 
     auto datapos= msg->pos();
 
-    if(VMapItemControllerUpdater::updateItemProperty(msg, ctrl))
-        return true;
-
-    msg->resetToPos(datapos);
-
     updatingCtrl= ctrl;
 
     auto property= msg->string16();
@@ -129,6 +124,12 @@ bool PathControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::
         }
         var= QVariant::fromValue(points);
     }
+    else
+    {
+        msg->resetToPos(datapos);
+        return VMapItemControllerUpdater::updateItemProperty(msg, ctrl);
+    }
+
     m_updatingFromNetwork= true;
     ctrl->setNetworkUpdate(true);
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);

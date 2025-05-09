@@ -25,6 +25,7 @@
 #include <QSet>
 #include <QTimer>
 
+#include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/vmapitemfactory.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "data/campaignmanager.h"
@@ -306,6 +307,19 @@ NetWorkReceiver::SendType VMapUpdater::processMessage(NetworkMessageReader* msg)
     else if(is(msg, NetMsg::VMapCategory, NetMsg::HighLightPosition))
     {
         VectorialMapMessageHelper::readHighLight(map, msg);
+    }
+    else if(is(msg, NetMsg::VMapCategory, NetMsg::MovePoint))
+    {
+        auto itemType= static_cast<vmap::VisualItemController::ItemType>(msg->uint8());
+        QString itemId= msg->string8();
+        auto itemCtrl= dynamic_cast<vmap::PathController*>(map->itemController(itemId));
+        auto it= m_updaters.find(itemType);
+        if(it != m_updaters.end())
+        {
+            auto updater= dynamic_cast<PathControllerUpdater*>(it->second.get());
+            if(updater)
+                updater->movePoint(msg, itemCtrl);
+        }
     }
     else if(is(msg, NetMsg::VMapCategory, NetMsg::DeleteItem))
     {

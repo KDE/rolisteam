@@ -127,6 +127,8 @@ PathItem::PathItem(vmap::PathController* ctrl) : VisualItem(ctrl), m_pathCtrl(ct
                 update();
             });
     connect(m_pathCtrl, &vmap::PathController::pointAdded, this, &PathItem::addChild);
+    connect(m_pathCtrl, &vmap::PathController::closedChanged, this, [this]() { update(); });
+    connect(m_pathCtrl, &vmap::PathController::filledChanged, this, [this]() { update(); });
 
     int i= 0;
     if(!m_pathCtrl->penLine())
