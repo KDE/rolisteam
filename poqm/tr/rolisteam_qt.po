@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-24 22:37+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"PO-Revision-Date: 2025-05-09 23:55+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -25,9 +25,6 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "Akıl haritası (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
 msgstr "Akıl Haritası Aç"
@@ -429,9 +426,6 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF Dosyaları (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
 msgstr "PDF Dışa Aktar arka plan iletişim kutusu"
@@ -741,12 +735,7 @@ msgid "Support"
 msgstr "Destek"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -766,10 +755,7 @@ msgid "Help"
 msgstr "Yardım"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
@@ -818,19 +804,11 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam Karakter Sayfası (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Geçerli QML kodunu silmek istiyor musunuz?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1660,20 +1638,14 @@ msgid "Server Panel"
 msgstr "Sunucu Paneli"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
-msgstr "Bildirim Alanı"
+msgstr "Bildirim Bölgesi"
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "OG Araçları"
+msgstr "OG Araçları"
 
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
@@ -1703,10 +1675,7 @@ msgid "Open Campaign"
 msgstr "Sefer Aç"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
@@ -1727,17 +1696,11 @@ msgstr ""
 "a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign?"
 msgstr "Seferi kaydetmek istiyor musunuz?"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you really want to quit Rolisteam ?"
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Rolisteam’den çıkmayı gerçekten istiyor musunuz?"
@@ -2439,81 +2402,51 @@ msgid "Is Background"
 msgstr "Arka Plan"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too many arguments"
 msgctxt "QObject|"
 msgid "abs: too many arguments"
 msgstr "abs: Pek çok argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too few arguments"
 msgctxt "QObject|"
 msgid "abs: too few arguments"
 msgstr "abs: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
 msgid "ceil: too many arguments"
 msgstr "ceil: Pek çok argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
 msgid "ceil: too few arguments"
 msgstr "ceil: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too many arguments"
 msgctxt "QObject|"
 msgid "floor: too many arguments"
 msgstr "floor: Pek çok argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too few arguments"
 msgctxt "QObject|"
 msgid "floor: too few arguments"
 msgstr "floor: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
 msgid "concatenate: too few arguments"
 msgstr "concatenate: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "min : too few arguments"
 msgctxt "QObject|"
 msgid "min: too few arguments"
 msgstr "min: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "max : too few arguments"
 msgctxt "QObject|"
 msgid "max: too few arguments"
 msgstr "max: Pek az argüman"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "avg : too few arguments"
 msgctxt "QObject|"
 msgid "avg: too few arguments"
 msgstr "avg: Pek az argüman"
@@ -3068,9 +3001,6 @@ msgid "Socket is not writable"
 msgstr "Yuva yazılabilir değil"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "ClientConnection|"
-#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "İletim hatası:"
@@ -3139,9 +3069,7 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Düzgün hizmet türü alınamadı: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Kapı eşlemlemesi eklenemedi (%1/%2): Hata: %3\n"
@@ -3408,12 +3336,10 @@ msgid "Webview"
 msgstr "Web Görünümü"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, fuzzy, qt-format
-#| msgctxt "DiceModel|"
-#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+#, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
-msgstr "# 3B Zar At: Uzaklık %1 — Zaman %2 — Dönme %3"
+msgstr "# 3B zar at: Uzaklık %1 — Zaman %2 — Dönme %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:30
 msgctxt "Main|"
@@ -4371,12 +4297,9 @@ msgid "Zoom"
 msgstr "Yakınlaştır"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
-msgstr "Döndürme Değeri ?"
+msgstr "Döndürme Değeri?"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:385
 msgctxt "RGraphicsView|"
@@ -5048,7 +4971,7 @@ msgstr "OK Hareketi"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "PC All"
-msgstr ""
+msgstr "PC Tümü"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5072,9 +4995,7 @@ msgid "Css"
 msgstr "CSS"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, fuzzy, qt-format
-#| msgctxt "PreferencesDialog|"
-#| msgid "<li>Image Format : %1 value %2</li>"
+#, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Görsel biçimi: %1 değer %2</li>"
@@ -5561,9 +5482,6 @@ msgid "Dialog"
 msgstr "İletişim Kutusu"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
 msgstr "Bir daha gösterme!"

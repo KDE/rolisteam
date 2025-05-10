@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-24 15:14+0200\n"
+"PO-Revision-Date: 2025-05-09 13:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -25,12 +25,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "карта думок (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "Відкриття карти думок"
+msgstr "Відкрити карту думок"
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -430,12 +427,9 @@ msgid "PDF files (*.pdf)"
 msgstr "файли PDF (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
-msgstr "Вікно експортування тла до PDF"
+msgstr "Вікно експортування тла до PDF"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
 msgctxt "PdfManager|"
@@ -742,12 +736,7 @@ msgid "Support"
 msgstr "Підтримка"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -768,10 +757,7 @@ msgid "Help"
 msgstr "Довідка"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
@@ -820,19 +806,11 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "аркуш персонажів Rolisteam (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Хочете вилучити поточний код QML?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1666,20 +1644,14 @@ msgid "Server Panel"
 msgstr "Панель сервера"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Зона сповіщень"
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "Інструменти ВГ"
+msgstr "Інструменти ВГ"
 
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
@@ -1709,10 +1681,7 @@ msgid "Open Campaign"
 msgstr "Відкрити шампанське"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
@@ -1733,17 +1702,11 @@ msgstr ""
 "href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign?"
 msgstr "Хочете зберегти кампанію?"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you really want to quit Rolisteam ?"
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Ви справді хочете вийти з Rolisteam?"
@@ -2445,84 +2408,54 @@ msgid "Is Background"
 msgstr "Є тлом"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too many arguments"
 msgctxt "QObject|"
 msgid "abs: too many arguments"
-msgstr "abs : забагато аргументів"
+msgstr "abs: забагато аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too few arguments"
 msgctxt "QObject|"
 msgid "abs: too few arguments"
 msgstr "abs : замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
 msgid "ceil: too many arguments"
-msgstr "ceil : забагато аргументів"
+msgstr "ceil: забагато аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
 msgid "ceil: too few arguments"
-msgstr "ceil : замало аргументів"
+msgstr "ceil: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too many arguments"
 msgctxt "QObject|"
 msgid "floor: too many arguments"
-msgstr "floor : забагато аргументів"
+msgstr "floor: забагато аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too few arguments"
 msgctxt "QObject|"
 msgid "floor: too few arguments"
-msgstr "floor : замало аргументів"
+msgstr "floor: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
 msgid "concatenate: too few arguments"
-msgstr "concatenate : замало аргументів"
+msgstr "concatenate: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "min : too few arguments"
 msgctxt "QObject|"
 msgid "min: too few arguments"
-msgstr "min : замало аргументів"
+msgstr "min: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "max : too few arguments"
 msgctxt "QObject|"
 msgid "max: too few arguments"
-msgstr "max : замало аргументів"
+msgstr "max: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "avg : too few arguments"
 msgctxt "QObject|"
 msgid "avg: too few arguments"
-msgstr "avg : замало аргументів"
+msgstr "avg: замало аргументів"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
 msgctxt "QObject|"
@@ -3074,9 +3007,6 @@ msgid "Socket is not writable"
 msgstr "Сокет є непридатним до запису"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "ClientConnection|"
-#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Помилка передавання:"
@@ -3147,9 +3077,7 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Не вдалося знайти належний тип служби: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Не вдалося додати прив'язку порту (%1/%2): помилка: %3\n"
@@ -3416,9 +3344,7 @@ msgid "Webview"
 msgstr "Вебперегляд"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, fuzzy, qt-format
-#| msgctxt "DiceModel|"
-#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+#, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Пр. кидання: Відстань %1 - Час %2 - Обертання %3"
@@ -4383,9 +4309,6 @@ msgid "Zoom"
 msgstr "Масштабування"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
 msgstr "Значення обертання?"
@@ -5062,7 +4985,7 @@ msgstr "Рух ІП"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "PC All"
-msgstr ""
+msgstr "Усе ІП"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5086,12 +5009,10 @@ msgid "Css"
 msgstr "CSS"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, fuzzy, qt-format
-#| msgctxt "PreferencesDialog|"
-#| msgid "<li>Image Format : %1 value %2</li>"
+#, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
-msgstr "<li>Формат зображення : значення %1 %2</li>"
+msgstr "<li>Формат зображення: значення %1 %2</li>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
 msgctxt "PreferencesDialog|"
@@ -5576,9 +5497,6 @@ msgid "Dialog"
 msgstr "Діалогове вікно"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
 msgstr "Ніколи більше це не показувати!"
