@@ -5068,7 +5068,7 @@ msgstr "Déplacement PJ"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "PC All"
-msgstr ""
+msgstr "Totalité des PJ"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
