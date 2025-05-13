@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-03-25 12:35+0100\n"
+"PO-Revision-Date: 2025-05-12 16:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 21.12.1\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -25,12 +25,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "MindMap (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "Aperi MindMap"
+msgstr "Aperi MindMap"
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -391,12 +388,9 @@ msgid "PDF files (*.pdf)"
 msgstr "Files PDF(*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Text background color"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
-msgstr "Color de fundo de texto"
+msgstr "Exporta Dialogo de fundo de PDF"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
 msgctxt "PdfManager|"
@@ -703,12 +697,7 @@ msgid "Support"
 msgstr "Supporto"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -729,10 +718,7 @@ msgid "Help"
 msgstr "Adjuta"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
@@ -782,25 +768,17 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam CharacterSheet (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Tu vole rader le codice QML currente?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
 "really want to generate QML code?"
 msgstr ""
-"Codice QML  generate ultrapassara ulle modificatione que tu ha facite inle "
+"Codice QML  generate ultrapassara ulle modification que tu ha facite in le "
 "QML.<br/> Tu vermente vole generar le codice QML?"
 
 #: src/binaries/rcse/mainwindow.cpp:796
@@ -1624,17 +1602,11 @@ msgid "Server Panel"
 msgstr "Pannello de Servitor"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona de Notification"
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Instrumentos GM"
@@ -1667,14 +1639,11 @@ msgid "Open Campaign"
 msgstr "Aperi Campania"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
-"Documentation de %1 pote esser trovate in linea a :<br> <a href=\"%2\">%1</a>"
+"Documentation de %1 pote esser trovate in linea a :<br> <a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
@@ -1690,9 +1659,6 @@ msgstr ""
 "%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign?"
 msgstr "Tu vole salveguardr le campania ?"
@@ -2399,84 +2365,54 @@ msgid "Is Background"
 msgstr "Es Fundo"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too many arguments"
 msgctxt "QObject|"
 msgid "abs: too many arguments"
-msgstr "abs: troppe argumentos"
+msgstr "abs: nimie argumentos"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too few arguments"
 msgctxt "QObject|"
 msgid "abs: too few arguments"
-msgstr "abs: troppe argumentos mancante"
+msgstr "abs: nimie argumentos mancante"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
 msgid "ceil: too many arguments"
-msgstr "ceil: troppe argumentos"
+msgstr "ceil: nimie argumentos"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
 msgid "ceil: too few arguments"
-msgstr "ceil: troppe argumentos mancante"
+msgstr "ceil: nimie pauc argumentos"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too many arguments"
 msgctxt "QObject|"
 msgid "floor: too many arguments"
-msgstr "floor (plano): Troppo argumentos"
+msgstr "floor (plano): Nimie argumentos"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too few arguments"
 msgctxt "QObject|"
 msgid "floor: too few arguments"
-msgstr "floor (plano): Troppo argumentos mancante"
+msgstr "floor (plano): Nimie pauc argumentos"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
 msgid "concatenate: too few arguments"
-msgstr "concatenate: Troppo pauc argumentos."
+msgstr "concatenate: Nimie pauc argumentos."
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "min : too few arguments"
 msgctxt "QObject|"
 msgid "min: too few arguments"
-msgstr "min: Troppo pauc argumentos."
+msgstr "min: Nimie pauc argumentos."
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "max : too few arguments"
 msgctxt "QObject|"
 msgid "max: too few arguments"
 msgstr "max: Troppo pauc argumentos."
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "avg : too few arguments"
 msgctxt "QObject|"
 msgid "avg: too few arguments"
-msgstr "avg (medie): Troppo pauc argumentos."
+msgstr "avg (medie): Nimie pauc argumentos."
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
 msgctxt "QObject|"
@@ -3028,9 +2964,6 @@ msgid "Socket is not writable"
 msgstr "Socket non es scribibile"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "ClientConnection|"
-#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Error de transmission :"
@@ -3099,9 +3032,7 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Falle a trovar proprie typo de servicio: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Falle a adder mappar de porto (%1/%2): error:%3\n"
@@ -4326,9 +4257,6 @@ msgid "Zoom"
 msgstr "Zoom"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
 msgstr "Valor de Rotation?"
@@ -5027,9 +4955,7 @@ msgid "Css"
 msgstr "Css"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
-#, fuzzy, qt-format
-#| msgctxt "PreferencesDialog|"
-#| msgid "<li>Image Format : %1 value %2</li>"
+#, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Formato de Imagine : %1 valor %2</li>"
@@ -5704,7 +5630,7 @@ msgstr "Avantiate"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:60
 msgctxt "AntagonistBoard|"
 msgid "Without"
-msgstr ""
+msgstr "Sin"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:67
 #: src/libraries/rwidgets/docks/antagonistboard.ui:127

@@ -24,12 +24,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr ""
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "NewFileDialog|"
-#| msgid "MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "Myšlenková mapa"
+msgstr ""
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -1631,12 +1628,9 @@ msgid "Notification Zone"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "Nástroje"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
@@ -3697,12 +3691,9 @@ msgid "All"
 msgstr "Vše"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:47
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Load Image"
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Načíst obrázek"
+msgstr ""
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:57
 msgctxt "PersonEdit|"
@@ -3783,28 +3774,19 @@ msgid "Add chatroom"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Player"
 msgctxt "RecipiantsView|"
 msgid "Players:"
-msgstr "Hráč"
+msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:38
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "All"
 msgctxt "RecipiantsView|"
 msgid "All"
-msgstr "Vše"
+msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:75
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Add Unit"
 msgctxt "RecipiantsView|"
 msgid "Add User"
-msgstr "Přidat jednotku"
+msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:39
 msgctxt "SideMenu|"
@@ -7681,28 +7663,20 @@ msgid "%1 - Image"
 msgstr "%1 - Obrázek"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy, qt-format
-#| msgctxt "Image|"
-#| msgid "%1 - (Picture)"
+#, qt-format
 msgctxt "Image|"
 msgid "%1 - (Picture : %2)"
-msgstr "%1 - (Obrázek)"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Shared"
-msgstr "Sdílet"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Unshared"
-msgstr "Sdílet"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:214
 msgctxt "Image|"
@@ -7843,20 +7817,14 @@ msgstr "Pozastavit"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:334
 #: src/libraries/rwidgets/mediacontainers/image.cpp:348
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Share"
-msgstr "Sdílet"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:346
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Stop Sharing"
 msgctxt "Image|"
 msgid "Stop Sharing"
-msgstr "Zastavit sdílení"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/instantmessagingview.cpp:86
 msgctxt "InstantMessagingView|"
@@ -8481,71 +8449,3 @@ msgstr "Spící"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Posedlý"
-
-#~ msgctxt "MindMapControllerBase|"
-#~ msgid "Root"
-#~ msgstr "Root"
-
-#~ msgctxt "MainWindow|"
-#~ msgid "Connection lost"
-#~ msgstr "Spojení ztraceno"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Portuguese"
-#~ msgstr "Portugalština"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Hungarian"
-#~ msgstr "Maďarština"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Turkish"
-#~ msgstr "Turečtina"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Romanian"
-#~ msgstr "Rumunský"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Spanish"
-#~ msgstr "Španělština"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Dutch"
-#~ msgstr "Holandština"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Catalan"
-#~ msgstr "Katalánština"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Current developers"
-#~ msgstr "Současní vývojáři"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Contributors"
-#~ msgstr "Přispěvatelé"
-
-#~ msgctxt "AboutRolisteam|"
-#~ msgid "Translators"
-#~ msgstr "Překladatelé"
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "Show time"
-#~ msgstr "Zobrazit čas"
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "Maximum Length:"
-#~ msgstr "Maximální délka:"
-
-#~ msgctxt "PlayersPanel|"
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgctxt "PlayersPanel|"
-#~ msgid "Add"
-#~ msgstr "Přidat"
-
-#~ msgctxt "PlayersPanel|"
-#~ msgid "remove"
-#~ msgstr "odstranit"

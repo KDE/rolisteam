@@ -26,12 +26,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr ""
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open Map"
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "打开地图"
+msgstr ""
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -429,12 +426,9 @@ msgid "PDF files (*.pdf)"
 msgstr ""
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
-msgstr "导出 PDF 背景对话框"
+msgstr ""
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
 msgctxt "PdfManager|"
@@ -759,13 +753,10 @@ msgid "Help"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
-msgstr " %1 的文档可以在以下网址获取：<br><a href=\"%2\">%2</a>"
+msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:503
 msgctxt "rcse::MainWindow|"
@@ -1639,20 +1630,14 @@ msgid "Server Panel"
 msgstr "服务器面板"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
-msgstr "通知区域"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "GM 工具"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:544
 msgctxt "MainWindow|"
@@ -1682,13 +1667,10 @@ msgid "Open Campaign"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
-msgstr " %1 的文档可以在以下网址获取：<br><a href=\"%2\">%2</a>"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
@@ -3001,12 +2983,9 @@ msgid "Socket is not writable"
 msgstr ""
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Translation File:"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
-msgstr "翻译文件："
+msgstr ""
 
 #: src/libraries/core/src/network/clientmanager.cpp:130
 msgctxt "ClientManager|"
@@ -5458,12 +5437,9 @@ msgid "Dialog"
 msgstr "对话框"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
-msgstr "不再显示！"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
@@ -8479,7 +8455,3 @@ msgstr ""
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
-
-#~ msgctxt "PreferencesDialog|"
-#~ msgid "PC All"
-#~ msgstr "全部 PC"
