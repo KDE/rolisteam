@@ -32,7 +32,7 @@ msgstr "MindMap (*.rmindmap *.rmap)"
 #: src/binaries/mindmap/Main.qml:59
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "Obri el MindMap"
+msgstr "Obri MindMap"
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -131,7 +131,7 @@ msgstr "Dreta de la part superior"
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:34
 msgctxt "AlignmentDelegate|"
 msgid "TopMiddle"
-msgstr "Al mig de la part superior"
+msgstr "En el mig de la part superior"
 
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:34
 msgctxt "AlignmentDelegate|"
@@ -146,7 +146,7 @@ msgstr "Dreta de la part central"
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:34
 msgctxt "AlignmentDelegate|"
 msgid "CenterMiddle"
-msgstr "Al mig de la part central"
+msgstr "En el mig de la part central"
 
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:35
 msgctxt "AlignmentDelegate|"
@@ -161,7 +161,7 @@ msgstr "Dreta de la part inferior"
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:35
 msgctxt "AlignmentDelegate|"
 msgid "BottomMiddle"
-msgstr "Al mig de la part inferior"
+msgstr "En el mig de la part inferior"
 
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:35
 msgctxt "AlignmentDelegate|"
@@ -625,7 +625,7 @@ msgstr "Dreta de la part superior"
 #: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
 msgid "TopMiddle"
-msgstr "Al mig de la part superior"
+msgstr "En el mig de la part superior"
 
 #: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
@@ -640,7 +640,7 @@ msgstr "Dreta de la part central"
 #: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
 msgid "CenterMiddle"
-msgstr "Al mig de la part central"
+msgstr "En el mig de la part central"
 
 #: src/binaries/rcse/fieldmodel.cpp:75
 msgctxt "FieldModel|"
@@ -655,7 +655,7 @@ msgstr "Dreta de la part inferior"
 #: src/binaries/rcse/fieldmodel.cpp:75
 msgctxt "FieldModel|"
 msgid "BottomMiddle"
-msgstr "Al mig de la part inferior"
+msgstr "En el mig de la part inferior"
 
 #: src/binaries/rcse/fieldmodel.cpp:75
 msgctxt "FieldModel|"
@@ -5167,7 +5167,7 @@ msgstr "Títol abreujat en la vista de pestanyes"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:302
 msgctxt "PreferencesDialogBox|"
 msgid "Max Length:"
-msgstr "Duració màxima:"
+msgstr "Llargària màxima:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
 msgctxt "PreferencesDialogBox|"
@@ -5357,12 +5357,12 @@ msgstr "Posicionament:"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:784
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
-msgstr "Cantó esquerra superior"
+msgstr "Cantó superior esquerre"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:789
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
-msgstr "Cantó esquerra inferior"
+msgstr "Cantó inferior esquerre"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:794
 msgctxt "PreferencesDialogBox|"
@@ -5372,12 +5372,12 @@ msgstr "Centre"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:799
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
-msgstr "Cantó dret superior"
+msgstr "Cantó superior dret"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:804
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
-msgstr "Cantó dret inferior"
+msgstr "Cantó inferior dret"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:809
 msgctxt "PreferencesDialogBox|"
