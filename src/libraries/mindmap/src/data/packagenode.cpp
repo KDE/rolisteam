@@ -82,9 +82,9 @@ bool ChildrenModel::removeChild(const QString& id)
 
 // Package
 
-PackageNode::PackageNode(QObject* parent)
-    : PositionedItem{MindItem::PackageType, parent}, m_title{tr("Package")}, m_children(new ChildrenModel)
+PackageNode::PackageNode(QObject* parent) : PositionedItem{MindItem::PackageType, parent}, m_children(new ChildrenModel)
 {
+    m_text= tr("Package");
     connect(this, &PackageNode::itemDragged, this,
             [this](const QPointF& motion)
             {
@@ -108,19 +108,6 @@ PackageNode::PackageNode(QObject* parent)
                 std::for_each(std::begin(list), std::end(list),
                               [visible](PositionedItem* item) { item->setVisible(visible); });
             });
-}
-
-const QString& PackageNode::title() const
-{
-    return m_title;
-}
-
-void PackageNode::setTitle(const QString& newTitle)
-{
-    if(m_title == newTitle)
-        return;
-    m_title= newTitle;
-    emit titleChanged();
 }
 
 void PackageNode::addChild(PositionedItem* item, bool isNetwork)

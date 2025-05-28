@@ -11,8 +11,8 @@ Rectangle {
 
     property bool selected: false
     property bool dropOver: false
-
-    property alias editable: textEdit.enabled
+    property bool readWrite: false
+    property bool editable: false
 
     signal addItem(var itemid)
     signal removeItem(var itemId)
@@ -56,6 +56,9 @@ Rectangle {
             else if(mouse.button === Qt.RightButton)
                 contextMenu.popup()
         }
+        onDoubleClicked: {
+            _root.editable = true
+        }
     }
 
     DropArea {
@@ -86,11 +89,14 @@ Rectangle {
         anchors.left: parent.left
         anchors.right: parent.right
 
-        text: _root.packageItem.title
+        enabled: _root.readWrite && _root.editable
+
+        text: _root.packageItem.text
         color: _root.style.borderColor
         onEditingFinished: {
-            _root.packageItem.title = textEdit.text
-            textEdit.readOnly = true
+            console.log("Title package edit finished")
+            _root.packageItem.text = textEdit.text
+            _root.editable = true
         }
     }
 

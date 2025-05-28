@@ -75,7 +75,7 @@ AddItemCommand::AddItemCommand(mindmap::MindItemModel* nodeModel, MindItem::Type
 
 void AddItemCommand::undo()
 {
-    for(auto const& item : m_nodes)
+    for(auto const& item : std::as_const(m_nodes))
     {
         m_nodeModel->removeItem(item);
     }

@@ -238,6 +238,12 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
 
         auto [vec, offset]= getVector(m_links, m_packages, m_nodes, node->type());
 
+        // prevent adding twice the same
+        auto it= std::find_if(std::begin(vec), std::end(vec),
+                              [node](const MindItem* item) { return item->id() == node->id(); });
+        if(it != std::end(vec))
+            continue;
+
         int row= offset + vec.size();
 
         if(node->type() == MindItem::LinkType)

@@ -58,13 +58,10 @@ private:
 class MINDMAP_EXPORT PackageNode : public PositionedItem
 {
     Q_OBJECT
-    Q_PROPERTY(QString title READ title WRITE setTitle NOTIFY titleChanged)
     Q_PROPERTY(int minimumMargin READ minimumMargin WRITE setMinimumMargin NOTIFY minimumMarginChanged)
     Q_PROPERTY(ChildrenModel* model READ model CONSTANT FINAL)
 public:
     explicit PackageNode(QObject* parent= nullptr);
-    const QString& title() const;
-    void setTitle(const QString& newTitle);
     const QList<PositionedItem*>& children() const;
     QStringList childrenId() const;
 
@@ -78,7 +75,6 @@ public slots:
     void removeChild(const QString& id, bool network= false);
 
 signals:
-    void titleChanged();
     void minimumMarginChanged();
     void childAdded(const QString& id);
     void childRemoved(const QString& id);
@@ -88,8 +84,6 @@ private slots:
     void performLayout();
 
 private:
-    QString m_title;
-    // QList<PositionedItem*> m_internalChildren;
     qreal m_minimumMargin{25.};
     std::unique_ptr<ChildrenModel> m_children;
 };

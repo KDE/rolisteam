@@ -91,9 +91,7 @@ signals:
     void itemAdded(const QList<mindmap::MindItem*> nodes);
     void itemRemoved(QStringList ids);
     void latestInsertedPackage(mindmap::PackageNode* package);
-
     void defaultStyleIndexChanged();
-
     void baseUrlChanged();
 
 private:

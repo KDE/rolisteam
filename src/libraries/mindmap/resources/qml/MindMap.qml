@@ -100,12 +100,11 @@ Flickable {
             packageItem: objectItem
             visible: objectItem.visible
             selected: objectItem.selected
-            title: objectItem.title
-            editable: root.ctrl.readWrite
+            title: objectItem.text
+            readWrite: _flick.ctrl.readWrite
             onAddItem: (itemid)=>{
                            _flick.ctrl.addItemIntoPackage(itemid, objectItem.id)
-                       }
-
+            }
             onMenu: {
                 contextMenu.packageItem = packageItem
                 contextMenu.subnodes = packageItem.model
@@ -161,6 +160,7 @@ Flickable {
             //color: _flick.styleSheet.linkColor
             buttonColor: _flick.styleSheet.textColor
             onAddChild: {
+                console.log("@@@ Add child qml")
                 _flick.ctrl.addNode(objectItem.id)
                 updateZoom()
             }

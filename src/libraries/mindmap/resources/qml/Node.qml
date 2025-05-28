@@ -93,10 +93,8 @@ Pane
             drag.minimumX: 0
             drag.minimumY: 0
             preventStealing: true
-            onContainsMouseChanged: console.log("Contain mouse changed",dragMouse.containsMouse)
             onPressed:(mouse)=>{
                           root.clicked(mouse)
-                          console.log("Node Mouse: ",root.width, root.height," ",root.Drag.active)
                           if(mouse.modifiers & Qt.ControlModifier)
                           {
                               root.Drag.dragType = Drag.Automatic

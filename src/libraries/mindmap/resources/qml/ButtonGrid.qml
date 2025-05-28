@@ -58,8 +58,13 @@ GridLayout{
         checkable: true
         enabled: _root.ctrl.readWrite
         tooltip: qsTr("Add Package")
-        checked: _root.ctrl.tool === MindMapController.Package
-        onClicked: _root.ctrl.tool = MindMapController.Package
+        checked: _root.ctrl.isPackage
+        onClicked: {
+            if(_pack.checked)
+                _root.ctrl.tool = MindMapController.Package
+            else
+                _root.ctrl.tool = MindMapController.Handler
+        }
     }
 
     IconButton {//Add gray arrow
@@ -68,8 +73,13 @@ GridLayout{
         source: _root.styleSheet.addGrayArrow
         checkable: true
         enabled: _root.ctrl.readWrite
-        checked: _root.ctrl.tool === MindMapController.Arrow
-        onClicked: _root.ctrl.tool = MindMapController.Arrow
+        checked: _root.ctrl.isArrow
+        onClicked: {
+            if(addArrow.checked)
+                _root.ctrl.tool = MindMapController.Arrow
+            else
+                _root.ctrl.tool = MindMapController.Handler
+        }
     }
     IconButton {//remove selection
         tooltip: qsTr("Remove selected Items")
