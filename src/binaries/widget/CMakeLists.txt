@@ -35,7 +35,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
 endif()
 
-
+set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.rolisteam")
 set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/rolisteam.qrc  ${CMAKE_SOURCE_DIR}/resources/rolisteam/logo/logo.qrc)
 
 if("${CAMKE_CXX_COMPILER_ID}" STREQUAL "Clang")

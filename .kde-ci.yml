@@ -2,13 +2,14 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux','Windows']
+- 'on': ['Linux','Windows', 'macOS']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
 
 Options:
   run-tests: True
   cmake-options: '-DBUILD_TESTING=ON -DCODE_COVERAGE=ON'
+  require-passing-tests-on: ['Linux']
   per-test-timeout: 6000
   setup-x-environment: True
   run-gcovr: True
