@@ -32,6 +32,7 @@ class CORE_EXPORT AddFogOfWarChangeCommand : public QUndoCommand
 {
 public:
     AddFogOfWarChangeCommand(vmap::SightController* ctrl, const QPolygonF& gone, bool mask);
+    virtual ~AddFogOfWarChangeCommand();
 
     void redo() override;
     void undo() override;
@@ -40,6 +41,7 @@ private:
     QPointer<vmap::SightController> m_ctrl;
     QPolygonF m_poly;
     bool m_mask= false;
+    QMetaObject::Connection m_connection;
 };
 
 #endif // ADDFOGOFWARCHANGECOMMAND_H

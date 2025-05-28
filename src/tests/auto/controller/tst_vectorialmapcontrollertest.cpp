@@ -701,10 +701,10 @@ void VectorialMapControllerTest::normalSize_data()
     {
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(m_ctrl.get(), Core::SelectableTool::FILLRECT,
-                                                            Helper::buildRectController(true, QRectF(0, 0, 10, 10))));
+                                                            Helper::buildRectController(true, QRectF(0, 0, 25, 25))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(m_ctrl.get(), Core::SelectableTool::FILLRECT,
                                                             Helper::buildRectController(true, QRectF(0, 0, 100, 100))));
-        QTest::addRow("cmd10") << vec << VectorialMapController::Smaller << QPointF() << QRectF(0, 0, 10, 10) << 1;
+        QTest::addRow("cmd10") << vec << VectorialMapController::Smaller << QPointF() << QRectF(0, 0, 25, 25) << 1;
     }
     {
         QList<vmap::VisualItemController*> vec;
@@ -738,21 +738,21 @@ void VectorialMapControllerTest::normalSize_data()
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::FILLRECT,
-            Helper::buildRectController(true, QRectF(0, 0, 10, 10), QPointF(0, 0))));
+            Helper::buildRectController(true, QRectF(0, 0, 25, 25), QPointF(0, 0))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::FILLRECT,
             Helper::buildRectController(true, QRectF(0, 0, 100, 100), QPointF(20, 20))));
-        QTest::addRow("cmd14") << vec << VectorialMapController::Smaller << QPointF() << QRectF(0, 0, 10, 10) << 1;
+        QTest::addRow("cmd14") << vec << VectorialMapController::Smaller << QPointF() << QRectF(0, 0, 25, 25) << 1;
     }
     {
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::FILLRECT,
-            Helper::buildRectController(true, QRectF(0, 0, 15, 15), QPointF(0, 0))));
+            Helper::buildRectController(true, QRectF(0, 0, 25, 25), QPointF(0, 0))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::FILLRECT,
             Helper::buildRectController(true, QRectF(0, 0, 100, 100), QPointF(20, 20))));
-        QTest::addRow("cmd15") << vec << VectorialMapController::UnderMouse << QPointF(10, 10) << QRectF(0, 0, 15, 15)
+        QTest::addRow("cmd15") << vec << VectorialMapController::UnderMouse << QPointF(10, 10) << QRectF(0, 0, 25, 25)
                                << 1;
     }
     {
@@ -1278,7 +1278,7 @@ void VectorialMapControllerTest::networkMessage()
     m_ctrl->setIdle(true);
 
     MessageHelper::sendOffVMap(m_ctrl.get());
-    auto byteArray= m_sender->messageData();
+    auto byteArray= m_sender->messageData().first();
 
     NetworkMessageReader msg;
     msg.setData(byteArray);

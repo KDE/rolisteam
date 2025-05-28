@@ -385,11 +385,7 @@ void PreferencesDialog::updateTheme()
     QString defaultStyle= theme->getStyleName();
 
     // ui->m_styleCombo->blockSignals(true);
-    qDebug() << "setIndex Style:" << ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains) << defaultStyle;
-    qDebug() << "before:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count()
-             << ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains);
     ui->m_styleCombo->setCurrentIndex(ui->m_styleCombo->findText(defaultStyle, Qt::MatchContains));
-    qDebug() << "after:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
     // ui->m_styleCombo->blockSignals(false);
 
     ui->m_diceHighlightColorBtn->setColor(theme->getDiceHighlightColor());

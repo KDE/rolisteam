@@ -188,7 +188,7 @@ protected:
     bool m_hasNetwork;
 
 private:
-    MindMapTool m_tool;
+    MindMapTool m_tool{Handler};
     bool m_isPackage;
     bool m_isArrow;
     bool m_hideEmptyLabel{false};

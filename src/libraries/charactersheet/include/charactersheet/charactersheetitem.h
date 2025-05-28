@@ -105,10 +105,10 @@ public:
     virtual void changeKeyChild(const QString& oldkey, const QString& newKey, TreeSheetItem* child);
 
     virtual void setOrig(TreeSheetItem* m_origine)= 0;
-    virtual void save(QJsonObject& json, bool exp= false) {}
-    virtual void load(const QJsonObject& json) {}
-    virtual void saveDataItem(QJsonObject& json) {}
-    virtual void loadDataItem(const QJsonObject& json) {}
+    virtual void save(QJsonObject&, bool exp= false) { Q_UNUSED(exp) }
+    virtual void load(const QJsonObject&) {}
+    virtual void saveDataItem(QJsonObject&) {}
+    virtual void loadDataItem(const QJsonObject&) {}
 
     bool readOnly() const;
     void setReadOnly(bool newReadOnly);

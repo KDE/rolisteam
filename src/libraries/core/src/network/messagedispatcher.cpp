@@ -275,6 +275,9 @@ QString MessageDispatcher::act2String(NetworkMessageHeader* head)
         case NetMsg::closeCharacterSheet:
             str= QStringLiteral("closeCharacterSheet");
             break;
+        case NetMsg::updateTableRowCount:
+            str= QStringLiteral("updateTableRowCount");
+            break;
         default:
             str= QStringLiteral("Unknown Action");
             break;

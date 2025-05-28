@@ -52,14 +52,16 @@ public:
     void addMediaController(MediaControllerBase* base) override;
 
     bool updateSubobjectProperty(NetworkMessageReader* msg, MindMapController* ctrl);
-    /* sendOffAddingMessage(const QString& idCtrl, const QList<mindmap::MindNode*>& nodes,
-                              const QList<mindmap::LinkController*>& links);*/
+
     void sendOffRemoveMessage(const QString& idCtrl, const QStringList& nodeids, const QStringList& linksId);
 
     NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
 
     template <typename T>
-    void sendOffChange(const QString& mapId, const QString& property, QObject* node, bool b);
+    void sendOffChange(const QString& mapId, const QString& property, QObject* node, NetMsg::Action b);
+
+private slots:
+    void itemAdded(const QList<mindmap::MindItem*>& items);
 
 private:
     void setConnection(MindMapController* ctrl);
@@ -69,18 +71,19 @@ private:
 
 private:
     QPointer<FilteredContentModel> m_mindmaps;
+    QList<QPointer<MindMapController>> m_knowCtrl;
     QVector<ConnectionInfo> m_connections;
 };
 
 template <typename T>
-void MindMapUpdater::sendOffChange(const QString& mapId, const QString& property, QObject* node, bool b)
+void MindMapUpdater::sendOffChange(const QString& mapId, const QString& property, QObject* node, NetMsg::Action b)
 {
     qDebug() << "networkmessageWriter Id " << mapId << property << node << b;
     if(!node)
         return;
 
     qDebug() << "networkmessageWriter Id " << mapId;
-    NetworkMessageWriter msg(NetMsg::MindMapCategory, b ? NetMsg::UpdateNode : NetMsg::UpdateLink);
+    NetworkMessageWriter msg(NetMsg::MindMapCategory, b);
     msg.string8(mapId);
     auto id= node->property("id").toString();
     qDebug() << "id link" << id;

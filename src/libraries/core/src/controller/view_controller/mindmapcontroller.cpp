@@ -31,10 +31,9 @@
 
 #include "mindmap/controller/spacingcontroller.h"
 #include "mindmap/model/minditemmodel.h"
-#include "updater/media/mindmapupdater.h"
+// #include "updater/media/mindmapupdater.h"
 
 QPointer<RemotePlayerModel> MindMapController::m_remotePlayerModel;
-QPointer<MindMapUpdater> MindMapController::m_updater;
 
 MindMapController::MindMapController(const QString& id, QObject* parent) : MindMapControllerBase(true, id, parent)
 {
@@ -106,7 +105,7 @@ RemotePlayerModel* MindMapController::remotePlayerModel() const
 
 PlayerModel* MindMapController::playerModel() const
 {
-    return m_remotePlayerModel->sourceModel();
+    return m_remotePlayerModel ? m_remotePlayerModel->sourceModel() : nullptr;
 }
 
 bool MindMapController::readWrite() const
@@ -169,10 +168,10 @@ void MindMapController::setRemotePlayerModel(RemotePlayerModel* model)
     m_remotePlayerModel= model;
 }
 
-void MindMapController::setMindMapUpdater(MindMapUpdater* updater)
+/*void MindMapController::setMindMapUpdater(MindMapUpdater* updater)
 {
     m_updater= updater;
-}
+}*/
 
 void MindMapController::generateTree()
 {

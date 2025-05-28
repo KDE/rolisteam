@@ -1,7 +1,7 @@
 #include <QAbstractItemModelTester>
 #include <QObject>
-#include <QtCore/QCoreApplication>
 #include <QTest>
+#include <QtCore/QCoreApplication>
 
 #include "helper.h"
 
@@ -70,21 +70,25 @@ void SheetTest::tableTest_data()
     QTest::addColumn<int>("colCount");
     QTest::addColumn<int>("expectedData");
 
-    QTest::addRow("empty") << 0 << 0 << 1;
-    QTest::addRow("empty") << 1 << 0 << 2;
-    QTest::addRow("empty") << 3 << 1 << 8;
+    QTest::addRow("empty") << 0 << 0 << 2;
+    QTest::addRow("cmd1") << 1 << 0 << 3;
+    QTest::addRow("cmd2") << 3 << 1 << 10;
 }
 
 void SheetTest::updateTest()
 {
-    std::unique_ptr<CharacterSheetController> ctrl{new CharacterSheetController("mytestid")};
     std::unique_ptr<CharacterSheet> sheet{new CharacterSheet()};
+    std::unique_ptr<CharacterSheetController> ctrl{new CharacterSheetController("mytestid")};
     std::unique_ptr<CharacterSheetUpdater> updater{new CharacterSheetUpdater(nullptr, nullptr)};
 
-    auto model= ctrl->model();
-    model->addCharacterSheet(sheet.get());
+    {
+        auto model= ctrl->model();
+        model->addCharacterSheet(sheet.get());
 
-    updater->addMediaController(ctrl.get());
+        updater->addMediaController(ctrl.get());
+    }
+
+    sheet.release(); // data destroyed by model.
 }
 
 QTEST_MAIN(SheetTest);

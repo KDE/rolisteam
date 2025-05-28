@@ -32,7 +32,7 @@
 #include "model/remoteplayermodel.h"
 
 class QQuickImageProvider;
-class MindMapUpdater;
+// class MindMapUpdater;
 
 namespace mindmap
 {
@@ -63,7 +63,7 @@ public:
     Core::SharingPermission sharingToAll() const;
 
     static void setRemotePlayerModel(RemotePlayerModel* model);
-    static void setMindMapUpdater(MindMapUpdater* updater);
+    // static void setMindMapUpdater(MindMapUpdater* updater);
 
 signals:
     void sharingToAllChanged(Core::SharingPermission newPerm, Core::SharingPermission formerPerm);
@@ -79,7 +79,7 @@ public slots:
 
 private:
     static QPointer<RemotePlayerModel> m_remotePlayerModel;
-    static QPointer<MindMapUpdater> m_updater;
+    // static QPointer<MindMapUpdater> m_updater;
     Core::SharingPermission m_sharingToAll= Core::SharingPermission::None;
     QHash<QString, Core::SharingPermission> m_permissions;
 };

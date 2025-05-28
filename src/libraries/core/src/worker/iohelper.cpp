@@ -549,7 +549,7 @@ QByteArray saveMindmap(mindmap::MindMapControllerBase* ctrl)
             continue;
         QJsonObject obj;
         updatePositionItem(obj, pack);
-        obj[Core::jsonctrl::Mindmap::JSON_PACK_TITLE]= pack->title();
+        obj[Core::jsonctrl::Mindmap::JSON_PACK_TITLE]= pack->text();
         obj[Core::jsonctrl::Mindmap::JSON_PACK_MINMARGE]= pack->minimumMargin();
         obj[Core::jsonctrl::Mindmap::JSON_PACK_INTERNAL_CHILDREN]= QJsonArray::fromStringList(pack->childrenId());
         packagesArray.append(obj);
@@ -908,13 +908,13 @@ void IOHelper::readMindmapControllerBase(mindmap::MindMapControllerBase* ctrl, c
     }
 
     auto packages= objCtrl[Core::jsonctrl::Mindmap::JSON_PACK_PACKAGES].toArray();
-    for(auto const& packRef : packages)
+    for(auto const& packRef : std::as_const(packages))
     {
         auto pack= packRef.toObject();
         auto node= new mindmap::PackageNode();
         updatePositionItem(pack, node);
 
-        node->setTitle(pack[Core::jsonctrl::Mindmap::JSON_PACK_TITLE].toString());
+        node->setText(pack[Core::jsonctrl::Mindmap::JSON_PACK_TITLE].toString());
         node->setMinimumMargin(pack[Core::jsonctrl::Mindmap::JSON_PACK_MINMARGE].toInt());
 
         auto childArray= pack[Core::jsonctrl::Mindmap::JSON_PACK_INTERNAL_CHILDREN].toArray();
@@ -925,7 +925,7 @@ void IOHelper::readMindmapControllerBase(mindmap::MindMapControllerBase* ctrl, c
     }
 
     auto linkArrays= objCtrl[Core::jsonctrl::Mindmap::JSON_LINKS].toArray();
-    for(auto const& linkRef : linkArrays)
+    for(auto const& linkRef : std::as_const(linkArrays))
     {
         auto obj= linkRef.toObject();
         auto link= new mindmap::LinkController();
@@ -1194,7 +1194,7 @@ RolisteamTheme* IOHelper::jsonToTheme(const QJsonObject& json)
     theme->setCss(json["css"].toString());
     theme->setBackgroundPosition(json["position"].toInt());
     QString bgColorName= json["bgColor"].toString();
-    QColor color = QColor::fromString(bgColorName);
+    QColor color= QColor::fromString(bgColorName);
     theme->setBackgroundColor(color);
 
     theme->setBackgroundImage(json["bgPath"].toString(":/resources/rolistheme/workspacebackground.jpg"));

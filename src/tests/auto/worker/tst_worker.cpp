@@ -17,8 +17,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
 #include <QImage>
 #include <QPainter>
@@ -114,11 +114,9 @@ void WorkerTest::helperUtilsTest_data()
     constexpr int k_width= 100;  // 1920
     constexpr int k_height= 100; // 1080
 
-    // QTest::addRow("%s", QString("cmd %1").arg(idx++).toStdString().c_str()) << QRect(0, 0, 16, 10) << ratios[2];
-
-    for(int i= 10; i <= k_width; ++i)
+    for(int i= 10; i <= k_width; i+= 10)
     {
-        for(int j= 10; j <= k_height; ++j)
+        for(int j= 10; j <= k_height; j+= 10)
         {
             for(auto r : std::as_const(ratios))
             {

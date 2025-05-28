@@ -54,7 +54,7 @@ void LineItem::setNewEnd(const QPointF& nend)
 }
 QRectF LineItem::boundingRect() const
 {
-    return m_lineCtrl->rect();
+    return m_lineCtrl ? m_lineCtrl->rect() : QRectF{};
 }
 QPainterPath LineItem::shape() const
 {

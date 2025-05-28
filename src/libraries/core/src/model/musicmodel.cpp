@@ -197,7 +197,7 @@ bool MusicModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int 
         return false;
 
     QList<QUrl> list= data->urls();
-    for(auto const& url : list)
+    for(auto const& url : std::as_const(list))
     {
         QString str= url.toLocalFile();
         if(str.endsWith(".m3u"))
@@ -208,7 +208,7 @@ bool MusicModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int 
         {
             QStringList filters
                 = m_ctrl->value("AudioFileFilter", "*.wav *.mp2 *.mp3 *.mpc *.ogg *.flac").toString().split(' ');
-            for(auto filter : filters)
+            for(auto filter : std::as_const(filters))
             {
                 filter.replace("*", "");
                 if(str.endsWith(filter))

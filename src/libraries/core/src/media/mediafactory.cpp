@@ -294,7 +294,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
             auto pack= new mindmap::PackageNode();
             auto packV= var.toHash();
             pack->setId(packV["uuid"].toString());
-            pack->setTitle(packV["title"].toString());
+            pack->setText(packV["title"].toString());
             pack->setPosition({packV["x"].toDouble(), packV["y"].toDouble()});
             pack->setWidth(packV["width"].toDouble());
             pack->setHeight(packV["height"].toDouble());

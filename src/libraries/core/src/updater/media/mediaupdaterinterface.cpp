@@ -48,7 +48,7 @@ bool MediaUpdaterInterface::is(NetworkMessageReader* msg, NetMsg::Category c, Ne
 
 void MediaUpdaterInterface::saveMediaController(MediaControllerBase* ctrl)
 {
-    if(!ctrl)
+    if(!ctrl || !m_manager)
         return;
     if(ctrl->remote())
         return;

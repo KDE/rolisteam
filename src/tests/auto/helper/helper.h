@@ -5,11 +5,11 @@
 // #include "utils/iohelper.h"
 #include <QByteArray>
 #include <QColor>
+#include <QMovie>
 #include <QPointF>
 #include <QRectF>
 #include <QStringList>
 #include <QUrl>
-#include <QMovie>
 #include <map>
 #include <random>
 #include <type_traits>
@@ -64,13 +64,16 @@ public:
     TestMessageSender();
     virtual void sendMessage(const NetworkMessage* msg) override;
 
-    QByteArray messageData() const;
+    const QList<QByteArray> messageData() const;
+
+    void clear();
 
 private:
-    QByteArray m_msgData;
+    QList<QByteArray> m_msgDataList;
 };
 
-HELPER_EXPORT std::pair<bool, QStringList> testAllProperties(QObject* obj, QStringList ignoredProperties, bool setAgain= true);
+HELPER_EXPORT std::pair<bool, QStringList> testAllProperties(QObject* obj, QStringList ignoredProperties,
+                                                             bool setAgain= true);
 
 template <typename T>
 T generate(const T& min, const T& max) //=std::numeric_limits<T>::min(),
@@ -134,7 +137,7 @@ QString randomString(int length= 10)
 }
 
 HELPER_EXPORT QString imagePath(bool isSquare= false);
-HELPER_EXPORT QUrl imagePathUrl(bool isSquare = false);
+HELPER_EXPORT QUrl imagePathUrl(bool isSquare= false);
 HELPER_EXPORT QByteArray imageData(bool isSquare= false);
 HELPER_EXPORT QByteArray randomData(int length= 1000);
 HELPER_EXPORT QColor randomColor();

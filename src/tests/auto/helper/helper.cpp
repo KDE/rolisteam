@@ -548,12 +548,17 @@ void TestMessageSender::sendMessage(const NetworkMessage* msg)
 {
     auto const writer= dynamic_cast<const NetworkMessageWriter*>(msg);
     if(writer)
-        m_msgData= writer->data();
+        m_msgDataList.append(writer->data());
 }
 
-QByteArray TestMessageSender::messageData() const
+void TestMessageSender::clear()
 {
-    return m_msgData;
+    m_msgDataList.clear();
+}
+
+const QList<QByteArray> TestMessageSender::messageData() const
+{
+    return m_msgDataList;
 }
 
 std::pair<bool, QStringList> testAllProperties(QObject* obj, QStringList ignoredProperties, bool setAgain)
@@ -590,7 +595,7 @@ std::pair<bool, QStringList> testAllProperties(QObject* obj, QStringList ignored
             auto currentval= p.read(obj);
             QSignalSpy spy(obj, p.notifySignal());
             int countChange= 0;
-            for(const auto& v : vs)
+            for(const auto& v : std::as_const(vs))
             {
                 if(!p.write(obj, v))
                     qDebug() << "write failed for " << p.name() << v;

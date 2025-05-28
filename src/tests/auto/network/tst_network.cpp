@@ -18,9 +18,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include <QTest>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QString>
-#include <QTest>
 
 #include "data/character.h"
 #include "network/ipbanaccepter.h"
@@ -278,8 +278,9 @@ void TestNetwork::timeAccepterTest_data()
         QTest::addRow("time %d", ++count) << QStringLiteral("%1:00").arg(i, 2, 10, QLatin1Char('0'))
                                           << QStringLiteral("%1:30").arg(i, 2, 10, QLatin1Char('0'));
 
-        QTest::addRow("time %d", ++count) << QStringLiteral("%1:30").arg(i, 2, 10, QLatin1Char('0'))
-                                          << QStringLiteral("%1:00").arg(i + 1, 2, 10, QLatin1Char('0'));
+        QTest::addRow("time %d", ++count)
+            << QStringLiteral("%1:30").arg(i, 2, 10, QLatin1Char('0'))
+            << (i == 23 ? QStringLiteral("23:59") : QStringLiteral("%1:00").arg(i + 1, 2, 10, QLatin1Char('0')));
     }
 
     QTest::addRow("time_null") << ""
@@ -397,7 +398,8 @@ void TestNetwork::messageHeaderTest_data()
     actionPerCategorie.append({"AddCharacterToPlayerAct", "RemoveCharacterToPlayerAct", "ChangePlayerPropertyAct",
                                "ChangeCharacterPropertyAct"});
     // 3
-    actionPerCategorie.append(QStringList{"addCharacterSheet", "updateFieldCharacterSheet", "closeCharacterSheet"});
+    actionPerCategorie.append(QStringList{"addCharacterSheet", "updateFieldCharacterSheet", "updateTableRowCount",
+                                          "updateCellSheet", "closeCharacterSheet"});
 
     actionPerCategorie.append({
         "InstantMessageAction",
@@ -484,7 +486,6 @@ void TestNetwork::messageHeaderTest_data()
 
 void TestNetwork::playerMessageHelper()
 {
-
     // Player info
     Helper::TestMessageSender sender;
     NetworkMessage::setMessageSender(&sender);
@@ -496,7 +497,7 @@ void TestNetwork::playerMessageHelper()
     auto pw= Helper::randomData();
     PlayerMessageHelper::sendOffConnectionInfo(&player, pw);
 
-    auto msgData= sender.messageData();
+    auto msgData= sender.messageData().first();
 
     PlayerMessageHelper::sendOffConnectionInfo(nullptr, pw);
 
@@ -508,7 +509,7 @@ void TestNetwork::playerMessageHelper()
         QCOMPARE(reader.string32(), player.name());
         QCOMPARE(reader.string32(), player.uuid());
     }
-
+    sender.clear();
     // Player info
     player.setGM(true);
     player.setAvatar(Helper::imageData(true));
@@ -517,7 +518,7 @@ void TestNetwork::playerMessageHelper()
 
     {
         NetworkMessageReader reader;
-        reader.setData(sender.messageData());
+        reader.setData(sender.messageData().first());
 
         Player tempPlayer;
 
@@ -531,7 +532,7 @@ void TestNetwork::playerMessageHelper()
 
         PlayerMessageHelper::sendOffPlayerInformations(nullptr);
     }
-
+    sender.clear();
     {
 
         auto character= new Character();
@@ -553,7 +554,7 @@ void TestNetwork::playerMessageHelper()
         PlayerMessageHelper::sendOffPlayerInformations(&player);
 
         NetworkMessageReader reader;
-        reader.setData(sender.messageData());
+        reader.setData(sender.messageData().first());
         Player tempPlayer;
         PlayerMessageHelper::readPlayer(reader, &tempPlayer);
 
@@ -583,17 +584,18 @@ void TestNetwork::messageHelperTest()
         MessageHelper::sendOffGoodBye();
 
         NetworkMessageReader reader;
-        reader.setData(sender.messageData());
+        reader.setData(sender.messageData().first());
         QCOMPARE(reader.action(), NetMsg::Goodbye);
         QCOMPARE(reader.category(), NetMsg::AdministrationCategory);
     }
-
+    sender.clear();
     {
         auto id= Helper::randomString();
         MessageHelper::closeMedia(id, Core::ContentType::CHARACTERSHEET);
 
         NetworkMessageReader reader;
-        reader.setData(sender.messageData());
+
+        reader.setData(sender.messageData().first());
 
         QCOMPARE(reader.action(), NetMsg::CloseMedia);
         QCOMPARE(reader.category(), NetMsg::MediaCategory);

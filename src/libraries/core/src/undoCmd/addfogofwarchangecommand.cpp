@@ -26,9 +26,12 @@ AddFogOfWarChangeCommand::AddFogOfWarChangeCommand(vmap::SightController* ctrl, 
     : QUndoCommand(), m_ctrl(ctrl), m_poly(gone), m_mask(mask)
 {
     setText(mask ? QObject::tr("Conceal vectorial map") : QObject::tr("Unveil vectorial map"));
-    QObject::connect(m_ctrl, &vmap::SightController::destroyed, m_ctrl, [this](){
-        setObsolete(true);
-    });
+    m_connection= QObject::connect(m_ctrl, &vmap::SightController::destroyed, m_ctrl, [this]() { setObsolete(true); });
+}
+
+AddFogOfWarChangeCommand::~AddFogOfWarChangeCommand()
+{
+    QObject::disconnect(m_connection);
 }
 
 void AddFogOfWarChangeCommand::redo()

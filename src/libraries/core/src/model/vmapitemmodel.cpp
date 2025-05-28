@@ -30,7 +30,7 @@ VmapItemModel::~VmapItemModel()= default;
 
 int VmapItemModel::rowCount(const QModelIndex& parent) const
 {
-    if(!parent.isValid())
+    if(parent.isValid())
         return 0;
 
     return static_cast<int>(m_items.size());

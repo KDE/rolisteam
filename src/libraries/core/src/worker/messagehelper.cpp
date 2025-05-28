@@ -491,7 +491,7 @@ void fillUpMessageWithMindmap(NetworkMessageWriter& msg, MindMapController* ctrl
             continue;
 
         msg.string8(pack->id());
-        msg.string16(pack->title());
+        msg.string16(pack->text());
         msg.real(pack->position().x());
         msg.real(pack->position().y());
         msg.real(pack->width());
@@ -1186,7 +1186,6 @@ const std::map<QString, QVariant> MessageHelper::readCharacter(NetworkMessageRea
     if(!characterDefined && !playableCharacter)
     {
         QString parentId;
-        qDebug() << "VMAP: read Character";
         auto character= PlayerMessageHelper::readCharacter(*msg, parentId);
         if(character)
         {
@@ -1528,7 +1527,6 @@ void addPackageToMsg(NetworkMessageWriter& msg, mindmap::PackageNode* pckg)
     msg.real(pckg->width());
     msg.real(pckg->height());
     msg.string32(pckg->text());
-    msg.string32(pckg->title());
     msg.uint64(pckg->minimumMargin());
     auto ids= pckg->childrenId().join(";");
     msg.string32(ids);
@@ -1587,14 +1585,12 @@ void readPackageFromMsg(MindMapController* ctrl, NetworkMessageReader* msg)
     auto wi= msg->real();
     auto he= msg->real();
     auto text= msg->string32();
-    auto title= msg->string32();
     auto margin= msg->uint64();
     auto ids= msg->string32().split(";");
 
     auto p= new mindmap::PackageNode();
     p->setId(id);
     p->setText(text);
-    p->setTitle(title);
     qDebug() << "Package read from network" << wi << he << x << y;
     p->setWidth(wi);
     p->setHeight(he);
@@ -1663,14 +1659,6 @@ void readNodeFromMsg(MindMapController* ctrl, NetworkMessageReader* msg)
     }
     node->setStyleIndex(indx);
     ctrl->addItem(node, true);
-
-    /*if(!parentId.isNull())
-        parentIdList.append({parentId, id});
-    // ctrl->createLink(parentId, id);
-
-    for(const auto& tmp : std::as_const(list))
-        parentIdList.append({id, tmp});
-    //  ctrl->createLink(id, tmp);*/
 }
 void MessageHelper::readMindMapAddItem(MindMapController* ctrl, NetworkMessageReader* msg)
 {

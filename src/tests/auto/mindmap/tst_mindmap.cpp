@@ -27,8 +27,10 @@
 #include "mindmap/geometry/linknode.h"
 #include "mindmap/model/minditemmodel.h"
 #include "mindmap/model/nodestylemodel.h"
+#include "model/contentmodel.h"
 #include "network/networkmessagereader.h"
 #include "network/networkmessagewriter.h"
+#include "updater/media/mindmapupdater.h"
 #include "worker/messagehelper.h"
 #include <helper.h>
 #include <memory>
@@ -63,16 +65,81 @@ private slots:
     void linkGeometryTest();
     void getAndSetTest();
 
+    void updaterTest();
+
 private:
     std::unique_ptr<MindMapController> m_ctrl;
+    std::unique_ptr<MindMapUpdater> m_updater;
+    std::unique_ptr<ContentModel> m_contentModel;
+    std::unique_ptr<FilteredContentModel> m_mindmapModel;
 };
 
 void MindMapTest::init()
 {
     m_ctrl.reset(new MindMapController("test_id"));
+
+    m_contentModel.reset(new ContentModel());
+    m_mindmapModel.reset(new FilteredContentModel(Core::ContentType::MINDMAP));
+    m_mindmapModel->setSourceModel(m_contentModel.get());
+
+    m_updater.reset(new MindMapUpdater(m_mindmapModel.get(), nullptr));
+
+    // MindMapController::setMindMapUpdater(m_updater.get());
 }
 
 MindMapTest::MindMapTest() {}
+
+void MindMapTest::updaterTest()
+{
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+    sender.clear();
+    m_contentModel->appendMedia(m_ctrl.get());
+    m_updater->addMediaController(m_ctrl.get());
+
+    auto node= std::make_unique<mindmap::MindNode>();
+    auto id= Helper::randomString();
+    node->setId(id);
+
+    auto node2= std::make_unique<mindmap::MindNode>();
+    auto id2= Helper::randomString();
+    node2->setId(id2);
+    m_ctrl->addNode({node.get(), node2.get()}, false);
+
+    m_ctrl->addLink(id, id2);
+
+    Helper::testAllProperties(m_ctrl.get(), {}, true);
+
+    m_ctrl->setSharingToAll(static_cast<int>(Core::SharingPermission::ReadWrite));
+    m_ctrl->addNode(id2);
+    m_ctrl->addImageFor(node->id(), Helper::imagePathUrl().toLocalFile(), Helper::imageData());
+    m_ctrl->removeImageFor(node->id());
+    m_ctrl->setName(Helper::randomString());
+    node2->setText(Helper::randomString());
+    m_ctrl->addPackage({0, 0});
+
+    Helper::testAllProperties(node2.get(), {}, true);
+
+    auto model= m_ctrl->itemModel();
+
+    if(model)
+    {
+        auto& items= model->items(mindmap::MindItem::LinkType);
+        QCOMPARE(items.size(), 2);
+        for(auto link : items)
+            Helper::testAllProperties(link, {}, true);
+    }
+
+    auto list= sender.messageData();
+    // QVERIFY(!list.isEmpty());
+    for(auto const& msg : std::as_const(list))
+    {
+        NetworkMessageReader reader;
+        reader.setData(msg);
+        m_updater->processMessage(&reader);
+    }
+    m_ctrl.release();
+}
 
 void MindMapTest::addRemoveImageTest()
 {

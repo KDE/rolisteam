@@ -170,7 +170,7 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
             });
 
     std::unique_ptr<GenericUpdater> pdfUpdater(new GenericUpdater(campaign));
-    MindMapController::setMindMapUpdater(mindMapUpdater.get());
+    // MindMapController::setMindMapUpdater(mindMapUpdater.get());
 
     connect(pdfUpdater.get(), &GenericUpdater::shareMedia, this,
             [](MediaControllerBase* ctrl) { MessageHelper::sendOffPdfFile(dynamic_cast<PdfController*>(ctrl)); });
