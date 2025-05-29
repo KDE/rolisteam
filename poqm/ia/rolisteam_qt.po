@@ -3393,37 +3393,37 @@ msgctxt "ButtonGrid|"
 msgid "Add Package"
 msgstr "Adde pacchetto"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:67
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:72
 msgctxt "ButtonGrid|"
 msgid "Add Arrow"
 msgstr "Adde Flecha"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:75
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:85
 msgctxt "ButtonGrid|"
 msgid "Remove selected Items"
 msgstr "Remove elementos seligite"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:82
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
 msgctxt "ButtonGrid|"
 msgid "Refresh"
 msgstr "Refresca"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:87
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:97
 msgctxt "ButtonGrid|"
 msgid "Export As PNG"
 msgstr "Exporta como PNG"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
 msgctxt "ButtonGrid|"
 msgid "Hide small map"
 msgstr "Cela mappa parve"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
 msgctxt "ButtonGrid|"
 msgid "Show small map"
 msgstr "Monstra mappa parve"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:98
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:108
 msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Spatiar Automatic"
@@ -3639,7 +3639,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Nove Nodo"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:86
+#: src/libraries/mindmap/src/data/packagenode.cpp:87
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Pacchetto"
@@ -4944,65 +4944,65 @@ msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Imagines (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:414
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Editor de Css"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:418
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:414
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "Css"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:449
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:445
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Formato de Imagine : %1 valor %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:446
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Formatos de Imagines Supportate:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:457
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Fin de Formato de Imagine"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:456
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Familias de Font</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:467
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:463
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Fin de familias de Font "
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:470
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:466
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Supporto de formatos de file Audio:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:505
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:501
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Fin de Formatos de file Audio supportate"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:518
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Exporta Thema de Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:524
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:533
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:520
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:529
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Thema de Rolisteam: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:532
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:528
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importa Thema de Rolisteam"
@@ -7543,12 +7543,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Netta Forma"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:138
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "Claude Percurso"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "Reimple Percurso"
