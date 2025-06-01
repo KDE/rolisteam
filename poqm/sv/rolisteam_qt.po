@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-04-05 14:12+0200\n"
+"PO-Revision-Date: 2025-05-31 16:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -24,12 +24,9 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "Tankekarta (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr "Öppna tankekarta"
+msgstr "Öppna tankekarta"
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
@@ -428,9 +425,6 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF-filer (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
 msgstr "Exportera PDF bakgrundsdialogruta"
@@ -740,12 +734,7 @@ msgid "Support"
 msgstr "Stöd"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -765,10 +754,7 @@ msgid "Help"
 msgstr "Hjälp"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr "Dokumentation om Rcse finns på nätet:<br> <a href=\"%1\">%1</a>"
@@ -815,19 +801,11 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam karaktärsblad (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Vill du radera nuvarande QML-kod?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1657,17 +1635,11 @@ msgid "Server Panel"
 msgstr "Serverpanel"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Underrättelsezon"
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "SM-verktyg"
@@ -1700,10 +1672,7 @@ msgid "Open Campaign"
 msgstr "Öppna kampanj"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr "Dokumentation om %1 finns på nätet:<br> <a href=\"%2\">%2</a>"
@@ -1720,17 +1689,11 @@ msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "Bidragssidan för %1 finns på nätet:<br> <a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign?"
 msgstr "Vill du spara kampanjen?"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Do you really want to quit Rolisteam ?"
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Vill du verkligen avsluta Rolisteam?"
@@ -2432,81 +2395,51 @@ msgid "Is Background"
 msgstr "Är bakgrund"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too many arguments"
 msgctxt "QObject|"
 msgid "abs: too many arguments"
 msgstr "abs: för många argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too few arguments"
 msgctxt "QObject|"
 msgid "abs: too few arguments"
 msgstr "abs: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
 msgid "ceil: too many arguments"
 msgstr "ceil: för många argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
 msgid "ceil: too few arguments"
 msgstr "ceil: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too many arguments"
 msgctxt "QObject|"
 msgid "floor: too many arguments"
 msgstr "floor: för många argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too few arguments"
 msgctxt "QObject|"
 msgid "floor: too few arguments"
 msgstr "floor: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
 msgid "concatenate: too few arguments"
 msgstr "concatenate: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "min : too few arguments"
 msgctxt "QObject|"
 msgid "min: too few arguments"
 msgstr "min: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "max : too few arguments"
 msgctxt "QObject|"
 msgid "max: too few arguments"
 msgstr "max: för få argument"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "avg : too few arguments"
 msgctxt "QObject|"
 msgid "avg: too few arguments"
 msgstr "avg: för få argument"
@@ -3061,9 +2994,6 @@ msgid "Socket is not writable"
 msgstr "Uttaget går inte att skiva till"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "ClientConnection|"
-#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Överföringsfel:"
@@ -3135,9 +3065,7 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Misslyckades hitta rätt servicetyp: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
 msgstr "Misslyckades lägga till portavbildning (%1/%2): fel: %3\n"
@@ -3404,9 +3332,7 @@ msgid "Webview"
 msgstr "Webbvisning"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, fuzzy, qt-format
-#| msgctxt "DiceModel|"
-#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+#, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Tredimensionellt kast : Avstånd %1 - Tid %2 - Rotation %3"
@@ -4366,9 +4292,6 @@ msgid "Zoom"
 msgstr "Zooma"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
 msgstr "Rotationsvärde?"
@@ -5042,7 +4965,7 @@ msgstr "PC drag"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "PC All"
-msgstr ""
+msgstr "PC alla"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5066,9 +4989,7 @@ msgid "Css"
 msgstr "CSS"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:445
-#, fuzzy, qt-format
-#| msgctxt "PreferencesDialog|"
-#| msgid "<li>Image Format : %1 value %2</li>"
+#, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Bildformat : %1 värde %2</li>"
@@ -5554,9 +5475,6 @@ msgid "Dialog"
 msgstr "Dialogruta"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
 msgstr "Visa aldrig igen."
