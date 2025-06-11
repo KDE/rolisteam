@@ -29,7 +29,7 @@ set(UIS mainwindow.ui)
 
 set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rolisteam/logo/rolisteam.rc)
 
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools Scxml MultimediaWidgets Multimedia)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools Scxml MultimediaWidgets Multimedia Pdf)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
@@ -62,6 +62,7 @@ target_link_libraries(rolisteam
         Qt6::Multimedia
         Qt6::Scxml
         Qt6::Quick3D
+        Qt6::Pdf
         $<$<CONFIG:Debug>:Qt6::RemoteObjects>
     PRIVATE
         core

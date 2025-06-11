@@ -782,6 +782,7 @@ void MessageHelper::sendOffPdfFile(PdfController* ctrl)
 
     NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::AddMedia);
     msg.uint8(static_cast<quint8>(ctrl->contentType()));
+    sendOffMediaControllerBase(ctrl, msg);
     msg.string8(ctrl->uuid());
     msg.byteArray32(ctrl->data());
     msg.sendToServer();
@@ -792,10 +793,14 @@ QHash<QString, QVariant> MessageHelper::readPdfData(NetworkMessageReader* msg)
     if(nullptr == msg)
         return {};
 
-    auto id= msg->string8();
-    auto data= msg->byteArray32();
+    auto hash = readMediaData(msg);
 
-    return QHash<QString, QVariant>({{Core::keys::KEY_UUID, id}, {Core::keys::KEY_DATA, data}});
+    auto id= msg->string8();
+    hash.insert(Core::keys::KEY_UUID, id);
+    auto data= msg->byteArray32();
+    hash.insert(Core::keys::KEY_DATA, data);
+
+    return hash;
 }
 
 void addVisualItemController(const vmap::VisualItemController* ctrl, NetworkMessageWriter& msg)
@@ -1233,9 +1238,7 @@ QHash<QString, QVariant> MessageHelper::readVectorialMapData(NetworkMessageReade
     if(nullptr == msg)
         return {};
 
-    QHash<QString, QVariant> hash;
-    hash[Core::keys::KEY_UUID]= msg->string8();
-    hash[Core::keys::KEY_NAME]= msg->string16();
+    QHash<QString, QVariant> hash = readMediaData(msg);
     hash[Core::keys::KEY_LAYER]= msg->uint8();
     hash[Core::keys::KEY_PERMISSION]= msg->uint8();
     hash[Core::keys::KEY_BGCOLOR]= QColor(msg->rgb());
@@ -1334,9 +1337,7 @@ void MessageHelper::sendOffVMap(VectorialMapController* ctrl)
 
     NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::AddMedia);
     msg.uint8(static_cast<quint8>(ctrl->contentType()));
-    msg.string8(ctrl->uuid());
-
-    msg.string16(ctrl->name());
+    sendOffMediaControllerBase(ctrl, msg);
     msg.uint8(static_cast<quint8>(ctrl->layer()));
     msg.uint8(static_cast<quint8>(ctrl->permission()));
     msg.rgb(ctrl->backgroundColor().rgb());

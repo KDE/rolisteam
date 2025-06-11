@@ -27,6 +27,11 @@
 
 #include "controller/view_controller/imageselectorcontroller.h"
 #include "rwidgets/dialogs/imageselectordialog.h"
+
+// Map view
+#include "rwidgets/customs/rgraphicsview.h"
+#include "controller/view_controller/vectorialmapcontroller.h"
+
 #include <helper.h>
 
 class WidgetsTest : public QObject
@@ -45,10 +50,14 @@ private slots:
     void diameterSelectorTest();
     void imageSelectorTest();
 
+    void mapViewTest();
+
 private:
     std::unique_ptr<RealSlider> m_realSlider;
     std::unique_ptr<FileDirChooser> m_fileDirChooser;
     std::unique_ptr<DiameterSelector> m_diameter;
+    std::unique_ptr<RGraphicsView> m_mapView;
+    std::unique_ptr<VectorialMapController> m_mapCtrl;
 };
 WidgetsTest::WidgetsTest() {}
 void WidgetsTest::initTestCase()
@@ -56,6 +65,9 @@ void WidgetsTest::initTestCase()
     m_realSlider.reset(new RealSlider());
     m_fileDirChooser.reset(new FileDirChooser());
     m_diameter.reset(new DiameterSelector());
+
+    m_mapCtrl.reset(new VectorialMapController);
+    m_mapView.reset(new RGraphicsView(m_mapCtrl.get()));
 }
 
 void WidgetsTest::cleanupTestCase() {}
@@ -119,6 +131,20 @@ void WidgetsTest::imageSelectorTest()
     QCOMPARE(pix.width(), pix.height());
 
     delete server;
+}
+
+void WidgetsTest::mapViewTest()
+{
+    m_mapView->currentToolChanged(Core::EMPTYELLIPSE);
+
+    m_mapCtrl->addItemController(Helper::buildRectController(true, QRect(0,0,100,100)),false);
+
+    m_mapView->addImageToMap();
+    m_mapView->centerOnItem();
+
+    //m_mapView->deleteItem({});
+    m_mapView->setRotation({}, 90);
+    m_mapView->setItemLayer({}, Core::Layer::GROUND);
 }
 
 QTEST_MAIN(WidgetsTest);

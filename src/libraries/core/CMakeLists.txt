@@ -219,7 +219,6 @@ set(HEADERS
   ${inc}/services/ipchecker.h
   ${inc}/services/tipchecker.h
   ${inc}/services/updatechecker.h
-  ${inc}/session/sessionitemmodel.h
   ${inc}/undoCmd/addfogofwarchangecommand.h
   ${inc}/undoCmd/addlocalcharactercommand.h
   ${inc}/undoCmd/addnonplayablecharactercommand.h
@@ -364,7 +363,6 @@ set(SOURCES
   src/services/ipchecker.cpp
   src/services/tipchecker.cpp
   src/services/updatechecker.cpp
-  src/session/sessionitemmodel.cpp
   src/undoCmd/addfogofwarchangecommand.cpp
   src/undoCmd/addlocalcharactercommand.cpp
   src/undoCmd/addnonplayablecharactercommand.cpp

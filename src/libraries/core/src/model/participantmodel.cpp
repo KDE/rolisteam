@@ -137,7 +137,7 @@ QVariant ParticipantModel::headerData(int section, Qt::Orientation orientation, 
 
 void ParticipantModel::initModel()
 {
-    if(m_ownerId.isEmpty())
+    if(m_ownerId.isEmpty() || !m_playerList)
         return;
 
     beginResetModel();

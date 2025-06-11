@@ -16,6 +16,7 @@ Pane {
     property bool darkMode: false
     property int idx: 0
     property QtObject styleSheet: Theme.styleSheet("mindmap")
+    property Button mainBtn: btn0
 
     signal saveMap
 
@@ -55,6 +56,14 @@ Pane {
                 mouse.accepted = false;
         }*/
     }
+    Button {
+        id: btn0
+      property bool isLundi: false
+    }
+    Button {
+       id: btn1
+    }
+
     MouseArea {
         anchors.fill: parent
         acceptedButtons:Qt.LeftButton

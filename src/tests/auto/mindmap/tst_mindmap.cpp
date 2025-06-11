@@ -67,6 +67,8 @@ private slots:
 
     void updaterTest();
 
+    void packageTest();
+
 private:
     std::unique_ptr<MindMapController> m_ctrl;
     std::unique_ptr<MindMapUpdater> m_updater;
@@ -139,6 +141,54 @@ void MindMapTest::updaterTest()
         m_updater->processMessage(&reader);
     }
     m_ctrl.release();
+}
+
+void MindMapTest::packageTest()
+{
+    auto package= std::make_unique<mindmap::PackageNode>();
+    auto model = package->model();
+
+    new QAbstractItemModelTester(model);
+
+    QSignalSpy spy(package.get(), &mindmap::PackageNode::minimumMarginChanged);
+    auto value = Helper::generate(26, 100);
+    package->setMinimumMargin(value);
+    package->setMinimumMargin(value*2);
+    QCOMPARE(spy.count(), 2);
+
+
+    auto node= std::make_unique<mindmap::MindNode>();
+    auto id= Helper::randomString();
+    node->setId(id);
+
+    package->addChild(node.get());
+
+    QCOMPARE(node->id(), id);
+
+
+    auto node2= std::make_unique<mindmap::MindNode>();
+    auto id2= Helper::randomString();
+    node2->setId(id2);
+
+    package->addChild(node2.get(), true);
+
+    auto & children = package->children();
+
+    auto ids = package->childrenId();
+
+
+    QCOMPARE(children.size(), 2);
+    QCOMPARE(model->rowCount(), 2);
+
+    package->setVisible(false);
+    package->setVisible(true);
+
+    package->removeChild(id2, true);
+    package->removeChild(id);
+
+    QCOMPARE(children.size(), 0);
+    QCOMPARE(model->rowCount(), 0);
+
 }
 
 void MindMapTest::addRemoveImageTest()

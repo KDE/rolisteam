@@ -1,6 +1,6 @@
 /***************************************************************************
  *   Copyright (C) 2011 by Renaud Guezennec                                *
- *   https://rolisteam.org/contact                   *
+ *   http://renaudguezennec.homelinux.org/accueil,3.html                   *
  *                                                                         *
  *   Rolisteam is free software; you can redistribute it and/or modify     *
  *   it under the terms of the GNU General Public License as published by  *
@@ -17,50 +17,44 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
+#include <QTest>
 
-#include <QImage>
-#include <QPainter>
+#include "common/include/common/logcontroller.h"
+#include <QtDebug>
 
-#include "model/patternmodel.h"
-
-//////IMPLEMENTATION of PatternModel
-PatternModel::PatternModel()
+class LogTest : public QObject
 {
-    m_list.append(QPixmap());
-    m_list.append(QPixmap(":/grid/resources/gridpattern/01_sqare.png"));
-    m_list.append(QPixmap(":/grid/resources/gridpattern/03_hexa.png"));
-    // m_list.append(QPixmap(":/grid/resources/gridpattern/02_octo.png"));
+    Q_OBJECT
 
-    m_listGrille << tr("NoGrid") << tr("Square") << tr("Hexagon") /*<< tr("Octogon")*/;
-}
-QVariant PatternModel::data(const QModelIndex& index, int role) const
+public:
+    LogTest();
+
+private slots:
+    void logTest();
+};
+
+LogTest::LogTest() {}
+
+void LogTest::logTest()
 {
-    if(Qt::DisplayRole == role)
-    {
-        QVariant variant= m_listGrille.at(index.row());
-        return variant;
-    }
-    else if(role == Qt::DecorationRole)
-    {
-        QVariant variant= m_list.at(index.row());
-        return variant;
-    }
-    else
-    {
-        return QVariant();
-    }
-}
-int PatternModel::rowCount(const QModelIndex& parent) const
-{
-    if(!parent.isValid())
-        return m_list.size();
-    return 0;
+    LogController logCtrl(true);
+
+    qInfo() << "Info";
+    qCritical() << "Critical";
+
+    auto mode = logCtrl.currentModes();
+    Q_UNUSED(mode);
+
+    logCtrl.setLogLevel(LogController::Warning);
+    logCtrl.setLogLevel(LogController::Info);
+    logCtrl.setLogLevel(LogController::Debug);
+
+    logCtrl.setSignalInspection(true);
+
+
 }
 
-QPixmap PatternModel::getPatternAt(int i)
-{
-    if(i >= m_list.size() || i < 0)
-        return {};
 
-    return m_list.at(i);
-}
+QTEST_MAIN(LogTest);
+
+#include "tst_log.moc"

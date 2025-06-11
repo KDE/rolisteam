@@ -70,6 +70,13 @@ void DataCleverURITest::testCleverURISetGet()
     m_cleverURI->setContentType(Core::ContentType::NOTES);
     QVERIFY2(m_cleverURI->contentType() == Core::ContentType::NOTES, "TEXT is not the current type");
 
+    CleverURI uri2(Core::ContentType::PICTURE);
+    QVERIFY(!(uri2 == *m_cleverURI));
+
+    CleverURI uri3(Helper::randomString(),Helper::randomString(),Core::ContentType::PICTURE);
+    uri3.hasData();
+    uri3.isDisplayed();
+
     QString path("/foo/bar/file.map");
     m_cleverURI->setPath(path);
     m_cleverURI->setName(QStringLiteral("file"));
@@ -78,6 +85,37 @@ void DataCleverURITest::testCleverURISetGet()
     QVERIFY2(m_cleverURI->getData(ResourcesNode::NAME).toString() == "file", "ShortName is wrong!");
 
     QVERIFY2(m_cleverURI->hasChildren() == false, "CleverURI has children, that should not be!");
+
+    auto uuid = Helper::randomString();
+    m_cleverURI->setUuid(uuid);
+    QCOMPARE(m_cleverURI->uuid(), uuid);
+    m_cleverURI->setUuid(uuid);
+
+    auto name = Helper::randomString();
+    m_cleverURI->setName(name);
+    QCOMPARE(m_cleverURI->name(), name);
+    m_cleverURI->setUuid(name);
+
+    auto value = Helper::randomString();
+    m_cleverURI->setValue(value);
+    QCOMPARE(m_cleverURI->value(), value);
+    m_cleverURI->setUuid(value);
+
+    QVERIFY(nullptr == m_cleverURI->getChildAt(100));
+    auto icon = m_cleverURI->icon();
+    QVERIFY(icon.isNull());
+
+    QVERIFY(m_cleverURI->type() == ResourcesNode::Cleveruri);
+    QVERIFY(nullptr == m_cleverURI->parentNode());
+    m_cleverURI->setParentNode(nullptr);
+    m_cleverURI->setParentNode(new CleverURI(Core::ContentType::NOTES));
+    m_cleverURI->rowInParent();
+    m_cleverURI->childrenCount();
+    m_cleverURI->isLeaf();
+    m_cleverURI->hasChildren();
+    m_cleverURI->contains(Helper::randomString());
+    m_cleverURI->findNode(Helper::randomString());
+    m_cleverURI->removeChild(nullptr);
 }
 
 void DataCleverURITest::testMime()

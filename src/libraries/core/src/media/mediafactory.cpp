@@ -163,6 +163,7 @@ VectorialMapController* vectorialMap(const QString& uuid, const QHash<QString, Q
         copyHashIntoMap(params, mapData);
 
         // clang-format off
+        hu::setParamIfAny<QString>(ck::KEY_OWNERID, mapData, std::bind(&VectorialMapController::setOwnerId, vmapCtrl, _1));
         hu::setParamIfAny<QString>(ck::KEY_NAME, mapData, std::bind(&VectorialMapController::setName, vmapCtrl, _1));
         hu::setParamIfAny<Core::Layer>(ck::KEY_LAYER, mapData, std::bind(&VectorialMapController::setLayer, vmapCtrl, _1));
         hu::setParamIfAny<Core::PermissionMode>(ck::KEY_PERMISSION, mapData, std::bind(&VectorialMapController::setPermission, vmapCtrl, _1));
@@ -206,6 +207,8 @@ PdfController* pdf(const QString& uuid, const QHash<QString, QVariant>& params)
 
     auto pdfCtrl= new PdfController(uuid);
 
+
+    hu::setParamIfAny<QString>(ck::KEY_OWNERID, pdfData, std::bind(&PdfController::setOwnerId, pdfCtrl, _1));
     hu::setParamIfAny<QString>(ck::KEY_NAME, pdfData, std::bind(&PdfController::setName, pdfCtrl, _1));
     hu::setParamIfAny<QByteArray>(ck::KEY_DATA, pdfData, std::bind(&PdfController::setData, pdfCtrl, _1));
     hu::setParamIfAny<QUrl>(ck::KEY_STATICDATA, pdfData, std::bind(&PdfController::setStaticData, pdfCtrl, _1));
@@ -454,6 +457,8 @@ MediaControllerBase* MediaFactory::createLocalMedia(const QString& uuid, Core::C
                                                     bool localIsGM)
 {
     QHash<QString, QVariant> params(map.begin(), map.end());
+    if(params.isEmpty())
+        return nullptr;
     using C= Core::ContentType;
     MediaControllerBase* base= nullptr;
 
@@ -486,7 +491,8 @@ MediaControllerBase* MediaFactory::createLocalMedia(const QString& uuid, Core::C
     default:
         break;
     }
-    Q_ASSERT(base != nullptr);
+    if(base == nullptr)
+        return base;
     base->setLocalGM(localIsGM);
     base->setLocalId(m_localId);
     base->setOwnerId(m_localId);

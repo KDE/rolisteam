@@ -28,3 +28,8 @@ target_link_libraries(tst_update PUBLIC Qt6::Core Qt6::Test PRIVATE core instant
 target_include_directories(tst_update PUBLIC ../helper)
 add_test(NAME tst_update COMMAND tst_update)
 
+
+add_executable(tst_logcontroller tst_log.cpp ../assets/resources.qrc)
+target_link_libraries(tst_logcontroller PUBLIC Qt6::Core Qt6::Test PRIVATE core instantmessaging common_core common_widget common_qml network helper utils)
+target_include_directories(tst_logcontroller PUBLIC ../helper)
+add_test(NAME tst_logcontroller COMMAND tst_logcontroller)

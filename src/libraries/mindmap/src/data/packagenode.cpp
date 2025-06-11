@@ -75,7 +75,9 @@ bool ChildrenModel::addChild(PositionedItem* item)
 bool ChildrenModel::removeChild(const QString& id)
 {
     beginResetModel();
-    bool res= 0 < erase_if(m_internalChildren, [id](PositionedItem* item) { return id == item->id(); });
+    bool res= 0 < erase_if(m_internalChildren, [id](PositionedItem* item) {
+                  qDebug() << item->id() << id;
+return id == item->id(); });
     endResetModel();
     return res;
 }
@@ -185,9 +187,9 @@ void PackageNode::performLayout()
     auto currentX= itemPerLine == itemCount ? currentMarge : m_minimumMargin;
     auto currentY= m_minimumMargin;
 
-    int i= 0;
+    unsigned int i= 0;
     qreal maxH= 0.;
-    for(auto item : children)
+    for(auto item : std::as_const(children))
     {
         auto p= position();
         QPointF a{currentX + p.x(), currentY + p.y()};

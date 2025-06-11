@@ -100,7 +100,6 @@ signals:
     void loadingModeChanged();
 
 protected:
-    void loadData();
     void init();
 
 private:

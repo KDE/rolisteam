@@ -83,7 +83,6 @@ public:
     static void sendOffCharacterStateMoved(int i, int j);
 
     static QString readPlayerId(NetworkMessageReader& msg);
-    static void sendOffMediaControllerBase(const MediaControllerBase* ctrl, NetworkMessageWriter& msg);
 
     // vmap
     static QHash<QString, QVariant> readVectorialMapData(NetworkMessageReader* msg);
@@ -108,6 +107,8 @@ public:
     // media
     static QString readMediaId(NetworkMessageReader* msg);
     static QHash<QString, QVariant> readMediaData(NetworkMessageReader* msg);
+    static void sendOffMediaControllerBase(const MediaControllerBase* ctrl, NetworkMessageWriter& msg);
+
 
     // image
     static void sendOffImage(ImageController* ctrl);

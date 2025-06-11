@@ -473,7 +473,7 @@ void VMapTest::commands()
     m_ctrl->stackBefore({item->uuid()}, {item2->uuid()});
     m_stack->undo();
 
-    QCOMPARE(model->rowCount(), childrenCount + 1);
+    QCOMPARE(model->rowCount(), childrenCount + 2);
     m_ctrl->aboutToRemove({item});
     QVERIFY(item->removed());
     m_stack->undo();

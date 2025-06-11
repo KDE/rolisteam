@@ -720,4 +720,28 @@ QMovie randomMovie()
     return QMovie(list[generate<int>(0, list.size() - 1)]);
 }
 
+const std::map<QString, QVariant> buildController(Core::ContentType type)
+{
+    std::map<QString, QVariant> res;
+    res.insert({Core::keys::KEY_TYPE, QVariant::fromValue(type)});
+    QUrl url= randomUrl();
+    res.insert({Core::keys::KEY_NAME, url.fileName()});
+    res.insert({Core::keys::KEY_PATH, randomString()});
+    return res;
+    /*switch(type)
+    {
+    case Core::ContentType::VECTORIALMAP:
+    case Core::ContentType::PICTURE:
+    case Core::ContentType::NOTES:
+    case Core::ContentType::CHARACTERSHEET:
+    case Core::ContentType::SHAREDNOTE:
+    case Core::ContentType::PDF:
+    case Core::ContentType::WEBVIEW:
+    case Core::ContentType::INSTANTMESSAGING:
+    case Core::ContentType::MINDMAP:
+    case Core::ContentType::UNKNOWN:
+        break;
+    }*/
+}
+
 } // namespace Helper

@@ -63,8 +63,12 @@ private slots:
     void singleContentTypeModel();
 
     void languageModel();
-    // void actionListModel();
     void colorModel();
+    void themeModel();
+
+    void stateModel();
+
+    void patternModel();
 
 private:
 };
@@ -464,6 +468,94 @@ void ModelTest::colorModel()
     new QAbstractItemModelTester(model.get());
     auto src= new campaign::NonPlayableCharacterModel(new CharacterStateModel());
     model->setSourceModel(src);
+}
+
+#include "model/thememodel.h"
+#include "data/rolisteamtheme.h"
+
+void ModelTest::themeModel()
+{
+    auto model= std::make_unique<ThemeModel>();
+    new QAbstractItemModelTester(model.get());
+
+    model->theme(10);
+    model->theme("uuid");
+    model->indexOf(nullptr);
+    model->indexOf("uuid");
+
+    RolisteamTheme* theme1 = new RolisteamTheme();
+    auto id = theme1->uuid();
+    model->addTheme(theme1);
+
+    model->removeTheme(0);
+    theme1 = new RolisteamTheme();
+    model->addTheme(theme1);
+    id = theme1->uuid();
+
+    QCOMPARE(model->indexOf(theme1),model->indexOf(id));
+
+    auto name = model->name(0);
+    Q_UNUSED(name);
+
+    auto& themes = model->themes();
+
+    QCOMPARE(themes.size(), 1);
+    model->clear();
+    QCOMPARE(themes.size(), 0);
+}
+#include "model/statemodel.h"
+
+void ModelTest::stateModel()
+{
+    auto model= std::make_unique<StateModel>();
+    new QAbstractItemModelTester(model.get());
+    auto states= new CharacterStateModel();
+    new QAbstractItemModelTester(states);
+
+    CharacterState alive;
+    alive.setLabel("Alive");
+    alive.setColor(Qt::green);
+    alive.setId("alive");
+    states->appendState(std::move(alive));
+
+    CharacterState dead;
+    dead.setLabel("Dead");
+    dead.setColor(Qt::gray);
+    dead.setId("dead");
+    states->appendState(std::move(dead));
+
+
+    auto src= new campaign::NonPlayableCharacterModel(states);
+    model->setSourceModel(src);
+
+    auto npc1 = new campaign::NonPlayableCharacter();
+    auto npc2 = new campaign::NonPlayableCharacter();
+    auto npc3 = new campaign::NonPlayableCharacter();
+
+    npc1->setStateId("dead");
+    npc2->setStateId("alive");
+
+    src->addCharacter(npc1);
+    src->addCharacter(npc2);
+    src->addCharacter(npc3);
+
+    model->rowCount(model->index(0));
+
+
+    npc3->setStateId("alive");
+    npc3->setStateId("dead");
+}
+#include "model/patternmodel.h"
+void ModelTest::patternModel()
+{
+    PatternModel model;
+
+    model.rowCount(model.index(0));
+
+    model.getPatternAt(0);
+    model.getPatternAt(100);
+
+
 }
 
 QTEST_MAIN(ModelTest);

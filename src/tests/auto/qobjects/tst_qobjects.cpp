@@ -295,7 +295,6 @@
 #include "services/ipchecker.h"
 #include "services/tipchecker.h"
 #include "services/updatechecker.h"
-#include "session/sessionitemmodel.h"
 #include "sheetcontroller.h"
 #include "sheetproperties.h"
 #include "sidemenucontroller.h"
@@ -679,7 +678,6 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("ServerConnectionManager") << static_cast<QObject*>(new ServerConnectionManager(params)) << true;
     QTest::addRow("ServerManagerUpdater")        << static_cast<QObject*>(new ServerManagerUpdater(new ServerConnectionManager(params), true)) << true;
     QTest::addRow("ServerManagerUpdater") << static_cast<QObject*>(new ServerManagerUpdater(nullptr, true)) << true;
-    QTest::addRow("SessionItemModel") << static_cast<QObject*>(new session::SessionItemModel()) << true;
     QTest::addRow("SharedNote") << static_cast<QObject*>(new SharedNote(nullptr)) << true;
     QTest::addRow("SharedNoteContainer") << static_cast<QObject*>(new SharedNoteContainer(nullptr)) << true;
     QTest::addRow("SharedNoteController") << static_cast<QObject*>(new SharedNoteController()) << true;

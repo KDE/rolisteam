@@ -68,3 +68,15 @@ target_link_libraries(tst_rolisteammimedata PUBLIC Qt6::Core Qt6::Test PRIVATE c
 target_include_directories(tst_rolisteammimedata PUBLIC ../helper)
 add_test(NAME tst_rolisteammimedata COMMAND tst_rolisteammimedata)
 
+
+
+
+
+# test resource node
+add_executable(tst_mediafactory tst_mediafactory.cpp)
+target_link_libraries(tst_mediafactory PUBLIC Qt6::Core Qt6::Test PRIVATE core rmindmap rwidgets charactersheet instantmessaging common_core common_widget common_qml utils helper network )
+target_include_directories(tst_mediafactory PUBLIC ../helper)
+add_test(NAME tst_mediafactory COMMAND tst_mediafactory)
+
+
+

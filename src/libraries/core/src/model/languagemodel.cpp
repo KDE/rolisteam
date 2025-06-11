@@ -28,7 +28,7 @@ void fetchData(QList<LanguageInfo>& infos)
 {
     auto data= IOHelper::fetchLanguageModel();
 
-    for(auto langRef : data)
+    for(auto langRef : std::as_const(data))
     {
         auto lang= langRef.toObject();
         LanguageInfo info;

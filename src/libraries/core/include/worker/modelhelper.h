@@ -22,7 +22,7 @@
 #include <QJsonObject>
 #include <QString>
 #include <core_global.h>
-class SessionItemModel;
+
 class ProfileModel;
 class CharacterSheetModel;
 class DiceAliasModel;

@@ -97,14 +97,6 @@ bool CleverURI::hasChildren() const
     return false;
 }
 
-void CleverURI::loadData()
-{
-    if(loadingMode() == Core::LoadingMode::Internal)
-    {
-        loadFileFromUri(m_data);
-    }
-}
-
 void CleverURI::init()
 {
     if(m_path.isEmpty())
