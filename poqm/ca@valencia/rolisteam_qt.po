@@ -1406,7 +1406,7 @@ msgid "Slider"
 msgstr "Control lliscant"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
 msgid "Hidden"
@@ -2620,22 +2620,22 @@ msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr "No hi ha cap objecte Diceparser"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Internal"
 msgstr "Intern"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Linked"
 msgstr "Enllaçat"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Closed"
 msgstr "Tancat"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Displayed"
 msgstr "Visualitzat"
@@ -3093,16 +3093,6 @@ msgctxt "IpChecker|"
 msgid "Error to read server IP."
 msgstr "S'ha produït un error en llegir la IP del servidor."
 
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Name"
-msgstr "Nom"
-
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Path"
-msgstr "Camí"
-
 #: src/libraries/core/src/undoCmd/addfogofwarchangecommand.cpp:28
 msgctxt "QObject|"
 msgid "Conceal vectorial map"
@@ -3482,12 +3472,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Espaiat automàtic"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:117
+#: src/libraries/mindmap/resources/qml/Content.qml:126
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Imatges (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:130
+#: src/libraries/mindmap/resources/qml/Content.qml:139
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Imatges (*.png)"
@@ -3693,7 +3683,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Node nou"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:87
+#: src/libraries/mindmap/src/data/packagenode.cpp:89
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Paquet"
@@ -8615,3 +8605,11 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Path"
+#~ msgstr "Camí"

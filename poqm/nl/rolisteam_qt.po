@@ -1400,7 +1400,7 @@ msgid "Slider"
 msgstr "Schuifregelaar"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
 msgid "Hidden"
@@ -2608,22 +2608,22 @@ msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr "Geen object Diceparser"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Internal"
 msgstr "Intern"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Linked"
 msgstr "Gekoppeld"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Closed"
 msgstr "Gesloten"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Displayed"
 msgstr "Getoond"
@@ -3074,16 +3074,6 @@ msgctxt "IpChecker|"
 msgid "Error to read server IP."
 msgstr "Server-IP-adres lezen gaf fout."
 
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Name"
-msgstr "Naam"
-
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Path"
-msgstr "Pad"
-
 #: src/libraries/core/src/undoCmd/addfogofwarchangecommand.cpp:28
 msgctxt "QObject|"
 msgid "Conceal vectorial map"
@@ -3463,12 +3453,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Automatische spatiëring"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:117
+#: src/libraries/mindmap/resources/qml/Content.qml:126
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Afbeeldingen (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:130
+#: src/libraries/mindmap/resources/qml/Content.qml:139
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Afbeeldingen (*.png)"
@@ -3674,7 +3664,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Nieuwe node"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:87
+#: src/libraries/mindmap/src/data/packagenode.cpp:89
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Pakket"
@@ -8592,6 +8582,14 @@ msgstr "Slaapt"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Behekst"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Name"
+#~ msgstr "Naam"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Path"
+#~ msgstr "Pad"
 
 #~ msgctxt "MainWindow|"
 #~ msgid "Notification Zone"

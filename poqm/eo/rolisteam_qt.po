@@ -1427,7 +1427,7 @@ msgid "Slider"
 msgstr "Glitilo"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
 msgid "Hidden"
@@ -2680,22 +2680,22 @@ msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr "Neniu Diceparser-Objekto"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Internal"
 msgstr "Interna"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Linked"
 msgstr "Ligita"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Closed"
 msgstr "Fermita"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Displayed"
 msgstr "Montriĝis"
@@ -3151,16 +3151,6 @@ msgctxt "IpChecker|"
 msgid "Error to read server IP."
 msgstr "Eraro legi la IP-on de la servilo."
 
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Name"
-msgstr "Nomo"
-
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Path"
-msgstr "Vojo"
-
 #: src/libraries/core/src/undoCmd/addfogofwarchangecommand.cpp:28
 msgctxt "QObject|"
 msgid "Conceal vectorial map"
@@ -3541,12 +3531,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Aŭtomata interspaco"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:117
+#: src/libraries/mindmap/resources/qml/Content.qml:126
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Bildoj (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:130
+#: src/libraries/mindmap/resources/qml/Content.qml:139
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Bildoj (*.png)"
@@ -3752,7 +3742,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Nova nodo"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:87
+#: src/libraries/mindmap/src/data/packagenode.cpp:89
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Pako"
@@ -8679,6 +8669,14 @@ msgstr "Dormanta"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Prisorĉita"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Name"
+#~ msgstr "Nomo"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Path"
+#~ msgstr "Vojo"
 
 #~ msgctxt "MainWindow|"
 #~ msgid "Notification Zone"

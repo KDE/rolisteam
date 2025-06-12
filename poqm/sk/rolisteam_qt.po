@@ -1734,7 +1734,7 @@ msgid "Slider"
 msgstr "Posuvník"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
 msgid "Hidden"
@@ -3199,22 +3199,22 @@ msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr ""
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Internal"
 msgstr "Interný"
 
-#: src/libraries/core/src/data/cleveruri.cpp:225
+#: src/libraries/core/src/data/cleveruri.cpp:217
 msgctxt "QObject|"
 msgid "Linked"
 msgstr "Prepojené"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Closed"
 msgstr "Uzavreté"
 
-#: src/libraries/core/src/data/cleveruri.cpp:230
+#: src/libraries/core/src/data/cleveruri.cpp:222
 msgctxt "QObject|"
 msgid "Displayed"
 msgstr "Zobrazené"
@@ -3669,16 +3669,6 @@ msgctxt "IpChecker|"
 msgid "Error to read server IP."
 msgstr "Chyba pri čítaní IP servera."
 
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Name"
-msgstr "Názov"
-
-#: src/libraries/core/src/session/sessionitemmodel.cpp:34
-msgctxt "SessionItemModel|"
-msgid "Path"
-msgstr "Cesta"
-
 #: src/libraries/core/src/undoCmd/addfogofwarchangecommand.cpp:28
 msgctxt "QObject|"
 msgid "Conceal vectorial map"
@@ -4072,12 +4062,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Automatické rozmiestnenie"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:117
+#: src/libraries/mindmap/resources/qml/Content.qml:126
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Obrázky (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:130
+#: src/libraries/mindmap/resources/qml/Content.qml:139
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Obrázky (*.png)"
@@ -4296,7 +4286,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Nový uzol"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:87
+#: src/libraries/mindmap/src/data/packagenode.cpp:89
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Balík"
@@ -10002,6 +9992,14 @@ msgstr "Spiaci"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Očarený"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Name"
+#~ msgstr "Názov"
+
+#~ msgctxt "SessionItemModel|"
+#~ msgid "Path"
+#~ msgstr "Cesta"
 
 #, fuzzy
 #~| msgctxt "SideMenu|"
