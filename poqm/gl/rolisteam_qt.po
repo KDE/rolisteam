@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-05-04 13:39+0200\n"
+"PO-Revision-Date: 2025-06-21 12:05+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.04.2\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
@@ -1659,9 +1659,6 @@ msgid "Server Panel"
 msgstr "Panel do servidor"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona de notificacións"
