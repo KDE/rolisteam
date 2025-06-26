@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-02-08 01:08+0100\n"
+"PO-Revision-Date: 2025-06-25 22:42+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -30,9 +30,6 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "Gogoeta-mapa (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
 msgstr "Ireki gogoeta-mapa"
@@ -434,9 +431,6 @@ msgid "PDF files (*.pdf)"
 msgstr "PDF fitxategiak (*.pdf)"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Export PDF background Dialog"
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
 msgstr "Esportatu PDF hondoko planoa elkarrizketa-koadroa"
@@ -500,7 +494,7 @@ msgstr "Orriaren propietatea"
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr ""
+msgstr "Zabalera bete era lehenetsian"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
@@ -746,12 +740,7 @@ msgid "Support"
 msgstr "Euskarria"
 
 #: src/binaries/rcse/mainwindow.cpp:378
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -772,10 +761,7 @@ msgid "Help"
 msgstr "Laguntza"
 
 #: src/binaries/rcse/mainwindow.cpp:491
-#, fuzzy, qt-format
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Documentation of Rcse can be found online at :<br> <a href=\"%1\">%1</a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
@@ -823,19 +809,11 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam pertsonaien-orri ikuspegia (*.rcs)"
 
 #: src/binaries/rcse/mainwindow.cpp:730
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Uneko QML kodea ezabatu nahi duzu?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1280,17 +1258,11 @@ msgid "Hidden Field (for intermediate calculations)"
 msgstr "Ezkutatutako eremua (tarteko kalkuluetarako)"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:37
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Directory to save QML file"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Directory to save QML file"
 msgstr "QML fitxategia gordetzeko direktorioa"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:37
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Place to save Generated files"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Place to save Generated files"
 msgstr "Sortutako fitxategiak gordetzeko lekua"
@@ -1671,17 +1643,11 @@ msgid "Server Panel"
 msgstr "Zerbitzariaren panela"
 
 #: src/binaries/widget/mainwindow.cpp:472
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Jakinarazpen eremua"
 
 #: src/binaries/widget/mainwindow.cpp:487
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "GM Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "JM Tresnak"
@@ -1714,10 +1680,7 @@ msgid "Open Campaign"
 msgstr "Ireki kanpaina bat"
 
 #: src/binaries/widget/mainwindow.cpp:715
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "Documentation of %1 can be found online at :<br> <a href=\"%2\">%2</a>"
+#, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
@@ -1737,17 +1700,14 @@ msgstr ""
 "%1 dohaintza orria lerroan hemen aurki daiteke:<br><a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:812
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "MainWindow|"
 msgid "Do you want to save the campaign?"
-msgstr "Uneko QML kodea ezabatu nahi duzu?"
+msgstr "Kanpaina gorde nahi duzu?"
 
 #: src/binaries/widget/mainwindow.cpp:812
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
-msgstr ""
+msgstr "Rolisteam-etik benetan irten nahi duzu?"
 
 #: src/binaries/widget/mainwindow.cpp:818
 #, qt-format
@@ -2446,84 +2406,54 @@ msgid "Is Background"
 msgstr "Hondoa da"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:87
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too many arguments"
 msgctxt "QObject|"
 msgid "abs: too many arguments"
 msgstr "abs: argumentu gehiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:91
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "abs : too few arguments"
 msgctxt "QObject|"
 msgid "abs: too few arguments"
 msgstr "abs: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:109
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too many arguments"
 msgctxt "QObject|"
 msgid "ceil: too many arguments"
-msgstr "ceil : argumentu gehiegi"
+msgstr "ceil: argumentu gehiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:113
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "ceil : too few arguments"
 msgctxt "QObject|"
 msgid "ceil: too few arguments"
-msgstr "ceil : argumentu gutxiegi"
+msgstr "ceil: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:130
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too many arguments"
 msgctxt "QObject|"
 msgid "floor: too many arguments"
-msgstr "floor : argumentu gehiegi"
+msgstr "floor: argumentu gehiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:134
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "floor : too few arguments"
 msgctxt "QObject|"
 msgid "floor: too few arguments"
-msgstr "floor : argumentu gutxiegi"
+msgstr "floor: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:151
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "concatenate : too few arguments"
 msgctxt "QObject|"
 msgid "concatenate: too few arguments"
-msgstr "concatenate : argumentu gutxiegi"
+msgstr "concatenate: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:174
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "min : too few arguments"
 msgctxt "QObject|"
 msgid "min: too few arguments"
-msgstr "min : argumentu gutxiegi"
+msgstr "min: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:203
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "max : too few arguments"
 msgctxt "QObject|"
 msgid "max: too few arguments"
-msgstr "max : argumentu gutxiegi"
+msgstr "max: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/operator.cpp:232
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "avg : too few arguments"
 msgctxt "QObject|"
 msgid "avg: too few arguments"
-msgstr "avg : argumentu gutxiegi"
+msgstr "avg: argumentu gutxiegi"
 
 #: src/libraries/charactersheet/src/formula/nodes/scalaroperatorfnode.cpp:74
 msgctxt "QObject|"
@@ -3075,9 +3005,6 @@ msgid "Socket is not writable"
 msgstr "Ezin da hargunean idatzi"
 
 #: src/libraries/core/src/network/clientconnection.cpp:119
-#, fuzzy
-#| msgctxt "ClientConnection|"
-#| msgid "Transmission error :"
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Transmisio errorea:"
@@ -3148,12 +3075,10 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Zerbitzu mota egokia aurkitzea huts egin du: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:342
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :%3\n"
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
-msgstr "Ataka mapatzea gehitzea huts egin du (%1/%2) : errorea :%3\n"
+msgstr "Ataka mapatzea gehitzea huts egin du (%1/%2): errorea:%3\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -3407,9 +3332,7 @@ msgid "Webview"
 msgstr "Web-ikuspegia"
 
 #: src/libraries/dicephysics/data/dicemodel.cpp:272
-#, fuzzy, qt-format
-#| msgctxt "DiceModel|"
-#| msgid "# 3D Roll : Distance %1 - Time %2 - Rotation %3"
+#, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D biratzea: Distantzia %1 - Denbora %2 - Errotazioa %3"
@@ -3443,12 +3366,12 @@ msgstr "Dado-komandoa:"
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
-msgstr ""
+msgstr "Ezkutatu 3D dadoa hau igarota: %1s"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:206
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
-msgstr ""
+msgstr "Denbora bat igarota 3D Dadoaren panela desagertzen da."
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
@@ -3680,12 +3603,9 @@ msgid "Link label visible:"
 msgstr "Estekaren etiketa ikusgai:"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:54
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Side Panels"
 msgctxt "SideMenu|"
 msgid "Hide empty label"
-msgstr "Alboko-panelak"
+msgstr "Ezkutatu etiketa hutsa"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
@@ -3801,12 +3721,9 @@ msgid "All"
 msgstr "Dena"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:47
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Load Image"
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Zamatu irudia"
+msgstr "Irudirik ez"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:57
 msgctxt "PersonEdit|"
@@ -3887,28 +3804,19 @@ msgid "Add chatroom"
 msgstr "Gehitu berriketa-gela"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Player"
 msgctxt "RecipiantsView|"
 msgid "Players:"
-msgstr "Jokalaria"
+msgstr "Jokalariak:"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:38
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "All"
 msgctxt "RecipiantsView|"
 msgid "All"
 msgstr "Dena"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:75
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Ban User"
 msgctxt "RecipiantsView|"
 msgid "Add User"
-msgstr "Debekatu erabiltzailea"
+msgstr "Gehitu erabiltzailea"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:39
 msgctxt "SideMenu|"
@@ -4003,7 +3911,7 @@ msgstr "Gorde profilak"
 #: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
-msgstr ""
+msgstr "Mesedez, datuak ezarri ertz gorriak ikusten dituzun lekuetan."
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:331
 msgctxt "ConnectionForm|"
@@ -4385,9 +4293,6 @@ msgid "Zoom"
 msgstr "Zoom"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:384
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Rotation Value ?"
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
 msgstr "Biraketa balioa?"
@@ -4591,17 +4496,6 @@ msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Gorria: %1, Berdea: %2, Urdina: %3"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
-#, fuzzy
-#| msgctxt "AboutRolisteam|"
-#| msgid ""
-#| "Rolisteam helps you to manage a tabletop role playing game with remote "
-#| "friends/players. It provides many features to share maps, pictures and it "
-#| "also includes tool to communicate with your friends/players. The goal is "
-#| "to make Rolisteam-managed RPG games as good as RPG games around your "
-#| "table. To achieve it, we are working hard to provide you more and more "
-#| "features. Existing features : Map sharing (with permission management), "
-#| "Image sharing, background music, dice roll and so on. Rolisteam is "
-#| "written in Qt5"
 msgctxt "AboutRolisteam|"
 msgid ""
 "Rolisteam helps you to manage a tabletop role playing game with remote "
@@ -4619,7 +4513,7 @@ msgstr ""
 "bezain onak izatea du. Hori lortzeko, lanean gogor ari gara, ezaugarri "
 "gehiago emateko. Dagoeneko dituen ezaugarriak: Mapak partekatzea (baimen "
 "kudeatzailearekin), irudiak partekatzea, hondoko musika, dadoak jaurtitzea, "
-"eta abar. Rolisteam «Qt5»ekin idatzita dago."
+"eta abar. Rolisteam Qt5-ekin idatzita dago."
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
 msgctxt "AboutRolisteam|"
@@ -4652,12 +4546,9 @@ msgid "Bug Tracker"
 msgstr "Akats aztarnaria"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
-#, fuzzy
-#| msgctxt "CampaignManager|"
-#| msgid "Impossible to create campaign template at %1"
 msgctxt "AboutRolisteam|"
 msgid "Impossible to read the template."
-msgstr "Ezinezkoa da %1(e)n kanpaina-txantiloia sortzea"
+msgstr "Ezinezkoa da txantiloia irakurtzea."
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.ui:17
 msgctxt "AboutRolisteam|"
@@ -5076,7 +4967,7 @@ msgstr "JPren mugimendua"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "PC All"
-msgstr ""
+msgstr "JP denak"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
@@ -5100,9 +4991,7 @@ msgid "Css"
 msgstr "CSS"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:445
-#, fuzzy, qt-format
-#| msgctxt "PreferencesDialog|"
-#| msgid "<li>Image Format : %1 value %2</li>"
+#, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Irudi-formatu: %1 balioa %2</li>"
@@ -5314,7 +5203,7 @@ msgstr "Mezularitza"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:463
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
-msgstr ""
+msgstr "Gorde berriketa-geletako datuak"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:486
 msgctxt "PreferencesDialogBox|"
@@ -5589,9 +5478,6 @@ msgid "Dialog"
 msgstr "Elkarrizketa-koadroa"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
 msgstr "Ez inoiz berriz erakutsi!"
@@ -7918,28 +7804,20 @@ msgid "%1 - Image"
 msgstr "%1 - Irudia"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy, qt-format
-#| msgctxt "Image|"
-#| msgid "%1 - (Picture)"
+#, qt-format
 msgctxt "Image|"
 msgid "%1 - (Picture : %2)"
-msgstr "%1 - (Irudia)"
+msgstr "%1 - (Irudia: %2)"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Shared"
-msgstr "Partekatu"
+msgstr "Partekatuta"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Unshared"
-msgstr "Partekatu"
+msgstr "Partekatu gabe"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:214
 msgctxt "Image|"
@@ -8080,17 +7958,11 @@ msgstr "Eten"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:334
 #: src/libraries/rwidgets/mediacontainers/image.cpp:348
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Share"
 msgstr "Partekatu"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:346
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Stop Sharing"
 msgctxt "Image|"
 msgid "Stop Sharing"
 msgstr "Utzi partekatzeari"
@@ -8289,12 +8161,9 @@ msgid "Text"
 msgstr "Testua"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:376
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Side Panels"
 msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
-msgstr "Alboko-panelak"
+msgstr "Ezkutatu alboko-panela"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
