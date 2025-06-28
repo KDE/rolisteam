@@ -58,7 +58,10 @@ QString Channel::description() const
 
 void Channel::setDescription(const QString& description)
 {
+    if(description == m_description)
+        return;
     m_description= description;
+    emit descriptionChanged();
 }
 
 bool Channel::usersListed() const

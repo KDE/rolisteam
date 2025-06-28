@@ -54,7 +54,7 @@ int ParticipantsModel::columnCount(const QModelIndex& parent) const
         return 0;
     return 1;
 }
-
+// ntntrs
 QVariant ParticipantsModel::data(const QModelIndex& index, int role) const
 {
     static QSet<int> set{PlayerModel::IdentifierRole, Qt::DisplayRole};

@@ -17,20 +17,19 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
-#include <memory.h>
 #include "common_qml/theme.h"
 #include "test_root_path.h"
 #include <helper.h>
+#include <memory.h>
 
 class ThemeTest : public QObject
 {
     Q_OBJECT
 public:
     ThemeTest();
-
 
 private slots:
     void init();
@@ -40,12 +39,7 @@ private:
     std::unique_ptr<customization::Theme> m_theme;
 };
 
-
-
-ThemeTest::ThemeTest()
-{
-
-}
+ThemeTest::ThemeTest() {}
 
 void ThemeTest::init()
 {
@@ -54,10 +48,10 @@ void ThemeTest::init()
 }
 void ThemeTest::getAndSet()
 {
-    auto styleSheet = m_theme->styleSheet("InstantMessaging");
+    auto styleSheet= m_theme->styleSheet("InstantMessaging");
 
-    auto key = Helper::randomString();
-    auto value = Helper::randomString();
+    auto key= Helper::randomString();
+    auto value= Helper::randomString();
     styleSheet->insertOrUpdate(key, QVariant::fromValue(value));
 
     QCOMPARE(styleSheet->value(key), value);
@@ -70,6 +64,31 @@ void ThemeTest::getAndSet()
 
     spy.wait();
     QCOMPARE(spy.count(), 2);
+
+    {
+        auto f= m_theme->imBigFont();
+        Q_UNUSED(f)
+    }
+    {
+        auto f= m_theme->imLittleFont();
+        Q_UNUSED(f)
+    }
+    {
+        auto f= m_theme->imFont();
+        Q_UNUSED(f)
+    }
+
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), true, true, true);
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), false, true, true);
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), false, false, true);
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), false, false, false);
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), true, true, false);
+    m_theme->buttonColor(Helper::randomColor(), Helper::randomColor(), true, false, false);
+
+    m_theme->buttonOutline(Helper::randomColor(), Helper::randomColor(), false, false);
+    m_theme->buttonOutline(Helper::randomColor(), Helper::randomColor(), true, false);
+    m_theme->buttonOutline(Helper::randomColor(), Helper::randomColor(), false, true);
+    m_theme->buttonOutline(Helper::randomColor(), Helper::randomColor(), true, true);
 }
 
 QTEST_MAIN(ThemeTest)

@@ -65,6 +65,14 @@ void PlayerModelTest::addTest()
         auto data= m_participantsModel->index(0, 0, index);
         QCOMPARE(name, data.data().toString());
     }
+
+    QJsonObject obj;
+
+    m_participantsModel->saveModel(obj);
+    m_participantsModel->loadModel(obj);
+
+    for(auto p : players)
+        m_participantsModel->removePlayer(p);
 }
 
 void PlayerModelTest::addTest_data()

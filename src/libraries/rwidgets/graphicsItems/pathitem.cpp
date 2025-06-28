@@ -134,7 +134,10 @@ PathItem::PathItem(vmap::PathController* ctrl) : VisualItem(ctrl), m_pathCtrl(ct
     if(!m_pathCtrl->penLine())
     {
         for(auto point : m_pathCtrl->points())
+        {
             addChild(point, i);
+            i++;
+        }
     }
 
     m_closeAct= new QAction(tr("Close Path"), this);

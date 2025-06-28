@@ -27,7 +27,7 @@
 #include <QRectF>
 #include <QVariant>
 #include <core_global.h>
-#include <vector>
+
 class VectorialMapController;
 namespace vmap
 {
@@ -71,7 +71,6 @@ signals:
     void textChanged(QString text);
     void textRectChanged(QRectF textRect);
     void borderRectChanged(QRectF borderRect);
-    void colorChanged(QColor color);
     void borderChanged(bool border);
     void fontChanged(QFont font);
     void borderRectEditFinished();

@@ -28,11 +28,17 @@
 #include "network/messagedispatcher.h"
 #include "network/networkmessagewriter.h"
 #include "network/passwordaccepter.h"
+#include "network/serverconnection.h"
 #include "network/timeaccepter.h"
 #include "worker/messagehelper.h"
 #include "worker/playermessagehelper.h"
 
 #include <helper.h>
+class ValidAccepetr : public ConnectionAccepter
+{
+protected:
+    bool isValid(const QMap<QString, QVariant>& data) const override;
+};
 
 class TestNetwork : public QObject
 {
@@ -66,6 +72,9 @@ private slots:
     void playerMessageHelper();
 
     void messageHelperTest();
+    void serverConnectionTest();
+
+    void channelTest();
 
 private:
     std::unique_ptr<NetworkMessageWriter> m_writer;
@@ -73,6 +82,8 @@ private:
     std::unique_ptr<PasswordAccepter> m_passwordAccepter;
     std::unique_ptr<IpRangeAccepter> m_ipRangeAccepter;
     std::unique_ptr<TimeAccepter> m_timeAccepter;
+    std::unique_ptr<ServerConnection> m_serverConnection;
+    std::unique_ptr<Channel> m_channel;
 };
 
 Q_DECLARE_METATYPE(PasswordAccepter::Level)
@@ -83,6 +94,83 @@ void TestNetwork::initTestCase() {}
 
 void TestNetwork::cleanupTestCase() {}
 
+void TestNetwork::channelTest()
+{
+    QTcpSocket socket;
+    m_serverConnection.reset(new ServerConnection(&socket, nullptr));
+
+    QTcpSocket socket2;
+    auto conn2= new ServerConnection(&socket2, nullptr);
+
+    QCOMPARE(m_channel->getCurrentGmId(), QString());
+    auto f= m_channel->getChildAt(0);
+    QVERIFY(!f);
+
+    m_channel->addChild(nullptr);
+
+    m_channel->addChild(m_serverConnection.get());
+    m_channel->addChild(conn2);
+    QCOMPARE(m_channel->indexOf(m_serverConnection.get()), 0);
+
+    f= m_channel->getChildAt(0);
+    QVERIFY(f);
+
+    f= m_channel->getChildAt(1000);
+    QVERIFY(!f);
+
+    m_channel->contains(Helper::randomString());
+
+    QVERIFY(m_channel->removeClient(m_serverConnection.get()));
+
+    NetworkMessageWriter msg(NetMsg::VMapCategory, NetMsg::AddItem);
+    m_channel->sendMessage(&msg, m_serverConnection.get(), false);
+
+    NetworkMessageWriter msg2(NetMsg::VMapCategory, NetMsg::AddItem, NetworkMessage::OneOrMany);
+    m_channel->sendMessage(&msg2, m_serverConnection.get(), false);
+
+    {
+        NetworkMessageWriter msg(NetMsg::VMapCategory, NetMsg::AddItem);
+        m_channel->sendMessage(&msg, m_serverConnection.get(), true);
+    }
+
+    NetworkMessageWriter infoPlayer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
+    Player player;
+
+    PlayerMessageHelper::writePlayerIntoMessage(infoPlayer, &player);
+
+    auto dataRaw= infoPlayer.data();
+
+    NetworkMessageReader info(*infoPlayer.buffer(), dataRaw.data());
+    conn2->setInfoPlayer(&info);
+
+    m_channel->clearData();
+    m_channel->clear();
+
+    m_channel->removeChildById(Helper::randomString());
+    m_channel->kick(Helper::randomString(), true, Helper::randomString());
+
+    m_serverConnection.release();
+}
+
+void TestNetwork::serverConnectionTest()
+{
+    QTcpSocket socket;
+    ServerConnection connection(&socket, nullptr);
+
+    connection.resetStateMachine();
+
+    QVERIFY(!connection.isConnected());
+
+    connection.setParentChannel(nullptr);
+    QCOMPARE(connection.getParentChannel(), nullptr);
+
+    QCOMPARE(connection.getSocket(), &socket);
+    QVERIFY(!connection.isGM());
+    QVERIFY(!connection.isAdmin());
+
+    connection.startReading();
+}
+
 void TestNetwork::init()
 {
     m_writer.reset(new NetworkMessageWriter(NetMsg::MediaCategory, NetMsg::AddMedia));
@@ -90,6 +178,13 @@ void TestNetwork::init()
     m_passwordAccepter.reset(new PasswordAccepter());
     m_ipRangeAccepter.reset(new IpRangeAccepter());
     m_timeAccepter.reset(new TimeAccepter());
+
+    m_channel.reset(new Channel());
+
+    m_ipBanAccepter->setNext(new ValidAccepetr());
+    m_passwordAccepter->setNext(new ValidAccepetr());
+    m_ipRangeAccepter->setNext(new ValidAccepetr());
+    m_timeAccepter->setNext(new ValidAccepetr());
 }
 void TestNetwork::writeTest()
 {
@@ -99,17 +194,6 @@ void TestNetwork::writeTest()
         QCOMPARE(m_writer->getDataSize(), (1 + i) * sizeof(quint8) + 1); //+sizeof(NetworkMessageHeader)
     }
 }
-/*
-void TestNetwork::writeAndReadTest()
-{
-
-}
-
-void TestNetwork::writeAndReadTest_data()
-{
-    QTest::addColumn<QString>("currentIp");
-    QTest::addColumn<QStringList>("ipBan");
-}*/
 
 void TestNetwork::cleanup() {}
 
@@ -130,6 +214,13 @@ void TestNetwork::ipBanAccepterTest()
     QFETCH(bool, expected);
 
     QMap<QString, QVariant> data= {{"currentIp", currentIp}, {"IpBan", ipBan}};
+
+    QVERIFY(m_ipBanAccepter->isActive());
+
+    m_ipBanAccepter->setIsActive(false);
+    QVERIFY(!m_ipBanAccepter->isActive());
+    m_ipBanAccepter->setIsActive(true);
+    QVERIFY(m_ipBanAccepter->isActive());
 
     QCOMPARE(m_ipBanAccepter->runAccepter(data), expected);
 
@@ -608,3 +699,9 @@ void TestNetwork::messageHelperTest()
 QTEST_MAIN(TestNetwork);
 
 #include "tst_network.moc"
+
+bool ValidAccepetr::isValid(const QMap<QString, QVariant>& data) const
+{
+    Q_UNUSED(data);
+    return true;
+}

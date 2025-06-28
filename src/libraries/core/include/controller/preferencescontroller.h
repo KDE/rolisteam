@@ -78,6 +78,9 @@ public:
     void setDiceHighLightColor(const QColor& color);
 
     QString paramsFor(Core::MediaType type);
+
+    void setPreferencesManager(PreferencesManager* manager);
+
 signals:
     void currentThemeIndexChanged();
     void currentLangIndexChanged();

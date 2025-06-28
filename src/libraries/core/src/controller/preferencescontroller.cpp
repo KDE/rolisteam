@@ -126,7 +126,7 @@ PreferencesController::~PreferencesController()= default;
 
 void PreferencesController::setGameController(GameController* game)
 {
-    m_preferences= game->preferencesManager();
+    setPreferencesManager(game->preferencesManager());
     loadPreferences();
 
     if(m_themeModel->rowCount() == 0)
@@ -417,6 +417,9 @@ RolisteamTheme* PreferencesController::currentEditableTheme()
 {
     auto theme= currentTheme();
 
+    if(!theme)
+        return nullptr;
+
     if(!theme->isRemovable())
     {
         dupplicateTheme(static_cast<int>(m_currentThemeIndex), true);
@@ -468,6 +471,11 @@ QString PreferencesController::paramsFor(Core::MediaType type)
     }
 
     return path;
+}
+
+void PreferencesController::setPreferencesManager(PreferencesManager* manager)
+{
+    m_preferences= manager;
 }
 
 void PreferencesController::setCurrentThemeStyle(QStyle* style)

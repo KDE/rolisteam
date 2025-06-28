@@ -130,11 +130,6 @@ ParticipantModel::ParticipantModel(const QString& ownerId, PlayerModel* model, Q
     initModel();
 }
 
-QVariant ParticipantModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
-    return QVariant();
-}
-
 void ParticipantModel::initModel()
 {
     if(m_ownerId.isEmpty() || !m_playerList)

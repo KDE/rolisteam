@@ -26,7 +26,7 @@ protected:
 
 protected:
     ConnectionAccepter* m_next{nullptr};
-    bool m_isActive;
+    bool m_isActive{true};
 };
 
 #endif // CONNECTIONACCEPTER_H

@@ -793,7 +793,7 @@ QHash<QString, QVariant> MessageHelper::readPdfData(NetworkMessageReader* msg)
     if(nullptr == msg)
         return {};
 
-    auto hash = readMediaData(msg);
+    auto hash= readMediaData(msg);
 
     auto id= msg->string8();
     hash.insert(Core::keys::KEY_UUID, id);
@@ -1238,7 +1238,7 @@ QHash<QString, QVariant> MessageHelper::readVectorialMapData(NetworkMessageReade
     if(nullptr == msg)
         return {};
 
-    QHash<QString, QVariant> hash = readMediaData(msg);
+    QHash<QString, QVariant> hash= readMediaData(msg);
     hash[Core::keys::KEY_LAYER]= msg->uint8();
     hash[Core::keys::KEY_PERMISSION]= msg->uint8();
     hash[Core::keys::KEY_BGCOLOR]= QColor(msg->rgb());
@@ -1481,9 +1481,9 @@ void MessageHelper::readChildPackageAction(bool add, NetworkMessageReader* msg, 
     auto node= msg->string8();
 
     if(add)
-        ctrl->addItemIntoPackage(node, pack);
+        ctrl->addItemIntoPackage(node, pack, true);
     else
-        ctrl->removeItemFromPackage(node, pack);
+        ctrl->removeItemFromPackage(node, true);
 }
 
 void MessageHelper::sendOffImageInfo(const mindmap::ImageInfo& info, MediaControllerBase* ctrl)

@@ -2,6 +2,7 @@
 #include <QSignalSpy>
 #include <QTest>
 #include <QtCore/QCoreApplication>
+#include <set>
 
 #include "controller/item_controllers/linecontroller.h"
 #include "controller/item_controllers/visualitemcontroller.h"
@@ -55,6 +56,7 @@ private:
     std::unique_ptr<VMapFrame> m_media;
     std::unique_ptr<QUndoStack> m_stack;
     std::unique_ptr<ContentModel> m_contentModel;
+    std::unique_ptr<vmap::VmapItemModel> m_vmapModel;
     std::unique_ptr<FilteredContentModel> m_mapModel;
     QPointer<VectorialMapController> m_pctrl;
     QPointer<VMapFrame> m_pmedia;
@@ -97,8 +99,7 @@ void VMapTest::init()
     connect(m_ctrl.get(), &VectorialMapController::performCommand, this,
             [this](QUndoCommand* cmd) { m_stack->push(cmd); });
 
-    // connect(m_ctrl.get(), &VectorialMapController::destroyed, this, []() { qDebug() << "ctrl destroyed"; });
-    // connect(m_media.get(), &VMapFrame::destroyed, this, []() { qDebug() << "VMapFrame destroyed"; });
+    m_vmapModel.reset(new vmap::VmapItemModel());
 }
 void VMapTest::cleanup() {}
 
@@ -120,6 +121,19 @@ void VMapTest::addNullItems()
     for(auto type : types)
         model->appendItemController(new FakeItem(type, m_ctrl.get()));
 
+    std::set<int> allowedRoles(
+        {Qt::DisplayRole, vmap::VmapItemModel::IdRole, vmap::VmapItemModel::SelectedRole,
+         vmap::VmapItemModel::EditableRole, vmap::VmapItemModel::SelectableRole, vmap::VmapItemModel::VisibleRole,
+         vmap::VmapItemModel::OpacityRole, vmap::VmapItemModel::RotationRole, vmap::VmapItemModel::LayerRole,
+         vmap::VmapItemModel::PositionRole, vmap::VmapItemModel::LocalGmRole, vmap::VmapItemModel::ColorRole,
+         vmap::VmapItemModel::LockedRole, vmap::VmapItemModel::ToolRole, vmap::VmapItemModel::TypeRole,
+         vmap::VmapItemModel::InitializedRole, vmap::VmapItemModel::ControllerRole});
+
+    for(auto r : allowedRoles)
+        model->data(model->index(0, 0), r);
+
+    model->setModifiedToAllItem();
+
     auto line= vmap::VmapItemFactory::createVMapItem(
         m_ctrl.get(), Core::SelectableTool::LINE,
         Helper::buildLineController(Helper::randomPoint(), Helper::randomPoint(), Helper::randomPoint()));
@@ -127,6 +141,8 @@ void VMapTest::addNullItems()
 
     m_ctrl->showTransparentItems();
     line->setOpacity(0);
+
+    model->clearData();
 }
 
 void VMapTest::addItems()

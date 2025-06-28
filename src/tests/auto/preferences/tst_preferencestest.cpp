@@ -19,6 +19,11 @@
  ***************************************************************************/
 #include <QTest>
 
+#include "data/rolisteamtheme.h"
+#include "test_root_path.h"
+#include <controller/preferencescontroller.h>
+#include <helper.h>
+#include <media/mediatype.h>
 #include <preferences/preferenceslistener.h>
 #include <preferences/preferencesmanager.h>
 
@@ -31,8 +36,8 @@ public:
     void preferencesHasChanged(const QString& pref) override;
 
 private slots:
+    void init();
     void testPreferenceRegisterValue();
-    void initTestCase();
     void testNotOverridePreferenceValue();
     void testOverridePreferenceValue();
     void testLambdaFunction();
@@ -41,10 +46,83 @@ private slots:
 
 private:
     PreferencesManager* m_preferences;
+    std::unique_ptr<PreferencesController> m_ctrl;
     int m_count= 0;
 };
 
 PreferencesTest::PreferencesTest() {}
+
+void PreferencesTest::init()
+{
+    m_preferences= new PreferencesManager("Rolisteam", "tests");
+    m_ctrl.reset(new PreferencesController);
+
+    m_ctrl->setPreferencesManager(m_preferences);
+
+    m_ctrl->loadPreferences();
+    m_ctrl->savePreferences();
+
+    auto model= m_ctrl->themeModel();
+    QCOMPARE(model->rowCount(), 0);
+
+    auto theme= new RolisteamTheme();
+    theme->setRemovable(true);
+    auto uuid= theme->uuid();
+
+    model->addTheme(theme);
+    QCOMPARE(model->rowCount(), 1);
+
+    auto path= Helper::randomString();
+    m_ctrl->exportData(path);
+    m_ctrl->importData(path);
+
+    m_ctrl->exportData({});
+    m_ctrl->importData({});
+
+    m_ctrl->setCurrentThemeIndex(0);
+
+    QCOMPARE(m_ctrl->currentEditableTheme(), theme);
+    m_ctrl->dupplicateTheme(0, false);
+    m_ctrl->dupplicateTheme(1, true);
+    m_ctrl->setCurrentThemeIndex(0);
+
+    QCOMPARE(m_ctrl->theme(uuid), theme);
+
+    auto tName= Helper::randomString();
+    m_ctrl->setCurrentThemeTitle(tName);
+    QCOMPARE(m_ctrl->themeName(0), tName);
+
+    m_ctrl->setDiceHighLightColor(Helper::randomColor());
+
+    auto color= Helper::randomColor();
+    m_ctrl->setColorCurrentTheme(color, 0);
+
+    auto css= Helper::randomString();
+    m_ctrl->setCurrentThemeCss(css);
+    // QCOMPARE(m_ctrl->themeName(0), css);
+
+    auto title= Helper::randomString();
+    m_ctrl->setCurrentThemeTitle(title);
+
+    m_ctrl->setCurrentThemeBackground(Helper::randomString(), Helper::generate<int>(0, 100), Helper::randomColor());
+
+    std::array<Core::MediaType, 5> medias{Core::MediaType::CharacterSheetFile, Core::MediaType::MindmapFile,
+                                          Core::MediaType::TextFile, Core::MediaType::MarkdownFile,
+                                          Core::MediaType::PdfFile};
+
+    for(auto p : medias)
+    {
+        m_ctrl->externalEditorFor(p);
+        m_ctrl->paramsFor(p);
+    }
+
+    auto langs= m_ctrl->languageModel();
+    m_ctrl->setCurrentLangIndex(Helper::generate<int>(0, langs->rowCount() - 1));
+
+    m_ctrl->setCurrentLangIndex(Helper::generate<int>(-100, -2));
+
+    m_ctrl->setCurrentLangIndex(Helper::generate<int>(langs->rowCount() + 2, (langs->rowCount() + 2) * 200));
+}
 
 void PreferencesTest::preferencesHasChanged(const QString& key)
 {
@@ -71,10 +149,6 @@ void PreferencesTest::testOverridePreferenceValue()
     QVERIFY(m_preferences->value("key2", 400) == 300);
     m_preferences->registerValue("key2", 100);
     QVERIFY(m_preferences->value("key2", 400) == 100);
-}
-void PreferencesTest::initTestCase()
-{
-    m_preferences= new PreferencesManager("Rolisteam", "tests");
 }
 
 void PreferencesTest::testLambdaFunction()

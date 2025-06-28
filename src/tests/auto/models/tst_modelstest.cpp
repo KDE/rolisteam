@@ -21,6 +21,7 @@
 #include "controller/view_controller/mindmapcontrollerbase.h"
 #include "controller/view_controller/webpagecontroller.h"
 #include "data/player.h"
+#include "data/rolisteamtheme.h"
 #include "data/shortcutmodel.h"
 #include "model/actiononlistmodel.h"
 #include "model/characterstatemodel.h"
@@ -34,6 +35,7 @@
 #include "model/playermodel.h"
 #include "model/playerproxymodel.h"
 #include "model/singlecontenttypemodel.h"
+#include "model/thememodel.h"
 #include "rwidgets/customs/shortcutvisitor.h"
 #include <QAbstractItemModelTester>
 #include <QClipboard>
@@ -468,10 +470,25 @@ void ModelTest::colorModel()
     new QAbstractItemModelTester(model.get());
     auto src= new campaign::NonPlayableCharacterModel(new CharacterStateModel());
     model->setSourceModel(src);
-}
 
-#include "model/thememodel.h"
-#include "data/rolisteamtheme.h"
+    auto npc= new campaign::NonPlayableCharacter();
+
+    npc->setName(Helper::randomString());
+    npc->setColor(Helper::randomColor());
+
+    src->addCharacter(npc);
+
+    npc= new campaign::NonPlayableCharacter();
+
+    npc->setName(Helper::randomString());
+    npc->setColor(Helper::randomColor());
+
+    src->addCharacter(npc);
+
+    npc->setColor(Helper::randomColor());
+
+    model->setData(model->index(0, 0), Helper::randomColor(), campaign::NonPlayableCharacterModel::RoleColor);
+}
 
 void ModelTest::themeModel()
 {
@@ -483,21 +500,21 @@ void ModelTest::themeModel()
     model->indexOf(nullptr);
     model->indexOf("uuid");
 
-    RolisteamTheme* theme1 = new RolisteamTheme();
-    auto id = theme1->uuid();
+    RolisteamTheme* theme1= new RolisteamTheme();
+    auto id= theme1->uuid();
     model->addTheme(theme1);
 
     model->removeTheme(0);
-    theme1 = new RolisteamTheme();
+    theme1= new RolisteamTheme();
     model->addTheme(theme1);
-    id = theme1->uuid();
+    id= theme1->uuid();
 
-    QCOMPARE(model->indexOf(theme1),model->indexOf(id));
+    QCOMPARE(model->indexOf(theme1), model->indexOf(id));
 
-    auto name = model->name(0);
+    auto name= model->name(0);
     Q_UNUSED(name);
 
-    auto& themes = model->themes();
+    auto& themes= model->themes();
 
     QCOMPARE(themes.size(), 1);
     model->clear();
@@ -524,13 +541,12 @@ void ModelTest::stateModel()
     dead.setId("dead");
     states->appendState(std::move(dead));
 
-
     auto src= new campaign::NonPlayableCharacterModel(states);
     model->setSourceModel(src);
 
-    auto npc1 = new campaign::NonPlayableCharacter();
-    auto npc2 = new campaign::NonPlayableCharacter();
-    auto npc3 = new campaign::NonPlayableCharacter();
+    auto npc1= new campaign::NonPlayableCharacter();
+    auto npc2= new campaign::NonPlayableCharacter();
+    auto npc3= new campaign::NonPlayableCharacter();
 
     npc1->setStateId("dead");
     npc2->setStateId("alive");
@@ -541,9 +557,45 @@ void ModelTest::stateModel()
 
     model->rowCount(model->index(0));
 
-
     npc3->setStateId("alive");
     npc3->setStateId("dead");
+
+    model->headerData(0, Qt::Vertical, Qt::DisplayRole);
+    model->headerData(0, Qt::Horizontal, Qt::DisplayRole);
+    model->headerData(0, Qt::Horizontal, Qt::EditRole);
+
+    QSet<int> acceptedRole({Qt::DecorationRole,
+                            Qt::DisplayRole,
+                            Qt::TextAlignmentRole,
+                            Qt::BackgroundRole,
+                            Qt::EditRole,
+                            campaign::NonPlayableCharacterModel::RoleUuid,
+                            campaign::NonPlayableCharacterModel::RoleAvatar,
+                            campaign::NonPlayableCharacterModel::RoleName,
+                            campaign::NonPlayableCharacterModel::RoleDescription,
+                            campaign::NonPlayableCharacterModel::RoleGmDetails,
+                            campaign::NonPlayableCharacterModel::RoleTags,
+                            campaign::NonPlayableCharacterModel::RoleColor,
+                            campaign::NonPlayableCharacterModel::RoleMinHp,
+                            campaign::NonPlayableCharacterModel::RoleCurrentHp,
+                            campaign::NonPlayableCharacterModel::RoleMaxHp,
+                            campaign::NonPlayableCharacterModel::RoleInitiative,
+                            campaign::NonPlayableCharacterModel::RoleDistancePerTurn,
+                            campaign::NonPlayableCharacterModel::RoleState,
+                            campaign::NonPlayableCharacterModel::RoleLifeColor,
+                            campaign::NonPlayableCharacterModel::RoleInitCommand,
+                            campaign::NonPlayableCharacterModel::RoleUuid,
+                            campaign::NonPlayableCharacterModel::RoleAvatarPath,
+                            campaign::NonPlayableCharacterModel::RoleHasInitiative,
+                            campaign::NonPlayableCharacterModel::RoleActionCount,
+                            campaign::NonPlayableCharacterModel::RoleShapeCount,
+                            campaign::NonPlayableCharacterModel::RolePropertiesCount});
+
+    for(auto i : acceptedRole)
+    {
+        src->data(src->index(0, 0), i);
+        src->setData(src->index(0, 0), QVariant(), i);
+    }
 }
 #include "model/patternmodel.h"
 void ModelTest::patternModel()
@@ -554,8 +606,6 @@ void ModelTest::patternModel()
 
     model.getPatternAt(0);
     model.getPatternAt(100);
-
-
 }
 
 QTEST_MAIN(ModelTest);

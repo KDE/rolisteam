@@ -27,6 +27,7 @@ TextControllerUpdater::TextControllerUpdater(QObject* parent) : VMapItemControll
 
 void TextControllerUpdater::addItemController(vmap::VisualItemController* ctrl, bool sendOff)
 {
+    qDebug() << "@@@@@@@@@@@@@@ add item controller text";
     if(nullptr == ctrl)
         return;
 
@@ -38,7 +39,11 @@ void TextControllerUpdater::addItemController(vmap::VisualItemController* ctrl, 
     VMapItemControllerUpdater::addItemController(textCtrl);
 
     connect(textCtrl, &vmap::TextController::textChanged, this,
-            [this, textCtrl]() { sendOffVMapChanges<QString>(textCtrl, QStringLiteral("text")); });
+            [this, textCtrl]()
+            {
+                qDebug() << "@@@@@@@@ update Text";
+                sendOffVMapChanges<QString>(textCtrl, QStringLiteral("text"));
+            });
     connect(textCtrl, &vmap::TextController::borderRectEditFinished, this,
             [this, textCtrl]() { sendOffVMapChanges<QRectF>(textCtrl, QStringLiteral("borderRect")); });
     connect(textCtrl, &vmap::TextController::fontChanged, this,

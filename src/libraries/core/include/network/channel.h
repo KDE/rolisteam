@@ -45,6 +45,7 @@ class NETWORK_EXPORT Channel : public TreeItem
     Q_PROPERTY(quint64 memorySize READ memorySize WRITE setMemorySize NOTIFY memorySizeChanged)
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
     Q_PROPERTY(ServerConnection* currentGM READ currentGM WRITE setCurrentGM NOTIFY currentGMChanged)
+    Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY descriptionChanged FINAL)
 public:
     Channel();
     explicit Channel(QString name);
@@ -109,6 +110,7 @@ signals:
     void memorySizeChanged(quint64 memorySize, Channel* id);
     void lockedChanged();
     void currentGMChanged();
+    void descriptionChanged();
 
 protected:
     bool hasNoClient();

@@ -63,6 +63,8 @@ TextController::TextController(const std::map<QString, QVariant>& params, Vector
     connect(this, &TextController::borderChanged, this, [this] { setModified(); });
     connect(this, &TextController::fontChanged, this, [this] { setModified(); });
     connect(this, &TextController::textPosChanged, this, [this] { setModified(); });
+
+    setInitialized(true);
 }
 QString TextController::text() const
 {
