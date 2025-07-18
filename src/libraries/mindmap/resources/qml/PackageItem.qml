@@ -71,10 +71,10 @@ Rectangle {
         }
         onEntered: (drag)=>{
             //drag.accepted = true
-            if(drag.source === root)
+            if(drag.source === _root)
                drag.accepted = false
 
-            if(drag.source !== root)
+            if(drag.source !== _root)
                 _root.dropOver = true
         }
         onExited:_root.dropOver = false

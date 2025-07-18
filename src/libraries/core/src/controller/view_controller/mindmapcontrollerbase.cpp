@@ -447,16 +447,11 @@ void MindMapControllerBase::addItemIntoPackage(const QString& idNode, const QStr
     node->setLocked(true);
 }
 
-void MindMapControllerBase::removeItemFromPackage(const QString& idNode, const QString& idPack, bool network)
+void MindMapControllerBase::removeItemFromPackage(const QString& idNode, bool network)
 {
-    auto node= dynamic_cast<PositionedItem*>(m_itemModel->item(idNode));
-    auto pack= dynamic_cast<PackageNode*>(m_itemModel->item(idPack));
-
-    if(!node || !pack || !readWrite())
+    if(!readWrite())
         return;
-
-    pack->removeChild(idNode, network);
-    node->setLocked(false);
+    m_itemModel->removeItemFromPackage(idNode, network);
 }
 
 QObject* MindMapControllerBase::subItem(const QString& id, mindmap::MindItem::Type type) const

@@ -75,11 +75,22 @@ bool ChildrenModel::addChild(PositionedItem* item)
 bool ChildrenModel::removeChild(const QString& id)
 {
     beginResetModel();
-    bool res= 0 < erase_if(m_internalChildren, [id](PositionedItem* item) {
-                  qDebug() << item->id() << id;
-return id == item->id(); });
+    bool res= 0 < erase_if(m_internalChildren,
+                           [id](PositionedItem* item)
+                           {
+                               qDebug() << item->id() << id;
+                               return id == item->id();
+                           });
     endResetModel();
     return res;
+}
+
+bool ChildrenModel::containsChild(const QString& childId) const
+{
+    auto it= std::find_if(std::begin(m_internalChildren), std::end(m_internalChildren),
+                          [childId](mindmap::PositionedItem* item) { return item->id() == childId; });
+
+    return it != std::end(m_internalChildren);
 }
 
 // Package
@@ -129,6 +140,11 @@ void PackageNode::removeChild(const QString& id, bool network)
 {
     if(m_children->removeChild(id) && !network)
         emit childRemoved(id);
+}
+
+bool PackageNode::containsChild(const QString& id) const
+{
+    return m_children->containsChild(id);
 }
 
 const QList<PositionedItem*>& PackageNode::children() const

@@ -51,6 +51,8 @@ public:
     bool addChild(mindmap::PositionedItem* item);
     bool removeChild(const QString& id);
 
+    bool containsChild(const QString& childId) const;
+
 private:
     QList<mindmap::PositionedItem*> m_internalChildren;
 };
@@ -69,6 +71,7 @@ public:
     void setMinimumMargin(int newMinimumMargin);
 
     ChildrenModel* model() const;
+    bool containsChild(const QString& id) const;
 
 public slots:
     void addChild(mindmap::PositionedItem* item, bool network= false);

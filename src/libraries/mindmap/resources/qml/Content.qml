@@ -16,7 +16,6 @@ Pane {
     property bool darkMode: false
     property int idx: 0
     property QtObject styleSheet: Theme.styleSheet("mindmap")
-    property Button mainBtn: btn0
 
     signal saveMap
 
@@ -55,13 +54,6 @@ Pane {
             else
                 mouse.accepted = false;
         }*/
-    }
-    Button {
-        id: btn0
-      property bool isLundi: false
-    }
-    Button {
-       id: btn1
     }
 
     MouseArea {

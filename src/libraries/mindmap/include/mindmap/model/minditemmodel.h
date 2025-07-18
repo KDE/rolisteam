@@ -77,6 +77,7 @@ public:
     void setDefaultStyleIndex(int newDefaultStyleIndex);
 
     PositionedItem* parentNode(const QString& id);
+    void removeItemFromPackage(const QString& id, bool network);
 
 public slots:
     mindmap::MindItem* createItem(MindItem::Type type);
@@ -85,6 +86,7 @@ public slots:
     void setImageUriToNode(const QString& id);
     void update(const QString& id, int role);
     void clear();
+    bool isPackageChild(const QString& id);
 
 signals:
     void geometryChanged();

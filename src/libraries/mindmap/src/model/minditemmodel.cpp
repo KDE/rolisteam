@@ -24,6 +24,7 @@
 #include <QRectF>
 
 #include "mindmap/data/linkcontroller.h"
+#include "mindmap/data/packagenode.h"
 #include "mindmap/model/imagemodel.h"
 #include "mindmap/model/nodeimageprovider.h"
 
@@ -227,6 +228,38 @@ void MindItemModel::clear()
     m_packages.clear();
     m_nodes.clear();
     endResetModel();
+}
+
+bool MindItemModel::isPackageChild(const QString& id)
+{
+    for(auto item : m_packages)
+    {
+        if(!item)
+            continue;
+
+        auto package= dynamic_cast<mindmap::PackageNode*>(item);
+        if(!package)
+            continue;
+
+        if(package->containsChild(id))
+            return true;
+    }
+    return false;
+}
+
+void MindItemModel::removeItemFromPackage(const QString& id, bool network)
+{
+    for(auto item : m_packages)
+    {
+        if(!item)
+            continue;
+
+        auto package= dynamic_cast<mindmap::PackageNode*>(item);
+        if(!package)
+            continue;
+
+        package->removeChild(id, network);
+    }
 }
 
 void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)

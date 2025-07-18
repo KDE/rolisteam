@@ -275,5 +275,22 @@ Flickable {
                 text: "%3 = Math.max(%1, %2)".arg(_flick.ctrl.contentRect.height).arg(_flick.height-_flick.marginW).arg(inner.height)
             }
         }*/
+
+        DropArea {
+            anchors.fill: parent
+            keys: [ "rmindmap/reparenting","text/plain","text/x-reparenting" ]
+            onDropped: (drop)=>{
+                const id = drop.getDataAsString("text/x-reparenting")
+                console.log("[mind]Dropped:", drop.keys," :",drop.formats," text:",id)
+                _flick.ctrl.removeItemFromPackage(id)
+            }
+            onEntered: (drag)=>{
+                const id = drag.getDataAsString("text/x-reparenting")
+                drag.accepted = _flick.ctrl.itemModel.isPackageChild(id)
+                console.log("[mind]Entered:", drag.accepted)
+                drag.dropOver = drag.accepted
+            }
+            onExited:_root.dropOver = false
+        }
     }
 }
