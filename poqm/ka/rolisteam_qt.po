@@ -3458,12 +3458,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "ავტომატური გამოტოვება"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:126
+#: src/libraries/mindmap/resources/qml/Content.qml:118
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "გამოსახულებები (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:139
+#: src/libraries/mindmap/resources/qml/Content.qml:131
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "გამოსახულებები (*.png)"
@@ -3669,7 +3669,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "ახალი კვანძი"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:89
+#: src/libraries/mindmap/src/data/packagenode.cpp:100
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "პაკეტი"
@@ -7656,12 +7656,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "ფორმის გასუფთავება"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "ბილიკის დახურვა"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:148
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "კონტურის შევსება"

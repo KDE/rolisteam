@@ -3472,12 +3472,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Espaiat automàtic"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:126
+#: src/libraries/mindmap/resources/qml/Content.qml:118
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Imatges (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:139
+#: src/libraries/mindmap/resources/qml/Content.qml:131
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Imatges (*.png)"
@@ -3683,7 +3683,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Node nou"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:89
+#: src/libraries/mindmap/src/data/packagenode.cpp:100
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Paquet"
@@ -7675,12 +7675,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Neteja la forma"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "Tanca el camí"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:148
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "Emplena el camí"

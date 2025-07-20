@@ -3526,12 +3526,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "स्वचालित अन्तराल"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:126
+#: src/libraries/mindmap/resources/qml/Content.qml:118
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "चित्राणि (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:139
+#: src/libraries/mindmap/resources/qml/Content.qml:131
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "चित्राणि (*.png)"
@@ -3746,7 +3746,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "नवीनं नाम :"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:89
+#: src/libraries/mindmap/src/data/packagenode.cpp:100
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "सम्पुट"
@@ -7776,12 +7776,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "स्वच्छ आकार"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "पथः निमीलतु"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:148
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "पूरय पथ"

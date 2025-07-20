@@ -3453,12 +3453,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Automatische spatiëring"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:126
+#: src/libraries/mindmap/resources/qml/Content.qml:118
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Afbeeldingen (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:139
+#: src/libraries/mindmap/resources/qml/Content.qml:131
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Afbeeldingen (*.png)"
@@ -3664,7 +3664,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Nieuwe node"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:89
+#: src/libraries/mindmap/src/data/packagenode.cpp:100
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Pakket"
@@ -7653,12 +7653,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Vorm opschonen"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "Pad sluiten"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:148
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "Pad invullen"

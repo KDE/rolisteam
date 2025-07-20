@@ -3466,12 +3466,12 @@ msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Samodejni razmik"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:126
+#: src/libraries/mindmap/resources/qml/Content.qml:118
 msgctxt "Content|"
 msgid "Images (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgstr "Slike (*.jpg *.png *.jpeg *.gif *.bmp)"
 
-#: src/libraries/mindmap/resources/qml/Content.qml:139
+#: src/libraries/mindmap/resources/qml/Content.qml:131
 msgctxt "Content|"
 msgid "Images (*.png)"
 msgstr "Slike (*.png)"
@@ -3677,7 +3677,7 @@ msgctxt "MindNode|"
 msgid "New node"
 msgstr "Novo vozlišče"
 
-#: src/libraries/mindmap/src/data/packagenode.cpp:89
+#: src/libraries/mindmap/src/data/packagenode.cpp:100
 msgctxt "PackageNode|"
 msgid "Package"
 msgstr "Paket"
@@ -7670,12 +7670,12 @@ msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Čista oblika"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:140
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:143
 msgctxt "PathItem|"
 msgid "Close Path"
 msgstr "Zapri pot"
 
-#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:145
+#: src/libraries/rwidgets/graphicsItems/pathitem.cpp:148
 msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "Zapolni pot"
