@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-06-25 22:42+0200\n"
+"PO-Revision-Date: 2025-07-23 14:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -525,7 +525,7 @@ msgstr "Txertatutako letra-tipoak:"
 #: src/binaries/rcse/dialog/sheetproperties.ui:193
 msgctxt "SheetProperties|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/binaries/rcse/fieldmodel.cpp:62
 msgctxt "FieldModel|"
@@ -973,7 +973,7 @@ msgstr "Irudia"
 #: src/binaries/rcse/mainwindow_rcse.ui:736
 msgctxt "MainWindow|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:380
 #: src/binaries/rcse/mainwindow_rcse.ui:1130
@@ -1081,7 +1081,7 @@ msgstr "Ktrl+S"
 #: src/binaries/rcse/mainwindow_rcse.ui:839
 msgctxt "MainWindow|"
 msgid "Save As..."
-msgstr "Gorde honela..."
+msgstr "Gorde honela…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:842
 msgctxt "MainWindow|"
@@ -1155,7 +1155,7 @@ msgstr "Ktrl+D"
 #: src/binaries/rcse/mainwindow_rcse.ui:986
 msgctxt "MainWindow|"
 msgid "Set image background…"
-msgstr "Ezarri irudiaren atzeko-planoa..."
+msgstr "Ezarri irudiaren atzeko-planoa…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1007
 msgctxt "MainWindow|"
@@ -1182,7 +1182,7 @@ msgstr "Ktrl+P"
 #: src/binaries/rcse/mainwindow_rcse.ui:1033
 msgctxt "MainWindow|"
 msgid "Sheet Properties…"
-msgstr "Orriaren propietateak..."
+msgstr "Orriaren propietateak…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1048
 msgctxt "MainWindow|"
@@ -1902,7 +1902,7 @@ msgstr "Ktrl+Ihes"
 #: src/binaries/widget/mainwindow.ui:179
 msgctxt "MainWindow|"
 msgid "Preferences…"
-msgstr "Hobespenak..."
+msgstr "Hobespenak…"
 
 #: src/binaries/widget/mainwindow.ui:201
 msgctxt "MainWindow|"
@@ -1937,7 +1937,7 @@ msgstr "Alt+T"
 #: src/binaries/widget/mainwindow.ui:225
 msgctxt "MainWindow|"
 msgid "Disconnection…"
-msgstr "Deskonexioa..."
+msgstr "Deskonexioa…"
 
 #: src/binaries/widget/mainwindow.ui:230
 msgctxt "MainWindow|"
@@ -2037,7 +2037,7 @@ msgstr "F6"
 #: src/binaries/widget/mainwindow.ui:364
 msgctxt "MainWindow|"
 msgid "Change Profile…"
-msgstr "Aldatu profila..."
+msgstr "Aldatu profila…"
 
 #: src/binaries/widget/mainwindow.ui:373
 msgctxt "MainWindow|"
@@ -2082,7 +2082,7 @@ msgstr "Ktrl+Maius+K"
 #: src/binaries/widget/mainwindow.ui:435
 msgctxt "MainWindow|"
 msgid "Shortcut Viewer…"
-msgstr "Laster-bide erakuslea..."
+msgstr "Laster-bide erakuslea…"
 
 #: src/binaries/widget/mainwindow.ui:438
 msgctxt "MainWindow|"
@@ -2107,7 +2107,7 @@ msgstr "PDF fitxategia"
 #: src/binaries/widget/mainwindow.ui:466
 msgctxt "MainWindow|"
 msgid "Copy Connection Link…"
-msgstr "Kopiatu konexio esteka..."
+msgstr "Kopiatu konexio esteka…"
 
 #: src/binaries/widget/mainwindow.ui:474
 msgctxt "MainWindow|"
@@ -2127,7 +2127,7 @@ msgstr "Pasahitz sortzailea"
 #: src/binaries/widget/mainwindow.ui:487
 msgctxt "MainWindow|"
 msgid "Current Media as…"
-msgstr "Uneko hedabidea ... gisa"
+msgstr "Uneko hedabidea … gisa"
 
 #: src/binaries/widget/mainwindow.ui:504
 msgctxt "MainWindow|"
@@ -2212,7 +2212,7 @@ msgstr "Kanpaina berria"
 #: src/binaries/widget/mainwindow.ui:609
 msgctxt "MainWindow|"
 msgid "Save Campaign As…"
-msgstr "Gorde kanpaina honela..."
+msgstr "Gorde kanpaina honela…"
 
 #: src/binaries/widget/mainwindow.ui:614
 msgctxt "MainWindow|"
@@ -2222,12 +2222,12 @@ msgstr "Pertsonaia ez jokagarria"
 #: src/binaries/widget/mainwindow.ui:619
 msgctxt "MainWindow|"
 msgid "Manage…"
-msgstr "Kudeatu..."
+msgstr "Kudeatu…"
 
 #: src/binaries/widget/mainwindow.ui:624
 msgctxt "MainWindow|"
 msgid "Remove…"
-msgstr "Kendu..."
+msgstr "Kendu…"
 
 #: src/binaries/widget/mainwindow.ui:629
 msgctxt "MainWindow|"
@@ -2237,7 +2237,7 @@ msgstr "Hustu"
 #: src/binaries/widget/mainwindow.ui:637
 msgctxt "MainWindow|"
 msgid "Import from another campaign…"
-msgstr "Inportatu beste kanpaina batetik..."
+msgstr "Inportatu beste kanpaina batetik…"
 
 #: src/binaries/widget/mainwindow.ui:649
 msgctxt "MainWindow|"
@@ -3826,7 +3826,7 @@ msgstr "Soinu-jakinarazpena"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:53
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Aukeratu letra-tipoa..."
+msgstr "Aukeratu letra-tipoa…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:60
 msgctxt "SideMenu|"
@@ -4172,7 +4172,7 @@ msgstr "Bilaketa direktorioak:"
 #: src/libraries/rwidgets/customs/playerwidget.ui:278
 msgctxt "PlayerWidgetUI|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:305
 msgctxt "PlayerWidgetUI|"
@@ -4250,7 +4250,7 @@ msgstr "Ezkerrera"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:257
 msgctxt "RGraphicsView|"
 msgid "Set Angle…"
-msgstr "Ezarri angelua..."
+msgstr "Ezarri angelua…"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:259
 msgctxt "RGraphicsView|"
@@ -4711,7 +4711,7 @@ msgstr "Elkarrizketa-koadroa"
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:34
 msgctxt "HistoryViewerDialog|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:71
 msgctxt "HistoryViewerDialog|"
@@ -4752,7 +4752,7 @@ msgstr "zama-jaitsi"
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:79
 msgctxt "ImageSelectorDialog|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:113
 msgctxt "ImageSelectorDialog|"
@@ -4802,7 +4802,7 @@ msgstr "Sorburu kanpaina"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:32
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Browse…"
-msgstr "Arakatu..."
+msgstr "Arakatu…"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:55
 msgctxt "ImportDataFromCampaignDialog|"
@@ -4942,7 +4942,7 @@ msgstr "Elkarrizketa-koadroa"
 #: src/libraries/rwidgets/dialogs/persondialog.ui:40
 msgctxt "PersonDialog|"
 msgid "Avatar…"
-msgstr "Abatara..."
+msgstr "Abatara…"
 
 #: src/libraries/rwidgets/dialogs/persondialog.ui:55
 msgctxt "PersonDialog|"
@@ -5313,7 +5313,7 @@ msgstr "CSS:"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
-msgstr "Editatu..."
+msgstr "Editatu…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:723
 msgctxt "PreferencesDialogBox|"
@@ -5393,12 +5393,12 @@ msgstr "*: berrabiatu beharra"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:895
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
-msgstr "Inportatu..."
+msgstr "Inportatu…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:902
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
-msgstr "Esportatu..."
+msgstr "Esportatu…"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:915
 msgctxt "PreferencesDialogBox|"
@@ -5659,7 +5659,7 @@ msgstr "Bilatu:"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1012
 msgctxt "AntagonistBoard|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:54
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1135
@@ -6526,17 +6526,17 @@ msgstr "&Gorde"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:189
 msgctxt "TextEdit|"
 msgid "&Print..."
-msgstr "In&primatu..."
+msgstr "In&primatu…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:195
 msgctxt "TextEdit|"
 msgid "Print Preview..."
-msgstr "Inprimatzeko aurrebista..."
+msgstr "Inprimatzeko aurrebista…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:199
 msgctxt "TextEdit|"
 msgid "&Export PDF..."
-msgstr "&Esportatu PDF..."
+msgstr "&Esportatu PDF…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:209
 msgctxt "TextEdit|"
@@ -6622,7 +6622,7 @@ msgstr "&Justifikatu"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:304
 msgctxt "TextEdit|"
 msgid "&Color..."
-msgstr "&Kolorea..."
+msgstr "&Kolorea…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:377
 msgctxt "TextEdit|"
@@ -6695,7 +6695,7 @@ msgstr "Konektatu dokumentuarekin"
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:52
 msgctxt "ConnectToDocument|"
 msgid "New..."
-msgstr "Berria..."
+msgstr "Berria…"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:62
 msgctxt "ConnectToDocument|"
@@ -7122,7 +7122,7 @@ msgstr "Editatu"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:77
 msgctxt "SharedNote|"
 msgid "Syntax Highlighting..."
-msgstr "Sintaxia nabarmentzea..."
+msgstr "Sintaxia nabarmentzea…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:97
 msgctxt "SharedNote|"
@@ -7187,7 +7187,7 @@ msgstr "Ktrl+V"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:225
 msgctxt "SharedNote|"
 msgid "Find..."
-msgstr "Aurkitu..."
+msgstr "Aurkitu…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:228
 msgctxt "SharedNote|"
@@ -7237,7 +7237,7 @@ msgstr "Ktrl+/"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:270
 msgctxt "SharedNote|"
 msgid "Save A Copy As..."
-msgstr "Gorde kopia bat honela..."
+msgstr "Gorde kopia bat honela…"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:278
 msgctxt "SharedNote|"
@@ -7267,7 +7267,7 @@ msgstr "Erakutsi/Ezkutatu berriketa"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:304
 msgctxt "SharedNote|"
 msgid "Connect to Document..."
-msgstr "Konektatu ... dokumentuarekin"
+msgstr "Konektatu … dokumentuarekin"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:307
 msgctxt "SharedNote|"
@@ -7367,7 +7367,7 @@ msgstr "Berritu"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:434
 msgctxt "SharedNote|"
 msgid "Markdown Preview"
-msgstr "«Markdown» aurreikuspegia..."
+msgstr "«Markdown» aurreikuspegia…"
 
 #: src/libraries/rwidgets/gmtoolbox/DiceBookMark/dicebookmarkmodel.cpp:16
 msgctxt "DiceBookMarkModel|"
@@ -7506,7 +7506,7 @@ msgstr "Bihurtu"
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
 msgctxt "Convertor|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
 msgctxt "Convertor|"
@@ -8047,7 +8047,7 @@ msgstr "PDF erakuslea"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:182
 msgctxt "PdfViewer|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:139
 msgctxt "PdfViewer|"
@@ -8231,7 +8231,7 @@ msgstr "Inprimakia"
 #: src/libraries/rwidgets/mediacontainers/webview.ui:90
 msgctxt "WebView|"
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:100
 msgctxt "WebView|"
@@ -8276,7 +8276,7 @@ msgstr "Partekatu HTML"
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:25
 msgctxt "campaign::CampaignView|"
 msgid "Add directory…"
-msgstr "Gehitu direktorioa..."
+msgstr "Gehitu direktorioa…"
 
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:26
 msgctxt "campaign::CampaignView|"
@@ -8341,7 +8341,7 @@ msgstr "Ohar partekatuak"
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:183
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
-msgstr "Ireki honela..."
+msgstr "Ireki honela…"
 
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:195
 msgctxt "campaign::CampaignView|"
@@ -8351,12 +8351,12 @@ msgstr "Erakutsi/ezkutatu zutabea"
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:51
 msgctxt "UserListView|"
 msgid "Set Avatar..."
-msgstr "Ezarri abatara..."
+msgstr "Ezarri abatara…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:52
 msgctxt "UserListView|"
 msgid "Remove..."
-msgstr "Kendu..."
+msgstr "Kendu…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:53
 msgctxt "UserListView|"
@@ -8366,7 +8366,7 @@ msgstr "Editatu izena"
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:54
 msgctxt "UserListView|"
 msgid "Change color…"
-msgstr "Aldatu kolorea..."
+msgstr "Aldatu kolorea…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:64
 msgctxt "UserListView|"
