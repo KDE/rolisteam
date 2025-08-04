@@ -36,7 +36,8 @@ public:
     enum Role
     {
         FilterModelRole= Qt::UserRole + 1,
-        UuidRole
+        UuidRole,
+        IndexRole
     };
     explicit ChatroomSplitterModel(QObject* parent= nullptr);
 
@@ -46,6 +47,18 @@ public:
     QHash<int, QByteArray> roleNames() const override;
     void addFilterModel(InstantMessaging::InstantMessagingModel* sourceModel, QStringList list= QStringList(),
                         bool all= true);
+    void removeModel(int modelIndex);
+    void mergeGlobal(const QString& uuid, int modelIndex);
+
+    void cleanAll();
+    void removeChatroom(const QString& id);
+
+public slots:
+    void moveRight(const QString& id, int index);
+    void moveLeft(const QString& id, int index);
+
+private:
+    FilterInstantMessagingModel* modelFromIndex(quint64 i);
 
 private:
     std::vector<std::unique_ptr<FilterInstantMessagingModel>> m_filterModels;

@@ -21,6 +21,7 @@
 #include "model/filterinstantmessagingmodel.h"
 #include "model/instantmessagingmodel.h"
 #include <set>
+#include "common/logcategory.h"
 
 namespace InstantMessaging
 {
@@ -54,6 +55,9 @@ QVariant ChatroomSplitterModel::data(const QModelIndex& index, int role) const
     case UuidRole:
         var= model->uuid();
         break;
+    case IndexRole:
+        var= index.row();
+        break;
     }
 
     return var;
@@ -61,7 +65,7 @@ QVariant ChatroomSplitterModel::data(const QModelIndex& index, int role) const
 
 QHash<int, QByteArray> ChatroomSplitterModel::roleNames() const
 {
-    static QHash<int, QByteArray> roles({{FilterModelRole, "filterModel"}, {UuidRole, "uuid"}});
+    static QHash<int, QByteArray> roles({{FilterModelRole, "filterModel"}, {UuidRole, "uuid"}, {IndexRole,"indexRole"}});
     return roles;
 }
 
@@ -85,6 +89,138 @@ void ChatroomSplitterModel::addFilterModel(InstantMessaging::InstantMessagingMod
     beginInsertRows(QModelIndex(), size, size);
     m_filterModels.push_back(std::move(model));
     endInsertRows();
+}
+
+void ChatroomSplitterModel::removeModel(int modelIndex)
+{
+    if(m_filterModels.empty() || modelIndex >= static_cast<int>(m_filterModels.size()))
+        return;
+
+    beginRemoveRows(QModelIndex(), modelIndex, modelIndex);
+    m_filterModels.erase(std::begin(m_filterModels) + modelIndex);
+    endRemoveRows();
+}
+
+void ChatroomSplitterModel::mergeGlobal(const QString& uuid, int modelIndex)
+{
+    if(static_cast<int>(m_filterModels.size()) <= modelIndex)
+        return;
+
+    auto model = m_filterModels[modelIndex].get();
+
+    model->removeFilterId(uuid);
+    if(model->filterIdCount() == 0)
+        removeModel(modelIndex);
+    m_filterModels[0]->removeFilterId(uuid);
+}
+
+void ChatroomSplitterModel::cleanAll()
+{
+    beginResetModel();
+    m_filterModels.clear();
+    endResetModel();
+}
+
+void ChatroomSplitterModel::removeChatroom(const QString& id)
+{
+    //Q_UNUSED(id)
+    QList<int> removeModelIndexes;
+    QStringList listIds;
+    static QString global("global");
+    int globalIndex = -1;
+    int i = 0;
+    for(auto& model : m_filterModels)
+    {
+        if(i == 0)
+        {
+            ++i;
+            model->removeFilterId(id);
+            continue;
+        }
+        if(model->contains(global))
+            globalIndex = i;
+        if(model->rowCount() == 0 && !model->all())
+        {
+            removeModelIndexes << i;
+            listIds << model->filteredId();
+        }
+        ++i;
+    }
+
+    for(auto i : std::as_const(removeModelIndexes))
+    {
+        removeModel(i);
+    }
+    auto model = m_filterModels[0].get();
+
+    std::for_each(std::begin(listIds), std::end(listIds), [model](const QString& id){
+        model->removeFilterId(id);
+    });
+
+    if(globalIndex<0)
+        return;
+
+    if(model->rowCount() == 0)
+    {
+        auto ids = model->filteredId();
+        if(ids.contains(global))
+        {
+            mergeGlobal(global, globalIndex);
+        }
+    }
+
+}
+
+void ChatroomSplitterModel::moveRight(const QString& id, int index)
+{
+    auto dest = modelFromIndex(index + 1);
+    auto source = modelFromIndex(index);
+
+    if(!dest || !source) {
+        qCWarning(MessagingCat) << tr("[move right] Source or destination chatroom does not exist.");
+        return;
+    }
+
+    if(source->all())
+    {
+        source->addFilterId(id);
+    }
+    else
+    {
+        source->removeFilterId(id);
+    }
+
+    dest->addFilterId(id);
+}
+
+void ChatroomSplitterModel::moveLeft(const QString& id, int index)
+{
+    auto dest = modelFromIndex(index - 1);
+    auto source = modelFromIndex(index);
+
+    if(!dest || !source) {
+        qCWarning(MessagingCat) << tr("[move left] Source or destination chatroom does not exist.");
+        return;
+    }
+
+    if(dest->all())
+    {
+        dest->removeFilterId(id);
+    }
+    else
+    {
+        dest->addFilterId(id);
+    }
+
+    source->removeFilterId(id);
+}
+
+FilterInstantMessagingModel* ChatroomSplitterModel::modelFromIndex(quint64 i)
+{
+    if(i < 0 || i >= m_filterModels.size())
+        return nullptr;
+
+    return m_filterModels[i].get();
 }
 
 } // namespace InstantMessaging

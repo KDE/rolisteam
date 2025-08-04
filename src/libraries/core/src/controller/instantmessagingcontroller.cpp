@@ -83,6 +83,7 @@ void registerType()
 InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, PlayerModel* model, QObject* parent)
     : AbstractControllerInterface(parent)
     , m_localPersonModel(new LocalPersonModel)
+    , m_splitterModel(new InstantMessaging::ChatroomSplitterModel)
     , m_model(new InstantMessaging::InstantMessagingModel(diceRoller, model))
     , m_players(model)
     , m_diceParser(diceRoller)
@@ -99,6 +100,12 @@ InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, P
             &InstantMessagingController::chatRoomCreated);
     connect(m_model.get(), &InstantMessaging::InstantMessagingModel::chatRoomDeleted, this,
             &InstantMessagingController::chatRoomRemoved);
+
+    connect(m_model.get(), &InstantMessaging::InstantMessagingModel::chatRoomDeleted, this, [this](const QString& id, bool remote) {
+        Q_UNUSED(remote)
+        m_splitterModel->removeChatroom(id);
+    });
+
     connect(m_model.get(), &InstantMessaging::InstantMessagingModel::localIdChanged, this,
             &InstantMessagingController::localIdChanged);
     connect(m_players, &PlayerModel::playerJoin, this,
@@ -124,6 +131,7 @@ InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, P
                     return;
 
                 m_model->removePlayer(player->uuid());
+                m_splitterModel->removeChatroom({});
             });
 
     m_model->insertGlobalChatroom(tr("Global"), QStringLiteral("global"));
@@ -133,8 +141,8 @@ InstantMessagingController::~InstantMessagingController()= default;
 
 InstantMessaging::ChatroomSplitterModel* InstantMessagingController::mainModel() const
 {
-    Q_ASSERT(m_splitterModels.size() > 0);
-    return m_splitterModels[0].get();
+    //Q_ASSERT(m_splitterModels.size() > 0);
+    return m_splitterModel.get();
 }
 
 InstantMessaging::ChatRoom* InstantMessagingController::globalChatroom() const
@@ -246,25 +254,34 @@ void InstantMessagingController::closeChatroom(const QString& id, bool network)
     m_model->removeChatroom(id, network);
 }
 
-void InstantMessagingController::detach(const QString& id, int index)
+void InstantMessagingController::moveRight(const QString& id, int index)
 {
-    Q_UNUSED(index);
-    Q_UNUSED(id);
+    m_splitterModel->moveRight(id, index);
 }
 
-void InstantMessagingController::reattach(const QString& id, int index)
+void InstantMessagingController::moveLeft(const QString& id, int index)
 {
-    Q_UNUSED(index);
-    Q_UNUSED(id);
+    m_splitterModel->moveLeft(id, index);
 }
 
 void InstantMessagingController::splitScreen(const QString& id, int index)
 {
-    if(index >= static_cast<int>(m_splitterModels.size()) || index < 0)
+
+    if(index >= static_cast<int>(m_splitterModel->rowCount()) || index < 0)
         return;
 
-    auto model= m_splitterModels.at(static_cast<std::size_t>(index)).get();
-    model->addFilterModel(m_model.get(), {id}, false);
+    m_splitterModel->addFilterModel(m_model.get(), {id}, false);
+}
+
+void InstantMessagingController::mergeScreen(const QString& uuid, int index)
+{
+    m_splitterModel->mergeGlobal(uuid, index);
+}
+
+void InstantMessagingController::resetScreen()
+{
+    m_splitterModel->cleanAll();
+    addChatroomSplitterModel();
 }
 
 void InstantMessagingController::setLocalId(const QString& id)
@@ -297,9 +314,7 @@ void InstantMessagingController::setNightMode(bool mode)
 
 void InstantMessagingController::addChatroomSplitterModel()
 {
-    std::unique_ptr<InstantMessaging::ChatroomSplitterModel> model(new InstantMessaging::ChatroomSplitterModel);
-    model->addFilterModel(m_model.get());
-    m_splitterModels.push_back(std::move(model));
+    m_splitterModel->addFilterModel(m_model.get());
 }
 
 void InstantMessagingController::translateDiceResult(const QHash<int, QList<int>>& rollResult, const QString& rest)
@@ -364,4 +379,17 @@ void InstantMessagingController::setCurrentTab(int newCurrentTab)
         return;
     m_currentTab= newCurrentTab;
     emit currentTabChanged();
+}
+
+bool InstantMessagingController::detached() const
+{
+    return m_detached;
+}
+
+void InstantMessagingController::setDetached(bool newDetached)
+{
+    if(m_detached == newDetached)
+        return;
+    m_detached= newDetached;
+    emit detachChanged();
 }

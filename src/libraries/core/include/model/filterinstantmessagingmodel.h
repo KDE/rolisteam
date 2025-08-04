@@ -36,6 +36,11 @@ public:
     bool all() const;
 
     void setFilterParameter(bool b, QStringList data);
+    void removeFilterId(const QString& id);
+    void addFilterId(const QString& id);
+    bool contains(const QString& id);
+    int filterIdCount() const;
+    QStringList filteredId() const;
 
     Q_INVOKABLE QVariant get(int index);
 

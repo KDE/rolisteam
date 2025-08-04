@@ -1,13 +1,13 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
 Popup {
     id: root
     property alias model: contactList.model
     property alias all: everyone.checked
     property alias title: title.text
-    property var recipiants: []
+    property list<string> recipiants: []
     property bool emptyRecipiants: true
 
     signal chatRoomAdded()
@@ -50,6 +50,7 @@ Popup {
                         id: contactList
                         RowLayout {
                             Layout.fillWidth: true
+                            visible: !model.local
                             Image {
                                 source: "image://avatar/%1".arg(model.uuid)
                                 fillMode: Image.PreserveAspectFit
@@ -87,6 +88,7 @@ Popup {
                 Layout.alignment: Qt.AlignRight
                 enabled: title.text.length > 0 && (everyone.checked || !root.emptyRecipiants )
                 onClicked: {
+                    root.recipiants.push(model.localPlayerId)
                     root.chatRoomAdded()
                     root.close()
                 }

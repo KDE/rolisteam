@@ -57,6 +57,7 @@ class CORE_EXPORT InstantMessagingController : public AbstractControllerInterfac
     Q_PROPERTY(bool unread READ unread NOTIFY unreadChanged)
     Q_PROPERTY(QFont font READ font WRITE setFont NOTIFY fontChanged FINAL)
     Q_PROPERTY(InstantMessaging::InstantMessagingModel* model READ model CONSTANT)
+    Q_PROPERTY(bool detached READ detached WRITE setDetached NOTIFY detachChanged)
 public:
     explicit InstantMessagingController(DiceRoller* diceRoller, PlayerModel* player, QObject* parent= nullptr);
     virtual ~InstantMessagingController();
@@ -83,12 +84,17 @@ public:
     int currentTab() const;
     void setCurrentTab(int newCurrentTab);
 
+    bool detached() const;
+    void setDetached(bool newDetached);
+
 public slots:
     void addChatroomSplitterModel();
     void closeChatroom(const QString& id, bool network);
-    void detach(const QString& id, int index);
-    void reattach(const QString& id, int index);
+    void moveRight(const QString& id, int index);
+    void moveLeft(const QString& id, int index);
     void splitScreen(const QString& id, int index);
+    void mergeScreen(const QString& uuid, int index);
+    void resetScreen();
     void setLocalId(const QString& id);
     void addExtraChatroom(const QString& title, bool everyone, const QVariantList& recipiant);
     void setNightMode(bool mode);
@@ -115,9 +121,12 @@ signals:
     void playerArrived(const QString& id);
     void currentTabChanged();
 
+    void detachChanged();
+
 private:
     std::unique_ptr<LocalPersonModel> m_localPersonModel;
-    std::vector<std::unique_ptr<InstantMessaging::ChatroomSplitterModel>> m_splitterModels;
+    //std::vector<std::unique_ptr<InstantMessaging::ChatroomSplitterModel>> m_splitterModels;
+    std::unique_ptr<InstantMessaging::ChatroomSplitterModel> m_splitterModel;
     std::unique_ptr<InstantMessaging::InstantMessagingModel> m_model;
     QPointer<PlayerModel> m_players;
     bool m_nightMode= false;
@@ -127,6 +136,7 @@ private:
     bool m_sound{true};
     QFont m_font;
     int m_currentTab;
+    bool m_detached;
 };
 
 #endif // TEXTMESSAGINGCONTROLLER_H

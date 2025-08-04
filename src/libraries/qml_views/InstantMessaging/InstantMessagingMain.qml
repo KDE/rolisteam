@@ -47,6 +47,10 @@ Pane {
             text: qsTr("Add chatroom")
             onTriggered: newChatRoom.open()
         }
+        Action {
+            text: qsTr("Reset to Default View")
+            onTriggered: InstantMessagerManager.ctrl.resetScreen()
+        }
     }
 
     SplitView {
@@ -58,6 +62,9 @@ Pane {
             delegate: ChatView {
                 chatroomModel: model.filterModel
                 styleSheet: root.styleSheet
+                isMergeable: model.index > 0
+                chatRoomCount: reaper.count
+                chatRoomIndex: model.index
                 onZoomChanged: sideMenu.fontFactor += delta
                 SplitView.minimumWidth: root.styleSheet.minimumWidth
                 SplitView.preferredWidth: root.width/reaper.count
@@ -65,10 +72,22 @@ Pane {
                 SplitView.fillWidth: true
                 tabBarRightMargin: index == reaper.count-1 ? listButton.width : 0
                 Component.onCompleted: reaper.headerHeight = tabBarHeight
-                localPersonModel: InstantMessagerManager.ctrl.localPersonModel
-                onAddChat: InstantMessagerManager.ctrl.addExtraChatroom(title, all, recipiants)
-                onSplit: InstantMessagerManager.ctrl.splitScreen(uuid, model.index)
-                onDetach: InstantMessagerManager.ctrl.detach(uuid, index, model.index)
+                localPersonModel: {InstantMessagerManager.ctrl.localPersonModel}
+                onAddChat: (title, all, recipiant) => {
+                    InstantMessagerManager.ctrl.addExtraChatroom(title, all, recipiants)
+                }
+                onMerge: (uuid) => {
+                    {InstantMessagerManager.ctrl.mergeScreen(uuid, model.index)}
+                }
+                onMoveLeft: (uuid) =>{
+                    InstantMessagerManager.ctrl.moveLeft(uuid, model.index)
+                }
+                onMoveRight: (uuid) => {
+                    InstantMessagerManager.ctrl.moveRight(uuid, model.index)
+                }
+
+                onSplit: (uuid) => {InstantMessagerManager.ctrl.splitScreen(uuid, model.index)}
+                //onDetach: (uuid, index) => { InstantMessagerManager.ctrl.detach(uuid, index, model.index)}
             }
         }
     }

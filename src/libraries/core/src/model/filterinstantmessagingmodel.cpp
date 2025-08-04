@@ -35,7 +35,19 @@ void FilterInstantMessagingModel::setFilterParameter(bool b, QStringList data)
         return;
 
     m_allBut= b;
-    m_filteredId= data;
+    m_filteredId << data;
+    invalidateFilter();
+}
+
+void FilterInstantMessagingModel::removeFilterId(const QString& id)
+{
+    m_filteredId.removeAll(id);
+    invalidateFilter();
+}
+
+void FilterInstantMessagingModel::addFilterId(const QString& id)
+{
+    m_filteredId << id;
     invalidateFilter();
 }
 
@@ -43,6 +55,21 @@ QVariant FilterInstantMessagingModel::get(int idx)
 {
     auto modelIndex= index(idx, 0);
     return modelIndex.data(InstantMessagingModel::ChatRole);
+}
+
+bool FilterInstantMessagingModel::contains(const QString& id)
+{
+    return m_filteredId.contains(id);
+}
+
+int FilterInstantMessagingModel::filterIdCount() const
+{
+    return m_filteredId.count();
+}
+
+QStringList FilterInstantMessagingModel::filteredId() const
+{
+    return m_filteredId;
 }
 
 QString FilterInstantMessagingModel::uuid() const
@@ -60,7 +87,7 @@ bool FilterInstantMessagingModel::filterAcceptsRow(int source_row, const QModelI
     bool value= true;
     if(m_allBut && m_filteredId.isEmpty())
         value= true;
-    else if(m_allBut && m_filteredId.isEmpty())
+    else if(!m_allBut && m_filteredId.isEmpty())
         value= false;
     else
     {

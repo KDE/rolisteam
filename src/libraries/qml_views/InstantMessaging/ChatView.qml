@@ -12,13 +12,18 @@ Item {
     property QtObject paletteSheet: Theme.styleSheet("Palette")
     property alias localPersonModel: imEditText.model
     property alias chatroomModel: repeater.model
+    property bool isMergeable: true
+    property int chatRoomCount: 0
+    property int chatRoomIndex: 0
     property ChatRoom chatRoom:  chatroomModel.get(tabHeader.currentIndex)
     property alias tabBarHeight: tabHeader.height
     property int tabBarRightMargin: 0
     signal zoomChanged(var delta)
-    signal addChat(var title, var all, var recipiants)
-    signal split(var uuid, var index)
-    signal detach(var uuid, var index)
+    signal addChat(string title, bool all, list<string> recipiants)
+    signal split(string uuid, int index)
+    signal merge(string uuid)
+    signal moveRight(string uuid)
+    signal moveLeft(string uuid)
 
     SoundEffect {
         id: effect
@@ -52,20 +57,35 @@ Item {
 
         Menu {
             id: contextMenu
+            property string currentChat: tabHeader.currentItem ? tabHeader.currentItem.text : ""
             Action {
-                text: qsTr("Split view")
+                text: qsTr("Split %1".arg(contextMenu.currentChat))
+                enabled: tabHeader.count > 1
                 onTriggered: {
-                    root.split(root.chatRoom.uuid, tabHeader.currentIndex)
+                    root.split(tabHeader.currentItem.uuid, tabHeader.currentIndex)
                     root.chatRoom =  chatroomModel.get(tabHeader.currentIndex)
                 }
             }
-            Action {
-                text: qsTr("Detach")
-                onTriggered: root.detach(root.chatRoom.uuid, tabHeader.currentIndex)
+            Action  {
+                text: qsTr("Merge %1".arg(contextMenu.currentChat))
+                enabled: root.isMergeable
+                onTriggered: {
+                    root.merge(tabHeader.currentItem.uuid)
+                }
             }
-            Action {
-                text: qsTr("Reatach")
-                //onTriggered: root.detach(root.chatRoom.uuid, tabHeader.currentIndex)
+            Action  {
+                text: qsTr("Move %1 Left".arg(contextMenu.currentChat))
+                enabled: root.chatRoomIndex > 0
+                onTriggered: {
+                    root.moveLeft(tabHeader.currentItem.uuid)
+                }
+            }
+            Action  {
+                text: qsTr("Move %1 Right".arg(contextMenu.currentChat))
+                enabled: root.chatRoomIndex + 1 < root.chatRoomCount
+                onTriggered: {
+                    root.moveRight(tabHeader.currentItem.uuid)
+                }
             }
         }
     }
@@ -84,6 +104,8 @@ Item {
                     TabButton {
                         id: tabButton
                         property bool current: tabHeader.currentIndex === index
+                        property string uuid: model.id
+                        text: model.title
                         background: Rectangle {
                             color: tabButton.current ? root.paletteSheet.alternateBase : model.unread ? root.paletteSheet.highlight : root.paletteSheet.mid
                         }
