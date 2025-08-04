@@ -112,11 +112,27 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     , m_dockLogUtil(new NotificationZone(game->logController(), this))
     , m_systemTray(new QSystemTrayIcon)
     , m_ui(new Ui::MainWindow)
+#ifdef QT_DEBUG
+    , m_webSocketServer(new WebSocketServer)
+#endif
 {
     parseCommandLineArguments(args);
     setAcceptDrops(true);
     m_systemTray->setIcon(QIcon(":/resources/rolisteam/logo/500-symbole.png"));
     m_systemTray->show();
+
+    #ifdef QT_DEBUG
+    connect(m_webSocketServer.get(), &WebSocketServer::showWindow, this , [this]{
+        setVisible(true);
+        raise();
+        activateWindow();
+    });
+    connect(m_webSocketServer.get(), &WebSocketServer::hideWindow, this , [this]{
+        //activateWindow();
+        lower();
+        setVisible(false);
+    });
+    #endif
 
     // ALLOCATIONS
     m_campaignDock.reset(new campaign::CampaignDock(m_gameController->campaignManager()->editor(),
@@ -1008,8 +1024,10 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
     QCommandLineOption user(QStringList() << "u"
                                           << "user",
                             tr("Define the <username>"), "username");
-    QCommandLineOption websecurity(QStringList() << "w"
-                                                 << "disable-web-security",
+    QCommandLineOption portws(QStringList() << "w"
+                                          << "websocket",
+                            tr("Define the <websocketport> useful for auto UI testing"), "websocket");
+    QCommandLineOption websecurity(QStringList() << "disable-web-security",
                                    tr("Remove limit to PDF file size"));
     QCommandLineOption translation(QStringList() << "t"
                                                  << "translation",
@@ -1019,6 +1037,7 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
                            QObject::tr("Define URL to connect to server: <url>"), "url");
 
     parser.addOption(port);
+    parser.addOption(portws);
     parser.addOption(hostname);
     parser.addOption(role);
     parser.addOption(reset);
@@ -1042,6 +1061,14 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
     QString username;
     QString urlString;
     QString passwordValue;
+    QString portwsStr;
+    if(parser.isSet(portws))
+    {
+        portwsStr= parser.value(portws);
+        #ifdef QT_DEBUG
+        m_webSocketServer->setPortws(portwsStr.toInt());
+        #endif
+    }
     if(hasPort)
     {
         portValue= parser.value(port);
@@ -1095,6 +1122,9 @@ void MainWindow::cleanUpData()
 
 void MainWindow::postConnection()
 {
+    #ifdef QT_DEBUG
+    m_webSocketServer->startConnection();
+    #endif
     m_ui->m_changeProfileAct->setEnabled(false);
     m_ui->m_disconnectAction->setEnabled(true);
 

@@ -161,6 +161,8 @@ ${root_dir}/binaries/widget/mainwindow.cpp
 ${root_dir}/binaries/widget/mainwindow.h
 ${root_dir}/binaries/widget/rolisteamapplication.cpp
 ${root_dir}/binaries/widget/rolisteamapplication.h
+${root_dir}/binaries/widget/websocketserver.cpp
+${root_dir}/binaries/widget/websocketserver.h
 ${root_dir}/binaries/widget/uiwatchdog.h
 ${root_dir}/libraries/core/include/preferences/preferencesmanager.h
 ${root_dir}/libraries/core/src/preferences/preferencesmanager.cpp

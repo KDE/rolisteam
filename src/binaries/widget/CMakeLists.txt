@@ -15,12 +15,14 @@ set(SOURCES
     main.cpp
     mainwindow.cpp
     rolisteamapplication.cpp
+    websocketserver.cpp
     )
 
 
 set(HEADERS
     mainwindow.h
     rolisteamapplication.h
+    websocketserver.h
     )
 
 
@@ -29,7 +31,7 @@ set(UIS mainwindow.ui)
 
 set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rolisteam/logo/rolisteam.rc)
 
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools Scxml MultimediaWidgets Multimedia Pdf)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools WebSockets Scxml MultimediaWidgets Multimedia Pdf)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
@@ -62,6 +64,7 @@ target_link_libraries(rolisteam
         Qt6::Multimedia
         Qt6::Scxml
         Qt6::Quick3D
+        Qt6::WebSockets
         Qt6::Pdf
         $<$<CONFIG:Debug>:Qt6::RemoteObjects>
     PRIVATE

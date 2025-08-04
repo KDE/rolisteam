@@ -36,7 +36,6 @@
 
 #include "controller/gamecontroller.h"
 #include "core/include/preferences/preferencesmanager.h"
-#include "network/networkreceiver.h"
 #include "rwidgets/customs/vmap.h"
 #include "rwidgets/dialogs/selectconnectionprofiledialog.h"
 #include "rwidgets/docks/channellistpanel.h"
@@ -46,6 +45,7 @@
 #include "rwidgets/mediacontainers/vmapframe.h"
 #include "rwidgets/toolbars/vtoolbar.h"
 #include "version.h"
+#include "websocketserver.h"
 
 #ifndef NULL_PLAYER
 #include "rwidgets/docks/audioPlayer.h"
@@ -253,6 +253,10 @@ private:
     std::vector<FileInfo> m_recentFiles;
     QList<GameMasterTool*> m_gmToolBoxList;
     ChannelListPanel* m_roomPanel;
+
+#ifdef QT_DEBUG
+    std::unique_ptr<WebSocketServer> m_webSocketServer;
+#endif
 
     bool m_isOut= false;
     bool m_ignoreUpdate{false};
