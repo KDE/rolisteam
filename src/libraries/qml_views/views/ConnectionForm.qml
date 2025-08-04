@@ -57,6 +57,7 @@ Item {
 
                     delegate: ItemDelegate {
                         text: model.name
+                        objectName: "profile_%1".arg(index)
                         width: _list.width
                         highlighted: ProfileController.currentProfileIndex === index
                         onClicked: _list.currentIndex = index

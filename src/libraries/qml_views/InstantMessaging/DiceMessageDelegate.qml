@@ -48,6 +48,7 @@ Frame {
 
             ToolButton {
                 id: details
+                objectName: frame.message.command
                 Layout.rightMargin: frame.styleSheet.rightMarge
 
                 background: Image {

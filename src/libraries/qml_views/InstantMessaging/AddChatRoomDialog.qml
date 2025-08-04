@@ -36,6 +36,7 @@ Popup {
                 }
                 Switch {
                     id: everyone
+                    objectName: "everyone"
                     checked: true
                 }
             }
@@ -62,6 +63,7 @@ Popup {
                             }
                             Switch {
                                 enabled: !everyone.checked
+                                objectName: model.name
                                 onCheckedChanged: {
                                     if(checked)
                                     {

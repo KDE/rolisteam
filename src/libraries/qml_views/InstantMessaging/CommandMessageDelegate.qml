@@ -4,6 +4,8 @@ import Customization 1.0
 
 Column {
     id: root
+
+    objectName: model.text
     property QtObject styleSheet: Theme.styleSheet("TextMessage")
     spacing: root.styleSheet.spacing
     property real factor : fontFactor
