@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>891</width>
-    <height>602</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <item>
     <widget class="QQuickWidget" name="m_quickWidget">
      <property name="resizeMode">
-      <enum>QQuickWidget::SizeRootObjectToView</enum>
+      <enum>QQuickWidget::ResizeMode::SizeRootObjectToView</enum>
      </property>
     </widget>
    </item>
   </layout>
   <action name="m_addCharacterAct">
    <property name="icon">
-    <iconset resource="../../../../rolisteam.qrc">
+    <iconset>
      <normaloff>:/resources/rolistheme/add_round.png</normaloff>:/resources/rolistheme/add_round.png</iconset>
    </property>
    <property name="text">
@@ -33,7 +33,7 @@
   </action>
   <action name="m_removeCharacterAct">
    <property name="icon">
-    <iconset resource="../../../../rolisteam.qrc">
+    <iconset>
      <normaloff>:/resources/rolistheme/delete.png</normaloff>:/resources/rolistheme/delete.png</iconset>
    </property>
    <property name="text">
@@ -73,8 +73,6 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../rolisteam.qrc"/>
-  <include location="../../../../rolisteam.qrc"/>
   <include location="../../../../rolisteam.qrc"/>
  </resources>
  <connections/>

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQml
 import Profile
 import CustomItems
 import Customization
@@ -30,6 +31,7 @@ Item {
     }
 
     SplitView {
+        id: splitView
         anchors.fill: parent
         Pane {
             SplitView.minimumWidth: 200 //list.contentWidth
@@ -39,7 +41,7 @@ Item {
             leftPadding: 2
             rightPadding: 2
             background: Rectangle {
-                     color: palette.base
+                color: palette.base
             }
             GridLayout {
                 anchors.fill: parent
@@ -99,80 +101,86 @@ Item {
             }
         }
 
-        ScrollView {
-            id: _scrollView
+        ColumnLayout {
+            id: _lyt
             SplitView.fillWidth: true
-
-            ColumnLayout {
-                id: _lyt
-                width: _scrollView.width
-                height: Math.max(_scrollView.height, _lyt.implicitHeight)
-                spacing: 0
-                RowLayout {
+            SplitView.fillHeight: true
+            spacing: 2
+            RowLayout {
+                Layout.fillWidth: true
+                Label {
+                    text: qsTr("Profile Name:")
+                }
+                RequiredTextField {
                     Layout.fillWidth: true
+                    validInput: (text && ProfileController.profileName)
+                    text: ProfileController.profileName
+                    onTextChanged: ProfileController.profileName = text
+                }
+            }
+            GroupBox {
+                id: connectionBox
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignTop
+                title: qsTr("Connection")
+                GridLayout {
+                    anchors.fill: parent
+                    columns: 4
                     Label {
-                        text: qsTr("Profile Name:")
+                        text: qsTr("Address:")
                     }
                     RequiredTextField {
+                        id: addressField
                         Layout.fillWidth: true
-                        validInput: (text && ProfileController.profileName)
-                        text: ProfileController.profileName
-                        onTextChanged: ProfileController.profileName = text
+                        Layout.columnSpan: 3
+                        text: ProfileController.address
+                        validInput: (text && ProfileController.address || ProfileController.isServer)
+                        enabled: !ProfileController.isServer
+                        onEditingFinished: ProfileController.address = text
                     }
-                }
-                GroupBox {
-                    Layout.fillWidth: true
-                    Layout.alignment: Qt.AlignTop
-                    title: qsTr("Connection")
-                    GridLayout {
-                        anchors.fill: parent
-                        columns: 2
-                        Label {
-                            text: qsTr("Address:")
-                        }
-                        RequiredTextField {
-                            Layout.fillWidth: true
-                            text: ProfileController.address
-                            validInput: (text && ProfileController.address || ProfileController.isServer)
-                            enabled: !ProfileController.isServer
-                            onEditingFinished: ProfileController.address = text
-                        }
-                        Label {
-                            text: qsTr("Port:")
-                        }
-                        TextField {
-                            Layout.fillWidth: true
-                            validator: IntValidator {bottom: 1; top: 65535;}
-                            text: ProfileController.port
-                            onEditingFinished: ProfileController.port = text
-                        }
-                        Label {
-                            text: qsTr("Password:")
-                        }
-                        TextField {
-                            Layout.fillWidth: true
-                            echoMode: TextField.Password
-                            text: ProfileController.password
-                            onEditingFinished: ProfileController.password = text
-                        }
-                        CheckBox {
-                            id: _host
-                            Layout.columnSpan: 2
-                            text: qsTr("Host the game")
-                            checked: ProfileController.isServer
-                            onCheckedChanged: {
-                                ProfileController.isServer =  _host.checked
-                            }
+                    Label {
+                        text: qsTr("Port:")
+                    }
+                    TextField {
+                        id: portField
+                        Layout.fillWidth: true
+                        validator: IntValidator {bottom: 1; top: 65535;}
+                        text: ProfileController.port
+                        onEditingFinished: ProfileController.port = text
+                    }
+                    CheckBox {
+                        id: _host
+                        Layout.columnSpan: 2
+                        text: qsTr("Host the game")
+                        checked: ProfileController.isServer
+                        onCheckedChanged: {
+                            ProfileController.isServer =  _host.checked
                         }
                     }
+                    Label {
+                        text: qsTr("Password:")
+                    }
+                    TextField {
+                        id: passwordField
+                        Layout.fillWidth: true
+                        Layout.columnSpan: 3
+                        echoMode: TextField.Password
+                        text: ProfileController.password
+                        onEditingFinished: ProfileController.password = text
+                    }
                 }
-                GroupBox {
-                    Layout.fillWidth: true
-                    title: qsTr("Player")
-                    Layout.alignment: Qt.AlignTop
+            }
+            GroupBox {
+                id: playerBox
+                Layout.fillWidth: true
+                title: qsTr("Player")
+                Layout.alignment: Qt.AlignTop
+                ColumnLayout {
+                    anchors.fill: parent
                     PersonEdit {
                         id: person
-                        anchors.fill: parent
+
+                        isPlayer: true
                         imageData: ProfileController.playerAvatar
                         characterName: ProfileController.playerName
                         validInput: (characterName && ProfileController.playerName)
@@ -180,116 +188,149 @@ Item {
                         onColorEdited: (col)=> ProfileController.playerColor = col
                         onNameEdited: ProfileController.playerName = person.characterName
                         onClicked: ProfileController.selectPlayerAvatar()
-                        CheckBox {
-                            id: _gameMaster
-                            Layout.columnSpan: 3
-                            text: qsTr("I'm the Game Master")
-                            checked: ProfileController.isGameMaster
-                            onCheckedChanged: {
-                                ProfileController.isGameMaster =  _gameMaster.checked
-                            }
+                        isGameMaster: ProfileController.isGameMaster
+                        onIsGameMasterChanged: {
+                            ProfileController.isGameMaster =  person.isGameMaster
                         }
-                        RowLayout {
-                            Layout.columnSpan: 3
-                            Layout.fillWidth: true
-                            Label {
-                                text: qsTr("Campaign Root:")
-                                opacity: ProfileController.isGameMaster ? 1.0 : 0.4
-                            }
-                            RequiredTextField {
-                                Layout.fillWidth: true
-                                text: ProfileController.campaignPath
-                                validInput: (text && ProfileController.campaignPath)
-                                enabled: ProfileController.isGameMaster
-                                opacity: enabled ? 1.0 : 0.4
-                                onEditingFinished: {
-                                    if(text !== ProfileController.campaignPath) {
-                                        ProfileController.campaignPath = text
-                                    }
-                                    text = Qt.binding(function(){return ProfileController.campaignPath})
-                                }
 
-                            }
-                            ToolButton {
-                                icon.name: "folder"
-                                enabled: ProfileController.isGameMaster
-                                opacity: enabled ? 1.0 : 0.4
-                                icon.color: "transparent"
-                                onClicked: ProfileController.selectCampaignPath()
-                            }
-                        }
                     }
-                }
-                GroupBox {
-                    id: _character
-                    Layout.fillHeight: true
-                    label: RowLayout {
+                    RowLayout {
+                        Layout.columnSpan: 3
+                        Layout.fillWidth: true
                         Label {
-                            text: qsTr("Characters")
+                            text: qsTr("Campaign Root:")
+                            opacity: ProfileController.isGameMaster ? 1.0 : 0.4
+                        }
+                        RequiredTextField {
+                            id: campaignPath
+                            Layout.fillWidth: true
+                            text: ProfileController.campaignPath
+                            validInput: (text && ProfileController.campaignPath)
+                            enabled: ProfileController.isGameMaster
+                            opacity: enabled ? 1.0 : 0.4
+                            onEditingFinished: {
+                                if(text !== ProfileController.campaignPath) {
+                                    ProfileController.campaignPath = text
+                                }
+                                text = Qt.binding(function(){return ProfileController.campaignPath})
+                            }
+
                         }
                         ToolButton {
-                            icon.name: "add"
+                            icon.name: "folder"
+                            enabled: ProfileController.isGameMaster
+                            opacity: enabled ? 1.0 : 0.4
                             icon.color: "transparent"
-                            onClicked: ProfileController.addCharacter()
+                            onClicked: ProfileController.selectCampaignPath()
                         }
-                    }
-                    Layout.alignment: Qt.AlignTop
-                    Layout.fillWidth: true
-                    Layout.preferredHeight: _characterList.height + _buttonBar.height + padding + padding
-                    visible: !ProfileController.isGameMaster
-
-                    ListView {
-                        id: _characterList
-                        width: _character.width
-                        height: contentHeight
-                        interactive: false
-
-                        model: ProfileController.characterModel
-                        delegate: ItemDelegate {
-                            width: _characterList.width - _character.padding - _character.padding
-                            height: _itemLyt.height
-
-                            PersonEdit {
-                                id: _itemLyt
-                                imageData: model.avatarData
-                                characterName: model.name
-                                width: parent.width
-                                color: model.color
-                                property bool editAvatar: false
-                                validInput: model.name && isSquare
-                                onClicked:{
-                                    console.log("Person:: On clickd")
-                                    _itemLyt.editAvatar = true
-                                    ProfileController.selectCharacterAvatar(model.index)
-                                }
-                                onNameEdited: ProfileController.editCharacterName(model.index,_itemLyt.characterName)
-                                onColorEdited: (color)=>ProfileController.editCharacterColor(model.index,color)
-                                onImageDataChanged: {
-                                    console.log("Person:: ImageDatachanged")
-                                    if(_itemLyt.editAvatar){
-                                        ProfileController.editCharacterAvatar(model.index, _itemLyt.imageData)
-                                        _itemLyt.editAvatar = false
-                                    }
-                                }
-                                line: [
-                                    ToolButton {
-                                        icon.name: "remove"
-                                        icon.color: "transparent"
-                                        onClicked: ProfileController.removeCharacter(model.index)
-                                        visible: index > 0
-                                    }
-                                ]
-                            }
-                        }
-
                     }
                 }
+            }
+            Item {
+                Layout.alignment: Qt.AlignTop
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+                visible: ProfileController.isGameMaster
+            }
+            GroupBox {
+                id: _character
+                Layout.fillHeight: true
+                label: RowLayout {
+                    Label {
+                        text: qsTr("Characters")
+                    }
+                    ToolButton {
+                        icon.name: "add"
+                        icon.color: "transparent"
+                        onClicked: ProfileController.addCharacter()
+                    }
+                }
+                Layout.alignment: Qt.AlignTop
+                Layout.fillWidth: true
+                Layout.preferredHeight: _characterList.height + _buttonBar.height + padding + padding
+                visible: !ProfileController.isGameMaster
+                //clip: true
+
+                ListView {
+                    id: _characterList
+                    anchors.fill: parent
+                    //clip: true
+                    spacing: 10
+                    ScrollBar.vertical: ScrollBar {
+                        policy: ScrollBar.AlwaysOn
+                        active: true
+                    }
+
+                    model: ProfileController.characterModel
+                    delegate: Item {
+                        width: _characterList.width - _character.padding - _character.padding
+                        height: _itemLyt.height
+
+                        PersonEdit {
+                            id: _itemLyt
+                            imageData: model.avatarData
+                            characterName: model.name
+                            objectName: "personEdit_%1".arg(model.index)
+                            width: parent.width
+                            color: model.color
+                            property bool editAvatar: false
+                            validInput: model.name && isSquare
+                            onClicked:{
+                                console.log("Person:: On clickd")
+                                _itemLyt.editAvatar = true
+                                ProfileController.selectCharacterAvatar(model.index)
+                            }
+                            onNameEdited: ProfileController.editCharacterName(model.index,_itemLyt.characterName)
+                            onColorEdited: (color)=>ProfileController.editCharacterColor(model.index,color)
+                            onImageDataChanged: {
+                                console.log("Person:: ImageDatachanged")
+                                if(_itemLyt.editAvatar){
+                                    ProfileController.editCharacterAvatar(model.index, _itemLyt.imageData)
+                                    _itemLyt.editAvatar = false
+                                }
+                            }
+                            line: [
+                                ToolButton {
+                                    icon.name: "remove"
+                                    icon.color: "transparent"
+                                    onClicked: ProfileController.removeCharacter(model.index)
+                                    visible: index > 0
+                                }
+                            ]
+                        }
+                    }
+
+                }
+            }
+
+            RowLayout {
+                id: _buttonBar
+                //Layout.alignment: Qt.AlignRight || Qt.AlignBottom
+                readonly property int marginSize: 10
+                Layout.fillWidth: true
+                Layout.bottomMargin: _buttonBar.marginSize
+                Layout.leftMargin: _buttonBar.marginSize
+                Button {
+                    id: _saveProfiles
+                    Layout.alignment: Qt.AlignLeft
+                    text: qsTr("Save profiles")
+                    onClicked: ProfileController.saveProfileModels()
+                    enabled: true
+
+                }
+
+                Label {
+                    Layout.fillWidth: true
+                    text: ProfileController.canConnect ? "" : qsTr("Please, set data where you see red borders.")
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
                 Label {
                     id: errorLbl
                     text: ProfileController.errorMsg
                     visible: ProfileController.errorMsg
                     background: Rectangle {
-                        color: "red"
+                        color: Qt.lighter("red")
                     }
 
                 }
@@ -298,55 +339,29 @@ Item {
                     text: ProfileController.infoMsg
                     visible: ProfileController.infoMsg
                     background: Rectangle {
-                        color: "green"
+                        color: Qt.lighter("green")
                     }
                 }
-                Item {
-                    Layout.alignment: Qt.AlignTop
-                    Layout.fillWidth: true
-                    Layout.fillHeight: true
-                    visible: ProfileController.isGameMaster
+
+                Button {
+                    id: _connectBtn
+                    Layout.alignment: Qt.AlignRight
+                    objectName: "connectbtn"
+                    text: qsTr("Connect")
+                    focus: true
+                    enabled: ProfileController.canConnect
+                    onClicked: ProfileController.startConnection() //startNetworkConnection()
+                    opacity: enabled ? 1.0 : 0.4
+                    icon.name: _connectBtn.enabled ? "checked" : "close-circle"
+                    icon.color: _connectBtn.enabled ? "green" : "red"
                 }
-                RowLayout {
-                    id: _buttonBar
-                    //Layout.alignment: Qt.AlignRight || Qt.AlignBottom
-                    Layout.fillWidth: true
-                    Button {
-                        id: _saveProfiles
-                        Layout.alignment: Qt.AlignLeft
-                        text: qsTr("Save profiles")
-                        onClicked: ProfileController.saveProfileModels()
-                        enabled: true
-
-                    }
-
-                    Label {
-                        Layout.fillWidth: true
-                        text: ProfileController.canConnect ? "" : qsTr("Please, set data where you see red borders.")
-                        horizontalAlignment: Text.AlignHCenter
-                    }
-
-                    Button {
-                        id: _connectBtn
-                        Layout.alignment: Qt.AlignRight
-                        text: qsTr("Connect")
-                        focus: true
-                        enabled: ProfileController.canConnect
-                        onClicked: ProfileController.startConnection() //startNetworkConnection()
-                        opacity: enabled ? 1.0 : 0.4
-                        icon.name: _connectBtn.enabled ? "checked" : "close-circle"
-                        icon.color: _connectBtn.enabled ? "green" : "red"
-                    }
-                    Button {
-                        id: _cancelBtn
-                        Layout.alignment: Qt.AlignRight
-                        text: qsTr("Cancel")
-                        onClicked: ProfileController.reject()
-                    }
+                Button {
+                    id: _cancelBtn
+                    Layout.alignment: Qt.AlignRight
+                    text: qsTr("Cancel")
+                    onClicked: ProfileController.reject()
                 }
             }
         }
-
     }
-
 }

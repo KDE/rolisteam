@@ -1,5 +1,5 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtQuick.Controls
 import QtQuick.Layouts
 import CustomItems
 import Profile
@@ -13,6 +13,9 @@ GridLayout {
     property alias validInput: _nameField.validInput
     property alias isSquare: _img.isSquare
     property alias validImg: _img.hasImage
+    property alias isGameMaster: _gameMaster.checked
+    property bool isPlayer: false
+
     signal clicked
     signal nameEdited(string name)
     signal colorEdited(color col)
@@ -71,6 +74,12 @@ GridLayout {
             Layout.preferredHeight: 30
             Layout.preferredWidth: 30
             onColorEdited: (col)=> _root.colorEdited(col)
+        }
+        CheckBox {
+            id: _gameMaster
+            Layout.columnSpan: 3
+            text: qsTr("I'm the Game Master")
+            visible: _root.isPlayer
         }
     }
 
