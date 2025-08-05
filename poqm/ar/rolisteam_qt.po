@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-06-28 17:15+0400\n"
+"PO-Revision-Date: 2025-08-04 14:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2865,7 +2865,7 @@ msgstr ""
 #, qt-format
 msgctxt "LogPanel|"
 msgid "Log files %1"
-msgstr "ملفّات السّجلّ %1"
+msgstr "ملفّات السجل %1"
 
 #: src/libraries/common/widgets/logpanel.ui:14
 msgctxt "LogPanel|"
@@ -4498,7 +4498,7 @@ msgstr "احفظ قائمة التّشغيل"
 #: src/libraries/rwidgets/customs/playerwidget.cpp:112
 msgctxt "PlayerWidget|"
 msgid "Clear"
-msgstr "امسح"
+msgstr "امحُ"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:116
 msgctxt "PlayerWidget|"
