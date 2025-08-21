@@ -2058,7 +2058,7 @@ msgstr "غير متصل"
 #: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
 msgid "Server"
-msgstr "الخادوم"
+msgstr "الخادم"
 
 #: src/binaries/widget/mainwindow.cpp:1210
 msgctxt "MainWindow|"
