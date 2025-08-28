@@ -8439,11 +8439,3 @@ msgstr "Spící"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Posedlý"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Name"
-#~ msgstr "Název"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Path"
-#~ msgstr "Cesta"
