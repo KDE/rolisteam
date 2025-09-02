@@ -1349,7 +1349,7 @@ msgstr "Control lliscant"
 #: src/binaries/rcse/tablecanvasfield.cpp:322
 msgctxt "TableCanvasField|"
 msgid "Select the column type"
-msgstr "Seleccioneu el tipus de columna"
+msgstr "Trieu el tipus de columna"
 
 #: src/binaries/rcse/tablecanvasfield.cpp:322
 msgctxt "TableCanvasField|"
@@ -3644,7 +3644,7 @@ msgstr "Descripció"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:185
 msgctxt "SideMenu|"
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Tria"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:197
 msgctxt "SideMenu|"
@@ -3834,7 +3834,7 @@ msgstr "Notificació de so"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:53
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Seleccioneu la lletra…"
+msgstr "Trieu la lletra…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:60
 msgctxt "SideMenu|"
@@ -3986,7 +3986,7 @@ msgstr "Roig: %1, verd: %2, blau: %3"
 #: src/libraries/rwidgets/customs/filedirchooser.cpp:108
 msgctxt "FileDirChooser|"
 msgid "Select directory"
-msgstr "Seleccioneu un directori"
+msgstr "Trieu un directori"
 
 #: src/libraries/rwidgets/customs/filedirchooser.cpp:113
 msgctxt "FileDirChooser|"
@@ -5157,7 +5157,7 @@ msgstr "Títol abreujat en la vista de pestanyes"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:302
 msgctxt "PreferencesDialogBox|"
 msgid "Max Length:"
-msgstr "Llargària màxima:"
+msgstr "Durada màxima:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
 msgctxt "PreferencesDialogBox|"
@@ -5422,7 +5422,7 @@ msgstr "Inici"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.cpp:117
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Select directory"
-msgstr "Seleccioneu un directori"
+msgstr "Trieu un directori"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:14
 msgctxt "SelectConnectionProfileDialog|"
@@ -6306,7 +6306,7 @@ msgstr "URL de l'enllaç:"
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:700
 msgctxt "MRichTextEdit|"
 msgid "Select an image"
-msgstr "Seleccioneu una imatge"
+msgstr "Trieu una imatge"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:701
 msgctxt "MRichTextEdit|"
@@ -8605,11 +8605,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Name"
-#~ msgstr "Nom"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Path"
-#~ msgstr "Camí"
