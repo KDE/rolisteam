@@ -120,6 +120,8 @@ CharacterSheetWindow::CharacterSheetWindow(CharacterSheetController* ctrl, QWidg
                 auto it= std::find_if(std::begin(m_tabs), std::end(m_tabs),
                                       [characterSheetId](const QPointer<SheetWidget>& sheetWid)
                                       {
+                                          if(!sheetWid)
+                                              return false;
                                           auto sheet= sheetWid->sheet();
                                           if(!sheet)
                                               return false;
@@ -159,7 +161,7 @@ void CharacterSheetWindow::setReadOnlyOnSelection()
     int i= 0;
     bool firstStatus= true;
     QList<CSItem*> listItem;
-    for(auto item : list)
+    for(auto item : std::as_const(list))
     {
         if(0 == item.column())
         {
