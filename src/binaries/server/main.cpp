@@ -30,7 +30,6 @@
 #include <QUuid>
 #include <iostream>
 #include <string>
-#include <time.h>
 
 #include "rolisteamdaemon.h"
 #include "version.h"
