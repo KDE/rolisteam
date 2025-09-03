@@ -347,7 +347,7 @@ ApplicationWindow {
                                }
                            }
                 onPositionChanged: (mouse)=>{
-                        if(false === ma.rolling || ma.selection.lenght === 0)
+                        if(false === ma.rolling || ma.selection.length === 0)
                             return
 
                         var point = viewport.mapTo3DScene(Qt.vector3d(mouse.x, mouse.y, 0))
@@ -356,7 +356,7 @@ ApplicationWindow {
                         Dice3DCtrl.expectRoll = true
                 }
                 onReleased: (mouse)=>{
-                    if(false === ma.rolling || ma.selection.lenght === 0)
+                    if(false === ma.rolling || ma.selection.length === 0)
                         return
                     var point = viewport.mapTo3DScene(Qt.vector3d(mouse.x, mouse.y, 0))
                     const vec = Qt.vector3d(xvelocity, -0.4, zvelocity).normalized();

@@ -58,8 +58,8 @@ set(sources  main.cpp
     dialog/codeeditordialog.cpp
     widgets/fieldview.cpp
     qmltypesregister.cpp
-  qmlgeneratorvisitor.cpp serializerhelper.cpp
-  controllers/integritycontroller.cpp)
+    qmlgeneratorvisitor.cpp serializerhelper.cpp
+    controllers/integritycontroller.cpp)
 
 set(headers mainwindow.h
     canvas.h
@@ -103,8 +103,8 @@ set(headers mainwindow.h
     widgets/fieldview.h
     qmltypesregister.h
     qmlgeneratorvisitor.h
-  serializerhelper.h
-  controllers/integritycontroller.h)
+    serializerhelper.h
+    controllers/integritycontroller.h)
 
 
 set(UI_files mainwindow_rcse.ui

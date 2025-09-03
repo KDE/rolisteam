@@ -55,7 +55,7 @@ DynamicRigidBody {
     onEulerRotationChanged: {
         if(root.ctrl.stable)
             root.ctrl.rotation = root.eulerRotation
-        else if(internal.rotation.fuzzyEquals(root.eulerRotation, 0.005))
+        else if(internal.rotation.fuzzyEquals(root.eulerRotation, 0.01)) // previous value: 0.005
             return;
         else
         {
@@ -67,15 +67,17 @@ DynamicRigidBody {
 
     position: root.ctrl.position
     onPositionChanged: {
-        moved()
+        moved();
+        let newPos = root.position;
+        // TODO: define margin value instead of 10
         if(root.position.y+10 < 0)
-            root.position.y = 20
-        if(Math.abs(root.position.x) > Math.abs(Dice3DCtrl.width/2))
-            root.position.x = root.position.x > 0 ? Dice3DCtrl.width/2 : -Dice3DCtrl.width/2
-        if(Math.abs(root.position.z) > Math.abs(Dice3DCtrl.height/2))
-            root.position.z = root.position.z > 0 ? Dice3DCtrl.height/2 : -Dice3DCtrl.height/2
+            newPos.y = 20
+        if(Math.abs(root.position.x) > Math.abs(Dice3DCtrl.width/2-10))
+            newPos.x = root.position.x > 0 ? Dice3DCtrl.width/2-10 : -Dice3DCtrl.width/2+10
+        if(Math.abs(root.position.z) > Math.abs(Dice3DCtrl.height/2-10))
+            newPos.z = root.position.z > 0 ? Dice3DCtrl.height/2-10 : -Dice3DCtrl.height/2+10
 
-        root.ctrl.position = root.position
+        root.ctrl.position = newPos
     }
 
     massMode: DynamicRigidBody.CustomDensity
