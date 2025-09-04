@@ -53,6 +53,7 @@ class DICE3D_EXPORTS Dice3DController : public QObject
     Q_PROPERTY(bool expectRoll READ expectRoll WRITE setExpectRoll NOTIFY expectRollChanged FINAL)
     Q_PROPERTY(int animationTime READ animationTime WRITE setAnimationTime NOTIFY animationTimeChanged FINAL)
     Q_PROPERTY(int hideTime READ hideTime WRITE setHideTime NOTIFY hideTimeChanged FINAL)
+    Q_PROPERTY(int count READ count NOTIFY countChanged FINAL)
 public:
     explicit Dice3DController(QObject* parent= nullptr);
     virtual ~Dice3DController();
@@ -129,6 +130,8 @@ public:
 
     int hideTime() const;
     void setHideTime(int newHideTime);
+
+    int count() const;
 
 signals:
     void fourColorChanged();

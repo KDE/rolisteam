@@ -40,12 +40,16 @@ Dice3DController::Dice3DController(QObject* parent) : QObject{parent}, m_model(n
     connect(m_model.get(), &DiceModel::selectionChanged, this, &Dice3DController::dicePartChanged);
     connect(m_model.get(), &DiceModel::sizeChanged, this, &Dice3DController::sizeChanged);
     connect(m_model.get(), &DiceModel::diceCountChanged, this, &Dice3DController::countChanged);
+    connect(m_model.get(), &DiceModel::diceCountChanged, this,
+            [this]()
+            {
+                if(count() == 0)
+                    setExpectRoll(false);
+            });
     connect(m_model.get(), &DiceModel::diceRollChanged, this, &Dice3DController::computeResult);
     connect(m_model.get(), &DiceModel::animationTimeChanged, this, &Dice3DController::animationTimeChanged);
 
-    connect(this, &Dice3DController::hideTimeChanged, &m_timer,
-            [this]() {
-m_timer.setInterval(m_hideTime * 1000); });
+    connect(this, &Dice3DController::hideTimeChanged, &m_timer, [this]() { m_timer.setInterval(m_hideTime * 1000); });
 
     m_timer.setInterval(m_hideTime * 1000);
 
@@ -73,9 +77,7 @@ m_timer.setInterval(m_hideTime * 1000); });
                     m_timer.stop();
             });
 
-    connect(&m_timer, &QTimer::timeout, this, [this]() {
-        setDisplayed(false);
-    });
+    connect(&m_timer, &QTimer::timeout, this, [this]() { setDisplayed(false); });
 }
 
 Dice3DController::~Dice3DController()
@@ -399,4 +401,9 @@ void Dice3DController::setHideTime(int newHideTime)
         return;
     m_hideTime= newHideTime;
     emit hideTimeChanged(m_hideTime);
+}
+
+int Dice3DController::count() const
+{
+    return m_model->totalDiceCount();
 }

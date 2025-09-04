@@ -144,6 +144,8 @@ void DiceModel::removeDice(DiceController::DiceType type)
 
     auto pos= std::distance(std::begin(dices), it);
     beginRemoveRows(QModelIndex(), pos, pos);
+    auto diceC= it->release();
+    diceC->deleteLater();
     dices.erase(it);
     endRemoveRows();
     emit diceCountChanged();
@@ -155,6 +157,13 @@ int DiceModel::diceCount(DiceController::DiceType type) const
     return std::accumulate(std::begin(dices), std::end(dices), 0,
                            [type](int i, const std::unique_ptr<DiceController>& ctrl)
                            { return i + ((ctrl->face() == type) ? 1 : 0); });
+}
+
+int DiceModel::totalDiceCount() const
+{
+    return std::accumulate(std::begin(m_models), std::end(m_models), 0,
+                           [](int i, const std::vector<std::unique_ptr<DiceController>>& model)
+                           { return i + model.size(); });
 }
 
 QList<DiceController*> DiceModel::selection() const

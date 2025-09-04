@@ -20,11 +20,11 @@
 #ifndef DICEMODEL_H
 #define DICEMODEL_H
 
+#include "dice3d_global.h"
 #include <QAbstractListModel>
 #include <QColor>
 #include <QQmlEngine>
 #include <utility>
-#include "dice3d_global.h"
 
 #include "dicecontroller.h"
 
@@ -34,6 +34,7 @@ class DICE3D_EXPORTS DiceModel : public QAbstractListModel
     QML_ELEMENT
     Q_PROPERTY(QSize size READ size WRITE setSize NOTIFY sizeChanged FINAL)
     Q_PROPERTY(int animationTime READ animationTime WRITE setAnimationTime NOTIFY animationTimeChanged FINAL)
+    Q_PROPERTY(int diceCount READ totalDiceCount NOTIFY diceCountChanged FINAL)
 public:
     enum Roles
     {
@@ -56,6 +57,8 @@ public:
     void addDice(DiceController* ctrl);
     void removeDice(DiceController::DiceType type);
     int diceCount(DiceController::DiceType type) const;
+    int totalDiceCount() const;
+
     QList<DiceController*> selection() const;
     void setDiceData(const QByteArray& data);
     const std::vector<std::unique_ptr<DiceController>>& localModel() const;

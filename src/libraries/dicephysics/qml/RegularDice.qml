@@ -20,7 +20,7 @@ DynamicRigidBody {
         ctrl.selected = root.selected
     }
 
-    opacity: root.ctrl.value > 0 ? 1.0 : 0.4
+    opacity: root.ctrl?.value > 0 ? 1.0 : 0.4
 
     property real internalScale: selected ? 1.2 : 1.
     readonly property string diceCode: Dice3DCtrl.diceTypeToCode(root.type)
@@ -39,6 +39,7 @@ DynamicRigidBody {
     function computeRotOffset(oldpos, newpos) {
         const offset = (Math.abs(newpos.x - oldpos.x) + Math.abs(newpos.y - oldpos.y) + Math.abs(newpos.z - oldpos.z))/3;
         ctrl.addRotationOffset(offset)
+        return offset;
     }
 
     Connections {
@@ -49,9 +50,13 @@ DynamicRigidBody {
         }
     }
 
+    Component.onCompleted: {
+        root.position = root.ctrl.position
+        root.eulerRotation = root.ctrl.rotation
+    }
+
 
     scale: Qt.vector3d(scaleFactor*internalScale, scaleFactor*internalScale, scaleFactor*internalScale)
-    eulerRotation: root.ctrl.rotation
     onEulerRotationChanged: {
         if(root.ctrl.stable)
             root.ctrl.rotation = root.eulerRotation
@@ -59,25 +64,28 @@ DynamicRigidBody {
             return;
         else
         {
-            moved()
-            computeRotOffset(internal.rotation, root.eulerRotation)
+            if(computeRotOffset(internal.rotation, root.eulerRotation) > 0.01)
+                moved()
         }
         internal.rotation = root.eulerRotation
     }
 
-    position: root.ctrl.position
     onPositionChanged: {
-        moved();
         let newPos = root.position;
-        // TODO: define margin value instead of 10
-        if(root.position.y+10 < 0)
+        const offset = 10//root.parentWidth * 0.01
+        if(root.position.y+offset < 0)
             newPos.y = 20
-        if(Math.abs(root.position.x) > Math.abs(Dice3DCtrl.width/2-10))
-            newPos.x = root.position.x > 0 ? Dice3DCtrl.width/2-10 : -Dice3DCtrl.width/2+10
-        if(Math.abs(root.position.z) > Math.abs(Dice3DCtrl.height/2-10))
-            newPos.z = root.position.z > 0 ? Dice3DCtrl.height/2-10 : -Dice3DCtrl.height/2+10
+        if(Math.abs(root.position.x) > Math.abs(Dice3DCtrl.width/2-offset))
+            newPos.x = root.position.x > 0 ? Dice3DCtrl.width/2-offset : -Dice3DCtrl.width/2+offset
+        if(Math.abs(root.position.z) > Math.abs(Dice3DCtrl.height/2-offset))
+            newPos.z = root.position.z > 0 ? Dice3DCtrl.height/2-offset : -Dice3DCtrl.height/2+offset
 
-        root.ctrl.position = newPos
+        if( newPos !== root.ctrl.position)
+        {
+            moved();
+            root.ctrl.position = newPos
+        }
+
     }
 
     massMode: DynamicRigidBody.CustomDensity

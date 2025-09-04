@@ -234,6 +234,14 @@ ApplicationWindow {
                 id: ma
                 anchors.fill: parent
                 enabled: !menu.mouseEnabled && !Dice3DCtrl.expectRoll
+                Connections {
+                    target: Dice3DCtrl
+                    function onCountChanged() {
+                        if(Dice3DCtrl.count === 0)
+                            ma.clear();
+                    }
+                }
+
                 property list<DynamicRigidBody> selection
                 property real xvelocity: 0.0
                 property real zvelocity: 0.0
