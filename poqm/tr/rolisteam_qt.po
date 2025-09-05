@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-05-09 23:55+0300\n"
+"PO-Revision-Date: 2025-09-04 14:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -3830,7 +3830,7 @@ msgstr "Yazıtipi ailesi:"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:66
 msgctxt "SideMenu|"
 msgid "Font size:"
-msgstr "Yazıtipi boyutu:"
+msgstr "Yazıtipi puntosu:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:75
 msgctxt "ConnectionForm|"
@@ -6442,7 +6442,7 @@ msgstr "Metin arka plan rengi"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:491
 msgctxt "MRichTextEdit|"
 msgid "Font size"
-msgstr "Yazıtipi boyutu"
+msgstr "Yazıtipi puntosu"
 
 #: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/OOReader.cpp:272
 msgctxt "OOReader|"
@@ -7691,7 +7691,7 @@ msgstr "Metin"
 #: src/libraries/rwidgets/graphicsItems/textitem.cpp:331
 msgctxt "TextItem|"
 msgid "Font Size"
-msgstr "Yazıtipi Boyutu"
+msgstr "Yazıtipi Puntosu"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
