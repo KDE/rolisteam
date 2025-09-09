@@ -45,7 +45,7 @@ public:
         BottomRight,
         BottomLeft,
         SightAngle,
-        SightLenght
+        SightLength
     };
     Q_ENUM(Corner)
     /**

@@ -40,7 +40,7 @@ void LinkNode::setColor(const QColor& color)
 void LinkNode::update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox,
                       const QRectF& endBox)
 {
-    qreal arrowLenght= 10.0;
+    qreal arrowLength= 10.0;
     qreal arrowWidth= 8.0;
     qreal radius= 0.;
     qreal diameter= 0.;
@@ -122,7 +122,7 @@ void LinkNode::update(const QRectF& rect, LinkController::Orientation orient, co
     line= QLineF(intersection1, intersection2);
 
     auto pArrow= line.pointAt(1 - radius / line.length());
-    auto startArrow= line.pointAt(1 - radius / line.length() - arrowLenght / line.length());
+    auto startArrow= line.pointAt(1 - radius / line.length() - arrowLength / line.length());
 
     QLineF arrowLine(startArrow, pArrow);
     QLineF arrowBase= arrowLine.normalVector();

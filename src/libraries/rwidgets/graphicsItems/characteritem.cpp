@@ -148,10 +148,10 @@ CharacterItem::CharacterItem(vmap::CharacterItemController* ctrl)
     connect(m_mapCtrl, &VectorialMapController::characterVisionChanged, this, updateLambda);
 
     // createActions();
-    for(int i= 0; i <= CharacterItem::SightLenght; ++i)
+    for(int i= 0; i <= CharacterItem::SightLength; ++i)
     {
         auto c= ChildPointItem::Control::Geometry;
-        if(i == CharacterItem::SightAngle || i == CharacterItem::SightLenght)
+        if(i == CharacterItem::SightAngle || i == CharacterItem::SightLength)
             c= ChildPointItem::Control::Vision;
         ChildPointItem* tmp= new ChildPointItem(m_itemCtrl, i, this, c);
         tmp->setMotion(ChildPointItem::MOUSE);
