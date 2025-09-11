@@ -1587,17 +1587,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "ფერის მიღება"
 
-#: src/binaries/server/main.cpp:109
+#: src/binaries/server/main.cpp:108
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "დააყენეთ ბილიკი კონფიგურაციის ფაილამდე [აუცილებელია]"
 
-#: src/binaries/server/main.cpp:112
+#: src/binaries/server/main.cpp:111
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "ნაგულისხმევი კონფიგურაციის ფაილის სტანდარტულ გამოტანაში ჩვენება"
 
-#: src/binaries/server/main.cpp:115
+#: src/binaries/server/main.cpp:114
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "პაროლის კითხვა და მისი ჰეშის გასაღების დაბრუნება."
@@ -3325,7 +3325,7 @@ msgctxt "QObject|"
 msgid "Webview"
 msgstr "Webview"
 
-#: src/libraries/dicephysics/data/dicemodel.cpp:272
+#: src/libraries/dicephysics/data/dicemodel.cpp:281
 #, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
@@ -7722,19 +7722,19 @@ msgctxt "CharacterSheetWindow|"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:221
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:223
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
 msgstr "%1 - (სიმბოლოების ფურცლის დათვალიერება)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:233
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:304
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:235
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:306
 msgctxt "CharacterSheetWindow|"
 msgid "Share To"
 msgstr "გაზიარება"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:286
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:288
 msgctxt "CharacterSheetWindow|"
 msgid "To all"
 msgstr "ყველასთნ"

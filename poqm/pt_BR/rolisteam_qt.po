@@ -1586,17 +1586,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Obter cor"
 
-#: src/binaries/server/main.cpp:109
+#: src/binaries/server/main.cpp:108
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Definir o caminho para o arquivo de configuração [obrigatório]"
 
-#: src/binaries/server/main.cpp:112
+#: src/binaries/server/main.cpp:111
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "Imprimir um arquivo de configuração padrão na saída padrão"
 
-#: src/binaries/server/main.cpp:115
+#: src/binaries/server/main.cpp:114
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Solicitar senha e retornar sua chave de hash."
@@ -3322,7 +3322,7 @@ msgctxt "QObject|"
 msgid "Webview"
 msgstr "Visão Web"
 
-#: src/libraries/dicephysics/data/dicemodel.cpp:272
+#: src/libraries/dicephysics/data/dicemodel.cpp:281
 #, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
@@ -7720,19 +7720,19 @@ msgctxt "CharacterSheetWindow|"
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:221
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:223
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
 msgstr "%1 - (Visualizador de ficha de personagem)"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:233
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:304
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:235
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:306
 msgctxt "CharacterSheetWindow|"
 msgid "Share To"
 msgstr "Compartilhar para"
 
-#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:286
+#: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:288
 msgctxt "CharacterSheetWindow|"
 msgid "To all"
 msgstr "Para todos"
