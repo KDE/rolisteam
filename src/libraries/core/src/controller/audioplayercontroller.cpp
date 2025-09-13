@@ -28,14 +28,15 @@
 
 int randomSong(int current, int count)
 {
-    static auto seed= std::chrono::high_resolution_clock::now().time_since_epoch().count();
-    static std::mt19937 rng= std::mt19937(static_cast<unsigned long long>(seed));
-    std::uniform_int_distribution<qint64> dist(0, count - 1);
-
     if(count < 0)
         return -1;
     if(count < 1)
         return 0;
+
+    static auto seed= std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    static std::mt19937 rng= std::mt19937(static_cast<unsigned long long>(seed));
+    std::uniform_int_distribution<qint64> dist(0, count - 1);
+
     if(count < 2)
         return current == 1 ? 0 : 1;
 
