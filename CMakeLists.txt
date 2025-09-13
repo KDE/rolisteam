@@ -20,7 +20,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(CTest)
 
 option(CODE_COVERAGE OFF)
-option(EXCLUDED_TEST_FROM_CI ON)
 option(DEBUG_MODE "enable more debug report" OFF)
 option(WARNING_AS_ERROR "Set all warning as error" OFF)
 option(GENERATE_TS_FILES "generate all ts file from po" OFF)

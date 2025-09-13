@@ -17,9 +17,11 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
+#include <QAudioDevice>
+#include <QMediaDevices>
 #include <QModelIndex>
 #include <QModelIndexList>
 #include <QtCore/QString>
@@ -40,6 +42,7 @@ public:
     TestAudioPlayer();
 
 private slots:
+    void iniTestCase();
     void init();
 
     void mode();
@@ -63,6 +66,14 @@ private:
 };
 
 TestAudioPlayer::TestAudioPlayer() {}
+
+void TestAudioPlayer::iniTestCase()
+{
+    auto list= QMediaDevices::audioOutputs();
+
+    if(list.isEmpty())
+        QSKIP("Skipping all audio test as no audio device");
+}
 
 void TestAudioPlayer::init()
 {

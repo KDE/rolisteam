@@ -11,9 +11,8 @@ add_subdirectory(helper)
 #add_link_options(-fsanitize=address)
 
 #subdirs with tests
-if(NOT EXCLUDED_TEST_FROM_CI)
-    add_subdirectory(audioplayer)
-endif()
+
+add_subdirectory(audioplayer)
 add_subdirectory(antaFilter)
 add_subdirectory(preferences )
 add_subdirectory(colorButton)
