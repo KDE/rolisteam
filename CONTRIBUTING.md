@@ -1,31 +1,10 @@
-# Rolisteam
+Contributing to Rolisteam
 
-Documentation about contributing into the project: [https://rolisteam.org/getinvolved.html](https://rolisteam.org/getinvolved.html)
+Thank you for your interest in contributing to Rolisteam! 
+From commenting on and triaging issues, to reviewing and sending Pull Requests, all contributions are welcome. 
+We aim to build a vibrant and inclusive ecosystem of partners, core contributors, and community 
+that goes beyond the main Rolisteam repository.
 
-## Before contributing
+To learn more about how to contribute check out the Contributing section on the Rolisteam website:
 
-1. Use rolisteam for your own games
-2. Get familiar with building rolisteam from gitlab source.
-3. Reviews tickets and pick one if you feel confortable enough.
-4. Submit your change and wait for review.
-5. Don't take the review personally, change your code 
-6. Merge you code
-7. start again at step 3 or add tickets you want to be implemented.
-
-## Tasks to do
-
-* [Board](https://invent.kde.org/rolisteam/rolisteam/-/boards)
-
-
-
-## Dev
-
-
-## Distribution
-
-### Executables (.exe, .app)
-
-### Installers
-
-
-### Release everything
+    https://rolisteam.org/getinvolved.html
