@@ -121,7 +121,9 @@ void LogUploader::uploadLog()
     m_postData.clear();
     m_postData.append("log=");
     m_postData.append(doc.toJson());
+#ifdef DEBUG_MODE
     m_accessManager->post(request, m_postData);
+#endif
 }
 
 QString LogUploader::conf() const
