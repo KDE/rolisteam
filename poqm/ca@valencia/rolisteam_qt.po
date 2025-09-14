@@ -2212,7 +2212,7 @@ msgstr "Campanya nova"
 #: src/binaries/widget/mainwindow.ui:609
 msgctxt "MainWindow|"
 msgid "Save Campaign As…"
-msgstr "Guarda la campanya com a…"
+msgstr "Anomena i guarda la campanya…"
 
 #: src/binaries/widget/mainwindow.ui:614
 msgctxt "MainWindow|"
@@ -3834,7 +3834,7 @@ msgstr "Notificació de so"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:53
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Trieu la lletra…"
+msgstr "Tria la lletra…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:60
 msgctxt "SideMenu|"
