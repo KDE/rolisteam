@@ -1,0 +1,6 @@
+function(FormatFiles)
+    file(GLOB_RECURSE files "*.cpp" "*.h" "*.hpp" "*.cxx" "*.cxx")
+    set(clangFilePath ${PROJECT_SOURCE_DIR}/.clang-format)
+    list(JOIN files "," FileList)
+    execute_process(COMMAND clang-format -i -style=file:${clangFilePath} ${files})
+endfunction()

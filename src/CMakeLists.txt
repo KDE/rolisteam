@@ -28,3 +28,8 @@ if (BUILD_TESTING)
   enable_testing()
   add_subdirectory(tests)
 endif()
+
+
+if(FORMAT_CODE)
+    FormatFiles()
+endif()

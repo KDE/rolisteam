@@ -18,8 +18,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(CTest)
+include(FormattingHelper)
 
 option(CODE_COVERAGE OFF)
+option(FORMAT_CODE OFF)
 option(DEBUG_MODE "enable more debug report" OFF)
 option(WARNING_AS_ERROR "Set all warning as error" OFF)
 option(GENERATE_TS_FILES "generate all ts file from po" OFF)
