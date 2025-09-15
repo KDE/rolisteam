@@ -21,9 +21,9 @@
 #define CHARACTERSTATE_H
 
 #include <QColor>
+#include <QMetaType>
 #include <QPixmap>
 #include <QString>
-#include <QMetaType>
 
 #include "network_global.h"
 /**

@@ -20,23 +20,23 @@
  * 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.                 *
  ***************************************************************************/
 #include "canvas.h"
+#include <QCryptographicHash>
 #include <QDebug>
 #include <QGraphicsSceneDragDropEvent>
 #include <QMimeData>
 #include <QUrl>
 #include <cmath>
-#include <QCryptographicHash>
 
+#include "controllers/editorcontroller.h"
+#include "controllers/imagecontroller.h"
 #include "undo/addfieldcommand.h"
 #include "undo/deletefieldcommand.h"
 #include "undo/movefieldcommand.h"
 #include "undo/setbackgroundimage.h"
 #include "utils/iohelper.h"
-#include "controllers/editorcontroller.h"
-#include "controllers/imagecontroller.h"
 
-#include "tablecanvasfield.h"
 #include "charactersheet/controllers/tablefield.h"
+#include "tablecanvasfield.h"
 
 Canvas::Canvas(EditorController* ctrl, QObject* parent)
     : QGraphicsScene(parent), m_ctrl(ctrl), m_bg(new QGraphicsPixmapItem()), m_currentItem(nullptr), m_model(nullptr)
@@ -96,7 +96,7 @@ void Canvas::deleteItem(QGraphicsItem* item)
 }
 void Canvas::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-    qDebug() << "canvas pressed"<< mouseEvent;
+    qDebug() << "canvas pressed" << mouseEvent;
     if(mouseEvent->button() == Qt::RightButton)
     {
         mouseEvent->accept();
@@ -113,7 +113,7 @@ void Canvas::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
                          mouseEvent->buttonDownScenePos(Qt::LeftButton).y());
 
         const QList<QGraphicsItem*> itemList= items(mousePos);
-        qDebug() << "count itemList: "<<itemList.size();// << itemList[0]->boundingRect();
+        qDebug() << "count itemList: " << itemList.size(); // << itemList[0]->boundingRect();
         for(auto item : itemList)
         {
             if(item->flags() & QGraphicsItem::ItemIsMovable)
@@ -128,7 +128,7 @@ void Canvas::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
         }
 
         // clearSelection();
-        //QGraphicsScene::mousePressEvent(mouseEvent);
+        // QGraphicsScene::mousePressEvent(mouseEvent);
     }
     if(m_currentTool == Canvas::DELETETOOL)
     {
@@ -165,7 +165,8 @@ void Canvas::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
     {
         QGraphicsScene::mouseMoveEvent(mouseEvent);
     }
-    else */if(m_currentItem != nullptr)
+    else */
+    if(m_currentItem != nullptr)
     {
         m_currentItem->setNewEnd(m_currentItem->mapFromScene(mouseEvent->scenePos()));
         update();
@@ -279,7 +280,7 @@ const QPixmap Canvas::pixmap() const
 void Canvas::setPixmap(const QPixmap& pix)
 {
     static QString md5;
-    auto key = QCryptographicHash::hash(utils::IOHelper::imageToData(pix.toImage()), QCryptographicHash::Md5);
+    auto key= QCryptographicHash::hash(utils::IOHelper::imageToData(pix.toImage()), QCryptographicHash::Md5);
 
     if(md5 == key)
         return;
@@ -293,5 +294,5 @@ void Canvas::setPixmap(const QPixmap& pix)
         addItem(m_bg);
         setSceneRect(m_bg->boundingRect());
     }
-    md5 = key;
+    md5= key;
 }

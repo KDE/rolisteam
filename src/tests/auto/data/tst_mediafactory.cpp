@@ -18,27 +18,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QTest>
-#include "media/mediafactory.h"
-#include <helper.h>
-#include "worker/messagehelper.h"
-#include "controller/view_controller/pdfcontroller.h"
 #include "controller/view_controller/charactersheetcontroller.h"
 #include "controller/view_controller/imagecontroller.h"
-#include "controller/view_controller/mindmapcontroller.h"
-#include "controller/view_controller/sharednotecontroller.h"
-#include "controller/view_controller/webpagecontroller.h"
-#include "controller/view_controller/vectorialmapcontroller.h"
 #include "controller/view_controller/mediacontrollerbase.h"
+#include "controller/view_controller/mindmapcontroller.h"
+#include "controller/view_controller/pdfcontroller.h"
+#include "controller/view_controller/sharednotecontroller.h"
+#include "controller/view_controller/vectorialmapcontroller.h"
+#include "controller/view_controller/webpagecontroller.h"
+#include "media/mediafactory.h"
+#include "worker/messagehelper.h"
+#include <QTest>
+#include <helper.h>
 
-using ParamMap = std::map<QString, QVariant>;
+using ParamMap= std::map<QString, QVariant>;
 
 class MediaFactoryTest : public QObject
 {
     Q_OBJECT
 public:
     MediaFactoryTest();
-
 
 private Q_SLOTS:
     void initTestCase();
@@ -50,10 +49,7 @@ private:
     Helper::TestMessageSender m_sender;
 };
 
-MediaFactoryTest::MediaFactoryTest()
-{
-
-}
+MediaFactoryTest::MediaFactoryTest() {}
 
 void MediaFactoryTest::initTestCase()
 {
@@ -72,11 +68,11 @@ void MediaFactoryTest::createMediaTest()
     QFETCH(bool, localIsGM);
     QFETCH(bool, validresult);
 
-    auto localId = Helper::randomString();
-    auto mediaId = Helper::randomString();
-    auto color = Helper::randomColor();
+    auto localId= Helper::randomString();
+    auto mediaId= Helper::randomString();
+    auto color= Helper::randomColor();
     Media::MediaFactory::setLocalId(localId);
-    auto base = Media::MediaFactory::createLocalMedia(mediaId,type,params,color, localIsGM);
+    auto base= Media::MediaFactory::createLocalMedia(mediaId, type, params, color, localIsGM);
     //
     if(!validresult)
     {
@@ -84,7 +80,6 @@ void MediaFactoryTest::createMediaTest()
         return;
     }
     QVERIFY(base != nullptr);
-
 
     QCOMPARE(base->contentType(), type);
     QCOMPARE(base->uuid(), mediaId);
@@ -94,7 +89,7 @@ void MediaFactoryTest::createMediaTest()
     QCOMPARE(base->ownerId(), localId);
     QVERIFY(base->localIsOwner());
 
-    auto localId2 = Helper::randomString();
+    auto localId2= Helper::randomString();
     Media::MediaFactory::setLocalId(localId2);
     switch(type)
     {
@@ -125,7 +120,7 @@ void MediaFactoryTest::createMediaTest()
         break;
     }
 
-    auto networkMsgs = m_sender.messageData();
+    auto networkMsgs= m_sender.messageData();
 
     if(networkMsgs.isEmpty())
         return;
@@ -134,9 +129,9 @@ void MediaFactoryTest::createMediaTest()
     {
         NetworkMessageReader reader;
         reader.setData(msg);
-        auto color2 = Helper::randomColor();
-        auto msgType = static_cast<Core::ContentType>(reader.uint8());
-        auto netWorkMsg = Media::MediaFactory::createRemoteMedia(msgType, &reader, color2, false);
+        auto color2= Helper::randomColor();
+        auto msgType= static_cast<Core::ContentType>(reader.uint8());
+        auto netWorkMsg= Media::MediaFactory::createRemoteMedia(msgType, &reader, color2, false);
 
         QCOMPARE(netWorkMsg->contentType(), type);
         QCOMPARE(netWorkMsg->uuid(), mediaId);
@@ -145,7 +140,6 @@ void MediaFactoryTest::createMediaTest()
         QCOMPARE(netWorkMsg->ownerId(), localId);
         QVERIFY(netWorkMsg->remote());
     }
-
 }
 
 void MediaFactoryTest::createMediaTest_data()
@@ -155,20 +149,15 @@ void MediaFactoryTest::createMediaTest_data()
     QTest::addColumn<bool>("localIsGM");
     QTest::addColumn<bool>("validresult");
 
-    int i = 0;
-    for(auto type: QList<Core::ContentType>{ Core::ContentType::VECTORIALMAP,
-                                             Core::ContentType::PICTURE,
-                                             Core::ContentType::NOTES,
-                                             Core::ContentType::CHARACTERSHEET,
-                                             Core::ContentType::SHAREDNOTE,
-                                             Core::ContentType::PDF,
-                                             Core::ContentType::WEBVIEW,
-                                             Core::ContentType::MINDMAP,
-                                             Core::ContentType::UNKNOWN})
+    int i= 0;
+    for(auto type : QList<Core::ContentType>{
+            Core::ContentType::VECTORIALMAP, Core::ContentType::PICTURE, Core::ContentType::NOTES,
+            Core::ContentType::CHARACTERSHEET, Core::ContentType::SHAREDNOTE, Core::ContentType::PDF,
+            Core::ContentType::WEBVIEW, Core::ContentType::MINDMAP, Core::ContentType::UNKNOWN})
     {
-        QTest::addRow("cmd %i",i++)<< type << ParamMap{} <<false << false;
+        QTest::addRow("cmd %i", i++) << type << ParamMap{} << false << false;
         if(type != Core::ContentType::UNKNOWN)
-            QTest::addRow("cmd %i",i++)<< type << Helper::buildController(type) <<true << true;
+            QTest::addRow("cmd %i", i++) << type << Helper::buildController(type) << true << true;
     }
 }
 

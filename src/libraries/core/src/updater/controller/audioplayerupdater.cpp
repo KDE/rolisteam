@@ -152,11 +152,14 @@ void AudioPlayerUpdater::initSignalForGM()
 
     // Network
     // play new song
-    connect(ctrl1, &AudioPlayerController::startPlayingSong, this, [](const QString& song, qint64 time)
+    connect(ctrl1, &AudioPlayerController::startPlayingSong, this,
+            [](const QString& song, qint64 time)
             { MessageHelper::sendOffPlaySong(song, time, AudioController::First); });
-    connect(ctrl2, &AudioPlayerController::startPlayingSong, this, [](const QString& song, qint64 time)
+    connect(ctrl2, &AudioPlayerController::startPlayingSong, this,
+            [](const QString& song, qint64 time)
             { MessageHelper::sendOffPlaySong(song, time, AudioController::Second); });
-    connect(ctrl2, &AudioPlayerController::startPlayingSong, this, [](const QString& song, qint64 time)
+    connect(ctrl2, &AudioPlayerController::startPlayingSong, this,
+            [](const QString& song, qint64 time)
             { MessageHelper::sendOffPlaySong(song, time, AudioController::Third); });
 
     connect(ctrl1, &AudioPlayerController::stopPlaying, this,

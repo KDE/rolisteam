@@ -19,8 +19,8 @@
  ***************************************************************************/
 #include "undoCmd/renamecampaignmedia.h"
 #include "data/campaign.h"
-#include "utils/iohelper.h"
 #include "model/mediamodel.h"
+#include "utils/iohelper.h"
 
 #include <QDebug>
 

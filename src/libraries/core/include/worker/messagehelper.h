@@ -109,7 +109,6 @@ public:
     static QHash<QString, QVariant> readMediaData(NetworkMessageReader* msg);
     static void sendOffMediaControllerBase(const MediaControllerBase* ctrl, NetworkMessageWriter& msg);
 
-
     // image
     static void sendOffImage(ImageController* ctrl);
     static QHash<QString, QVariant> readImageData(NetworkMessageReader* msg);

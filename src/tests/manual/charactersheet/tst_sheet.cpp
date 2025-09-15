@@ -18,8 +18,8 @@
 #include "mindmap/data/nodestyle.h"
 #include "mindmap/qmlItems/linkitem.h"
 #include "model/playermodel.h"
-#include "worker/modelhelper.h"
 #include "test_root_path.h"
+#include "worker/modelhelper.h"
 
 void registerMindmapType()
 {
@@ -65,14 +65,14 @@ int main(int argc, char* argv[])
     QQuickStyle::setFallbackStyle("Fusion");
 
     campaign::CampaignManager campaignManager(nullptr);
-    campaignManager.openCampaign(
-        QUrl(QString("file://%1/manual/charactersheet/campaign").arg(tests::root_path)));
+    campaignManager.openCampaign(QUrl(QString("file://%1/manual/charactersheet/campaign").arg(tests::root_path)));
 
-    auto serializedData= utils::IOHelper::loadFile(QString("/%1/manual/charactersheet/campaign/media/tf2.rcs").arg(tests::root_path));
+    auto serializedData
+        = utils::IOHelper::loadFile(QString("/%1/manual/charactersheet/campaign/media/tf2.rcs").arg(tests::root_path));
     Q_UNUSED(serializedData)
     QUndoStack undoStack;
 
-    CharacterSheetUpdater updater(nullptr ,&campaignManager);
+    CharacterSheetUpdater updater(nullptr, &campaignManager);
 
     CharacterSheetController ctrl;
     QUrl path(QString("file://%1/manual/charactersheet/campaign/media/tf2.rcs").arg(tests::root_path));
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
     ctrl.setQmlCode(qml);
     ctrl.setRootJson(root);
 
-    //IOHelper::readCharacterSheetController(&ctrl, serializedData);
+    // IOHelper::readCharacterSheetController(&ctrl, serializedData);
 
     qDebug() << "character model: " << model->rowCount();
 

@@ -17,11 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include "common/remotelogcontroller.h"
+#include <QDateTime>
 #include <QTest>
 #include <helper.h>
 #include <memory>
-#include <QDateTime>
-#include "common/remotelogcontroller.h"
 
 class RemoteLogTest : public QObject
 {
@@ -38,10 +38,7 @@ private:
     std::unique_ptr<RemoteLogController> m_ctrl;
 };
 
-RemoteLogTest::RemoteLogTest()
-{
-
-}
+RemoteLogTest::RemoteLogTest() {}
 
 void RemoteLogTest::init()
 {
@@ -50,27 +47,21 @@ void RemoteLogTest::init()
 
 void RemoteLogTest::getAndSetTest()
 {
-    for(int i = 0 ; i < 10; ++i)
+    for(int i= 0; i < 10; ++i)
     {
-        m_ctrl->addLog(Helper::randomString(), Helper::randomString(), Helper::randomString(), QDateTime::currentDateTime().toString());
+        m_ctrl->addLog(Helper::randomString(), Helper::randomString(), Helper::randomString(),
+                       QDateTime::currentDateTime().toString());
     }
 
-    auto id = Helper::generate<int>(0,10);
+    auto id= Helper::generate<int>(0, 10);
 
     m_ctrl->setAppId(id);
     QCOMPARE(m_ctrl->appId(), id);
 
-
-    auto strId = Helper::randomString();
+    auto strId= Helper::randomString();
     m_ctrl->setLocalUuid(strId);
     QCOMPARE(m_ctrl->localUuid(), strId);
-
 }
-
-
-
-
-
 
 QTEST_MAIN(RemoteLogTest);
 

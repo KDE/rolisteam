@@ -1,16 +1,15 @@
 #include <QTest>
 
-#include "rwidgets/delegates/statedelegate.h"
 #include "model/characterstatemodel.h"
-#include <helper.h>
+#include "rwidgets/delegates/statedelegate.h"
 #include <QComboBox>
-
+#include <helper.h>
 
 class StateDelegateTest : public QObject
 {
     Q_OBJECT
 public:
-    StateDelegateTest() = default;
+    StateDelegateTest()= default;
 
 private slots:
     void init();
@@ -23,7 +22,6 @@ private:
     std::unique_ptr<CharacterStateModel> m_states;
     std::unique_ptr<QComboBox> m_combox;
 };
-
 
 void StateDelegateTest::init()
 {
@@ -57,7 +55,6 @@ void StateDelegateTest::setAndGetTest()
     m_combox->setCurrentIndex(1);
 
     m_combox->setCurrentIndex(2);
-
 }
 
 void StateDelegateTest::nullableTest()
@@ -65,7 +62,6 @@ void StateDelegateTest::nullableTest()
     m_delegate->setEditorData(nullptr, QModelIndex());
     m_delegate->setModelData(nullptr, nullptr, QModelIndex());
 }
-
 
 QTEST_MAIN(StateDelegateTest);
 #include "tst_state.moc"

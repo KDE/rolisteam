@@ -34,7 +34,6 @@ void CleverUriMimeData::addResourceNode(ResourcesNode* m)
         return;
 
     m_mediaList.append(m);
-
 }
 QList<ResourcesNode*> CleverUriMimeData::getList() const
 {

@@ -8,8 +8,8 @@
 #include "data/character.h"
 #include "media/mediatype.h"
 #include "rwidgets/mediacontainers/vmapframe.h"
-#include "utils/iohelper.h"
 #include "test_root_path.h"
+#include "utils/iohelper.h"
 
 int main(int argc, char* argv[])
 {
@@ -58,7 +58,6 @@ int main(int argc, char* argv[])
     Character character("aaa", "Lynn Gray-Rike", QColor("#0000DD"), false, 0);
     character.setAvatar(utils::IOHelper::loadFile(QString("%1/resources/lynn_gray_rike.jpg").arg(tests::root_path)));
 
-
     Character characterB("bb", "Toku Kahime", QColor("#FF00DD"), false, 0);
     characterB.setAvatar(utils::IOHelper::loadFile(QString("%1/resources/predateur.jpg").arg(tests::root_path)));
 
@@ -81,11 +80,10 @@ int main(int argc, char* argv[])
 
     auto d= new vmap::CharacterItemController(params2, &ctrl);
 
-
     VMapFrame frame(&ctrl);
     auto cancel= frame.addAction("Cancel");
     cancel->setShortcut(QKeySequence::Undo);
-    QObject::connect(cancel, &QAction::triggered,cancel,
+    QObject::connect(cancel, &QAction::triggered, cancel,
                      [&undoStack]()
                      {
                          qDebug() << "undo";

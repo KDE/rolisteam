@@ -23,8 +23,8 @@
 #include <QSGFlatColorMaterial>
 #include <QSGGeometryNode>
 
-#include "mindmap/mindmap_global.h"
 #include "mindmap/data/linkcontroller.h"
+#include "mindmap/mindmap_global.h"
 
 namespace mindmap
 {

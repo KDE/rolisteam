@@ -80,7 +80,7 @@ AddBackGroundImagesCommand::AddBackGroundImagesCommand(EditorController* ctrl, c
 void AddBackGroundImagesCommand::undo()
 {
     QUndoCommand::undo();
-    for(const auto &info : m_oldData)
+    for(const auto& info : m_oldData)
         m_ctrl->setImageBackground(info.index, info.oldImg, "");
 }
 

@@ -30,7 +30,7 @@ namespace vmap
 {
 class VisualItemController;
 }
-class  CORE_EXPORT ShowTransparentItemCommand : public QUndoCommand
+class CORE_EXPORT ShowTransparentItemCommand : public QUndoCommand
 {
 public:
     ShowTransparentItemCommand(const QList<vmap::VisualItemController*>& list);

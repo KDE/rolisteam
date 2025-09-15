@@ -23,9 +23,9 @@
 #include "worker/iohelper.h"
 #include <QClipboard>
 #include <QGuiApplication>
-#include <QTest>
 #include <QSignalSpy>
 #include <QTemporaryFile>
+#include <QTest>
 #include <helper.h>
 #include <memory>
 
@@ -175,7 +175,7 @@ void PictureTest::respectShape()
     QString dir("path/to/root");
     m_ctrl.reset(new ImageSelectorController(true, ImageSelectorController::All,
                                              static_cast<ImageSelectorController::Shape>(shape), dir));
-    m_ctrl->setVisualSize(QSize{547,333});
+    m_ctrl->setVisualSize(QSize{547, 333});
     m_ctrl->setRect(geometry);
     m_ctrl->setImageData(utils::IOHelper::loadFile(path));
 
@@ -194,8 +194,8 @@ void PictureTest::respectShape_data()
     QTest::addColumn<bool>("expected");
     QTest::addColumn<int>("count");
 
-    QTest::addRow("any with any with img")
-        << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 23) << ":/img/girafe3.jpg" << true << 1;
+    QTest::addRow("any with any with img") << static_cast<int>(ImageSelectorController::AnyShape)
+                                           << QRect(20, 20, 300, 23) << ":/img/girafe3.jpg" << true << 1;
     QTest::addRow("any with any with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 23) << QString{} << false << 0;
 
@@ -204,15 +204,15 @@ void PictureTest::respectShape_data()
     QTest::addRow("any with square with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
-    QTest::addRow("square with square with img")
-        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 300, 300) << ":/img/girafe3.jpg" << true  << 1;
+    QTest::addRow("square with square with img") << static_cast<int>(ImageSelectorController::Square)
+                                                 << QRect(20, 20, 300, 300) << ":/img/girafe3.jpg" << true << 1;
     QTest::addRow("square with square with no img")
-        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 300, 300) << QString{} << false  << 0;
+        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
-    QTest::addRow("square with any with img")
-        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 200, 300) << ":/img/girafe3.jpg" << false  << 1;
+    QTest::addRow("square with any with img") << static_cast<int>(ImageSelectorController::Square)
+                                              << QRect(20, 20, 200, 300) << ":/img/girafe3.jpg" << false << 1;
     QTest::addRow("square with any with no img")
-        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 200, 300) << QString{} << false  << 0;
+        << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 200, 300) << QString{} << false << 0;
 }
 
 void PictureTest::finalImage() {}
@@ -331,10 +331,9 @@ void PictureTest::readAllImageSize()
 
     QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
 
-    auto img = utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe3.jpg"));
+    auto img= utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe3.jpg"));
 
-    auto imgW = img.copy(0,0, imageSize.width(), imageSize.height());
-
+    auto imgW= img.copy(0, 0, imageSize.width(), imageSize.height());
 
     m_ctrl->setVisualSize(visualsize);
     m_ctrl->setRect(selectedRect);
@@ -355,22 +354,20 @@ void PictureTest::readAllImageSize_data()
     QTest::addColumn<QRect>("selectedRect");
     QTest::addColumn<bool>("expected");
 
-    QTest::addRow("ImageBigSelectionIn") << QSize(3264,2448) << QSize(547,333) << QRect{100,100,50,50} << true;
-    QTest::addRow("ImageBigSelectionOut") << QSize(3264,2448) << QSize(547,333) << QRect{-100,-100,50,50} << false;
+    QTest::addRow("ImageBigSelectionIn") << QSize(3264, 2448) << QSize(547, 333) << QRect{100, 100, 50, 50} << true;
+    QTest::addRow("ImageBigSelectionOut") << QSize(3264, 2448) << QSize(547, 333) << QRect{-100, -100, 50, 50} << false;
 
-    //QTest::addRow("ImageLargeSelectionDefault") << QSize(600,333) << QSize(547,333) << QRect{} << true;
-    QTest::addRow("ImageLargeSelectionIn") << QSize(600,333) << QSize(547,333) << QRect{100,100,50,50} << true;
-    QTest::addRow("ImageLargeSelectionOut") << QSize(600,333) << QSize(547,333) << QRect{-100,-100,50,50} << false;
+    // QTest::addRow("ImageLargeSelectionDefault") << QSize(600,333) << QSize(547,333) << QRect{} << true;
+    QTest::addRow("ImageLargeSelectionIn") << QSize(600, 333) << QSize(547, 333) << QRect{100, 100, 50, 50} << true;
+    QTest::addRow("ImageLargeSelectionOut") << QSize(600, 333) << QSize(547, 333) << QRect{-100, -100, 50, 50} << false;
 
-    //QTest::addRow("ImageHighSelectionDefault") << QSize(547,400) << QSize(547,333) << QRect{} << true;
-    QTest::addRow("ImageHighSelectionIn") << QSize(547,400) << QSize(547,333) << QRect{100,100,50,50} << true;
-    QTest::addRow("ImageHighSelectionOut") << QSize(547,400) << QSize(547,333) << QRect{-100,-100,50,50} << false;
+    // QTest::addRow("ImageHighSelectionDefault") << QSize(547,400) << QSize(547,333) << QRect{} << true;
+    QTest::addRow("ImageHighSelectionIn") << QSize(547, 400) << QSize(547, 333) << QRect{100, 100, 50, 50} << true;
+    QTest::addRow("ImageHighSelectionOut") << QSize(547, 400) << QSize(547, 333) << QRect{-100, -100, 50, 50} << false;
 
-
-    //QTest::addRow("ImageSmallSelectionDefault") << QSize(123,111) << QSize(547,333) << QRect{} << true;
-    QTest::addRow("ImageSmallSelectionIn") << QSize(123,111) << QSize(547,333) << QRect{100,100,50,50} << true;
-    QTest::addRow("ImageSmallSelectionOut") << QSize(123,111) << QSize(547,333) << QRect{-100,-100,50,50} << false;
-
+    // QTest::addRow("ImageSmallSelectionDefault") << QSize(123,111) << QSize(547,333) << QRect{} << true;
+    QTest::addRow("ImageSmallSelectionIn") << QSize(123, 111) << QSize(547, 333) << QRect{100, 100, 50, 50} << true;
+    QTest::addRow("ImageSmallSelectionOut") << QSize(123, 111) << QSize(547, 333) << QRect{-100, -100, 50, 50} << false;
 }
 QTEST_MAIN(PictureTest);
 

@@ -95,10 +95,7 @@ void StateModel::setSourceModel(const campaign::NonPlayableCharacterModel* sourc
     auto const& npcs= source->npcList();
 
     std::for_each(std::begin(npcs), std::end(npcs),
-                  [&ids](const std::unique_ptr<campaign::NonPlayableCharacter>& npc)
-                  {
-                      ids.insert(npc->stateId());
-                  });
+                  [&ids](const std::unique_ptr<campaign::NonPlayableCharacter>& npc) { ids.insert(npc->stateId()); });
 
     beginResetModel();
     m_data= ids.values();

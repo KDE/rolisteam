@@ -21,8 +21,8 @@
 #include <QAbstractItemModelTester>
 #include <QModelIndex>
 #include <QModelIndexList>
-#include <QtCore/QString>
 #include <QTest>
+#include <QtCore/QString>
 #include <memory>
 
 #include "rwidgets/gmtoolbox/UnitConvertor/unit.h"

@@ -36,15 +36,18 @@ InstantMessagingView::InstantMessagingView(InstantMessagingController* ctrl, QWi
 
     auto engine= m_qmlViewer->engine();
 
-    connect(engine, &QQmlEngine::warnings, this, [](const QList<QQmlError>& warnings) {
-        for(const auto& warn : warnings)
-        {
-            qDebug() << warn.toString();
-        }
-    });
+    connect(engine, &QQmlEngine::warnings, this,
+            [](const QList<QQmlError>& warnings)
+            {
+                for(const auto& warn : warnings)
+                {
+                    qDebug() << warn.toString();
+                }
+            });
     qmlRegisterSingletonType<InstantMessagerManager>(
         "org.rolisteam.InstantMessaging", 1, 0, "InstantMessagerManager",
-        [this, engine](QQmlEngine* qmlengine, QJSEngine* scriptEngine) -> QObject* {
+        [this, engine](QQmlEngine* qmlengine, QJSEngine* scriptEngine) -> QObject*
+        {
             Q_UNUSED(scriptEngine)
             if(qmlengine != engine)
                 return {};
@@ -65,10 +68,12 @@ InstantMessagingView::InstantMessagingView(InstantMessagingController* ctrl, QWi
 
     connect(m_qmlViewer.get(), &QQuickWidget::sceneGraphError, this,
             [](QQuickWindow::SceneGraphError, const QString& msg) { qDebug() << msg; });
-    connect(engine, &QQmlEngine::warnings, this, [](const QList<QQmlError>& warnings) {
-        for(const auto& error : warnings)
-            qDebug() << error.toString();
-    });
+    connect(engine, &QQmlEngine::warnings, this,
+            [](const QList<QQmlError>& warnings)
+            {
+                for(const auto& error : warnings)
+                    qDebug() << error.toString();
+            });
     setMinimumWidth(200);
 
     m_qmlViewer->setResizeMode(QQuickWidget::SizeRootObjectToView);

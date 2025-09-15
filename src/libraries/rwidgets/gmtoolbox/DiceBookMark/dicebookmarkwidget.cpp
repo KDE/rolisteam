@@ -10,13 +10,15 @@ DiceBookMarkWidget::DiceBookMarkWidget(std::vector<DiceShortCut>& data, QWidget*
     auto header= ui->tableView->horizontalHeader();
     header->setStretchLastSection(true);
     connect(ui->m_addBtn, &QToolButton::clicked, this, [=]() { m_model->appendRows(); });
-    connect(ui->m_removeBtn, &QToolButton::clicked, this, [=]() {
-        auto index= ui->tableView->currentIndex();
-        if(index.isValid())
-        {
-            m_model->removeRows(index.row(), 1);
-        }
-    });
+    connect(ui->m_removeBtn, &QToolButton::clicked, this,
+            [=]()
+            {
+                auto index= ui->tableView->currentIndex();
+                if(index.isValid())
+                {
+                    m_model->removeRows(index.row(), 1);
+                }
+            });
 }
 
 DiceBookMarkWidget::~DiceBookMarkWidget()

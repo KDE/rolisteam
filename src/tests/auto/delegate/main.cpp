@@ -18,21 +18,21 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "tst_imagecontroller.cpp"
 #include "tst_charactersheetcontroller.cpp"
+#include "tst_imagecontroller.cpp"
 
 int main(int argc, char* argv[])
 {
-    int status = 0;
+    int status= 0;
 
     {
         CharacterSheetControllerTest test;
-        status |= QTest::qExec(&test, argc, argv);
+        status|= QTest::qExec(&test, argc, argv);
     }
 
     {
         ImageControllerTest test;
-        status |= QTest::qExec(&test, argc, argv);
+        status|= QTest::qExec(&test, argc, argv);
     }
     return status;
 }

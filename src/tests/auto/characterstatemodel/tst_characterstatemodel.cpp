@@ -22,8 +22,8 @@
 #include <QModelIndex>
 #include <QModelIndexList>
 #include <QTemporaryFile>
-#include <QtCore/QString>
 #include <QTest>
+#include <QtCore/QString>
 #include <memory>
 
 #include "data/character.h"

@@ -61,7 +61,7 @@ GridItem::GridItem(vmap::GridController* ctrl) : VisualItem(ctrl), m_gridCtrl(ct
 
 GridItem::~GridItem() {}
 
-void GridItem::setNewEnd(const QPointF &nend)
+void GridItem::setNewEnd(const QPointF& nend)
 {
     Q_UNUSED(nend);
 }

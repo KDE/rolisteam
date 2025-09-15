@@ -22,9 +22,9 @@
 
 #include "utils/utils_global.h"
 #include <QObject>
+#include <QQmlEngine>
 #include <QRectF>
 #include <QSizeF>
-#include <QQmlEngine>
 
 namespace utils
 {

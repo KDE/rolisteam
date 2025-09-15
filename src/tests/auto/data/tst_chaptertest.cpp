@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include <QObject>
-#include <QtCore/QString>
 #include <QTest>
+#include <QtCore/QString>
 #include <chrono>
 #include <data/resourcesnode.h>
 

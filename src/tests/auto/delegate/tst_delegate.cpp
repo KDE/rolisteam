@@ -5,7 +5,6 @@
 #include <helper.h>
 #include <limits>
 
-
 class DelegateTest : public QObject
 {
     Q_OBJECT
@@ -23,7 +22,6 @@ void DelegateTest::init()
 {
     m_delegate.reset(new Delegate());
 }
-
 
 QTEST_MAIN(DelegateTest);
 #include "tst_delegate.moc"

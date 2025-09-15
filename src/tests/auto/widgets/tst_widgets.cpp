@@ -18,8 +18,8 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
 #include "rwidgets/customs/diameterselector.h"
 #include "rwidgets/customs/filedirchooser.h"
@@ -29,8 +29,8 @@
 #include "rwidgets/dialogs/imageselectordialog.h"
 
 // Map view
-#include "rwidgets/customs/rgraphicsview.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
+#include "rwidgets/customs/rgraphicsview.h"
 
 #include <helper.h>
 
@@ -137,12 +137,12 @@ void WidgetsTest::mapViewTest()
 {
     m_mapView->currentToolChanged(Core::EMPTYELLIPSE);
 
-    m_mapCtrl->addItemController(Helper::buildRectController(true, QRect(0,0,100,100)),false);
+    m_mapCtrl->addItemController(Helper::buildRectController(true, QRect(0, 0, 100, 100)), false);
 
     m_mapView->addImageToMap();
     m_mapView->centerOnItem();
 
-    //m_mapView->deleteItem({});
+    // m_mapView->deleteItem({});
     m_mapView->setRotation({}, 90);
     m_mapView->setItemLayer({}, Core::Layer::GROUND);
 }

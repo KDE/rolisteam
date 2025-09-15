@@ -13,19 +13,22 @@ QList<FieldController*> cleanSelection(const QList<QGraphicsItem*>& items, bool&
 {
     QList<FieldController*> res;
 
-    auto func= [](QGraphicsItem* item) {
+    auto func= [](QGraphicsItem* item)
+    {
         auto field= dynamic_cast<CanvasField*>(item);
         if(nullptr == field)
             return false;
         return static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
     };
 
-    allSame= std::all_of(std::begin(items), std::end(items), [](QGraphicsItem* item) {
-        auto field= dynamic_cast<CanvasField*>(item);
-        if(nullptr == field)
-            return false;
-        return static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
-    });
+    allSame= std::all_of(std::begin(items), std::end(items),
+                         [](QGraphicsItem* item)
+                         {
+                             auto field= dynamic_cast<CanvasField*>(item);
+                             if(nullptr == field)
+                                 return false;
+                             return static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
+                         });
 
     if(!items.isEmpty())
         locked= func(items.first());
@@ -33,7 +36,8 @@ QList<FieldController*> cleanSelection(const QList<QGraphicsItem*>& items, bool&
         locked= false;
 
     std::transform(std::begin(items), std::end(items), std::back_inserter(res),
-                   [](QGraphicsItem* item) -> FieldController* {
+                   [](QGraphicsItem* item) -> FieldController*
+                   {
                        auto field= dynamic_cast<CanvasField*>(item);
                        if(!field)
                            return nullptr;
@@ -74,24 +78,30 @@ void ItemEditor::setController(EditorController* editCtrl)
     m_ctrl= editCtrl;
 
     connect(m_ctrl, &EditorController::dataChanged, this, [this]() { invalidateScene(); });
-    connect(m_lockItem.get(), &QAction::triggered, this, [this](bool checked) {
-        std::for_each(std::begin(m_selection), std::end(m_selection), [checked](FieldController* ctrl) {
-            if(!ctrl)
-                return;
-            ctrl->setReadOnly(checked);
-        });
-    });
-    connect(m_fitInView.get(), &QAction::triggered, this, [this](bool checked) {
-        if(checked)
-        {
-            const QPixmap& pix= m_ctrl->backgroundFromIndex(m_ctrl->currentPage());
-            fitInView(QRectF(pix.rect()), Qt::KeepAspectRatioByExpanding);
-        }
-        else
-        {
-            fitInView(rect());
-        }
-    });
+    connect(m_lockItem.get(), &QAction::triggered, this,
+            [this](bool checked)
+            {
+                std::for_each(std::begin(m_selection), std::end(m_selection),
+                              [checked](FieldController* ctrl)
+                              {
+                                  if(!ctrl)
+                                      return;
+                                  ctrl->setReadOnly(checked);
+                              });
+            });
+    connect(m_fitInView.get(), &QAction::triggered, this,
+            [this](bool checked)
+            {
+                if(checked)
+                {
+                    const QPixmap& pix= m_ctrl->backgroundFromIndex(m_ctrl->currentPage());
+                    fitInView(QRectF(pix.rect()), Qt::KeepAspectRatioByExpanding);
+                }
+                else
+                {
+                    fitInView(rect());
+                }
+            });
     connect(m_alignOnY.get(), &QAction::triggered, this,
             [this]() { m_ctrl->alignOn(false, m_selection, m_underCursorItem); });
     connect(m_alignOnX.get(), &QAction::triggered, this,
@@ -107,17 +117,21 @@ void ItemEditor::setController(EditorController* editCtrl)
     connect(m_horizontalEquaDistance.get(), &QAction::triggered, this,
             [this]() { m_ctrl->spreadItemEqualy(m_selection, true); });
 
-    connect(m_ctrl, &EditorController::currentPageChanged, this, [this]() {
-        if(m_ctrl->currentCanvas())
-            setScene(m_ctrl->currentCanvas());
-    });
-    connect(m_ctrl, &EditorController::pageCountChanged, this, [this]() {
-        auto c= m_ctrl->currentCanvas();
-        if(!c)
-            return;
+    connect(m_ctrl, &EditorController::currentPageChanged, this,
+            [this]()
+            {
+                if(m_ctrl->currentCanvas())
+                    setScene(m_ctrl->currentCanvas());
+            });
+    connect(m_ctrl, &EditorController::pageCountChanged, this,
+            [this]()
+            {
+                auto c= m_ctrl->currentCanvas();
+                if(!c)
+                    return;
 
-        setScene(c);
-    });
+                setScene(c);
+            });
 
     if(m_ctrl->currentCanvas())
         setScene(m_ctrl->currentCanvas());
@@ -152,7 +166,8 @@ void ItemEditor::mousePressEvent(QMouseEvent* event)
         QList<QGraphicsItem*> list= items(event->pos());
 
         list.erase(std::remove_if(list.begin(), list.end(),
-                                  [](QGraphicsItem* item) {
+                                  [](QGraphicsItem* item)
+                                  {
                                       static QGraphicsPixmapItem pix;
                                       return item->type() == pix.type();
                                   }),

@@ -20,10 +20,10 @@
 #ifndef CLEVERURIMIMEDATA_H
 #define CLEVERURIMIMEDATA_H
 
+#include <QList>
 #include <QMimeData>
 #include <QModelIndex>
 #include <QObject>
-#include <QList>
 #include <core_global.h>
 
 class ResourcesNode;

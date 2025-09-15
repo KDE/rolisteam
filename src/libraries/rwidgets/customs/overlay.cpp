@@ -102,19 +102,20 @@ void Overlay::paintEvent(QPaintEvent*)
     painter.fillRect(m_selectedRect.bottomRight().x() - offset, m_selectedRect.bottomRight().y() - offset,
                      k_distance_selection, k_distance_selection, Qt::red);
 
-    auto s = m_selectedRect.width()/3;
+    auto s= m_selectedRect.width() / 3;
 
-    m_centerRect = m_selectedRect.adjusted(s,s,-s,-s);
-    painter.fillRect(m_centerRect, QColor(255, 0,0,120));
+    m_centerRect= m_selectedRect.adjusted(s, s, -s, -s);
+    painter.fillRect(m_centerRect, QColor(255, 0, 0, 120));
 
-    QImage arrows(m_centerRect.width(), m_centerRect.height(), QImage::Format_ARGB32);;
+    QImage arrows(m_centerRect.width(), m_centerRect.height(), QImage::Format_ARGB32);
+    ;
     {
         QSvgRenderer render(QString(":/resources/rolistheme/4arrows.svg"));
         arrows.fill(Qt::transparent);
         QPainter p(&arrows);
         render.render(&p);
     }
-    painter.drawImage(m_centerRect, arrows );
+    painter.drawImage(m_centerRect, arrows);
 }
 
 QRect Overlay::selectedRect() const

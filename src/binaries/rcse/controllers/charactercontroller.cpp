@@ -21,7 +21,8 @@ CharacterController::CharacterController(QObject* parent)
     // m_characters->setSourceModel(m_characterModel.get());
 
     connect(m_characterModel.get(), &CharacterSheetModel::characterSheetHasBeenAdded, this,
-            [this](CharacterSheet* sheet) {
+            [this](CharacterSheet* sheet)
+            {
                 connect(sheet, &CharacterSheet::updateField, m_characterModel.get(),
                         &CharacterSheetModel::fieldHasBeenChanged);
                 connect(sheet, &CharacterSheet::addLineToTableField, m_characterModel.get(),

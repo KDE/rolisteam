@@ -26,7 +26,7 @@
 class Canvas;
 class Field;
 class FieldModel;
-class  CORE_EXPORT AddFieldCommand : public QUndoCommand
+class CORE_EXPORT AddFieldCommand : public QUndoCommand
 {
 public:
     AddFieldCommand(Canvas::Tool tool, Canvas* graphicsScene, FieldModel* model, int currentPage, QPointF pos,

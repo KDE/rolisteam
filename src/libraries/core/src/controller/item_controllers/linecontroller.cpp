@@ -22,8 +22,8 @@
 #include <QVariant>
 
 #include "controller/view_controller/vectorialmapcontroller.h"
-#include "worker/utilshelper.h"
 #include "media/mediatype.h"
+#include "worker/utilshelper.h"
 
 namespace vmap
 {
@@ -32,15 +32,11 @@ LineController::LineController(const std::map<QString, QVariant>& params, Vector
 {
     m_tool= Core::SelectableTool::LINE;
 
-    helper::utils::setParamIfAny<QColor>(Core::vmapkeys::KEY_COLOR, params, [this](const QColor& color) {
-        setColor(color);
-    });
-    helper::utils::setParamIfAny<quint16>(Core::vmapkeys::KEY_PENWIDTH, params, [this](const quint16& penWidth) {
-       m_penWidth = penWidth;
-    });
-    helper::utils::setParamIfAny<QPointF>(Core::vmapkeys::KEY_POS, params, [this](const QPointF& pos) {
-        m_pos = pos;
-    });
+    helper::utils::setParamIfAny<QColor>(Core::vmapkeys::KEY_COLOR, params,
+                                         [this](const QColor& color) { setColor(color); });
+    helper::utils::setParamIfAny<quint16>(Core::vmapkeys::KEY_PENWIDTH, params,
+                                          [this](const quint16& penWidth) { m_penWidth= penWidth; });
+    helper::utils::setParamIfAny<QPointF>(Core::vmapkeys::KEY_POS, params, [this](const QPointF& pos) { m_pos= pos; });
 
     connect(this, &LineController::startPointChanged, this, [this] { setModified(); });
     connect(this, &LineController::endPointChanged, this, [this] { setModified(); });
@@ -89,8 +85,7 @@ QRectF LineController::rect() const
     return QRectF(startPoint(), endPoint()).normalized();
 }
 
-void LineController::setCorner(const QPointF& move, int corner,
-                               Core::TransformType tt)
+void LineController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
     switch(corner)
     {

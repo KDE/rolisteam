@@ -117,11 +117,10 @@ void SightItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
             trans.translate(center.x(), center.y());
             trans.rotate(rot);
 
-            auto side = vision->side()/2;
+            auto side= vision->side() / 2;
             QPainterPath token;
-            token.addRect(QRectF{0,0,side*2,side*2});
-            path= path.subtracted(
-                trans.map(token.translated(-side,-side))); // always see the user
+            token.addRect(QRectF{0, 0, side * 2, side * 2});
+            path= path.subtracted(trans.map(token.translated(-side, -side))); // always see the user
             switch(vision->shape())
             {
             case CharacterVision::DISK:

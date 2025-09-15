@@ -46,8 +46,8 @@
 
 #include <QMainWindow>
 #include <QMap>
-#include <QSettings>
 #include <QPointer>
+#include <QSettings>
 #include <QtPrintSupport/QPrinter>
 
 #include "editors/noteeditor/format_OO_oasis_/OOReader.h"

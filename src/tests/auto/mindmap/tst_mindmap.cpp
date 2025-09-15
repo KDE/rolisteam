@@ -146,16 +146,15 @@ void MindMapTest::updaterTest()
 void MindMapTest::packageTest()
 {
     auto package= std::make_unique<mindmap::PackageNode>();
-    auto model = package->model();
+    auto model= package->model();
 
     new QAbstractItemModelTester(model);
 
     QSignalSpy spy(package.get(), &mindmap::PackageNode::minimumMarginChanged);
-    auto value = Helper::generate(26, 100);
+    auto value= Helper::generate(26, 100);
     package->setMinimumMargin(value);
-    package->setMinimumMargin(value*2);
+    package->setMinimumMargin(value * 2);
     QCOMPARE(spy.count(), 2);
-
 
     auto node= std::make_unique<mindmap::MindNode>();
     auto id= Helper::randomString();
@@ -165,17 +164,15 @@ void MindMapTest::packageTest()
 
     QCOMPARE(node->id(), id);
 
-
     auto node2= std::make_unique<mindmap::MindNode>();
     auto id2= Helper::randomString();
     node2->setId(id2);
 
     package->addChild(node2.get(), true);
 
-    auto & children = package->children();
+    auto& children= package->children();
 
-    auto ids = package->childrenId();
-
+    auto ids= package->childrenId();
 
     QCOMPARE(children.size(), 2);
     QCOMPARE(model->rowCount(), 2);
@@ -188,7 +185,6 @@ void MindMapTest::packageTest()
 
     QCOMPARE(children.size(), 0);
     QCOMPARE(model->rowCount(), 0);
-
 }
 
 void MindMapTest::addRemoveImageTest()

@@ -22,11 +22,7 @@
 
 #include <QPainter>
 
-AnchorItem::AnchorItem()
-    : m_pen(QColor(Qt::darkGray))
-{
-
-}
+AnchorItem::AnchorItem() : m_pen(QColor(Qt::darkGray)) {}
 
 AnchorItem::~AnchorItem() {}
 QRectF AnchorItem::boundingRect() const
@@ -34,14 +30,14 @@ QRectF AnchorItem::boundingRect() const
     return QRectF(m_startPoint, m_endPoint);
 }
 
-void AnchorItem::setNewEnd(const QPointF &nend)
+void AnchorItem::setNewEnd(const QPointF& nend)
 {
-    if (nend.isNull())
+    if(nend.isNull())
         return;
 
-    m_endPoint += nend;
+    m_endPoint+= nend;
 }
-void AnchorItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void AnchorItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     Q_UNUSED(widget)
     Q_UNUSED(option)

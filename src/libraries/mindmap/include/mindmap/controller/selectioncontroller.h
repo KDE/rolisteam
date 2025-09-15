@@ -20,14 +20,14 @@
 #ifndef SELECTIONCONTROLLER_H
 #define SELECTIONCONTROLLER_H
 
-#include "mindmap/mindmap_global.h"
 #include "mindmap/data/minditem.h"
+#include "mindmap/mindmap_global.h"
 
 #include <QObject>
 #include <QPointF>
+#include <QQmlEngine>
 #include <QUndoStack>
 #include <vector>
-#include <QQmlEngine>
 
 namespace mindmap
 {

@@ -24,12 +24,13 @@
 #include <QTimer>
 #include <core_global.h>
 #include <memory>
-class  CORE_EXPORT CountDownObject : public QObject
+class CORE_EXPORT CountDownObject : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(bool running READ isRunning  NOTIFY runningChanged)
+    Q_PROPERTY(bool running READ isRunning NOTIFY runningChanged)
 public:
-    explicit CountDownObject(int tryCount = 5, int countDown = 10, int timeBeforeDecrease = 1000, QObject* parent= nullptr);
+    explicit CountDownObject(int tryCount= 5, int countDown= 10, int timeBeforeDecrease= 1000,
+                             QObject* parent= nullptr);
 
     bool isRunning() const;
 

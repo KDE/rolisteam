@@ -29,7 +29,7 @@
 /**
  * @brief The IpChecker class is dedicated to reach https://rolisteam.org/ip.php to read the public ip.
  */
-class CORE_EXPORT  IpChecker : public QObject
+class CORE_EXPORT IpChecker : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QString ipAddress READ ipAddress NOTIFY ipAddressChanged)

@@ -57,7 +57,8 @@ ParticipantsPane::ParticipantsPane(SharedNoteController* ctrl, QWidget* parent)
 
     auto selectionModel= ui->m_treeview->selectionModel();
     connect(selectionModel, &QItemSelectionModel::currentChanged, this,
-            [this](const QModelIndex& idx, const QModelIndex&) {
+            [this](const QModelIndex& idx, const QModelIndex&)
+            {
                 auto item= static_cast<ParticipantItem*>(idx.internalPointer());
 
                 auto canMove= (item->uuid() != m_sharedCtrl->ownerId() & item->isLeaf());

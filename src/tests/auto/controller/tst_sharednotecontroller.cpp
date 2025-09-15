@@ -2,19 +2,18 @@
 
 #include <QSignalSpy>
 
-#include "data/player.h"
 #include "controller/view_controller/sharednotecontroller.h"
+#include "data/player.h"
 #include "model/playermodel.h"
 #include <QAbstractItemModelTester>
 #include <helper.h>
 #include <limits>
 
-
 class SharedNoteControllerTest : public QObject
 {
     Q_OBJECT
 public:
-    SharedNoteControllerTest() = default;
+    SharedNoteControllerTest()= default;
 
 private slots:
     void init();
@@ -25,7 +24,6 @@ private:
     std::unique_ptr<SharedNoteController> m_ctrl;
     std::unique_ptr<PlayerModel> m_playerModel;
 };
-
 
 void SharedNoteControllerTest::init()
 {
@@ -38,7 +36,7 @@ void SharedNoteControllerTest::setAndGetTest()
 {
     QSignalSpy spy(m_ctrl.get(), &SharedNoteController::permissionChanged);
 
-    auto id = Helper::randomString();
+    auto id= Helper::randomString();
     m_ctrl->setLocalId(id);
     m_ctrl->setOwnerId(id);
 
@@ -48,15 +46,19 @@ void SharedNoteControllerTest::setAndGetTest()
 
     QVERIFY(!m_ctrl->localCanWrite());
 
-    auto length = Helper::generate<int>(1,100);
+    auto length= Helper::generate<int>(1, 100);
     m_ctrl->setUpdateCmd(Helper::randomString(length));
     m_ctrl->setUpdateCmd(QString("doc:%1").arg(Helper::randomString(length)));
-    auto cmd = QString("doc:%1 %2 %3 %4").arg(Helper::generate<int>(1,100)).arg(Helper::generate<int>(1,100)).arg(length).arg(Helper::randomString(length));
+    auto cmd= QString("doc:%1 %2 %3 %4")
+                  .arg(Helper::generate<int>(1, 100))
+                  .arg(Helper::generate<int>(1, 100))
+                  .arg(length)
+                  .arg(Helper::randomString(length));
     m_ctrl->setUpdateCmd(cmd);
 
     QCOMPARE(m_ctrl->updateCmd(), cmd);
 
-    auto text = Helper::randomString();
+    auto text= Helper::randomString();
     m_ctrl->setTextUpdate(text);
     m_ctrl->setTextUpdate(text);
 
@@ -67,7 +69,7 @@ void SharedNoteControllerTest::setAndGetTest()
     QVERIFY(!m_ctrl->canWrite(nullptr));
 
     {
-        auto model = m_ctrl->playerModel();
+        auto model= m_ctrl->playerModel();
         QCOMPARE(model, m_playerModel.get());
     }
     m_ctrl->setUrl(Helper::randomUrl());
@@ -75,15 +77,14 @@ void SharedNoteControllerTest::setAndGetTest()
     // MODEL Player
     PlayerModel model;
     SharedNoteController::setPlayerModel(&model);
-    m_ctrl.reset(new SharedNoteController(id,id));//local is owner
+    m_ctrl.reset(new SharedNoteController(id, id)); // local is owner
 
-    Player* local = new Player;
+    Player* local= new Player;
     local->setUuid(id);
     model.setLocalPlayerId(id);
     model.addPlayer(local);
 
-
-    Player* p2 = new Player;
+    Player* p2= new Player;
     p2->setUuid(Helper::randomString());
     model.addPlayer(p2);
 
@@ -94,7 +95,6 @@ void SharedNoteControllerTest::setAndGetTest()
     m_ctrl->promoteCurrentItem(QModelIndex());
     m_ctrl->demoteCurrentItem(QModelIndex());
 }
-
 
 QTEST_MAIN(SharedNoteControllerTest);
 #include "tst_sharednotecontroller.moc"

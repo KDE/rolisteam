@@ -100,9 +100,7 @@ void ColorModel::setSourceModel(const campaign::NonPlayableCharacterModel* sourc
     auto const& npcs= source->npcList();
     std::for_each(std::begin(npcs), std::end(npcs),
                   [&colors](const std::unique_ptr<campaign::NonPlayableCharacter>& npc)
-                  {
-                      colors.insert(npc->getColor());
-                  });
+                  { colors.insert(npc->getColor()); });
 
     beginResetModel();
     m_data= colors.values();

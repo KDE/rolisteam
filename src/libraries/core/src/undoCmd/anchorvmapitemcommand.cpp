@@ -1,15 +1,14 @@
 #include "undoCmd/anchorvmapitemcommand.h"
 #include "controller/item_controllers/visualitemcontroller.h"
 
-
-AnchorVMapItemCommand::AnchorVMapItemCommand(vmap::VisualItemController *child, vmap::VisualItemController *newParent)
+AnchorVMapItemCommand::AnchorVMapItemCommand(vmap::VisualItemController* child, vmap::VisualItemController* newParent)
     : m_child(child)
 {
     if(m_child)
-        m_previousParent = m_child->parentUuid();
+        m_previousParent= m_child->parentUuid();
 
     if(newParent)
-        m_parentId = newParent->uuid();
+        m_parentId= newParent->uuid();
 }
 
 void AnchorVMapItemCommand::redo()

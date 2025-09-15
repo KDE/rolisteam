@@ -115,12 +115,14 @@ void EditorController::spreadItemEqualy(QList<FieldController*> ctrls, bool hori
     if(ctrls.size() < 3) // ignore when 2 elements or less have been selected.
         return;
 
-    auto widthCompare= [](FieldController* a, FieldController* b) {
+    auto widthCompare= [](FieldController* a, FieldController* b)
+    {
         auto posA= a->x() - a->width() / 2;
         auto posB= b->x() - b->width() / 2;
         return posA < posB;
     };
-    auto heightCompare= [](FieldController* a, FieldController* b) {
+    auto heightCompare= [](FieldController* a, FieldController* b)
+    {
         auto posA= a->y() - a->height() / 2;
         auto posB= b->y() - b->height() / 2;
         return posA < posB;
@@ -154,9 +156,9 @@ void EditorController::spreadItemEqualy(QList<FieldController*> ctrls, bool hori
     ctrls.erase(ctrls.cend() - 1);
 
     qreal itemSpace= 0.0;
-    std::for_each(ctrls.begin(), ctrls.end(), [horizon, &itemSpace](FieldController* item) {
-        itemSpace+= horizon ? item->width() : item->height();
-    });
+    std::for_each(ctrls.begin(), ctrls.end(),
+                  [horizon, &itemSpace](FieldController* item)
+                  { itemSpace+= horizon ? item->width() : item->height(); });
 
     availableDistance= endAvailableSpace - beginAvailableSpace - itemSpace;
     spaceCount= ctrls.size() + 1; // need two spaces when one element between first and last

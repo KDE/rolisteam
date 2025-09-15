@@ -22,8 +22,8 @@
 #include <QTest>
 
 #include "rwidgets/delegates/actiondelegate.h"
-#include <helper.h>
 #include <QAbstractItemModelTester>
+#include <helper.h>
 #include <memory>
 
 class ActionDelegateTest : public QObject
@@ -36,7 +36,6 @@ private slots:
     void init();
     void setAndGetTest();
 
-
 private:
     std::unique_ptr<ActionDelegate> m_delegate;
     std::unique_ptr<LabelWithOptions> m_label;
@@ -48,26 +47,23 @@ void ActionDelegateTest::init()
     m_delegate.reset(new ActionDelegate);
 }
 
-
 void ActionDelegateTest::setAndGetTest()
 {
     {
         QSignalSpy spy2(m_label.get(), &LabelWithOptions::textChanged);
 
-        m_label->setData({Helper::randomString(),Helper::randomString(),Helper::randomString(),Helper::randomString(),Helper::randomString()},
-                         {Helper::randomString(),Helper::randomString(),Helper::randomString(),Helper::randomString(),Helper::randomString()});
+        m_label->setData({Helper::randomString(), Helper::randomString(), Helper::randomString(),
+                          Helper::randomString(), Helper::randomString()},
+                         {Helper::randomString(), Helper::randomString(), Helper::randomString(),
+                          Helper::randomString(), Helper::randomString()});
 
-        auto txt = Helper::randomString();
+        auto txt= Helper::randomString();
         m_label->setText(txt);
         m_label->setText(txt);
         QCOMPARE(m_label->text(), txt);
         QCOMPARE(spy2.count(), 1);
     }
-
-
-
 }
-
 
 QTEST_MAIN(ActionDelegate);
 

@@ -32,13 +32,12 @@ class UserListTest : public QObject
 {
     Q_OBJECT
 public:
-    UserListTest()
-    {
-    };
+    UserListTest(){};
 
 private slots:
     void init();
     void cleanupTestCase();
+
 private:
     std::unique_ptr<UserListDelegate> m_delegate;
 };
@@ -48,11 +47,7 @@ void UserListTest::init()
     m_delegate.reset(new UserListDelegate);
 }
 
-void UserListTest::cleanupTestCase()
-{
-
-}
-
+void UserListTest::cleanupTestCase() {}
 
 QTEST_MAIN(UserListTest);
 

@@ -1,11 +1,11 @@
 #ifndef UPNPNAT_H
 #define UPNPNAT_H
 
+#include "network_global.h"
 #include <QHostAddress>
 #include <QObject>
 #include <string>
 #include <vector>
-#include "network_global.h"
 
 constexpr int DefaultTimeOut{10};
 constexpr int DefaultInterval{200};

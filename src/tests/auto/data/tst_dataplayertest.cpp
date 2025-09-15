@@ -19,9 +19,9 @@
  ***************************************************************************/
 
 #include <QColor>
+#include <QTest>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QString>
-#include <QTest>
 #include <data/character.h>
 #include <data/player.h>
 #include <helper.h>

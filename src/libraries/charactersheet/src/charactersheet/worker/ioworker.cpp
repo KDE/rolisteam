@@ -32,7 +32,7 @@ namespace IOWorker
 
 QJsonObject saveCharaterSheetModel(CharacterSheetModel* model)
 {
-    auto section = model->getRootSection();
+    auto section= model->getRootSection();
     if(!section)
         return {};
 
@@ -41,9 +41,9 @@ QJsonObject saveCharaterSheetModel(CharacterSheetModel* model)
     return res;
 }
 
-void fetchCharacterSheetModel(CharacterSheetModel *model, const QJsonObject &object)
+void fetchCharacterSheetModel(CharacterSheetModel* model, const QJsonObject& object)
 {
-    auto section = model->getRootSection();
+    auto section= model->getRootSection();
     if(!section)
         return;
     section->load(object);
@@ -108,7 +108,5 @@ QJsonObject readFileToObject(const QString& filename)
     QJsonDocument json= QJsonDocument::fromJson(file.readAll());
     return json.object();
 }
-
-
 
 } // namespace IOWorker

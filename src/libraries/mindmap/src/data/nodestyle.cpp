@@ -25,9 +25,7 @@ namespace mindmap
 {
 
 NodeStyle::NodeStyle(QObject* parent) : QObject(parent) {}
-NodeStyle::~NodeStyle()
-{
-}
+NodeStyle::~NodeStyle() {}
 QColor NodeStyle::colorOne() const
 {
     return m_colorOne;

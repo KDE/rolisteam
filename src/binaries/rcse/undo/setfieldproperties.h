@@ -30,8 +30,7 @@
 class SetFieldPropertyCommand : public QUndoCommand
 {
 public:
-    SetFieldPropertyCommand(QList<TreeSheetItem*> selection, QVariant value, int col,
-                            QUndoCommand* parent= nullptr);
+    SetFieldPropertyCommand(QList<TreeSheetItem*> selection, QVariant value, int col, QUndoCommand* parent= nullptr);
 
     void undo() override;
     void redo() override;

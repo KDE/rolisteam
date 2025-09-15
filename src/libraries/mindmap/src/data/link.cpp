@@ -72,10 +72,12 @@ void Link::setStart(MindNode* start)
     m_start= start;
     emit startPointChanged();
 
-    connect(m_start, &MindNode::positionChanged, this, [this]() {
-        emit startPositionChanged();
-        emit endPositionChanged();
-    });
+    connect(m_start, &MindNode::positionChanged, this,
+            [this]()
+            {
+                emit startPositionChanged();
+                emit endPositionChanged();
+            });
 }
 
 MindNode* Link::endNode() const
@@ -106,10 +108,12 @@ void Link::setEnd(MindNode* end)
     m_end= end;
     emit endPointChanged();
 
-    connect(m_end, &MindNode::positionChanged, this, [this]() {
-        emit startPositionChanged();
-        emit endPositionChanged();
-    });
+    connect(m_end, &MindNode::positionChanged, this,
+            [this]()
+            {
+                emit startPositionChanged();
+                emit endPositionChanged();
+            });
 }
 
 QPointF Link::computePoint(bool p1) const

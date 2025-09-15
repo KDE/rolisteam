@@ -47,43 +47,49 @@ void SharedNoteControllerUpdater::addSharedNoteController(SharedNoteController* 
 
     m_noteReaders.insert({noteCtrl, QSet<QString>()});
 
-    connect(noteCtrl, &SharedNoteController::openShareNoteTo, this, [this, noteCtrl](const QString& id) {
-        MessageHelper::shareNotesTo(noteCtrl, {id});
-        try
-        {
-            auto& it= m_noteReaders.at(noteCtrl);
-            it.insert(id);
-        }
-        catch(const std::out_of_range&)
-        {
-            Q_ASSERT(false);
-        }
-    });
+    connect(noteCtrl, &SharedNoteController::openShareNoteTo, this,
+            [this, noteCtrl](const QString& id)
+            {
+                MessageHelper::shareNotesTo(noteCtrl, {id});
+                try
+                {
+                    auto& it= m_noteReaders.at(noteCtrl);
+                    it.insert(id);
+                }
+                catch(const std::out_of_range&)
+                {
+                    Q_ASSERT(false);
+                }
+            });
 
-    connect(noteCtrl, &SharedNoteController::closeShareNoteTo, this, [this, noteCtrl](const QString& id) {
-        MessageHelper::closeNoteTo(noteCtrl, id);
-        try
-        {
-            auto& it= m_noteReaders.at(noteCtrl);
-            it.remove(id);
-        }
-        catch(...)
-        {
-            Q_ASSERT(false);
-        }
-    });
+    connect(noteCtrl, &SharedNoteController::closeShareNoteTo, this,
+            [this, noteCtrl](const QString& id)
+            {
+                MessageHelper::closeNoteTo(noteCtrl, id);
+                try
+                {
+                    auto& it= m_noteReaders.at(noteCtrl);
+                    it.remove(id);
+                }
+                catch(...)
+                {
+                    Q_ASSERT(false);
+                }
+            });
 
     connect(noteCtrl, &SharedNoteController::textUpdateChanged, this,
             [this, noteCtrl]() { sendOffChanges<QString>(noteCtrl, QStringLiteral("updateCmd")); });
     connect(noteCtrl, &SharedNoteController::userCanWrite, this,
             [this, noteCtrl](QString id, bool write) { sendOffPermissionChanged(noteCtrl, write, id); });
 
-    connect(noteCtrl, &SharedNoteController::modifiedChanged, this, [noteCtrl, this]() {
-        if(noteCtrl->modified())
-        {
-            saveMediaController(noteCtrl);
-        }
-    });
+    connect(noteCtrl, &SharedNoteController::modifiedChanged, this,
+            [noteCtrl, this]()
+            {
+                if(noteCtrl->modified())
+                {
+                    saveMediaController(noteCtrl);
+                }
+            });
 }
 
 void SharedNoteControllerUpdater::sendOffPermissionChanged(SharedNoteController* ctrl, bool b, const QString& id)

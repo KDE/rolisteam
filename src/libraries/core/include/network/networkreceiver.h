@@ -20,9 +20,9 @@
 #ifndef NETWORKRECEIVER_H
 #define NETWORKRECEIVER_H
 
-//class NetworkMessageReader;
-#include <network/networkmessagereader.h>
+// class NetworkMessageReader;
 #include <network/networkmessage.h>
+#include <network/networkmessagereader.h>
 /**
  * @brief The NetWorkReceiver class is an abstract class. It is part of the listener pattern. Any class which need to be
  * process some network message should subclass this class.
@@ -48,8 +48,8 @@ public:
      */
     virtual NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg)= 0;
 
-
-    bool checkAction(NetworkMessageReader* msg, NetMsg::Category cat, NetMsg::Action act) const {
+    bool checkAction(NetworkMessageReader* msg, NetMsg::Category cat, NetMsg::Action act) const
+    {
         return (msg->category() == cat && msg->action() == act);
     };
 };

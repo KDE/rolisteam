@@ -21,8 +21,8 @@
 
 #include <QStandardItemModel>
 
-#include "rwidgets/delegates/colordelegate.h"
 #include "rwidgets/customs/colorlisteditor.h"
+#include "rwidgets/delegates/colordelegate.h"
 #include <memory>
 
 class ColorDelegateTest : public QObject
@@ -53,22 +53,21 @@ void ColorDelegateTest::cleanupTestCase() {}
 void ColorDelegateTest::usageTest()
 {
     QStandardItemModel model;
-    auto a = new QStandardItem;
+    auto a= new QStandardItem;
     a->setData(QVariant::fromValue(Qt::black), Qt::DisplayRole);
     model.appendRow(a);
 
-    auto b = new QStandardItem;
+    auto b= new QStandardItem;
     b->setData(QVariant::fromValue(Qt::green), Qt::DisplayRole);
     model.appendRow(b);
 
-    auto editor = dynamic_cast<rwidgets::ColorListEditor*>(m_delegate->createEditor(nullptr, QStyleOptionViewItem(), QModelIndex()));
+    auto editor= dynamic_cast<rwidgets::ColorListEditor*>(
+        m_delegate->createEditor(nullptr, QStyleOptionViewItem(), QModelIndex()));
 
-    m_delegate->setEditorData(editor, model.index(0,1));
+    m_delegate->setEditorData(editor, model.index(0, 1));
 
     editor->setColor(Qt::darkMagenta);
-    m_delegate->setModelData(editor, &model, model.index(0,1));
-
-
+    m_delegate->setModelData(editor, &model, model.index(0, 1));
 }
 
 QTEST_MAIN(ColorDelegateTest);

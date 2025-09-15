@@ -7,7 +7,7 @@
 
 namespace Ui
 {
-    class CodeEditorDialog;
+class CodeEditorDialog;
 }
 
 class CodeEditorDialog : public QDialog

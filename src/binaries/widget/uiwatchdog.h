@@ -28,15 +28,15 @@
 #ifndef UIWATCHDOG_H
 #define UIWATCHDOG_H
 
-#include <QThread>
-#include <QTimer>
-#include <QMutex>
+#include <QDebug>
 #include <QElapsedTimer>
 #include <QLoggingCategory>
-#include <QDebug>
+#include <QMutex>
+#include <QThread>
+#include <QTimer>
 
 #ifdef Q_OS_WIN
-# include <Windows.h>
+#include <Windows.h>
 #endif
 
 #define MAX_TIME_BLOCKED 300 // ms
@@ -48,17 +48,15 @@ class UiWatchdog;
 class UiWatchdogWorker : public QObject
 {
 public:
-    enum Option {
-        OptionNone = 0,
-        OptionDebugBreak = 1
+    enum Option
+    {
+        OptionNone= 0,
+        OptionDebugBreak= 1
     };
     typedef int Options;
 
 private:
-    UiWatchdogWorker(Options options)
-        : QObject()
-        , m_watchTimer(new QTimer(this))
-        , m_options(options)
+    UiWatchdogWorker(Options options) : QObject(), m_watchTimer(new QTimer(this)), m_options(options)
     {
         qCDebug(uidelays) << "UiWatchdogWorker created";
         connect(m_watchTimer, &QTimer::timeout, this, &UiWatchdogWorker::checkUI);
@@ -70,16 +68,13 @@ private:
         stop();
     }
 
-    void start(int frequency_msecs = 200)
+    void start(int frequency_msecs= 200)
     {
         m_watchTimer->start(frequency_msecs);
         m_elapsedTimeSinceLastBeat.start();
     }
 
-    void stop()
-    {
-        m_watchTimer->stop();
-    }
+    void stop() { m_watchTimer->stop(); }
 
     void checkUI()
     {
@@ -87,12 +82,13 @@ private:
 
         {
             QMutexLocker l(&m_mutex);
-            elapsed = m_elapsedTimeSinceLastBeat.elapsed();
+            elapsed= m_elapsedTimeSinceLastBeat.elapsed();
         }
 
-        if (elapsed > MAX_TIME_BLOCKED) {
-            qDebug() << "UI is blocked !" << elapsed;  // Add custom action here!
-            if ((m_options & OptionDebugBreak))
+        if(elapsed > MAX_TIME_BLOCKED)
+        {
+            qDebug() << "UI is blocked !" << elapsed; // Add custom action here!
+            if((m_options & OptionDebugBreak))
                 debugBreak();
         }
     }
@@ -110,7 +106,7 @@ private:
         m_elapsedTimeSinceLastBeat.restart();
     }
 
-    QTimer *const m_watchTimer;
+    QTimer* const m_watchTimer;
     QElapsedTimer m_elapsedTimeSinceLastBeat;
     QMutex m_mutex;
     const Options m_options;
@@ -120,11 +116,8 @@ private:
 class UiWatchdog : public QObject
 {
 public:
-
-    explicit UiWatchdog(UiWatchdogWorker::Options options = UiWatchdogWorker::OptionNone, QObject *parent = nullptr)
-        : QObject(parent)
-        , m_uiTimer(new QTimer(this))
-        , m_options(options)
+    explicit UiWatchdog(UiWatchdogWorker::Options options= UiWatchdogWorker::OptionNone, QObject* parent= nullptr)
+        : QObject(parent), m_uiTimer(new QTimer(this)), m_options(options)
     {
         QLoggingCategory::setFilterRules("uidelays.debug=false");
         qCDebug(uidelays) << "UiWatchdog created";
@@ -137,47 +130,43 @@ public:
         qCDebug(uidelays) << "UiWatchdog destroyed";
     }
 
-    void start(int frequency_msecs = 100)
+    void start(int frequency_msecs= 100)
     {
-        if (m_worker)
+        if(m_worker)
             return;
 
         m_uiTimer->start(frequency_msecs);
 
-        m_worker = new UiWatchdogWorker(m_options);
-        m_watchDogThread = new QThread(this);
+        m_worker= new UiWatchdogWorker(m_options);
+        m_watchDogThread= new QThread(this);
         m_worker->moveToThread(m_watchDogThread);
         m_watchDogThread->start();
-        connect(m_watchDogThread, &QThread::started, m_worker, [this, frequency_msecs] {
-            m_worker->start(frequency_msecs);
-        });
+        connect(m_watchDogThread, &QThread::started, m_worker,
+                [this, frequency_msecs] { m_worker->start(frequency_msecs); });
     }
 
     void stop()
     {
-        if (!m_worker)
+        if(!m_worker)
             return;
 
         m_uiTimer->stop();
         m_worker->deleteLater();
         m_watchDogThread->quit();
-        const bool didquit = m_watchDogThread->wait(2000);
+        const bool didquit= m_watchDogThread->wait(2000);
         qCDebug(uidelays) << "watch thread quit?" << didquit;
         delete m_watchDogThread;
 
-        m_watchDogThread = nullptr;
-        m_worker = nullptr;
+        m_watchDogThread= nullptr;
+        m_worker= nullptr;
     }
 
-    void onUiBeat()
-    {
-        m_worker->reset();
-    }
+    void onUiBeat() { m_worker->reset(); }
 
 private:
-    QTimer *const m_uiTimer;
-    QThread *m_watchDogThread = nullptr;
-    UiWatchdogWorker *m_worker = nullptr;
+    QTimer* const m_uiTimer;
+    QThread* m_watchDogThread= nullptr;
+    UiWatchdogWorker* m_worker= nullptr;
     const UiWatchdogWorker::Options m_options;
 };
 

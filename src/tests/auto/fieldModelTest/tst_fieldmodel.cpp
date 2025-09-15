@@ -18,9 +18,9 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QtCore/QString>
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
+#include <QtCore/QString>
 
 #include "data/character.h"
 #include "model/genericmodel.h"

@@ -26,7 +26,7 @@
 #include <core_global.h>
 class Character;
 class PlayerModel;
-class  CORE_EXPORT RemoveLocalCharacterCommand : public QUndoCommand
+class CORE_EXPORT RemoveLocalCharacterCommand : public QUndoCommand
 {
 public:
     RemoveLocalCharacterCommand(PlayerModel* model, const QModelIndex& index);

@@ -29,7 +29,7 @@ class MediaNode;
 class MediaModel;
 class Campaign;
 } // namespace campaign
-class CORE_EXPORT  RenameCampaignMedia : public QUndoCommand
+class CORE_EXPORT RenameCampaignMedia : public QUndoCommand
 {
 public:
     RenameCampaignMedia(campaign::MediaNode* mediaNode, const QString& newPath, const QString& oldPath,

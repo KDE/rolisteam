@@ -25,7 +25,7 @@
 
 #include "media/mediatype.h"
 #include <core_global.h>
-class CORE_EXPORT  MediaFilteredModel : public QSortFilterProxyModel
+class CORE_EXPORT MediaFilteredModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QString pattern READ pattern WRITE setPattern NOTIFY patternChanged)

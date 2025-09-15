@@ -14,6 +14,6 @@ struct COMMON_EXPORT Log
     QString m_timestamp;
     QString m_level;
 };
-}
+} // namespace common
 
 #endif // TYPES_H

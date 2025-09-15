@@ -21,10 +21,9 @@
 #define MUSICMODEL_H
 
 #include <QAbstractListModel>
-#include <QUrl>
 #include <QPointer>
+#include <QUrl>
 #include <core_global.h>
-
 
 class PreferencesManager;
 

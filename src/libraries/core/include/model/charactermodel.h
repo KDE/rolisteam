@@ -23,7 +23,7 @@
 #include <QAbstractProxyModel>
 #include <core_global.h>
 class Character;
-class  CORE_EXPORT CharacterModel : public QAbstractProxyModel
+class CORE_EXPORT CharacterModel : public QAbstractProxyModel
 {
     Q_OBJECT
 public:

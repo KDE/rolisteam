@@ -51,13 +51,14 @@ public:
     };
     Q_ENUM(SHAPE)
 
-    enum class ChangedProperty {
-        NONE=0x0,
+    enum class ChangedProperty
+    {
+        NONE= 0x0,
         ANGLE= 0x1,
-        ROTATION=0x2,
-        POSITION=0x4,
-        RADIUS=0x8,
-        PATH=0xF
+        ROTATION= 0x2,
+        POSITION= 0x4,
+        RADIUS= 0x8,
+        PATH= 0xF
     };
     Q_DECLARE_FLAGS(Changes, ChangedProperty)
     Q_FLAG(Changes)
@@ -107,7 +108,7 @@ signals:
     void sideChanged();
     void removedChanged();
 
-    //edited
+    // edited
     void radiusEdited();
     void angleEdited();
     void rotationEdited();

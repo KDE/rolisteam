@@ -3,15 +3,16 @@
 
 #include <QContextMenuEvent>
 #include <QList>
+#include <QPointer>
 #include <QSignalMapper>
 #include <QTreeView>
-#include <QPointer>
 
 class QUndoStack;
 class FieldModel;
 class Canvas;
 class FieldController;
-namespace rcse{
+namespace rcse
+{
 class MainController;
 }
 class FieldView : public QTreeView
@@ -20,7 +21,7 @@ class FieldView : public QTreeView
 public:
     FieldView(QWidget* parent= nullptr);
 
-    void setController(rcse::MainController *ctrl);
+    void setController(rcse::MainController* ctrl);
 
     void applyValue(QModelIndex& index, bool selection);
     void defineItemCode(QModelIndex& index);

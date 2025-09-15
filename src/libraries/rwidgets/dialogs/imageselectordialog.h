@@ -40,7 +40,8 @@ class RWIDGET_EXPORT ImageSelectorDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ImageSelectorDialog(ImageSelectorController* ctrl,  QWidget* parent= nullptr, const QString &defaultPath={});
+    explicit ImageSelectorDialog(ImageSelectorController* ctrl, QWidget* parent= nullptr,
+                                 const QString& defaultPath= {});
     virtual ~ImageSelectorDialog();
 
 private slots:

@@ -1,9 +1,9 @@
 #ifndef ANCHORVMAPITEMCOMMAND_H
 #define ANCHORVMAPITEMCOMMAND_H
 
-#include <QUndoCommand>
-#include <QString>
 #include <QPointer>
+#include <QString>
+#include <QUndoCommand>
 
 namespace vmap
 {
@@ -13,7 +13,7 @@ class VisualItemController;
 class AnchorVMapItemCommand : public QUndoCommand
 {
 public:
-    AnchorVMapItemCommand(vmap::VisualItemController *child, vmap::VisualItemController *newParent);
+    AnchorVMapItemCommand(vmap::VisualItemController* child, vmap::VisualItemController* newParent);
 
     void redo() override;
     void undo() override;

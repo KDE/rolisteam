@@ -28,10 +28,12 @@ constexpr int iconSize{32};
 CheckedLabel::CheckedLabel(QWidget* parent) : QLabel(parent)
 {
     setScaledContents(true);
-    connect(this, &CheckedLabel::validChanged, this, [this]() {
-        setPixmap(m_valid ? QIcon::fromTheme(url_to_validcheck).pixmap(iconSize, iconSize) :
-                            QIcon::fromTheme(url_to_cross).pixmap(iconSize, iconSize));
-    });
+    connect(this, &CheckedLabel::validChanged, this,
+            [this]()
+            {
+                setPixmap(m_valid ? QIcon::fromTheme(url_to_validcheck).pixmap(iconSize, iconSize) :
+                                    QIcon::fromTheme(url_to_cross).pixmap(iconSize, iconSize));
+            });
 
     setPixmap(QIcon::fromTheme(url_to_cross).pixmap(iconSize, iconSize));
     setText(QString());

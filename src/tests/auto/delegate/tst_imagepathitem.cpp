@@ -17,11 +17,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include "rwidgets/delegates/imagepathdelegateitem.h"
+#include <QDateTime>
 #include <QTest>
 #include <helper.h>
 #include <memory>
-#include <QDateTime>
-#include "rwidgets/delegates/imagepathdelegateitem.h"
 
 class ImagePathDelegateTest : public QObject
 {
@@ -38,25 +38,14 @@ private:
     std::unique_ptr<ImagePathDelegateTest> m_delegate;
 };
 
-ImagePathDelegateTest::ImagePathDelegateTest()
-{
-
-}
+ImagePathDelegateTest::ImagePathDelegateTest() {}
 
 void ImagePathDelegateTest::init()
 {
     m_delegate.reset(new ImagePathDelegateTest);
 }
 
-void ImagePathDelegateTest::getAndSetTest()
-{
-
-}
-
-
-
-
-
+void ImagePathDelegateTest::getAndSetTest() {}
 
 QTEST_MAIN(ImagePathDelegateTest);
 

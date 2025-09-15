@@ -31,7 +31,8 @@ class IM_EXPORT MessageFactory
 {
 public:
     static MessageInterface* createMessage(const QString& uuid, const QString& writerId, const QDateTime& time,
-                                           InstantMessaging::MessageInterface::MessageType type, const QString& text, const QUrl &url);
+                                           InstantMessaging::MessageInterface::MessageType type, const QString& text,
+                                           const QUrl& url);
 };
 } // namespace InstantMessaging
 

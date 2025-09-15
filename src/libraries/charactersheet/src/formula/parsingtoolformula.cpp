@@ -121,9 +121,8 @@ bool ParsingToolFormula::readScalarOperator(QString& str, FormulaNode* previous)
 {
     ScalarOperatorFNode::ArithmeticOperator ope;
     auto it= std::find_if(m_arithmeticOperation.begin(), m_arithmeticOperation.end(),
-                          [str](const std::pair<QString, ScalarOperatorFNode::ArithmeticOperator>& pair) {
-                              return str.startsWith(pair.first);
-                          });
+                          [str](const std::pair<QString, ScalarOperatorFNode::ArithmeticOperator>& pair)
+                          { return str.startsWith(pair.first); });
 
     if(it == m_arithmeticOperation.end())
         return false;
@@ -203,9 +202,8 @@ bool ParsingToolFormula::readStringValue(QString& str, FormulaNode*& previous)
 bool ParsingToolFormula::readOperator(QString& str, FormulaNode*& previous)
 {
     auto it= std::find_if(m_hashOp.begin(), m_hashOp.end(),
-                          [str](const std::pair<QString, ParsingToolFormula::FormulaOperator>& pair) {
-                              return str.startsWith(pair.first);
-                          });
+                          [str](const std::pair<QString, ParsingToolFormula::FormulaOperator>& pair)
+                          { return str.startsWith(pair.first); });
 
     if(it == m_hashOp.end())
         return false;

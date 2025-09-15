@@ -219,7 +219,7 @@ void SharedNoteController::setUpdateCmd(const QString& cmd)
     int charsRemoved= match.captured(2).toInt();
     int charsAdded= match.captured(3).toInt();
     tmpCmd= match.captured(4);
-    m_updateCmd = cmd;
+    m_updateCmd= cmd;
     emit updateCmdChanged();
     emit collabTextChanged(pos, charsRemoved, charsAdded, tmpCmd);
 }

@@ -23,8 +23,8 @@
 #include <QAbstractItemModel>
 #include <QKeySequence>
 #include <core_global.h>
-#include <vector>
 #include <memory>
+#include <vector>
 
 class CORE_EXPORT ShortCutItem
 {
@@ -87,15 +87,14 @@ public:
     virtual QModelIndex index(int, int, const QModelIndex& parent) const override;
     virtual QModelIndex parent(const QModelIndex& parent) const override;
 
-    int rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    int rowCount(const QModelIndex& parent= QModelIndex()) const override;
     int columnCount(const QModelIndex& parent) const override;
     QVariant data(const QModelIndex& index, int role) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
     void insertShortCut(const QString& category, const QString& name, const QString& key);
     void addCategory(const QString& category);
-    void removeCategory(const QString& category, bool isDestoyed = false);
-
+    void removeCategory(const QString& category, bool isDestoyed= false);
 
 private:
     std::vector<std::unique_ptr<Category>> m_root;

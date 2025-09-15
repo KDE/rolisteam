@@ -93,7 +93,8 @@ void messageHandler(QtMsgType type, const QMessageLogContext& context, const QSt
     }
 
     // controller->manageMessage(msgFormated,cLevel);
-    QMetaObject::invokeMethod(controller, "manageMessage", Qt::QueuedConnection, Q_ARG(QString, msgFormated),Q_ARG(QString, QString::fromLocal8Bit(context.category)),
+    QMetaObject::invokeMethod(controller, "manageMessage", Qt::QueuedConnection, Q_ARG(QString, msgFormated),
+                              Q_ARG(QString, QString::fromLocal8Bit(context.category)),
                               Q_ARG(LogController::LogLevel, cLevel));
     QMetaObject::invokeMethod(controller, "logToFile", Qt::QueuedConnection, Q_ARG(QString, msg),
                               Q_ARG(LogController::LogLevel, cLevel),
@@ -206,7 +207,8 @@ void LogController::signalActivated()
     auto index= senderSignalIndex();
     auto meta= obj->metaObject();
     auto method= meta->method(index);
-    manageMessage(QStringLiteral("[signal] - %1").arg(QString::fromUtf8(method.name())), QStringLiteral("Signal"), Info);
+    manageMessage(QStringLiteral("[signal] - %1").arg(QString::fromUtf8(method.name())), QStringLiteral("Signal"),
+                  Info);
 }
 
 QString LogController::typeToText(LogController::LogLevel type)

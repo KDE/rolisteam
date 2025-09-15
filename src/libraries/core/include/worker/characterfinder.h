@@ -22,10 +22,11 @@
 
 #include <core_global.h>
 
-#include <QPointer>
 #include <QObject>
+#include <QPointer>
 
-namespace campaign {
+namespace campaign
+{
 class NonPlayableCharacterModel;
 }
 class CharacterModel;
@@ -39,20 +40,20 @@ class CORE_EXPORT CharacterFinder : public QObject
 {
     Q_OBJECT
 public:
-    CharacterFinder() = default;
+    CharacterFinder()= default;
 
     bool isReady();
 
-    Character *find(const QString &id);
+    Character* find(const QString& id);
 
-    static void setNpcModel(campaign::NonPlayableCharacterModel *model);
-    static void setPcModel(CharacterModel *model);
-    static void setPlayerModel(PlayerModel *model);
+    static void setNpcModel(campaign::NonPlayableCharacterModel* model);
+    static void setPcModel(CharacterModel* model);
+    static void setPlayerModel(PlayerModel* model);
 
     bool setUpConnect();
 signals:
     void dataChanged();
-    void characterAdded(const QStringList &ids);
+    void characterAdded(const QStringList& ids);
 
 private slots:
 

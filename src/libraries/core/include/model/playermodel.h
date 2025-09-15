@@ -72,7 +72,7 @@ public:
 
     Player* playerById(const QString& id) const;
     Person* personById(const QString& id) const;
-    Character* characterById(const QString& id)const;
+    Character* characterById(const QString& id) const;
 
     QModelIndex personToIndex(Person* person) const;
 
@@ -84,7 +84,7 @@ public slots:
     void clear();
     void addPlayer(Player* player);
     void removePlayer(Player* player);
-    void addCharacter(const QModelIndex& parent, Character *character, int pos= -1);
+    void addCharacter(const QModelIndex& parent, Character* character, int pos= -1);
     void removeCharacter(Character* character);
     void setLocalPlayerId(const QString& uuid);
 

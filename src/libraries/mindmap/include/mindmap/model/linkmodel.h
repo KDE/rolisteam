@@ -20,9 +20,9 @@
 #ifndef LINKMODEL_H
 #define LINKMODEL_H
 
+#include "mindmap/mindmap_global.h"
 #include <QAbstractItemModel>
 #include <QObject>
-#include "mindmap/mindmap_global.h"
 
 namespace mindmap
 {

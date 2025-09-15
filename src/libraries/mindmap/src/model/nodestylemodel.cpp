@@ -29,7 +29,7 @@ NodeStyleModel::NodeStyleModel(QObject* parent) : QAbstractListModel(parent)
     initStyles();
 }
 
-NodeStyleModel::~NodeStyleModel() = default;
+NodeStyleModel::~NodeStyleModel()= default;
 
 int NodeStyleModel::rowCount(const QModelIndex& parent) const
 {

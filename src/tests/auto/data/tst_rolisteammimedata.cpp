@@ -18,11 +18,11 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QTest>
 #include "data/rolisteammimedata.h"
 #include "media/mediatype.h"
-#include <helper.h>
 #include <QSignalSpy>
+#include <QTest>
+#include <helper.h>
 
 class RolisteamMimeDataTest : public QObject
 {
@@ -37,39 +37,32 @@ private:
     RolisteamMimeData m_data;
 };
 
-RolisteamMimeDataTest::RolisteamMimeDataTest()
-{
-
-}
+RolisteamMimeDataTest::RolisteamMimeDataTest() {}
 
 void RolisteamMimeDataTest::testGetSet()
 {
-    QStringList list{Core::mimedata::MIME_KEY_PERSON_DATA,
-                     Core::mimedata::MIME_KEY_DICE_ALIAS_DATA,
-                     Core::mimedata::MIME_KEY_MEDIA_UUID,
-                     Core::mimedata::MIME_KEY_NPC_ID};
+    QStringList list{Core::mimedata::MIME_KEY_PERSON_DATA, Core::mimedata::MIME_KEY_DICE_ALIAS_DATA,
+                     Core::mimedata::MIME_KEY_MEDIA_UUID, Core::mimedata::MIME_KEY_NPC_ID};
 
     for(auto s : list)
         m_data.hasFormat(s);
 
-    auto uuid = Helper::randomString();
+    auto uuid= Helper::randomString();
     QSignalSpy spy(&m_data, &RolisteamMimeData::mediaUuidChanged);
     m_data.setMediaUuid(uuid);
     m_data.setMediaUuid(uuid);
     QCOMPARE(m_data.mediaUuid(), uuid);
     QCOMPARE(spy.count(), 1);
 
-    uuid = Helper::randomString();
+    uuid= Helper::randomString();
     QSignalSpy spy2(&m_data, &RolisteamMimeData::npcUuidChanged);
     m_data.setNpcUuid(uuid);
     m_data.setNpcUuid(uuid);
     QCOMPARE(m_data.npcUuid(), uuid);
     QCOMPARE(spy2.count(), 1);
 
-
-
-    auto aName = Helper::randomString();
-    auto aCmd = Helper::randomString();
+    auto aName= Helper::randomString();
+    auto aCmd= Helper::randomString();
     QSignalSpy spy3(&m_data, &RolisteamMimeData::aliasChanged);
     m_data.setAlias(aName, aCmd, true);
 

@@ -43,15 +43,14 @@ void ShortCut::setName(const QString& name)
     m_name= name;
 }
 
-//ShortCut::~ShortCut() = default;
+// ShortCut::~ShortCut() = default;
 
 /////////////////////////////////////////
 Category::Category(const QString& name) : m_name(name) {}
 
-Category::Category(Category&& other)
-    : m_shortcuts(std::move(other.m_shortcuts))
+Category::Category(Category&& other) : m_shortcuts(std::move(other.m_shortcuts))
 {
-    m_name = other.m_name;
+    m_name= other.m_name;
 }
 
 QString Category::name() const
@@ -75,13 +74,15 @@ int Category::size() const
 
 bool Category::hasShortCut(ShortCut* cut) const
 {
-    auto cat= std::find_if(m_shortcuts.begin(), m_shortcuts.end(), [cut](const std::unique_ptr<ShortCut>& cato) { return (cato.get() == cut); });
+    auto cat= std::find_if(m_shortcuts.begin(), m_shortcuts.end(),
+                           [cut](const std::unique_ptr<ShortCut>& cato) { return (cato.get() == cut); });
     return cat != std::end(m_shortcuts);
 }
 
 int Category::indexOf(ShortCut* cut) const
 {
-    auto cat= std::find_if(m_shortcuts.begin(), m_shortcuts.end(), [cut](const std::unique_ptr<ShortCut>& cato) { return (cato.get() == cut); });
+    auto cat= std::find_if(m_shortcuts.begin(), m_shortcuts.end(),
+                           [cut](const std::unique_ptr<ShortCut>& cato) { return (cato.get() == cut); });
 
     if(cat == std::end(m_shortcuts))
         return -1;
@@ -118,12 +119,12 @@ QModelIndex ShortCutModel::index(int r, int c, const QModelIndex& parent) const
     QModelIndex idx;
     if(!parent.isValid())
     {
-        idx = createIndex(r, c, m_root[r].get());
+        idx= createIndex(r, c, m_root[r].get());
     }
     else
     {
         Category* parentItem= static_cast<Category*>(parent.internalPointer());
-        idx = createIndex(r, c, parentItem->getShortCut(r));
+        idx= createIndex(r, c, parentItem->getShortCut(r));
     }
     return idx;
 }
@@ -145,7 +146,8 @@ QModelIndex ShortCutModel::parent(const QModelIndex& index) const
         if(nullptr != shortCut)
         {
             auto cat= std::find_if(m_root.begin(), m_root.end(),
-                                   [shortCut](const std::unique_ptr<Category>& cato) { return cato->hasShortCut(shortCut); });
+                                   [shortCut](const std::unique_ptr<Category>& cato)
+                                   { return cato->hasShortCut(shortCut); });
             return createIndex(static_cast<int>(std::distance(m_root.begin(), cat)), 0, (*cat).get());
         }
     }
@@ -157,7 +159,8 @@ void ShortCutModel::addCategory(const QString& category)
     if(category.isEmpty())
         return;
 
-    auto cat= std::find_if(m_root.begin(), m_root.end(), [category](const std::unique_ptr<Category>& cato) { return (cato->name() == category); });
+    auto cat= std::find_if(m_root.begin(), m_root.end(),
+                           [category](const std::unique_ptr<Category>& cato) { return (cato->name() == category); });
     if(cat == m_root.end())
     {
         beginInsertRows(QModelIndex(), m_root.size(), m_root.size());
@@ -169,10 +172,7 @@ void ShortCutModel::addCategory(const QString& category)
 void ShortCutModel::insertShortCut(const QString& category, const QString& name, const QString& key)
 {
     auto cat= std::find_if(m_root.begin(), m_root.end(),
-                           [category](const std::unique_ptr<Category>& cato)
-                           {
-                                return (cato->name() == category);
-                           });
+                           [category](const std::unique_ptr<Category>& cato) { return (cato->name() == category); });
 
     if(cat == m_root.end())
         return;
@@ -222,20 +222,18 @@ int ShortCutModel::columnCount(const QModelIndex& index) const
 
 void ShortCutModel::removeCategory(const QString& category, bool isDestoyed)
 {
-    auto it = std::find_if(std::begin(m_root), std::end(m_root),[category](const std::unique_ptr<Category>& cato){
-        return (cato->name() == category);
-    });
+    auto it= std::find_if(std::begin(m_root), std::end(m_root),
+                          [category](const std::unique_ptr<Category>& cato) { return (cato->name() == category); });
 
     if(it == std::end(m_root))
         return;
 
-    auto idx = std::distance(std::begin(m_root), it);
+    auto idx= std::distance(std::begin(m_root), it);
     beginRemoveRows(QModelIndex(), idx, idx);
     if(isDestoyed)
         it->release();
     m_root.erase(it);
     endRemoveRows();
-
 }
 
 QVariant ShortCutModel::data(const QModelIndex& index, int role) const

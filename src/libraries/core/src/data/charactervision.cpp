@@ -30,7 +30,7 @@ void CharacterVision::setAngle(qreal a)
         return;
     m_angle= a;
     emit angleChanged(m_angle);
-    m_changes |= ChangedProperty::ANGLE;
+    m_changes|= ChangedProperty::ANGLE;
 }
 
 void CharacterVision::setRadius(qreal r)
@@ -39,7 +39,7 @@ void CharacterVision::setRadius(qreal r)
         return;
     m_radius= r;
     emit radiusChanged(m_radius);
-    m_changes |= ChangedProperty::RADIUS;
+    m_changes|= ChangedProperty::RADIUS;
 }
 
 void CharacterVision::setPosition(const QPointF& p)
@@ -48,7 +48,7 @@ void CharacterVision::setPosition(const QPointF& p)
         return;
     m_pos= p;
     emit positionChanged(m_pos);
-    m_changes |= ChangedProperty::POSITION;
+    m_changes|= ChangedProperty::POSITION;
 }
 
 void CharacterVision::setShape(CharacterVision::SHAPE s)
@@ -100,7 +100,7 @@ void CharacterVision::endOfGeometryChanges()
     if(m_changes & ChangedProperty::PATH)
         emit pathEdited();
 
-    m_changes = ChangedProperty::NONE;
+    m_changes= ChangedProperty::NONE;
 }
 
 void CharacterVision::updatePosition() {}
@@ -159,11 +159,11 @@ QPainterPath CharacterVision::path() const
 
 void CharacterVision::setPath(QPainterPath newPath)
 {
-    if (m_path == newPath)
+    if(m_path == newPath)
         return;
-    m_path = newPath;
+    m_path= newPath;
     emit pathChanged();
-    m_changes |= ChangedProperty::PATH;
+    m_changes|= ChangedProperty::PATH;
 }
 
 qreal CharacterVision::rotation() const
@@ -173,11 +173,11 @@ qreal CharacterVision::rotation() const
 
 void CharacterVision::setRotation(qreal newRotation)
 {
-    if (qFuzzyCompare(m_rotation, newRotation))
+    if(qFuzzyCompare(m_rotation, newRotation))
         return;
-    m_rotation = newRotation;
+    m_rotation= newRotation;
     emit rotationChanged();
-    m_changes |= ChangedProperty::ROTATION;
+    m_changes|= ChangedProperty::ROTATION;
 }
 
 qreal CharacterVision::side() const
@@ -187,9 +187,9 @@ qreal CharacterVision::side() const
 
 void CharacterVision::setSide(qreal newSide)
 {
-    if (qFuzzyCompare(m_side, newSide))
+    if(qFuzzyCompare(m_side, newSide))
         return;
-    m_side = newSide;
+    m_side= newSide;
     emit sideChanged();
 }
 
@@ -200,8 +200,8 @@ bool CharacterVision::removed() const
 
 void CharacterVision::setRemoved(bool newRemoved)
 {
-    if (m_removed == newRemoved)
+    if(m_removed == newRemoved)
         return;
-    m_removed = newRemoved;
+    m_removed= newRemoved;
     emit removedChanged();
 }

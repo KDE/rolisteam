@@ -48,7 +48,8 @@ SharedNote::SharedNote(SharedNoteController* ctrl, QWidget* parent)
     connect(m_document->getDocument(), &QTextDocument::contentsChange, this, &SharedNote::textHasChanged);
     auto pane= m_document->getParticipantPane();
 
-    auto func= [this]() {
+    auto func= [this]()
+    {
         if(!m_sharedCtrl)
             return;
         setWindowTitle(tr("%1 - Shared Note Editor").arg(m_sharedCtrl->name()));
@@ -98,10 +99,12 @@ SharedNote::SharedNote(SharedNoteController* ctrl, QWidget* parent)
 
     ui->m_showParticipants->setEnabled(localIsOwner);
 
-    connect(ui->m_highlightMarkdownAction, &QAction::triggered, this, [this](bool b) {
-        m_sharedCtrl->setHighligthedSyntax(b ? SharedNoteController::HighlightedSyntax::MarkDown :
-                                               SharedNoteController::HighlightedSyntax::None);
-    });
+    connect(ui->m_highlightMarkdownAction, &QAction::triggered, this,
+            [this](bool b)
+            {
+                m_sharedCtrl->setHighligthedSyntax(b ? SharedNoteController::HighlightedSyntax::MarkDown :
+                                                       SharedNoteController::HighlightedSyntax::None);
+            });
 
     connect(ui->m_markdownPreview, &QAction::triggered, m_sharedCtrl, &SharedNoteController::setMarkdownVisible);
 

@@ -1,6 +1,7 @@
 #ifndef DICECONTROLLER_H
 #define DICECONTROLLER_H
 
+#include "dice3d_global.h"
 #include <QColor>
 #include <QElapsedTimer>
 #include <QObject>
@@ -9,7 +10,6 @@
 #include <QVector3D>
 #include <memory>
 #include <tuple>
-#include "dice3d_global.h"
 
 class DICE3D_EXPORTS DiceController : public QObject
 {

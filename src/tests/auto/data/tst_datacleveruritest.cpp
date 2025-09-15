@@ -73,7 +73,7 @@ void DataCleverURITest::testCleverURISetGet()
     CleverURI uri2(Core::ContentType::PICTURE);
     QVERIFY(!(uri2 == *m_cleverURI));
 
-    CleverURI uri3(Helper::randomString(),Helper::randomString(),Core::ContentType::PICTURE);
+    CleverURI uri3(Helper::randomString(), Helper::randomString(), Core::ContentType::PICTURE);
     uri3.hasData();
     uri3.isDisplayed();
 
@@ -86,23 +86,23 @@ void DataCleverURITest::testCleverURISetGet()
 
     QVERIFY2(m_cleverURI->hasChildren() == false, "CleverURI has children, that should not be!");
 
-    auto uuid = Helper::randomString();
+    auto uuid= Helper::randomString();
     m_cleverURI->setUuid(uuid);
     QCOMPARE(m_cleverURI->uuid(), uuid);
     m_cleverURI->setUuid(uuid);
 
-    auto name = Helper::randomString();
+    auto name= Helper::randomString();
     m_cleverURI->setName(name);
     QCOMPARE(m_cleverURI->name(), name);
     m_cleverURI->setUuid(name);
 
-    auto value = Helper::randomString();
+    auto value= Helper::randomString();
     m_cleverURI->setValue(value);
     QCOMPARE(m_cleverURI->value(), value);
     m_cleverURI->setUuid(value);
 
     QVERIFY(nullptr == m_cleverURI->getChildAt(100));
-    auto icon = m_cleverURI->icon();
+    auto icon= m_cleverURI->icon();
     QVERIFY(icon.isNull());
 
     QVERIFY(m_cleverURI->type() == ResourcesNode::Cleveruri);

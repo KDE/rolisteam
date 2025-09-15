@@ -26,9 +26,9 @@
 
 #include "rwidgets_global.h"
 #include <QPointer>
-#include <QWidget>
-#include <QTextListFormat>
 #include <QTextList>
+#include <QTextListFormat>
+#include <QWidget>
 
 namespace Ui
 {

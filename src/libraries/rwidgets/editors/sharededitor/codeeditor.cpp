@@ -643,4 +643,4 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent* event)
         ++blockNumber;
     }
 }
-}
+} // namespace sharedNotes

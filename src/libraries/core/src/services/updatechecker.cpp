@@ -71,7 +71,8 @@ void UpdateChecker::readXML(QNetworkReply* p)
 
     QByteArray a= p->readAll();
     QString string(a);
-    auto func= [](const QString& string, const QRegularExpression& reg) -> QString {
+    auto func= [](const QString& string, const QRegularExpression& reg) -> QString
+    {
         auto match= reg.match(string);
         if(match.hasMatch())
             return match.captured(0);

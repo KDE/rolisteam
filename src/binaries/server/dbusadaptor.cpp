@@ -9,10 +9,10 @@
  */
 
 #include "dbusadaptor.h"
-#include <QtCore/QMetaObject>
 #include <QtCore/QByteArray>
 #include <QtCore/QList>
 #include <QtCore/QMap>
+#include <QtCore/QMetaObject>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 #include <QtCore/QVariant>
@@ -21,8 +21,7 @@
  * Implementation of adaptor class DbusAdaptor
  */
 
-DbusAdaptor::DbusAdaptor(QObject *parent)
-    : QDBusAbstractAdaptor(parent)
+DbusAdaptor::DbusAdaptor(QObject* parent) : QDBusAbstractAdaptor(parent)
 {
     // constructor
     setAutoRelaySignals(true);
@@ -33,17 +32,16 @@ DbusAdaptor::~DbusAdaptor()
     // destructor
 }
 
-void DbusAdaptor::createEmptyConfigFile(const QString &filepath)
+void DbusAdaptor::createEmptyConfigFile(const QString& filepath)
 {
     // handle method call local.RolisteamDaemon.createEmptyConfigFile
     QMetaObject::invokeMethod(parent(), "createEmptyConfigFile", Q_ARG(QString, filepath));
 }
 
-bool DbusAdaptor::readConfigFile(const QString &in0)
+bool DbusAdaptor::readConfigFile(const QString& in0)
 {
     // handle method call local.RolisteamDaemon.readConfigFile
     bool out0;
     QMetaObject::invokeMethod(parent(), "readConfigFile", Q_RETURN_ARG(bool, out0), Q_ARG(QString, in0));
     return out0;
 }
-

@@ -19,10 +19,10 @@
  ***************************************************************************/
 #include <QTest>
 
-#include <QSignalSpy>
 #include <QImage>
 #include <QPainter>
 #include <QRect>
+#include <QSignalSpy>
 #include <QString>
 #include <memory>
 

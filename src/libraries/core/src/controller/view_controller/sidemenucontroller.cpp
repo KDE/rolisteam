@@ -58,7 +58,7 @@ bool FilteredModel::filterAcceptsRow(int source_row, const QModelIndex& source_p
     switch(m_criteria)
     {
     case FilteredModel::NoCrit:
-        res = true;
+        res= true;
         break;
     case FilteredModel::NameCrit:
         res= node->text().contains(m_pattern, Qt::CaseInsensitive);
@@ -73,7 +73,9 @@ bool FilteredModel::filterAcceptsRow(int source_row, const QModelIndex& source_p
         res= parent ? parent->id().contains(m_pattern, Qt::CaseInsensitive) : false;
         break;
     case FilteredModel::AllCrit:
-        res= node->text().contains(m_pattern, Qt::CaseInsensitive) || node->tagsText().contains(m_pattern, Qt::CaseInsensitive) || node->description().contains(m_pattern, Qt::CaseInsensitive);
+        res= node->text().contains(m_pattern, Qt::CaseInsensitive)
+             || node->tagsText().contains(m_pattern, Qt::CaseInsensitive)
+             || node->description().contains(m_pattern, Qt::CaseInsensitive);
         break;
     }
 
@@ -151,7 +153,7 @@ QString SideMenuController::name() const
     return m_controller ? m_controller->name() : QString();
 }
 
-void SideMenuController::setName(const QString &newName)
+void SideMenuController::setName(const QString& newName)
 {
     if(m_controller)
         m_controller->setName(newName);

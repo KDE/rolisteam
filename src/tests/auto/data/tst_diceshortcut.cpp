@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include <QTest>
 #include <QObject>
+#include <QTest>
 
 #include <data/diceshortcut.h>
 #include <helper.h>
@@ -38,26 +38,23 @@ private:
     DiceShortCut* m_diceSc;
 };
 
-DiceShortCutTest::DiceShortCutTest()
-{
-
-}
+DiceShortCutTest::DiceShortCutTest() {}
 
 void DiceShortCutTest::setAndGetTest()
 {
-    m_diceSc = new DiceShortCut();
+    m_diceSc= new DiceShortCut();
     m_diceSc->setAlias(true);
     QVERIFY(m_diceSc->alias());
 
     m_diceSc->setAlias(false);
     QVERIFY(!m_diceSc->alias());
 
-    auto cmd = Helper::randomString();
+    auto cmd= Helper::randomString();
 
     m_diceSc->setCommand(cmd);
     QCOMPARE(m_diceSc->command(), cmd);
 
-    auto text = Helper::randomString();
+    auto text= Helper::randomString();
 
     m_diceSc->setText(text);
     QCOMPARE(m_diceSc->text(), text);

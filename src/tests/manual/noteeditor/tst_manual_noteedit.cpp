@@ -6,10 +6,10 @@
 #include <QUndoStack>
 #include <QVariant>
 
+#include "controller/view_controller/notecontroller.h"
 #include "data/campaignmanager.h"
 #include "rwidgets/editors/noteeditor/src/notecontainer.h"
 #include "rwidgets/editors/noteeditor/src/textedit.h"
-#include "controller/view_controller/notecontroller.h"
 #include "utils/iohelper.h"
 #include <common_qml/theme.h>
 
@@ -29,17 +29,15 @@ int main(int argc, char* argv[])
     QQuickStyle::setFallbackStyle("Fusion");
     QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme");
 
-    //PlayerModel* pmodel= new PlayerModel();
-    // auto model= new RemotePlayerModel(pmodel);
+    // PlayerModel* pmodel= new PlayerModel();
+    //  auto model= new RemotePlayerModel(pmodel);
 
     campaign::CampaignManager campaignManager(nullptr);
-    campaignManager.openCampaign(
-        QUrl(QString("file://%1/manual/pdf/campaign").arg(tests::root_path)));
+    campaignManager.openCampaign(QUrl(QString("file://%1/manual/pdf/campaign").arg(tests::root_path)));
 
     QUndoStack undoStack;
 
-    NoteController ctrl(
-        "uuid1");
+    NoteController ctrl("uuid1");
 
     QObject::connect(&ctrl, &NoteController::performCommand, &ctrl,
                      [&undoStack](QUndoCommand* cmd) { undoStack.push(cmd); });

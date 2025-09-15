@@ -19,25 +19,27 @@
  ***************************************************************************/
 #include "utils/countdownobject.h"
 
-CountDownObject::CountDownObject(int tryCount,int countDown, int timeBeforeDecrease, QObject* parent)
+CountDownObject::CountDownObject(int tryCount, int countDown, int timeBeforeDecrease, QObject* parent)
     : QObject(parent), m_timer(new QTimer), m_countDown(countDown), m_tryCount(tryCount)
 {
     m_timer->setInterval(timeBeforeDecrease);
     init();
-    connect(m_timer.get(), &QTimer::timeout, this, [this, countDown]() {
-        --m_allDown;
+    connect(m_timer.get(), &QTimer::timeout, this,
+            [this, countDown]()
+            {
+                --m_allDown;
 
-        auto rest = (m_allDown % countDown);
-        emit countDownChanged(rest);
-        if(rest == 0)
-        {
-            emit triggered(m_allDown / countDown);
-        }
-        if(m_allDown<=0)
-        {
-            stop();
-        }
-    });
+                auto rest= (m_allDown % countDown);
+                emit countDownChanged(rest);
+                if(rest == 0)
+                {
+                    emit triggered(m_allDown / countDown);
+                }
+                if(m_allDown <= 0)
+                {
+                    stop();
+                }
+            });
 }
 
 bool CountDownObject::isRunning() const
@@ -49,7 +51,7 @@ void CountDownObject::setRunning(bool b)
 {
     if(b == m_running)
         return;
-    m_running = b;
+    m_running= b;
     emit runningChanged();
 }
 
@@ -78,5 +80,5 @@ void CountDownObject::stop()
 
 void CountDownObject::init()
 {
-    m_allDown = m_countDown * m_tryCount;
+    m_allDown= m_countDown * m_tryCount;
 }

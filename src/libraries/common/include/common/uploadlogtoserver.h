@@ -23,8 +23,8 @@
 #include <QObject>
 #include <vector>
 
-#include <common/common_types.h>
 #include "common/common_global.h"
+#include <common/common_types.h>
 
 class QNetworkAccessManager;
 /**

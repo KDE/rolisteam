@@ -21,8 +21,8 @@
 #define IOWORKER_H
 
 #include <charactersheet/charactersheet_global.h>
-#include <charactersheet/imagemodel.h>
 #include <charactersheet/charactersheetmodel.h>
+#include <charactersheet/imagemodel.h>
 
 #include <QJsonArray>
 
@@ -37,7 +37,6 @@ CHARACTERSHEET_EXPORT QJsonObject readFileToObject(const QString& file);
 
 CHARACTERSHEET_EXPORT QJsonObject saveCharaterSheetModel(CharacterSheetModel* model);
 CHARACTERSHEET_EXPORT void fetchCharacterSheetModel(CharacterSheetModel* model, const QJsonObject& object);
-
 
 }; // namespace IOWorker
 

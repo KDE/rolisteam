@@ -21,8 +21,8 @@
 #include <QModelIndex>
 #include <QModelIndexList>
 #include <QString>
-#include <QVector>
 #include <QTest>
+#include <QVector>
 #include <memory>
 
 #include "charactersheetitem.h"
@@ -165,9 +165,9 @@ void TestCharacterSheetModel::removeDataTest_data()
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
-            CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
-            CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
-            CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
+         CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
+         CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
+         CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
     QVector<Field*> list;
 
@@ -225,9 +225,9 @@ void TestCharacterSheetModel::saveModelTest_data()
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
-            CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
-            CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
-            CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
+         CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
+         CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
+         CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
     QVector<Field*> list;
 
@@ -288,9 +288,9 @@ void TestCharacterSheetModel::readAndWriteModelTest_data()
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
-            CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
-            CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
-            CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
+         CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
+         CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
+         CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
     QVector<Field*> list;
 
@@ -340,9 +340,9 @@ void TestCharacterSheetModel::clearModel_data()
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
-            CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
-            CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
-            CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
+         CharacterSheetItem::SELECT, CharacterSheetItem::CHECKBOX, CharacterSheetItem::IMAGE,
+         CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
+         CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
     QVector<Field*> list;
 

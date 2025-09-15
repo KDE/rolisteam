@@ -19,16 +19,15 @@
  ***************************************************************************/
 #include <QTest>
 
-#include <memory.h>
 #include "rwidgets/delegates/taglistdelegate.h"
 #include <helper.h>
+#include <memory.h>
 
 class TagListTest : public QObject
 {
     Q_OBJECT
 public:
     TagListTest();
-
 
 private slots:
     void init();
@@ -37,16 +36,12 @@ private:
     std::unique_ptr<TagListDelegate> m_delegate;
 };
 
-TagListTest::TagListTest()
-{
-
-}
+TagListTest::TagListTest() {}
 
 void TagListTest::init()
 {
     m_delegate.reset(new TagListDelegate);
 }
-
 
 QTEST_MAIN(TagListTest)
 

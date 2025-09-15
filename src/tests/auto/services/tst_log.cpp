@@ -42,7 +42,7 @@ void LogTest::logTest()
     qInfo() << "Info";
     qCritical() << "Critical";
 
-    auto mode = logCtrl.currentModes();
+    auto mode= logCtrl.currentModes();
     Q_UNUSED(mode);
 
     logCtrl.setLogLevel(LogController::Warning);
@@ -50,10 +50,7 @@ void LogTest::logTest()
     logCtrl.setLogLevel(LogController::Debug);
 
     logCtrl.setSignalInspection(true);
-
-
 }
-
 
 QTEST_MAIN(LogTest);
 

@@ -78,7 +78,7 @@ class RWIDGET_EXPORT CampaignIntegrityDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit CampaignIntegrityDialog(CampaignIntegrityController* ctrl, QWidget *parent= nullptr);
+    explicit CampaignIntegrityDialog(CampaignIntegrityController* ctrl, QWidget* parent= nullptr);
     ~CampaignIntegrityDialog();
 
 protected:

@@ -207,7 +207,6 @@ PdfController* pdf(const QString& uuid, const QHash<QString, QVariant>& params)
 
     auto pdfCtrl= new PdfController(uuid);
 
-
     hu::setParamIfAny<QString>(ck::KEY_OWNERID, pdfData, std::bind(&PdfController::setOwnerId, pdfCtrl, _1));
     hu::setParamIfAny<QString>(ck::KEY_NAME, pdfData, std::bind(&PdfController::setName, pdfCtrl, _1));
     hu::setParamIfAny<QByteArray>(ck::KEY_DATA, pdfData, std::bind(&PdfController::setData, pdfCtrl, _1));

@@ -20,8 +20,8 @@
 #ifndef NOTIFICATIONZONE_H
 #define NOTIFICATIONZONE_H
 
-#include <QDockWidget>
 #include "rwidgets_global.h"
+#include <QDockWidget>
 
 class LogController;
 namespace Ui
@@ -29,7 +29,7 @@ namespace Ui
 class NotificationZone;
 }
 
-class  RWIDGET_EXPORT  NotificationZone : public QWidget
+class RWIDGET_EXPORT NotificationZone : public QWidget
 {
     Q_OBJECT
 public:

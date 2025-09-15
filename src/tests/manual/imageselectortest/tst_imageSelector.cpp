@@ -1,14 +1,14 @@
 #include <QApplication>
 
+#include <QIcon>
 #include <QJSEngine>
 #include <QQmlEngine>
 #include <QQuickStyle>
 #include <QUndoStack>
 #include <QVariant>
-#include <QIcon>
 
-#include "rwidgets/dialogs/imageselectordialog.h"
 #include "controller/view_controller/imageselectorcontroller.h"
+#include "rwidgets/dialogs/imageselectordialog.h"
 //#include ""
 
 int main(int argc, char* argv[])
@@ -28,17 +28,12 @@ int main(int argc, char* argv[])
     QQuickStyle::setFallbackStyle("Fusion");
     QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme");
 
-    auto ctrl = new ImageSelectorController(true, ImageSelectorController::All, ImageSelectorController::Square);
+    auto ctrl= new ImageSelectorController(true, ImageSelectorController::All, ImageSelectorController::Square);
     ImageSelectorDialog dialog(ctrl);
 
-
-    QObject::connect(&dialog, &ImageSelectorDialog::accepted, [ctrl](){
-        ctrl->finalImageData();
-    });
-
+    QObject::connect(&dialog, &ImageSelectorDialog::accepted, [ctrl]() { ctrl->finalImageData(); });
 
     dialog.show();
-
 
     return app.exec();
 }

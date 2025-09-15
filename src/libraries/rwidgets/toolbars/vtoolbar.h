@@ -27,8 +27,8 @@
 #include <QComboBox>
 #include <QDockWidget>
 #include <QDoubleSpinBox>
-#include <QLabel>
 #include <QLCDNumber>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPointer>
 #include <QResizeEvent>

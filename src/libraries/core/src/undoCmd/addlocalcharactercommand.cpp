@@ -23,7 +23,7 @@
 #include "model/playermodel.h"
 
 AddLocalCharacterCommand::AddLocalCharacterCommand(PlayerModel* model, const QString& stateId, const QModelIndex& index)
-    : m_model(model), m_index(index),m_stateId(stateId)
+    : m_model(model), m_index(index), m_stateId(stateId)
 {
     setText(QObject::tr("Add character to %1").arg(index.data().toString()));
 }
@@ -32,7 +32,7 @@ void AddLocalCharacterCommand::redo()
 {
     if(!m_character)
     {
-        m_character=new Character();
+        m_character= new Character();
         m_character->setName(QObject::tr("Unknown Character"));
         m_character->setStateId(m_stateId);
     }

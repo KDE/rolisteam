@@ -33,18 +33,21 @@ TipOfDayViewer::TipOfDayViewer(QString title, QString msg, QString url, QWidget*
 
     if(!url.isEmpty())
     {
-        connect(m_ui->m_buttonBox, &QDialogButtonBox::clicked, this, [&](QAbstractButton* btn) {
-            auto standard= m_ui->m_buttonBox->standardButton(btn);
-            if(QDialogButtonBox::Open == standard)
-            {
-                if(!QDesktopServices::openUrl(QUrl(url)))
+        connect(m_ui->m_buttonBox, &QDialogButtonBox::clicked, this,
+                [&](QAbstractButton* btn)
                 {
-                    QMessageBox* msgBox= new QMessageBox(QMessageBox::Information, tr("No Service to open links"),
-                        tr("Please find the type here: <a href=\"%1\">%1</a>").arg(url), QMessageBox::Ok);
-                    msgBox->exec();
-                }
-            }
-        });
+                    auto standard= m_ui->m_buttonBox->standardButton(btn);
+                    if(QDialogButtonBox::Open == standard)
+                    {
+                        if(!QDesktopServices::openUrl(QUrl(url)))
+                        {
+                            QMessageBox* msgBox= new QMessageBox(
+                                QMessageBox::Information, tr("No Service to open links"),
+                                tr("Please find the type here: <a href=\"%1\">%1</a>").arg(url), QMessageBox::Ok);
+                            msgBox->exec();
+                        }
+                    }
+                });
     }
 }
 

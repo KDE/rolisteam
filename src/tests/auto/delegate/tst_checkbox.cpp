@@ -41,10 +41,7 @@ private:
 
 CheckBoxTest::CheckBoxTest() {}
 
-void CheckBoxTest::init()
-{
-
-}
+void CheckBoxTest::init() {}
 
 QTEST_MAIN(CheckBoxTest);
 

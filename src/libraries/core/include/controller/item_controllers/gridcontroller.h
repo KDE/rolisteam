@@ -52,7 +52,7 @@ signals:
 public slots:
     void setGm(bool gm);
     void setGridPattern(const QImage& gridPattern);
-    void setRect(const QRectF &rect);
+    void setRect(const QRectF& rect);
 
 private:
     void computePattern();

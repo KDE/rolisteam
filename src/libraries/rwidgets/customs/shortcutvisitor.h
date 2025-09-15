@@ -26,7 +26,6 @@
 
 #include "utils/directaccessdatastructure.h"
 
-
 class ShortCutModel;
 
 class RWIDGET_EXPORT ShortcutVisitor : public QObject

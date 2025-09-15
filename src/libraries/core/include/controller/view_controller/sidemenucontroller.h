@@ -79,7 +79,7 @@ public:
     explicit SideMenuController(QObject* parent= nullptr);
 
     mindmap::MindMapControllerBase* controller() const;
-    void setController(MindMapControllerBase *newController);
+    void setController(MindMapControllerBase* newController);
 
     mindmap::FilteredModel* model() const;
 
@@ -90,7 +90,7 @@ public:
     void setCriteria(FilteredModel::Criteria newCriteria);
 
     QString name() const;
-    void setName(const QString &newName);
+    void setName(const QString& newName);
 
 signals:
     void controllerChanged();

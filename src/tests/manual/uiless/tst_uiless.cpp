@@ -27,17 +27,16 @@ int main(int argc, char* argv[])
     QCoreApplication app(argc, argv);
     CountDownObject counter(4, 10);
 
-    QObject::connect(&counter, &CountDownObject::triggered, &app, [](int remaingTries){
-        qDebug() << "triggered: remaining:" << remaingTries;
-    });
-    QObject::connect(&counter, &CountDownObject::countDownChanged, &app, [](int c){
-        qDebug() << "countDown: " << c;
-    });
+    QObject::connect(&counter, &CountDownObject::triggered, &app,
+                     [](int remaingTries) { qDebug() << "triggered: remaining:" << remaingTries; });
+    QObject::connect(&counter, &CountDownObject::countDownChanged, &app, [](int c) { qDebug() << "countDown: " << c; });
 
-    QObject::connect(&counter, &CountDownObject::runningChanged, &app, [&app, &counter](){
-        if(!counter.isRunning())
-            app.quit();
-    });
+    QObject::connect(&counter, &CountDownObject::runningChanged, &app,
+                     [&app, &counter]()
+                     {
+                         if(!counter.isRunning())
+                             app.quit();
+                     });
 
     counter.start();
 

@@ -22,8 +22,8 @@
 #include <QSignalSpy>
 #include <QUrl>
 
-#include <memory>
 #include "rwidgets/delegates/avatardelegate.h"
+#include <memory>
 
 class AvatarDelegateTest : public QObject
 {

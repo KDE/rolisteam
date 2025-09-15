@@ -152,5 +152,5 @@ private:
 
     PreferencesManager* m_preferences;
 };
-}
+} // namespace rcse
 #endif // RCSE_MAINWINDOW_H

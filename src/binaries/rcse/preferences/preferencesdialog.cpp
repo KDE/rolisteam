@@ -2,19 +2,18 @@
 #include "ui_preferencesdialog.h"
 
 #include <QFileDialog>
-namespace rcse {
-PreferencesDialog::PreferencesDialog(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::PreferencesDialog)
+namespace rcse
+{
+PreferencesDialog::PreferencesDialog(QWidget* parent) : QDialog(parent), ui(new Ui::PreferencesDialog)
 {
     ui->setupUi(this);
 
-    connect(ui->m_selectDirectory,SIGNAL(clicked(bool)),this,SLOT(selectDir()));
+    connect(ui->m_selectDirectory, SIGNAL(clicked(bool)), this, SLOT(selectDir()));
 }
 
 PreferencesDialog::~PreferencesDialog()
 {
-    //delete ui;
+    // delete ui;
     qDebug() << "delete preferenceDialgog";
 }
 
@@ -23,7 +22,7 @@ QString PreferencesDialog::generationPath() const
     return ui->m_dirPath->text();
 }
 
-void PreferencesDialog::setGenerationPath(const QString &generationPath)
+void PreferencesDialog::setGenerationPath(const QString& generationPath)
 {
     ui->checkBox->setCheckState(Qt::Checked);
     ui->m_dirPath->setText(generationPath);
@@ -34,10 +33,11 @@ bool PreferencesDialog::hasCustomPath()
 }
 void PreferencesDialog::selectDir()
 {
-    QString path = QFileDialog::getExistingDirectory(this,tr("Directory to save QML file"),tr("Place to save Generated files"));
+    QString path= QFileDialog::getExistingDirectory(this, tr("Directory to save QML file"),
+                                                    tr("Place to save Generated files"));
     if(!path.isEmpty())
     {
         ui->m_dirPath->setText(path);
     }
 }
-}
+} // namespace rcse

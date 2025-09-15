@@ -76,7 +76,7 @@ public:
     void renameChannel(const QString& senderId, const QString& id, const QString& value);
     bool moveClient(Channel* origin, const QString& id, Channel* dest);
 
-    const QList<QPointer<TreeItem> > &modelData();
+    const QList<QPointer<TreeItem>>& modelData();
     void resetData(QList<TreeItem*> data);
 signals:
     void totalSizeChanged(quint64);

@@ -49,8 +49,7 @@ void TextWriterController::computeText()
     static auto reg1= QRegularExpression("((?:https?)://\\S+)");
     static auto reg2= QRegularExpression("((?:www)\\S+)");
 
-
-    auto text = m_text;
+    auto text= m_text;
 
     auto matcher= reg1.match(text);
     auto matcher2= reg2.match(text);

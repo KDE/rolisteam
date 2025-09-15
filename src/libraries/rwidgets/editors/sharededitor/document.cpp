@@ -59,9 +59,9 @@ Document::Document(SharedNoteController* ctrl, QWidget* parent)
     ui->participantSplitter->insertWidget(1, m_previewMarkdown);
     ui->participantSplitter->insertWidget(2, m_participantPane.get());
 
-    connect(m_shareCtrl, &SharedNoteController::permissionChanged, this, [this](ParticipantModel::Permission perm) {
-        m_editor->setReadOnly(ParticipantModel::Permission::readOnly == perm);
-    });
+    connect(m_shareCtrl, &SharedNoteController::permissionChanged, this,
+            [this](ParticipantModel::Permission perm)
+            { m_editor->setReadOnly(ParticipantModel::Permission::readOnly == perm); });
 
     connect(m_shareCtrl, &SharedNoteController::markdownVisibleChanged, m_previewMarkdown, &QTextEdit::setVisible);
     connect(m_shareCtrl, &SharedNoteController::textChanged, m_previewMarkdown, &QTextEdit::setMarkdown);

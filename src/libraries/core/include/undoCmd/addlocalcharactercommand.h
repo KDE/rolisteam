@@ -38,7 +38,7 @@ public:
 
 private:
     QPointer<PlayerModel> m_model;
-    QPointer<Character> m_character;//should not own it
+    QPointer<Character> m_character; // should not own it
     QPersistentModelIndex m_index;
     QString m_stateId;
 };

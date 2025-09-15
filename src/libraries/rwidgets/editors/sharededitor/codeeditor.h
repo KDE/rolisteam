@@ -76,7 +76,6 @@ private:
     QWidget* lineNumberArea;
 };
 
-
 class LineNumberArea : public QWidget
 {
 public:
@@ -90,5 +89,5 @@ protected:
 private:
     sharedNotes::CodeEditor* codeEditor;
 };
-}
+} // namespace sharedNotes
 #endif // SHAREDNOTES_CODEEDITOR_H

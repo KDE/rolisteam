@@ -22,8 +22,8 @@
 #include <QJsonObject>
 #include <QModelIndex>
 #include <QModelIndexList>
-#include <QtCore/QString>
 #include <QTest>
+#include <QtCore/QString>
 #include <memory>
 
 #include "diceparser/dicealias.h"

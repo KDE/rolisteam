@@ -26,7 +26,7 @@
 #include <memory>
 class PreferencesManager;
 class QTimer;
-class CORE_EXPORT  AutoSaveController : public QObject
+class CORE_EXPORT AutoSaveController : public QObject
 {
     Q_OBJECT
 public:

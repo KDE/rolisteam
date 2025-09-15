@@ -32,9 +32,9 @@
 #include <QUrl>
 
 #include "controller/view_controller/imageselectorcontroller.h"
+#include "rwidgets/customs/overlay.h"
 #include "worker/iohelper.h"
 #include "worker/utilshelper.h"
-#include "rwidgets/customs/overlay.h"
 
 ImageSelectorDialog::ImageSelectorDialog(ImageSelectorController* ctrl, QWidget* parent, const QString& defaultPath)
     : QDialog(parent), m_ctrl(ctrl), ui(new Ui::ImageSelectorDialog), m_overlay(new Overlay())
@@ -53,15 +53,15 @@ ImageSelectorDialog::ImageSelectorDialog(ImageSelectorController* ctrl, QWidget*
     connect(ui->m_titleLineEdit, &QLineEdit::textEdited, this,
             [this]() { m_ctrl->setTitle(ui->m_titleLineEdit->text()); });
 
-
-    auto checkButton = [this] {
+    auto checkButton= [this]
+    {
         auto button= ui->buttonBox->button(QDialogButtonBox::Ok);
         if(button)
             button->setEnabled(m_ctrl->validData() && m_ctrl->rectInShape());
     };
 
-
-    auto func= [this, checkButton](const QRect& rect) {
+    auto func= [this, checkButton](const QRect& rect)
+    {
         // qreal scale= m_ctrl->pixmap().size().width() / m_imageViewerLabel->rect().width();
         // QRect scaledRect(rect.x() * scale, rect.y() * scale, rect.width() * scale, rect.height() * scale);
 
@@ -69,7 +69,6 @@ ImageSelectorDialog::ImageSelectorDialog(ImageSelectorController* ctrl, QWidget*
         checkButton();
     };
     connect(m_overlay.get(), &Overlay::selectedRectChanged, m_ctrl, func);
-
 
     setAcceptDrops(m_ctrl->canDrop());
 
@@ -110,28 +109,30 @@ ImageSelectorDialog::ImageSelectorDialog(ImageSelectorController* ctrl, QWidget*
                                                                              Overlay::Ratio::Ratio_Unconstrained);
     m_overlay->initRect();
 
-    connect(m_ctrl, &ImageSelectorController::pixmapChanged, this, [this, checkButton]() {
-        if(m_ctrl->isMovie())
-        {
-            auto movie= m_ctrl->movie();
-            m_imageViewerLabel->setMovie(movie);
-            m_imageViewerLabel->resize(movie->frameRect().size());
-        }
-        else
-        {
-            auto pix= m_ctrl->pixmap();
-            m_imageViewerLabel->setPixmap(pix);
-            m_imageViewerLabel->resize(pix.size());
-        }
-        if(!m_ctrl->rect().isEmpty())
-            m_ctrl->setRect(m_overlay->selectedRect());
+    connect(m_ctrl, &ImageSelectorController::pixmapChanged, this,
+            [this, checkButton]()
+            {
+                if(m_ctrl->isMovie())
+                {
+                    auto movie= m_ctrl->movie();
+                    m_imageViewerLabel->setMovie(movie);
+                    m_imageViewerLabel->resize(movie->frameRect().size());
+                }
+                else
+                {
+                    auto pix= m_ctrl->pixmap();
+                    m_imageViewerLabel->setPixmap(pix);
+                    m_imageViewerLabel->resize(pix.size());
+                }
+                if(!m_ctrl->rect().isEmpty())
+                    m_ctrl->setRect(m_overlay->selectedRect());
 
-        checkButton();
+                checkButton();
 
-        m_overlay->setVisible(!m_ctrl->dataInShape());
-        resizeLabel();
-        update();
-    });
+                m_overlay->setVisible(!m_ctrl->dataInShape());
+                resizeLabel();
+                update();
+            });
 
     ui->scrollArea->setWidget(m_imageViewerLabel);
 
@@ -168,12 +169,11 @@ void ImageSelectorDialog::resizeLabel()
         return;
 
     m_ctrl->setVisualSize(ui->scrollArea->viewport()->rect().size());
-    auto thumbnail = m_ctrl->thumbnail();
+    auto thumbnail= m_ctrl->thumbnail();
 
     m_imageViewerLabel->resize(thumbnail.size());
     m_overlay->resize(thumbnail.size());
     m_overlay->setSelectedRect(thumbnail.rect());
-
 
     /*auto pix= m_ctrl->pixmap();
     auto const sImg= pix.size();

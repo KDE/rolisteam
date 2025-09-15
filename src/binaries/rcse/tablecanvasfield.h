@@ -22,8 +22,8 @@
 #ifndef TABLECANVASFIELD_H
 #define TABLECANVASFIELD_H
 
-#include <QObject>
 #include <QGraphicsProxyWidget>
+#include <QObject>
 #include <memory>
 
 #include "canvasfield.h"
@@ -61,7 +61,7 @@ class TableCanvasField : public CanvasField
 {
     Q_OBJECT
 public:
-    explicit TableCanvasField(TableFieldController *field);
+    explicit TableCanvasField(TableFieldController* field);
     virtual ~TableCanvasField();
     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget* a= nullptr) override;
     bool hasFocusOrChild();

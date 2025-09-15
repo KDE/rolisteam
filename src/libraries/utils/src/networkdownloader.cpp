@@ -26,16 +26,18 @@
 NetworkDownloader::NetworkDownloader(const QUrl& url, QObject* parent) : QObject(parent), m_url(url)
 {
     m_manager.reset(new QNetworkAccessManager());
-    connect(m_manager.get(), &QNetworkAccessManager::finished, this, [this](QNetworkReply* reply) {
-        QByteArray data= reply->readAll();
-        bool isImage= false;
+    connect(m_manager.get(), &QNetworkAccessManager::finished, this,
+            [this](QNetworkReply* reply)
+            {
+                QByteArray data= reply->readAll();
+                bool isImage= false;
 
-        auto v= reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        if(v.startsWith("image"))
-            isImage= true;
+                auto v= reply->header(QNetworkRequest::ContentTypeHeader).toString();
+                if(v.startsWith("image"))
+                    isImage= true;
 
-        emit finished(data, isImage);
-    });
+                emit finished(data, isImage);
+            });
 }
 
 void NetworkDownloader::download()

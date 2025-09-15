@@ -1,8 +1,8 @@
 #include <algorithm>
 
 #include "helper_global.h"
-#include "network/networkmessage.h"
 #include "media/mediatype.h"
+#include "network/networkmessage.h"
 #include <QByteArray>
 #include <QColor>
 #include <QMovie>
@@ -124,8 +124,6 @@ HELPER_EXPORT const std::map<QString, QVariant> buildLineController(const QPoint
 HELPER_EXPORT const std::map<QString, QVariant> buildTokenController(bool isNpc, const QPointF& pos);
 
 HELPER_EXPORT const std::map<QString, QVariant> buildController(Core::ContentType type);
-
-
 
 QString randomString(int length= 10)
 {

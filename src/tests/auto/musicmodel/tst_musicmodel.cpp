@@ -21,8 +21,8 @@
 #include <QAbstractItemModelTester>
 #include <QModelIndex>
 #include <QModelIndexList>
-#include <QtCore/QString>
 #include <QTest>
+#include <QtCore/QString>
 #include <memory>
 
 #include "model/musicmodel.h"
@@ -51,7 +51,7 @@ TestMusicModel::TestMusicModel() {}
 
 void TestMusicModel::init()
 {
-    m_model.reset(new MusicModel(new PreferencesManager("anan","annta")));
+    m_model.reset(new MusicModel(new PreferencesManager("anan", "annta")));
     new QAbstractItemModelTester(m_model.get());
 }
 
