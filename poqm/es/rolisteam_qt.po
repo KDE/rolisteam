@@ -1,11 +1,13 @@
 # Spanish translations for rolisteam_qt.po package.
+# Copyright (C) 2022-2025 This file is copyright:
+# This file is distributed under the same license as the rolisteam package.
 #
 # SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-05-10 00:33+0100\n"
+"PO-Revision-Date: 2025-09-20 17:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -14,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -7887,7 +7889,7 @@ msgstr "Pequeño"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:268
 msgctxt "Image|"
 msgid "Set the zoom level at 20% "
-msgstr "Ajustar el nivel de ampliación al 20%"
+msgstr "Ajustar el nivel de ampliación al 20 %"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:271
 msgctxt "Image|Set the zoom level at 20%"
@@ -7917,7 +7919,7 @@ msgstr "Grande"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:290
 msgctxt "Image|"
 msgid "Set the zoom level at 400%"
-msgstr "Ajustar el nivel de ampliación al 400%"
+msgstr "Ajustar el nivel de ampliación al 400 %"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:293
 msgctxt "Image|Zoom Out"
@@ -8062,32 +8064,32 @@ msgstr "Ajustar a la vista"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:149
 msgctxt "PdfViewer|"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:154
 msgctxt "PdfViewer|"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:159
 msgctxt "PdfViewer|"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:164
 msgctxt "PdfViewer|"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:169
 msgctxt "PdfViewer|"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:174
 msgctxt "PdfViewer|"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:212
 msgctxt "PdfViewer|"
@@ -8592,11 +8594,3 @@ msgstr "Durmiente"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Hechizado"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Name"
-#~ msgstr "Nombre"
-
-#~ msgctxt "SessionItemModel|"
-#~ msgid "Path"
-#~ msgstr "Ruta"
