@@ -1,9 +1,16 @@
 option(QML_CLI "enable compilation of QML client" OFF)
 
-if (QML_CLI)
-add_subdirectory(android)
+
+
+if(ANDROID)
+    add_subdirectory(3DDicer)
+else()
+    if (QML_CLI)
+    add_subdirectory(android)
+    endif()
+    add_subdirectory(server)
+    add_subdirectory(widget)
+    add_subdirectory(rcse)
+    add_subdirectory(mindmap)
+    add_subdirectory(3DDicer)
 endif()
-add_subdirectory(server)
-add_subdirectory(widget)
-add_subdirectory(rcse)
-add_subdirectory(mindmap)

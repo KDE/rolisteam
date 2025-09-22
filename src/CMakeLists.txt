@@ -18,8 +18,6 @@ IF (WARNING_AS_ERROR)
   include(StaticAnalyzers)
 endif()
 
-
-
 add_subdirectory(libraries)
 add_subdirectory(binaries)
 
@@ -33,3 +31,4 @@ endif()
 if(FORMAT_CODE)
     FormatFiles()
 endif()
+

@@ -16,7 +16,8 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Core Widgets Gui Svg Network Multimedia PrintSupport Qml Quick Xml QuickWidgets QuickControls2 Xml WebEngineWidgets WebEngineCore Concurrent Sql PdfWidgets StateMachine REQUIRED)
+find_package(Qt6 COMPONENTS Core Widgets Gui Svg Network Multimedia PrintSupport Qml Quick Xml QuickWidgets QuickControls2 Xml  Concurrent Sql PdfWidgets StateMachine REQUIRED)
+# WebEngineWidgets WebEngineCore
 
 if(TESTS)
     find_package(Qt6 COMPONENTS Test REQUIRED)

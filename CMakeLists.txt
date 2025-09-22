@@ -26,7 +26,12 @@ option(DEBUG_MODE "enable more debug report" OFF)
 option(WARNING_AS_ERROR "Set all warning as error" OFF)
 option(GENERATE_TS_FILES "generate all ts file from po" OFF)
 
-find_package(Qt6 COMPONENTS Core Widgets Gui LinguistTools QmlImportScanner REQUIRED)
+if(ANDROID)
+    find_package(Qt6 COMPONENTS Core Widgets Gui LinguistTools REQUIRED)
+else()
+    find_package(Qt6 COMPONENTS Core Widgets Gui LinguistTools WebEngineCore WebEngineWidgets WebEngineQuick REQUIRED)
+endif()
+
 configure_file(version.h.in version.h @ONLY)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release" OR ${GENERATE_TS_FILES} )
