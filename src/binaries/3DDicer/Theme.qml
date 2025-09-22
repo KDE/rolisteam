@@ -10,8 +10,11 @@ QtObject {
     readonly property int titleFontSize: 50
     readonly property int commandFontSize: 20
     readonly property int finalDiceResultFontSize: 30
+    readonly property int textFieldFontSize: 30
     readonly property int timeFontSize:8
     readonly property int margin: 8
+    readonly property int padding: 8
     readonly property int spacing: 8
     readonly property int radius: 10
+    readonly property int minimalTextField: 30
 }

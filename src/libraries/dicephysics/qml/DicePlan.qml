@@ -311,7 +311,8 @@ Item {
                 var interval = nt - t
                 if(interval == 0)
                     return
-                //console.log("nx: ",nx," distx: ",distx," ",ma.enabled)
+                console.log("nx: ",nx," distx: ",distx," ",ma.enabled)
+                console.log("Apply impluse velocity nx: ",nx," distx: ",distx," ",ma.enabled)
                 ma.xvelocity = distx//Math.sqrt(distx*distx)  //interval
                 ma.zvelocity = disty//Math.sqrt(disty*disty) //interval
                 xpos = nx
@@ -376,7 +377,7 @@ Item {
                     return
                 }
                 var point = viewport.mapTo3DScene(Qt.vector3d(mouse.x, mouse.y, 0))
-                const vec = Qt.vector3d(xvelocity, -0.4, zvelocity).normalized();
+                const vec = Qt.vector3d(ma.xvelocity, -0.4, ma.zvelocity).normalized();
                 ma.releaseSelection(point, vec)
             }
         }

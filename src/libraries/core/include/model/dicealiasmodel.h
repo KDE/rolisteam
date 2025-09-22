@@ -39,7 +39,7 @@ public:
      */
     enum COLUMN_TYPE
     {
-        PATTERN,
+        PATTERN= Qt::UserRole + 1,
         COMMAND,
         METHOD,
         DISABLE,
@@ -98,7 +98,6 @@ public:
 
     /// new methods
     void appendAlias(DiceAlias&& alias);
-    void deleteAlias(const QModelIndex& index);
 
     const std::vector<std::unique_ptr<DiceAlias>>& aliases() const;
 
@@ -111,6 +110,12 @@ public:
     void setGM(bool);
     void setModified(bool);
     QString convert(const QString& str);
+
+    QHash<int, QByteArray> roleNames() const override;
+
+public slots:
+    void deleteAlias(const QModelIndex& index);
+    void deleteAt(int index);
 
 signals:
     void aliasAdded(DiceAlias* alias, int i);

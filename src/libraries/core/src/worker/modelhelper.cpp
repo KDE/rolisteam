@@ -484,7 +484,7 @@ void fetchDiceModel(const QJsonArray& dice, DiceAliasModel* model)
         DiceAlias alias(
             diceCmd[Core::DiceAlias::k_dice_pattern].toString(), diceCmd[Core::DiceAlias::k_dice_command].toString(),
             diceCmd[Core::DiceAlias::k_dice_comment].toString(), diceCmd[Core::DiceAlias::k_dice_replacement].toBool(),
-            diceCmd[Core::DiceAlias::k_dice_enabled].toBool());
+            !diceCmd[Core::DiceAlias::k_dice_enabled].toBool());
 
         model->appendAlias(std::move(alias));
     }

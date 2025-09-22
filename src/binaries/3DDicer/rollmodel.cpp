@@ -93,9 +93,9 @@ void RollModel::addRoll(const QByteArray& data)
         tempRes << QStringLiteral("d%1:(%2)").arg(k).arg(v.join(','));
     }
 
-    beginInsertRows(QModelIndex(), m_rolls.size(), m_rolls.size());
-    m_rolls.push_back(RollInfo{obj["command"].toString(), obj["string"].toString(), data, obj["comment"].toString(),
-                               QDateTime::currentDateTime().toString("hh:mm:ss"), tempRes.join(",")});
+    beginInsertRows(QModelIndex(), 0, 0);
+    m_rolls.prepend(RollInfo{obj["command"].toString(), obj["string"].toString(), data, obj["comment"].toString(),
+                             QDateTime::currentDateTime().toString("hh:mm:ss"), tempRes.join(",")});
     endInsertRows();
 }
 
@@ -108,7 +108,6 @@ void RollModel::clear()
 
 QHash<int, QByteArray> RollModel::roleNames() const
 {
-
     return {{CommandRole, "command"}, {ResultRole, "result"},  {JsonRole, "json"},
             {CommentRole, "comment"}, {DetailRole, "details"}, {DateTimeRole, "time"}};
 }

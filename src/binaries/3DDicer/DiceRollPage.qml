@@ -13,6 +13,7 @@ Panel {
         Layout.fillWidth: true
         model: DiceMainController.model
         spacing: 5
+        clip: true
 
         delegate: Pane {
             required property string result
@@ -81,7 +82,6 @@ Panel {
         id: groupBox
         Layout.fillWidth: true
         clip: true
-        //Layout.maximumHeight: stackLayout.currentIndex === 0 ? Theme.iconSize*2 : root.height/2
         ColumnLayout
         {
             anchors.fill: parent
@@ -90,12 +90,11 @@ Panel {
                 id: stackLayout
                 Layout.fillWidth: true
                 Layout.fillHeight: true
+                currentIndex: DiceMainController.currentPanel
+                onCurrentIndexChanged: DiceMainController.currentPanel = currentIndex
+                interactive: gridLyt.count > 0
                 GridLayout {
                     columns: 2
-                    /*Layout.fillWidth: true
-                    Layout.maximumHeight: Theme.iconSize*2
-                    Layout.preferredHeight: Theme.iconSize
-                    Layout.bottomMargin: Theme.margin*/
                     TextField {
                         id: cmdField
                         placeholderText: qsTr("Type your command e.g: 3d10…")
@@ -129,30 +128,34 @@ Panel {
                         Layout.columnSpan: 2
                         Layout.preferredHeight: 40
                     }
-
                 }
 
-                GridLayout {
+                GridView {
                     id: gridLyt
                     visible: stackLayout.currentIndex === 1
                     Layout.fillWidth: true
-                    uniformCellHeights: true
-                    uniformCellWidths: true
-                    columns: 4
-                    columnSpacing: Theme.spacing
-                    Repeater {
-                        model: 20
+                    Layout.fillHeight: true
+                    cellHeight: cellWidth
+                    cellWidth: (root.width  - (3 * Theme.spacing)) / Math.max(4 ,Math.min(4, gridLyt.count))
+
+                    model: DiceMainController.macros
+                    delegate: ItemDelegate {
+                        background: Rectangle {
+                            border.width: 1
+                        }
+                        width: gridLyt.cellWidth
+                        height: gridLyt.cellHeight
                         Label {
-
-                            //width: (groupBox.width-(Theme.spacing*3)) / 4
-                            background: Rectangle {
-                                border.width: 1
-                            }
-                            text: "%1 - %2".arg(width).arg(height)
-
-                            Layout.preferredHeight: width
+                            anchors.centerIn: parent
+                            text: model.name
+                            font.pointSize: Theme.commandFontSize
+                        }
+                        scale: pressed ? 0.8 : 1.0
+                        onClicked: {
+                            DiceMainController.runCommand(model.command)
                         }
                     }
+
                 }
             }
             PageIndicator {

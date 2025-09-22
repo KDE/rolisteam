@@ -41,7 +41,7 @@ public slots:
     void addRoll(const QByteArray& data);
 
 private:
-    std::vector<RollInfo> m_rolls;
+    QList<RollInfo> m_rolls;
 };
 
 #endif // ROLLMODEL_H

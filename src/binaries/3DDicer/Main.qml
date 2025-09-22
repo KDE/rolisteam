@@ -11,6 +11,10 @@ ApplicationWindow {
     visible: true
     title: qsTr("3D Dice")
 
+    onClosing: {
+        DiceMainController.saveData();
+    }
+
     Component {
         id: physics
         PhysicsDicePage {
@@ -25,28 +29,31 @@ ApplicationWindow {
     }
     Component {
         id: settings
-        Panel {
-            title: qsTr("Settings")
+        SettingsPage {
+
+        }
+    }
+    Component {
+        id: macros
+        MacrosPage {
         }
     }
     Component {
         id: aliases
-        Panel {
-            title: qsTr("Aliases")
+        AliasesPage {
         }
     }
     Component {
         id: sheet
-        Panel {
-            title: qsTr("CharacterSheet")
+        SheetPage {
+
         }
     }
-    Component {
+    /*Component {
         id: profile
-        Panel {
-            title: qsTr("Select Profile")
+        SettingsPage {
         }
-    }
+    }*/
 
     function getPageComponent() {
         let res = diceRoll
@@ -63,6 +70,9 @@ ApplicationWindow {
             break;
         case DiceMainController.AliasPage:
             res = aliases;
+            break;
+        case DiceMainController.MacroPage:
+            res = macros;
             break;
         case DiceMainController.SelectContextPage:
             res = profile;
@@ -111,6 +121,15 @@ ApplicationWindow {
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.PhysicsPage
+                }
+                TabButton {
+                       text: qsTr("Macros")
+                       icon.source: "qrc:/assets/bookmark.svg"
+                       icon.width: Theme.tabIconSize
+                       icon.height:Theme.tabIconSize
+                       display: AbstractButton.IconOnly
+                       padding: Theme.margin
+                       onClicked: DiceMainController.currentPage = DiceMainController.MacroPage
                 }
                 TabButton {
                        text: qsTr("Aliases")

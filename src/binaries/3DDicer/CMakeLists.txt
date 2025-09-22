@@ -5,6 +5,8 @@ project(3DDicer VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Quick Quick3D Quick3DPhysics)
+find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup(REQUIRES 6.8)
 
@@ -30,6 +32,9 @@ assets/plus.svg
 assets/plus2.svg
 assets/plus3.svg
 assets/aliases.svg
+assets/bookmark.svg
+assets/edit.svg
+assets/check.svg
 )
 
 set_source_files_properties(Theme.qml
@@ -42,7 +47,12 @@ qt_add_qml_module(app3DDicer
         Main.qml
         SOURCES dicemaincontroller.h dicemaincontroller.cpp
         SOURCES rollmodel.h rollmodel.cpp
-        QML_FILES Panel.qml Theme.qml DiceRollPage.qml SettingsPage.qml SheetPage.qml MacrosPage.qml PhysicsDicePage.qml
+        QML_FILES Panel.qml Theme.qml DiceRollPage.qml SettingsPage.qml SheetPage.qml MacrosPage.qml PhysicsDicePage.qml AliasesPage.qml
+        SOURCES settingcontroller.h settingcontroller.cpp
+        SOURCES propertiesmodel.h propertiesmodel.cpp
+        SOURCES session.h session.cpp
+        SOURCES sessionmodel.h sessionmodel.cpp
+        SOURCES macromodel.cpp macromodel.h
 
 )
 
@@ -68,7 +78,10 @@ PRIVATE
     Qt::Quick3DPhysics
     diceparser_shared
     dice3d
+    core
 )
+target_link_libraries(app3DDicer PRIVATE Qt6::Core)
+target_link_libraries(app3DDicer PRIVATE Qt6::Core)
 
 
 include(GNUInstallDirs)

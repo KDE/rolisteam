@@ -58,28 +58,36 @@ QVariant DiceAliasModel::data(const QModelIndex& index, int role) const
     if(!diceAlias)
         return {};
 
+    int realRole= role;
     if((Qt::DisplayRole == role) || (Qt::EditRole == role))
     {
-        if(index.column() == PATTERN)
+        static std::array<COLUMN_TYPE, 5> p{PATTERN, COMMAND, METHOD, DISABLE, COMMENT};
+        realRole= p[index.column()];
+    }
+
+    if(realRole > Qt::UserRole)
+    {
+        QVariant res;
+        switch(realRole)
         {
-            return diceAlias->pattern();
+        case PATTERN:
+            res= diceAlias->pattern();
+            break;
+        case COMMAND:
+            res= diceAlias->command();
+            break;
+        case METHOD:
+            res= diceAlias->isReplace();
+            break;
+        case DISABLE:
+            res= diceAlias->isDisable();
+            break;
+        case COMMENT:
+            res= diceAlias->comment();
+            break;
         }
-        else if(index.column() == COMMAND)
-        {
-            return diceAlias->command();
-        }
-        else if(index.column() == METHOD)
-        {
-            return !diceAlias->isReplace();
-        }
-        else if(index.column() == DISABLE)
-        {
-            return !diceAlias->isDisable();
-        }
-        else if(index.column() == COMMENT)
-        {
-            return diceAlias->comment();
-        }
+
+        return res;
     }
     else if(Qt::BackgroundRole == role)
     {
@@ -147,6 +155,11 @@ QString DiceAliasModel::convert(const QString& str)
     return res;
 }
 
+QHash<int, QByteArray> DiceAliasModel::roleNames() const
+{
+    return {{PATTERN, "pattern"}, {COMMAND, "command"}, {METHOD, "method"}, {DISABLE, "disable"}, {COMMENT, "comment"}};
+}
+
 void DiceAliasModel::appendAlias(DiceAlias&& alias)
 {
     auto iter= std::find_if(std::begin(m_diceAliasList), std::end(m_diceAliasList),
@@ -175,38 +188,40 @@ bool DiceAliasModel::setData(const QModelIndex& index, const QVariant& value, in
         return result;
 
     auto const& diceAlias= m_diceAliasList[index.row()];
+    int realRole= role;
     if(role == Qt::EditRole)
     {
-        switch(index.column())
+        realRole= PATTERN + index.column();
+    }
+    switch(realRole)
+    {
+    case PATTERN:
+        diceAlias->setPattern(value.toString());
+        result= true;
+        break;
+    case COMMAND:
+        diceAlias->setCommand(value.toString());
+        result= true;
+        break;
+    case METHOD:
+        if(value.toBool())
         {
-        case PATTERN:
-            diceAlias->setPattern(value.toString());
-            result= true;
-            break;
-        case COMMAND:
-            diceAlias->setCommand(value.toString());
-            result= true;
-            break;
-        case METHOD:
-            if(value.toBool())
-            {
-                diceAlias->setType(DiceAlias::REGEXP);
-            }
-            else
-            {
-                diceAlias->setType(DiceAlias::REPLACE);
-            }
-            result= true;
-            break;
-        case DISABLE:
-            diceAlias->setDisable(value.toBool());
-            result= true;
-            break;
-        case COMMENT:
-            diceAlias->setComment(value.toString());
-            result= true;
-            break;
+            diceAlias->setType(DiceAlias::REGEXP);
         }
+        else
+        {
+            diceAlias->setType(DiceAlias::REPLACE);
+        }
+        result= true;
+        break;
+    case DISABLE:
+        diceAlias->setDisable(value.toBool());
+        result= true;
+        break;
+    case COMMENT:
+        diceAlias->setComment(value.toString());
+        result= true;
+        break;
     }
 
     if(result)
@@ -228,16 +243,24 @@ void DiceAliasModel::deleteAlias(const QModelIndex& index)
     if(!index.isValid())
         return;
 
-    beginRemoveRows(QModelIndex(), index.row(), index.row());
-    auto const& it= m_diceAliasList.begin() + index.row();
-    m_diceAliasList.erase(it);
-    endRemoveRows();
-
-    emit aliasRemoved(index.row());
+    deleteAt(index.row());
 
     /*NetworkMessageWriter msg(NetMsg::SharePreferencesCategory, NetMsg::removeDiceAlias);
     msg.int64(index.row());
     msg.sendToServer();*/
+}
+
+void DiceAliasModel::deleteAt(int index)
+{
+    if(index < 0 || static_cast<quint64>(index) >= m_diceAliasList.size())
+        return;
+
+    beginRemoveRows(QModelIndex(), index, index);
+    auto const& it= m_diceAliasList.begin() + index;
+    m_diceAliasList.erase(it);
+    endRemoveRows();
+
+    emit aliasRemoved(index);
 }
 void DiceAliasModel::upAlias(const QModelIndex& index)
 {
