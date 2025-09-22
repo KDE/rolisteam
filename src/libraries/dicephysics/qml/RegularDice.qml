@@ -40,6 +40,7 @@ DynamicRigidBody {
     function computeRotOffset(oldpos, newpos) {
         const offset = (Math.abs(newpos.x - oldpos.x) + Math.abs(newpos.y - oldpos.y) + Math.abs(newpos.z - oldpos.z))/3;
         ctrl.addRotationOffset(offset)
+        console.log("Offset: ",offset)
         return offset;
     }
 
