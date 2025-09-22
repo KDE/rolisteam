@@ -107,7 +107,7 @@ void MessageHelper::sendOffAllDiceAlias(DiceAliasModel* model)
         msg.string32(alias->pattern());
         msg.string32(alias->command());
         msg.int8(alias->isReplace());
-        msg.int8(alias->isEnable());
+        msg.int8(alias->isDisable());
         msg.string32(alias->comment());
         ++i;
     }
@@ -138,7 +138,7 @@ void MessageHelper::sendOffOneDiceAlias(const DiceAlias* da, int row)
     msg.string32(da->pattern());
     msg.string32(da->command());
     msg.int8(da->isReplace());
-    msg.int8(da->isEnable());
+    msg.int8(da->isDisable());
     msg.string32(da->comment());
     msg.sendToServer();
 }

@@ -1181,7 +1181,7 @@ QJsonObject IOHelper::diceAliasToJSonObject(DiceAlias* alias)
     aliasJson[Core::DiceAlias::k_dice_command]= alias->command();
     aliasJson[Core::DiceAlias::k_dice_comment]= alias->comment();
     aliasJson[Core::DiceAlias::k_dice_pattern]= alias->pattern();
-    aliasJson[Core::DiceAlias::k_dice_enabled]= alias->isEnable();
+    aliasJson[Core::DiceAlias::k_dice_enabled]= !alias->isDisable();
     aliasJson[Core::DiceAlias::k_dice_replacement]= alias->isReplace();
     return aliasJson;
 }
@@ -1199,17 +1199,16 @@ RolisteamTheme* IOHelper::jsonToTheme(const QJsonObject& json)
 
     theme->setBackgroundImage(json["bgPath"].toString(":/resources/rolistheme/workspacebackground.jpg"));
     theme->setStyle(QStyleFactory::create(json["stylename"].toString()));
-    QColor diceColor;
-    diceColor.setNamedColor(json["diceHighlight"].toString());
+    QColor diceColor= QColor::fromString(json["diceHighlight"].toString());
+
     theme->setDiceHighlightColor(diceColor);
     QJsonArray colors= json["colors"].toArray();
     int i= 0;
     auto model= theme->paletteModel();
-    for(auto const& ref : colors)
+    for(auto const& ref : std::as_const(colors))
     {
         QJsonObject paletteObject= ref.toObject();
-        QColor color;
-        color.setNamedColor(paletteObject["color"].toString());
+        QColor color= QColor::fromString(paletteObject["color"].toString());
         model->setColor(i, color);
         ++i;
     }

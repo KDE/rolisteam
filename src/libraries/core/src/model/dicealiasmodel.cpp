@@ -74,7 +74,7 @@ QVariant DiceAliasModel::data(const QModelIndex& index, int role) const
         }
         else if(index.column() == DISABLE)
         {
-            return !diceAlias->isEnable();
+            return !diceAlias->isDisable();
         }
         else if(index.column() == COMMENT)
         {
@@ -83,7 +83,7 @@ QVariant DiceAliasModel::data(const QModelIndex& index, int role) const
     }
     else if(Qt::BackgroundRole == role)
     {
-        if(!diceAlias->isEnable())
+        if(!diceAlias->isDisable())
         {
             return QColor(Qt::red).lighter();
         }
@@ -199,7 +199,7 @@ bool DiceAliasModel::setData(const QModelIndex& index, const QVariant& value, in
             result= true;
             break;
         case DISABLE:
-            diceAlias->setEnable(!value.toBool());
+            diceAlias->setDisable(value.toBool());
             result= true;
             break;
         case COMMENT:
