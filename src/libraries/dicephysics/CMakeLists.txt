@@ -84,6 +84,10 @@ set_source_files_properties(qml/RegularDice.qml PROPERTIES
 set_source_files_properties(qml/SideMenu.qml PROPERTIES
     QT_RESOURCE_ALIAS SideMenu.qml
 )
+set_source_files_properties(qml/DicePlan.qml PROPERTIES
+    QT_RESOURCE_ALIAS DicePlan.qml
+)
+
 
 qt6_add_qml_module(${PROJECT_NAME}
   URI DicePhysics
@@ -95,12 +99,13 @@ qt6_add_qml_module(${PROJECT_NAME}
     qml/DiceInterface.qml
     qml/RegularDice.qml
     qml/SideMenu.qml
+    qml/DicePlan.qml
   SOURCES
     data/dicemodel.h
     data/dicemodel.cpp
     controllers/dicecontroller.h
     controllers/dicecontroller.cpp
-  VERSION 1.0 
+  VERSION 1.0
 )
 
 qt_add_resources(${PROJECT_NAME} "qml"

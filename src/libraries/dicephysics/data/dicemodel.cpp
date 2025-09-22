@@ -203,6 +203,7 @@ std::vector<std::unique_ptr<DiceController>>& DiceModel::currentModel() const
 void DiceModel::checkStable()
 {
     QList<DiceController*> rolled;
+
     for(auto const& ctrl : currentModel())
     {
         if(!ctrl->selected())
@@ -214,6 +215,7 @@ void DiceModel::checkStable()
         rolled.append(ctrl.get());
     }
     emit diceRollChanged(diceControllerToData(rolled, m_size));
+    emit allDiceAreStable();
 }
 
 void DiceModel::setIndex(int idx)

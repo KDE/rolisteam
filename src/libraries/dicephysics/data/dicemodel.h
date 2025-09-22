@@ -82,8 +82,8 @@ signals:
     void diceRollChanged(QByteArray data);
     void sizeChanged();
     void diceCountChanged();
-
     void animationTimeChanged();
+    void allDiceAreStable();
 
 private:
     void setIndex(int idx);

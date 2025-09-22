@@ -39,7 +39,46 @@ ApplicationWindow {
 
     title: qsTr("Rolisteam 3D dice roller %1".arg(Dice3DCtrl.normalDialogMode))
 
-    Item
+    DicePlan {
+        id: dicePlan
+        anchors.fill: parent
+        ctrl: Dice3DCtrl
+        factor: menu.factor
+        SideMenu {
+            id: menu
+        }
+
+        RoundButton {
+            id: iconOpen
+            icon.source: "qrc:/dice3d/icons/menuIcon.svg"
+            x: root.currDrawerWidth
+            onClicked: {
+                menu.open()
+            }
+        }
+
+        Label {
+            id: selectionCount
+            text: dicePlan.selectedCount > 0
+            visible: dicePlan.selectedCount > 0
+            font.pixelSize: 30
+            font.bold: true
+            anchors.horizontalCenter: iconOpen.horizontalCenter
+            anchors.top: iconOpen.bottom
+            anchors.topMargin: 20
+            horizontalAlignment: Label.AlignHCenter
+
+            width: Math.max(implicitHeight, implicitWidth)
+            height: width
+            background: Rectangle {
+                color: "white"
+                radius: width/2
+                opacity: 0.8
+            }
+        }
+    }
+
+    /*Item
     {
         anchors.fill: parent
 
@@ -415,7 +454,7 @@ ApplicationWindow {
                 opacity: 0.8
             }
         }
-    }
+    }*/
 }
 
 

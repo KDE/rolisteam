@@ -46,6 +46,7 @@ Dice3DController::Dice3DController(QObject* parent) : QObject{parent}, m_model(n
                 if(count() == 0)
                     setExpectRoll(false);
             });
+    connect(m_model.get(), &DiceModel::allDiceAreStable, this, [this]() { setExpectRoll(false); });
     connect(m_model.get(), &DiceModel::diceRollChanged, this, &Dice3DController::computeResult);
     connect(m_model.get(), &DiceModel::animationTimeChanged, this, &Dice3DController::animationTimeChanged);
 

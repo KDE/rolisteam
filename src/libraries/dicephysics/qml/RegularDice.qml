@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick3D
 import QtQuick3D.Physics
 import QtMultimedia
-import Controllers
+//import Controllers
 
 DynamicRigidBody {
     id: root
@@ -12,6 +12,7 @@ DynamicRigidBody {
     required property int index
     required property int type
     required property QtObject ctrl
+    required property QtObject dice3DCtrl
     required property real parentWidth
     required property real parentHeight
 
@@ -23,7 +24,7 @@ DynamicRigidBody {
     opacity: root.ctrl?.value > 0 ? 1.0 : 0.4
 
     property real internalScale: selected ? 1.2 : 1.
-    readonly property string diceCode: Dice3DCtrl.diceTypeToCode(root.type)
+    readonly property string diceCode: root.dice3DCtrl.diceTypeToCode(root.type)
 
     QtObject {
         id: internal
@@ -39,14 +40,18 @@ DynamicRigidBody {
     function computeRotOffset(oldpos, newpos) {
         const offset = (Math.abs(newpos.x - oldpos.x) + Math.abs(newpos.y - oldpos.y) + Math.abs(newpos.z - oldpos.z))/3;
         ctrl.addRotationOffset(offset)
+        console.log("Offset: ",offset)
         return offset;
     }
 
     Connections {
         target: root.ctrl
         function onStableChanged() {
-            root.ctrl.rotation = root.eulerRotation
-            root.ctrl.position = root.position
+            if(root.ctrl.stable)
+            {
+                root.ctrl.rotation = root.eulerRotation
+                root.ctrl.position = root.position
+            }
         }
     }
 
@@ -64,8 +69,10 @@ DynamicRigidBody {
             return;
         else
         {
-            if(computeRotOffset(internal.rotation, root.eulerRotation) > 0.01)
+            if(computeRotOffset(internal.rotation, root.eulerRotation) > 0.01) {
+             console.log("Moved Rotation")
                 moved()
+            }
         }
         internal.rotation = root.eulerRotation
     }
@@ -75,13 +82,15 @@ DynamicRigidBody {
         const offset = 10//root.parentWidth * 0.01
         if(root.position.y+offset < 0)
             newPos.y = 20
-        if(Math.abs(root.position.x) > Math.abs(Dice3DCtrl.width/2-offset))
-            newPos.x = root.position.x > 0 ? Dice3DCtrl.width/2-offset : -Dice3DCtrl.width/2+offset
-        if(Math.abs(root.position.z) > Math.abs(Dice3DCtrl.height/2-offset))
-            newPos.z = root.position.z > 0 ? Dice3DCtrl.height/2-offset : -Dice3DCtrl.height/2+offset
+        if(Math.abs(root.position.x) > Math.abs(root.dice3DCtrl.width/2-offset))
+            newPos.x = root.position.x > 0 ? root.dice3DCtrl.width/2-offset : -root.dice3DCtrl.width/2+offset
+        if(Math.abs(root.position.z) > Math.abs(root.dice3DCtrl.height/2-offset))
+            newPos.z = root.position.z > 0 ? root.dice3DCtrl.height/2-offset : -root.dice3DCtrl.height/2+offset
 
+        console.log("\nnewPos:",newPos,"\noldPos:",root.ctrl.position," ",root.ctrl.stable)
         if( newPos !== root.ctrl.position)
         {
+            console.log("Moved translation")
             moved();
             root.ctrl.position = newPos
         }
@@ -92,6 +101,7 @@ DynamicRigidBody {
     receiveContactReports: true
 
     onBodyContact: (body, positions, impulses, normals) => {
+        console.log("Moved onBodyContact")
         moved()
         let volume = 0
         impulses.forEach(vector => {
@@ -144,7 +154,7 @@ DynamicRigidBody {
     SoundEffect {
         id: diceSound
         loops: 0
-        muted: Dice3DCtrl.muted || !Dice3DCtrl.displayed
+        muted: root.dice3DCtrl.muted || !root.dice3DCtrl.displayed
         source: "qrc:/dice3d/sounds/onedice.wav"
     }
 }
