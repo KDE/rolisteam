@@ -136,7 +136,7 @@ private:
     bool m_sound{true};
     QFont m_font;
     int m_currentTab;
-    bool m_detached;
+    bool m_detached{false};
 };
 
 #endif // TEXTMESSAGINGCONTROLLER_H

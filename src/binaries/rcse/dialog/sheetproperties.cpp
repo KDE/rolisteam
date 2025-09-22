@@ -13,7 +13,7 @@ SheetProperties::SheetProperties(QmlGeneratorController* ctrl, QWidget* parent)
     ui->listView->setModel(&m_model);
 
     connect(ui->m_addFontBtn, &QToolButton::clicked, this,
-            [=]
+            [this]
             {
                 QStringList files
                     = QFileDialog::getOpenFileNames(this, tr("Add Font file"), QDir::homePath(), "font (*.ttf *.otf)");
@@ -29,7 +29,7 @@ SheetProperties::SheetProperties(QmlGeneratorController* ctrl, QWidget* parent)
             });
 
     connect(ui->m_removeFontBtn, &QToolButton::clicked, this,
-            [=]
+            [this]
             {
                 auto index= ui->listView->currentIndex();
                 if(index.isValid())

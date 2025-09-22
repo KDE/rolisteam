@@ -92,7 +92,7 @@ signals:
 
 public slots:
     void manageMessage(QString message, const QString& category, LogController::LogLevel type);
-    void listenObjects(const QObject* widget);
+    // void listenObjects(const QObject* widget);
     void signalActivated();
     void actionActivated();
     void setLogLevel(const LogController::LogLevel& logLevel);

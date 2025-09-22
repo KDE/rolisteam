@@ -7,7 +7,6 @@ HeartBeatSender::HeartBeatSender(QObject* parent) : QObject(parent)
     connect(&m_timer, &QTimer::timeout, this,
             [this]()
             {
-                qCDebug(NetworkCat) << "Timeout send heartbeatAsk";
                 emit sendOff(new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::HeartbeatAsk));
                 m_awaitingAnswer++;
                 if(m_awaitingAnswer > m_maxMissingAnswer)
@@ -18,7 +17,7 @@ HeartBeatSender::HeartBeatSender(QObject* parent) : QObject(parent)
 
 void HeartBeatSender::updateTimer()
 {
-    qCDebug(NetworkCat) << "UpdateTimer";
+    qCDebug(NetworkCat) << "UpdateTimer new interval:" << m_interval * 1000;
     auto act= active();
     m_timer.stop();
     if(act)

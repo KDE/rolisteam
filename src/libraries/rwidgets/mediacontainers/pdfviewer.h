@@ -86,7 +86,6 @@ protected slots:
     void extractMap();
     void showOverLay();
     void sharePdfTo();
-    void updateTitle();
     void bookmarkSelected(const QModelIndex& index);
 
 private:

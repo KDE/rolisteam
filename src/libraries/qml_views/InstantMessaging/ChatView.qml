@@ -106,6 +106,7 @@ Item {
                         property bool current: tabHeader.currentIndex === index
                         property string uuid: model.id
                         text: model.title
+                        objectName: model.title
                         background: Rectangle {
                             color: tabButton.current ? root.paletteSheet.alternateBase : model.unread ? root.paletteSheet.highlight : root.paletteSheet.mid
                         }
@@ -157,6 +158,7 @@ Item {
                     id: listView
                     SplitView.fillWidth: true
                     SplitView.fillHeight: true
+                    objectName: "chatroom_%1".arg(root.chatRoomIndex)
                     model: root.chatRoom ? root.chatRoom.messageModel: 0
                     clip: true
                     spacing: 5

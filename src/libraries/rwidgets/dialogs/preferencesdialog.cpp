@@ -346,14 +346,11 @@ void PreferencesDialog::load()
 
     ui->m_styleCombo->clear();
     ui->m_styleCombo->addItems(QStyleFactory::keys());
-    qDebug() << "keys style: " << QStyleFactory::keys();
+
     if(m_ctrl->currentTheme())
     {
-        qDebug() << "setInedx 2: stlye:" << m_ctrl->currentTheme()->getStyleName();
-        qDebug() << "currentindex before:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
         ui->m_styleCombo->setCurrentIndex(
             ui->m_styleCombo->findText(m_ctrl->currentTheme()->getStyleName(), Qt::MatchContains));
-        qDebug() << "currentindex after:" << ui->m_styleCombo->currentIndex() << ui->m_styleCombo->count();
     }
     connect(ui->m_styleCombo, &QComboBox::activated, this, &PreferencesDialog::setStyle);
 }

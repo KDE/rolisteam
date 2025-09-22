@@ -128,9 +128,7 @@ signals:
     void mediaRootChanged();
     void historyChanged();
 
-    void sessionChanged(bool);
-    void sessionNameChanged();
-    void sessionPathChanged();
+    void contentChanged();
     void gameMasterIdChanged(const QString& gameMasterId);
     void localIdChanged(const QString& game);
     void mediaControllerCreated(MediaControllerBase* base);

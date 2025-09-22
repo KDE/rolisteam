@@ -107,13 +107,14 @@ GameController::GameController(const QString& appname, const QString& version, Q
                     m_contentCtrl->setMediaRoot(cm->directory(campaign::Campaign::Place::MEDIA_ROOT));
                     emit campaignRootChanged();
                 });
+        emit campaignChanged();
     };
     updateCampaign();
     connect(m_campaignManager.get(), &campaign::CampaignManager::campaignChanged, this, updateCampaign);
     connect(m_campaignManager->editor(), &campaign::CampaignEditor::performCommand, this, &GameController::addCommand);
 
     // clang-format off
-    connect(m_autoSaveCtrl.get(), &AutoSaveController::saveData, m_campaignManager.get(), &campaign::CampaignManager::saveCampaign);
+    connect(m_autoSaveCtrl.get(), &AutoSaveController::saveData, this, &GameController::save);
     connect(m_playerController.get(), &PlayerController::gameMasterIdChanged, m_contentCtrl.get(), &ContentController::setGameMasterId);
     connect(m_playerController.get(), &PlayerController::performCommand, this, &GameController::addCommand);
     connect(m_playerController.get(), &PlayerController::localPlayerIdChanged, m_remoteLogCtrl.get(), &RemoteLogController::setLocalUuid);
@@ -511,8 +512,7 @@ void GameController::setDataFromProfile(int profileIndex)
     {
         auto characters= profile->characters();
         std::for_each(
-            characters.begin(), characters.end(),
-            [local](const connection::CharacterData& data)
+            characters.begin(), characters.end(), [local](const connection::CharacterData& data)
             { local->addCharacter(data.m_uuid, data.m_name, data.m_color, data.m_avatarData, data.m_params, false); });
     }
     else

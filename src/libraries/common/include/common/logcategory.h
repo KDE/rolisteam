@@ -12,6 +12,7 @@ constexpr auto network{"Network"};
 constexpr auto messaging{"Messaging"};
 constexpr auto imageCtrl{"ImageController"};
 constexpr auto map{"Map"};
+constexpr auto sharedNotes{"Shared Notes"};
 constexpr auto mindMap{"Mindmap"};
 constexpr auto characterSheet{"CharacterSheet"};
 constexpr auto pdf{"Pdf"};
@@ -39,6 +40,7 @@ static Q_LOGGING_CATEGORY(UsabilityCat, logger::usability)
 static Q_LOGGING_CATEGORY(RcseCat, logger::rcse)
 static Q_LOGGING_CATEGORY(RolisteamCat, logger::rolisteam)
 static Q_LOGGING_CATEGORY(DiceCat, logger::dice)
+static Q_LOGGING_CATEGORY(ShredNoteCat, logger::sharedNotes)
 
 [[maybe_unused]]static void foo()
 {
@@ -57,6 +59,7 @@ Q_UNUSED(UsabilityCat)
 Q_UNUSED(RcseCat)
 Q_UNUSED(RolisteamCat)
 Q_UNUSED(DiceCat)
+Q_UNUSED(ShredNoteCat)
 }
 // clang-format on
 

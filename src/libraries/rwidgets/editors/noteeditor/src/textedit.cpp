@@ -70,6 +70,7 @@
 #include <QToolBar>
 #include <QtDebug>
 #include <optional>
+#include <QInputDialog>
 
 #include "controller/view_controller/notecontroller.h"
 #include "worker/utilshelper.h"
@@ -186,13 +187,26 @@ void TextEdit::setupFileActions()
         menu->addAction(a);
     }
 
+    a= new QAction(tr("&Name..."), this);
+    connect(a, &QAction::triggered, this, [this](){
+        auto name = QInputDialog::getText(this, tr("Change note file name"), tr("Name"));
+        if(!name.isEmpty())
+        {
+            m_noteCtrl->setName(name);
+        }
+    });
+    tb->addAction(a);
+    menu->addAction(a);
+
     a= new QAction(QIcon::fromTheme("fileprint"), tr("&Print..."), this);
     a->setShortcut(QKeySequence::Print);
+    a->setIcon(QIcon::fromTheme("print"));
     connect(a, SIGNAL(triggered()), this, SLOT(filePrint()));
     tb->addAction(a);
     menu->addAction(a);
 
     a= new QAction(QIcon::fromTheme("fileprint"), tr("Print Preview..."), this);
+    a->setIcon(QIcon::fromTheme("preview_html"));
     connect(a, SIGNAL(triggered()), this, SLOT(filePrintPreview()));
     menu->addAction(a);
 
@@ -257,7 +271,7 @@ void TextEdit::setupTextActions()
     actionTextBold->setCheckable(true);
 
     actionTextItalic= new QAction(QIcon(":/images/win/textitalic.png"), tr("&Italic"), this);
-    actionTextItalic->setShortcut(Qt::CTRL + Qt::Key_I);
+    actionTextItalic->setShortcut(Qt::CTRL | Qt::Key_I);
     QFont italic;
     italic.setItalic(true);
     actionTextItalic->setFont(italic);
@@ -267,7 +281,7 @@ void TextEdit::setupTextActions()
     actionTextItalic->setCheckable(true);
 
     actionTextUnderline= new QAction(QIcon(":/images/win/textunder.png"), tr("&Underline"), this);
-    actionTextUnderline->setShortcut(Qt::CTRL + Qt::Key_U);
+    actionTextUnderline->setShortcut(Qt::CTRL | Qt::Key_U);
     QFont underline;
     underline.setUnderline(true);
     actionTextUnderline->setFont(underline);

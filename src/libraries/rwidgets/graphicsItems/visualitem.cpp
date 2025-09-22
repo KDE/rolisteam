@@ -423,7 +423,8 @@ void VisualItem::setHighlightColor(const QColor& highlightColor)
 
 void VisualItem::paintCoord(QPainter* painter)
 {
-#ifdef QT_DEBUG
+    Q_UNUSED(painter)
+#ifdef DEBUG_MODE
     auto p= pos();
     auto rect= boundingRect();
     auto transformCenter= QString("Center: %1x%2").arg(transformOriginPoint().x()).arg(transformOriginPoint().y());

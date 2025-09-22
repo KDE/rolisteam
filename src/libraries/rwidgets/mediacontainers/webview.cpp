@@ -45,10 +45,14 @@ WebView::WebView(WebpageController* ctrl, QWidget* parent)
     m_ui->m_nextBtn->setDefaultAction(m_ui->m_nextAct);
     m_ui->m_previousBtn->setDefaultAction(m_ui->m_previousAct);
     m_ui->m_reloadBtn->setDefaultAction(m_ui->m_reloadAct);
+
     m_ui->m_hideAddressBtn->setDefaultAction(m_ui->m_hideAddressAct);
+    m_ui->m_hideAddressAct->setIcon(QIcon::fromTheme("mask"));
 
     m_ui->m_shareBtn->setDefaultAction(m_ui->m_shareAct);
+    m_ui->m_shareBtn->setIcon(QIcon::fromTheme("share_doc"));
     m_ui->m_htmlShareBtn->setDefaultAction(m_ui->m_htmlShareAct);
+    m_ui->m_htmlShareBtn->setIcon(QIcon::fromTheme("document-share"));
 
     auto page= m_ui->m_webview->page();
     connect(page, &QWebEnginePage::permissionRequested, this,

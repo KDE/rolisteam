@@ -81,6 +81,13 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
                 if(buf->open(QIODevice::ReadOnly))
                     m_document->load(buf);
             });
+
+    auto updateTitle = [this]()
+    {
+        setWindowTitle(tr("%1 - PDFViewer").arg(m_pdfCtrl->name()));
+    };
+    connect(m_pdfCtrl, &PdfController::nameChanged, this, updateTitle);
+    updateTitle();
 }
 
 PdfViewer::~PdfViewer() {}
@@ -228,6 +235,8 @@ void PdfViewer::makeConnections()
 
     m_ui->m_splitter->setCollapsible(0, true);
     m_ui->m_splitter->setCollapsible(1, false);
+
+
 }
 
 bool PdfViewer::eventFilter(QObject* obj, QEvent* event)
@@ -251,7 +260,6 @@ void PdfViewer::extractImage()
 
     auto rect= m_overlay->selectedRect();
     auto pix= m_ui->m_view->grab(rect);
-    // m_pdfCtrl->shareImageIntoImage(pix);
     m_overlay.reset();
 }
 
@@ -311,11 +319,6 @@ void PdfViewer::sharePdfTo()
     }
 }
 
-void PdfViewer::updateTitle()
-{
-    setWindowTitle(tr("%1 - (PDF)").arg(m_pdfCtrl->name()));
-}
-
 void PdfViewer::bookmarkSelected(const QModelIndex& index)
 {
     if(!index.isValid())
@@ -349,21 +352,7 @@ void PdfViewer::showOverLay()
     }
 }
 
-void PdfViewer::savePdfToFile(QDataStream& out)
-{
-    Q_UNUSED(out)
-    //    QByteArray baPdfViewer;
-    //    QBuffer bufPdfViewer(&baPdfViewer);
-    //    if(!m_pixMap.isNull())
-    //    {
-    //        if (!m_pixMap.save(&bufPdfViewer, "jpg", 70))
-    //        {
-    //            error(tr("PdfViewer Compression fails (savePdfViewerToFile - PdfViewer.cpp)"),this);
-    //            return;
-    //        }
-    //        out << baPdfViewer;
-    //    }
-}
+
 
 void PdfViewer::contextMenuEvent(QContextMenuEvent* event)
 {
@@ -381,13 +370,3 @@ void PdfViewer::contextMenuEvent(QContextMenuEvent* event)
     menu.exec(event->globalPos());
 }
 
-/*void PdfViewer::putDataIntoCleverUri()
-{
-   QByteArray data;
-   QDataStream out(&data, QIODevice::WriteOnly);
-   savePdfToFile(out);
-   if(nullptr != m_uri)
-   {
-       m_uri->setData(data);
-   }
-}*/

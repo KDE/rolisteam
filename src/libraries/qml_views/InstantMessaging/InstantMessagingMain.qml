@@ -51,6 +51,10 @@ Pane {
             text: qsTr("Reset to Default View")
             onTriggered: InstantMessagerManager.ctrl.resetScreen()
         }
+        Action {
+            text: InstantMessagerManager.ctrl.detached ? qsTr("Attach on Main") : qsTr("Detach")
+            onTriggered: InstantMessagerManager.ctrl.detached = !InstantMessagerManager.ctrl.detached
+        }
     }
 
     SplitView {

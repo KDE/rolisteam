@@ -697,6 +697,8 @@ QHash<QString, QVariant> MessageHelper::readSharedNoteData(NetworkMessageReader*
     auto mkH= static_cast<bool>(msg->uint8());
     auto text= msg->string32();
 
+    //    qCDebug(ShredNoteCat) << text;
+
     hash.insert(Core::vmapkeys::KEY_MARKDOWN, mkH);
     hash.insert(Core::vmapkeys::KEY_TEXT, text);
 
@@ -985,8 +987,8 @@ const std::map<QString, QVariant> MessageHelper::readLine(NetworkMessageReader* 
 
     auto x2= msg->real();
     auto y2= msg->real();
-    hash.insert({Core::vmapkeys::KEY_ENDPOINT, QPointF(x1, y1)});
-    hash.insert({Core::vmapkeys::KEY_STARTPOINT, QPointF(x2, y2)});
+    hash.insert({Core::vmapkeys::KEY_STARTPOINT, QPointF(x1, y1)});
+    hash.insert({Core::vmapkeys::KEY_ENDPOINT, QPointF(x2, y2)});
     hash.insert({Core::vmapkeys::KEY_PENWIDTH, penWidth});
     return hash;
 }

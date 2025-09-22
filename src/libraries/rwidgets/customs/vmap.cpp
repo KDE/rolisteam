@@ -366,7 +366,6 @@ VisualItem* VMap::visualItemUnder(const QPointF& pos)
 
 void VMap::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
-    qDebug() << "MOUSE PRESSED MAP" << m_currentPath.isNull() << static_cast<int>(m_ctrl->editionMode());
     auto leftButton= (mouseEvent->button() == Qt::LeftButton);
     auto hasShift= (mouseEvent->modifiers() & Qt::ShiftModifier);
 
@@ -458,6 +457,10 @@ void VMap::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
                 clearSelection();
             item->setSelected(true);
             QGraphicsScene::mousePressEvent(mouseEvent);
+        }
+        else
+        {
+            mouseEvent->accept();
         }
     }
 }

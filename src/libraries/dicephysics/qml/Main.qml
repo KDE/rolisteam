@@ -15,19 +15,29 @@ ApplicationWindow {
     width: Dice3DCtrl.width
     height: Dice3DCtrl.height
 
+    onWidthChanged: {
+        if (root.width !== Dice3DCtrl.width && Dice3DCtrl.normalDialogMode)
+            Dice3DCtrl.size = Qt.size(root.width, root.height)
+    }
+    onHeightChanged: {
+        if (root.height !== Dice3DCtrl.height && Dice3DCtrl.normalDialogMode)
+            Dice3DCtrl.size = Qt.size(root.width, root.height)
+    }
+
     property real halfWidth: width/2
     property real halfHeight: height/2
     property real ceilling: 500.
     property real side: 100.
 
+
     visible: Dice3DCtrl.displayed
 
-    flags: Qt.WA_TranslucentBackground | Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.Popup
-    color: "transparent"
+    flags: Dice3DCtrl.normalDialogMode ? Qt.Window : Qt.WA_TranslucentBackground | Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.Popup
+    color:  Dice3DCtrl.normalDialogMode ? "#88FFFFFF" : "transparent"
 
     property real currDrawerWidth: menu.width * menu.position
 
-    title: qsTr("Rolisteam 3D dice roller")
+    title: qsTr("Rolisteam 3D dice roller %1".arg(Dice3DCtrl.normalDialogMode))
 
     Item
     {

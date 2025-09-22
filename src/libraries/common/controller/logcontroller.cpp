@@ -52,7 +52,6 @@ QString humanReadableDiceResult(const QString& json)
     auto error= obj[Core::jsonDice::JSON_ERROR].toString();
     auto scalar= obj[Core::jsonDice::JSON_SCALAR].toString();*/
 
-    list << QString(json.toUtf8().toBase64());
     return list.join(";");
 }
 } // namespace log
@@ -62,41 +61,57 @@ void messageHandler(QtMsgType type, const QMessageLogContext& context, const QSt
 {
     static QMutex mutex;
     QMutexLocker lock(&mutex);
+    static int i= 0;
 
-    if(nullptr == controller)
-        return;
+#ifdef DEBUG_MODE
+    auto contectFormated= QStringLiteral("(in %3 at %1:%2)")
+                              .arg(QString(context.file), QString::number(context.line), QString(context.function));
+#else
+    QString contectFormated;
+#endif
 
-    QByteArray localMsg= msg.toLocal8Bit();
-    auto msgFormated= QStringLiteral("%1 (%2:%3), %4")
-                          .arg(QString(localMsg.constData()), QString(context.file), QString::number(context.line),
-                               QString(context.function));
     LogController::LogLevel cLevel= LogController::Error;
     switch(type)
     {
     case QtDebugMsg:
         cLevel= LogController::Debug;
-        std::cout << msg.toStdString() << std::endl;
         break;
     case QtInfoMsg:
         cLevel= LogController::Info;
-        std::cout << msg.toStdString() << std::endl;
         break;
     case QtWarningMsg:
         cLevel= LogController::Warning;
-        std::cout << msg.toStdString() << std::endl;
         break;
     case QtCriticalMsg:
     case QtFatalMsg:
         cLevel= LogController::Error;
-        std::cerr << msg.toStdString() << std::endl;
         break;
     }
 
-    // controller->manageMessage(msgFormated,cLevel);
-    QMetaObject::invokeMethod(controller, "manageMessage", Qt::QueuedConnection, Q_ARG(QString, msgFormated),
+    QString res("%1 - %3%2: %5 %4");
+    QString num= QString("(%1)").arg(++i, 5, 10, QChar('0'));
+    QDateTime dateTime= QDateTime::currentDateTime();
+    res= res.arg(
+#ifdef DEBUG_MODE
+                dateTime.toString("dd/MM/yyyy hh:mm:ss.zzz"))
+#else
+                dateTime.toString("hh:mm:ss.zzz"))
+#endif
+
+             .arg(num, QMetaEnum::fromType<LogController::LogLevel>().valueToKey(cLevel), contectFormated, msg);
+
+    if(cLevel == LogController::Error)
+        std::cerr << res.toStdString() << std::endl;
+    else
+        std::cout << res.toStdString() << std::endl;
+
+    if(nullptr == controller)
+        return;
+
+    QMetaObject::invokeMethod(controller, "manageMessage", Qt::QueuedConnection, Q_ARG(QString, res),
                               Q_ARG(QString, QString::fromLocal8Bit(context.category)),
                               Q_ARG(LogController::LogLevel, cLevel));
-    QMetaObject::invokeMethod(controller, "logToFile", Qt::QueuedConnection, Q_ARG(QString, msg),
+    QMetaObject::invokeMethod(controller, "logToFile", Qt::QueuedConnection, Q_ARG(QString, res),
                               Q_ARG(LogController::LogLevel, cLevel),
                               Q_ARG(QString, QString::fromLocal8Bit(context.category)));
 }
@@ -153,45 +168,24 @@ void LogController::setLogLevel(const LogLevel& currentLevel)
     emit logLevelChanged();
 }
 
-void LogController::listenObjects(const QObject* object)
+/*void LogController::listenObjects(const QObject* object)
 {
-#ifdef QT_WIDGETS_LIB
-    const auto widget= dynamic_cast<const QWidget*>(object);
-    if(widget != nullptr)
-    {
-        QList<QAction*> actions= widget->actions();
-        for(QAction* action : actions)
-        {
-            connect(action, &QAction::triggered, this, &LogController::actionActivated, Qt::QueuedConnection);
-        }
-    }
-#endif
-    Q_UNUSED(object)
-    /*if(m_signalInspection)
-    {
-        auto metaObject = object->metaObject();
+    //   const auto widget= dynamic_cast<const QWidget*>(object);
+    if(object == nullptr)
+        return;
 
-        for(int i = 0; i < metaObject->methodCount(); ++i)
-        {
-            auto meth = metaObject->method(i);
-           // qDebug() << meth.name();
-            if(meth.methodType() == QMetaMethod::Signal && meth.access() == QMetaMethod::Public)
-            {
-                connect(object,meth.name(),this,SLOT(actionActivated()),Qt::QueuedConnection);
-            }
-        }
-    }*/
-#ifdef QT_WIDGETS_LIB
-    if(widget != nullptr)
+    QList<QAction*> actions= object->actions();
+    for(QAction* action : actions)
     {
-        QObjectList children= widget->children();
-        for(QObject* obj : children)
-        {
-            listenObjects(obj);
-        }
+        connect(action, &QAction::triggered, this, &LogController::actionActivated, Qt::QueuedConnection);
     }
-#endif
-}
+
+    QObjectList children= widget->children();
+    for(QObject* obj : children)
+    {
+        listenObjects(obj);
+    }
+}*/
 
 void LogController::actionActivated()
 {
@@ -254,21 +248,18 @@ void LogController::manageMessage(QString message, const QString& category, LogC
     QMutexLocker locker(&mutex);
     Q_UNUSED(locker)
 
-    QString str("%1 - %2 - %3");
-    str= str.arg(QTime::currentTime().toString("hh:mm:ss"), typeToText(type), message);
-
     QString timestamps;
     timestamps= QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss.zzz");
 
     if(type == Hidden)
     {
-        emit showMessage(str, type);
+        emit showMessage(message, type);
         return;
     }
 
     if(type == Search || (m_currentModes & Network))
     {
-        emit sendOffMessage(str, typeToText(type), category, timestamps);
+        emit sendOffMessage(message, typeToText(type), category, timestamps);
     }
 
     if(type > m_logLevel)
@@ -277,14 +268,14 @@ void LogController::manageMessage(QString message, const QString& category, LogC
     if(m_currentModes & Console)
     {
         if(type == Error)
-            std::cerr << str.toStdString() << std::endl;
+            std::cerr << message.toStdString() << std::endl;
         else
-            std::cout << str.toStdString() << std::endl;
+            std::cout << message.toStdString() << std::endl;
     }
 
     if(m_currentModes & Gui)
     {
-        emit showMessage(str, type);
+        emit showMessage(message, type);
     }
 }
 

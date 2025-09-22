@@ -77,7 +77,7 @@ int ServerConnectionManager::countConnection() const
     {
         setState(Error);
         emit eventOccured(m_server->errorString(), LogController::Error);
-        /*if(m_tryCount < getValue(QStringLiteral("TryCount")).toInt()
+        / *if(m_tryCount < getValue(QStringLiteral("TryCount")).toInt()
            || getValue(QStringLiteral("TryCount")).toInt() == 0)
         {
             emit eventOccured(tr("Retry start server in %1s!").arg(getValue(QStringLiteral("TimeToRetry")).toInt()),

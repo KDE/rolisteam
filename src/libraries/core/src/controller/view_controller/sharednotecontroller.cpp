@@ -35,10 +35,10 @@ SharedNoteController::SharedNoteController(const QString& ownerId, const QString
     setLocalId(local);
 
     connect(this, &SharedNoteController::ownerIdChanged, m_participantModel.get(), &ParticipantModel::setOwner);
-    connect(this, &SharedNoteController::localIdChanged, this,
+    /*connect(this, &SharedNoteController::localIdChanged, this,
             [this]() {
 
-            });
+            });*/
 
     connect(this, &SharedNoteController::urlChanged, this,
             [this](const QUrl& path) { setText(utils::IOHelper::readTextFile(path.toLocalFile())); });

@@ -44,6 +44,9 @@ public:
     template <typename T>
     void sendOffChanges(MediaControllerBase* ctrl, const QString& property);
 
+    template <typename T>
+    void sendOffValue(MediaControllerBase* ctrl, const QVariant& value, const QString& property);
+
     virtual NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
 
     bool is(NetworkMessageReader* msg, NetMsg::Category, NetMsg::Action) const;
@@ -75,6 +78,20 @@ void MediaUpdaterInterface::sendOffChanges(MediaControllerBase* ctrl, const QStr
     msg.string16(property);
     auto val= ctrl->property(property.toLocal8Bit().data());
     Helper::variantToType<T>(val.value<T>(), msg);
+    msg.sendToServer();
+}
+
+template <typename T>
+void MediaUpdaterInterface::sendOffValue(MediaControllerBase* ctrl, const QVariant& value, const QString& property)
+{
+    if(nullptr == ctrl || m_updatingFromNetwork)
+        return;
+
+    NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::UpdateMediaProperty);
+    msg.uint8(static_cast<int>(ctrl->contentType()));
+    msg.string8(ctrl->uuid());
+    msg.string16(property);
+    Helper::variantToType<T>(value.value<T>(), msg);
     msg.sendToServer();
 }
 #endif // MEDIAUPDATERINTERFACE_H

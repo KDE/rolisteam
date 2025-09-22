@@ -30,6 +30,7 @@
 #include <QWidget>
 
 #include "mediacontainers/mediacontainer.h"
+//#include "mediacontainers/instantmessagingview.h"
 #include "rwidgets_global.h"
 
 class RWIDGET_EXPORT PreventClosing : public QObject
@@ -60,6 +61,7 @@ class NoteController;
 class Dice3DController;
 class InstantMessagingController;
 class MindMapController;
+class InstantMessagingView;
 /**
  * @brief The ImprovedWorkspace class
  */
@@ -125,6 +127,7 @@ private:
 private:
     QPointer<ContentController> m_ctrl;
     QPointer<Dice3DController> m_diceCtrl;
+    QPointer<InstantMessagingController> m_instantCtrl;
     std::vector<std::unique_ptr<MediaContainer>> m_mediaContainers;
     std::unique_ptr<QQmlApplicationEngine> m_engine;
     QPixmap m_backgroundPicture;
@@ -135,6 +138,7 @@ private:
     QPointer<QMdiSubWindow> m_instantMessageView;
     bool m_visible= false;
     std::unique_ptr<PreventClosing> m_prevent;
+    QPointer<InstantMessagingView> m_instantView;
 };
 
 #endif

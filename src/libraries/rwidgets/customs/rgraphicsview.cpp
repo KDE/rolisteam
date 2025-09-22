@@ -190,11 +190,12 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
     auto selectedItems= selection();
     QList<vmap::VisualItemController*> underMouseCtrls;
     QList<ItemToControllerInfo> visualItemUnderMouse;
+
+    auto itemUnderMouse= items(m_menuPoint);
+    visualItemUnderMouse= extractVisualItem(itemUnderMouse);
+
     if(selectedItems.isEmpty())
     {
-        auto itemUnderMouse= items(m_menuPoint);
-        visualItemUnderMouse= extractVisualItem(itemUnderMouse);
-
         if(!visualItemUnderMouse.isEmpty())
         {
             selectedItems.append(visualItemUnderMouse.first());
@@ -202,8 +203,10 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
         std::transform(std::begin(visualItemUnderMouse), std::end(visualItemUnderMouse),
                        std::back_inserter(underMouseCtrls), [](const ItemToControllerInfo& item) { return item.ctrl; });
     }
+
     QMenu menu;
     auto parentWid= dynamic_cast<MediaContainer*>(parentWidget());
+    bool hasItemUnderMouse= !visualItemUnderMouse.isEmpty();
     // Empty list
 
     QAction* resetRotationAct= nullptr;
@@ -245,6 +248,7 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
         menu.addAction(m_dupplicate);
 
         auto overlapping= menu.addMenu(tr("Overlapping"));
+        overlapping->setEnabled(hasItemUnderMouse);
         overlapping->addAction(m_backOrderAction);
         overlapping->addAction(m_lowerAction);
         overlapping->addAction(m_raiseAction);
@@ -269,6 +273,7 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
         QMenu* harmonizeMenu= menu.addMenu(tr("Normalize Size"));
         harmonizeMenu->addAction(m_normalizeSizeAverage);
         harmonizeMenu->addAction(m_normalizeSizeUnderMouse);
+        m_normalizeSizeUnderMouse->setEnabled(hasItemUnderMouse);
         harmonizeMenu->addAction(m_normalizeSizeBigger);
         harmonizeMenu->addAction(m_normalizeSizeSmaller);
 
@@ -423,7 +428,7 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
             else if(order == VectorialMapController::StackOrder::LOWER)
             {
                 QList<ItemToControllerInfo> res;
-                for(auto i : visualItem)
+                for(auto i : std::as_const(visualItem))
                 {
                     if(i.item == first.item)
                         continue;
@@ -525,6 +530,7 @@ void RGraphicsView::createAction()
     m_zoomOut->setShortcut(QKeySequence("-"));
 
     m_removeSelection= new QAction(tr("Remove"), this);
+    m_removeSelection->setToolTip(tr("Delete all selected items"));
     m_removeSelection->setShortcut(QKeySequence(QKeySequence::Delete));
     addAction(m_removeSelection);
     connect(m_removeSelection, &QAction::triggered, this,

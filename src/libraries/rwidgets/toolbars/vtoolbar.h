@@ -46,9 +46,22 @@ class HiddingButton : public QToolButton
 {
     Q_OBJECT
 public:
-    HiddingButton(QWidget* w);
+    HiddingButton(QWidget* w= nullptr);
 
     void addAction(QAction* act);
+};
+
+class ClickableLabel : public QLabel
+{
+    Q_OBJECT
+public:
+    ClickableLabel(QWidget* parent= nullptr);
+
+protected:
+    void mousePressEvent(QMouseEvent* ev) override;
+
+signals:
+    void clicked(const QPoint& pos);
 };
 
 /**
@@ -62,6 +75,9 @@ public:
     ToolBox(VectorialMapController* ctrl, QWidget* parent= nullptr);
     ~ToolBox();
     void setImage(const QPixmap& img);
+
+signals:
+    void clickedOn(const QPointF& f);
 
 private slots:
     void setupUi();
@@ -83,7 +99,7 @@ private:
 
     std::unique_ptr<RealSlider> m_zoomSlider;
     std::unique_ptr<QDoubleSpinBox> m_zoomSpinBox;
-    std::unique_ptr<QLabel> m_smallScene;
+    std::unique_ptr<ClickableLabel> m_smallScene;
 
     // paiting or fow edition
     QAction* m_paintingModeAct= nullptr;

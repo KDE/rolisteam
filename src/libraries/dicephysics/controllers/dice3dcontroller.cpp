@@ -67,6 +67,7 @@ Dice3DController::Dice3DController(QObject* parent) : QObject{parent}, m_model(n
     connect(this, &Dice3DController::hideTimeChanged, this, restart);
     connect(this, &Dice3DController::dicePartChanged, this, restart);
     connect(this, &Dice3DController::mutedChanged, this, restart);
+    connect(this, &Dice3DController::normalDialogModeChanged, this, restart);
 
     connect(this, &Dice3DController::displayedChanged, this,
             [this, restart]()
@@ -406,4 +407,18 @@ void Dice3DController::setHideTime(int newHideTime)
 int Dice3DController::count() const
 {
     return m_model->totalDiceCount();
+}
+
+bool Dice3DController::normalDialogMode() const
+{
+    return m_normalDialogMode;
+}
+
+void Dice3DController::setNormalDialogMode(bool newNormalDialogMode)
+{
+    if(m_normalDialogMode == newNormalDialogMode)
+        return;
+    m_normalDialogMode= newNormalDialogMode;
+    emit normalDialogModeChanged();
+
 }

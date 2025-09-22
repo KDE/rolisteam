@@ -143,7 +143,7 @@ Drawer {
 
                     ToolButton {
                         icon.name: "list-add"
-                        icon.color: "transparent"
+                        //icon.color: "transparent"
                         onClicked:{
                             Dice3DCtrl.addDice(model.type)
                         }
@@ -201,6 +201,12 @@ Drawer {
             }
 
             ColumnLayout {
+                Switch {
+                    text: qsTr("Show 3D dice in Dialog")
+                    checked: Dice3DCtrl.normalDialogMode
+                    onClicked: Dice3DCtrl.normalDialogMode = !Dice3DCtrl.normalDialogMode
+                }
+
                 Label {
                     text: qsTr("Hide 3D Dice after: %1s").arg(hideTime.value)
                     ToolTip.text: qsTr("3D Dice panel disappear after a time.")

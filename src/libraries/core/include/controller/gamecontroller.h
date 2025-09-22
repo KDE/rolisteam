@@ -124,9 +124,8 @@ signals:
     void remoteVersionChanged();
     void tipOfDayChanged();
     void closingApp();
-    void campaignChanged();
     void dataLoaded(const QStringList missingFiles, const QStringList unmanagedFiles);
-
+    void campaignChanged();
     void dicePhysicControllerChanged();
     void themeChanged(const QString& theme);
 

@@ -87,6 +87,9 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
 
     connect(m_sessionModel.get(), &QFileSystemModel::rootPathChanged, this, &ContentController::mediaRootChanged);
 
+    connect(m_campaign, &campaign::CampaignManager::campaignChanged, this, &ContentController::contentChanged);
+    connect(m_contentModel.get(), &ContentModel::mediaModified, this, &ContentController::contentChanged);
+
     ReceiveEvent::registerNetworkReceiver(NetMsg::MediaCategory, this);
 
     auto fModel= new FilteredContentModel(Core::ContentType::VECTORIALMAP);
@@ -145,7 +148,6 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
             [this](const QString& uuid, const QString& ctrlId, const QString& characterId)
             {
                 Q_UNUSED(characterId)
-                qDebug() << "contentController stop Sharing" << uuid;
                 auto media= m_contentModel->media(ctrlId);
                 auto sheetCtrl= dynamic_cast<CharacterSheetController*>(media);
 
@@ -159,12 +161,10 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
 
                 if(model->getCharacterSheetCount() == 1 && nullptr != model->getCharacterSheetById(uuid))
                 {
-                    qDebug() << "updater: sheet count == 1";
                     m_contentModel->removeMedia(ctrlId);
                 }
                 else if(model->getCharacterSheetCount() > 1)
                 {
-                    qDebug() << "updater: sheet count > 1";
                     model->removeCharacterSheet(model->getCharacterSheetById(uuid));
                 }
             });

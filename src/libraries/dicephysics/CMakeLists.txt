@@ -19,7 +19,7 @@ add_library(${PROJECT_NAME}
         controllers/dicecontroller.cpp
         ${headers}
 )
-target_link_libraries(${PROJECT_NAME} PUBLIC
+target_link_libraries(${PROJECT_NAME} PRIVATE
     Qt::Core
     Qt::Gui
     Qt::Quick

@@ -172,7 +172,7 @@ void NetworkController::startServer()
         m_server.reset(new RServer(m_serverParameters, true));
         m_serverThread.reset(new QThread);
     }
-    m_server->moveToThread(thread());
+    // m_server->moveToThread(thread());
     m_server->setPort(port());
 
     connect(m_serverThread.get(), &QThread::started, m_server.get(), &RServer::listen);

@@ -448,11 +448,6 @@ target_include_directories(core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 
-message(${CMAKE_CURRENT_BINARY_DIR})
-message(${CMAKE_CURRENT_BINARY_DIR})
-message(${CMAKE_CURRENT_BINARY_DIR})
-message(${CMAKE_CURRENT_BINARY_DIR})
-
 if("${CAMKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set_source_files_properties("${CMAKE_CURRENT_BINARY_DIR}/core_autogen/mocs_compilation.cpp" PROPERTIES COMPILE_FLAGS "-Wno-undefined-reinterpret-cast -Wno-useless-cast")
     set_source_files_properties("${CMAKE_CURRENT_BINARY_DIR}/network_autogen/mocs_compilation.cpp" PROPERTIES COMPILE_FLAGS "-Wno-undefined-reinterpret-cast -Wno-useless-cast")

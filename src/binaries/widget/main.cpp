@@ -184,36 +184,25 @@ int main(int argc, char* argv[])
     states.connectToState(playing, QScxmlStateMachine::onEntry(
                                        [&connectionDialog, &mainWindow]()
                                        {
-                                           qDebug() << "on playing";
                                            connectionDialog.accept();
                                            mainWindow.makeVisible(true);
                                            connectionDialog.setVisible(false);
                                        }));
-    states.connectToState(exitState, QScxmlStateMachine::onEntry(
-                                         [/*&states,*/ &app]()
-                                         {
-                                             qDebug() << "on exit";
-                                             app.quit();
-                                         }));
+    states.connectToState(exitState, QScxmlStateMachine::onEntry([/*&states,*/ &app]() { app.quit(); }));
 
     QObject::connect(&app, &RolisteamApplication::quitApp, &states,
                      [&states, &connectionDialog, &mainWindow /*, &app*/]()
                      {
-                         qDebug() << "on quit app event";
                          states.stop();
-                         qDebug() << "stops on quit app event";
                          states.submitEvent(quit);
                          mainWindow.makeVisible(false);
                          connectionDialog.setVisible(false);
-                         qDebug() << "end of on quit app event";
-
                          // QMetaObject::invokeMethod(&app, &RolisteamApplication::quit, Qt::QueuedConnection);
                      });
 
     QObject::connect(&app, &RolisteamApplication::connectStatusChanged, &states,
                      [&states](bool b)
                      {
-                         qDebug() << "on status changed" << b;
                          if(b)
                              states.submitEvent(connected);
                          else

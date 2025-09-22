@@ -52,6 +52,7 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
     : QMdiArea(parent)
     , m_ctrl(ctrl)
     , m_diceCtrl(diceCtrl)
+    , m_instantCtrl(instantCtrl)
     , m_engine(new QQmlApplicationEngine)
     , m_variableSizeBackground(size())
     , m_toolbar(toolbar)
@@ -68,19 +69,34 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
     connect(m_ctrl, &ContentController::mediaControllerCreated, this, &Workspace::addMedia);
     connect(this, &Workspace::subWindowActivated, this, &Workspace::updateActiveMediaContainer);
 
-    if(instantCtrl)
+    if(m_instantCtrl)
     {
-        m_instantMessageView= addSubWindow(new InstantMessagingView(instantCtrl));
+        m_instantView = new InstantMessagingView(m_instantCtrl);
+        m_instantMessageView= addSubWindow(m_instantView);
         m_instantMessageView->setGeometry(0, 0, 400, 600);
         m_instantMessageView->setAttribute(Qt::WA_DeleteOnClose, false);
         m_instantMessageView->setWindowIcon(QIcon::fromTheme("chaticon"));
-        connect(instantCtrl, &InstantMessagingController::visibleChanged, m_instantMessageView,
+        connect(m_instantCtrl, &InstantMessagingController::visibleChanged, m_instantMessageView,
                 &QMdiSubWindow::setVisible);
-        m_instantMessageView->setVisible(instantCtrl->visible());
+        m_instantMessageView->setVisible(m_instantCtrl->visible());
 
         m_prevent.reset(new PreventClosing(m_instantMessageView));
-        connect(m_prevent.get(), &PreventClosing::visibilityObjectChanged, instantCtrl,
+        connect(m_prevent.get(), &PreventClosing::visibilityObjectChanged, m_instantCtrl,
                 &InstantMessagingController::setVisible);
+
+        connect(m_instantCtrl, &InstantMessagingController::detachChanged, this, [this](){
+            if(m_instantCtrl->detached())
+            {
+                m_instantMessageView->setParent(nullptr);
+                m_instantMessageView->setVisible(true);
+            }
+            else
+            {
+                addSubWindow(m_instantMessageView);
+                m_instantMessageView->setVisible(true);
+            }
+        }, Qt::QueuedConnection);
+
     }
     if(m_ctrl)
         m_backgroundPicture= QPixmap(m_ctrl->workspaceFilename());
@@ -197,6 +213,8 @@ void Workspace::addDicePanel()
 
 void Workspace::updateDicePanelGeometry()
 {
+    if(m_diceCtrl->normalDialogMode())
+        return;
     m_diceCtrl->setPosition(mapToGlobal(QPointF(0, 0)).toPoint());
     m_diceCtrl->setSize(geometry().size());
 }

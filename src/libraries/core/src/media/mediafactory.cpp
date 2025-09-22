@@ -247,6 +247,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
 {
     auto name= map.value(Core::keys::KEY_NAME).toString();
     auto url= map.value(Core::keys::KEY_URL).toUrl();
+    auto dataArray= map.value(Core::keys::KEY_DATA).toByteArray();
 
     auto ownerid= map.value(Core::keys::KEY_OWNERID).toString();
     auto serializedData= map.value(Core::keys::KEY_SERIALIZED).toByteArray();
@@ -255,6 +256,9 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
 
     if(map.contains("indexStyle"))
         mindmapCtrl->setDefaultStyleIndex(map.value("indexStyle").toBool());
+
+    if(!dataArray.isEmpty())
+        IOHelper::readMindmapController(mindmapCtrl, dataArray);
 
     QHash<QString, mindmap::PositionedItem*> data;
     QHash<QString, QString> parentData;
@@ -383,10 +387,13 @@ SharedNoteController* sharedNote(const QString& uuid, const QHash<QString, QVari
     auto ownerId= params.value(Core::keys::KEY_OWNERID).toString();
     auto b= params.value(Core::keys::KEY_MARKDOWN, false).toBool();
     auto url= params.value(Core::keys::KEY_URL).toUrl();
+    auto text= params.value(Core::keys::KEY_TEXT).toString();
+    auto name= params.value(Core::jsonctrl::base::JSON_NAME).toString();
     auto serializedData= params.value(Core::keys::KEY_SERIALIZED).toByteArray();
 
     auto noteCtrl= new SharedNoteController(ownerId, localId, uuid);
-
+    noteCtrl->setText(text);
+    noteCtrl->setName(name);
     if(!url.isEmpty())
     {
         noteCtrl->setUrl(url);

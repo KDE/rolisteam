@@ -163,8 +163,7 @@ MainWindow::MainWindow(QWidget* parent)
     connect(m_mainCtrl->characterCtrl()->characters(), &CharacterList::dataChanged, this,
             [this]() { ui->m_characterSelectBox->setCurrentIndex(0); });
 
-    connect(ui->m_characterSelectBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this,
-            [this]()
+    connect(ui->m_characterSelectBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
             { m_mainCtrl->generatorCtrl()->setUuidCharacter(ui->m_characterSelectBox->currentData().toString()); });
 
     ui->m_characterSelectBox->setCurrentIndex(0);
@@ -191,7 +190,7 @@ MainWindow::MainWindow(QWidget* parent)
     //////////////////////////////////////
     /// TODO better management of scene options
     connect(ui->m_showItemIcon, &QAction::triggered,
-            [=](bool triggered)
+            [this](bool triggered)
             {
                 CanvasField::setShowImageField(triggered);
                 QList<QRectF> list;
@@ -337,8 +336,7 @@ MainWindow::MainWindow(QWidget* parent)
     connect(ui->actionSave_As, &QAction::triggered, this, &MainWindow::saveAs);
     connect(ui->m_openAct, &QAction::triggered, this, &MainWindow::open);
     connect(
-        ui->m_checkValidityAct, &QAction::triggered, this,
-        [this]()
+        ui->m_checkValidityAct, &QAction::triggered, this, [this]()
         { m_mainCtrl->characterCtrl()->checkCharacter(m_mainCtrl->generatorCtrl()->fieldModel()->getRootSection()); });
     connect(ui->m_addPage, &QPushButton::clicked, this,
             [this]() { m_mainCtrl->processCommand(new AddPageCommand(m_mainCtrl->editCtrl())); });

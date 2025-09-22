@@ -28,7 +28,7 @@ SharedNoteContainer::SharedNoteContainer(SharedNoteController* ctrl, QWidget* pa
 {
     if(!m_sharedCtrl)
         return;
-
+    setObjectName("SharedNoteEditor");
     m_edit->setId(m_sharedCtrl->uuid());
 #ifdef Q_OS_MAC
     m_edit->menuBar()->setNativeMenuBar(false);

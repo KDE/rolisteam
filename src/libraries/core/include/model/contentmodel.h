@@ -83,6 +83,7 @@ public:
 
 signals:
     void mediaControllerAdded(MediaControllerBase* newCtrl);
+    void mediaModified();
 
 private:
     std::vector<std::unique_ptr<MediaControllerBase>> m_medias;

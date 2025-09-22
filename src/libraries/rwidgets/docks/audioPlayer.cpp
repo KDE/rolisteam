@@ -68,7 +68,7 @@ AudioPlayer::~AudioPlayer() {}
 
 void AudioPlayer::updateState()
 {
-    for(auto p : m_players)
+    for(auto p : std::as_const(m_players))
     {
         p->updateUi();
     }
@@ -94,6 +94,7 @@ void AudioPlayer::setupUi()
         for(int i= 0; i < 3; ++i)
         {
             auto* playerWidget= new PlayerWidget(array[i], this);
+            playerWidget->setObjectName(QStringLiteral("AudioPlayer_%1").arg(i));
             connect(playerWidget, &PlayerWidget::changePlayerDirectory, this, &AudioPlayer::changePlayerDirectory);
 
             m_players.append(playerWidget);

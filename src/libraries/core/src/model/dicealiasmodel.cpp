@@ -26,6 +26,12 @@
 
 #include "diceparser/dicealias.h"
 
+bool operator==(const DiceAlias& a, const DiceAlias& b)
+{
+    return a.pattern() == b.pattern() && a.command() == b.command() && a.isReplace() == b.isReplace()
+           && a.comment() == b.comment();
+}
+
 DiceAliasModel::DiceAliasModel(QObject* parent) : QAbstractListModel(parent)
 {
     m_header << tr("Pattern") << tr("Value") << tr("Regular Expression") << tr("Disable") << tr("Comments");
@@ -143,6 +149,11 @@ QString DiceAliasModel::convert(const QString& str)
 
 void DiceAliasModel::appendAlias(DiceAlias&& alias)
 {
+    auto iter= std::find_if(std::begin(m_diceAliasList), std::end(m_diceAliasList),
+                            [alias](const std::unique_ptr<DiceAlias>& pAlias) { return alias == *pAlias.get(); });
+
+    if(iter != std::end(m_diceAliasList))
+        return;
     beginInsertRows(QModelIndex(), m_diceAliasList.size(), m_diceAliasList.size());
     m_diceAliasList.push_back(std::make_unique<DiceAlias>(alias));
     endInsertRows();

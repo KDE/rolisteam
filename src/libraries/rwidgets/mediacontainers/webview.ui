@@ -114,16 +114,26 @@
    </item>
   </layout>
   <action name="m_previousAct">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::GoPrevious"/>
+   </property>
    <property name="text">
     <string>Previous</string>
    </property>
   </action>
   <action name="m_nextAct">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::GoNext"/>
+   </property>
    <property name="text">
     <string>Next</string>
    </property>
   </action>
   <action name="m_reloadAct">
+   <property name="icon">
+    <iconset resource="../../../../rolisteam.qrc">
+     <normaloff>:/resources/rolistheme/action-rotate.svg</normaloff>:/resources/rolistheme/action-rotate.svg</iconset>
+   </property>
    <property name="text">
     <string>Reload</string>
    </property>
@@ -133,8 +143,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../../rolisteam.qrc">
-     <normaloff>:/resources/rolistheme/mask.png</normaloff>:/resources/rolistheme/mask.png</iconset>
+    <iconset resource="../../../../rolisteam.qrc">
+     <normaloff>:/resources/rolistheme/mask.svg</normaloff>:/resources/rolistheme/mask.svg</iconset>
    </property>
    <property name="text">
     <string>Hide Address</string>
@@ -145,7 +155,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../../rolisteam.qrc">
+    <iconset theme="document-share" resource="../../../../rolisteam.qrc">
      <normaloff>:/resources/rolistheme/document-share.svg</normaloff>:/resources/rolistheme/document-share.svg</iconset>
    </property>
    <property name="text">
@@ -169,7 +179,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../rolisteam.qrc"/>
+  <include location="../../../../rolisteam.qrc"/>
  </resources>
  <connections/>
 </ui>

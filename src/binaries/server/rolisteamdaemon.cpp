@@ -58,10 +58,10 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
 
     auto listIpBan= ipBan.split(",", Qt::SkipEmptyParts);
 
-    if(deepInspectionLog)
+    /*if(deepInspectionLog)
     {
         m_logController->listenObjects(m_server.get());
-    }
+    }*/
     m_logController->setLogLevel(static_cast<LogController::LogLevel>(logLevel));
 
     LogController::StorageModes modes= LogController::Console;
@@ -101,8 +101,7 @@ void RolisteamDaemon::start()
     connect(
         m_server.get(), &RServer::eventOccured, m_logController,
         [this](const QString& msg, LogController::LogLevel type)
-        { m_logController->manageMessage(msg, QStringLiteral("Server"), type); },
-        Qt::QueuedConnection);
+        { m_logController->manageMessage(msg, QStringLiteral("Server"), type); }, Qt::QueuedConnection);
     connect(m_server.get(), &RServer::completed, &m_thread, &QThread::quit);
     connect(m_server.get(), &RServer::stateChanged, this,
             [this]()

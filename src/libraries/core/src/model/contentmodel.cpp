@@ -101,6 +101,14 @@ bool ContentModel::appendMedia(MediaControllerBase* media)
     m_medias.push_back(std::move(ctrl));
     endInsertRows();
 
+    connect(media, &MediaControllerBase::modifiedChanged, this,
+            [this](bool b)
+            {
+                if(!b)
+                    return;
+                emit mediaModified();
+            });
+
     emit mediaControllerAdded(media);
     return true;
 }

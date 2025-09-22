@@ -28,6 +28,7 @@
 #include "network/networkmessagewriter.h"
 #include "worker/convertionhelper.h"
 #include "worker/messagehelper.h"
+#include "common/logcategory.h"
 
 SharedNoteControllerUpdater::SharedNoteControllerUpdater(FilteredContentModel* model,
                                                          campaign::CampaignManager* campaign, QObject* parent)
@@ -78,7 +79,7 @@ void SharedNoteControllerUpdater::addSharedNoteController(SharedNoteController* 
             });
 
     connect(noteCtrl, &SharedNoteController::textUpdateChanged, this,
-            [this, noteCtrl]() { sendOffChanges<QString>(noteCtrl, QStringLiteral("updateCmd")); });
+            [this, noteCtrl](const QString& text) { sendOffValue<QString>(noteCtrl, text , QStringLiteral("updateCmd")); });
     connect(noteCtrl, &SharedNoteController::userCanWrite, this,
             [this, noteCtrl](QString id, bool write) { sendOffPermissionChanged(noteCtrl, write, id); });
 
@@ -145,6 +146,10 @@ void SharedNoteControllerUpdater::updateProperty(NetworkMessageReader* msg, Shar
 
     m_updatingFromNetwork= true;
     auto feedback= ctrl->setProperty(property.toLocal8Bit().data(), var);
-    Q_ASSERT(feedback);
+    //Q_ASSERT(feedback);
+    if(!feedback)
+    {
+        qCWarning(ShredNoteCat) << property.toLocal8Bit().data() << var;
+    }
     m_updatingFromNetwork= false;
 }

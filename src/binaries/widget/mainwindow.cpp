@@ -121,18 +121,25 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     m_systemTray->setIcon(QIcon(":/resources/rolisteam/logo/500-symbole.png"));
     m_systemTray->show();
 
-    #ifdef QT_DEBUG
-    connect(m_webSocketServer.get(), &WebSocketServer::showWindow, this , [this]{
-        setVisible(true);
-        raise();
-        activateWindow();
-    });
-    connect(m_webSocketServer.get(), &WebSocketServer::hideWindow, this , [this]{
-        //activateWindow();
-        lower();
-        setVisible(false);
-    });
-    #endif
+#ifdef QT_DEBUG
+    connect(m_webSocketServer.get(), &WebSocketServer::showWindow, this,
+            [this]
+            {
+                // setVisible(true);
+                showMaximized();
+                raise();
+                activateWindow();
+                // setWindowFlag(Qt::WindowStaysOnTopHint, true);
+            });
+    connect(m_webSocketServer.get(), &WebSocketServer::hideWindow, this,
+            [this]
+            {
+                // activateWindow();
+                // setWindowFlag(Qt::WindowStaysOnTopHint, false);
+                lower();
+                setVisible(false);
+            });
+#endif
 
     // ALLOCATIONS
     m_campaignDock.reset(new campaign::CampaignDock(m_gameController->campaignManager()->editor(),
@@ -254,12 +261,22 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     };
     m_preferences->registerLambda(QStringLiteral("VMAP::highlightColor"), func2);
 
-    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this,
-            [this](bool b)
+    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this, [this](bool b)
             { m_ui->m_toolBar->setToolButtonStyle(b ? Qt::ToolButtonTextBesideIcon : Qt::ToolButtonIconOnly); });
 
-    connect(m_gameController->contentController(), &ContentController::sessionChanged, this,
-            &MainWindow::setWindowModified);
+    auto setModified= [this] { setWindowModified(true); };
+    auto setUnModified= [this] { setWindowModified(false); };
+
+    connect(m_gameController->contentController(), &ContentController::contentChanged, this, setModified);
+    connect(m_gameController->contentController(), &ContentController::mediaControllerCreated, this, setModified);
+    connect(m_gameController, &GameController::dicePhysicControllerChanged, this, setModified);
+    connect(m_gameController, &GameController::themeChanged, this, setModified);
+    connect(m_gameController->campaignManager(), &campaign::CampaignManager::campaignChanged, this, setModified);
+    connect(m_gameController->campaignManager(), &campaign::CampaignManager::fileImported, this, setModified);
+    connect(m_gameController->campaignManager(), &campaign::CampaignManager::antagonistCtrlChanged, this, setModified);
+
+    connect(m_gameController->campaignManager(), &campaign::CampaignManager::campaignSaved, this, setUnModified);
+
     connect(m_gameController->contentController(), &ContentController::canPasteChanged, m_ui->m_pasteAct,
             &QAction::setEnabled);
 
@@ -541,6 +558,10 @@ void MainWindow::linkActionToMenu()
         }
         else
         {
+            auto name= QInputDialog::getText(this, tr("Define document's name"), tr("Name:"));
+            if(name.isEmpty())
+                return;
+            params.insert({Core::keys::KEY_NAME, name});
             params.insert({Core::keys::KEY_TYPE, act->data()});
         }
 
@@ -825,13 +846,20 @@ int MainWindow::mayBeSaved()
 
     QString msg= m_preferences->value("Application_Name", "rolisteam").toString();
     auto isGM= m_gameController->localIsGM();
-    msgBox.setText(isGM ? tr("Do you want to save the campaign?") : tr("Do you really want to quit Rolisteam?"));
+    auto now= QDateTime::currentDateTime();
+    auto lastSave= m_gameController->campaignManager()->lastSave();
+
+    msgBox.setText(isGM ? tr("Do you want to save the campaign?\nLast save: %1 min(s) ago")
+                              .arg(static_cast<int>(lastSave.secsTo(now) / 60)) :
+                          tr("Do you really want to quit Rolisteam?"));
     msgBox.setIcon(QMessageBox::Question);
     msgBox.addButton(isGM ? QMessageBox::Save : QMessageBox::Yes);
     if(isGM)
         msgBox.addButton(QMessageBox::Discard);
     msgBox.addButton(isGM ? QMessageBox::Cancel : QMessageBox::No);
     msgBox.setWindowTitle(tr("Quit %1 ").arg(msg));
+
+    msgBox.setDefaultButton(isGM ? QMessageBox::Save : QMessageBox::Yes);
 
     m_ui->m_showDice3D->setChecked(false);
 
@@ -1025,10 +1053,9 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
                                           << "user",
                             tr("Define the <username>"), "username");
     QCommandLineOption portws(QStringList() << "w"
-                                          << "websocket",
-                            tr("Define the <websocketport> useful for auto UI testing"), "websocket");
-    QCommandLineOption websecurity(QStringList() << "disable-web-security",
-                                   tr("Remove limit to PDF file size"));
+                                            << "websocket",
+                              tr("Define the <websocketport> useful for auto UI testing"), "websocket");
+    QCommandLineOption websecurity(QStringList() << "disable-web-security", tr("Remove limit to PDF file size"));
     QCommandLineOption translation(QStringList() << "t"
                                                  << "translation",
                                    QObject::tr("path to the translation file: <translationfile>"), "translationfile");
@@ -1065,9 +1092,9 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
     if(parser.isSet(portws))
     {
         portwsStr= parser.value(portws);
-        #ifdef QT_DEBUG
+#ifdef QT_DEBUG
         m_webSocketServer->setPortws(portwsStr.toInt());
-        #endif
+#endif
     }
     if(hasPort)
     {
@@ -1122,9 +1149,9 @@ void MainWindow::cleanUpData()
 
 void MainWindow::postConnection()
 {
-    #ifdef QT_DEBUG
+#ifdef QT_DEBUG
     m_webSocketServer->startConnection();
-    #endif
+#endif
     m_ui->m_changeProfileAct->setEnabled(false);
     m_ui->m_disconnectAction->setEnabled(true);
 

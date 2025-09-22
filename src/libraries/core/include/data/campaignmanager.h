@@ -20,6 +20,7 @@
 #ifndef CAMPAIGNMANAGER_H
 #define CAMPAIGNMANAGER_H
 
+#include <QDateTime>
 #include <QObject>
 #include <QString>
 #include <memory>
@@ -42,6 +43,7 @@ class CORE_EXPORT CampaignManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(campaign::Campaign* campaign READ campaign NOTIFY campaignChanged)
+    Q_PROPERTY(QDateTime lastSave READ lastSave NOTIFY lastSaveChanged FINAL)
 public:
     explicit CampaignManager(DiceRoller* diceparser, QObject* parent= nullptr);
     virtual ~CampaignManager();
@@ -66,6 +68,8 @@ public:
 
     bool performAction(const QString& path, Core::CampaignAction action);
 
+    QDateTime lastSave() const;
+
 public slots:
     void shareModels();
     void setLocalIsGM(bool b);
@@ -78,11 +82,18 @@ signals:
     void errorOccured(const QString& error);
     void createBlankFile(const QString& path, Core::MediaType mediaType);
     void autoSavedNeeded();
+    void campaignSaved();
     void antagonistCtrlChanged();
+
+    void lastSaveChanged();
+
+private:
+    void setLastSave();
 
 private:
     std::unique_ptr<CampaignEditor> m_editor;
     std::unique_ptr<CampaignUpdater> m_campaignUpdater;
+    QDateTime m_lastSave{QDateTime::currentDateTime()};
 };
 } // namespace campaign
 

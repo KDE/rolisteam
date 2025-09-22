@@ -125,10 +125,7 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
             pen.setWidth(30);
             painter.setPen(pen);
 
-            /*painter.drawRect(QRectF{visible.x() * ratioX, visible.y() * ratioY, visible.width() * ratioX,
-                                    visible.height() * ratioY});*/
             visible= visible.translated(origin);
-            // qDebug() << "visible:" << visible << "viewport" << viewPort << "scene:" << sceneRect << origin;
             painter.drawRect(QRectF{visible.x(), visible.y(), visible.width(), visible.height()});
 
             painter.restore();
@@ -136,6 +133,13 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
 
         m_toolbox->setImage(map.scaledToWidth(w));
     };
+
+    connect(m_toolbox.get(), &ToolBox::clickedOn, this,
+            [this](const QPointF& p)
+            {
+                auto r= m_vmap->sceneRect();
+                m_graphicView->centerOn(QPointF{p.x() * r.width(), p.y() * r.height()});
+            });
 
     // connect(m_vmap.get(), &VMap::changed, this, updateSmallImage);
     connect(&m_timer, &QTimer::timeout, this, updateSmallImage);

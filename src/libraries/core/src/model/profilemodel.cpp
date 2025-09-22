@@ -103,14 +103,12 @@ void ProfileModel::appendProfile(ConnectionProfile* profile)
 
 void ProfileModel::checkProfile(ConnectionProfile* prof)
 {
-    qDebug() << "connect Profile " << prof;
     if(prof == nullptr)
         return;
 
     connect(prof, &ConnectionProfile::gmChanged, this,
             [prof, this]()
             {
-                qDebug() << "Update gm changed" << prof->isGM();
                 if(!prof->isGM() && (prof->characterCount() == 0))
                 {
                     connection::CharacterData data({QUuid::createUuid().toString(), QObject::tr("Unknown Character"),
@@ -119,19 +117,14 @@ void ProfileModel::checkProfile(ConnectionProfile* prof)
                 }
             });
 
-    auto updateCharacters= [prof]()
-    {
-        qDebug() << "Update updateCharacters" << helper::utils::hasValidCharacter(prof->characters(), prof->isGM());
-        prof->setCharactersValid(helper::utils::hasValidCharacter(prof->characters(), prof->isGM()));
-    };
+    auto updateCharacters
+        = [prof]() { prof->setCharactersValid(helper::utils::hasValidCharacter(prof->characters(), prof->isGM())); };
     connect(prof, &ConnectionProfile::characterCountChanged, this, updateCharacters);
     connect(prof, &ConnectionProfile::characterChanged, this, updateCharacters);
     connect(prof, &ConnectionProfile::gmChanged, this, updateCharacters);
 
     auto updatePlayerInfo= [prof]()
     {
-        qDebug() << "Update playerInfos" << prof->playerColor().isValid() << "name" << prof->playerName().isEmpty()
-                 << "avatar" << helper::utils::isSquareImage(prof->playerAvatar());
         prof->setPlayerInfoValid(prof->playerColor().isValid() && !prof->playerName().isEmpty()
                                  && helper::utils::isSquareImage(prof->playerAvatar()));
     };
@@ -141,8 +134,6 @@ void ProfileModel::checkProfile(ConnectionProfile* prof)
 
     auto updateCampaign= [prof]()
     {
-        qDebug() << "Update Campaign path: gm:" << prof->isGM()
-                 << campaign::FileSerializer::isValidCampaignDirectory(prof->campaignPath());
         prof->setCampaignInfoValid(
             prof->isGM() ? campaign::FileSerializer::isValidCampaignDirectory(prof->campaignPath()) : true);
     };

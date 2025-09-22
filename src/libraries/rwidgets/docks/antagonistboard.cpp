@@ -134,7 +134,7 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                 character->setHealthPointsCurrent(ui->m_currentLife->value());
                 character->setHealthPointsMax(ui->m_maxLife->value());
                 character->setHealthPointsMin(ui->m_lifeMin->value());
-                character->setAvatar(IOHelper::pixmapToData(ui->m_avatarDisplay->pixmap()));
+                m_ctrl->changeImage(character->uuid(), IOHelper::pixmapToData(ui->m_avatarDisplay->pixmap()));
 
                 m_ctrl->saveToken();
                 m_ctrl->setCharacter(nullptr);
@@ -306,7 +306,7 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
             [this]() { m_ctrl->appendData(campaign::ModelType::Model_Action); });
     connect(ui->m_addPropertyAct, &QAction::triggered, this,
             [this]() { m_ctrl->appendData(campaign::ModelType::Model_Properties); });
-    connect(ui->m_addActionAct, &QAction::triggered, this,
+    connect(ui->m_addShapeAct, &QAction::triggered, this,
             [this]()
             {
                 m_ctrl->appendData(campaign::ModelType::Model_Shape);
@@ -364,6 +364,9 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
     connect(ui->m_shapeList, &QTableView::doubleClicked, this,
             [this](const QModelIndex& index)
             {
+                if(index.column() <= 0)
+                    return;
+
                 auto path= index.data().toString();
                 auto dir= QDir::homePath();
 
@@ -379,7 +382,8 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                     return;
 
                 auto data= ctrl.finalImageData();
-                // m_shapeModel->setData(index, data);
+                auto model= m_ctrl->shapeModel();
+                model->setData(index, IOHelper::dataToPixmap(data).toImage());
             });
 
     connect(ui->m_sizeEdit, QOverload<int>::of(&QSpinBox::valueChanged), this,
@@ -529,6 +533,9 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
     connect(ui->m_searchLine, &QLineEdit::textChanged, this,
             [this]() { m_ctrl->setSearchText(ui->m_searchLine->text()); });
 
+    ui->page_3->installEventFilter(this);
+    ui->m_searchLine->setFocus();
+
 #ifndef Q_OS_MAC
     ui->m_actionList->setAlternatingRowColors(true);
     ui->m_shapeList->setAlternatingRowColors(true);
@@ -606,7 +613,15 @@ bool AntagonistBoard::eventFilter(QObject* obj, QEvent* event)
             }
         }*/
     }
-
+    if(obj == ui->page_3)
+    {
+        QSet<QEvent::Type> forbidden{QEvent::WindowActivate, QEvent::FocusIn, QEvent::WindowDeactivate};
+        if(forbidden.contains(event->type()))
+        {
+            // event->accept();
+            return true;
+        }
+    }
     return QWidget::eventFilter(obj, event);
 }
 

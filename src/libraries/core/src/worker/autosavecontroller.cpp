@@ -23,7 +23,7 @@
 
 #include "preferences/preferencesmanager.h"
 
-constexpr int minutes= 6000;
+constexpr int minutes= 60000;
 
 AutoSaveController::AutoSaveController(PreferencesManager* pref, QObject* parent)
     : QObject(parent), m_preferences(pref), m_timer(new QTimer)

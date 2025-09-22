@@ -120,6 +120,8 @@ void CampaignManager::saveCampaign()
     if(!m_editor)
         return;
     m_campaignUpdater->save();
+    setLastSave();
+    emit campaignSaved();
 }
 
 void CampaignManager::reload()
@@ -286,6 +288,18 @@ bool CampaignManager::performAction(const QString& path, Core::CampaignAction ac
     }
     // action == 1 => create document
     return res;
+}
+
+QDateTime CampaignManager::lastSave() const
+{
+    return m_lastSave;
+}
+
+void CampaignManager::setLastSave()
+{
+    qCInfo(CampaignCat) << "save time updated";
+    m_lastSave= QDateTime::currentDateTime();
+    emit lastSaveChanged();
 }
 
 } // namespace campaign

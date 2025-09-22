@@ -38,6 +38,12 @@ LineController::LineController(const std::map<QString, QVariant>& params, Vector
                                           [this](const quint16& penWidth) { m_penWidth= penWidth; });
     helper::utils::setParamIfAny<QPointF>(Core::vmapkeys::KEY_POS, params, [this](const QPointF& pos) { m_pos= pos; });
 
+    helper::utils::setParamIfAny<QPointF>(Core::vmapkeys::KEY_STARTPOINT, params,
+                                          [this](const QPointF& pos) { m_start= pos; });
+
+    helper::utils::setParamIfAny<QPointF>(Core::vmapkeys::KEY_ENDPOINT, params,
+                                          [this](const QPointF& pos) { m_end= pos; });
+
     connect(this, &LineController::startPointChanged, this, [this] { setModified(); });
     connect(this, &LineController::endPointChanged, this, [this] { setModified(); });
     connect(this, &LineController::penWidthChanged, this, [this] { setModified(); });

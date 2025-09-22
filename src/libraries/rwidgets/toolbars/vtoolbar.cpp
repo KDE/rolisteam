@@ -380,7 +380,14 @@ void ToolBox::makeTools()
     m_zoomSpinBox->setMinimum(0.01);
     m_zoomSpinBox->setMaximum(5.0);
 
-    m_smallScene= std::make_unique<QLabel>();
+    m_smallScene= std::make_unique<ClickableLabel>();
+    connect(m_smallScene.get(), &ClickableLabel::clicked, this,
+            [this](const QPoint& p)
+            {
+                qreal w= m_smallScene->width();
+                qreal h= m_smallScene->height();
+                emit clickedOn(QPointF{static_cast<qreal>(p.x()) / w, static_cast<qreal>(p.y()) / h});
+            });
     m_smallScene->setScaledContents(true);
 
     connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this,
@@ -436,4 +443,15 @@ void ToolBox::setImage(const QPixmap& img)
 {
     if(m_smallScene)
         m_smallScene->setPixmap(img);
+}
+
+ClickableLabel::ClickableLabel(QWidget* parent) : QLabel(parent) {}
+
+void ClickableLabel::mousePressEvent(QMouseEvent* ev)
+{
+    if(ev->button() == Qt::LeftButton)
+    {
+        emit clicked(ev->pos());
+    }
+    QLabel::mousePressEvent(ev);
 }

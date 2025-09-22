@@ -105,7 +105,7 @@ QVariant CharacterShape::getData(int col, int role)
             return uri();
         }
     }
-    else if(Qt::DecorationRole == role && col == 0 && !m_image.isNull())
+    else if(Qt::DecorationRole == role && col == 1 && !m_image.isNull())
     {
         return QPixmap::fromImage(m_image).scaled(m_size, m_size, Qt::KeepAspectRatio);
     }
@@ -124,7 +124,8 @@ bool CharacterShape::setData(int col, QVariant value, int role)
         }
         else if(col == 1)
         {
-            setUri(value.toString());
+            setImage(value.value<QImage>());
+            //setUri(value.toString());
             set= true;
         }
     }
