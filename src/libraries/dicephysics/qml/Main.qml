@@ -72,7 +72,7 @@ ApplicationWindow {
                 opacity: 0.8
             }
         }
-    }*/
+    }
 }
 
 

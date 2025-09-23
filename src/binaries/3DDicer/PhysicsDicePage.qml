@@ -226,6 +226,8 @@ Panel {
             anchors.fill: parent
             ctrl: DiceMainController.dice3dCtrl
             factor: root.ctrl.factor
+            parentWidth: width
+            parentHeight: height
 
             onWidthChanged: DiceMainController.dice3dSize = Qt.size(width, height)
             onHeightChanged: DiceMainController.dice3dSize = Qt.size(width, height)

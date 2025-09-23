@@ -421,5 +421,4 @@ void Dice3DController::setNormalDialogMode(bool newNormalDialogMode)
         return;
     m_normalDialogMode= newNormalDialogMode;
     emit normalDialogModeChanged();
-
 }

@@ -15,8 +15,8 @@ Item {
     readonly property int selectedCount: ma.selection.length
     property bool denyClick: false
     property real factor: 1.0
-    property real parentWidth
-    property real parentHeight
+    required property real parentWidth
+    required property real parentHeight
 
     property real halfWidth: parentWidth/2
     property real halfHeight: parentHeight/2
@@ -311,8 +311,7 @@ Item {
                 var interval = nt - t
                 if(interval == 0)
                     return
-                console.log("nx: ",nx," distx: ",distx," ",ma.enabled)
-                console.log("Apply impluse velocity nx: ",nx," distx: ",distx," ",ma.enabled)
+
                 ma.xvelocity = distx//Math.sqrt(distx*distx)  //interval
                 ma.zvelocity = disty//Math.sqrt(disty*disty) //interval
                 xpos = nx
