@@ -40,7 +40,6 @@ DynamicRigidBody {
     function computeRotOffset(oldpos, newpos) {
         const offset = (Math.abs(newpos.x - oldpos.x) + Math.abs(newpos.y - oldpos.y) + Math.abs(newpos.z - oldpos.z))/3;
         ctrl.addRotationOffset(offset)
-        console.log("Offset: ",offset)
         return offset;
     }
 
@@ -70,7 +69,6 @@ DynamicRigidBody {
         else
         {
             if(computeRotOffset(internal.rotation, root.eulerRotation) > 0.01) {
-             console.log("Moved Rotation")
                 moved()
             }
         }
@@ -87,10 +85,8 @@ DynamicRigidBody {
         if(Math.abs(root.position.z) > Math.abs(root.dice3DCtrl.height/2-offset))
             newPos.z = root.position.z > 0 ? root.dice3DCtrl.height/2-offset : -root.dice3DCtrl.height/2+offset
 
-        console.log("\nnewPos:",newPos,"\noldPos:",root.ctrl.position," ",root.ctrl.stable)
         if( newPos !== root.ctrl.position)
         {
-            console.log("Moved translation")
             moved();
             root.ctrl.position = newPos
         }
@@ -101,7 +97,6 @@ DynamicRigidBody {
     receiveContactReports: true
 
     onBodyContact: (body, positions, impulses, normals) => {
-        console.log("Moved onBodyContact")
         moved()
         let volume = 0
         impulses.forEach(vector => {

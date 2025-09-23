@@ -15,6 +15,13 @@ Item {
     readonly property int selectedCount: ma.selection.length
     property bool denyClick: false
     property real factor: 1.0
+    property real parentWidth
+    property real parentHeight
+
+    property real halfWidth: parentWidth/2
+    property real halfHeight: parentHeight/2
+    property real ceilling: 500.
+    property real side: 100.
 
     PhysicsWorld {
         id: physicsWorld
@@ -72,7 +79,7 @@ Item {
                 id: table
 
                 position: Qt.vector3d(0, 0, 0)
-                scale: Qt.vector3d(root.width/100, 1., root.height/100)
+                scale: Qt.vector3d(root.parentWidth/100, 1., root.parentHeight/100)
                 sendContactReports: true
                 Model {
                     source: "#Cube"
@@ -82,7 +89,7 @@ Item {
                     }
                 }
                 collisionShapes: BoxShape {
-                    extents: Qt.vector3d(root.width, root.side, root.height)
+                    extents: Qt.vector3d(root.parentWidth, root.side, root.parentHeight)
                     enableDebugDraw: true
                 }
             }
@@ -91,7 +98,7 @@ Item {
                 id: northWall
 
                 position: Qt.vector3d(0, root.ceilling/2, -root.halfHeight-(root.side/2))
-                scale: Qt.vector3d(root.width/100, root.ceilling/100, 1.)
+                scale: Qt.vector3d(root.parentWidth/100, root.ceilling/100, 1.)
                 sendContactReports: true
                 Model {
                     source: "#Cube"
@@ -101,7 +108,7 @@ Item {
                     }
                 }
                 collisionShapes: BoxShape {
-                    extents: Qt.vector3d(root.width, root.ceilling, root.side)
+                    extents: Qt.vector3d(root.parentWidth, root.ceilling, root.side)
                     enableDebugDraw: true
                 }
             }
@@ -110,7 +117,7 @@ Item {
                 id: southWall
 
                 position: Qt.vector3d(0, root.ceilling/2, root.halfHeight+(root.side/2))
-                scale: Qt.vector3d(root.width/100, root.ceilling/100, 1.)
+                scale: Qt.vector3d(root.parentWidth/100, root.ceilling/100, 1.)
                 sendContactReports: true
                 Model {
                     source: "#Cube"
@@ -120,7 +127,7 @@ Item {
                     }
                 }
                 collisionShapes: BoxShape {
-                    extents: Qt.vector3d(root.width, root.ceilling, root.side)
+                    extents: Qt.vector3d(root.parentWidth, root.ceilling, root.side)
                     enableDebugDraw: true
                 }
             }
@@ -129,7 +136,7 @@ Item {
                 id: westWall
 
                 position: Qt.vector3d(-root.halfWidth-(root.side/2), root.ceilling/2, 0)
-                scale: Qt.vector3d(1., root.ceilling/100, root.height/100)
+                scale: Qt.vector3d(1., root.ceilling/100, root.parentHeight/100)
                 sendContactReports: true
                 Model {
                     id: wwModel
@@ -140,7 +147,7 @@ Item {
                     }
                 }
                 collisionShapes: BoxShape {
-                    extents: Qt.vector3d(root.side, root.ceilling, root.height)
+                    extents: Qt.vector3d(root.side, root.ceilling, root.parentHeight)
                     enableDebugDraw: true
                 }
             }
@@ -149,7 +156,7 @@ Item {
                 id: aestWall
 
                 position: Qt.vector3d(root.halfWidth+(root.side/2), root.ceilling/2, 0)
-                scale: Qt.vector3d(1., root.ceilling/100, root.height/100)
+                scale: Qt.vector3d(1., root.ceilling/100, root.parentHeight/100)
                 sendContactReports: true
                 Model {
                     id: model
@@ -160,7 +167,7 @@ Item {
                     }
                 }
                 collisionShapes: BoxShape {
-                    extents: Qt.vector3d(root.side, root.ceilling, root.height)
+                    extents: Qt.vector3d(root.side, root.ceilling, root.parentHeight)
                     enableDebugDraw: true
                 }
             }
@@ -169,7 +176,7 @@ Item {
                 id: ceilling
 
                 position: Qt.vector3d(0, root.ceilling, 0)
-                scale: Qt.vector3d(root.width/100, 1., root.height/100)
+                scale: Qt.vector3d(root.parentWidth/100, 1., root.parentHeight/100)
 
                 sendContactReports: true
                 Model {
@@ -182,23 +189,23 @@ Item {
 
                 collisionShapes: BoxShape {
                     //source: model.source
-                    extents: Qt.vector3d(root.width, root.side, root.height)
+                    extents: Qt.vector3d(root.parentWidth, root.side, root.parentHeight)
                     enableDebugDraw: true
                 }
             }
 
-            AxisHelper {
+            /*AxisHelper {
                 //opacity: 0.3
                 visible: false
-            }
+            }*/
 
             Component {
                 id: genericDiceComp
                 RegularDice {
                     scaleFactor: root.factor
                     dice3DCtrl: root.ctrl
-                    parentWidth: root.width
-                    parentHeight: root.height
+                    parentWidth: root.parentWidth
+                    parentHeight: root.parentHeight
                 }
             }
 
@@ -238,7 +245,7 @@ Item {
             property vector3d formerPosition
 
             function clear() {
-                console.log("Clear selection")
+                //console.log("Clear selection")
                 while(ma.selection.length > 0) {
                     let target = ma.selection.pop();
                     target.selected = false
@@ -246,7 +253,7 @@ Item {
             }
 
             function prepareSelection(point) {
-                console.log("prepare selection")
+                //console.log("prepare selection")
                 ma.rolling = true
                 ma.selection.forEach(body => {
                         body.isKinematic = true
@@ -256,7 +263,7 @@ Item {
                 formerPosition = point
             }
             function releaseSelection(point, velocity) {
-                console.log("release selection")
+                //console.log("release selection")
                 ma.selection.forEach(body => {
                         body.kinematicPosition =  Qt.vector3d(point.x, 50, point.z)
                         body.isKinematic = false
@@ -304,7 +311,7 @@ Item {
                 var interval = nt - t
                 if(interval == 0)
                     return
-                console.log("nx: ",nx," distx: ",distx," ",ma.enabled)
+                //console.log("nx: ",nx," distx: ",distx," ",ma.enabled)
                 ma.xvelocity = distx//Math.sqrt(distx*distx)  //interval
                 ma.zvelocity = disty//Math.sqrt(disty*disty) //interval
                 xpos = nx
@@ -317,7 +324,7 @@ Item {
                            var point = viewport.mapTo3DScene(Qt.vector3d(mouse.x, mouse.y, 0))
                            var result = viewport.pick(mouse.x, mouse.y)
 
-                           console.log("inside onPressed :",result.objectHit)
+                           //console.log("inside onPressed :",result.objectHit)
                            if(!result.objectHit)
                            {
                                 mouse.accepted = false
