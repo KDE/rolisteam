@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-09-20 17:07+0100\n"
+"PO-Revision-Date: 2025-09-23 14:50+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1651,17 +1651,11 @@ msgid "GM Tools"
 msgstr "Herramientas de DJ"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Definir el nuevo nombre"
+msgstr "Definir el nombre del documento"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nombre:"
@@ -1713,14 +1707,14 @@ msgstr ""
 "a>"
 
 #: src/binaries/widget/mainwindow.cpp:852
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign?"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to save the campaign?\n"
 "Last save: %1 min(s) ago"
-msgstr "¿Desea guardar la campaña?"
+msgstr ""
+"¿Desea guardar la campaña?\n"
+"Guardada por última vez hace %1 minutos."
 
 #: src/binaries/widget/mainwindow.cpp:854
 msgctxt "MainWindow|"
@@ -1795,6 +1789,8 @@ msgstr "Definir el <nombre de usuario>"
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
+"Definir el <puerto de conector web> útil para prueba automática de la "
+"interfaz"
 
 #: src/binaries/widget/mainwindow.cpp:1058
 msgctxt "MainWindow|"
@@ -2690,12 +2686,13 @@ msgstr "Imagen"
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:180
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
-msgstr ""
+msgstr "[mover a la derecha] La sala de chat de origen o de destino no existe."
 
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:202
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
 msgstr ""
+"[mover a la izquierda] La sala de chat de origen o de destino no existe."
 
 #: src/libraries/core/src/model/colormodel.cpp:44
 msgctxt "ColorModel|"
@@ -3396,7 +3393,7 @@ msgstr "Orden para dados:"
 #: src/libraries/dicephysics/qml/SideMenu.qml:205
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
-msgstr ""
+msgstr "Mostrar dados en 3D en el diálogo"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:211
 #, qt-format
@@ -3772,9 +3769,6 @@ msgid "Color:"
 msgstr "Color:"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "I'm the Game Master"
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
 msgstr "Soy el director de juego"
@@ -3833,22 +3827,16 @@ msgid "Add chatroom"
 msgstr "Añadir sala de chat"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:51
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Definir como predeterminado"
+msgstr "Restablecer la vista predeterminada"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
-msgstr ""
+msgstr "Adjuntar a la principal"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
-#, fuzzy
-#| msgctxt "MindMap|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Desprender"
@@ -4383,12 +4371,9 @@ msgid "Remove"
 msgstr "Eliminar"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:533
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Remove selected Items"
 msgctxt "RGraphicsView|"
 msgid "Delete all selected items"
-msgstr "Eliminar los elementos seleccionados"
+msgstr "Borrar todos los elementos seleccionados"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:543
 msgctxt "RGraphicsView|"
@@ -6578,25 +6563,16 @@ msgid "&Save"
 msgstr "&Guardar"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Nombre"
+msgstr "&Nombre…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Cambiar perfil…"
+msgstr "Cambiar el nombre del archivo de notas"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "Name"
 msgstr "Nombre"
@@ -8089,12 +8065,10 @@ msgid "ReadOnly"
 msgstr "Solo lectura"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:87
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - (PDF)"
+msgstr "%1 - Visor PDF"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:313
 msgctxt "PdfViewer|"
@@ -8673,19 +8647,3 @@ msgstr "Durmiente"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Hechizado"
-
-#~ msgctxt "Main|"
-#~ msgid "Rolisteam 3D dice roller"
-#~ msgstr "Lanzador de dados en 3D de Rolisteam"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Split view"
-#~ msgstr "Dividir vista"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Detach"
-#~ msgstr "Desprender"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Reatach"
-#~ msgstr "Volver a adjuntar"
