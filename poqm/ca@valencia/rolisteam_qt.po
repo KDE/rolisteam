@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2025-05-09 11:08+0200\n"
+"PO-Revision-Date: 2025-09-23 12:02+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -1652,17 +1652,11 @@ msgid "GM Tools"
 msgstr "Eines del DJ"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Establix el nom nou"
+msgstr "Establix el nom del document"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nom:"
@@ -1714,14 +1708,14 @@ msgstr ""
 "La pàgina de donació a %1 es pot trobar en línia a:<br> <a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:852
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign?"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to save the campaign?\n"
 "Last save: %1 min(s) ago"
-msgstr "Voleu guardar la campanya?"
+msgstr ""
+"Voleu guardar la campanya?\n"
+"Últim guardada: fa %1 mins"
 
 #: src/binaries/widget/mainwindow.cpp:854
 msgctxt "MainWindow|"
@@ -1795,7 +1789,7 @@ msgstr "Definix el <nom_usuari>"
 #: src/binaries/widget/mainwindow.cpp:1057
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
-msgstr ""
+msgstr "Definix el <websocketport> útil per a provar la IU automàticament"
 
 #: src/binaries/widget/mainwindow.cpp:1058
 msgctxt "MainWindow|"
@@ -2694,12 +2688,13 @@ msgstr "Imatge"
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:180
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
-msgstr ""
+msgstr "[mou cap a la dreta] La sala de xat d'origen o destinació no existix."
 
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:202
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
 msgstr ""
+"[mou cap a l'esquerra] La sala de xat d'origen o destinació no existix."
 
 #: src/libraries/core/src/model/colormodel.cpp:44
 msgctxt "ColorModel|"
@@ -3404,7 +3399,7 @@ msgstr "Ordre del dau:"
 #: src/libraries/dicephysics/qml/SideMenu.qml:205
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
-msgstr ""
+msgstr "Mostra el dau en 3D en el diàleg"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:211
 #, qt-format
@@ -3780,9 +3775,6 @@ msgid "Color:"
 msgstr "Color:"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "I'm the Game Master"
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
 msgstr "Soc el director de joc"
@@ -3841,22 +3833,16 @@ msgid "Add chatroom"
 msgstr "Afig una sala de xat"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:51
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Establix com a predeterminat"
+msgstr "Reinicia a la vista predeterminada"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
-msgstr ""
+msgstr "Ajunta a la principal"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
-#, fuzzy
-#| msgctxt "MindMap|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Separa"
@@ -4391,12 +4377,9 @@ msgid "Remove"
 msgstr "Elimina"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:533
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Remove selected Items"
 msgctxt "RGraphicsView|"
 msgid "Delete all selected items"
-msgstr "Elimina els elements seleccionats"
+msgstr "Suprimix tots els elements seleccionats"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:543
 msgctxt "RGraphicsView|"
@@ -6587,25 +6570,16 @@ msgid "&Save"
 msgstr "Guar&da"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Nom"
+msgstr "&Nom…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Canvia el perfil…"
+msgstr "Canvia el nom de fitxer de la nota"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "Name"
 msgstr "Nom"
@@ -8100,12 +8074,10 @@ msgid "ReadOnly"
 msgstr "NomésLectura"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:87
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - (PDF)"
+msgstr "%1 - Visor de PDF"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:313
 msgctxt "PdfViewer|"
@@ -8684,19 +8656,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "Main|"
-#~ msgid "Rolisteam 3D dice roller"
-#~ msgstr "Tirador de daus 3D de Rolisteam"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Split view"
-#~ msgstr "Vista dividida"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Detach"
-#~ msgstr "Separa"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Reatach"
-#~ msgstr "Torna a unir"
