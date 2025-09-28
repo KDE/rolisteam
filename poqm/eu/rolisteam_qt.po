@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-07-23 14:20+0200\n"
+"PO-Revision-Date: 2025-09-27 13:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -1653,17 +1653,11 @@ msgid "GM Tools"
 msgstr "JM Tresnak"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Definitu izen berria"
+msgstr "Definitu dokumentuaren izena"
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Izena:"
@@ -1671,12 +1665,12 @@ msgstr "Izena:"
 #: src/binaries/widget/mainwindow.cpp:581
 msgctxt "MainWindow|"
 msgid "Open Webpage"
-msgstr "Ireki web-orria"
+msgstr "Ireki web-orrialdea"
 
 #: src/binaries/widget/mainwindow.cpp:581
 msgctxt "MainWindow|"
 msgid "Webpage url:"
-msgstr "Web-orriaren URL:"
+msgstr "Web-orrialdearen URL:"
 
 #: src/binaries/widget/mainwindow.cpp:589
 msgctxt "MainWindow|"
@@ -1716,14 +1710,14 @@ msgstr ""
 "%1 dohaintza orria lerroan hemen aurki daiteke:<br><a href=\"%2\">%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:852
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign?"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to save the campaign?\n"
 "Last save: %1 min(s) ago"
-msgstr "Kanpaina gorde nahi duzu?"
+msgstr ""
+"Kanpaina gorde nahi duzu?\n"
+"Azkenekoz gorde: duela %1 min"
 
 #: src/binaries/widget/mainwindow.cpp:854
 msgctxt "MainWindow|"
@@ -1797,7 +1791,7 @@ msgstr "Definitu «erabiltzaile-izena>"
 #: src/binaries/widget/mainwindow.cpp:1057
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
-msgstr ""
+msgstr "Definitu UI proba automatikoetarako <web artuneataka> erabilgarria"
 
 #: src/binaries/widget/mainwindow.cpp:1058
 msgctxt "MainWindow|"
@@ -2693,11 +2687,13 @@ msgstr "Irudia"
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
 msgstr ""
+"[mugitu eskuinera] Sorburu edo helburu berriketa-gela ez da existitzen."
 
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:202
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
 msgstr ""
+"[mugitu ezkerrera] Sorburu edo helburu berriketa-gela ez da existitzen."
 
 #: src/libraries/core/src/model/colormodel.cpp:44
 msgctxt "ColorModel|"
@@ -3396,7 +3392,7 @@ msgstr "Dado-komandoa:"
 #: src/libraries/dicephysics/qml/SideMenu.qml:205
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
-msgstr ""
+msgstr "Elkarrizketan 3D dadoa erakutsi"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:211
 #, qt-format
@@ -3772,9 +3768,6 @@ msgid "Color:"
 msgstr "Kolorea."
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "I'm the Game Master"
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
 msgstr "Jokoaren maisua naiz"
@@ -3833,22 +3826,16 @@ msgid "Add chatroom"
 msgstr "Gehitu berriketa-gela"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:51
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Ezarri lehenetsia"
+msgstr "Berrezarri ikuspegi lehenetsira"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
-msgstr ""
+msgstr "Erantsi Nagusian"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
-#, fuzzy
-#| msgctxt "MindMap|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Bereizi"
@@ -4383,12 +4370,9 @@ msgid "Remove"
 msgstr "Kendu"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:533
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Remove selected Items"
 msgctxt "RGraphicsView|"
 msgid "Delete all selected items"
-msgstr "Kendu hautatutako elementuak"
+msgstr "Ezabatu hautatutako elementu guztiak"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:543
 msgctxt "RGraphicsView|"
@@ -6577,25 +6561,16 @@ msgid "&Save"
 msgstr "&Gorde"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Izena"
+msgstr "Ize&na..."
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Aldatu profila…"
+msgstr "Aldatu ohar fitxategi-izena"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "Name"
 msgstr "Izena"
@@ -8087,12 +8062,10 @@ msgid "ReadOnly"
 msgstr "Irakurtzeko soilik"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:87
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - (PDF)"
+msgstr "%1 - PDFViewer"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:313
 msgctxt "PdfViewer|"
