@@ -53,3 +53,16 @@ void Session::setMacros(const QByteArray& newMacros)
     m_macros= newMacros;
     emit macrosChanged();
 }
+
+QByteArray Session::dice3D() const
+{
+    return m_dice3D;
+}
+
+void Session::setDice3D(const QByteArray &newDice3D)
+{
+    if (m_dice3D == newDice3D)
+        return;
+    m_dice3D = newDice3D;
+    emit dice3DChanged();
+}

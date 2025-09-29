@@ -54,7 +54,8 @@ class DICE3D_EXPORTS Dice3DController : public QObject
     Q_PROPERTY(int animationTime READ animationTime WRITE setAnimationTime NOTIFY animationTimeChanged FINAL)
     Q_PROPERTY(int hideTime READ hideTime WRITE setHideTime NOTIFY hideTimeChanged FINAL)
     Q_PROPERTY(int count READ count NOTIFY countChanged FINAL)
-    Q_PROPERTY(bool normalDialogMode READ normalDialogMode WRITE setNormalDialogMode NOTIFY normalDialogModeChanged FINAL)
+    Q_PROPERTY(
+        bool normalDialogMode READ normalDialogMode WRITE setNormalDialogMode NOTIFY normalDialogModeChanged FINAL)
 public:
     explicit Dice3DController(QObject* parent= nullptr);
     virtual ~Dice3DController();
@@ -136,6 +137,8 @@ public:
     bool normalDialogMode() const;
     void setNormalDialogMode(bool newNormalDialogMode);
 
+    void reset();
+
 signals:
     void fourColorChanged();
     void sixColorChanged();
@@ -159,7 +162,6 @@ signals:
     void expectRollChanged();
     void animationTimeChanged();
     void hideTimeChanged(int time);
-
     void normalDialogModeChanged();
 
 private:

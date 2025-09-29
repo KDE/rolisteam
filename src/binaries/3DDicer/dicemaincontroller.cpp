@@ -4,9 +4,29 @@
 
 #include "diceparser/dicealias.h"
 #include "worker/fileserializer.h"
-#include "worker/iohelper.h"
-#include "worker/modelhelper.h"
+//#include "worker/iohelper.h"
+//#include "worker/modelhelper.h"
 #include <QJsonArray>
+#include <QStandardPaths>
+
+QSettings* computeSettingsPath()
+{
+#ifdef Q_OS_ANDROID
+    const QString configfile("config.ini");
+    auto path= QStandardPaths::writableLocation(QStandardPaths::ConfigLocation);
+    auto filePath= QStringLiteral("%1/%2").arg(path, configfile);
+    QFile file(filePath);
+    if(file.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "initfile: " << file.readAll();
+    }
+    else
+        qDebug() << "Can't read initfile" << filePath;
+    return new QSettings(QStringLiteral("%1/%2").arg(path, configfile));
+#else
+    return new QSettings(QSettings::UserScope, "Rolisteam", "DicelyVerse");
+#endif
+}
 
 DiceMainController::DiceMainController(QObject* parent)
     : QObject{parent}
@@ -18,7 +38,24 @@ DiceMainController::DiceMainController(QObject* parent)
     , m_propertiesModel{new PropertiesModel}
     , m_macros{new MacrosModel}
 {
+
     loadData();
+    connect(m_settingsCtrl.get(), &SettingController::currentSessionIndexChanged, this,
+            &DiceMainController::loadFromCurrentProfile);
+    connect(m_settingsCtrl.get(), &SettingController::sessionCountChanged, this,
+            &DiceMainController::profileCountChanged);
+
+    connect(m_dice3DCtrl.get(), &Dice3DController::countChanged, this, &DiceMainController::saveData);
+    connect(m_dice3DCtrl.get(), &Dice3DController::colorChanged, this, &DiceMainController::saveData);
+
+    connect(m_aliases.get(), &DiceAliasModel::aliasAdded, this, &DiceMainController::saveData);
+    connect(m_aliases.get(), &DiceAliasModel::aliasRemoved, this, &DiceMainController::saveData);
+    connect(m_aliases.get(), &DiceAliasModel::aliasMoved, this, &DiceMainController::saveData);
+
+    connect(m_propertiesModel.get(), &PropertiesModel::countChanged, this, &DiceMainController::saveData);
+
+    connect(m_macros.get(), &MacrosModel::countChanged, this, &DiceMainController::saveData);
+    connect(m_settingsCtrl.get(), &SettingController::sessionCountChanged, this, &DiceMainController::saveData);
 }
 
 DiceMainController::Page DiceMainController::currentPage() const
@@ -41,7 +78,7 @@ RollModel* DiceMainController::model() const
 
 int DiceMainController::profileCount() const
 {
-    return m_profileCount;
+    return m_settingsCtrl->sessionCount();
 }
 
 void DiceMainController::runCommand(const QString& cmd)
@@ -145,92 +182,145 @@ void DiceMainController::addAlias()
     m_aliases->appendAlias(std::move(a));
 }
 
-void DiceMainController::saveData()
+void DiceMainController::saveInCurrentProfile()
 {
-    QSettings settings("Rolisteam", "DiceRoller");
+    auto current= m_settingsCtrl->currentSession();
+    if(!current)
+        return;
 
-    // settings.setValue("sessionCount", m_settingsCtrl->sessionCount());
-    settings.setValue("sessionNames", m_settingsCtrl->sessions()->sessionNames()); // TODO change me
-    settings.setValue("currentSession", m_settingsCtrl->currentSessionIndex());
-    for(int i= 0; i < m_settingsCtrl->sessionCount(); ++i)
+    auto aliasJson
+        = dice3D::FileSerializer::jsonArrayToByteArray(dice3D::FileSerializer::dicesToArray(m_aliases->aliases()));
+
+    current->setAliases(aliasJson);
     {
-        m_settingsCtrl->setCurrentSessionIndex(i);
-        auto name= m_settingsCtrl->sessionName();
-        settings.beginGroup(name);
-
-        auto aliasJson= IOHelper::jsonArrayToByteArray(campaign::FileSerializer::dicesToArray(m_aliases->aliases()));
-        settings.setValue("aliases", aliasJson);
-
+        auto const& infos= m_propertiesModel->infos();
+        QJsonArray array;
+        for(auto const& i : infos)
         {
-            auto const& infos= m_propertiesModel->infos();
-            QJsonArray array;
-            for(auto const& i : infos)
-            {
-                QJsonObject obj;
-                obj["key"]= i.key;
-                obj["value"]= i.value;
-                array.append(obj);
-            }
-            auto sheet= IOHelper::jsonArrayToByteArray(array);
-            settings.setValue("sheet", sheet);
+            QJsonObject obj;
+            obj["key"]= i.key;
+            obj["value"]= i.value;
+            array.append(obj);
         }
-
-        {
-            auto const& macros= m_macros->macros();
-            QJsonArray array;
-            for(auto const& i : macros)
-            {
-                QJsonObject obj;
-                obj["name"]= i.name;
-                obj["command"]= i.command;
-                array.append(obj);
-            }
-            auto sheet= IOHelper::jsonArrayToByteArray(array);
-            settings.setValue("macros", sheet);
-        }
-        settings.endGroup();
+        auto sheet= dice3D::FileSerializer::jsonArrayToByteArray(array);
+        current->setSheets(sheet);
     }
 
-    settings.sync();
+    {
+        auto const& macros= m_macros->macros();
+        QJsonArray array;
+        for(auto const& i : macros)
+        {
+            QJsonObject obj;
+            obj["name"]= i.name;
+            obj["command"]= i.command;
+            array.append(obj);
+        }
+        auto sheet= dice3D::FileSerializer::jsonArrayToByteArray(array);
+        current->setMacros(sheet);
+    }
+
+    {
+        auto json= dice3D::FileSerializer::buildDice3dData(m_dice3DCtrl.get());
+        current->setDice3D(json);
+    }
+}
+
+void DiceMainController::loadFromCurrentProfile()
+{
+    auto current= m_settingsCtrl->currentSession();
+    if(!current)
+        return;
+
+    m_loading= true;
+    m_propertiesModel->clear();
+    m_macros->clear();
+    m_aliases->clear();
+    m_dice3DCtrl->reset();
+
+    auto array= dice3D::FileSerializer::byteArrayToJsonArray(current->sheets());
+    for(auto const& r : std::as_const(array))
+    {
+        auto obj= r.toObject();
+        auto key= obj["key"].toString();
+        auto value= obj["value"].toString();
+        if(key.isEmpty() && value.isEmpty())
+            continue;
+        m_propertiesModel->addField(key, value);
+    }
+
+    auto macro= dice3D::FileSerializer::byteArrayToJsonArray(current->macros());
+    for(auto const& r : std::as_const(macro))
+    {
+        auto obj= r.toObject();
+        auto key= obj["name"].toString();
+        auto value= obj["command"].toString();
+        if(key.isEmpty() && value.isEmpty())
+            continue;
+        m_macros->addMacro(key, value);
+    }
+
+    dice3D::FileSerializer::fetchDiceModel(dice3D::FileSerializer::byteArrayToJsonArray(current->aliases()),
+                                           m_aliases.get());
+    dice3D::FileSerializer::fetchDice3d(m_dice3DCtrl.get(), current->dice3D());
+
+    m_loading= false;
+}
+
+void DiceMainController::saveData()
+{
+    if(m_loading)
+        return;
+
+    saveInCurrentProfile();
+
+    std::unique_ptr<QSettings> settings(computeSettingsPath());
+
+    settings->setValue("sessionNames", m_settingsCtrl->sessions()->sessionNames()); // TODO change me
+    settings->setValue("currentSession", m_settingsCtrl->currentSessionIndex());
+
+    for(int i= 0; i < m_settingsCtrl->sessionCount(); ++i)
+    {
+        auto session= m_settingsCtrl->sessions()->session(i);
+        if(!session)
+            continue;
+
+        auto name= session->name();
+        settings->beginGroup(name);
+        settings->setValue("aliases", session->aliases());
+        settings->setValue("sheet", session->sheets());
+        settings->setValue("macros", session->macros());
+        settings->setValue("dice3d", session->dice3D());
+        settings->endGroup();
+    }
+
+    settings->sync();
 }
 
 void DiceMainController::loadData()
 {
-    QSettings settings("Rolisteam", "DiceRoller");
-    auto names= settings.value("sessionNames", {"default"}).toStringList();
+    std::unique_ptr<QSettings> settings(computeSettingsPath());
+    auto names= settings->value("sessionNames", {"default"}).toStringList();
 
     for(const auto& n : std::as_const(names))
     {
-        settings.beginGroup(n);
-        auto json= settings.value("aliases").toByteArray();
-        auto sheetjson= settings.value("sheet").toByteArray();
-        auto macrosjson= settings.value("macros").toByteArray();
-
-        ModelHelper::fetchDiceModel(IOHelper::byteArrayToJsonArray(json), m_aliases.get());
-
-        {
-            auto array= IOHelper::byteArrayToJsonArray(sheetjson);
-            for(auto const& r : std::as_const(array))
-            {
-                auto obj= r.toObject();
-                m_propertiesModel->addField(obj["key"].toString(), obj["value"].toString());
-            }
-        }
-
-        {
-            auto array= IOHelper::byteArrayToJsonArray(macrosjson);
-            for(auto const& r : std::as_const(array))
-            {
-                auto obj= r.toObject();
-                m_macros->addMacro(obj["name"].toString(), obj["command"].toString());
-            }
-        }
+        settings->beginGroup(n);
+        auto json= settings->value("aliases").toByteArray();
+        auto sheetjson= settings->value("sheet").toByteArray();
+        auto macrosjson= settings->value("macros").toByteArray();
+        auto dice3djson= settings->value("dice3d").toByteArray();
 
         m_settingsCtrl->sessions()->addSession(n);
-        settings.endGroup();
+        auto session= m_settingsCtrl->sessions()->session(n);
+        session->setAliases(json);
+        session->setSheets(sheetjson);
+        session->setMacros(macrosjson);
+        session->setDice3D(dice3djson);
+        settings->endGroup();
     }
 
-    m_settingsCtrl->setCurrentSessionIndex(settings.value("currentSession", 0).toInt());
+    m_settingsCtrl->setCurrentSessionIndex(settings->value("currentSession", 0).toInt());
+    loadFromCurrentProfile();
 }
 
 SettingController* DiceMainController::settingsCtrl() const
@@ -253,10 +343,23 @@ DiceMainController::PanelMode DiceMainController::currentPanel() const
     return m_currentPanel;
 }
 
-void DiceMainController::setCurrentPanel(const PanelMode &newCurrentPanel)
+void DiceMainController::setCurrentPanel(const PanelMode& newCurrentPanel)
 {
-    if (m_currentPanel == newCurrentPanel)
+    if(m_currentPanel == newCurrentPanel)
         return;
-    m_currentPanel = newCurrentPanel;
+    m_currentPanel= newCurrentPanel;
     emit currentPanelChanged();
+}
+
+bool DiceMainController::show3dMenu() const
+{
+    return m_show3dMenu;
+}
+
+void DiceMainController::setShow3dMenu(bool newShow3dMenu)
+{
+    if(m_show3dMenu == newShow3dMenu)
+        return;
+    m_show3dMenu= newShow3dMenu;
+    emit show3dMenuChanged();
 }

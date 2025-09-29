@@ -30,7 +30,10 @@
 #include <QPixmap>
 #include <QUuid>
 
+#ifndef Q_OS_ANDROID
+#include "charactersheet/charactersheet.h"
 #include "charactersheet/rolisteamimageprovider.h"
+#endif
 
 #include "worker/iohelper.h"
 
@@ -38,7 +41,7 @@
 #ifndef UNIT_TEST
 #include "charactersheet.h"
 #endif
-#include "charactersheet/charactersheet.h"
+
 #include "data/player.h"
 
 //  Begin character field
@@ -125,7 +128,7 @@ bool CharacterShape::setData(int col, QVariant value, int role)
         else if(col == 1)
         {
             setImage(value.value<QImage>());
-            //setUri(value.toString());
+            // setUri(value.toString());
             set= true;
         }
     }
@@ -268,15 +271,31 @@ bool CharacterProperty::setData(int col, QVariant value, int role)
 
 QList<CharacterState*>* Character::m_stateList= nullptr;
 
-Character::Character(QObject* parent) : Person(parent), m_sheet(nullptr) {}
+Character::Character(QObject* parent)
+    : Person(parent)
+#ifndef Q_OS_ANDROID
+    , m_sheet(nullptr)
+#endif
+{
+}
 
 Character::Character(const QString& name, const QColor& color, bool npc, int number)
-    : Person(name, color), m_isNpc(npc), m_number(number), m_sheet(nullptr)
+    : Person(name, color)
+    , m_isNpc(npc)
+    , m_number(number)
+#ifndef Q_OS_ANDROID
+    , m_sheet(nullptr)
+#endif
 {
 }
 
 Character::Character(const QString& uuid, const QString& name, const QColor& color, bool npc, int number)
-    : Person(name, color, uuid), m_isNpc(npc), m_number(number), m_sheet(nullptr)
+    : Person(name, color, uuid)
+    , m_isNpc(npc)
+    , m_number(number)
+#ifndef Q_OS_ANDROID
+    , m_sheet(nullptr)
+#endif
 {
 }
 
@@ -318,7 +337,7 @@ void Character::definePropertiesList(const QList<CharacterProperty*>& props)
     m_propertyList.clear();
     m_propertyList << props;
 }
-
+#ifndef Q_OS_ANDROID
 RolisteamImageProvider* Character::getImageProvider() const
 {
     return m_imageProvider;
@@ -329,6 +348,16 @@ void Character::setImageProvider(RolisteamImageProvider* imageProvider)
     m_imageProvider= imageProvider;
 }
 
+CharacterSheet* Character::getSheet() const
+{
+    return m_sheet;
+}
+
+void Character::setSheet(CharacterSheet* sheet)
+{
+    m_sheet= sheet;
+}
+#endif
 qreal Character::getDistancePerTurn() const
 {
     return m_distancePerTurn;
@@ -407,13 +436,16 @@ QString Character::getParentId() const
 QHash<QString, QString> Character::getVariableDictionnary()
 {
     QHash<QString, QString> variables;
+#ifndef Q_OS_ANDROID
     if(nullptr != m_sheet)
     {
 #ifndef UNIT_TEST
         variables= m_sheet->getVariableDictionnary();
 #endif
     }
-    else if(!m_propertyList.isEmpty())
+    else
+#endif
+        if(!m_propertyList.isEmpty())
     {
         for(auto& property : m_propertyList)
         {
@@ -424,15 +456,6 @@ QHash<QString, QString> Character::getVariableDictionnary()
     return variables;
 }
 
-CharacterSheet* Character::getSheet() const
-{
-    return m_sheet;
-}
-
-void Character::setSheet(CharacterSheet* sheet)
-{
-    m_sheet= sheet;
-}
 void Character::setListOfCharacterState(QList<CharacterState*>* list)
 {
     m_stateList= list;

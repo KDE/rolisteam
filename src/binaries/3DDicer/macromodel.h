@@ -29,10 +29,13 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     const std::vector<MacroInfo>& macros() const;
+    void clear();
 
 public slots:
     void addMacro(const QString& key= QString(), const QString& value= QString());
     void removeMacro(int index);
+signals:
+    void countChanged();
 
 private:
     std::vector<MacroInfo> m_data;

@@ -73,6 +73,7 @@ public:
 
     int animationTime() const;
     void setAnimationTime(int newAnimationTime);
+    void clear();
 
 public slots:
     void checkStable();

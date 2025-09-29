@@ -11,6 +11,7 @@ Panel {
     title: qsTr("3D Dice")
 
     property QtObject ctrl: DiceMainController.dice3dCtrl
+    titleVisible: false
 
     data: [ColorDialog {
         id: colorDialog
@@ -40,7 +41,16 @@ Panel {
         Layout.fillHeight: true
         Layout.fillWidth: true
 
+        Label {
+            font.bold: true
+            anchors.horizontalCenter: parent.horizontalCenter
+            horizontalAlignment: Label.AlignHCenter
+            font.pointSize: Theme.titleFontSize
+            text: root.title
+        }
+
         Flickable {
+            id: ground
             anchors.bottom: parent.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -50,20 +60,10 @@ Panel {
             ScrollBar.vertical: ScrollBar {
                 policy: Screen.height < 600 ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
             }
-           /* Rectangle {
-
-                anchors.fill: parent
-                color: "red"
-                opacity: 0.23
-                Timer {
-                    running: true
-                    repeat: true
-                    onTriggered: console.log("Item:",parent.width," ",parent.height)
-                }
-            }*/
             ColumnLayout {
                 id: _toolBar
                 anchors.horizontalCenter: parent.horizontalCenter
+                width: ground.width
 
 
                 property int fourCount: 0
@@ -76,6 +76,7 @@ Panel {
 
                 Label {
                     text: qsTr("Dice Size:")
+                    visible: DiceMainController.show3dMenu
                 }
 
                 Slider {
@@ -84,19 +85,13 @@ Panel {
                     to: 100.0
                     value: root.ctrl.factor
                     Layout.fillWidth: true
+                    visible: DiceMainController.show3dMenu
 
                     onValueChanged:  {
                         root.ctrl.factor = _factor.value;
-                        console.log("value:",_factor.value)
+                        //console.log("value:",_factor.value)
                     }
                 }
-
-                CheckBox {
-                    id: mouseCtrl
-                    text: qsTr("disable mouseArea")
-                    checked: false
-                }
-
                 ListModel {
                     id: colors
                     ListElement {
@@ -134,14 +129,18 @@ Panel {
 
                     RowLayout {
                         Layout.fillWidth: true
+                        visible: DiceMainController.show3dMenu
                         Label {
                             text: "D%1".arg(model.side)
                             Layout.fillWidth: true
+                            font.pointSize: Theme.textFieldFontSize
                         }
 
                         ToolButton {
-                            icon.name: "list-remove"
+                            icon.source: "qrc:/assets/remove.svg"
                             icon.color: "transparent"
+                            icon.width: Theme.iconSize
+                            icon.height: Theme.iconSize
                             onClicked:  {
                                 root.ctrl.removeDice(model.type)
                             }
@@ -152,6 +151,7 @@ Panel {
                             id: label
                             property int value: root.ctrl.diceCount(model.type)
                             text: value
+                            font.pointSize: Theme.textFieldFontSize
                             Connections {
                                 target: root.ctrl
                                 function onCountChanged() {
@@ -161,8 +161,10 @@ Panel {
                         }
 
                         ToolButton {
-                            icon.name: "list-add"
+                            icon.source: "qrc:/assets/plus3.svg"
                             icon.color: "transparent"
+                            icon.width: Theme.iconSize
+                            icon.height: Theme.iconSize
                             onClicked:{
                                 root.ctrl.addDice(model.type)
                             }
@@ -171,6 +173,7 @@ Panel {
                         ToolButton {
                             Layout.preferredWidth: height
                             Layout.fillHeight: true
+                            Layout.minimumHeight: Theme.colorButtonSize
                             contentItem: Rectangle {
                                 id: rect
                                 color: root.ctrl.diceColor(model.type)
@@ -190,34 +193,43 @@ Panel {
                         }
                     }
                 }
-
                 RowLayout {
-                    Label {
-                        text: qsTr("Collision sound:")
-                    }
-
+                    Layout.fillWidth: true
+                    Layout.alignment: Qt.AlignRight | Qt.AlignBottom
                     ToolButton {
-                        id: mute
+                        //select all
+                        icon.source: "qrc:/assets/selectall.svg"
+                        icon.color: "transparent"
+                        icon.width: Theme.iconSize
+                        icon.height: Theme.iconSize
+                        visible: DiceMainController.show3dMenu
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        onClicked: diceGround.selectAll()
+                    }
+                    ToolButton {
+                        //selection rect
+                        icon.source: "qrc:/assets/selectRect.svg"
+                        icon.color: "transparent"
+                        icon.width: Theme.iconSize
+                        icon.height: Theme.iconSize
                         checkable: true
-                        checked: root.ctrl.muted
-                        icon.name: checked ? "audio-volume-muted" : "audio-volume-high"
+                        visible: DiceMainController.show3dMenu
+                        checked: diceGround.rectSelect
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        onClicked: diceGround.rectSelect = true
                     }
-                }
-                /*RowLayout {
-                    Label {
-                        text: qsTr("Dice Command:")
-                    }
-                    Label {
-                        text: root.ctrl.dicePart
-                    }
-
-                    TextField {
-                        id: command
-                        onTextEdited: {
-                            root.ctrl.diceCommand = text
+                    ToolButton {
+                        // hide menu
+                        icon.source: "qrc:/assets/menu.svg"
+                        icon.color: "transparent"
+                        icon.width: Theme.iconSize
+                        icon.height: Theme.iconSize
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        onClicked: {
+                            DiceMainController.show3dMenu = !DiceMainController.show3dMenu
                         }
                     }
-                }*/
+                }
             }
         }
 

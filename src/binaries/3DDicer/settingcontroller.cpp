@@ -1,6 +1,11 @@
 #include "settingcontroller.h"
 
-SettingController::SettingController(QObject* parent) : QObject{parent}, m_sessions{new SessionModel} {}
+SettingController::SettingController(QObject* parent) : QObject{parent}, m_sessions{new SessionModel}
+{
+
+    connect(m_sessions.get(), &SessionModel::sessionAdded, this, &SettingController::sessionCountChanged);
+    connect(m_sessions.get(), &SessionModel::sessionRemoved, this, &SettingController::sessionCountChanged);
+}
 
 SessionModel* SettingController::sessions() const
 {

@@ -70,11 +70,19 @@ const std::vector<FieldInfo>& PropertiesModel::infos() const
     return m_data;
 }
 
+void PropertiesModel::clear()
+{
+    beginResetModel();
+    m_data.clear();
+    endResetModel();
+}
+
 void PropertiesModel::addField(const QString& key, const QString& value)
 {
     beginInsertRows(QModelIndex(), m_data.size(), m_data.size());
     m_data.push_back(FieldInfo{key, value});
     endInsertRows();
+    emit countChanged();
 }
 
 void PropertiesModel::removeField(int index)
@@ -82,4 +90,5 @@ void PropertiesModel::removeField(int index)
     beginRemoveRows(QModelIndex(), index, index);
     m_data.erase(std::begin(m_data) + index);
     endRemoveRows();
+    emit countChanged();
 }

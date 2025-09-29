@@ -30,10 +30,14 @@ public:
 
     QHash<QString, QString> dictionary() const;
     const std::vector<FieldInfo>& infos() const;
+    void clear();
 
 public slots:
     void addField(const QString& key= QString(), const QString& value= QString());
     void removeField(int index);
+
+signals:
+    void countChanged();
 
 private:
     std::vector<FieldInfo> m_data;

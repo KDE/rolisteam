@@ -30,6 +30,7 @@ public:
 
 signals:
     void currentSessionIndexChanged();
+    void sessionCountChanged();
 
 private:
     std::unique_ptr<SessionModel> m_sessions;

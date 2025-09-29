@@ -1,4 +1,4 @@
-if(CMAKE_BUILD_TYPE STREQUAL "Release" OR ${GENERATE_TS_FILES})
+if((NOT ANDROID) AND (CMAKE_BUILD_TYPE STREQUAL "Release" OR ${GENERATE_TS_FILES}))
     file(GLOB QM_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/*.qm")
     qt_add_resources(rolisteam translations
         PREFIX "/translations"

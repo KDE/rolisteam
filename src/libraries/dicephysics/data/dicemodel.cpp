@@ -336,3 +336,10 @@ void DiceModel::setAnimationTime(int newAnimationTime)
     m_timer.setInterval(newAnimationTime);
     emit animationTimeChanged();
 }
+
+void DiceModel::clear()
+{
+    beginResetModel();
+    m_models[0].clear();
+    endResetModel();
+}

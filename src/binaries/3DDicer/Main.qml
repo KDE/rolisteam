@@ -9,10 +9,17 @@ ApplicationWindow {
     width: 1080/2
     height: 2240/2
     visible: true
-    title: qsTr("3D Dice")
+    title: stackView.currentItem.title//qsTr("3D Dice")
 
     onClosing: {
         DiceMainController.saveData();
+    }
+    Connections {
+        target: Application
+        function onStateChanged() {
+            if(Application.state < Application.Inactive)
+                DiceMainController.saveData();
+        }
     }
 
     Component {
@@ -49,11 +56,6 @@ ApplicationWindow {
 
         }
     }
-    /*Component {
-        id: profile
-        SettingsPage {
-        }
-    }*/
 
     function getPageComponent() {
         let res = diceRoll
@@ -107,6 +109,7 @@ ApplicationWindow {
                        text: qsTr("Dice Rolls")
                        icon.source: "qrc:/assets/diceroll.svg"
                        icon.width: Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        icon.height:Theme.tabIconSize
                        //indicator: Item{}
@@ -118,6 +121,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/dice.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.PhysicsPage
@@ -127,6 +131,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/bookmark.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.MacroPage
@@ -136,6 +141,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/aliases.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.AliasPage
@@ -145,6 +151,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/sheet2.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.SheetPage
@@ -154,6 +161,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/settings.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
+                       icon.color: "transparent"
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.SettingsPage

@@ -74,7 +74,6 @@ void DiceController::setValue(int newValue)
 {
     if(m_value == newValue)
         return;
-    // qDebug() << "setvalue" << newValue;
     m_value= newValue;
     emit valueChanged();
 }

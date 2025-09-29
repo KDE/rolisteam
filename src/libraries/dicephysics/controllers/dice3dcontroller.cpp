@@ -422,3 +422,19 @@ void Dice3DController::setNormalDialogMode(bool newNormalDialogMode)
     m_normalDialogMode= newNormalDialogMode;
     emit normalDialogModeChanged();
 }
+
+void Dice3DController::reset()
+{
+    m_model->clear();
+    m_colors[DiceController::DiceType::FOURSIDE]= QColor(255, 0, 0);
+    m_colors[DiceController::DiceType::SIXSIDE]= QColor(255, 127, 0);
+    m_colors[DiceController::DiceType::OCTOSIDE]= QColor(255, 255, 0);
+    m_colors[DiceController::DiceType::TENSIDE]= QColor(0, 255, 0);
+    m_colors[DiceController::DiceType::TWELVESIDE]= QColor(0, 0, 255);
+    m_colors[DiceController::DiceType::TWENTYSIDE]= QColor(75, 0, 130);
+    m_colors[DiceController::DiceType::ONEHUNDREDSIDE]= QColor(148, 0, 211);
+
+    setFactor(45.0);
+    setExpectRoll(false);
+    setMuted(false);
+}

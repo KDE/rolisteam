@@ -29,6 +29,7 @@ class DiceMainController : public QObject
     Q_PROPERTY(PropertiesModel* propertiesModel READ propertiesModel CONSTANT FINAL)
     Q_PROPERTY(MacrosModel* macros READ macros CONSTANT)
     Q_PROPERTY(DiceMainController::PanelMode currentPanel READ currentPanel WRITE setCurrentPanel NOTIFY currentPanelChanged FINAL)
+    Q_PROPERTY(bool show3dMenu READ show3dMenu WRITE setShow3dMenu NOTIFY show3dMenuChanged FINAL)
     // clang-format on
 public:
     enum Page
@@ -78,6 +79,9 @@ public:
     PanelMode currentPanel() const;
     void setCurrentPanel(const PanelMode& newCurrentPanel);
 
+    bool show3dMenu() const;
+    void setShow3dMenu(bool newShow3dMenu);
+
 public slots:
     void runCommand(const QString& cmd);
     void addAlias();
@@ -89,12 +93,15 @@ signals:
     void profileCountChanged();
     void errorHumanReadableChanged();
     void dice3dSizeChanged();
-
     void settingsCtrlChanged();
-
     void propertiesModelChanged();
-
     void currentPanelChanged();
+
+    void show3dMenuChanged();
+
+private:
+    void saveInCurrentProfile();
+    void loadFromCurrentProfile();
 
 private:
     std::unique_ptr<RollModel> m_model;
@@ -104,11 +111,12 @@ private:
     std::unique_ptr<SettingController> m_settingsCtrl;
     std::unique_ptr<PropertiesModel> m_propertiesModel;
     DiceMainController::Page m_currentPage{CommandsPage};
-    int m_profileCount;
     QString m_errorHumanReadable;
     QSize m_dice3dSize;
     std::unique_ptr<MacrosModel> m_macros;
     PanelMode m_currentPanel;
+    bool m_show3dMenu{true};
+    bool m_loading{false};
 };
 
 #endif // DICEMAINCONTROLLER_H

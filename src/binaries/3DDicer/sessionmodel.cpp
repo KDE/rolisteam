@@ -59,6 +59,16 @@ Session* SessionModel::session(int index) const
     return m_sessions[index].get();
 }
 
+Session* SessionModel::session(const QString& name) const
+{
+    auto it= std::find_if(std::begin(m_sessions), std::end(m_sessions),
+                          [name](const std::unique_ptr<Session>& session) { return session->name() == name; });
+
+    if(it == std::end(m_sessions))
+        return nullptr;
+    return (*it).get();
+}
+
 QStringList SessionModel::sessionNames() const
 {
     QStringList res;
@@ -72,6 +82,8 @@ void SessionModel::addSession(const QString& name)
     beginInsertRows(QModelIndex(), m_sessions.size(), m_sessions.size());
     m_sessions.push_back(std::make_unique<Session>(name));
     endInsertRows();
+
+    emit sessionAdded(m_sessions.size() - 1);
 }
 
 void SessionModel::removeSession(int index)
@@ -79,4 +91,6 @@ void SessionModel::removeSession(int index)
     beginRemoveRows(QModelIndex(), index, index);
     m_sessions.erase(std::begin(m_sessions) + index);
     endRemoveRows();
+
+    emit sessionRemoved(index);
 }

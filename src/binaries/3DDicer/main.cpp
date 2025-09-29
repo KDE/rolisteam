@@ -4,6 +4,10 @@
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
+    app.setApplicationDisplayName("DicelyVerse");
+    app.setApplicationName("DicelyVerse");
+    app.setOrganizationName("rolisteam");
+
     Q_INIT_RESOURCE(qmake_DicePhysics);
 
     QQmlApplicationEngine engine;

@@ -60,11 +60,19 @@ const std::vector<MacroInfo>& MacrosModel::macros() const
     return m_data;
 }
 
+void MacrosModel::clear()
+{
+    beginResetModel();
+    m_data.clear();
+    endResetModel();
+}
+
 void MacrosModel::addMacro(const QString& key, const QString& value)
 {
     beginInsertRows(QModelIndex(), m_data.size(), m_data.size());
     m_data.push_back(MacroInfo{key, value});
     endInsertRows();
+    emit countChanged();
 }
 
 void MacrosModel::removeMacro(int index)
@@ -72,4 +80,5 @@ void MacrosModel::removeMacro(int index)
     beginRemoveRows(QModelIndex(), index, index);
     m_data.erase(std::begin(m_data) + index);
     endRemoveRows();
+    emit countChanged();
 }

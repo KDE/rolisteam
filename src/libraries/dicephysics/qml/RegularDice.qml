@@ -22,6 +22,8 @@ DynamicRigidBody {
     }
 
     opacity: root.ctrl?.value > 0 ? 1.0 : 0.4
+    massMode: DynamicRigidBody.CustomDensity
+    receiveContactReports: true
 
     property real internalScale: selected ? 1.2 : 1.
     readonly property string diceCode: root.dice3DCtrl.diceTypeToCode(root.type)

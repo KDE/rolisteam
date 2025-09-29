@@ -22,6 +22,22 @@ Item {
     property real halfHeight: parentHeight/2
     property real ceilling: 500.
     property real side: 100.
+    property alias rectSelect: ma.rectSelect
+
+    function selectAll() {
+        ma.clear()
+        for(let i = 0; i < dicePool.count; ++i)
+        {
+            let obj = dicePool.objectAt(i)
+            ma.select(obj)
+        }
+    }
+
+    function resetSelection() {
+        ma.clear()
+    }
+
+
 
     PhysicsWorld {
         id: physicsWorld
@@ -220,11 +236,23 @@ Item {
                 }
             }
         } // scene
-
+        Rectangle {
+            id: rectSelector
+            visible: ma.rectSelect
+            border.width: 2
+            border.color: "red"
+            color: "transparent"
+            onVisibleChanged: {
+                x = 0
+                y = 0
+                width = 0
+                height = 0
+            }
+        }
         MouseArea {
             id: ma
             anchors.fill: parent
-            enabled: !root.denyClick && !root.ctrl.expectRoll
+            enabled: !root.denyClick //&& !root.ctrl.expectRoll
             Connections {
                 target: root.ctrl
                 function onCountChanged() {
@@ -241,21 +269,23 @@ Item {
             property real ypos: 0.0
             property real t: 0.0
             property bool rolling: false
+            property bool rectSelect: false
 
             property vector3d formerPosition
 
             function clear() {
-                //console.log("Clear selection")
                 while(ma.selection.length > 0) {
                     let target = ma.selection.pop();
-                    target.selected = false
+                    if(target)
+                        target.selected = false
                 }
             }
 
             function prepareSelection(point) {
-                //console.log("prepare selection")
                 ma.rolling = true
                 ma.selection.forEach(body => {
+                        if(!body)
+                            return;
                         body.isKinematic = true
                         body.kinematicRotation = body.rotation
                         body.kinematicPosition =  Qt.vector3d(body.position.x, 50, body.position.z)
@@ -263,8 +293,9 @@ Item {
                 formerPosition = point
             }
             function releaseSelection(point, velocity) {
-                //console.log("release selection")
                 ma.selection.forEach(body => {
+                         if(!body)
+                             return;
                         body.kinematicPosition =  Qt.vector3d(point.x, 50, point.z)
                         body.isKinematic = false
                         body.applyCentralImpulse(velocity)
@@ -277,13 +308,16 @@ Item {
                 const distX= point.x - formerPosition.x
                 const distZ = point.z - formerPosition.z
                 ma.selection.forEach(body => {
+                        if(!body)
+                            return;
                         body.kinematicPosition =  Qt.vector3d(body.kinematicPosition.x + distX, body.kinematicPosition.y, body.kinematicPosition.z+ distZ)
                 });
                 formerPosition = point
             }
 
             function select(target) {
-                ma.selection.push(target)
+                if(!ma.selection.includes(target))
+                    ma.selection.push(target)
                 target.selected = true
             }
 
@@ -294,6 +328,19 @@ Item {
 
                 ma.selection.splice(idx, 1)
                 target.selected = false
+            }
+
+            function computeSelectionFromRect() {
+                ma.clear()
+                const p1 = viewport.mapTo3DScene(Qt.vector3d(rectSelector.x,rectSelector.y,0))
+                const p2 = viewport.mapTo3DScene(Qt.vector3d(rectSelector.x + rectSelector.width,rectSelector.y + rectSelector.height,0))
+                for(let i = 0; i < dicePool.count; ++i)
+                {
+                    let obj = dicePool.objectAt(i)
+                    //console.log("p1",p1," p2",p2," obj",obj.position," z:",obj.scenePosition)
+                    if((obj.x >= p1.x) && (obj.z >= p1.z) && (obj.x <= p2.x) && (obj.z <= p2.z))
+                        ma.select(obj)
+                }
             }
 
 
@@ -312,14 +359,20 @@ Item {
                 if(interval == 0)
                     return
 
-                ma.xvelocity = distx//Math.sqrt(distx*distx)  //interval
-                ma.zvelocity = disty//Math.sqrt(disty*disty) //interval
+                ma.xvelocity = distx
+                ma.zvelocity = disty
                 xpos = nx
                 ypos = ny
                 t = nt
             }
 
             onPressed: (mouse)=> {
+
+                           if(ma.rectSelect) {
+                               rectSelector.x = mouse.x
+                               rectSelector.y = mouse.y
+                               return;
+                           }
 
                            var point = viewport.mapTo3DScene(Qt.vector3d(mouse.x, mouse.y, 0))
                            var result = viewport.pick(mouse.x, mouse.y)
@@ -354,6 +407,11 @@ Item {
                            }
                        }
             onPositionChanged: (mouse)=>{
+                    if(ma.rectSelect) {
+                        rectSelector.width = mouse.x-rectSelector.x
+                        rectSelector.height = mouse.y-rectSelector.y
+                        return;
+                    }
                     if(false === ma.rolling || ma.selection.length === 0) {
                         mouse.accepted = false
                         return
@@ -371,6 +429,13 @@ Item {
                        }*/
 
             onReleased: (mouse)=>{
+                if(ma.rectSelect) {
+                    rectSelector.width = mouse.x-rectSelector.x
+                    rectSelector.height = mouse.y-rectSelector.y
+                    ma.computeSelectionFromRect()
+                    ma.rectSelect = false
+                    return;
+                }
                 if(false === ma.rolling || ma.selection.length === 0) {
                     mouse.accepted = false
                     return

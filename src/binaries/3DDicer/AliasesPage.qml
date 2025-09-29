@@ -118,9 +118,9 @@ Panel {
                     icon.source: "qrc:/assets/check.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
+                    icon.color: "transparent"
                     text: qsTr("Save and back")
                     flat: true
-                    icon.color: "transparent"
                     Layout.fillWidth: true
                     background: Rectangle {
                         border.width: 1
@@ -158,6 +158,7 @@ Panel {
         icon.source: "qrc:/assets/plus2.svg"
         icon.width: Theme.iconSize * 2
         icon.height: Theme.iconSize * 2
+        icon.color: "transparent"
         flat: true
         background: Item {}
         onClicked: {

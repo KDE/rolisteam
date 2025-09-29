@@ -16,5 +16,6 @@ QtObject {
     readonly property int padding: 8
     readonly property int spacing: 8
     readonly property int radius: 10
+    readonly property int colorButtonSize: 50
     readonly property int minimalTextField: 30
 }

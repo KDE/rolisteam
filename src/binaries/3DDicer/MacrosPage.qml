@@ -12,7 +12,8 @@ Panel {
         Layout.fillHeight: true
         Layout.fillWidth: true
         model: DiceMainController.macros
-        spacing: 5
+        spacing: Theme.spacing
+        clip: true
 
         delegate: SwipeDelegate {
             width:view.width
@@ -41,6 +42,7 @@ Panel {
                     icon.source: edition ?  "qrc:/assets/check.svg" :  "qrc:/assets/edit.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
+                    icon.color: "transparent"
                     background: Item {}
                     flat: true
                     opacity: swipe.position === 0 ? 1.0 : 0.0
@@ -81,6 +83,7 @@ Panel {
         icon.source: "qrc:/assets/plus2.svg"
         icon.width: Theme.iconSize * 2
         icon.height: Theme.iconSize * 2
+        icon.color: "transparent"
         background: Item {}
         flat: true
         onClicked: {

@@ -31,6 +31,7 @@ Panel {
                         icon.source: "qrc:/assets/plus.svg"
                         icon.width: Theme.iconSize
                         icon.height:Theme.iconSize
+                        icon.color: "transparent"
                         display: AbstractButton.IconOnly
                         checkable: true
                         flat: true
@@ -50,6 +51,7 @@ Panel {
                             icon.source: "qrc:/assets/redo.svg"
                             icon.width: Theme.iconSize
                             icon.height:Theme.iconSize
+                            icon.color: "transparent"
                             display: AbstractButton.IconOnly
                             onClicked: DiceMainController.runCommand(command)
                         }
@@ -65,7 +67,7 @@ Panel {
                 Label {
                     text: "%1 : %2".arg(command).arg(details)
                     visible: detailsBtn.checked
-                    textFormat: Text.StyledText
+                    textFormat: Text.RichText
                     Layout.fillWidth: true
                 }
             }
@@ -75,12 +77,12 @@ Panel {
                 border.width: 1
                 border.color: "black"
             }
-
         }
     }
     GroupBox {
         id: groupBox
         Layout.fillWidth: true
+        Layout.preferredHeight: root.height * 0.33
         clip: true
         ColumnLayout
         {
@@ -93,58 +95,67 @@ Panel {
                 currentIndex: DiceMainController.currentPanel
                 onCurrentIndexChanged: DiceMainController.currentPanel = currentIndex
                 interactive: gridLyt.count > 0
-                GridLayout {
-                    columns: 2
-                    TextField {
-                        id: cmdField
-                        placeholderText: qsTr("Type your command e.g: 3d10…")
+                ColumnLayout {
+
+                    Layout.fillWidth: true
+                    Layout.fillHeight: true
+                    RowLayout {
+                        Layout.alignment: Qt.AlignTop
                         Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        font.pointSize: Theme.commandFontSize
-                        onEditingFinished: {
-                            DiceMainController.runCommand(cmdField.text)
-                            cmdField.text = ""
+                        TextField {
+                            id: cmdField
+                            placeholderText: qsTr("Type your command e.g: 3d10…")
+                            Layout.fillWidth: true
+
+
+                            font.pointSize: Theme.commandFontSize
+                            onEditingFinished: {
+                                DiceMainController.runCommand(cmdField.text)
+                                cmdField.text = ""
+                            }
+                        }
+                        ToolButton {
+                            text: qsTr("Run")
+                            enabled: cmdField.text.length > 0
+                            icon.source: "qrc:/assets/send.svg"
+                            icon.width: Theme.iconSize * 2
+                            icon.height:Theme.iconSize * 2
+                            icon.color: "transparent"
+                            //Layout.fillHeight: true
+                            display: AbstractButton.IconOnly
+                            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                            opacity: enabled ? 1.0 : 0.2
+                            scale: pressed ? 0.8 : 1.0
+                            background: Item{}
+                            onClicked: {
+                                DiceMainController.runCommand(cmdField.text)
+                                cmdField.text = ""
+                            }
                         }
                     }
-                    ToolButton {
-                        text: qsTr("Run")
-                        enabled: cmdField.text.length > 0
-                        icon.source: "qrc:/assets/send.svg"
-                        icon.width: Theme.iconSize * 2
-                        icon.height:Theme.iconSize * 2
-                        Layout.fillHeight: true
-                        display: AbstractButton.IconOnly
-                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        opacity: enabled ? 1.0 : 0.2
-                        scale: pressed ? 0.8 : 1.0
-                        background: Item{}
-                        onClicked: {
-                            DiceMainController.runCommand(cmdField.text)
-                            cmdField.text = ""
-                        }
-                    }
-                    Item {
+                    /*Item {
                         id: margin
                         Layout.columnSpan: 2
                         Layout.preferredHeight: 40
-                    }
+                    }*/
                 }
 
                 GridView {
                     id: gridLyt
                     visible: stackLayout.currentIndex === 1
+                    //anchors.fill: parent
                     Layout.fillWidth: true
                     Layout.fillHeight: true
-                    cellHeight: cellWidth
-                    cellWidth: (root.width  - (3 * Theme.spacing)) / Math.max(4 ,Math.min(4, gridLyt.count))
+                    cellHeight: cellWidth + Theme.spacing/2
+                    cellWidth: (gridLyt.width  - (3 * Theme.spacing)) / Math.max(4 ,Math.min(4, gridLyt.count)) + Theme.spacing/2
 
                     model: DiceMainController.macros
                     delegate: ItemDelegate {
                         background: Rectangle {
                             border.width: 1
                         }
-                        width: gridLyt.cellWidth
-                        height: gridLyt.cellHeight
+                        width: gridLyt.cellWidth - Theme.spacing
+                        height: gridLyt.cellHeight - Theme.spacing
                         Label {
                             anchors.centerIn: parent
                             text: model.name

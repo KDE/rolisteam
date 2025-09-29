@@ -18,7 +18,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 COMPONENTS Core Widgets Gui Svg Network Multimedia PrintSupport Qml Quick Xml QuickWidgets QuickControls2 Xml  Concurrent Sql PdfWidgets StateMachine REQUIRED)
 # WebEngineWidgets WebEngineCore
-
+include(install_helper)
 if(TESTS)
     find_package(Qt6 COMPONENTS Test REQUIRED)
 endif()
@@ -94,12 +94,25 @@ set(Network_SRC
     src/network/upnp/upnpnat.cpp
     src/data/charactervision.cpp
 )
-message(${Network_SRC} ${Network_HEADER})
+
 add_library(network SHARED ${Network_SRC} ${Network_HEADER})
 set_target_properties(network PROPERTIES PUBLIC_HEADER "${Network_HEADER}")
 set_target_properties(network PROPERTIES COMPILE_DEFINITIONS "UNIT_TEST=1")
 target_compile_definitions(network PRIVATE NETWORK_LIBRARY)
-target_link_libraries(network
+if(ANDROID)
+  target_link_libraries(network
+      PUBLIC
+          Qt6::Core
+          Qt6::Network
+          Qt6::Gui
+          Qt6::StateMachine
+          Qt6::Xml
+      PRIVATE
+          common_core
+          utils
+   )
+else()
+  target_link_libraries(network
     PUBLIC
         Qt6::Core
         Qt6::Network
@@ -111,6 +124,8 @@ target_link_libraries(network
         utils
         charactersheet
  )
+endif()
+
 target_include_directories(network
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
@@ -124,10 +139,7 @@ target_include_directories(network
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/upnp>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-
-
-
-
+rinstallLib(network libraries)
 #===============================================================
 
 
@@ -454,7 +466,5 @@ if("${CAMKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set_source_files_properties("${CMAKE_CURRENT_BINARY_DIR}/network_autogen/mocs_compilation.cpp" PROPERTIES COMPILE_FLAGS "-Wno-undefined-reinterpret-cast -Wno-useless-cast")
 endif()
 
-include(install_helper)
-rinstallLib(core libraries)
-rinstallLib(network libraries)
 
+rinstallLib(core libraries)

@@ -7,6 +7,7 @@ Pane {
 
     property alias title: titleLabel.text
     default property alias children: mainLyt.children
+    property alias titleVisible: titleLabel.visible
 
     ColumnLayout {
         id: mainLyt
@@ -20,11 +21,6 @@ Pane {
             Layout.alignment: Qt.AlignHCenter | Qt.AlignTop
             horizontalAlignment: Label.AlignHCenter
             font.pointSize: Theme.titleFontSize
-            /*Rectangle {
-                anchors.fill: parent
-                color: "red"
-                opacity: 0.2
-            }*/
         }
     }
 }

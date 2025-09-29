@@ -25,6 +25,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     Session* session(int index) const;
+    Session* session(const QString& name) const;
     QStringList sessionNames() const;
 public slots:
     void addSession(const QString& name= QString());
@@ -32,6 +33,7 @@ public slots:
 
 signals:
     void sessionAdded(int index);
+    void sessionRemoved(int index);
 
 private:
     std::vector<std::unique_ptr<Session>> m_sessions;

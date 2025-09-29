@@ -25,8 +25,10 @@
 #include "network_global.h"
 #include "person.h"
 
+#ifndef Q_OS_ANDROID
 class CharacterSheet;
 class RolisteamImageProvider;
+#endif
 
 #include <QList>
 #include <QMovie>
@@ -220,9 +222,6 @@ public:
     bool hasInitScore() const;
     void setHasInitiative(bool b);
 
-    CharacterSheet* getSheet() const;
-    void setSheet(CharacterSheet* sheet);
-
     Player* getParentPlayer() const;
     QString getParentId() const;
 
@@ -249,8 +248,12 @@ public:
     qreal getDistancePerTurn() const;
     void setDistancePerTurn(const qreal& distancePerTurn);
 
+#ifndef Q_OS_ANDROID
+    CharacterSheet* getSheet() const;
+    void setSheet(CharacterSheet* sheet);
     RolisteamImageProvider* getImageProvider() const;
     void setImageProvider(RolisteamImageProvider* imageProvider);
+#endif
 
     QColor getLifeColor() const;
     void setLifeColor(QColor color);
@@ -297,11 +300,13 @@ private:
     QList<CharacterAction*> m_actionList;
     QList<CharacterProperty*> m_propertyList;
     QString m_stateId;
-    QPointer<CharacterSheet> m_sheet;
     int m_healthPointsMax= 100;
     int m_healthPointsMin= 0;
     int m_healthPointsCurrent= 100;
+#ifndef Q_OS_ANDROID
+    QPointer<CharacterSheet> m_sheet;
     QPointer<RolisteamImageProvider> m_imageProvider= nullptr;
+#endif
     int m_initiativeScore= 0;
     CharacterAction m_initiativeRoll;
     qreal m_distancePerTurn= 0;
