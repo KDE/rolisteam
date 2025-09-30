@@ -1640,12 +1640,9 @@ msgid "GM Tools"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "ImportDataFromCampaignDialog|"
-#| msgid "Pdf documents"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "PDF 文档"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:561
 msgctxt "MainWindow|"
@@ -6514,12 +6511,9 @@ msgid "&Name..."
 msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "更改配置文件..."
+msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 msgctxt "TextEdit|"
