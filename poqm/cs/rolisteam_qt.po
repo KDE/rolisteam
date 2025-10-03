@@ -1633,20 +1633,14 @@ msgid "GM Tools"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Zadat nový název"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:561
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "MainWindow|"
 msgid "Name:"
-msgstr "Název:"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:581
 msgctxt "MainWindow|"
@@ -3788,12 +3782,9 @@ msgid "Add chatroom"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:51
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Nastavit výchozí"
+msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
@@ -3801,12 +3792,9 @@ msgid "Attach on Main"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
-#, fuzzy
-#| msgctxt "ChatView|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
-msgstr "Odpojit"
+msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:35
 msgctxt "RecipiantsView|"
@@ -6511,28 +6499,19 @@ msgid "&Save"
 msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Název"
+msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Změnit profil..."
+msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "Name"
-msgstr "Název"
+msgstr ""
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:201
 msgctxt "TextEdit|"
@@ -7928,12 +7907,10 @@ msgid "ReadOnly"
 msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:87
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - (PDF)"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:313
 msgctxt "PdfViewer|"
@@ -8510,7 +8487,3 @@ msgstr "Spící"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Posedlý"
-
-#~ msgctxt "ChatView|"
-#~ msgid "Split view"
-#~ msgstr "Rozdělit pohled"
