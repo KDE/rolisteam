@@ -15,15 +15,19 @@ Panel {
         spacing: 5
         clip: true
 
-        delegate: Pane {
+        delegate: ItemDelegate {
             required property string result
             required property string command
             required property string comment
             required property string time
             required property string details
             width:view.width
+            height: lyt.implicitHeight + padding
             ColumnLayout {
+                id: lyt
                 anchors.fill: parent
+                anchors.rightMargin: Theme.margin
+                anchors.leftMargin: Theme.margin
                 RowLayout {
                     Layout.fillWidth: true
                     ToolButton {
@@ -64,12 +68,24 @@ Panel {
                         }
                     }
                 }
-                Label {
-                    text: "%1 : %2".arg(command).arg(details)
-                    visible: detailsBtn.checked
-                    textFormat: Text.RichText
+                RowLayout {
                     Layout.fillWidth: true
+                    visible: detailsBtn.checked
+                    spacing: 0
+                    Label {
+                        text: "%1".arg(command)
+                        textFormat: Text.PlainText
+                    }
+                    Label {
+                        text: ": %1".arg(details)
+                        textFormat: Text.RichText
+                    }
                 }
+
+            }
+
+            onPressAndHold: {
+                cmdField.text = command
             }
 
             background: Rectangle {
@@ -144,6 +160,7 @@ Panel {
                     id: gridLyt
                     visible: stackLayout.currentIndex === 1
                     //anchors.fill: parent
+
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     cellHeight: cellWidth + Theme.spacing/2

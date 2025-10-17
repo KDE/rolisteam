@@ -1,12 +1,27 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(dicelyVerse VERSION 0.1 LANGUAGES CXX)
+project(dicelyVerse VERSION 5 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Quick Quick3D Quick3DPhysics Multimedia)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick Quick3D Quick3DPhysics)
 
 qt_standard_project_setup(REQUIRES 6.8)
+
+include(gitinfo)
+get_version_from_git()
+
+
+set(PROJECT_VERSION_MAJOR 0)
+set(PROJECT_VERSION_MINOR 0)
+set(PROJECT_VERSION_PATCH 6)
+
+
+
+configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/version.h.in
+    ${CMAKE_CURRENT_BINARY_DIR}/dicelyverse/version.h
+)
 
 
 qt_add_executable(dicelyVerse
@@ -62,11 +77,13 @@ qt_add_qml_module(dicelyVerse
         SOURCES sessionmodel.h sessionmodel.cpp
         SOURCES macromodel.cpp macromodel.h
         RESOURCES android/AndroidManifest.xml android/build.gradle android/res/values/libs.xml android/res/xml/qtprovider_paths.xml
-
+        RESOURCES version.h.in
 )
-
-
-
+set_target_properties(dicelyVerse PROPERTIES
+    QT_ANDROID_VERSION_NAME "Auguste"
+    QT_ANDROID_VERSION_CODE "${PROJECT_VERSION}"
+)
+target_include_directories(dicelyVerse PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
@@ -77,7 +94,9 @@ set_target_properties(dicelyVerse PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
-
+set_target_properties(dicelyVerse PROPERTIES
+       QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
+   )
 target_link_libraries(dicelyVerse
 PRIVATE
     Qt6::Core
@@ -85,7 +104,6 @@ PRIVATE
     Qt6::Concurrent
     Qt::Quick3D
     Qt::Quick3DPhysics
-    Qt::Multimedia
     diceparser_shared
     dice3d
 )

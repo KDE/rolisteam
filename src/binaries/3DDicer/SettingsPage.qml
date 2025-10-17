@@ -92,8 +92,11 @@ Panel {
                 DiceMainController.settingsCtrl.sessions.addSession()
             }
         }
-        Item {
+        Label {
             Layout.fillWidth: true
+            text: qsTr("v%1 - %2 - sha1:%3").arg(DiceMainController.version).arg(DiceMainController.dateVersion).arg(DiceMainController.hashVersion)
+            horizontalAlignment: Label.AlignHCenter
+            verticalAlignment: Label.AlignBottom
         }
 
         ToolButton {

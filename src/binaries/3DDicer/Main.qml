@@ -2,7 +2,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import treeDicer
-
+import QtQuick3D.Helpers
 
 
 ApplicationWindow {
@@ -22,10 +22,20 @@ ApplicationWindow {
         }
     }
 
+    ProceduralSkyTextureData {
+        id: skyTexture
+        sunLongitude: -115
+        groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
+        //onDestroyed: console.log("SkyTexture")
+    }
+
+    Component.onCompleted: {
+        DiceMainController.skyTextureData = skyTexture
+    }
+
     Component {
         id: physics
         PhysicsDicePage {
-
         }
     }
     Component {
@@ -102,7 +112,7 @@ ApplicationWindow {
 
             TabBar {
                 id: tabs
-                visible: DiceMainController.currentPage !== DiceMainController.SelectContextPage
+                visible: DiceMainController.show3dMenu
                 Layout.fillWidth: true
                 //Layout.preferredHeight: Theme.iconSize * 2 + (Theme.margin * 2)
                 TabButton {

@@ -204,7 +204,7 @@ Panel {
                         icon.height: Theme.iconSize
                         visible: DiceMainController.show3dMenu
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        onClicked: diceGround.selectAll()
+                        onClicked: loader.item.selectAll()
                     }
                     ToolButton {
                         //selection rect
@@ -214,9 +214,9 @@ Panel {
                         icon.height: Theme.iconSize
                         checkable: true
                         visible: DiceMainController.show3dMenu
-                        checked: diceGround.rectSelect
+                        checked: loader.item.rectSelect
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
-                        onClicked: diceGround.rectSelect = true
+                        onClicked: loader.item.rectSelect = true
                     }
                     ToolButton {
                         // hide menu
@@ -233,17 +233,28 @@ Panel {
             }
         }
 
-        DicePlan {
-            id: diceGround
-            anchors.fill: parent
-            ctrl: DiceMainController.dice3dCtrl
-            factor: root.ctrl.factor
-            parentWidth: width
-            parentHeight: height
+        Component {
+            id: diceComp
+            DicePlan {
+                id: diceGround
+                anchors.fill: parent
+                ctrl: DiceMainController.dice3dCtrl
+                mainCtrl: DiceMainController
+                factor: root.ctrl.factor
+                parentWidth: width
+                parentHeight: height
 
-            onWidthChanged: DiceMainController.dice3dSize = Qt.size(width, height)
-            onHeightChanged: DiceMainController.dice3dSize = Qt.size(width, height)
-            Component.onCompleted: DiceMainController.dice3dSize = Qt.size(width, height)
+                onWidthChanged: DiceMainController.dice3dSize = Qt.size(width, height)
+                onHeightChanged: DiceMainController.dice3dSize = Qt.size(width, height)
+                Component.onCompleted: DiceMainController.dice3dSize = Qt.size(width, height)
+            }
+        }
+
+        Loader {
+            id: loader
+            sourceComponent: diceComp
+            asynchronous: true
+            anchors.fill: parent
         }
     }
 }

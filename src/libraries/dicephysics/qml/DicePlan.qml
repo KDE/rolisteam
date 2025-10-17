@@ -11,6 +11,7 @@ Item {
     id: root
 
     required property QtObject ctrl
+    required property QtObject mainCtrl
 
     readonly property int selectedCount: ma.selection.length
     property bool denyClick: false
@@ -66,9 +67,18 @@ Item {
 
         Texture {
             id: proceduralSky
-            textureData: ProceduralSkyTextureData {
-                sunLongitude: -115
-                groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
+            Loader {
+                id: loader
+                asynchronous: true
+                sourceComponent:  Component {
+                    ProceduralSkyTextureData {
+                        sunLongitude: -115
+                        groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
+                    }
+                }
+                onStatusChanged: {
+                    proceduralSky.textureData = loader.item
+                }
             }
         }
 
@@ -215,6 +225,7 @@ Item {
                 visible: false
             }*/
 
+
             Component {
                 id: genericDiceComp
                 RegularDice {
@@ -222,6 +233,11 @@ Item {
                     dice3DCtrl: root.ctrl
                     parentWidth: root.parentWidth
                     parentHeight: root.parentHeight
+                    onPlaySoundEffect: (volume) => {
+                        diceSound.volume = volume
+                        if(!diceSound.playing)
+                            diceSound.play()
+                    }
                 }
             }
 

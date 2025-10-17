@@ -7,6 +7,7 @@ int main(int argc, char* argv[])
     app.setApplicationDisplayName("DicelyVerse");
     app.setApplicationName("DicelyVerse");
     app.setOrganizationName("rolisteam");
+    app.setApplicationVersion("0.2");
 
     Q_INIT_RESOURCE(qmake_DicePhysics);
 

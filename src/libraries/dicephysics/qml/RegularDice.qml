@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick3D
 import QtQuick3D.Physics
-import QtMultimedia
 //import Controllers
 
 DynamicRigidBody {

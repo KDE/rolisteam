@@ -10,6 +10,7 @@
 #include "settingcontroller.h"
 #include <QObject>
 #include <QQmlEngine>
+#include <QQuick3DTextureData>
 #include <memory>
 
 class DiceMainController : public QObject
@@ -30,6 +31,9 @@ class DiceMainController : public QObject
     Q_PROPERTY(MacrosModel* macros READ macros CONSTANT)
     Q_PROPERTY(DiceMainController::PanelMode currentPanel READ currentPanel WRITE setCurrentPanel NOTIFY currentPanelChanged FINAL)
     Q_PROPERTY(bool show3dMenu READ show3dMenu WRITE setShow3dMenu NOTIFY show3dMenuChanged FINAL)
+    Q_PROPERTY(QString version READ version CONSTANT FINAL)
+    Q_PROPERTY(QString dateVersion READ dateVersion CONSTANT FINAL)
+    Q_PROPERTY(QString hashVersion READ hashVersion CONSTANT FINAL)
     // clang-format on
 public:
     enum Page
@@ -81,6 +85,10 @@ public:
 
     bool show3dMenu() const;
     void setShow3dMenu(bool newShow3dMenu);
+    QString version() const;
+    QString hashVersion() const;
+
+    QString dateVersion() const;
 
 public slots:
     void runCommand(const QString& cmd);
@@ -96,8 +104,8 @@ signals:
     void settingsCtrlChanged();
     void propertiesModelChanged();
     void currentPanelChanged();
-
     void show3dMenuChanged();
+    void skyTextureDataChanged();
 
 private:
     void saveInCurrentProfile();

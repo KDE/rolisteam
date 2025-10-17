@@ -2,10 +2,9 @@
 
 #include <QtConcurrent>
 
+#include "dicelyverse/version.h"
 #include "diceparser/dicealias.h"
 #include "worker/fileserializer.h"
-//#include "worker/iohelper.h"
-//#include "worker/modelhelper.h"
 #include <QJsonArray>
 #include <QStandardPaths>
 
@@ -98,7 +97,7 @@ void DiceMainController::runCommand(const QString& cmd)
 
             m_parser->setVariableDictionary(m_propertiesModel->dictionary());
 
-            if(!m_parser->parseLine(cmd))
+            if(!m_parser->parseLine(cmd.trimmed()))
             {
                 setErrorHumanReadable(m_parser->humanReadableError());
                 return;
@@ -264,6 +263,9 @@ void DiceMainController::loadFromCurrentProfile()
                                            m_aliases.get());
     dice3D::FileSerializer::fetchDice3d(m_dice3DCtrl.get(), current->dice3D());
 
+    if(m_macros->rowCount() == 0)
+        setCurrentPanel(TypeCommand);
+
     m_loading= false;
 }
 
@@ -362,4 +364,19 @@ void DiceMainController::setShow3dMenu(bool newShow3dMenu)
         return;
     m_show3dMenu= newShow3dMenu;
     emit show3dMenuChanged();
+}
+
+QString DiceMainController::version() const
+{
+    return DicelyVerse::FULL_VERSION;
+}
+
+QString DiceMainController::hashVersion() const
+{
+    return DicelyVerse::VERSION_SHA1;
+}
+
+QString DiceMainController::dateVersion() const
+{
+    return DicelyVerse::VERSION_DATE;
 }
