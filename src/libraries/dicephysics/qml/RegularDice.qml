@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick3D
 import QtQuick3D.Physics
-//import Controllers
+import QtMultimedia
 
 DynamicRigidBody {
     id: root

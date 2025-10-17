@@ -233,11 +233,6 @@ Item {
                     dice3DCtrl: root.ctrl
                     parentWidth: root.parentWidth
                     parentHeight: root.parentHeight
-                    onPlaySoundEffect: (volume) => {
-                        diceSound.volume = volume
-                        if(!diceSound.playing)
-                            diceSound.play()
-                    }
                 }
             }
 
