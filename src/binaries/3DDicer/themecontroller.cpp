@@ -26,7 +26,7 @@ int ThemeController::titleFontSize() const
     return m_titleFontSize;
 }
 
-int ThemeController::name() const
+int ThemeController::commandFontSize() const
 {
     return m_commandFontSize;
 }

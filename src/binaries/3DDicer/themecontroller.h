@@ -16,7 +16,7 @@ class ThemeController : public QObject
     Q_PROPERTY(int iconSize READ iconSize CONSTANT FINAL)
     Q_PROPERTY(int tabIconSize READ tabIconSize CONSTANT FINAL)
     Q_PROPERTY(int titleFontSize READ titleFontSize CONSTANT FINAL)
-    Q_PROPERTY(int commandFontSize READ name CONSTANT FINAL)
+    Q_PROPERTY(int commandFontSize READ commandFontSize CONSTANT FINAL)
     Q_PROPERTY(int finalDiceResultFontSize READ finalDiceResultFontSize CONSTANT FINAL)
     Q_PROPERTY(int textFieldFontSize READ textFieldFontSize  CONSTANT FINAL)
     Q_PROPERTY(int timeFontSize READ timeFontSize  CONSTANT FINAL)
@@ -52,7 +52,7 @@ public:
     int iconSize() const;
     int tabIconSize() const;
     int titleFontSize() const;
-    int name() const;
+    int commandFontSize() const;
     int finalDiceResultFontSize() const;
     int textFieldFontSize() const;
     int timeFontSize() const;
