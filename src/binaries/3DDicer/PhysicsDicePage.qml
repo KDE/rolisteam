@@ -3,7 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQml
-import treeDicer
+import dicely
 import DicePhysics
 
 Panel {
@@ -89,7 +89,6 @@ Panel {
 
                     onValueChanged:  {
                         root.ctrl.factor = _factor.value;
-                        //console.log("value:",_factor.value)
                     }
                 }
                 ListModel {
@@ -138,7 +137,7 @@ Panel {
 
                         ToolButton {
                             icon.source: "qrc:/assets/remove.svg"
-                            icon.color: "transparent"
+                            icon.color: Theme.transparent
                             icon.width: Theme.iconSize
                             icon.height: Theme.iconSize
                             onClicked:  {
@@ -162,7 +161,7 @@ Panel {
 
                         ToolButton {
                             icon.source: "qrc:/assets/plus3.svg"
-                            icon.color: "transparent"
+                            icon.color: Theme.transparent
                             icon.width: Theme.iconSize
                             icon.height: Theme.iconSize
                             onClicked:{
@@ -199,7 +198,7 @@ Panel {
                     ToolButton {
                         //select all
                         icon.source: "qrc:/assets/selectall.svg"
-                        icon.color: "transparent"
+                        icon.color: Theme.textColor
                         icon.width: Theme.iconSize
                         icon.height: Theme.iconSize
                         visible: DiceMainController.show3dMenu
@@ -209,7 +208,7 @@ Panel {
                     ToolButton {
                         //selection rect
                         icon.source: "qrc:/assets/selectRect.svg"
-                        icon.color: "transparent"
+                        icon.color: Theme.textColor
                         icon.width: Theme.iconSize
                         icon.height: Theme.iconSize
                         checkable: true
@@ -221,7 +220,7 @@ Panel {
                     ToolButton {
                         // hide menu
                         icon.source: "qrc:/assets/menu.svg"
-                        icon.color: "transparent"
+                        icon.color: Theme.textColor
                         icon.width: Theme.iconSize
                         icon.height: Theme.iconSize
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter

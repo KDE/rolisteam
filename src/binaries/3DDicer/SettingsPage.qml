@@ -1,110 +1,155 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import treeDicer
+import dicely
 
 Panel {
     id: root
     title: qsTr("Settings")
-
-    ListView {
-        id: view
+    property bool hasSelection: group.checkedButton !== null
+    Flickable {
+        id: flick
         Layout.fillHeight: true
         Layout.fillWidth: true
-        model: DiceMainController.settingsCtrl.sessions
-        spacing: Theme.spacing
         clip: true
+        ButtonGroup {
+            id: group
+            buttons: [profile.button, appSettings.button, about.button]
+            property Item previous
 
-        delegate: SwipeDelegate {
-            width:view.width
-            height: lyt.implicitHeight + 2 * Theme.padding
-            property bool edition: false
-            RowLayout {
-                id: lyt
-                anchors.margins: Theme.margin
-                anchors.fill: parent
-                TextField {
-                    enabled: edition
-                    text: model.name
-                    onEditingFinished: model.name = text
-                    font.pointSize: Theme.finalDiceResultFontSize
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
-                    //anchors.fill: parent
+
+            onClicked: button => {
+                if(group.previous === button && group.checkState != Qt.Unchecked) {
+                    group.checkState = Qt.Unchecked
+                    group.previous = null
+                    return
+                }
+
+                previous = button
+            }
+        }
+        ColumnLayout {
+            id: column
+            width: flick.width
+            spacing: Theme.spacing
+            ExpansionPanel {
+                id: profile
+                text: qsTr("Select Profile")
+                Layout.fillWidth: true
+                opacity: hasSelection && group.checkedButton !== profile.button ? 0.0 : 1.0
+                ProfileSelector {
+                    id: profileSelector
+                    Layout.preferredHeight: flick.height - appSettings.height - profile.button.height - (Theme.spacing * 2)//flick.height - (Theme.spacing * 4)- appSettings.height - appSettings.height - about.height - footer.height
+                    interactive: flick.height-appSettings.height < profileSelector.contentHeight
                     Layout.fillWidth: true
                 }
                 ToolButton {
-                    icon.source: edition ?  "qrc:/assets/check.svg" :  "qrc:/assets/edit.svg"
+                    id: add
+                    icon.source: "qrc:/assets/plus2.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
-                    icon.color: "transparent"
+                    icon.color: Theme.transparent
                     background: Item {}
+                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
                     flat: true
-                    opacity: swipe.position === 0 ? 1.0 : 0.0
-                    enabled: swipe.position === 0
                     onClicked: {
-                        edition = !edition
+                        DiceMainController.settingsCtrl.sessions.addSession()
                     }
                 }
             }
-            background:  Rectangle {
-                border.width: 1
-                radius: Theme.radius
-                color: DiceMainController.settingsCtrl.currentSessionIndex === model.index ? "#662e8b57" : "transparent"
+            ExpansionPanel {
+                id: appSettings
+                text: qsTr("App Settings")
+                Layout.fillWidth: true
+                Layout.fillHeight: group.checkedButton === appSettings.button
+                opacity: hasSelection && group.checkedButton !== appSettings.button ? 0.0 : 1.0
+                GridLayout {
+                    columns: 2
+                    rowSpacing: Theme.spacing
+                    Layout.topMargin: Theme.margin
+                    Layout.bottomMargin: Theme.margin
+                    Layout.leftMargin: Theme.margin
+                    Layout.alignment: Qt.AlignTop | Qt.AlignVCenter
+                    Label {
+                        Layout.leftMargin: Theme.margin
+                        text: qsTr("Dark Mode:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Switch {
+                        id: darkModeSw
+                        checked: Theme.darkMode
+                        onClicked: {
+                            Theme.darkMode = darkModeSw.checked
+                        }
+                    }
+                    Label {
+                        Layout.leftMargin: Theme.margin
+                        text: qsTr("Language:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    ComboBox {
+                        id: langSelector
+                        model: DiceMainController.langModel
+                        Layout.fillWidth: true
+                        currentValue: DiceMainController.lang ? DiceMainController.lang : Qt.uiLanguage
+                        textRole: "display"
+                        valueRole: "code"
+                        hoverEnabled: true
+                        onCurrentValueChanged: {
+                            if(DiceMainController.lang !== langSelector.currentValue)
+                                DiceMainController.lang = langSelector.currentValue
+                        }
+                    }
+                }
             }
-
-            onClicked: {
-                DiceMainController.saveData()
-                DiceMainController.settingsCtrl.currentSessionIndex = model.index
-            }
-
-            swipe.right: Label {
-                id: deleteLabel
-                text: qsTr("Delete")
-                color: "white"
-                verticalAlignment: Label.AlignVCenter
-                padding: 12
-                height: parent.height
-                anchors.right: parent.right
-                opacity: swipe.position === 0 ? 0.0 : 1.0
-
-                SwipeDelegate.onClicked: DiceMainController.settingsCtrl.sessions.removeSession(index)
-
-                background: Rectangle {
-                    color: deleteLabel.SwipeDelegate.pressed ? Qt.darker("tomato", 1.1) : "tomato"
-                    radius: Theme.radius
+            ExpansionPanel {
+                id: about
+                text: qsTr("About")
+                Layout.fillWidth: true
+                opacity: hasSelection && group.checkedButton !== about.button ? 0.0 : 1.0
+                GridLayout {
+                    columns: 2
+                    Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
+                    Label {
+                        text: qsTr("Version:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Label {
+                        text: DiceMainController.version
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Label {
+                        text: qsTr("Date:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Label {
+                        text: DiceMainController.dateVersion
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Label {
+                        text: qsTr("Sha1:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Label {
+                        text: DiceMainController.hashVersion
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
                 }
             }
         }
     }
-    RowLayout {
-        Layout.fillWidth: true
-        ToolButton {
-            id: add
-            icon.source: "qrc:/assets/plus2.svg"
-            icon.width: Theme.iconSize * 2
-            icon.height: Theme.iconSize * 2
-            icon.color: "transparent"
-            background: Item {}
-            Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-            flat: true
-            onClicked: {
-                DiceMainController.settingsCtrl.sessions.addSession()
-            }
-        }
-        Label {
-            Layout.fillWidth: true
-            text: qsTr("v%1 - %2 - sha1:%3").arg(DiceMainController.version).arg(DiceMainController.dateVersion).arg(DiceMainController.hashVersion)
-            horizontalAlignment: Label.AlignHCenter
-            verticalAlignment: Label.AlignBottom
-        }
 
+
+    RowLayout {
+        id: footer
+        Layout.fillWidth: true
+        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
         ToolButton {
             id: link
             icon.source: "qrc:/assets/external.svg"
             icon.width: Theme.iconSize * 2
             icon.height: Theme.iconSize * 2
-            icon.color: "transparent"
+            icon.color: Theme.textColor
             background: Item {}
             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             flat: true

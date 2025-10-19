@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import treeDicer
+import dicely
 
 Panel {
     id: root
@@ -35,7 +35,7 @@ Panel {
                         icon.source: "qrc:/assets/plus.svg"
                         icon.width: Theme.iconSize
                         icon.height:Theme.iconSize
-                        icon.color: "transparent"
+                        icon.color: Theme.transparent
                         display: AbstractButton.IconOnly
                         checkable: true
                         flat: true
@@ -55,7 +55,7 @@ Panel {
                             icon.source: "qrc:/assets/redo.svg"
                             icon.width: Theme.iconSize
                             icon.height:Theme.iconSize
-                            icon.color: "transparent"
+                            icon.color: Theme.transparent
                             display: AbstractButton.IconOnly
                             onClicked: DiceMainController.runCommand(command)
                         }
@@ -88,11 +88,11 @@ Panel {
                 cmdField.text = command
             }
 
-            background: Rectangle {
+            /*background: Rectangle {
                 radius: Theme.radius
                 border.width: 1
                 border.color: "black"
-            }
+            }*/
         }
     }
     GroupBox {
@@ -136,7 +136,7 @@ Panel {
                             icon.source: "qrc:/assets/send.svg"
                             icon.width: Theme.iconSize * 2
                             icon.height:Theme.iconSize * 2
-                            icon.color: "transparent"
+                            icon.color: Theme.transparent
                             //Layout.fillHeight: true
                             display: AbstractButton.IconOnly
                             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
@@ -169,7 +169,10 @@ Panel {
                     model: DiceMainController.macros
                     delegate: ItemDelegate {
                         background: Rectangle {
-                            border.width: 1
+                            border.width: Theme.penWidth
+                            border.color: Theme.borderColor
+                            color: Theme.contentBackGroundColor
+                            radius: Theme.radius
                         }
                         width: gridLyt.cellWidth - Theme.spacing
                         height: gridLyt.cellHeight - Theme.spacing

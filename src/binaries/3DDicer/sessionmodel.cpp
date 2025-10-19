@@ -56,6 +56,8 @@ QHash<int, QByteArray> SessionModel::roleNames() const
 
 Session* SessionModel::session(int index) const
 {
+    if(index >= static_cast<int>(m_sessions.size()))
+        return nullptr;
     return m_sessions[index].get();
 }
 

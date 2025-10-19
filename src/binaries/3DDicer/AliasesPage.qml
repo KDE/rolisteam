@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import treeDicer
+import dicely
 
 Panel {
     id: root
@@ -12,7 +12,8 @@ Panel {
         Layout.fillHeight: true
         Layout.fillWidth: true
         model: DiceMainController.aliases
-        spacing: 5
+        spacing: Theme.spacing
+        clip: true
         property int editIndex: -1
 
         delegate: SwipeDelegate {
@@ -21,6 +22,7 @@ Panel {
             height: pane.editMode ? edit.implicitHeight : lyt.implicitHeight + 2 * Theme.padding
             visible: view.editIndex === index || view.editIndex < 0
             property bool editMode: false
+
             RowLayout {
                 id: lyt
                 anchors.fill: parent
@@ -48,8 +50,9 @@ Panel {
                 }
             }
             background:  Rectangle {
-                color: model.disable ? "#66DC143C" : "transparent"
-                border.width: 1
+                color: model.disable ? Theme.disabledColor : Theme.contentBackGroundColor
+                border.width: Theme.penWidth
+                border.color: Theme.borderColor
                 radius: Theme.radius
             }
 
@@ -118,13 +121,16 @@ Panel {
                     icon.source: "qrc:/assets/check.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
-                    icon.color: "transparent"
+                    icon.color: Theme.transparent
                     text: qsTr("Save and back")
                     flat: true
+                    //color: Theme.textColor
                     Layout.fillWidth: true
                     background: Rectangle {
-                        border.width: 1
+                        border.width: Theme.penWidth
                         radius: Theme.radius
+                        border.color: Theme.borderColor
+                        color: Theme.placeHolderTextColor
                     }
 
                     onClicked: {
@@ -133,12 +139,16 @@ Panel {
                     }
                 }
             }
-            swipe.right: Label {
+            swipe.right: ToolButton {
                 id: deleteLabel
                 text: qsTr("Delete")
-                color: "white"
-                verticalAlignment: Label.AlignVCenter
-                padding: 12
+                 width: Math.max(deleteLabel.implicitWidth, height)
+                icon.color: Theme.deleteTextColor
+                icon.source: "qrc:/assets/trashbin.svg"
+                icon.width: Theme.iconSize
+                icon.height: Theme.iconSize
+                display: ToolButton.TextUnderIcon
+                padding: Theme.padding
                 height: parent.height
                 anchors.right: parent.right
                 opacity: swipe.position === 0 ? 0.0 : 1.0
@@ -146,7 +156,7 @@ Panel {
                 SwipeDelegate.onClicked: DiceMainController.aliases.deleteAt(index)
 
                 background: Rectangle {
-                    color: deleteLabel.SwipeDelegate.pressed ? Qt.darker("tomato", 1.1) : "tomato"
+                    color: deleteLabel.SwipeDelegate.pressed ? Qt.darker(Theme.deleteBtnColor, 1.1) : Theme.deleteBtnColor
                     radius: Theme.radius
                 }
             }
@@ -158,7 +168,7 @@ Panel {
         icon.source: "qrc:/assets/plus2.svg"
         icon.width: Theme.iconSize * 2
         icon.height: Theme.iconSize * 2
-        icon.color: "transparent"
+        icon.color: Theme.transparent
         flat: true
         background: Item {}
         onClicked: {

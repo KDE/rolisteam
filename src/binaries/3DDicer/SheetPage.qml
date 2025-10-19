@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
-import treeDicer
+import dicely
 
 Panel {
     id: root
@@ -16,6 +16,7 @@ Panel {
         clip: true
 
         delegate: SwipeDelegate {
+            id: delegate
             width:view.width
             height: lyt.implicitHeight + 2 * Theme.padding
             property bool edition: false
@@ -43,7 +44,7 @@ Panel {
                     icon.source: edition ?  "qrc:/assets/check.svg" :  "qrc:/assets/edit.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
-                    icon.color: "transparent"
+                    icon.color: Theme.transparent
                     background: Item {}
                     flat: true
                     opacity: swipe.position === 0 ? 1.0 : 0.0
@@ -54,17 +55,16 @@ Panel {
                 }
             }
 
-            background:  Rectangle {
-                border.width: 1
-                radius: Theme.radius
-            }
-
-            swipe.right: Label {
+            swipe.right: ToolButton {
                 id: deleteLabel
                 text: qsTr("Delete")
-                color: "white"
-                verticalAlignment: Label.AlignVCenter
-                padding: 12
+                icon.color: Theme.deleteTextColor
+                icon.source: "qrc:/assets/trashbin.svg"
+                icon.width: Theme.iconSize
+                icon.height: Theme.iconSize
+                 width: Math.max(deleteLabel.implicitWidth, height)
+                display: ToolButton.TextUnderIcon
+                padding: Theme.padding
                 height: parent.height
                 anchors.right: parent.right
                 opacity: swipe.position === 0 ? 0.0 : 1.0
@@ -72,7 +72,7 @@ Panel {
                 SwipeDelegate.onClicked: DiceMainController.propertiesModel.removeField(index)
 
                 background: Rectangle {
-                    color: deleteLabel.SwipeDelegate.pressed ? Qt.darker("tomato", 1.1) : "tomato"
+                    color: deleteLabel.SwipeDelegate.pressed ? Qt.darker(Theme.deleteBtnColor, 1.1) : Theme.deleteBtnColor
                     radius: Theme.radius
                 }
             }
@@ -84,7 +84,7 @@ Panel {
         icon.source: "qrc:/assets/plus2.svg"
         icon.width: Theme.iconSize * 2
         icon.height: Theme.iconSize * 2
-        icon.color: "transparent"
+        icon.color: Theme.transparent
         background: Item {}
         flat: true
         onClicked: {

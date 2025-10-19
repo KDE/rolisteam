@@ -1,7 +1,8 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import treeDicer
+import dicely
+
 Pane {
     id: root
 

@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
-import treeDicer
+import dicely
 import QtQuick3D.Helpers
 
 
@@ -11,26 +11,33 @@ ApplicationWindow {
     visible: true
     title: stackView.currentItem.title//qsTr("3D Dice")
 
+    color: Theme.windowColor
     onClosing: {
         DiceMainController.saveData();
     }
+    function updateLang() {
+        if(DiceMainController.lang.length > 0)
+            Qt.uiLanguage = DiceMainController.lang
+    }
+
+    Component.onCompleted: {
+        DiceMainController.themeCtrl = Theme
+        updateLang()
+    }
+
+    Connections {
+        target: DiceMainController
+        function onLangChanged() {
+            updateLang()
+        }
+    }
+
     Connections {
         target: Application
         function onStateChanged() {
             if(Application.state < Application.Inactive)
                 DiceMainController.saveData();
         }
-    }
-
-    ProceduralSkyTextureData {
-        id: skyTexture
-        sunLongitude: -115
-        groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
-        //onDestroyed: console.log("SkyTexture")
-    }
-
-    Component.onCompleted: {
-        DiceMainController.skyTextureData = skyTexture
     }
 
     Component {
@@ -105,7 +112,13 @@ ApplicationWindow {
     }
 
     Item {
-        anchors.fill: parent
+        anchors {
+            fill: parent
+            topMargin: parent.SafeArea.margins.top
+            leftMargin: parent.SafeArea.margins.left
+            rightMargin: parent.SafeArea.margins.right
+            bottomMargin: parent.SafeArea.margins.bottom
+        }
         ColumnLayout {
             id: lyt
             anchors.fill: parent
@@ -114,24 +127,26 @@ ApplicationWindow {
                 id: tabs
                 visible: DiceMainController.show3dMenu
                 Layout.fillWidth: true
-                //Layout.preferredHeight: Theme.iconSize * 2 + (Theme.margin * 2)
+                background: Rectangle {
+                       color: Theme.windowColor
+                }
+
                 TabButton {
                        text: qsTr("Dice Rolls")
                        icon.source: "qrc:/assets/diceroll.svg"
                        icon.width: Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        icon.height:Theme.tabIconSize
-                       //indicator: Item{}
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.CommandsPage
                 }
                 TabButton {
-                       text: qsTr("Dice 3D")
+                       text: qsTr("3D Dice")
                        icon.source: "qrc:/assets/dice.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.PhysicsPage
@@ -141,7 +156,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/bookmark.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.MacroPage
@@ -151,7 +166,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/aliases.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.AliasPage
@@ -161,7 +176,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/sheet2.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.SheetPage
@@ -171,7 +186,7 @@ ApplicationWindow {
                        icon.source: "qrc:/assets/settings.svg"
                        icon.width: Theme.tabIconSize
                        icon.height:Theme.tabIconSize
-                       icon.color: "transparent"
+                       icon.color: Theme.transparent
                        display: AbstractButton.IconOnly
                        padding: Theme.margin
                        onClicked: DiceMainController.currentPage = DiceMainController.SettingsPage

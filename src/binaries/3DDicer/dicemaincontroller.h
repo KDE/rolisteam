@@ -8,9 +8,11 @@
 #include "propertiesmodel.h"
 #include "rollmodel.h"
 #include "settingcontroller.h"
+#include "themecontroller.h"
 #include <QObject>
 #include <QQmlEngine>
 #include <QQuick3DTextureData>
+#include <QRangeModel>
 #include <memory>
 
 class DiceMainController : public QObject
@@ -34,6 +36,9 @@ class DiceMainController : public QObject
     Q_PROPERTY(QString version READ version CONSTANT FINAL)
     Q_PROPERTY(QString dateVersion READ dateVersion CONSTANT FINAL)
     Q_PROPERTY(QString hashVersion READ hashVersion CONSTANT FINAL)
+    Q_PROPERTY(ThemeController* themeCtrl READ themeCtrl WRITE setThemeCtrl NOTIFY themeCtrlChanged FINAL)
+    Q_PROPERTY(QRangeModel* langModel READ langModel CONSTANT)
+    Q_PROPERTY(QString lang READ lang WRITE setLang NOTIFY langChanged FINAL)
     // clang-format on
 public:
     enum Page
@@ -85,10 +90,21 @@ public:
 
     bool show3dMenu() const;
     void setShow3dMenu(bool newShow3dMenu);
+
     QString version() const;
     QString hashVersion() const;
-
     QString dateVersion() const;
+
+    bool darkMode() const;
+    void setDarkMode(bool newDarkMode);
+
+    ThemeController* themeCtrl() const;
+    void setThemeCtrl(ThemeController* newThemeCtrl);
+
+    QRangeModel* langModel() const;
+
+    QString lang() const;
+    void setLang(const QString& newLang);
 
 public slots:
     void runCommand(const QString& cmd);
@@ -105,7 +121,10 @@ signals:
     void propertiesModelChanged();
     void currentPanelChanged();
     void show3dMenuChanged();
-    void skyTextureDataChanged();
+    void darkModeChanged();
+    void themeCtrlChanged();
+
+    void langChanged();
 
 private:
     void saveInCurrentProfile();
@@ -118,6 +137,7 @@ private:
     std::unique_ptr<DiceAliasModel> m_aliases;
     std::unique_ptr<SettingController> m_settingsCtrl;
     std::unique_ptr<PropertiesModel> m_propertiesModel;
+    std::unique_ptr<QRangeModel> m_langModel;
     DiceMainController::Page m_currentPage{CommandsPage};
     QString m_errorHumanReadable;
     QSize m_dice3dSize;
@@ -125,6 +145,9 @@ private:
     PanelMode m_currentPanel;
     bool m_show3dMenu{true};
     bool m_loading{false};
+    bool m_darkMode{false};
+    QPointer<ThemeController> m_themeCtrl;
+    QString m_lang;
 };
 
 #endif // DICEMAINCONTROLLER_H

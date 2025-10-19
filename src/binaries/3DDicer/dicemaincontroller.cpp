@@ -6,7 +6,9 @@
 #include "diceparser/dicealias.h"
 #include "worker/fileserializer.h"
 #include <QJsonArray>
+#include <QMap>
 #include <QStandardPaths>
+#include <QVariant>
 
 QSettings* computeSettingsPath()
 {
@@ -39,6 +41,7 @@ DiceMainController::DiceMainController(QObject* parent)
 {
 
     loadData();
+    m_dice3DCtrl->setMuted(true);
     connect(m_settingsCtrl.get(), &SettingController::currentSessionIndexChanged, this,
             &DiceMainController::loadFromCurrentProfile);
     connect(m_settingsCtrl.get(), &SettingController::sessionCountChanged, this,
@@ -55,6 +58,20 @@ DiceMainController::DiceMainController(QObject* parent)
 
     connect(m_macros.get(), &MacrosModel::countChanged, this, &DiceMainController::saveData);
     connect(m_settingsCtrl.get(), &SettingController::sessionCountChanged, this, &DiceMainController::saveData);
+
+    QDirIterator it(QString(":/qt/qml/dicely/i18n/"), QDirIterator::Subdirectories);
+    using LangEntry= QMap<Qt::ItemDataRole, QVariant>;
+
+    QList<LangEntry> res;
+    while(it.hasNext())
+    {
+        auto code= it.next().replace(".qm", "").replace(":/qt/qml/dicely/i18n/qml_", "");
+        res << LangEntry(
+            {{Qt::DisplayRole, QLocale::languageToString(QLocale::codeToLanguage(code))}, {Qt::UserRole, code}});
+    }
+
+    m_langModel.reset(new QRangeModel(res));
+    m_langModel->setRoleNames({{Qt::UserRole, "code"}, {Qt::DisplayRole, "display"}});
 }
 
 DiceMainController::Page DiceMainController::currentPage() const
@@ -280,6 +297,9 @@ void DiceMainController::saveData()
 
     settings->setValue("sessionNames", m_settingsCtrl->sessions()->sessionNames()); // TODO change me
     settings->setValue("currentSession", m_settingsCtrl->currentSessionIndex());
+    settings->setValue("lang", m_lang);
+    if(m_themeCtrl)
+        settings->setValue("darkMode", m_themeCtrl->darkMode());
 
     for(int i= 0; i < m_settingsCtrl->sessionCount(); ++i)
     {
@@ -303,6 +323,7 @@ void DiceMainController::loadData()
 {
     std::unique_ptr<QSettings> settings(computeSettingsPath());
     auto names= settings->value("sessionNames", {"default"}).toStringList();
+    setLang(settings->value("lang", QString()).toString());
 
     for(const auto& n : std::as_const(names))
     {
@@ -321,8 +342,15 @@ void DiceMainController::loadData()
         settings->endGroup();
     }
 
+    if(names.isEmpty())
+        m_settingsCtrl->sessions()->addSession(tr("default"));
+
     m_settingsCtrl->setCurrentSessionIndex(settings->value("currentSession", 0).toInt());
     loadFromCurrentProfile();
+    if(m_themeCtrl)
+        m_themeCtrl->setDarkMode(settings->value("darkMode", false).toBool());
+    else
+        m_darkMode= settings->value("darkMode", false).toBool();
 }
 
 SettingController* DiceMainController::settingsCtrl() const
@@ -379,4 +407,50 @@ QString DiceMainController::hashVersion() const
 QString DiceMainController::dateVersion() const
 {
     return DicelyVerse::VERSION_DATE;
+}
+
+bool DiceMainController::darkMode() const
+{
+    return m_darkMode;
+}
+
+void DiceMainController::setDarkMode(bool newDarkMode)
+{
+    if(m_darkMode == newDarkMode)
+        return;
+    m_darkMode= newDarkMode;
+    emit darkModeChanged();
+}
+
+ThemeController* DiceMainController::themeCtrl() const
+{
+    return m_themeCtrl;
+}
+
+void DiceMainController::setThemeCtrl(ThemeController* newThemeCtrl)
+{
+    if(m_themeCtrl == newThemeCtrl)
+        return;
+    m_themeCtrl= newThemeCtrl;
+    if(m_themeCtrl)
+        m_themeCtrl->setDarkMode(m_darkMode);
+    emit themeCtrlChanged();
+}
+
+QRangeModel* DiceMainController::langModel() const
+{
+    return m_langModel.get();
+}
+
+QString DiceMainController::lang() const
+{
+    return m_lang;
+}
+
+void DiceMainController::setLang(const QString& newLang)
+{
+    if(m_lang == newLang)
+        return;
+    m_lang= newLang;
+    emit langChanged();
 }

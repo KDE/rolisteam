@@ -1,0 +1,13 @@
+module DiceStyle
+Button 1.0 Button.qml
+Label 1.0 Label.qml
+Pane 1.0 Pane.qml
+SwipeDelegate 1.0 SwipeDelegate.qml
+TextField 1.0 TextField.qml
+ItemDelegate 1.0 ItemDelegate.qml
+GroupBox 1.0 GroupBox.qml
+ToolButton 1.0 ToolButton.qml
+Switch 1.0 Switch.qml
+TabButton 1.0 TabButton.qml
+PageIndicator 1.0 PageIndicator.qml
+ComboBox 1.0 ComboBox.qml
