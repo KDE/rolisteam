@@ -66,8 +66,9 @@ DiceMainController::DiceMainController(QObject* parent)
     while(it.hasNext())
     {
         auto code= it.next().replace(".qm", "").replace(":/qt/qml/dicely/i18n/qml_", "");
-        res << LangEntry(
-            {{Qt::DisplayRole, QLocale::languageToString(QLocale::codeToLanguage(code))}, {Qt::UserRole, code}});
+        auto locale= QLocale(QLocale::codeToLanguage(code));
+        res << LangEntry({{Qt::DisplayRole, locale.nativeLanguageName()},
+                          {Qt::UserRole, code}}); // QLocale::languageToString(QLocale::codeToLanguage(code))
     }
 
     m_langModel.reset(new QRangeModel(res));
