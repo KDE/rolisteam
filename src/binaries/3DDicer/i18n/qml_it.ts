@@ -105,7 +105,7 @@
 <context>
     <name>DiceMainController</name>
     <message>
-        <location filename="../dicemaincontroller.cpp" line="346"/>
+        <location filename="../dicemaincontroller.cpp" line="347"/>
         <source>default</source>
         <translation type="unfinished"></translation>
     </message>
@@ -233,27 +233,27 @@
         <translation type="unfinished">Modalità scura:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="88"/>
+        <location filename="../SettingsPage.qml" line="87"/>
         <source>Language:</source>
         <translation type="unfinished">Lingua:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="108"/>
+        <location filename="../SettingsPage.qml" line="107"/>
         <source>About</source>
         <translation type="unfinished">a proposito</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="115"/>
+        <location filename="../SettingsPage.qml" line="114"/>
         <source>Version:</source>
         <translation type="unfinished">Versione:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="123"/>
+        <location filename="../SettingsPage.qml" line="122"/>
         <source>Date:</source>
         <translation type="unfinished">Data:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="131"/>
+        <location filename="../SettingsPage.qml" line="130"/>
         <source>Sha1:</source>
         <translation type="unfinished">Sha1:</translation>
     </message>
