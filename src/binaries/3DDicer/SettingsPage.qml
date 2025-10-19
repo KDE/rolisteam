@@ -11,7 +11,7 @@ Panel {
         id: flick
         Layout.fillHeight: true
         Layout.fillWidth: true
-        clip: true
+        //clip: true
         ButtonGroup {
             id: group
             buttons: [profile.button, appSettings.button, about.button]
@@ -43,19 +43,7 @@ Panel {
                     interactive: flick.height-appSettings.height < profileSelector.contentHeight
                     Layout.fillWidth: true
                 }
-                ToolButton {
-                    id: add
-                    icon.source: "qrc:/assets/plus2.svg"
-                    icon.width: Theme.iconSize * 2
-                    icon.height: Theme.iconSize * 2
-                    icon.color: Theme.transparent
-                    background: Item {}
-                    Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
-                    flat: true
-                    onClicked: {
-                        DiceMainController.settingsCtrl.sessions.addSession()
-                    }
-                }
+
             }
             ExpansionPanel {
                 id: appSettings
@@ -143,7 +131,25 @@ Panel {
     RowLayout {
         id: footer
         Layout.fillWidth: true
-        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+        //Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+        ToolButton {
+            id: add
+            icon.source: "qrc:/assets/plus2.svg"
+            icon.width: Theme.iconSize * 2
+            icon.height: Theme.iconSize * 2
+            icon.color: Theme.transparent
+            visible: group.checkedButton === profile.button
+            background: Item {}
+            Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
+            flat: true
+            onClicked: {
+                DiceMainController.settingsCtrl.sessions.addSession()
+            }
+        }
+        Item {//filler
+            Layout.fillWidth: true
+        }
+
         ToolButton {
             id: link
             icon.source: "qrc:/assets/external.svg"
