@@ -67,18 +67,9 @@ Item {
 
         Texture {
             id: proceduralSky
-            Loader {
-                id: loader
-                asynchronous: true
-                sourceComponent:  Component {
-                    ProceduralSkyTextureData {
-                        sunLongitude: -115
-                        groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
-                    }
-                }
-                onStatusChanged: {
-                    proceduralSky.textureData = loader.item
-                }
+            textureData: ProceduralSkyTextureData {
+                sunLongitude: -115
+                groundBottomColor : Qt.rgba(0.5, 0.5, 0.5, 0.5)
             }
         }
 

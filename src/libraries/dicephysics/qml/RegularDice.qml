@@ -105,7 +105,7 @@ DynamicRigidBody {
                              volume += vector.length()
                          })
         diceSound.volume = volume / 2000
-        if (!diceSound.playing)
+        if (!diceSound.playing && !diceSound.muted)
             diceSound.play()
     }
 
