@@ -107,7 +107,7 @@
     <message>
         <location filename="../dicemaincontroller.cpp" line="347"/>
         <source>default</source>
-        <translation type="unfinished"></translation>
+        <translation>Prédéfini</translation>
     </message>
 </context>
 <context>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../Main.qml" line="145"/>
         <source>3D Dice</source>
-        <translation type="unfinished">Dés 3D</translation>
+        <translation>Dés 3D</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="155"/>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../ProfileSelector.qml" line="66"/>
         <source>Last Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Dernier profil</translation>
     </message>
 </context>
 <context>
@@ -227,41 +227,41 @@
         <translation>Profil courant</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="62"/>
+        <location filename="../SettingsPage.qml" line="50"/>
         <source>App Settings</source>
         <translation>Paramètres généraux</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="75"/>
+        <location filename="../SettingsPage.qml" line="63"/>
         <source>Dark Mode:</source>
         <translation>Mode Sombre:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="87"/>
+        <location filename="../SettingsPage.qml" line="75"/>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation>Langue:</translation>
     </message>
     <message>
         <source>Langue:</source>
         <translation type="vanished">Langue:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="107"/>
+        <location filename="../SettingsPage.qml" line="95"/>
         <source>About</source>
         <translation>À propos</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="114"/>
+        <location filename="../SettingsPage.qml" line="102"/>
         <source>Version:</source>
         <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="122"/>
+        <location filename="../SettingsPage.qml" line="110"/>
         <source>Date:</source>
         <translation>Date:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="130"/>
+        <location filename="../SettingsPage.qml" line="118"/>
         <source>Sha1:</source>
         <translation>Sha1:</translation>
     </message>

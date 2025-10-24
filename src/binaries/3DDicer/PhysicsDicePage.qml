@@ -238,7 +238,6 @@ Panel {
                 id: diceGround
                 anchors.fill: parent
                 ctrl: DiceMainController.dice3dCtrl
-                mainCtrl: DiceMainController
                 factor: root.ctrl.factor
                 parentWidth: width
                 parentHeight: height

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(dicelyVerse VERSION 5 LANGUAGES CXX)
+project(dicelyVerse VERSION 7 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -13,9 +13,9 @@ include(gitinfo)
 get_version_from_git()
 
 
-set(PROJECT_VERSION_MAJOR 0)
+set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
-set(PROJECT_VERSION_PATCH 6)
+set(PROJECT_VERSION_PATCH 7)
 
 
 
@@ -62,6 +62,8 @@ FILES
     assets/trashbin.svg
     assets/lock.svg
 )
+
+set_property(TARGET dicelyVerse PROPERTY QT_EXCLUDE_SOURCES_FROM_TRANSLATION "assets/*.svg")
 
 set_source_files_properties(Theme.qml
     PROPERTIES QT_QML_SINGLETON_TYPE TRUE)

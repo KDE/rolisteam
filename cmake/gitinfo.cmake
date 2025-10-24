@@ -6,7 +6,7 @@ function(get_version_from_git)
     endif()
 
     execute_process(
-        COMMAND bash -c "${GIT_EXECUTABLE} log --date=iso -n 1 | grep -i Date | awk '{print $2}'"
+        COMMAND bash -c "${GIT_EXECUTABLE} log --date=iso -n 1 | grep -i \"Date:\" | awk '{print $2}'"
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         OUTPUT_VARIABLE GIT_DATE
         OUTPUT_STRIP_TRAILING_WHITESPACE

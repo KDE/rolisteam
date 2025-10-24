@@ -6,72 +6,72 @@
     <message>
         <location filename="../AliasesPage.qml" line="8"/>
         <source>Aliases</source>
-        <translation type="unfinished">Aliase</translation>
+        <translation>Aliase</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="32"/>
         <source>&lt;b&gt;%1&lt;/b&gt;&lt;br/&gt;%2 =&gt; %3&lt;br/&gt;Regex: %4</source>
-        <translation type="unfinished">&lt;b&gt;%1&lt;/b&gt;&lt;br/&gt;%2 =&gt; %3&lt;br/&gt;Regulärer Ausdruck: %4</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;&lt;br/&gt;%2 =&gt; %3&lt;br/&gt;Regulärer Ausdruck: %4</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="32"/>
         <source>Alias #%1</source>
-        <translation type="unfinished">Alias ​​#%1</translation>
+        <translation>Alias ​​#%1</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="33"/>
         <source>Pattern</source>
-        <translation type="unfinished">Muster</translation>
+        <translation>Muster</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="34"/>
         <source>Command</source>
-        <translation type="unfinished">Befehl</translation>
+        <translation>Befehl</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="35"/>
         <source>Off</source>
-        <translation type="unfinished">Aus</translation>
+        <translation>Aus</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="35"/>
         <source>On</source>
-        <translation type="unfinished">An</translation>
+        <translation>An</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="76"/>
         <source>Name:</source>
-        <translation type="unfinished">Name:</translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="86"/>
         <source>Pattern:</source>
-        <translation type="unfinished">Muster:</translation>
+        <translation>Muster:</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="97"/>
         <source>Command:</source>
-        <translation type="unfinished">Befehl:</translation>
+        <translation>Befehl:</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="108"/>
         <source>Regular expression</source>
-        <translation type="unfinished">Regulärer Ausdruck</translation>
+        <translation>Regulärer Ausdruck</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="115"/>
         <source>Disable</source>
-        <translation type="unfinished">Deaktivieren</translation>
+        <translation>Deaktivieren</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="125"/>
         <source>Save and back</source>
-        <translation type="unfinished">Speichern und zurück</translation>
+        <translation>Speichern und zurück</translation>
     </message>
     <message>
         <location filename="../AliasesPage.qml" line="144"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
 </context>
 <context>
@@ -79,27 +79,27 @@
     <message>
         <location filename="../model/dicealiasmodel.cpp" line="37"/>
         <source>Pattern</source>
-        <translation type="unfinished">Muster</translation>
+        <translation>Muster</translation>
     </message>
     <message>
         <location filename="../model/dicealiasmodel.cpp" line="37"/>
         <source>Value</source>
-        <translation type="unfinished">Wert</translation>
+        <translation>Wert</translation>
     </message>
     <message>
         <location filename="../model/dicealiasmodel.cpp" line="37"/>
         <source>Regular Expression</source>
-        <translation type="unfinished">Regulärer Ausdruck</translation>
+        <translation>Regulärer Ausdruck</translation>
     </message>
     <message>
         <location filename="../model/dicealiasmodel.cpp" line="37"/>
         <source>Disable</source>
-        <translation type="unfinished">Deaktivieren</translation>
+        <translation>Deaktivieren</translation>
     </message>
     <message>
         <location filename="../model/dicealiasmodel.cpp" line="37"/>
         <source>Comments</source>
-        <translation type="unfinished">Kommentare</translation>
+        <translation>Kommentare</translation>
     </message>
 </context>
 <context>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../dicemaincontroller.cpp" line="347"/>
         <source>default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard</translation>
     </message>
 </context>
 <context>
@@ -115,17 +115,17 @@
     <message>
         <location filename="../DiceRollPage.qml" line="8"/>
         <source>Dice Rolls</source>
-        <translation type="unfinished">Würfelwürfe</translation>
+        <translation>Würfelwürfe</translation>
     </message>
     <message>
         <location filename="../DiceRollPage.qml" line="123"/>
         <source>Type your command e.g: 3d10…</source>
-        <translation type="unfinished">Geben Sie Ihren Befehl ein, z. B.: 3d10…</translation>
+        <translation>Geben Sie Ihren Befehl ein, z. B.: 3d10…</translation>
     </message>
     <message>
         <location filename="../DiceRollPage.qml" line="134"/>
         <source>Run</source>
-        <translation type="unfinished">Laufen</translation>
+        <translation>Werfen</translation>
     </message>
 </context>
 <context>
@@ -133,22 +133,22 @@
     <message>
         <location filename="../MacrosPage.qml" line="8"/>
         <source>Macros</source>
-        <translation type="unfinished">Makros</translation>
+        <translation>Makros</translation>
     </message>
     <message>
         <location filename="../MacrosPage.qml" line="31"/>
         <source>Name</source>
-        <translation type="unfinished">Name</translation>
+        <translation>Name</translation>
     </message>
     <message>
         <location filename="../MacrosPage.qml" line="39"/>
         <source>command</source>
-        <translation type="unfinished">Befehl</translation>
+        <translation>Befehl</translation>
     </message>
     <message>
         <location filename="../MacrosPage.qml" line="59"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
 </context>
 <context>
@@ -156,32 +156,32 @@
     <message>
         <location filename="../Main.qml" line="135"/>
         <source>Dice Rolls</source>
-        <translation type="unfinished">Würfelwürfe</translation>
+        <translation>Würfelwürfe</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="145"/>
         <source>3D Dice</source>
-        <translation type="unfinished">3D-Würfel</translation>
+        <translation>3D-Würfel</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="155"/>
         <source>Macros</source>
-        <translation type="unfinished">Makros</translation>
+        <translation>Makros</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="165"/>
         <source>Aliases</source>
-        <translation type="unfinished">Aliase</translation>
+        <translation>Aliase</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="175"/>
         <source>CharacterSheet</source>
-        <translation type="unfinished">Charakterblatt</translation>
+        <translation>Charakterblatt</translation>
     </message>
     <message>
         <location filename="../Main.qml" line="185"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
 </context>
 <context>
@@ -189,12 +189,12 @@
     <message>
         <location filename="../PhysicsDicePage.qml" line="11"/>
         <source>3D Dice</source>
-        <translation type="unfinished">3D-Würfel</translation>
+        <translation>3D-Würfel</translation>
     </message>
     <message>
         <location filename="../PhysicsDicePage.qml" line="78"/>
         <source>Dice Size:</source>
-        <translation type="unfinished">Würfelgröße:</translation>
+        <translation>Würfelgröße:</translation>
     </message>
 </context>
 <context>
@@ -202,12 +202,12 @@
     <message>
         <location filename="../ProfileSelector.qml" line="66"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="../ProfileSelector.qml" line="66"/>
         <source>Last Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Letztes Profil</translation>
     </message>
 </context>
 <context>
@@ -215,47 +215,47 @@
     <message>
         <location filename="../SettingsPage.qml" line="8"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../SettingsPage.qml" line="37"/>
         <source>Select Profile</source>
-        <translation type="unfinished">Profil auswählen</translation>
+        <translation>Profil auswählen</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="62"/>
+        <location filename="../SettingsPage.qml" line="50"/>
         <source>App Settings</source>
-        <translation type="unfinished">App-Einstellungen</translation>
+        <translation>App-Einstellungen</translation>
+    </message>
+    <message>
+        <location filename="../SettingsPage.qml" line="63"/>
+        <source>Dark Mode:</source>
+        <translation>Dunkler Modus:</translation>
     </message>
     <message>
         <location filename="../SettingsPage.qml" line="75"/>
-        <source>Dark Mode:</source>
-        <translation type="unfinished">Dunkler Modus:</translation>
-    </message>
-    <message>
-        <location filename="../SettingsPage.qml" line="87"/>
         <source>Language:</source>
-        <translation type="unfinished">Sprache:</translation>
+        <translation>Sprache:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="107"/>
+        <location filename="../SettingsPage.qml" line="95"/>
         <source>About</source>
-        <translation type="unfinished">Um</translation>
+        <translation>Um</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="114"/>
+        <location filename="../SettingsPage.qml" line="102"/>
         <source>Version:</source>
-        <translation type="unfinished">Version:</translation>
+        <translation>Version:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="122"/>
+        <location filename="../SettingsPage.qml" line="110"/>
         <source>Date:</source>
-        <translation type="unfinished">Datum:</translation>
+        <translation>Datum:</translation>
     </message>
     <message>
-        <location filename="../SettingsPage.qml" line="130"/>
+        <location filename="../SettingsPage.qml" line="118"/>
         <source>Sha1:</source>
-        <translation type="unfinished">Sha1:</translation>
+        <translation>Sha1:</translation>
     </message>
 </context>
 <context>
@@ -263,22 +263,22 @@
     <message>
         <location filename="../SheetPage.qml" line="8"/>
         <source>Character Sheet</source>
-        <translation type="unfinished">Charakterbogen</translation>
+        <translation>Charakterbogen</translation>
     </message>
     <message>
         <location filename="../SheetPage.qml" line="32"/>
         <source>Key</source>
-        <translation type="unfinished">Schlüssel</translation>
+        <translation>Schlüssel</translation>
     </message>
     <message>
         <location filename="../SheetPage.qml" line="40"/>
         <source>Value</source>
-        <translation type="unfinished">Wert</translation>
+        <translation>Wert</translation>
     </message>
     <message>
         <location filename="../SheetPage.qml" line="60"/>
         <source>Delete</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
 </context>
 </TS>

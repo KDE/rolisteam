@@ -11,7 +11,6 @@ Item {
     id: root
 
     required property QtObject ctrl
-    required property QtObject mainCtrl
 
     readonly property int selectedCount: ma.selection.length
     property bool denyClick: false

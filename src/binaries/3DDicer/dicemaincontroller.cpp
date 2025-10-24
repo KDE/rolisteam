@@ -323,7 +323,7 @@ void DiceMainController::saveData()
 void DiceMainController::loadData()
 {
     std::unique_ptr<QSettings> settings(computeSettingsPath());
-    auto names= settings->value("sessionNames", {"default"}).toStringList();
+    auto names= settings->value("sessionNames", {tr("default")}).toStringList();
     setLang(settings->value("lang", QString()).toString());
 
     for(const auto& n : std::as_const(names))
