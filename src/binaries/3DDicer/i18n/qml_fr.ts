@@ -105,6 +105,7 @@
 <context>
     <name>DiceMainController</name>
     <message>
+        <location filename="../dicemaincontroller.cpp" line="326"/>
         <location filename="../dicemaincontroller.cpp" line="347"/>
         <source>default</source>
         <translation>Prédéfini</translation>
