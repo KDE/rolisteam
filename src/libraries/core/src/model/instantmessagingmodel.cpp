@@ -102,7 +102,7 @@ QHash<int, QByteArray> InstantMessagingModel::roleNames() const
 {
     return QHash<int, QByteArray>({{TitleRole, "title"},
                                    {ChatRole, "chatroom"},
-                                   {IdRole, "id"},
+                                   {IdRole, "uuid"},
                                    {ClosableRole, "closable"},
                                    {HasUnreadMessageRole, "unread"},
                                    {RecipiantCountRole, "recipiantCount"}});

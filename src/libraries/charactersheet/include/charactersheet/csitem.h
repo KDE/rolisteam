@@ -29,7 +29,6 @@
 
 #include <charactersheet/charactersheet_global.h>
 
-class QGraphicsItem;
 /**
  * @brief The CSItem class is managing some item values for RCSE.
  */

@@ -427,6 +427,9 @@ bool Channel::hasNoClient()
     bool hasNoClient= true;
     for(auto& child : m_child)
     {
+        if(!child)
+            continue;
+
         if(child->isLeaf())
         {
             hasNoClient= false;

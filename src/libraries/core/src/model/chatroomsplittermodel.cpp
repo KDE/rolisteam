@@ -18,10 +18,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "model/chatroomsplittermodel.h"
+#include "common/logcategory.h"
 #include "model/filterinstantmessagingmodel.h"
 #include "model/instantmessagingmodel.h"
 #include <set>
-#include "common/logcategory.h"
 
 namespace InstantMessaging
 {
@@ -65,7 +65,8 @@ QVariant ChatroomSplitterModel::data(const QModelIndex& index, int role) const
 
 QHash<int, QByteArray> ChatroomSplitterModel::roleNames() const
 {
-    static QHash<int, QByteArray> roles({{FilterModelRole, "filterModel"}, {UuidRole, "uuid"}, {IndexRole,"indexRole"}});
+    static QHash<int, QByteArray> roles(
+        {{FilterModelRole, "filterModel"}, {UuidRole, "uuid"}, {IndexRole, "indexRole"}});
     return roles;
 }
 
@@ -106,7 +107,7 @@ void ChatroomSplitterModel::mergeGlobal(const QString& uuid, int modelIndex)
     if(static_cast<int>(m_filterModels.size()) <= modelIndex)
         return;
 
-    auto model = m_filterModels[modelIndex].get();
+    auto model= m_filterModels[modelIndex].get();
 
     model->removeFilterId(uuid);
     if(model->filterIdCount() == 0)
@@ -123,12 +124,12 @@ void ChatroomSplitterModel::cleanAll()
 
 void ChatroomSplitterModel::removeChatroom(const QString& id)
 {
-    //Q_UNUSED(id)
+    // Q_UNUSED(id)
     QList<int> removeModelIndexes;
     QStringList listIds;
     static QString global("global");
-    int globalIndex = -1;
-    int i = 0;
+    int globalIndex= -1;
+    int i= 0;
     for(auto& model : m_filterModels)
     {
         if(i == 0)
@@ -138,7 +139,7 @@ void ChatroomSplitterModel::removeChatroom(const QString& id)
             continue;
         }
         if(model->contains(global))
-            globalIndex = i;
+            globalIndex= i;
         if(model->rowCount() == 0 && !model->all())
         {
             removeModelIndexes << i;
@@ -151,32 +152,30 @@ void ChatroomSplitterModel::removeChatroom(const QString& id)
     {
         removeModel(i);
     }
-    auto model = m_filterModels[0].get();
+    auto model= m_filterModels[0].get();
 
-    std::for_each(std::begin(listIds), std::end(listIds), [model](const QString& id){
-        model->removeFilterId(id);
-    });
+    std::for_each(std::begin(listIds), std::end(listIds), [model](const QString& id) { model->removeFilterId(id); });
 
-    if(globalIndex<0)
+    if(globalIndex < 0)
         return;
 
     if(model->rowCount() == 0)
     {
-        auto ids = model->filteredId();
+        auto ids= model->filteredId();
         if(ids.contains(global))
         {
             mergeGlobal(global, globalIndex);
         }
     }
-
 }
 
 void ChatroomSplitterModel::moveRight(const QString& id, int index)
 {
-    auto dest = modelFromIndex(index + 1);
-    auto source = modelFromIndex(index);
+    auto dest= modelFromIndex(index + 1);
+    auto source= modelFromIndex(index);
 
-    if(!dest || !source) {
+    if(!dest || !source)
+    {
         qCWarning(MessagingCat) << tr("[move right] Source or destination chatroom does not exist.");
         return;
     }
@@ -195,10 +194,11 @@ void ChatroomSplitterModel::moveRight(const QString& id, int index)
 
 void ChatroomSplitterModel::moveLeft(const QString& id, int index)
 {
-    auto dest = modelFromIndex(index - 1);
-    auto source = modelFromIndex(index);
+    auto dest= modelFromIndex(index - 1);
+    auto source= modelFromIndex(index);
 
-    if(!dest || !source) {
+    if(!dest || !source)
+    {
         qCWarning(MessagingCat) << tr("[move left] Source or destination chatroom does not exist.");
         return;
     }

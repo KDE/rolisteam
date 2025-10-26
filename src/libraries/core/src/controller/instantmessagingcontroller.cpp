@@ -100,10 +100,12 @@ InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, P
     connect(m_model.get(), &InstantMessaging::InstantMessagingModel::chatRoomDeleted, this,
             &InstantMessagingController::chatRoomRemoved);
 
-    connect(m_model.get(), &InstantMessaging::InstantMessagingModel::chatRoomDeleted, this, [this](const QString& id, bool remote) {
-        Q_UNUSED(remote)
-        m_splitterModel->removeChatroom(id);
-    });
+    connect(m_model.get(), &InstantMessaging::InstantMessagingModel::chatRoomDeleted, this,
+            [this](const QString& id, bool remote)
+            {
+                Q_UNUSED(remote)
+                m_splitterModel->removeChatroom(id);
+            });
 
     connect(m_model.get(), &InstantMessaging::InstantMessagingModel::localIdChanged, this,
             &InstantMessagingController::localIdChanged);
@@ -140,7 +142,7 @@ InstantMessagingController::~InstantMessagingController()= default;
 
 InstantMessaging::ChatroomSplitterModel* InstantMessagingController::mainModel() const
 {
-    //Q_ASSERT(m_splitterModels.size() > 0);
+    // Q_ASSERT(m_splitterModels.size() > 0);
     return m_splitterModel.get();
 }
 

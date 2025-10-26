@@ -58,7 +58,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
     ChatRoom* globalChatRoom() const;
-    ChatRoom* chatRoomFromId(const QString& uuid) const;
+    Q_INVOKABLE ChatRoom* chatRoomFromId(const QString& uuid) const;
     ChatRoom* oneToOneChatRoom(const QString& personId) const;
     QString localId() const;
     bool unread() const;

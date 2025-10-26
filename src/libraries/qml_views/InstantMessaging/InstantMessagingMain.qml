@@ -25,6 +25,7 @@ Pane {
     SideMenu {
         id: sideMenu
         height: parent.height
+        width: Math.min(parent.width * 0.8, sideMenu.requiredWidth)
         edge: Qt.RightEdge
     }
 
@@ -78,6 +79,7 @@ Pane {
                 SplitView.fillWidth: true
                 tabBarRightMargin: index == reaper.count-1 ? listButton.width : 0
                 Component.onCompleted: reaper.headerHeight = tabBarHeight
+                onTabBarHeightChanged: reaper.headerHeight = tabBarHeight
                 localPersonModel: {InstantMessagerManager.ctrl.localPersonModel}
                 onAddChat: (title, all, recipiant) => {
                     InstantMessagerManager.ctrl.addExtraChatroom(title, all, recipiants)

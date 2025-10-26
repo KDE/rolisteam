@@ -78,7 +78,7 @@ public slots:
     void setTitle(const QString& title);
     void setUnreadMessage(bool b);
     void addMessage(const QString& text, const QUrl& url, const QString& personId, const QString& personName);
-    void addMessageInterface(MessageInterface* message);
+    void addMessageInterface(InstantMessaging::MessageInterface* message);
     void setLocalId(const QString& id);
     bool rollDice(const QString& command, const QString& personId);
 

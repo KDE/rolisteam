@@ -38,6 +38,10 @@ Pane {
             text: qsTr("All")
             visible: root.isGlobal
         }
+        Item {
+            visible: root.isGlobal
+            Layout.fillHeight: true
+        }
 
         ListView {
             id: recipiantsList

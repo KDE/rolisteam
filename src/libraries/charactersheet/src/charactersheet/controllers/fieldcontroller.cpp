@@ -223,6 +223,8 @@ void FieldController::setValueFrom(TreeSheetItem::ColumnId id, const QVariant& v
     case TOOLTIP:
         m_tooltip= var.toString();
         break;
+    case TreeSheetItem::FORMULA:
+        break;
     }
     // update();
 }

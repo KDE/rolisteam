@@ -79,7 +79,8 @@ InstantMessagingView::InstantMessagingView(InstantMessagingController* ctrl, QWi
     m_qmlViewer->setResizeMode(QQuickWidget::SizeRootObjectToView);
     m_qmlViewer->setSource(QUrl("qrc:/qml/InstantMessaging/InstantMessagingMain.qml"));
 
-    for(const auto& error : m_qmlViewer->errors())
+    auto const& errors= m_qmlViewer->errors();
+    for(const auto& error : std::as_const(errors))
         qDebug() << error.toString();
 
     auto layout= new QVBoxLayout();

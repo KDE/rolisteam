@@ -114,8 +114,8 @@ protected slots:
     void addPdf(PdfController* ctrl);
 
 protected:
-    void resizeEvent(QResizeEvent* event);
-    bool eventFilter(QObject* object, QEvent* event);
+    void resizeEvent(QResizeEvent* event) override;
+    bool eventFilter(QObject* object, QEvent* event) override;
     bool updateTitleTab();
     bool closeSub(MediaContainer* container);
 

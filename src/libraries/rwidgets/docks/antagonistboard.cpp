@@ -235,7 +235,9 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                 RolisteamMimeData* mimeData= new RolisteamMimeData();
                 mimeData->setNpcUuid(uuid);
                 if(!pix.isNull())
+                {
                     mimeData->setImageData(pix.toImage());
+                }
                 mimeData->setText(name);
                 drag->setMimeData(mimeData);
                 if(!pix.isNull())
