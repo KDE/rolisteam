@@ -69,7 +69,14 @@ void IntegrityController::fieldAdded(CSItem* item)
     auto const& list= m_sheets->sheets();
     for(auto sheet : list)
     {
-        sheet->insertCharacterItem(item);
+        auto index= sheet->indexFromId(item->id());
+
+        if(index >= 0) // already exist
+            continue;
+
+        item->fieldType() == FieldController::TABLE ?
+            sheet->insertCharacterItem(copyField<TableFieldController>(item)) :
+            sheet->insertCharacterItem(copyField<FieldController>(item));
     }
 
     if(item->fieldType() != CSItem::TypeField::TABLE)
