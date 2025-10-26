@@ -10,7 +10,8 @@ Popup {
     property list<string> recipiants: []
     property bool emptyRecipiants: true
 
-    signal chatRoomAdded()
+    signal chatRoomAdded(title : string, all : bool, list : list<string>)
+
     width: frame.implicitWidth
     height: frame.implicitHeight
     padding: 0
@@ -89,8 +90,7 @@ Popup {
                 enabled: title.text.length > 0 && (everyone.checked || !root.emptyRecipiants )
                 onClicked: {
                     root.recipiants.push(model.localPlayerId)
-                    root.chatRoomAdded()
-                    root.close()
+                    root.chatRoomAdded(root.title, root.all, root.recipiants)
                 }
             }
         }

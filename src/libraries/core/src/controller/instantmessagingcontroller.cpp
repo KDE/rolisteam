@@ -288,19 +288,12 @@ void InstantMessagingController::setLocalId(const QString& id)
     m_model->setLocalId(id);
 }
 
-void InstantMessagingController::addExtraChatroom(const QString& title, bool everyone, const QVariantList& recipiant)
+void InstantMessagingController::addExtraChatroom(const QString& title, bool everyone, const QStringList& recipiant)
 {
     if(everyone)
         m_model->insertGlobalChatroom(title);
     else
-    {
-        QStringList ids;
-        ids.reserve(recipiant.size());
-        std::transform(recipiant.begin(), recipiant.end(), std::back_inserter(ids),
-                       [](const QVariant& variant) { return variant.toString(); });
-
-        m_model->insertExtraChatroom(title, ids, false);
-    }
+        m_model->insertExtraChatroom(title, recipiant, false);
 }
 
 void InstantMessagingController::setNightMode(bool mode)

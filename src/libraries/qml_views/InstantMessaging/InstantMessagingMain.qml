@@ -32,8 +32,10 @@ Pane {
         id: newChatRoom
         x: -width+parent.width
         model: InstantMessagerManager.ctrl.playerModel
-        onChatRoomAdded: {
-            InstantMessagerManager.ctrl.addExtraChatroom(newChatRoom.title, newChatRoom.all, newChatRoom.recipiants)
+        onChatRoomAdded: (title, all, list)=> {
+            console.log("add chatroom List",list)
+            InstantMessagerManager.ctrl.addExtraChatroom(title, all, list)
+            newChatRoom.close()
         }
     }
     Menu {

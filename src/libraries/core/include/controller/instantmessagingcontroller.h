@@ -99,7 +99,7 @@ public slots:
     void mergeScreen(const QString& uuid, int index);
     void resetScreen();
     void setLocalId(const QString& id);
-    void addExtraChatroom(const QString& title, bool everyone, const QVariantList& recipiant);
+    void addExtraChatroom(const QString& title, bool everyone, const QStringList &recipiant);
     void setNightMode(bool mode);
     void openLink(const QString& link);
     void setDiceParser(DiceRoller* diceParser);
