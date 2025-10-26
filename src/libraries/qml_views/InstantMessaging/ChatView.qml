@@ -15,7 +15,7 @@ Item {
     property bool isMergeable: true
     property int chatRoomCount: 0
     property int chatRoomIndex: 0
-    property ChatRoom chatRoom:  chatroomModel.get(tabHeader.currentIndex)
+    property ChatRoom chatRoom //tabHeader.currentItem.chatroom//:  tabHeader.currentIndex >= 0 ? chatroomModel.get(tabHeader.currentIndex) : null
     property alias tabBarHeight: tabHeader.height
     property int tabBarRightMargin: 0
     signal zoomChanged(var delta)
@@ -47,17 +47,12 @@ Item {
         onWheel:  (wheel) => {//(wheel)
             if (wheel.modifiers & Qt.ControlModifier) {
                 zoomChanged(wheel.angleDelta.y / 240)
-                /*fontFactor += wheel.angleDelta.y / 240;
-                if(fontFactor<1.0)
-                    fontFactor=1.0
-                else if(fontFactor>10.0)
-                    fontFactor=10.0*/
             }
         }
 
         Menu {
             id: contextMenu
-            property string currentChat: tabHeader.currentItem ? tabHeader.currentItem.text : ""
+            property string currentChat: root.chatRoom ? root.chatRoom.title : ""
             Action {
                 text: qsTr("Split %1".arg(contextMenu.currentChat))
                 enabled: tabHeader.count > 1
@@ -75,14 +70,14 @@ Item {
             }
             Action  {
                 text: qsTr("Move %1 Left".arg(contextMenu.currentChat))
-                enabled: root.chatRoomIndex > 0
+                enabled: root.chatRoomIndex > 0 && (tabHeader.count > 1)
                 onTriggered: {
                     root.moveLeft(tabHeader.currentItem.uuid)
                 }
             }
             Action  {
                 text: qsTr("Move %1 Right".arg(contextMenu.currentChat))
-                enabled: root.chatRoomIndex + 1 < root.chatRoomCount
+                enabled: (root.chatRoomIndex + 1 < root.chatRoomCount) && (tabHeader.count > 1)
                 onTriggered: {
                     root.moveRight(tabHeader.currentItem.uuid)
                 }
@@ -97,40 +92,59 @@ Item {
             Layout.fillWidth: true
             TabBar {
                 id: tabHeader
+
                 Layout.fillWidth: true
                 Layout.rightMargin: root.tabBarRightMargin
+
                 Repeater {
                     id: repeater
                     TabButton {
                         id: tabButton
-                        property bool current: tabHeader.currentIndex === index
-                        property string uuid: model.id
-                        text: model.title
-                        objectName: model.title
+                        required property string title
+                        required property string uuid
+                        required property int index
+                        required property bool closable
+                        required property bool unread
+                        required property ChatRoom chatroom
+
+                        property bool current: tabHeader.currentIndex === tabButton.index
+                        onCurrentChanged: {
+                            if(current) {
+                                root.chatRoom = tabButton.chatroom
+                            }
+                        }
+
+                        text: tabButton.title
+                        objectName: tabButton.title
                         background: Rectangle {
-                            color: tabButton.current ? root.paletteSheet.alternateBase : model.unread ? root.paletteSheet.highlight : root.paletteSheet.mid
+                            color: tabButton.current ? root.paletteSheet.alternateBase : tabButton.unread ? root.paletteSheet.highlight : root.paletteSheet.mid
+                        }
+
+                        onClicked: {
+                            tabHeader.currentIndex = tabButton.index
+                            root.chatRoom = tabButton.chatroom
                         }
 
                         contentItem: RowLayout {
                             Label {
-                                text: model.unread ? "%1 (\*)".arg(model.title) : model.title
+                                text: (tabButton.unread ? "%1 (\*)".arg(tabButton.title) : tabButton.title)
                                 Layout.fillWidth: true
                                 horizontalAlignment: Qt.AlignHCenter
                                 font: Theme.imFont
                                 color: tabButton.current ? root.paletteSheet.text : root.paletteSheet.button
                             }
                             ToolButton {
-                                visible: model.closable
+                                visible: tabButton.closable
                                 text: "X"
                                 ToolTip.text: qsTr("close")
                                 ToolTip.visible: down
                                 onClicked: {
-                                    InstantMessagerManager.ctrl.closeChatroom(model.id, false)
+                                    InstantMessagerManager.ctrl.closeChatroom(tabButton.uuid, false)
                                 }
                             }
                         }
                         Connections {
-                            target: model.chatroom
+                            target: tabButton.chatroom
                             function onUnreadMessageChanged(unread) {
                                 if(unread && !tabButton.current)
                                     effect.play()
