@@ -87,7 +87,6 @@ InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, P
     , m_model(new InstantMessaging::InstantMessagingModel(diceRoller, model))
     , m_players(model)
     , m_diceParser(diceRoller)
-    , m_font(QFont().toString())
 {
     registerType();
     addChatroomSplitterModel();
@@ -355,19 +354,6 @@ void InstantMessagingController::setSound(bool newSound)
     emit soundChanged();
 }
 
-QFont InstantMessagingController::font() const
-{
-    return m_font;
-}
-
-void InstantMessagingController::setFont(const QFont& newFont)
-{
-    if(m_font == newFont)
-        return;
-    m_font= newFont;
-    emit fontChanged();
-}
-
 int InstantMessagingController::currentTab() const
 {
     return m_currentTab;
@@ -392,4 +378,25 @@ void InstantMessagingController::setDetached(bool newDetached)
         return;
     m_detached= newDetached;
     emit detachChanged();
+}
+
+QFont InstantMessagingController::imFont() const
+{
+    auto theme= customization::Theme::instance();
+    if(!theme)
+        return {};
+
+    connect(theme, &customization::Theme::imFontChanged, this, &InstantMessagingController::imFontChanged,
+            Qt::UniqueConnection);
+
+    return theme->imFont();
+}
+
+void InstantMessagingController::setImFont(QFont font)
+{
+    auto theme= customization::Theme::instance();
+    if(!theme)
+        return;
+
+    theme->setImFont(font);
 }

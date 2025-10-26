@@ -54,6 +54,7 @@ class COMMON_QML_EXPORT Theme : public QObject
     Q_PROPERTY(QFont imFont READ imFont WRITE setImFont NOTIFY imFontChanged FINAL)
     Q_PROPERTY(QFont imLittleFont READ imLittleFont NOTIFY imFontChanged FINAL)
     Q_PROPERTY(QFont imBigFont READ imBigFont NOTIFY imFontChanged FINAL)
+    Q_PROPERTY(qreal fontSizeFactor READ fontSizeFactor WRITE setFontSizeFactor NOTIFY fontSizeFactorChanged FINAL)
 public:
     explicit Theme(QObject* parent= nullptr);
 
@@ -75,6 +76,9 @@ public:
     Q_INVOKABLE QColor buttonColor(QColor button, QColor highLight, bool isHighlight, bool down, bool hovered) const;
     Q_INVOKABLE QColor buttonOutline(QColor highLight, QColor window, bool highlighted, bool enabled) const;
 
+    qreal fontSizeFactor() const;
+    void setFontSizeFactor(qreal newFontSizeFactor);
+
 public slots:
     void setNightMode(bool b);
 
@@ -82,6 +86,7 @@ signals:
     void nightModeChanged(bool b);
     void folderChanged(QString f);
     void imFontChanged();
+    void fontSizeFactorChanged();
 
 private:
     void loadData(const QString& source);
@@ -93,6 +98,7 @@ private:
     std::map<QString, StyleSheet*> m_styleSheets;
     bool m_nightMode= false;
     QFont m_imFont;
+    qreal m_fontSizeFactor{1.0};
 };
 } // namespace customization
 

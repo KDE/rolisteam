@@ -129,7 +129,7 @@ void Theme::loadData(const QString& source)
         }
         else if(currentStyleSheet)
         {
-            QRegularExpression exp("^(\\w+)=(.*)$");
+            static QRegularExpression exp("^(\\w+)=(.*)$");
             auto match= exp.match(str, 0, QRegularExpression::PartialPreferCompleteMatch);
             if(match.hasMatch())
             {
@@ -150,8 +150,7 @@ void Theme::loadData(const QString& source)
                     continue;
                 }
 
-                QColor color;
-                color.setNamedColor(value);
+                QColor color= QColor::fromString(value);
                 if(color.isValid())
                 {
                     if(!key.endsWith("_dark"))
@@ -218,7 +217,9 @@ StyleSheet* Theme::addStyleSheet(const QString& name)
 
 QFont Theme::imFont() const
 {
-    return m_imFont;
+    QFont res= m_imFont;
+    res.setPointSize(res.pointSize() * m_fontSizeFactor);
+    return res;
 }
 
 void Theme::setImFont(const QFont& newImFont)
@@ -232,14 +233,14 @@ void Theme::setImFont(const QFont& newImFont)
 QFont Theme::imLittleFont() const
 {
     QFont res= m_imFont;
-    res.setPointSize(res.pointSize() * 0.8);
+    res.setPointSize(res.pointSize() * 0.6 * m_fontSizeFactor);
     return res;
 }
 
 QFont Theme::imBigFont() const
 {
     QFont res= m_imFont;
-    res.setPointSize(res.pointSize() * 2);
+    res.setPointSize(res.pointSize() * 2 * m_fontSizeFactor);
     res.setBold(true);
     return res;
 }
@@ -288,6 +289,20 @@ QColor Theme::buttonOutline(QColor highLight, QColor window, bool highlighted, b
     QColor darkOutline
         = enabled && highlighted ? highlightedOutline(highLight, m_nightMode) : window.darker(m_nightMode ? 60 : 140);
     return !enabled ? darkOutline.lighter(m_nightMode ? 85 : 115) : darkOutline;
+}
+
+qreal Theme::fontSizeFactor() const
+{
+    return m_fontSizeFactor;
+}
+
+void Theme::setFontSizeFactor(qreal newFontSizeFactor)
+{
+    if(qFuzzyCompare(m_fontSizeFactor, newFontSizeFactor) || newFontSizeFactor < 0.2 || newFontSizeFactor > 5.0)
+        return;
+    m_fontSizeFactor= newFontSizeFactor;
+    emit fontSizeFactorChanged();
+    emit imFontChanged();
 }
 
 } // namespace customization

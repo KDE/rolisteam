@@ -280,7 +280,7 @@ void InstantMessagingUpdater::save(const QString& path)
     rootObj[keys::modelData]= obj;
     rootObj[keys::nightMode]= m_imCtrl->nightMode();
     rootObj[keys::sound]= m_imCtrl->sound();
-    rootObj[keys::font]= m_imCtrl->font().toString();
+    rootObj[keys::font]= m_imCtrl->imFont().toString();
 
     QJsonDocument doc;
     doc.setObject(rootObj);
@@ -301,7 +301,7 @@ void InstantMessagingUpdater::load(const QString& path)
     m_imCtrl->setSound(data[keys::sound].toBool());
     QFont f;
     f.fromString(data[keys::font].toString());
-    m_imCtrl->setFont(f);
+    m_imCtrl->setImFont(f);
     m_imCtrl->setNightMode(data[keys::nightMode].toInt());
     if(ok && !data.isEmpty() && m_saveChatrooms)
         ModelHelper::fetchInstantMessageModel(modelData, model);

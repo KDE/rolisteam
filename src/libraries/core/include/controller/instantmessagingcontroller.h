@@ -55,9 +55,9 @@ class CORE_EXPORT InstantMessagingController : public AbstractControllerInterfac
     Q_PROPERTY(bool sound READ sound WRITE setSound NOTIFY soundChanged FINAL)
     Q_PROPERTY(bool visible READ visible WRITE setVisible NOTIFY visibleChanged)
     Q_PROPERTY(bool unread READ unread NOTIFY unreadChanged)
-    Q_PROPERTY(QFont font READ font WRITE setFont NOTIFY fontChanged FINAL)
     Q_PROPERTY(InstantMessaging::InstantMessagingModel* model READ model CONSTANT)
     Q_PROPERTY(bool detached READ detached WRITE setDetached NOTIFY detachChanged)
+    Q_PROPERTY(QFont imFont READ imFont WRITE setImFont NOTIFY imFontChanged FINAL)
 public:
     explicit InstantMessagingController(DiceRoller* diceRoller, PlayerModel* player, QObject* parent= nullptr);
     virtual ~InstantMessagingController();
@@ -78,14 +78,17 @@ public:
     bool sound() const;
     void setSound(bool newSound);
 
-    QFont font() const;
-    void setFont(const QFont& newFont);
-
     int currentTab() const;
     void setCurrentTab(int newCurrentTab);
 
     bool detached() const;
     void setDetached(bool newDetached);
+
+    qreal fontSizeFactor() const;
+    void setFontSizeFactor(qreal newFontSizeFactor);
+
+    QFont imFont() const;
+    void setImFont(QFont font);
 
 public slots:
     void addChatroomSplitterModel();
@@ -117,24 +120,20 @@ signals:
     void chatRoomCreated(InstantMessaging::ChatRoom* room, bool remote);
     void chatRoomRemoved(const QString& id, bool remote);
     void soundChanged();
-    void fontChanged();
     void playerArrived(const QString& id);
     void currentTabChanged();
-
     void detachChanged();
+    void imFontChanged();
 
 private:
     std::unique_ptr<LocalPersonModel> m_localPersonModel;
-    //std::vector<std::unique_ptr<InstantMessaging::ChatroomSplitterModel>> m_splitterModels;
     std::unique_ptr<InstantMessaging::ChatroomSplitterModel> m_splitterModel;
     std::unique_ptr<InstantMessaging::InstantMessagingModel> m_model;
     QPointer<PlayerModel> m_players;
     bool m_nightMode= false;
-    int m_fontSizeFactor= false;
     QPointer<DiceRoller> m_diceParser;
     bool m_visible= false;
     bool m_sound{true};
-    QFont m_font;
     int m_currentTab;
     bool m_detached{false};
 };

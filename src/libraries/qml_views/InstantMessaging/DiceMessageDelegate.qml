@@ -17,6 +17,7 @@ Frame {
         Label {
             text: frame.message.comment
             visible: frame.message.comment
+            font: Theme.imLittleFont
             Layout.fillWidth: true
         }
         RowLayout {
@@ -34,12 +35,10 @@ Frame {
                 id: mainText
                 text: frame.message.result
                 font: Theme.imBigFont
-                //font.bold: true
                 Layout.fillWidth: true
                 textFormat: Label.RichText
                 antialiasing: false
                 minimumPixelSize: 10;
-                //font.pixelSize: frame.styleSheet.imageSize*frame.factor
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Label.WordWrap
                 ToolTip.visible: activeFocus
@@ -68,6 +67,7 @@ Frame {
         Label {
             text: qsTr("Details: %1").arg(frame.message.details)
             textFormat: Label.RichText
+            font: Theme.imLittleFont
             visible: layout.showDetails
         }
         Label {

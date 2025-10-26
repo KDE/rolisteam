@@ -12,6 +12,7 @@ Frame {
         text: frame.message.text
         color: "red"
         textFormat: Label.RichText
+        font: Theme.imLittleFont
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WrapAnywhere

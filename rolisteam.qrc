@@ -151,5 +151,6 @@
         <file>resources/rolistheme/pipette.svg</file>
         <file>resources/rolisteam/templates/about.template</file>
         <file>resources/rolistheme/remove.svg</file>
+        <file>resources/rolistheme/reset.svg</file>
     </qresource>
 </RCC>

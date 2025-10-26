@@ -120,7 +120,6 @@
     <addaction name="separator"/>
     <addaction name="m_diceAliasAct"/>
     <addaction name="m_statesAct"/>
-    <addaction name="m_statisticAct"/>
     <addaction name="separator"/>
     <addaction name="m_importFromCampaign"/>
     <addaction name="separator"/>
@@ -642,7 +641,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../../build/Desktop_Qt_6_8_1-Debug/src/libraries/dicephysics/.qt/rcc/qml.qrc">
+    <iconset resource="../../../build/Desktop_Qt_6_10_0-Debug/src/libraries/dicephysics/.qt/rcc/qml.qrc">
      <normaloff>:/dice3d/icons/dice3d.svg</normaloff>:/dice3d/icons/dice3d.svg</iconset>
    </property>
    <property name="text">
@@ -657,7 +656,7 @@
   <include location="../../../rolisteam.qrc"/>
   <include location="../../../resources/rolisteam/logo/logo.qrc"/>
   <include location="../../../resources/rolisteam/logo/logo.qrc"/>
-  <include location="../../../build/Desktop_Qt_6_8_1-Debug/src/libraries/dicephysics/.qt/rcc/qml.qrc"/>
+  <include location="../../../build/Desktop_Qt_6_10_0-Debug/src/libraries/dicephysics/.qt/rcc/qml.qrc"/>
   <include location="../../../rolisteam.qrc"/>
  </resources>
  <connections>

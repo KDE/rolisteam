@@ -87,7 +87,7 @@ ColumnLayout {
         text: root.local ? root.time : "%1 - %2".arg(root.time).arg(root.writerName)
         //anchors.right: root.local ? parent.right : undefined
         Layout.alignment: root.local ? Qt.AlignRight : Qt.AlignLeft
-        font.pixelSize: root.styleSheet.fontSizeTime * root.factor
+        font: Theme.imLittleFont
         opacity: root.styleSheet.opacityTime
     }
 }

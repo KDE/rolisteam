@@ -69,7 +69,7 @@ Pane {
                 isMergeable: model.index > 0
                 chatRoomCount: reaper.count
                 chatRoomIndex: model.index
-                onZoomChanged: sideMenu.fontFactor += delta
+                onZoomChanged: (delta) => {Theme.fontSizeFactor += delta}
                 SplitView.minimumWidth: root.styleSheet.minimumWidth
                 SplitView.preferredWidth: root.width/reaper.count
                 SplitView.fillHeight: true
@@ -98,10 +98,14 @@ Pane {
 
     ToolButton {
         id: listButton
+        property QtObject subPalette: Theme.styleSheet("Palette")
         anchors.top: parent.top
         anchors.right: parent.right
         height: reaper.headerHeight
         icon.name: "menu-rounded-solid"
+        icon.color: listButton.subPalette.buttonText
+        icon.height: Math.max(16,Theme.imFont.pixelSize)
+        icon.width: Math.max(16,Theme.imFont.pixelSize)
         onClicked: menu.open()
     }
 }

@@ -34,21 +34,24 @@ void FilterInstantMessagingModel::setFilterParameter(bool b, QStringList data)
     if(m_allBut == b && m_filteredId == data)
         return;
 
+    beginFilterChange();
     m_allBut= b;
     m_filteredId << data;
-    invalidateFilter();
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
 }
 
 void FilterInstantMessagingModel::removeFilterId(const QString& id)
 {
+    beginFilterChange();
     m_filteredId.removeAll(id);
-    invalidateFilter();
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
 }
 
 void FilterInstantMessagingModel::addFilterId(const QString& id)
 {
+    beginFilterChange();
     m_filteredId << id;
-    invalidateFilter();
+    endFilterChange(QSortFilterProxyModel::Direction::Rows);
 }
 
 QVariant FilterInstantMessagingModel::get(int idx)
@@ -70,6 +73,11 @@ int FilterInstantMessagingModel::filterIdCount() const
 QStringList FilterInstantMessagingModel::filteredId() const
 {
     return m_filteredId;
+}
+
+QHash<int, QByteArray> FilterInstantMessagingModel::roleNames() const
+{
+    return sourceModel()->roleNames();
 }
 
 QString FilterInstantMessagingModel::uuid() const

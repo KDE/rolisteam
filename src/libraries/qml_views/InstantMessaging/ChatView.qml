@@ -116,6 +116,7 @@ Item {
                                 text: model.unread ? "%1 (\*)".arg(model.title) : model.title
                                 Layout.fillWidth: true
                                 horizontalAlignment: Qt.AlignHCenter
+                                font: Theme.imFont
                                 color: tabButton.current ? root.paletteSheet.text : root.paletteSheet.button
                             }
                             ToolButton {

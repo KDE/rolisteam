@@ -39,6 +39,7 @@ Frame {
                         id: selector
                         textRole: "name"
                         valueRole: "uuid"
+                        font: Theme.imFont
                         onCountChanged: {
                             if(selector.currentIndex < 0 && count > 0)
                                 selector.currentIndex = 0
@@ -50,8 +51,8 @@ Frame {
                                 fillMode: Image.PreserveAspectFit
                                 Layout.fillHeight: true
                                 Layout.leftMargin: 10
-                                sourceSize.height: selector.height
-                                sourceSize.width: selector.height
+                                sourceSize.height: Math.max(40, nameLbl.implicitHeight)
+                                sourceSize.width: Math.max(40, nameLbl.implicitHeight)
                             }
                             Label {
                                 id: nameLbl
@@ -162,8 +163,9 @@ Frame {
                 }
             }
             Button {
-                text: qsTr("send")
+                text: qsTr("Send")
                 Layout.fillHeight: true
+                font: Theme.imFont
                 enabled:  edit.length > 0
                 onClicked: {
                     layout.sendMessage()

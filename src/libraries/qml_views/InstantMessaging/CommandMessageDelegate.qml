@@ -8,7 +8,6 @@ Column {
     objectName: model.text
     property QtObject styleSheet: Theme.styleSheet("TextMessage")
     spacing: root.styleSheet.spacing
-    property real factor : fontFactor
     Rectangle {
         anchors.right: model.local ? parent.right : undefined
         id: rect
@@ -19,7 +18,7 @@ Column {
         Label {
             id: messageId
             text: model.text
-            font.pixelSize: root.styleSheet.fontSize * root.factor
+            font: Theme.imFont
             anchors.centerIn: parent
             wrapMode: Text.WordWrap
             onLinkActivated: _ctrl.openLink(link)
@@ -29,7 +28,7 @@ Column {
         id: timestamp
         text: model.time
         anchors.right: model.local ? parent.right : undefined
-        font.pixelSize: root.styleSheet.fontSize * root.factor
+        font: Theme.imLittleFont
         opacity: root.styleSheet.opacityTime
     }
 }
