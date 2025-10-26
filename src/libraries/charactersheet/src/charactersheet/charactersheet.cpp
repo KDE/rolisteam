@@ -60,7 +60,11 @@ int CharacterSheet::getFieldCount() const
 
 int CharacterSheet::indexFromId(const QString& id) const
 {
-    return m_valuesMap.keys().indexOf(id);
+    auto it= m_valuesMap.find(id);
+
+    if(it == std::end(m_valuesMap))
+        return -1;
+    return std::distance(std::begin(m_valuesMap), it);
 }
 
 CSItem* CharacterSheet::getFieldFromIndex(const std::vector<int>& row) const

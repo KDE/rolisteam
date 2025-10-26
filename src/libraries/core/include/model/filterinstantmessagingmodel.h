@@ -41,6 +41,7 @@ public:
     bool contains(const QString& id);
     int filterIdCount() const;
     QStringList filteredId() const;
+    QHash<int, QByteArray> roleNames() const override;
 
     Q_INVOKABLE QVariant get(int index);
 
