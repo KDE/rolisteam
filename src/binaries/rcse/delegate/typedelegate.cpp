@@ -18,6 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "typedelegate.h"
+#include "charactersheet/charactersheetitem.h"
+#include "charactersheet/csitem.h"
 #include <QComboBox>
 
 TypeDelegate::TypeDelegate(QWidget* parent) : QStyledItemDelegate(parent)
@@ -29,8 +31,9 @@ TypeDelegate::TypeDelegate(QWidget* parent) : QStyledItemDelegate(parent)
 
 QWidget* TypeDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-    // ComboBox ony in column 2
-    if(index.column() != 4)
+    if(index.column() != static_cast<int>(TreeSheetItem::TYPE))
+        return QStyledItemDelegate::createEditor(parent, option, index);
+    if(index.data().toInt() == CSItem::TABLE)
         return QStyledItemDelegate::createEditor(parent, option, index);
 
     QComboBox* cm= new QComboBox(parent);
@@ -58,6 +61,9 @@ void TypeDelegate::setEditorData(QWidget* editor, const QModelIndex& index) cons
 }
 void TypeDelegate::setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const
 {
+    if(index.data().toInt() == CSItem::TABLE)
+        return;
+
     if(QComboBox* cb= qobject_cast<QComboBox*>(editor))
     {
         model->setData(index, cb->currentIndex(), Qt::EditRole);
@@ -75,5 +81,8 @@ QString TypeDelegate::displayText(const QVariant& value, const QLocale& locale) 
     {
         return m_data.at(i);
     }
-    return m_data.at(0);
+    else if(i == CSItem::TABLE)
+        return tr("Table");
+    else
+        return m_data.at(0);
 }

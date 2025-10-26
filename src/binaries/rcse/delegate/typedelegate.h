@@ -27,23 +27,11 @@ class TypeDelegate : public QStyledItemDelegate
 {
 public:
     TypeDelegate(QWidget* parent= nullptr);
-    enum AlignmentState
-    {
-        TopRight,
-        TopMiddle,
-        TopLeft,
-        CenterRight,
-        CenterMiddle,
-        CenterLeft,
-        BottomRight,
-        BottomMiddle,
-        BottomLeft
-    };
 
-    QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    void setEditorData(QWidget* editor, const QModelIndex& index) const;
-    void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const;
-    QString displayText(const QVariant& value, const QLocale& locale) const;
+    QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const override;
+    void setEditorData(QWidget* editor, const QModelIndex& index) const override;
+    void setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const override;
+    QString displayText(const QVariant& value, const QLocale& locale) const override;
 
 private:
     QStringList m_data;

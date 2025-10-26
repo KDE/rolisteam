@@ -140,7 +140,9 @@ bool FieldModel::setData(const QModelIndex& index, const QVariant& value, int ro
         model->setData(model->indexFromCell(treeitem), valStr, role);
     }
     else
+    {
         treeitem->setValueFrom(m_colunm[index.column()]->getPos(), valStr);
+    }
 
     emit valuesChanged(treeitem->valueFrom(TreeSheetItem::ID, Qt::DisplayRole).toString(), valStr);
     emit dataChanged(index, index, {role});
@@ -309,7 +311,7 @@ QRectF FieldModel::childrenRect() const
 {
     QRectF res{0., 0., 1., 1.};
     auto alls= allChildren();
-    for(auto field : alls)
+    for(auto field : std::as_const(alls))
     {
         if(!field)
             continue;
