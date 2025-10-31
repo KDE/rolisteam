@@ -25,10 +25,8 @@
 #include <QPointer>
 #include <QTcpSocket>
 
-#include "connectionprofile.h"
 #include "network/networkmessage.h"
 #include "network_global.h"
-#include "networkreceiver.h"
 
 /**
  * @brief The NetworkLink [Client side] class.
@@ -40,6 +38,7 @@ class NETWORK_EXPORT ClientConnection : public QObject, public MessageSenderInte
 {
     Q_OBJECT
     Q_PROPERTY(bool connected READ connected NOTIFY connectedChanged)
+
 public:
     ClientConnection();
     virtual ~ClientConnection() override;
@@ -65,10 +64,10 @@ private slots:
     void setConnected(bool);
     void receivingData();
 
-private:
+private: // methods
     void makeSignalConnection();
 
-private:
+private: // attributes
     QPointer<QTcpSocket> m_socketTcp;
     bool m_inError= false;
     bool m_connected= false;

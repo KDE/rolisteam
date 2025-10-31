@@ -73,7 +73,7 @@ public:
      * @param socket
      * @param parent
      */
-    explicit ServerConnection(QTcpSocket* socket, QObject* parent= nullptr);
+    explicit ServerConnection(QTcpSocket* socket= nullptr, QObject* parent= nullptr);
     ~ServerConnection();
     /**
      * @brief getParentChannel

@@ -22,14 +22,10 @@
  *************************************************************************/
 
 #include "network/clientmanager.h"
+#include "network/clientconnection.h"
 
 #include <QDebug>
 #include <QTcpSocket>
-
-#include "data/person.h"
-#include "data/player.h"
-#include "network/clientconnection.h"
-#include "network/connectionprofile.h"
 
 #define second 1000
 

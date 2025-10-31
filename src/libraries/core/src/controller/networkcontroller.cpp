@@ -29,6 +29,7 @@
 #include "controller/gamecontroller.h"
 #include "controller/playercontroller.h"
 #include "network/clientmanager.h"
+#include "network/connectionprofile.h"
 #include "network/networkmessage.h"
 #include "network/receiveevent.h"
 #include "network/rserver.h"

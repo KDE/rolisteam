@@ -23,6 +23,7 @@
 #include <QtCore/QString>
 
 #include "data/character.h"
+#include "network/channel.h"
 #include "network/ipbanaccepter.h"
 #include "network/iprangeaccepter.h"
 #include "network/messagedispatcher.h"

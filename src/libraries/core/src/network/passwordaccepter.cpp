@@ -1,6 +1,7 @@
 #include "network/passwordaccepter.h"
 #include <QCryptographicHash>
 #include <QDebug>
+
 PasswordAccepter::PasswordAccepter(PasswordAccepter::Level level) : m_currentLevel(level) {}
 
 bool PasswordAccepter::isValid(const QMap<QString, QVariant>& data) const

@@ -1,6 +1,4 @@
 #include "network/ipbanaccepter.h"
-#include <QDebug>
-#include <QHostAddress>
 
 IpBanAccepter::IpBanAccepter() {}
 
@@ -19,7 +17,7 @@ bool IpBanAccepter::isValid(const QMap<QString, QVariant>& data) const
 
     // Cut current ip
     bool result
-        = ((!bannedIp.contains(currentIp)) && (!bannedIp.contains(currentIpV4)) && (!bannedIp.contains(currentIpV6)));
+        = (!bannedIp.contains(currentIp)) && (!bannedIp.contains(currentIpV4)) && (!bannedIp.contains(currentIpV6));
 
     // qInfo() << " Ip Ban:" << result << "current IP: " << currentIp;
     return result;

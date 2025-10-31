@@ -54,6 +54,7 @@ NetworkMessageWriter::~NetworkMessageWriter()
 {
     delete[] m_buffer;
 }
+
 quint32 NetworkMessageWriter::getDataSize() const
 {
     return static_cast<quint32>(m_currentPos - m_begin);
@@ -63,6 +64,7 @@ quint32 NetworkMessageWriter::bufferSize() const
 {
     return m_sizeBuffer;
 }
+
 NetMsg::Category NetworkMessageWriter::category() const
 {
     return NetMsg::Category(m_header->category);
@@ -222,6 +224,7 @@ void NetworkMessageWriter::makeRoom(int size)
         m_sizeData= m_sizeBuffer - static_cast<long long int>(sizeof(NetworkMessageHeader));
     }
 }
+
 void NetworkMessageWriter::int8(qint8 data)
 {
     int size= sizeof(qint8);
@@ -248,6 +251,7 @@ void NetworkMessageWriter::int32(qint32 data)
     *(reinterpret_cast<qint32*>(m_currentPos))= data;
     m_currentPos+= size;
 }
+
 void NetworkMessageWriter::int64(qint64 data)
 {
     int size= sizeof(qint64);
@@ -256,6 +260,7 @@ void NetworkMessageWriter::int64(qint64 data)
     *(reinterpret_cast<qint64*>(m_currentPos))= data;
     m_currentPos+= size;
 }
+
 void NetworkMessageWriter::real(qreal data)
 {
     int size= sizeof(qreal);
@@ -264,6 +269,7 @@ void NetworkMessageWriter::real(qreal data)
     *(reinterpret_cast<qreal*>(m_currentPos))= data;
     m_currentPos+= size;
 }
+
 void NetworkMessageWriter::setRecipientList(QStringList list, NetworkMessage::RecipientMode mode)
 {
     m_recipientList= list;
@@ -279,10 +285,12 @@ void NetworkMessageWriter::setRecipientList(QStringList list, NetworkMessage::Re
         }
     }
 }
+
 QStringList NetworkMessageWriter::getRecipientList() const
 {
     return m_recipientList;
 }
+
 NetworkMessage::RecipientMode NetworkMessageWriter::getRecipientMode() const
 {
     return m_mode;

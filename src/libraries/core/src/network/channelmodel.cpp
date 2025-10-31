@@ -19,7 +19,6 @@
 #endif
 
 #include "network/channel.h"
-#include "network/receiveevent.h"
 
 quint64 computeTotalSize(const std::map<Channel*, quint64>& map)
 {

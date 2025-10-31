@@ -1,8 +1,7 @@
 #ifndef MESSAGEDISPATCHER_H
 #define MESSAGEDISPATCHER_H
 
-#include "channelmodel.h"
-#include "network_global.h"
+#include "network_global.h" // NETWORK_EXPORT
 #include "networkmessage.h"
 #include "serverconnection.h"
 #include <QByteArray>

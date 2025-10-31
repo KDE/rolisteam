@@ -23,7 +23,6 @@
 #include <QTimer>
 
 #include "network/receiveevent.h"
-
 #include "network/networkmessagereader.h"
 
 /****************
@@ -92,6 +91,7 @@ void ReceiveEvent::registerReceiver(NetMsg::Category categorie, NetMsg::Action a
 
     s_receiverMap.insert(key, receiver);
 }
+
 void ReceiveEvent::registerNetworkReceiver(NetMsg::Category categorie, NetWorkReceiver* receiver)
 {
     ms_netWorkReceiverMap.insert(categorie, receiver);

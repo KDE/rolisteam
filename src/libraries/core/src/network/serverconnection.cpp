@@ -322,7 +322,7 @@ void ServerConnection::receivingData()
         else
         {
             m_headerRead= 0;
-            dataRead= 0;
+            // dataRead= 0;
             m_dataReceivedTotal= 0;
             emit readDataReceived(0, 0);
             m_receivingData= false;
@@ -350,6 +350,7 @@ QString ServerConnection::getServerPassword() const
 {
     return m_serverPassword;
 }
+
 void ServerConnection::forwardMessage()
 {
     QByteArray array(reinterpret_cast<char*>(&m_header), sizeof(NetworkMessageHeader));

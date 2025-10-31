@@ -32,7 +32,6 @@
 
 #include "network/serverconnection.h"
 #include "network_global.h"
-#include "networkmessagewriter.h"
 
 class NetworkMessage;
 class NetworkMessageReader;
@@ -46,6 +45,7 @@ class NETWORK_EXPORT Channel : public TreeItem
     Q_PROPERTY(bool locked READ locked WRITE setLocked NOTIFY lockedChanged)
     Q_PROPERTY(ServerConnection* currentGM READ currentGM WRITE setCurrentGM NOTIFY currentGMChanged)
     Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY descriptionChanged FINAL)
+
 public:
     Channel();
     explicit Channel(QString name);
@@ -103,9 +103,11 @@ public:
     void setLocked(bool locked);
 
     bool contains(QString id);
+
 public slots:
     void clearData();
     void renamePlayer(const QString& id, const QString& name);
+
 signals:
     void memorySizeChanged(quint64 memorySize, Channel* id);
     void lockedChanged();

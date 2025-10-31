@@ -22,7 +22,7 @@
 
 #include "network/network_type.h"
 #include "network_global.h"
-#include <QAbstractTableModel>
+#include <QAbstractListModel>
 #include <QPointer>
 
 class ConnectionProfile;

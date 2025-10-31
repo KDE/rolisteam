@@ -42,7 +42,6 @@ public:
     const QHash<QTcpSocket*, ServerConnection*> connections() const;
 
 signals:
-
     void eventOccured(QString, LogController::LogLevel);
     void messageMustBeDispatched(QByteArray array, Channel* channel, ServerConnection* client);
     void portChanged();

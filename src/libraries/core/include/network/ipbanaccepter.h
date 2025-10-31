@@ -3,6 +3,7 @@
 
 #include "connectionaccepter.h"
 #include "network_global.h"
+
 class NETWORK_EXPORT IpBanAccepter : public ConnectionAccepter
 {
 public:

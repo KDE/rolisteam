@@ -1,5 +1,6 @@
 #include "network/heartbeatsender.h"
-#include "common/logcategory.h"
+
+#include "common/logcategory.h" // qCDebug
 #include "network/networkmessagewriter.h"
 
 HeartBeatSender::HeartBeatSender(QObject* parent) : QObject(parent)

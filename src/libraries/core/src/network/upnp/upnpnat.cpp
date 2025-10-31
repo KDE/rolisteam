@@ -1,7 +1,4 @@
 // #include <winsock2.h>
-#include <iostream>
-#include <string>
-
 #include "network/upnp/upnpnat.h"
 // #include "network/upnp/xmlParser.h"
 

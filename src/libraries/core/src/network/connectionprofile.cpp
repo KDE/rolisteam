@@ -2,14 +2,12 @@
 
 #include <QCryptographicHash>
 #include <QDebug>
-#include <QFileInfo>
 
 ConnectionProfile::ConnectionProfile()
     : m_title(QObject::tr("Unknown")), m_playerName(QObject::tr("Player")), m_playerColor(Qt::red)
 {
     auto updateValid= [this]() {
-        setValid(m_validConnectionInfo && m_validPlayerInfo && m_validCharacter && m_validCampaign
-                 && !m_title.isEmpty());
+        setValid(m_validConnectionInfo && m_validPlayerInfo && m_validCharacter && m_validCampaign && !m_title.isEmpty());
     };
 
     connect(this, &ConnectionProfile::playerInfoValidChanged, this, updateValid);
@@ -18,8 +16,7 @@ ConnectionProfile::ConnectionProfile()
     connect(this, &ConnectionProfile::connectionInfoValidChanged, this, updateValid);
     connect(this, &ConnectionProfile::titleChanged, this, updateValid);
 
-    auto updateConnectionInfo
-        = [this]() { setConnectionInfoValid(m_port > 0 && m_server ? m_server : !m_address.isEmpty()); };
+    auto updateConnectionInfo = [this]() { setConnectionInfoValid(m_port > 0 && m_server ? m_server : !m_address.isEmpty()); };
 
     connect(this, &ConnectionProfile::serverChanged, this, updateConnectionInfo);
     connect(this, &ConnectionProfile::portChanged, this, updateConnectionInfo);
@@ -28,7 +25,9 @@ ConnectionProfile::ConnectionProfile()
     updateConnectionInfo();
     updateValid();
 }
+
 ConnectionProfile::~ConnectionProfile() {}
+
 void ConnectionProfile::setProfileTitle(const QString& str)
 {
     if(str == m_title)
@@ -179,7 +178,7 @@ void ConnectionProfile::setHash(const QByteArray& password)
     emit passwordChanged();
 }
 
-const std::vector<connection::CharacterData>& ConnectionProfile::characters()
+const std::vector<connection::CharacterData>& ConnectionProfile::characters() const
 {
     return m_characters;
 }

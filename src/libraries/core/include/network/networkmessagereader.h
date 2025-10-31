@@ -21,7 +21,7 @@
 #ifndef DATA_READER_H
 #define DATA_READER_H
 
-#include "network_global.h"
+#include "network_global.h" // NETWORK_EXPORT
 #include "networkmessage.h"
 #include <QDateTime>
 #include <QString>
@@ -39,7 +39,7 @@ public:
     NetworkMessageReader(const NetworkMessageReader& other);
     virtual ~NetworkMessageReader() override;
 
-    bool isValid();
+    bool isValid() const;
 
     NetMsg::Category category() const override;
     NetMsg::Action action() const override;
@@ -83,11 +83,6 @@ public:
     void resetToData();
     void resetToPos(const char* pos);
     const char* pos() const;
-    /////////////////////////////////
-    ///
-    /// \brief readRecipient
-    ///
-    /////////////////////////////////
     void readRecipient();
 
     NetworkMessage::RecipientMode getRecipientMode() const override;

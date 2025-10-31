@@ -37,7 +37,7 @@ void MessageDispatcher::dispatchMessage(QByteArray data, Channel* channel, Serve
     }
     else if(msg->category() == NetMsg::UserCategory)
     {
-        if(msg->action() == NetMsg::PlayerConnectionAction)
+        if(msg->action() == NetMsg::PlayerConnectionAction && emitter)
         {
             emitter->setInfoPlayer(msg);
             saveIt= false;

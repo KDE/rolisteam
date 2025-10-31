@@ -2,7 +2,7 @@
 #define PASSWORDACCEPTER_H
 
 #include "connectionaccepter.h"
-#include "network_global.h"
+#include "network_global.h" //NETWORK_EXPORT
 
 class NETWORK_EXPORT PasswordAccepter : public ConnectionAccepter
 {

@@ -59,7 +59,7 @@ NetworkMessageReader::~NetworkMessageReader()
     delete[](reinterpret_cast<char*>(m_header));
 }
 
-bool NetworkMessageReader::isValid()
+bool NetworkMessageReader::isValid() const
 {
     return !m_outMemory;
 }
@@ -96,6 +96,7 @@ void NetworkMessageReader::setInternalData(const QByteArray& bytes)
     auto size= bytes.size();
     m_buffer= new char[size];
     memcpy(m_buffer, bytes.constData(), static_cast<std::size_t>(size));
+
     m_header= reinterpret_cast<NetworkMessageHeader*>(m_buffer);
     size_t headerSize= sizeof(NetworkMessageHeader);
     m_pos= m_buffer + headerSize;
@@ -290,6 +291,7 @@ QByteArray NetworkMessageReader::byteArray32()
     }
     return {};
 }
+
 qint8 NetworkMessageReader::int8()
 {
     size_t size= sizeof(qint8);
@@ -327,6 +329,7 @@ qint32 NetworkMessageReader::int32()
     }
     return 0;
 }
+
 qint64 NetworkMessageReader::int64()
 {
     size_t size= sizeof(qint64);
@@ -365,6 +368,7 @@ QDateTime NetworkMessageReader::dateTime()
     }
     return time;
 }
+
 qreal NetworkMessageReader::real()
 {
     size_t size= sizeof(qreal);

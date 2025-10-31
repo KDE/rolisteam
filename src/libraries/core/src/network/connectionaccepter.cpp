@@ -1,6 +1,7 @@
 #include "network/connectionaccepter.h"
 
 ConnectionAccepter::ConnectionAccepter() : m_next(nullptr) {}
+
 ConnectionAccepter::~ConnectionAccepter()
 {
     if(nullptr != m_next)
@@ -9,6 +10,7 @@ ConnectionAccepter::~ConnectionAccepter()
         m_next= nullptr;
     }
 }
+
 void ConnectionAccepter::setNext(ConnectionAccepter* next)
 {
     m_next= next;
@@ -23,6 +25,7 @@ void ConnectionAccepter::setIsActive(bool isActive)
 {
     m_isActive= isActive;
 }
+
 bool ConnectionAccepter::runAccepter(const QMap<QString, QVariant>& data) const
 {
     bool result= isValid(data);

@@ -1,8 +1,6 @@
 #ifndef TREEITEM_H
 #define TREEITEM_H
 
-#include <QJsonArray>
-#include <QJsonObject>
 #include <QObject>
 #include <QString>
 
@@ -15,6 +13,7 @@ class NETWORK_EXPORT TreeItem : public QObject
     Q_OBJECT
     Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
     Q_PROPERTY(QString uuid READ uuid WRITE setUuid NOTIFY uuidChanged)
+
 public:
     TreeItem(QObject* parent= nullptr);
 

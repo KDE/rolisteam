@@ -26,7 +26,7 @@
 #include "network_global.h"
 #include <QStringList>
 #include <QtGlobal>
-//
+
 class NetworkLink;
 class ClientManager;
 struct NETWORK_EXPORT NetworkMessageHeader
@@ -190,6 +190,7 @@ public:
     };
     explicit NetworkMessage();
     virtual ~NetworkMessage();
+
     virtual void sendToServer();
     virtual NetMsg::Category category() const= 0;
     virtual NetMsg::Action action() const= 0;

@@ -22,9 +22,7 @@
  *************************************************************************/
 #include "network/clientconnection.h"
 
-#include <QCoreApplication>
 #include <QTcpSocket>
-
 #include <QDebug>
 
 QByteArray dataToArray(const NetworkMessageHeader& header, const char* buffer)
@@ -74,6 +72,7 @@ ClientConnection::ClientConnection() : m_socketTcp(new QTcpSocket(this))
     m_receivingData= false;
     m_headerRead= 0;
 }
+
 ClientConnection::~ClientConnection()= default;
 
 bool ClientConnection::connected() const
@@ -146,8 +145,7 @@ void ClientConnection::receivingData()
                                                                     - static_cast<qint64>(m_headerRead));
             readDataSize+= static_cast<qint64>(m_headerRead);
 
-            if((readDataSize
-                != static_cast<qint64>(sizeof(NetworkMessageHeader)))) //||(m_header.category>=NetMsg::LastCategory)
+            if((readDataSize != static_cast<qint64>(sizeof(NetworkMessageHeader)))) //||(m_header.category>=NetMsg::LastCategory)
             {
                 m_headerRead= static_cast<quint64>(readDataSize);
                 return;
@@ -160,8 +158,7 @@ void ClientConnection::receivingData()
             m_remainingData= m_header.dataSize;
             emit readDataReceived(m_header.dataSize, m_header.dataSize);
         }
-        readData
-            = m_socketTcp->read(&(m_buffer[m_header.dataSize - m_remainingData]), static_cast<qint64>(m_remainingData));
+        readData = m_socketTcp->read(&(m_buffer[m_header.dataSize - m_remainingData]), static_cast<qint64>(m_remainingData));
         if(readData < static_cast<qint64>(m_remainingData))
         {
             m_remainingData-= static_cast<quint32>(readData);

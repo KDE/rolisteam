@@ -4,10 +4,9 @@
 #include <QObject>
 #include <QProperty>
 #include <QString>
-#include <optional>
 
 #include "network/network_type.h"
-#include "network_global.h"
+#include "network_global.h" // NETWORK_EXPORT
 
 typedef std::function<void(void)> StdFunc;
 /**
@@ -55,10 +54,12 @@ public:
     bool charactersValid() const;
     bool campaignInfoValid() const;
 
-    const std::vector<connection::CharacterData>& characters();
+    const std::vector<connection::CharacterData>& characters() const;
     void setCharacters(const std::vector<connection::CharacterData>& characters);
+
     connection::CharacterData& character(int i);
     void addCharacter(const connection::CharacterData& data);
+
     void removeCharacter(int index);
     int characterCount();
     void clearCharacter();

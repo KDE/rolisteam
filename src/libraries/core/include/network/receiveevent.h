@@ -26,7 +26,6 @@
 #include <QEvent>
 #include <QMap>
 #include <QObject>
-#include <QString>
 
 #include "network_global.h"
 #include "networkmessagereader.h"

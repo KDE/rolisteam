@@ -102,6 +102,7 @@ connection::CharacterData CharacterDataModel::character(int i) const
     else
         return {};
 }
+
 /*bool CharacterDataModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
     if(m_profile.isNull())
@@ -204,6 +205,7 @@ void CharacterDataModel::setName(int i, const QString& string)
     emit dataChanged(index(i, 0), index(i, 0), {Name});
     m_profile->characterHasChanged();
 }
+
 void CharacterDataModel::setColor(int i, const QColor& color)
 {
     if(!m_profile || i < 0 || i >= m_profile->characterCount())

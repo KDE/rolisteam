@@ -77,10 +77,6 @@ public:
 
     void real(qreal data);
 
-    /**
-     * @brief getRecipientList
-     * @return
-     */
     void setRecipientList(QStringList, NetworkMessage::RecipientMode mode);
     virtual QStringList getRecipientList() const override;
     NetworkMessage::RecipientMode getRecipientMode() const override;

@@ -6,10 +6,8 @@
 #include <QObject>
 
 #include "network/channel.h"
-#include "network/networkmessagereader.h"
-#include "network/networkmessagewriter.h"
 #include "network/serverconnection.h"
-#include "network_global.h"
+#include "network_global.h" // NETWORK_EXPORT
 
 class NETWORK_EXPORT ClientMimeData : public QMimeData
 {
@@ -88,8 +86,7 @@ public slots:
     void setChannelMemorySize(Channel* chan, quint64);
 
 protected:
-    bool moveMediaItem(QList<ServerConnection*> items, const QModelIndex& parentToBe, int row,
-                       QList<QModelIndex>& formerPosition);
+    bool moveMediaItem(QList<ServerConnection*> items, const QModelIndex& parentToBe, int row, QList<QModelIndex>& formerPosition);
 
     void appendChannel(Channel* channel);
     bool localIsGM() const;

@@ -25,17 +25,14 @@
 #define NETWORKMANAGER_H
 
 #include <QList>
-#include <QTcpServer>
-
 #include <QState>
 #include <QStateMachine>
+#include <QTcpServer>
 #include <QTimer>
 
-#include "heartbeatsender.h"
 #include "network/clientconnection.h"
 #include "network/networkmessage.h"
-#include "network/networkmessagewriter.h"
-#include "network_global.h"
+#include "network_global.h" // NETWORK_EXPORT
 
 /**
  * @brief ClientManager manages the state of current client: connected, authentified…
