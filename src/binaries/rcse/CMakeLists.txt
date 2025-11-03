@@ -118,6 +118,7 @@ set(UI_files mainwindow_rcse.ui
 
 set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rcse/logo/rcse.rc)
 add_executable(rcse WIN32 ${sources} ${headers} ${UI_files} ${ressources} ${RC_FILE}
+    autofillerdialog.h autofillerdialog.cpp autofillerdialog.ui
      )
 
 qt_add_resources(rcse "templates"

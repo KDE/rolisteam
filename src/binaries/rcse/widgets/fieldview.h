@@ -54,6 +54,7 @@ private:
     QAction* m_applyValueOnAllLines= nullptr;
     QAction* m_defineCode= nullptr;
     QAction* m_resetCode= nullptr;
+    QAction* m_fillerAssist= nullptr;
 
     // Show Hide Columns
     QAction* m_showGeometryGroup= nullptr;

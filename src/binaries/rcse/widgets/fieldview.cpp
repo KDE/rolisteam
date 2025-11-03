@@ -9,6 +9,7 @@
 #include "undo/setfieldproperties.h"
 
 // Delegates
+#include "autofillerdialog.h"
 #include "borderlisteditor.h"
 #include "delegate/alignmentdelegate.h"
 #include "delegate/fontdelegate.h"
@@ -26,6 +27,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
     m_delItem= new QAction(tr("Delete Item"), this);
     m_applyValueOnSelection= new QAction(tr("Apply on Selection"), this);
     m_applyValueOnAllLines= new QAction(tr("Apply on all lines"), this);
+    m_fillerAssist= new QAction(tr("Open filler assistant"), this);
     m_defineCode= new QAction(tr("Define Field Code"), this);
     m_resetCode= new QAction(tr("Reset Field Code"), this);
 
@@ -136,16 +138,20 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
     QMenu menu(this);
 
     QModelIndex index= currentIndex();
+    QModelIndexList selection= selectionModel()->selectedRows(index.column());
     if(index.isValid())
     {
 
         menu.addAction(m_applyValueOnSelection);
         menu.addAction(m_applyValueOnAllLines);
+        menu.addAction(m_fillerAssist);
         menu.addSeparator();
         menu.addAction(m_lock);
         menu.addAction(m_delItem);
         menu.addSeparator();
         menu.addAction(m_defineCode);
+
+        m_fillerAssist->setEnabled(selection.count() > 1);
     }
     auto showSubMenu= menu.addMenu(tr("Show"));
     showSubMenu->addAction(m_showAllGroup);
@@ -178,6 +184,11 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
             = new DeleteFieldCommand(itemData, m_model, m_currentPage);
         m_undoStack->push(deleteCommand);*/
         emit removeField(itemData, m_currentPage);
+    }
+    else if(m_fillerAssist == act)
+    {
+        AutoFillerDialog dialog(m_model, index.column(), selection, this);
+        dialog.exec();
     }
     else if(m_applyValueOnAllLines == act)
     {
