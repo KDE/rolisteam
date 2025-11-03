@@ -102,8 +102,10 @@ QVariant FieldModel::data(const QModelIndex& index, int role) const
     {
         if(colId == TreeSheetItem::FONT)
         {
-            QFont font;
+            QFont font= QGuiApplication::font();
+            auto pixSize= font.pointSize();
             font.fromString(valueFromField.toString());
+            font.setPointSize(pixSize);
             res= font;
         }
     }
