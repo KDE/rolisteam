@@ -54,8 +54,16 @@ SelectConnectionProfileDialog::SelectConnectionProfileDialog(GameController* ctr
     if(!m_gameCtrl)
         return;
     auto networkCtrl= m_gameCtrl->networkController();
-    connect(networkCtrl, &NetworkController::lastErrorChanged, m_ctrl.get(), &SelectConnProfileController::setErrorMsg);
-    connect(networkCtrl, &NetworkController::infoMessage, m_ctrl.get(), &SelectConnProfileController::setInfoMsg);
+    connect(networkCtrl, &NetworkController::eventOccurs, m_ctrl.get(),
+            [this](const QString& msg, LogController::LogLevel level)
+            {
+                if(msg.startsWith("Trying"))
+                    qDebug() << "ERROR" << msg << level;
+                if(level == LogController::Error)
+                    m_ctrl->setErrorMsg(msg);
+                else
+                    m_ctrl->setInfoMsg(msg);
+            });
     connect(networkCtrl, &NetworkController::connectingChanged, this,
             [this](bool connecting)
             {

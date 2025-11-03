@@ -101,14 +101,15 @@ void RolisteamDaemon::start()
     connect(
         m_server.get(), &RServer::eventOccured, m_logController,
         [this](const QString& msg, LogController::LogLevel type)
-        { m_logController->manageMessage(msg, QStringLiteral("Server"), type); }, Qt::QueuedConnection);
-    connect(m_server.get(), &RServer::completed, &m_thread, &QThread::quit);
-    connect(m_server.get(), &RServer::stateChanged, this,
+        { m_logController->manageMessage(msg, QStringLiteral("Server"), type); },
+        Qt::QueuedConnection);
+    // connect(m_server.get(), &RServer::completed, &m_thread, &QThread::quit);
+    /*connect(m_server.get(), &RServer::stateChanged, this,
             [this]()
             {
-                if(m_server->state() == RServer::Stopped)
+                if(m_server->state() == RServer::Finished)
                     m_thread.quit();
-            });
+            });*/
     connect(&m_thread, &QThread::finished, this,
             [this]()
             {

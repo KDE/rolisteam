@@ -9,8 +9,8 @@
 
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <QTimer>
 #include <QReadLocker>
+#include <QTimer>
 #include <QWriteLocker>
 
 void sendEventToClient(ServerConnection* client, ServerConnection::ConnectionEvent event)
@@ -34,7 +34,8 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
     connect(m_model.get(), &ChannelModel::totalSizeChanged, this, &ServerConnectionManager::memoryChannelChanged);
 
     m_msgDispatcher= new MessageDispatcher(this);
-    connect(this, &ServerConnectionManager::messageMustBeDispatched, m_msgDispatcher, &MessageDispatcher::dispatchMessage, Qt::QueuedConnection);
+    connect(this, &ServerConnectionManager::messageMustBeDispatched, m_msgDispatcher,
+            &MessageDispatcher::dispatchMessage, Qt::QueuedConnection);
 
     connect(m_msgDispatcher, &MessageDispatcher::messageForAdmin, this, &ServerConnectionManager::processMessageAdmin);
 
@@ -242,8 +243,9 @@ void ServerConnectionManager::sendOffAdminAuthFail()
         NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AdminAuthFail);
         QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
                                   Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-        emit eventOccured(tr("Authentification as Admin fails: %2 - %1, Wrong password.").arg(client->name(), client->getIpAddress()),
-                          LogController::Info);
+        emit eventOccured(
+            tr("Authentification as Admin fails: %2 - %1, Wrong password.").arg(client->name(), client->getIpAddress()),
+            LogController::Info);
     }
 }
 
@@ -269,9 +271,9 @@ void ServerConnectionManager::sendOffAuthFail()
             = new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AuthentificationFail);
         QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
                                   Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-        emit eventOccured(
-            tr("Authentification fails: %1 try to connect to the server with wrong password.").arg(client->getIpAddress()),
-            LogController::Info);
+        emit eventOccured(tr("Authentification fails: %1 try to connect to the server with wrong password.")
+                              .arg(client->getIpAddress()),
+                          LogController::Info);
     }
 }
 
@@ -289,8 +291,9 @@ void ServerConnectionManager::kickClient(QString id, bool isAdmin, QString sende
         {
             client= value;
         }
-        if (client)
-            emit eventOccured(tr("User has been kick out: %2 - %1.").arg(client->name(), client->getIpAddress()), LogController::Info);
+        if(client)
+            emit eventOccured(tr("User has been kick out: %2 - %1.").arg(client->name(), client->getIpAddress()),
+                              LogController::Info);
     }
 
     if(nullptr != client)
@@ -427,31 +430,6 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
     }
 }
 
-/*void ServerManager::sendOffModel(ServerConnection* client)
-{
-    if(nullptr == client)
-        return;
-
-    qDebug() << "ServerManager Send off channel model" << sender();
-    static QMap<ServerConnection*, QByteArray> model;
-    QJsonDocument doc;
-    QJsonObject obj;
-    m_model->writeDataJson(obj);
-    doc.setObject(obj);
-
-    auto b= doc.toJson();
-
-    if(b != model[client])
-    {
-        model[client]= b;
-
-        NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::SetChannelList);
-        msg->byteArray32(doc.toJson());
-        QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
-                                  Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-    }
-}*/
-
 ChannelModel* ServerConnectionManager::channelModel() const
 {
     return m_model.get();
@@ -497,13 +475,14 @@ void ServerConnectionManager::accept(qintptr handle, ServerConnection* connectio
     connect(connection, &ServerConnection::adminAuthSucceed, this, &ServerConnectionManager::sendOffAdminAuthSuccessed,
             Qt::QueuedConnection);
 
-    connect(connection, &ServerConnection::itemChanged, this,
-            []()
-            {
-                qDebug() << "connection ItemChanged";
-                // sendOffModelToAll();
-            },
-            Qt::QueuedConnection);
+    connect(
+        connection, &ServerConnection::itemChanged, this,
+        []()
+        {
+            qDebug() << "connection ItemChanged";
+            // sendOffModelToAll();
+        },
+        Qt::QueuedConnection);
 
     connect(connection, &ServerConnection::checkServerAcceptClient, this, &ServerConnectionManager::serverAcceptClient,
             Qt::QueuedConnection);

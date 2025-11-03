@@ -37,7 +37,6 @@
 class ClientManager;
 class RServer;
 class QThread;
-class HeartBeatSender;
 class QAbstractItemModel;
 class GameController;
 class IpChecker;
@@ -118,11 +117,10 @@ signals:
     void ipv4Changed();
     void downloadingData(quint64 readData, quint64 size);
     void tableChanged();
-    void lastErrorChanged(const QString& error);
-    void infoMessage(const QString& msg);
     void authentificationFail();
     void selectedProfileIndexChanged();
     void groupsChanged();
+    void lastErrorChanged();
 
 public slots:
     // network

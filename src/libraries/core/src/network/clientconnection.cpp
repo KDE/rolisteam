@@ -22,8 +22,8 @@
  *************************************************************************/
 #include "network/clientconnection.h"
 
-#include <QTcpSocket>
 #include <QDebug>
+#include <QTcpSocket>
 
 QByteArray dataToArray(const NetworkMessageHeader& header, const char* buffer)
 {
@@ -63,7 +63,7 @@ ClientConnection::ClientConnection() : m_socketTcp(new QTcpSocket(this))
     connect(m_socketTcp, &QTcpSocket::errorOccurred, this,
             [this](const QAbstractSocket::SocketError& error)
             {
-                qDebug() << "NetworkLink - state changed" << error << m_socketTcp->errorString();
+                qDebug() << "NetworkLink - Error occured" << error << m_socketTcp->errorString();
                 if(m_socketTcp.isNull())
                     return;
                 emit errorOccured(m_socketTcp->errorString());
@@ -145,7 +145,8 @@ void ClientConnection::receivingData()
                                                                     - static_cast<qint64>(m_headerRead));
             readDataSize+= static_cast<qint64>(m_headerRead);
 
-            if((readDataSize != static_cast<qint64>(sizeof(NetworkMessageHeader)))) //||(m_header.category>=NetMsg::LastCategory)
+            if((readDataSize
+                != static_cast<qint64>(sizeof(NetworkMessageHeader)))) //||(m_header.category>=NetMsg::LastCategory)
             {
                 m_headerRead= static_cast<quint64>(readDataSize);
                 return;
@@ -158,7 +159,8 @@ void ClientConnection::receivingData()
             m_remainingData= m_header.dataSize;
             emit readDataReceived(m_header.dataSize, m_header.dataSize);
         }
-        readData = m_socketTcp->read(&(m_buffer[m_header.dataSize - m_remainingData]), static_cast<qint64>(m_remainingData));
+        readData
+            = m_socketTcp->read(&(m_buffer[m_header.dataSize - m_remainingData]), static_cast<qint64>(m_remainingData));
         if(readData < static_cast<qint64>(m_remainingData))
         {
             m_remainingData-= static_cast<quint32>(readData);

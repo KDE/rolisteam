@@ -23,6 +23,9 @@
 #include <QObject>
 #include <QUndoCommand>
 #include <core_global.h>
+
+#include "common/logcontroller.h"
+
 class GameController;
 class CORE_EXPORT AbstractControllerInterface : public QObject
 {
@@ -34,8 +37,7 @@ public:
 signals:
     void performCommand(QUndoCommand* command);
     void popCommand();
-    void errorOccurs(QString);
-    void infoOccurs(QString);
+    void eventOccurs(const QString& msg, LogController::LogLevel level);
 };
 
 #endif // CONTROLLERINTERFACE_H

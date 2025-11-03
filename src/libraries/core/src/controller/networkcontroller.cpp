@@ -22,9 +22,6 @@
 #include <QLoggingCategory>
 #include <QMetaObject>
 #include <QThread>
-#include <chrono>
-#include <iostream>
-#include <thread>
 
 #include "controller/gamecontroller.h"
 #include "controller/playercontroller.h"
@@ -53,7 +50,6 @@ void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
 NetworkController::NetworkController(QObject* parent)
     : AbstractControllerInterface(parent)
     , m_clientManager(new ClientManager)
-    //, m_hbSender(new HeartBeatSender)
     , m_profileModel(new ProfileModel)
     , m_channelModel(new ChannelModel)
     , m_countDown(new CountDownObject(5, 10))
@@ -88,7 +84,12 @@ NetworkController::NetworkController(QObject* parent)
     connect(m_clientManager.get(), &ClientManager::authentificationSuccessed, this,
             [this]() { setGroups(m_currentGroups | Group::ADMIN); });
 }
-NetworkController::~NetworkController() {}
+
+NetworkController::~NetworkController()
+{
+    m_serverThread->quit();
+    m_ipChecker->deleteLater();
+}
 
 void NetworkController::dispatchMessage(QByteArray array)
 {
@@ -168,35 +169,42 @@ void NetworkController::startServer()
 {
     m_serverParameters= {{"ServerPassword", serverPassword()}, {"AdminPassword", adminPassword()}};
 
-    if(!m_server)
+    if(m_server)
+    {
+        QMetaObject::invokeMethod(m_server.get(), &RServer::listen, Qt::QueuedConnection);
+        return;
+    }
+
+    if(!m_server || !m_serverThread)
     {
         m_server.reset(new RServer(m_serverParameters, true));
+        connect(m_server.get(), &RServer::eventOccured, this, &NetworkController::eventOccurs);
         m_serverThread.reset(new QThread);
     }
-    // m_server->moveToThread(thread());
+
     m_server->setPort(port());
 
     connect(m_serverThread.get(), &QThread::started, m_server.get(), &RServer::listen);
     connect(m_serverThread.get(), &QThread::finished, this,
-            [this]() { emit infoMessage("server thread has been closed"); });
-
-    connect(m_server.get(), &RServer::finished, this, [this]() { emit infoMessage("server has been closed"); });
+            [this]()
+            {
+                emit eventOccurs(tr("server thread has been closed"), LogController::LogLevel::Info);
+                m_serverThread->deleteLater(); // AS addition
+                m_server.release();
+            });
 
     connect(m_server.get(), &RServer::stateChanged, this,
             [this]()
             {
                 switch(m_server->state())
                 {
-                case RServer::Stopped:
-                    m_serverThread->quit();
+                case RServer::Idle:
+                    emit eventOccurs(tr("Server is off"), LogController::LogLevel::Info);
                     break;
                 case RServer::Listening:
                     m_countDown->stop();
-                    emit infoMessage("server is on");
+                    emit eventOccurs(tr("server is on"), LogController::LogLevel::Info);
                     startClient();
-                    break;
-                case RServer::Error:
-                    closeServer();
                     break;
                 }
             });
@@ -345,8 +353,10 @@ void NetworkController::setLastError(const QString& error)
     if(error == m_lastError)
         return;
     m_lastError= error;
-    emit lastErrorChanged(m_lastError);
+    emit eventOccurs(m_lastError, LogController::Error);
+    emit lastErrorChanged();
 }
+
 void NetworkController::closeServer()
 {
     if(!m_server)

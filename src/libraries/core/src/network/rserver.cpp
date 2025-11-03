@@ -1,8 +1,9 @@
-#include "network/rserver.h"
 #include <QDebug>
 #include <QMessageLogger>
-#include <network/serverconnectionmanager.h>
 
+#include "common/logcategory.h"
+#include "network/rserver.h"
+#include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
 #include "network/upnp/upnpnat.h"
 
@@ -13,10 +14,12 @@ RServer::RServer(const QMap<QString, QVariant>& parameter, bool internal, QObjec
         m_threadCount= m_data.value("ThreadCount", m_threadCount).toInt();
     connect(this, &RServer::portChanged, this, &RServer::runUpnpNat);
     runUpnpNat();
+    initServerConnections();
 }
 
 RServer::~RServer()
 {
+    complete();
     emit eventOccured(QStringLiteral("Server Destructor"), LogController::Debug);
     for(auto& info : m_threadPool)
     {
@@ -47,25 +50,19 @@ void RServer::runUpnpNat()
             });
 
     connect(nat, &UpnpNat::lastErrorChanged, this,
-            [this, nat]() { emit eventOccured(nat->lastError(), LogController::LogLevel::Error); });
+            [nat]() { qCWarning(ServerLogCat) << "[Upnp]" << nat->lastError(); });
 
     nat->discovery();
 }
 
-bool RServer::listen()
+void RServer::initServerConnections()
 {
-    if(!QTcpServer::listen(QHostAddress::Any, m_port))
-    {
-        setState(RServer::Error);
-        return false;
-    }
-    emit eventOccured(QStringLiteral("Start Listening"), LogController::Info);
-
     m_connectionsManager.reset(new ServerConnectionManager(m_data));
     m_updater.reset(new ServerManagerUpdater(m_connectionsManager.get(), m_internal));
+    if(m_connectionThread)
+        m_connectionThread->exit();
     m_connectionThread.reset(new QThread);
 
-    connect(this, &RServer::finished, m_connectionsManager.get(), &ServerConnectionManager::quit, Qt::QueuedConnection);
     connect(this, &RServer::accepting, m_connectionsManager.get(), &ServerConnectionManager::accept,
             Qt::QueuedConnection);
     connect(m_connectionsManager.get(), &ServerConnectionManager::finished, this, &RServer::complete,
@@ -82,6 +79,17 @@ bool RServer::listen()
     m_updater->moveToThread(m_connectionThread.get());
 
     m_connectionThread->start();
+}
+
+bool RServer::listen()
+{
+    if(!QTcpServer::listen(QHostAddress::Any, m_port))
+    {
+        emit eventOccured(errorString(), LogController::LogLevel::Error);
+        return false;
+    }
+
+    emit eventOccured(tr("[Server] Start Listening"), LogController::Info);
 
     setState(RServer::Listening);
 
@@ -90,12 +98,14 @@ bool RServer::listen()
 
 void RServer::close()
 {
-    emit finished();
+    if(state() == RServer::Idle)
+        return;
     QTcpServer::close();
-    setState(RServer::Stopped);
+    // m_connectionsManager->quit() invoke method
+    setState(RServer::Idle);
 }
 
-qint64 RServer::port()
+qint64 RServer::port() const
 {
     return m_port;
 }
@@ -129,11 +139,10 @@ void RServer::incomingConnection(qintptr descriptor)
     if(!m_corConnection->runAccepter(m_data))
         return;
 
-    ServerConnection* connection= new ServerConnection(nullptr, nullptr);
-    accept(descriptor, connection);
+    accept(descriptor);
 }
 
-void RServer::accept(qintptr descriptor, ServerConnection* connection)
+void RServer::accept(qintptr descriptor)
 {
     if(m_threadPool.isEmpty())
     {
@@ -152,7 +161,9 @@ void RServer::accept(qintptr descriptor, ServerConnection* connection)
     }
 
     it->m_connectionCount++;
+    ServerConnection* connection= new ServerConnection();
     connection->moveToThread(it->m_thread);
+
     emit accepting(descriptor, connection);
 }
 
@@ -160,13 +171,9 @@ void RServer::setState(const ServerState& state)
 {
     if(state == m_state)
         return;
+
     m_state= state;
     emit stateChanged(m_state);
-
-    emit eventOccured(QStringLiteral("State Changed to %1").arg(state), LogController::Info);
-
-    if(m_state == Error)
-        emit eventOccured(errorString(), LogController::Error);
 }
 
 void RServer::complete()
@@ -179,12 +186,11 @@ void RServer::complete()
 
     m_connectionsManager.release();
 
-    qDebug() << this << "Quitting thread";
     m_connectionThread->quit();
     m_connectionThread->wait();
 
     m_connectionThread.release();
 
     emit eventOccured(QStringLiteral("Rserver Complete"), LogController::Info);
-    emit completed();
+    // emit completed();
 }

@@ -512,7 +512,8 @@ void GameController::setDataFromProfile(int profileIndex)
     {
         auto characters= profile->characters();
         std::for_each(
-            characters.begin(), characters.end(), [local](const connection::CharacterData& data)
+            characters.begin(), characters.end(),
+            [local](const connection::CharacterData& data)
             { local->addCharacter(data.m_uuid, data.m_name, data.m_color, data.m_avatarData, data.m_params, false); });
     }
     else
@@ -553,7 +554,7 @@ void GameController::aboutToClose(bool saveData)
 
     // close connection
     MessageHelper::sendOffGoodBye();
-    m_networkCtrl->closeServer();
+    m_networkCtrl->stopConnection();
     m_preferences->writeSettings();
     m_preferences->registerValue(QStringLiteral("LogLevel"), QVariant::fromValue(m_logController->logLevel()));
     emit closingApp();
