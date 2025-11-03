@@ -55,6 +55,7 @@ ${root_dir}/libraries/common/widgets/logpanel.ui
 ${root_dir}/binaries/widget/mainwindow.ui
 ${root_dir}/binaries/rcse/preferences/preferencesdialog.ui
 ${root_dir}/binaries/rcse/mainwindow_rcse.ui
+${root_dir}/binaries/rcse/autofillerdialog.ui
 ${root_dir}/binaries/rcse/widgets/codeedit.ui
 ${root_dir}/binaries/rcse/dialog/sheetproperties.ui
 ${root_dir}/binaries/rcse/dialog/pdfmanager.ui
@@ -154,6 +155,9 @@ ${root_dir}/binaries/rcse/undo/setpropertyonallcharacters.h
 ${root_dir}/binaries/rcse/widgets/codeedit.cpp
 ${root_dir}/binaries/rcse/widgets/codeedit.h
 ${root_dir}/binaries/rcse/widgets/fieldview.cpp
+${root_dir}/binaries/rcse/widgets/fieldview.h
+${root_dir}/binaries/rcse/autofillerdialog.cpp
+${root_dir}/binaries/rcse/autofillerdialog.h
 ${root_dir}/binaries/rcse/widgets/fieldview.h
 ${root_dir}/binaries/server/rolisteamdaemon.cpp
 ${root_dir}/binaries/server/rolisteamdaemon.h

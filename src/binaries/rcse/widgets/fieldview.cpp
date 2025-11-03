@@ -35,7 +35,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
 
     m_showGeometryGroup= new QAction(tr("Position columns"), this);
     connect(m_showGeometryGroup, &QAction::triggered, this,
-            [=]()
+            [this]()
             {
                 hideAllColumns(true);
                 showColumn(TreeSheetItem::ID);
@@ -48,7 +48,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
             });
     m_showEsteticGroup= new QAction(tr("Aesthetic columns"), this);
     connect(m_showEsteticGroup, &QAction::triggered, this,
-            [=]()
+            [this]()
             {
                 hideAllColumns(true);
                 showColumn(TreeSheetItem::ID);
@@ -62,7 +62,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
             });
     m_showValueGroup= new QAction(tr("Value columns"), this);
     connect(m_showValueGroup, &QAction::triggered, this,
-            [=]()
+            [this]()
             {
                 hideAllColumns(true);
                 showColumn(TreeSheetItem::ID);
@@ -73,7 +73,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
             });
     m_showIdGroup= new QAction(tr("Id columns"), this);
     connect(m_showIdGroup, &QAction::triggered, this,
-            [=]()
+            [this]()
             {
                 hideAllColumns(true);
                 showColumn(TreeSheetItem::ID);
@@ -81,7 +81,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
             });
 
     m_showAllGroup= new QAction(tr("All columns"), this);
-    connect(m_showAllGroup, &QAction::triggered, this, [=]() { hideAllColumns(false); });
+    connect(m_showAllGroup, &QAction::triggered, this, [this]() { hideAllColumns(false); });
 
 #ifndef Q_OS_MACX
     setAlternatingRowColors(true);
@@ -187,11 +187,12 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
 
     if(act == m_delItem)
     {
-        auto itemData= static_cast<FieldController*>(index.internalPointer());
+        auto item= static_cast<TreeSheetItem*>(index.internalPointer());
+
         /*DeleteFieldCommand* deleteCommand
             = new DeleteFieldCommand(itemData, m_model, m_currentPage);
         m_undoStack->push(deleteCommand);*/
-        emit removeField(itemData, m_currentPage);
+        emit removeField(dynamic_cast<FieldController*>(item), m_currentPage);
     }
     else if(m_fillerAssist == act)
     {
