@@ -219,6 +219,80 @@ QString QmlGeneratorVisitor::generateSheet(const QString& imports, const QString
     return evaluateTemplate(ct::Sheet, data);
 }
 
+void QmlGeneratorVisitor::generateField(QTextStream& out, TreeSheetItem* item, bool isInsideTable)
+{
+    if(item->itemType() == TreeSheetItem::FieldItem)
+    {
+        auto field= dynamic_cast<FieldController*>(item);
+        if(field->generatedCode().isEmpty())
+        {
+            switch(field->fieldType())
+            {
+            case CSItem::TEXTINPUT:
+                generateTextInput(out, field, isInsideTable);
+                break;
+            case CSItem::TEXTFIELD:
+                generateTextField(out, field, isInsideTable);
+                break;
+            case CSItem::TEXTAREA:
+                generateTextArea(out, field, isInsideTable);
+                break;
+            case CSItem::SELECT:
+                generateSelect(out, field, isInsideTable);
+                break;
+            case CSItem::CHECKBOX:
+                generateCheckBox(out, field, isInsideTable);
+                break;
+            case CSItem::IMAGE:
+                generateImage(out, field, isInsideTable);
+                break;
+            case CSItem::DICEBUTTON:
+                generateDiceButton(out, field, isInsideTable);
+                break;
+            case CSItem::FUNCBUTTON:
+                generateFuncButton(out, field, isInsideTable);
+                break;
+            case CSItem::RLABEL:
+                generateLabelField(out, field, isInsideTable);
+                break;
+            case CSItem::TABLE:
+                generateTable(out, field);
+                break;
+            case CSItem::WEBPAGE:
+                generateWebPage(out, field, isInsideTable);
+                break;
+            case CSItem::NEXTPAGE:
+            case CSItem::PREVIOUSPAGE:
+                generateChangePageBtn(out, field, CSItem::NEXTPAGE == field->fieldType());
+                break;
+            case CSItem::SLIDER:
+                generateSlider(out, field, isInsideTable);
+                break;
+            case CSItem::HIDDEN:
+                generateHidden(out, field, isInsideTable);
+                break;
+            }
+        }
+        else
+        {
+            out << field->generatedCode();
+        }
+    }
+    else if(item->itemType() == TreeSheetItem::TableItem)
+    {
+        auto field= dynamic_cast<TableFieldController*>(item);
+        if(nullptr != field)
+        {
+            if(field->generatedCode().isEmpty())
+            {
+                generateTable(out, field);
+            }
+            else
+                out << field->generatedCode();
+        }
+    }
+}
+
 QString QmlGeneratorVisitor::generateTreeSheetItem()
 {
     QString res;
@@ -226,76 +300,7 @@ QString QmlGeneratorVisitor::generateTreeSheetItem()
     for(int i= 0; i < m_root->childrenCount(); ++i)
     {
         auto child= m_root->childAt(i);
-        if(child->itemType() == TreeSheetItem::FieldItem)
-        {
-            auto field= dynamic_cast<FieldController*>(child);
-            if(field->generatedCode().isEmpty())
-            {
-                switch(field->fieldType())
-                {
-                case CSItem::TEXTINPUT:
-                    generateTextInput(out, field, false);
-                    break;
-                case CSItem::TEXTFIELD:
-                    generateTextField(out, field, false);
-                    break;
-                case CSItem::TEXTAREA:
-                    generateTextArea(out, field, false);
-                    break;
-                case CSItem::SELECT:
-                    generateSelect(out, field, false);
-                    break;
-                case CSItem::CHECKBOX:
-                    generateCheckBox(out, field, false);
-                    break;
-                case CSItem::IMAGE:
-                    generateImage(out, field, false);
-                    break;
-                case CSItem::DICEBUTTON:
-                    generateDiceButton(out, field, false);
-                    break;
-                case CSItem::FUNCBUTTON:
-                    generateFuncButton(out, field, false);
-                    break;
-                case CSItem::RLABEL:
-                    generateLabelField(out, field, false);
-                    break;
-                case CSItem::TABLE:
-                    generateTable(out, field);
-                    break;
-                case CSItem::WEBPAGE:
-                    generateWebPage(out, field, false);
-                    break;
-                case CSItem::NEXTPAGE:
-                case CSItem::PREVIOUSPAGE:
-                    generateChangePageBtn(out, field, CSItem::NEXTPAGE == field->fieldType());
-                    break;
-                case CSItem::SLIDER:
-                    generateSlider(out, field, false);
-                    break;
-                case CSItem::HIDDEN:
-                    generateHidden(out, field, false);
-                    break;
-                }
-            }
-            else
-            {
-                out << field->generatedCode();
-            }
-        }
-        else if(child->itemType() == TreeSheetItem::TableItem)
-        {
-            auto field= dynamic_cast<TableFieldController*>(child);
-            if(nullptr != field)
-            {
-                if(field->generatedCode().isEmpty())
-                {
-                    generateTable(out, field);
-                }
-                else
-                    out << field->generatedCode();
-            }
-        }
+        generateField(out, child, false);
     }
     return res;
 }
@@ -463,6 +468,7 @@ bool QmlGeneratorVisitor::generateSelect(QTextStream& out, FieldController* item
     data[cj::textColor]= item->textColor().name(QColor::HexArgb).toStdString();
     data[cj::bgColor]= item->bgColor().name(QColor::HexArgb).toStdString();
     data[cj::indent]= m_indenSpace.toStdString();
+    font(data, item->font());
     data[cj::availableValues]= QStringLiteral("[\"%1\"]").arg(item->availableValues().join("\",\"")).toStdString();
     data[cj::readOnly]
         = (isInsideTable ? QStringLiteral("readOnly") : QStringLiteral("%1.readOnly").arg(getId(item))).toStdString();

@@ -62,7 +62,9 @@ ComboBox {
 
               Connections {
                   target: root
-                  onPressedChanged: canvas.requestPaint()
+                  function onPressedChanged(){
+                      canvas.requestPaint()
+                  }
               }
 
               onPaint: {

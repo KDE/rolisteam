@@ -24,6 +24,8 @@ public:
                           const QString& mainItem, const QString& source, int width, int height,
                           const QString& baseWidth, bool pageAdapt, qreal zoomLevel, TreeSheetItem* m_root);
 
+    void generateField(QTextStream& out, TreeSheetItem *item, bool isInsideTable);
+
 protected:
     QString generateTreeSheetItem();
     bool generateTextInput(QTextStream& out, FieldController* item, bool isInsideTable);

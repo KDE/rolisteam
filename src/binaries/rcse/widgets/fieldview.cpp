@@ -11,12 +11,12 @@
 // Delegates
 #include "autofillerdialog.h"
 #include "borderlisteditor.h"
+#include "controllers/maincontroller.h"
 #include "delegate/alignmentdelegate.h"
 #include "delegate/fontdelegate.h"
 #include "delegate/pagedelegate.h"
 #include "delegate/typedelegate.h"
-
-#include "controllers/maincontroller.h"
+#include "qmlgeneratorvisitor.h"
 
 #include "dialog/codeeditordialog.h"
 
@@ -151,8 +151,16 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
         menu.addSeparator();
         menu.addAction(m_defineCode);
 
+        auto p= static_cast<TreeSheetItem*>(index.internalPointer());
+        if(p)
+        {
+            auto f= dynamic_cast<FieldController*>(p);
+            m_defineCode->setEnabled(f != nullptr);
+        }
+
         m_fillerAssist->setEnabled(selection.count() > 1);
     }
+
     auto showSubMenu= menu.addMenu(tr("Show"));
     showSubMenu->addAction(m_showAllGroup);
     showSubMenu->addAction(m_showEsteticGroup);
@@ -211,7 +219,7 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
 
         if(nullptr != field)
         {
-            field->setGeneratedCode(QStringLiteral(""));
+            field->setGeneratedCode(QString());
         }
     }
 }
@@ -308,18 +316,24 @@ void FieldView::defineItemCode(QModelIndex& index)
 
     FieldController* field= m_model->getFieldFromIndex(index);
 
-    if(nullptr != field)
+    if(!field)
+        return;
+
+    auto code= field->generatedCode();
+
+    if(code.isEmpty())
     {
-        CodeEditorDialog dialog;
+        QTextStream out(&code);
+        QmlGeneratorVisitor visitor;
+        visitor.generateField(out, field, false);
+    }
 
-        // field->storeQMLCode();
-        auto code= field->generatedCode();
-        dialog.setPlainText(code);
+    CodeEditorDialog dialog;
+    dialog.setPlainText(code);
 
-        if(dialog.exec())
-        {
-            field->setGeneratedCode(dialog.toPlainText());
-        }
+    if(dialog.exec())
+    {
+        field->setGeneratedCode(dialog.toPlainText());
     }
 }
 

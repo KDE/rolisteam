@@ -414,6 +414,7 @@ void FieldController::setTextAlign(const FieldController::TextAlign& textAlign)
         return;
     m_textAlign= textAlign;
 }
+
 FieldController::TextAlign FieldController::textAlign()
 {
     return m_textAlign;

@@ -93,7 +93,6 @@ signals:
     void generatedCodeChanged();
     void aliasEnabledChanged();
     void availableValuesChanged();
-
     void visibleChanged();
 
 protected:
