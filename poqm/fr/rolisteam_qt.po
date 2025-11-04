@@ -3401,7 +3401,7 @@ msgstr "Commande de dé :"
 #: src/libraries/dicephysics/qml/SideMenu.qml:205
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
-msgstr "Afficher le dé en 3D dans la boîte de dialogue"
+msgstr "Afficher le dé en 3D dans la boite de dialogue"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:211
 #, qt-format
@@ -3412,7 +3412,7 @@ msgstr "Masquer le dé 3D après : %1 s"
 #: src/libraries/dicephysics/qml/SideMenu.qml:212
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
-msgstr "Le panneau du dé 3D disparaît après un certain temps."
+msgstr "Le panneau du dé 3D disparait après un certain temps."
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:233
 msgctxt "SideMenu|"
@@ -6522,7 +6522,7 @@ msgstr "Erreur « xml » trouvée"
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "Check line %1 column %2 on string \"%3\"!"
-msgstr "Vérifier la ligne %1, la colonne %2 dans la chaîne « %3 » !"
+msgstr "Vérifier la ligne %1, la colonne %2 dans la chaine « %3 » !"
 
 #: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:71
 msgctxt "XMLTextEdit|"
@@ -6759,7 +6759,7 @@ msgstr "Toujours utiliser ce nom"
 #: src/libraries/rwidgets/editors/sharededitor/announcedocumentdialog.ui:108
 msgctxt "AnnounceDocumentDialog|"
 msgid "You can change this in the preferences dialog."
-msgstr "Vous pouvez modifier ceci dans la boîte de dialogue « Préférences »."
+msgstr "Vous pouvez modifier ceci dans la boite de dialogue « Préférences »."
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:14
 msgctxt "ConnectToDocument|"
@@ -6814,7 +6814,7 @@ msgstr "Cahoots"
 #: src/libraries/rwidgets/editors/sharededitor/document.cpp:295
 msgctxt "Document|"
 msgid "The string was not found."
-msgstr "La chaîne n'a pu être trouvée."
+msgstr "La chaine n'a pu être trouvée."
 
 #: src/libraries/rwidgets/editors/sharededitor/document.ui:14
 msgctxt "Document|"
