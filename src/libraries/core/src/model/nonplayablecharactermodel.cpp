@@ -143,9 +143,6 @@ QVariant NonPlayableCharacterModel::data(const QModelIndex& index, int role) con
     if(!index.isValid() || !acceptedRole.contains(role))
         return QVariant();
 
-    if(role == Qt::TextAlignmentRole)
-        return Qt::AlignCenter;
-
     auto customRole= role > Qt::UserRole ? role : Qt::UserRole + 1 + index.column();
 
     if(role == Qt::BackgroundRole && (customRole != RoleColor && customRole != RoleLifeColor))
@@ -153,6 +150,9 @@ QVariant NonPlayableCharacterModel::data(const QModelIndex& index, int role) con
 
     if(role == Qt::DecorationRole && (customRole != RoleAvatar))
         return {};
+
+    if(role == Qt::TextAlignmentRole)
+        return (customRole == RoleTags) ? QVariant::fromValue(Qt::AlignLeft | Qt::AlignTop) : Qt::AlignCenter;
 
     auto const& character= m_data[index.row()];
     QVariant res;
@@ -205,7 +205,7 @@ QVariant NonPlayableCharacterModel::data(const QModelIndex& index, int role) con
         break;
     case RoleTags:
         if(role == Qt::DisplayRole || role == RoleTags)
-            res= character->tags();
+            res= character->tags().join(";").replace(";", "|");
         else if(role == Qt::EditRole)
             res= character->tags().join(";");
         break;
@@ -253,6 +253,9 @@ bool NonPlayableCharacterModel::setData(const QModelIndex& index, const QVariant
             break;
         case RoleDescription:
             character->setDescription(value.toString());
+            break;
+        case RoleGmDetails:
+            character->setGameMasterDesc(value.toString());
             break;
         case RoleColor:
             character->setColor(value.value<QColor>());

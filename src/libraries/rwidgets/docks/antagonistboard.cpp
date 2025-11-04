@@ -89,7 +89,7 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
     ui->m_antogonistView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->m_antogonistView->setContextMenuPolicy(Qt::CustomContextMenu);
     ui->m_antogonistView->setItemDelegateForColumn(NonPlayableCharacterModel::ColAvatar, new AvatarDelegate(this));
-    ui->m_antogonistView->setItemDelegateForColumn(NonPlayableCharacterModel::ColTags, new TagListDelegate(this));
+    // ui->m_antogonistView->setItemDelegateForColumn(NonPlayableCharacterModel::ColTags, new TagListDelegate(this));
     ui->m_antogonistView->setItemDelegateForColumn(NonPlayableCharacterModel::ColState,
                                                    new StateDelegate(m_ctrl->characterStateModel(), this));
     connect(ui->m_antogonistView, &QTableView::customContextMenuRequested, this, &AntagonistBoard::contextualMenu);
