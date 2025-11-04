@@ -41,7 +41,6 @@ DynamicRigidBody {
     function computeRotOffset(oldpos, newpos) {
         const offset = (Math.abs(newpos.x - oldpos.x) + Math.abs(newpos.y - oldpos.y) + Math.abs(newpos.z - oldpos.z))/3;
         ctrl.addRotationOffset(offset)
-        console.log("Offset: ",offset)
         return offset;
     }
 
@@ -94,9 +93,6 @@ DynamicRigidBody {
         }
 
     }
-
-    massMode: DynamicRigidBody.CustomDensity
-    receiveContactReports: true
 
     onBodyContact: (body, positions, impulses, normals) => {
         moved()
@@ -151,7 +147,7 @@ DynamicRigidBody {
     SoundEffect {
         id: diceSound
         loops: 0
-        muted: root.dice3DCtrl.muted || !root.dice3DCtrl.displayed
+        muted: true//root.dice3DCtrl.muted || !root.dice3DCtrl.displayed
         source: "qrc:/dice3d/sounds/onedice.wav"
     }
 }

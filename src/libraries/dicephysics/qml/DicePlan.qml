@@ -253,7 +253,7 @@ Item {
         MouseArea {
             id: ma
             anchors.fill: parent
-            enabled: !root.denyClick //&& !root.ctrl.expectRoll
+            enabled: !root.denyClick && !root.ctrl.expectRoll
             Connections {
                 target: root.ctrl
                 function onCountChanged() {
@@ -423,11 +423,6 @@ Item {
                     computeVelocity(mouse)
                     root.ctrl.expectRoll = true
             }
-
-            /*onClicked: (mouse) => {
-                           console.log("clicked on")
-                           mouse.accepted = false
-                       }*/
 
             onReleased: (mouse)=>{
                 if(ma.rectSelect) {

@@ -173,6 +173,7 @@ Drawer {
             }
 
             RowLayout {
+                visible: false
                 Label {
                     text: qsTr("Collision sound:")
                 }

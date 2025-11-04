@@ -371,7 +371,11 @@ void Dice3DController::setReady(bool newReady)
 
 bool Dice3DController::expectRoll() const
 {
+#ifdef Q_OS_ANDROID
+    return false;
+#else
     return m_expectRoll;
+#endif
 }
 
 void Dice3DController::setExpectRoll(bool newExpectRoll)
