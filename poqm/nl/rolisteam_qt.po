@@ -13,6 +13,374 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
+#: src/binaries/3DDicer/AliasesPage.qml:8
+#, fuzzy
+#| msgctxt "DiceBookMarkModel|"
+#| msgid "Alias"
+msgctxt "AliasesPage|"
+msgid "Aliases"
+msgstr "Alias"
+
+#: src/binaries/3DDicer/AliasesPage.qml:32
+#, qt-format
+msgctxt "AliasesPage|"
+msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
+msgstr ""
+
+#: src/binaries/3DDicer/AliasesPage.qml:32
+#, fuzzy, qt-format
+#| msgctxt "DiceBookMarkModel|"
+#| msgid "Alias"
+msgctxt "AliasesPage|"
+msgid "Alias #%1"
+msgstr "Alias"
+
+#: src/binaries/3DDicer/AliasesPage.qml:33
+#, fuzzy
+#| msgctxt "Campaign|"
+#| msgid "Pattern"
+msgctxt "AliasesPage|"
+msgid "Pattern"
+msgstr "Patroon"
+
+#: src/binaries/3DDicer/AliasesPage.qml:34
+#, fuzzy
+#| msgctxt "Campaign|"
+#| msgid "Command"
+msgctxt "AliasesPage|"
+msgid "Command"
+msgstr "Commando"
+
+#: src/binaries/3DDicer/AliasesPage.qml:35
+msgctxt "AliasesPage|"
+msgid "Off"
+msgstr ""
+
+#: src/binaries/3DDicer/AliasesPage.qml:35
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Open"
+msgctxt "AliasesPage|"
+msgid "On"
+msgstr "Openen"
+
+#: src/binaries/3DDicer/AliasesPage.qml:76
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Name:"
+msgctxt "AliasesPage|"
+msgid "Name:"
+msgstr "Naam:"
+
+#: src/binaries/3DDicer/AliasesPage.qml:86
+#, fuzzy
+#| msgctxt "Campaign|"
+#| msgid "Pattern"
+msgctxt "AliasesPage|"
+msgid "Pattern:"
+msgstr "Patroon"
+
+#: src/binaries/3DDicer/AliasesPage.qml:97
+#, fuzzy
+#| msgctxt "Campaign|"
+#| msgid "Command"
+msgctxt "AliasesPage|"
+msgid "Command:"
+msgstr "Commando"
+
+#: src/binaries/3DDicer/AliasesPage.qml:108
+#, fuzzy
+#| msgctxt "DiceAliasModel|"
+#| msgid "Regular Expression"
+msgctxt "AliasesPage|"
+msgid "Regular expression"
+msgstr "Reguliere expressie"
+
+#: src/binaries/3DDicer/AliasesPage.qml:115
+#, fuzzy
+#| msgctxt "DiceAliasModel|"
+#| msgid "Disable"
+msgctxt "AliasesPage|"
+msgid "Disable"
+msgstr "Uitschakelen"
+
+#: src/binaries/3DDicer/AliasesPage.qml:125
+msgctxt "AliasesPage|"
+msgid "Save and back"
+msgstr ""
+
+#: src/binaries/3DDicer/AliasesPage.qml:144
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Delete"
+msgctxt "AliasesPage|"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/binaries/3DDicer/dicemaincontroller.cpp:326
+#: src/binaries/3DDicer/dicemaincontroller.cpp:347
+#, fuzzy
+#| msgctxt "ThemeModel|"
+#| msgid "default"
+msgctxt "DiceMainController|"
+msgid "default"
+msgstr "standaard"
+
+#: src/binaries/3DDicer/DiceRollPage.qml:8
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Dice Alias"
+msgctxt "DiceRollPage|"
+msgid "Dice Rolls"
+msgstr "Alias van dobbelsteen"
+
+#: src/binaries/3DDicer/DiceRollPage.qml:123
+msgctxt "DiceRollPage|"
+msgid "Type your command e.g: 3d10…"
+msgstr ""
+
+#: src/binaries/3DDicer/DiceRollPage.qml:134
+#, fuzzy
+#| msgctxt "Convertor|"
+#| msgid "Return"
+msgctxt "DiceRollPage|"
+msgid "Run"
+msgstr "Terug"
+
+#: src/binaries/3DDicer/MacrosPage.qml:8
+msgctxt "MacrosPage|"
+msgid "Macros"
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:31
+#, fuzzy
+#| msgctxt "MediaModel|"
+#| msgid "Name"
+msgctxt "MacrosPage|"
+msgid "Name"
+msgstr "Naam"
+
+#: src/binaries/3DDicer/MacrosPage.qml:39
+#, fuzzy
+#| msgctxt "Campaign|"
+#| msgid "Command"
+msgctxt "MacrosPage|"
+msgid "command"
+msgstr "Commando"
+
+#: src/binaries/3DDicer/MacrosPage.qml:59
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Delete"
+msgctxt "MacrosPage|"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/binaries/3DDicer/Main.qml:135
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Dice Alias"
+msgctxt "Main|"
+msgid "Dice Rolls"
+msgstr "Alias van dobbelsteen"
+
+#: src/binaries/3DDicer/Main.qml:145
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Dice3D"
+msgctxt "Main|"
+msgid "3D Dice"
+msgstr "Dobbelsteen-3D"
+
+#: src/binaries/3DDicer/Main.qml:155
+msgctxt "Main|"
+msgid "Macros"
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:165
+#, fuzzy
+#| msgctxt "DiceBookMarkModel|"
+#| msgid "Alias"
+msgctxt "Main|"
+msgid "Aliases"
+msgstr "Alias"
+
+#: src/binaries/3DDicer/Main.qml:175
+#, fuzzy
+#| msgctxt "campaign::CampaignDock|"
+#| msgid "CharacterSheet"
+msgctxt "Main|"
+msgid "CharacterSheet"
+msgstr "Blad met karakter"
+
+#: src/binaries/3DDicer/Main.qml:185
+#, fuzzy
+#| msgctxt "InstantMessagingMain|"
+#| msgid "Settings"
+msgctxt "Main|"
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
+#: src/libraries/core/src/model/dicealiasmodel.cpp:37
+msgctxt "DiceAliasModel|"
+msgid "Pattern"
+msgstr "Patroon"
+
+#: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
+#: src/libraries/core/src/model/dicealiasmodel.cpp:37
+msgctxt "DiceAliasModel|"
+msgid "Value"
+msgstr "Waarde"
+
+#: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
+#: src/libraries/core/src/model/dicealiasmodel.cpp:37
+msgctxt "DiceAliasModel|"
+msgid "Regular Expression"
+msgstr "Reguliere expressie"
+
+#: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
+#: src/libraries/core/src/model/dicealiasmodel.cpp:37
+msgctxt "DiceAliasModel|"
+msgid "Disable"
+msgstr "Uitschakelen"
+
+#: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
+#: src/libraries/core/src/model/dicealiasmodel.cpp:37
+msgctxt "DiceAliasModel|"
+msgid "Comments"
+msgstr "Opmerkingen"
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:11
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Dice3D"
+msgctxt "PhysicsDicePage|"
+msgid "3D Dice"
+msgstr "Dobbelsteen-3D"
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:78
+#, fuzzy
+#| msgctxt "SideMenu|"
+#| msgid "Dice Size:"
+msgctxt "PhysicsDicePage|"
+msgid "Dice Size:"
+msgstr "Dobbelsteengrootte:"
+
+#: src/binaries/3DDicer/ProfileSelector.qml:66
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Save profiles"
+msgctxt "ProfileSelector|"
+msgid "Last Profile"
+msgstr "Profielen opslaan"
+
+#: src/binaries/3DDicer/ProfileSelector.qml:66
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Delete"
+msgctxt "ProfileSelector|"
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: src/binaries/3DDicer/SettingsPage.qml:8
+#, fuzzy
+#| msgctxt "InstantMessagingMain|"
+#| msgid "Settings"
+msgctxt "SettingsPage|"
+msgid "Settings"
+msgstr "Instellingen"
+
+#: src/binaries/3DDicer/SettingsPage.qml:37
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Clone profile"
+msgctxt "SettingsPage|"
+msgid "Select Profile"
+msgstr "Profiel klonen"
+
+#: src/binaries/3DDicer/SettingsPage.qml:50
+#, fuzzy
+#| msgctxt "InstantMessagingMain|"
+#| msgid "Settings"
+msgctxt "SettingsPage|"
+msgid "App Settings"
+msgstr "Instellingen"
+
+#: src/binaries/3DDicer/SettingsPage.qml:63
+#, fuzzy
+#| msgctxt "MediaModel|"
+#| msgid "Date Modified"
+msgctxt "SettingsPage|"
+msgid "Dark Mode:"
+msgstr "Datum gewijzigd"
+
+#: src/binaries/3DDicer/SettingsPage.qml:75
+msgctxt "SettingsPage|"
+msgid "Language:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:95
+#, fuzzy
+#| msgctxt "TextEdit|"
+#| msgid "About"
+msgctxt "SettingsPage|"
+msgid "About"
+msgstr "Info over"
+
+#: src/binaries/3DDicer/SettingsPage.qml:102
+#, fuzzy
+#| msgctxt "PermissionFrame|"
+#| msgid "Permission"
+msgctxt "SettingsPage|"
+msgid "Version:"
+msgstr "Toestemming"
+
+#: src/binaries/3DDicer/SettingsPage.qml:110
+#, fuzzy
+#| msgctxt "AntagonistBoard|"
+#| msgid "State:"
+msgctxt "SettingsPage|"
+msgid "Date:"
+msgstr "Status:"
+
+#: src/binaries/3DDicer/SettingsPage.qml:118
+msgctxt "SettingsPage|"
+msgid "Sha1:"
+msgstr ""
+
+#: src/binaries/3DDicer/SheetPage.qml:8
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Character Sheet"
+msgctxt "SheetPage|"
+msgid "Character Sheet"
+msgstr "Blad met karakters"
+
+#: src/binaries/3DDicer/SheetPage.qml:32
+#, fuzzy
+#| msgctxt "ImageModel|"
+#| msgid "Key"
+msgctxt "SheetPage|"
+msgid "Key"
+msgstr "Sleutel"
+
+#: src/binaries/3DDicer/SheetPage.qml:40
+#, fuzzy
+#| msgctxt "FieldModel|"
+#| msgid "Value"
+msgctxt "SheetPage|"
+msgid "Value"
+msgstr "Waarde"
+
+#: src/binaries/3DDicer/SheetPage.qml:60
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Delete"
+msgctxt "SheetPage|"
+msgid "Delete"
+msgstr "Verwijderen"
+
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
 msgid "open <file>."
@@ -37,6 +405,79 @@ msgstr "Afbeeldingen (*.jpg *.png *.jpeg *.gif *.bmp)"
 msgctxt "MindMap|"
 msgid "Images (*.png)"
 msgstr "Afbeeldingen (*.png)"
+
+#: src/binaries/rcse/autofillerdialog.cpp:24
+#: src/binaries/rcse/autofillerdialog.ui:28
+#, fuzzy, qt-format
+#| msgctxt "DiceMessageDelegate|"
+#| msgid "Command: %1"
+msgctxt "AutoFillerDialog|"
+msgid "Count: %1"
+msgstr "Commando: %1"
+
+#: src/binaries/rcse/autofillerdialog.ui:14
+msgctxt "AutoFillerDialog|"
+msgid "Filler Assistant Dialog"
+msgstr ""
+
+#: src/binaries/rcse/autofillerdialog.ui:35
+#, fuzzy
+#| msgctxt "CharacterItem|"
+#| msgid "Change State"
+msgctxt "AutoFillerDialog|"
+msgid "Counter Start:"
+msgstr "Status wijzigen"
+
+#: src/binaries/rcse/autofillerdialog.ui:49
+msgctxt "AutoFillerDialog|"
+msgid "Counter Step:"
+msgstr ""
+
+#: src/binaries/rcse/autofillerdialog.ui:82
+#, fuzzy
+#| msgctxt "PageDelegate|"
+#| msgid "All pages"
+msgctxt "AutoFillerDialog|"
+msgid "Set All values"
+msgstr "Alle pagina's"
+
+#: src/binaries/rcse/autofillerdialog.ui:95
+#, fuzzy
+#| msgctxt "FindDialog|"
+#| msgid "Replace All"
+msgctxt "AutoFillerDialog|"
+msgid "Replacement Rules"
+msgstr "Alles vervangen"
+
+#: src/binaries/rcse/autofillerdialog.ui:109
+#: src/binaries/rcse/autofillerdialog.ui:116
+#, fuzzy
+#| msgctxt "SheetProperties|"
+#| msgid "..."
+msgctxt "AutoFillerDialog|"
+msgid "..."
+msgstr "..."
+
+#: src/binaries/rcse/autofillerdialog.ui:144
+msgctxt "AutoFillerDialog|"
+msgid "Result preview:"
+msgstr ""
+
+#: src/binaries/rcse/autofillerdialog.ui:176
+#, fuzzy
+#| msgctxt "CampaignProperties|"
+#| msgid "Add"
+msgctxt "AutoFillerDialog|"
+msgid "Add"
+msgstr "Toevoegen"
+
+#: src/binaries/rcse/autofillerdialog.ui:188
+#, fuzzy
+#| msgctxt "RGraphicsView|"
+#| msgid "Remove"
+msgctxt "AutoFillerDialog|"
+msgid "Remove"
+msgstr "Verwijderen"
 
 #: src/binaries/rcse/borderlisteditor.cpp:28
 msgctxt "BorderListEditor|"
@@ -178,75 +619,83 @@ msgctxt "PageDelegate|"
 msgid "All Pages"
 msgstr "Alle pagina's"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "TextInput"
 msgstr "Tekstinvoer"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "TextField"
 msgstr "Tekstveld"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "TextArea"
 msgstr "Tekstgebied"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "Select"
 msgstr "Selecteren"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "Checkbox"
 msgstr "Keuzevakje"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:25
+#: src/binaries/rcse/delegate/typedelegate.cpp:27
 msgctxt "TypeDelegate|"
 msgid "Image"
 msgstr "Afbeelding"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:26
+#: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "RLabel"
 msgstr "R-label"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:26
+#: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "Dice Button"
 msgstr "Dobbelsteenknop"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:26
+#: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "Function Button"
 msgstr "Functieknop"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:26
+#: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "WebView"
 msgstr "Webweergave"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:26
+#: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "Slider"
 msgstr "Schuifregelaar"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:27
+#: src/binaries/rcse/delegate/typedelegate.cpp:29
 msgctxt "TypeDelegate|"
 msgid "Hidden"
 msgstr "Verborgen"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:27
+#: src/binaries/rcse/delegate/typedelegate.cpp:29
 msgctxt "TypeDelegate|"
 msgid "Next Page Button"
 msgstr "Knop Volgende pagina"
 
-#: src/binaries/rcse/delegate/typedelegate.cpp:27
+#: src/binaries/rcse/delegate/typedelegate.cpp:29
 msgctxt "TypeDelegate|"
 msgid "Previous Page Button"
 msgstr "Knop Vorige pagina"
+
+#: src/binaries/rcse/delegate/typedelegate.cpp:85
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Table"
+msgctxt "TypeDelegate|"
+msgid "Table"
+msgstr "Tabel"
 
 #: src/binaries/rcse/dialog/aboutrcse.ui:14
 msgctxt "AboutRcse|"
@@ -713,27 +1162,27 @@ msgctxt "QObject|"
 msgid "define path to current <translation>"
 msgstr "pad naar huidige <translation> definiëren"
 
-#: src/binaries/rcse/mainwindow.cpp:174
+#: src/binaries/rcse/mainwindow.cpp:175
 msgctxt "rcse::MainWindow|"
 msgid "Log panel"
 msgstr "Log-paneel"
 
-#: src/binaries/rcse/mainwindow.cpp:204
+#: src/binaries/rcse/mainwindow.cpp:205
 msgctxt "rcse::MainWindow|"
 msgid "&Undo"
 msgstr "&Ongedaan maken"
 
-#: src/binaries/rcse/mainwindow.cpp:207
+#: src/binaries/rcse/mainwindow.cpp:208
 msgctxt "rcse::MainWindow|"
 msgid "&Redo"
 msgstr "Opnie&uw"
 
-#: src/binaries/rcse/mainwindow.cpp:375
+#: src/binaries/rcse/mainwindow.cpp:377
 msgctxt "rcse::MainWindow|"
 msgid "Support"
 msgstr "Ondersteuning"
 
-#: src/binaries/rcse/mainwindow.cpp:376
+#: src/binaries/rcse/mainwindow.cpp:378
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
@@ -743,70 +1192,70 @@ msgstr ""
 "De donatiepagina %1 is online te vinden op :<br> <a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 
-#: src/binaries/rcse/mainwindow.cpp:451
+#: src/binaries/rcse/mainwindow.cpp:453
 msgctxt "rcse::MainWindow|"
 msgid "Untitled"
 msgstr "Zonder titel"
 
-#: src/binaries/rcse/mainwindow.cpp:488
+#: src/binaries/rcse/mainwindow.cpp:490
 msgctxt "rcse::MainWindow|"
 msgid "Help"
 msgstr "Help"
 
-#: src/binaries/rcse/mainwindow.cpp:489
+#: src/binaries/rcse/mainwindow.cpp:491
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 "De donatiepagina van Rcse is online te vinden op :<br> <a href=\"%1\">%1</a>"
 
-#: src/binaries/rcse/mainwindow.cpp:501
+#: src/binaries/rcse/mainwindow.cpp:503
 msgctxt "rcse::MainWindow|"
 msgid "The charactersheet has unsaved changes."
 msgstr "Het blad met karakters heeft niet opgeslagen wijzigingen."
 
-#: src/binaries/rcse/mainwindow.cpp:508
+#: src/binaries/rcse/mainwindow.cpp:510
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Quit %1 "
 msgstr "%1 afsluiten"
 
-#: src/binaries/rcse/mainwindow.cpp:563
+#: src/binaries/rcse/mainwindow.cpp:565
 msgctxt "rcse::MainWindow|"
 msgid "Image Generation"
 msgstr "Generatie van afbeelding"
 
-#: src/binaries/rcse/mainwindow.cpp:563
+#: src/binaries/rcse/mainwindow.cpp:565
 msgctxt "rcse::MainWindow|"
 msgid "Image generation in progress"
 msgstr "Generatie van afbeelding in bezig"
 
-#: src/binaries/rcse/mainwindow.cpp:584 src/binaries/rcse/mainwindow.cpp:811
+#: src/binaries/rcse/mainwindow.cpp:586 src/binaries/rcse/mainwindow.cpp:813
 msgctxt "rcse::MainWindow|"
 msgid "Open Background Image"
 msgstr "Achtergrondafbeelding openen"
 
-#: src/binaries/rcse/mainwindow.cpp:595
+#: src/binaries/rcse/mainwindow.cpp:597
 msgctxt "rcse::MainWindow|"
 msgid "Open Image"
 msgstr "Afbeelding openen"
 
-#: src/binaries/rcse/mainwindow.cpp:620 src/binaries/rcse/mainwindow.cpp:663
+#: src/binaries/rcse/mainwindow.cpp:622 src/binaries/rcse/mainwindow.cpp:665
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet"
 msgstr "Blad met karakters opslaan"
 
-#: src/binaries/rcse/mainwindow.cpp:621 src/binaries/rcse/mainwindow.cpp:664
+#: src/binaries/rcse/mainwindow.cpp:623 src/binaries/rcse/mainwindow.cpp:666
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam blad met karakters (*.rcs)"
 
-#: src/binaries/rcse/mainwindow.cpp:728
+#: src/binaries/rcse/mainwindow.cpp:730
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Wilt u de huidige QML-code wissen?"
 
-#: src/binaries/rcse/mainwindow.cpp:729
+#: src/binaries/rcse/mainwindow.cpp:731
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -815,72 +1264,72 @@ msgstr ""
 "QML-code genereren zal elke wijziging die u hebt gemaakt in de QML "
 "overschrijven.<br/>Wilt u QML-code genereren?"
 
-#: src/binaries/rcse/mainwindow.cpp:794
+#: src/binaries/rcse/mainwindow.cpp:796
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet View"
 msgstr "Weergave van blad met karakters opslaan"
 
-#: src/binaries/rcse/mainwindow.cpp:795
+#: src/binaries/rcse/mainwindow.cpp:797
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet View (*.qml)"
 msgstr "Weergave Rolisteam blad met karakters (*.qml)"
 
-#: src/binaries/rcse/mainwindow.cpp:920
+#: src/binaries/rcse/mainwindow.cpp:922
 msgctxt "rcse::MainWindow|"
 msgid "Copy Path"
 msgstr "Pad kopiëren"
 
-#: src/binaries/rcse/mainwindow.cpp:923
+#: src/binaries/rcse/mainwindow.cpp:925
 msgctxt "rcse::MainWindow|"
 msgid "Copy Url"
 msgstr "URL-adres kopiëren"
 
-#: src/binaries/rcse/mainwindow.cpp:926
+#: src/binaries/rcse/mainwindow.cpp:928
 msgctxt "rcse::MainWindow|"
 msgid "Replace Image"
 msgstr "Afbeelding vervangen"
 
-#: src/binaries/rcse/mainwindow.cpp:927
+#: src/binaries/rcse/mainwindow.cpp:929
 msgctxt "rcse::MainWindow|"
 msgid "Remove Image"
 msgstr "Afbeelding verwijderen"
 
-#: src/binaries/rcse/mainwindow.cpp:928
+#: src/binaries/rcse/mainwindow.cpp:930
 msgctxt "rcse::MainWindow|"
 msgid "Reload image from file"
 msgstr "Afbeelding uit bestand opnieuw laden"
 
-#: src/binaries/rcse/mainwindow.cpp:937
+#: src/binaries/rcse/mainwindow.cpp:939
 msgctxt "rcse::MainWindow|"
 msgid "Load Image"
 msgstr "Afbeelding Inlezen"
 
-#: src/binaries/rcse/mainwindow.cpp:938
+#: src/binaries/rcse/mainwindow.cpp:940
 msgctxt "rcse::MainWindow|"
 msgid "Supported Image Format (*.jpg *.png *.svg *.gif)"
 msgstr "Ondersteunde afbeeldingsformaten (*.jpg *.png *.svg *.gif)"
 
-#: src/binaries/rcse/mainwindow.cpp:951
+#: src/binaries/rcse/mainwindow.cpp:953
 msgctxt "rcse::MainWindow|"
 msgid "Add character"
 msgstr "Karakter toevoegen"
 
-#: src/binaries/rcse/mainwindow.cpp:952
+#: src/binaries/rcse/mainwindow.cpp:954
 msgctxt "rcse::MainWindow|"
 msgid "Delete character"
 msgstr "Karakter verwijderen"
 
-#: src/binaries/rcse/mainwindow.cpp:954
+#: src/binaries/rcse/mainwindow.cpp:956
 msgctxt "rcse::MainWindow|"
 msgid "Character's Name"
 msgstr "Naam van karakter"
 
-#: src/binaries/rcse/mainwindow.cpp:956
+#: src/binaries/rcse/mainwindow.cpp:958
 msgctxt "rcse::MainWindow|"
 msgid "Apply on Selection"
 msgstr "Toepassen op selectie"
 
-#: src/binaries/rcse/mainwindow.cpp:957
+#: src/binaries/rcse/mainwindow.cpp:959
 msgctxt "rcse::MainWindow|"
 msgid "Apply on all characters"
 msgstr "Op alle karakters toepassen"
@@ -1055,7 +1504,7 @@ msgid "Open"
 msgstr "Openen"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:826
-#: src/binaries/widget/mainwindow.ui:516
+#: src/binaries/widget/mainwindow.ui:515
 msgctxt "MainWindow|"
 msgid "Ctrl+O"
 msgstr "Ctrl+O"
@@ -1066,7 +1515,7 @@ msgid "Save"
 msgstr "Opslaan"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:834
-#: src/binaries/widget/mainwindow.ui:387
+#: src/binaries/widget/mainwindow.ui:386
 msgctxt "MainWindow|"
 msgid "Ctrl+S"
 msgstr "Ctrl+S"
@@ -1087,19 +1536,19 @@ msgid "New"
 msgstr "Nieuw"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:850
-#: src/binaries/widget/mainwindow.ui:255
+#: src/binaries/widget/mainwindow.ui:254
 msgctxt "MainWindow|"
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:855
-#: src/binaries/widget/mainwindow.ui:190
+#: src/binaries/widget/mainwindow.ui:189
 msgctxt "MainWindow|"
 msgid "Quit"
 msgstr "Afsluiten"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:858
-#: src/binaries/widget/mainwindow.ui:193
+#: src/binaries/widget/mainwindow.ui:192
 msgctxt "MainWindow|"
 msgid "Ctrl+Q"
 msgstr "Ctrl+Q"
@@ -1140,7 +1589,7 @@ msgid "Code To Sheet"
 msgstr "Code naar blad"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:933
-#: src/binaries/widget/mainwindow.ui:461
+#: src/binaries/widget/mainwindow.ui:460
 msgctxt "MainWindow|"
 msgid "Ctrl+D"
 msgstr "Ctrl+D"
@@ -1167,7 +1616,7 @@ msgstr "Voorkeuren"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1025
 #: src/binaries/rcse/mainwindow_rcse.ui:1036
-#: src/binaries/widget/mainwindow.ui:182
+#: src/binaries/widget/mainwindow.ui:181
 msgctxt "MainWindow|"
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
@@ -1215,7 +1664,7 @@ msgid "&Redo"
 msgstr "Opnie&uw"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1113
-#: src/binaries/widget/mainwindow.ui:430 src/binaries/widget/mainwindow.ui:496
+#: src/binaries/widget/mainwindow.ui:429 src/binaries/widget/mainwindow.ui:495
 msgctxt "MainWindow|"
 msgid "Support Rolisteam"
 msgstr "Rolisteam ondersteunen"
@@ -1439,7 +1888,7 @@ msgid "Previous Page Button"
 msgstr "Knop Vorige pagina"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:8
+#: src/libraries/core/src/network/connectionprofile.cpp:7
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -1515,72 +1964,77 @@ msgctxt "CodeEdit|"
 msgid "Dialog"
 msgstr "Dialoog"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:25
+#: src/binaries/rcse/widgets/fieldview.cpp:26
 msgctxt "FieldView|"
 msgid "Lock up Item"
 msgstr "Item vergrendelen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:26
+#: src/binaries/rcse/widgets/fieldview.cpp:27
 msgctxt "FieldView|"
 msgid "Delete Item"
 msgstr "Item verwijderen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:27
+#: src/binaries/rcse/widgets/fieldview.cpp:28
 msgctxt "FieldView|"
 msgid "Apply on Selection"
 msgstr "Toepassen op selectie"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:28
+#: src/binaries/rcse/widgets/fieldview.cpp:29
 msgctxt "FieldView|"
 msgid "Apply on all lines"
 msgstr "Op alle regels toepassen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:29
+#: src/binaries/rcse/widgets/fieldview.cpp:30
+msgctxt "FieldView|"
+msgid "Open filler assistant"
+msgstr ""
+
+#: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
 msgid "Define Field Code"
 msgstr "Veldcode definiëren"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:30
+#: src/binaries/rcse/widgets/fieldview.cpp:32
 msgctxt "FieldView|"
 msgid "Reset Field Code"
 msgstr "Veldcode resetten"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:34
+#: src/binaries/rcse/widgets/fieldview.cpp:36
 msgctxt "FieldView|"
 msgid "Position columns"
 msgstr "Positie van kolommen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:47
+#: src/binaries/rcse/widgets/fieldview.cpp:49
 msgctxt "FieldView|"
 msgid "Aesthetic columns"
 msgstr "Esthetische kolommen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:61
+#: src/binaries/rcse/widgets/fieldview.cpp:63
 msgctxt "FieldView|"
 msgid "Value columns"
 msgstr "Waarde in kolommen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:72
+#: src/binaries/rcse/widgets/fieldview.cpp:74
 msgctxt "FieldView|"
 msgid "Id columns"
 msgstr "Id van kolommen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:81
+#: src/binaries/rcse/widgets/fieldview.cpp:83
 msgctxt "FieldView|"
 msgid "All columns"
 msgstr "Alle kolommen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:150
+#: src/binaries/rcse/widgets/fieldview.cpp:164
 msgctxt "FieldView|"
 msgid "Show"
 msgstr "Tonen"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:157
+#: src/binaries/rcse/widgets/fieldview.cpp:171
 msgctxt "FieldView|"
 msgid "Show/Hide"
 msgstr "Tonen/verbergen "
 
-#: src/binaries/rcse/widgets/fieldview.cpp:332
+#: src/binaries/rcse/widgets/fieldview.cpp:358
 msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Kleur ophalen"
@@ -1677,7 +2131,7 @@ msgstr "Kaart:"
 
 #: src/binaries/widget/mainwindow.cpp:603
 #: src/binaries/widget/mainwindow.cpp:642
-#: src/binaries/widget/mainwindow.cpp:872 src/binaries/widget/mainwindow.ui:285
+#: src/binaries/widget/mainwindow.cpp:872 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Campagne openen"
@@ -1889,367 +2343,367 @@ msgctxt "MainWindow|"
 msgid "&Campaign"
 msgstr "&Campagne openen"
 
-#: src/binaries/widget/mainwindow.ui:131
+#: src/binaries/widget/mainwindow.ui:130
 msgctxt "MainWindow|"
 msgid "&History"
 msgstr "&Geschiedenis"
 
-#: src/binaries/widget/mainwindow.ui:148
+#: src/binaries/widget/mainwindow.ui:147
 msgctxt "MainWindow|"
 msgid "toolBar"
 msgstr "werkbalk"
 
-#: src/binaries/widget/mainwindow.ui:168
+#: src/binaries/widget/mainwindow.ui:167
 msgctxt "MainWindow|"
 msgid "Close File"
 msgstr "Bestand  sluiten"
 
-#: src/binaries/widget/mainwindow.ui:171
+#: src/binaries/widget/mainwindow.ui:170
 msgctxt "MainWindow|"
 msgid "Ctrl+Esc"
 msgstr "Ctrl+Esc"
 
-#: src/binaries/widget/mainwindow.ui:179
+#: src/binaries/widget/mainwindow.ui:178
 msgctxt "MainWindow|"
 msgid "Preferences…"
 msgstr "Voorkeuren…"
 
-#: src/binaries/widget/mainwindow.ui:201
+#: src/binaries/widget/mainwindow.ui:200
 msgctxt "MainWindow|"
 msgid "Tab"
 msgstr "Tabblad"
 
-#: src/binaries/widget/mainwindow.ui:204
+#: src/binaries/widget/mainwindow.ui:203
 msgctxt "MainWindow|"
 msgid "F2"
 msgstr "F2"
 
-#: src/binaries/widget/mainwindow.ui:209
+#: src/binaries/widget/mainwindow.ui:208
 msgctxt "MainWindow|"
 msgid "Cascade"
 msgstr "Trapsgewijs"
 
-#: src/binaries/widget/mainwindow.ui:212 src/binaries/widget/mainwindow.ui:313
+#: src/binaries/widget/mainwindow.ui:211 src/binaries/widget/mainwindow.ui:312
 msgctxt "MainWindow|"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/binaries/widget/mainwindow.ui:217
+#: src/binaries/widget/mainwindow.ui:216
 msgctxt "MainWindow|"
 msgid "Tile"
 msgstr "Tegel"
 
-#: src/binaries/widget/mainwindow.ui:220
+#: src/binaries/widget/mainwindow.ui:219
 msgctxt "MainWindow|"
 msgid "Alt+T"
 msgstr "Alt+T"
 
-#: src/binaries/widget/mainwindow.ui:225
+#: src/binaries/widget/mainwindow.ui:224
 msgctxt "MainWindow|"
 msgid "Disconnection…"
 msgstr "Verbinding verbreken…"
 
-#: src/binaries/widget/mainwindow.ui:230
+#: src/binaries/widget/mainwindow.ui:229
 msgctxt "MainWindow|"
 msgid "Rolisteam Help"
 msgstr "Help voor Rolisteam"
 
-#: src/binaries/widget/mainwindow.ui:233
+#: src/binaries/widget/mainwindow.ui:232
 msgctxt "MainWindow|"
 msgid "online documentation"
 msgstr "online-documentatie"
 
-#: src/binaries/widget/mainwindow.ui:236
+#: src/binaries/widget/mainwindow.ui:235
 msgctxt "MainWindow|"
 msgid "F1"
 msgstr "F1"
 
-#: src/binaries/widget/mainwindow.ui:244
+#: src/binaries/widget/mainwindow.ui:243
 msgctxt "MainWindow|"
 msgid "About Rolisteam"
 msgstr "Info over Rolisteam"
 
-#: src/binaries/widget/mainwindow.ui:252 src/binaries/widget/mainwindow.ui:274
+#: src/binaries/widget/mainwindow.ui:251 src/binaries/widget/mainwindow.ui:273
 msgctxt "MainWindow|"
 msgid "Note"
 msgstr "Notitie"
 
-#: src/binaries/widget/mainwindow.ui:263
+#: src/binaries/widget/mainwindow.ui:262
 msgctxt "MainWindow|"
 msgid "Picture"
 msgstr "Plaatje"
 
-#: src/binaries/widget/mainwindow.ui:266
+#: src/binaries/widget/mainwindow.ui:265
 msgctxt "MainWindow|"
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
-#: src/binaries/widget/mainwindow.ui:277
+#: src/binaries/widget/mainwindow.ui:276
 msgctxt "MainWindow|"
 msgid "Ctrl+Shift+N"
 msgstr "Ctrl+Shift+N"
 
-#: src/binaries/widget/mainwindow.ui:288
+#: src/binaries/widget/mainwindow.ui:287
 msgctxt "MainWindow|"
 msgid "Ctrl+E"
 msgstr "Ctrl+E"
 
-#: src/binaries/widget/mainwindow.ui:296
+#: src/binaries/widget/mainwindow.ui:295
 msgctxt "MainWindow|"
 msgid "Online Picture"
 msgstr "Online plaatje"
 
-#: src/binaries/widget/mainwindow.ui:299
+#: src/binaries/widget/mainwindow.ui:298
 msgctxt "MainWindow|"
 msgid "Ctrl+Shift+I"
 msgstr "Ctrl+Shift+I"
 
-#: src/binaries/widget/mainwindow.ui:310
+#: src/binaries/widget/mainwindow.ui:309
 msgctxt "MainWindow|"
 msgid "Character List"
 msgstr "Karakters"
 
-#: src/binaries/widget/mainwindow.ui:321
+#: src/binaries/widget/mainwindow.ui:320
 msgctxt "MainWindow|"
 msgid "ToolBar"
 msgstr "Werkbalk"
 
-#: src/binaries/widget/mainwindow.ui:324
+#: src/binaries/widget/mainwindow.ui:323
 msgctxt "MainWindow|"
 msgid "F8"
 msgstr "F8"
 
-#: src/binaries/widget/mainwindow.ui:333 src/binaries/widget/mainwindow.ui:345
+#: src/binaries/widget/mainwindow.ui:332 src/binaries/widget/mainwindow.ui:344
 msgctxt "MainWindow|"
 msgid "Map"
 msgstr "Kaart"
 
-#: src/binaries/widget/mainwindow.ui:336
+#: src/binaries/widget/mainwindow.ui:335
 msgctxt "MainWindow|"
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: src/binaries/widget/mainwindow.ui:348
+#: src/binaries/widget/mainwindow.ui:347
 msgctxt "MainWindow|"
 msgid "Ctrl+Shift+M"
 msgstr "Ctrl+Shift+M"
 
-#: src/binaries/widget/mainwindow.ui:356
+#: src/binaries/widget/mainwindow.ui:355
 msgctxt "MainWindow|"
 msgid "Show Health State"
 msgstr "Status welzijn tonen"
 
-#: src/binaries/widget/mainwindow.ui:359
+#: src/binaries/widget/mainwindow.ui:358
 msgctxt "MainWindow|"
 msgid "F6"
 msgstr "F6"
 
-#: src/binaries/widget/mainwindow.ui:364
+#: src/binaries/widget/mainwindow.ui:363
 msgctxt "MainWindow|"
 msgid "Change Profile…"
 msgstr "Profiel wijzigen…"
 
-#: src/binaries/widget/mainwindow.ui:373
+#: src/binaries/widget/mainwindow.ui:372
 msgctxt "MainWindow|"
 msgid "Character Sheet"
 msgstr "Blad met karakters"
 
-#: src/binaries/widget/mainwindow.ui:376
+#: src/binaries/widget/mainwindow.ui:375
 msgctxt "MainWindow|"
 msgid "Ctrl+U"
 msgstr "Ctrl+U"
 
-#: src/binaries/widget/mainwindow.ui:384
+#: src/binaries/widget/mainwindow.ui:383
 msgctxt "MainWindow|"
 msgid "Save Campaign"
 msgstr "Campagne opslaan"
 
-#: src/binaries/widget/mainwindow.ui:395
+#: src/binaries/widget/mainwindow.ui:394
 msgctxt "MainWindow|"
 msgid "Room List"
 msgstr "Lijst met rooms"
 
-#: src/binaries/widget/mainwindow.ui:398
+#: src/binaries/widget/mainwindow.ui:397
 msgctxt "MainWindow|"
 msgid "F10"
 msgstr "F10"
 
-#: src/binaries/widget/mainwindow.ui:407 src/binaries/widget/mainwindow.ui:419
+#: src/binaries/widget/mainwindow.ui:406 src/binaries/widget/mainwindow.ui:418
 msgctxt "MainWindow|"
 msgid "Shared Note"
 msgstr "Gedeelde notitie"
 
-#: src/binaries/widget/mainwindow.ui:410
+#: src/binaries/widget/mainwindow.ui:409
 msgctxt "MainWindow|"
 msgid "Ctrl+K"
 msgstr "Ctrl+K"
 
-#: src/binaries/widget/mainwindow.ui:422
+#: src/binaries/widget/mainwindow.ui:421
 msgctxt "MainWindow|"
 msgid "Ctrl+Shift+K"
 msgstr "Ctrl+Shift+K"
 
-#: src/binaries/widget/mainwindow.ui:435
+#: src/binaries/widget/mainwindow.ui:434
 msgctxt "MainWindow|"
 msgid "Shortcut Viewer…"
 msgstr "Viewer met sneltoetsen…"
 
-#: src/binaries/widget/mainwindow.ui:438
+#: src/binaries/widget/mainwindow.ui:437
 msgctxt "MainWindow|"
 msgid "Ctrl+F1"
 msgstr "Ctrl+F1"
 
-#: src/binaries/widget/mainwindow.ui:446
+#: src/binaries/widget/mainwindow.ui:445
 msgctxt "MainWindow|"
 msgid "Full Screen"
 msgstr "Volledig scherm"
 
-#: src/binaries/widget/mainwindow.ui:449
+#: src/binaries/widget/mainwindow.ui:448
 msgctxt "MainWindow|"
 msgid "F11"
 msgstr "F11"
 
-#: src/binaries/widget/mainwindow.ui:458
+#: src/binaries/widget/mainwindow.ui:457
 msgctxt "MainWindow|"
 msgid "PDF File"
 msgstr "PDF-bestand"
 
-#: src/binaries/widget/mainwindow.ui:466
+#: src/binaries/widget/mainwindow.ui:465
 msgctxt "MainWindow|"
 msgid "Copy Connection Link…"
 msgstr "Verbindingskoppeling kopiëren…"
 
-#: src/binaries/widget/mainwindow.ui:474
+#: src/binaries/widget/mainwindow.ui:473
 msgctxt "MainWindow|"
 msgid "WebPage"
 msgstr "Webpagina"
 
-#: src/binaries/widget/mainwindow.ui:477
+#: src/binaries/widget/mainwindow.ui:476
 msgctxt "MainWindow|"
 msgid "Ctrl+W"
 msgstr "Ctrl+W"
 
-#: src/binaries/widget/mainwindow.ui:482
+#: src/binaries/widget/mainwindow.ui:481
 msgctxt "MainWindow|"
 msgid "Password Generator"
 msgstr "Wachtwoordgenerator"
 
-#: src/binaries/widget/mainwindow.ui:487
+#: src/binaries/widget/mainwindow.ui:486
 msgctxt "MainWindow|"
 msgid "Current Media as…"
 msgstr "Huidige medium als…"
 
-#: src/binaries/widget/mainwindow.ui:504
+#: src/binaries/widget/mainwindow.ui:503
 msgctxt "MainWindow|"
 msgid "Media title in toolbar"
 msgstr "Mediumtitel in werkbalk"
 
-#: src/binaries/widget/mainwindow.ui:513 src/binaries/widget/mainwindow.ui:525
+#: src/binaries/widget/mainwindow.ui:512 src/binaries/widget/mainwindow.ui:524
 msgctxt "MainWindow|"
 msgid "Mindmap"
 msgstr "Mindmap"
 
-#: src/binaries/widget/mainwindow.ui:528
+#: src/binaries/widget/mainwindow.ui:527
 msgctxt "MainWindow|"
 msgid "Ctrl+Shift+O"
 msgstr "Ctrl+Shift+O"
 
-#: src/binaries/widget/mainwindow.ui:540
+#: src/binaries/widget/mainwindow.ui:539
 msgctxt "MainWindow|"
 msgid "Instant messaging"
 msgstr "Instant messaging"
 
-#: src/binaries/widget/mainwindow.ui:543
+#: src/binaries/widget/mainwindow.ui:542
 msgctxt "MainWindow|"
 msgid "Instant Messaging Window"
 msgstr "Venster voor Instant messaging"
 
-#: src/binaries/widget/mainwindow.ui:546
+#: src/binaries/widget/mainwindow.ui:545
 msgctxt "MainWindow|"
 msgid "Alt+I"
 msgstr "Alt+I"
 
-#: src/binaries/widget/mainwindow.ui:554
+#: src/binaries/widget/mainwindow.ui:553
 msgctxt "MainWindow|"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: src/binaries/widget/mainwindow.ui:557
+#: src/binaries/widget/mainwindow.ui:556
 msgctxt "MainWindow|"
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: src/binaries/widget/mainwindow.ui:568
+#: src/binaries/widget/mainwindow.ui:567
 msgctxt "MainWindow|"
 msgid "Paste"
 msgstr "Plakken"
 
-#: src/binaries/widget/mainwindow.ui:571
+#: src/binaries/widget/mainwindow.ui:570
 msgctxt "MainWindow|"
 msgid "Ctrl+V"
 msgstr "Ctrl+V"
 
-#: src/binaries/widget/mainwindow.ui:579
+#: src/binaries/widget/mainwindow.ui:578
 msgctxt "MainWindow|"
 msgid "Properties"
 msgstr "Eigenschappen"
 
-#: src/binaries/widget/mainwindow.ui:584
+#: src/binaries/widget/mainwindow.ui:583
 msgctxt "MainWindow|"
 msgid "Dice Alias"
 msgstr "Alias van dobbelsteen"
 
-#: src/binaries/widget/mainwindow.ui:589
+#: src/binaries/widget/mainwindow.ui:588
 msgctxt "MainWindow|"
 msgid "Character States"
 msgstr "Blad met karakters"
 
-#: src/binaries/widget/mainwindow.ui:594
+#: src/binaries/widget/mainwindow.ui:593
 msgctxt "MainWindow|"
 msgid "Statistics"
 msgstr "Statistieken"
 
-#: src/binaries/widget/mainwindow.ui:599
+#: src/binaries/widget/mainwindow.ui:598
 msgctxt "MainWindow|"
 msgid "Theme"
 msgstr "Thema"
 
-#: src/binaries/widget/mainwindow.ui:604
+#: src/binaries/widget/mainwindow.ui:603
 msgctxt "MainWindow|"
 msgid "New Campaign"
 msgstr "Nieuwe campagne"
 
-#: src/binaries/widget/mainwindow.ui:609
+#: src/binaries/widget/mainwindow.ui:608
 msgctxt "MainWindow|"
 msgid "Save Campaign As…"
 msgstr "Campagne opslaan als…"
 
-#: src/binaries/widget/mainwindow.ui:614
+#: src/binaries/widget/mainwindow.ui:613
 msgctxt "MainWindow|"
 msgid "Non Playable Characters"
 msgstr "Alle speelbare karakters"
 
-#: src/binaries/widget/mainwindow.ui:619
+#: src/binaries/widget/mainwindow.ui:618
 msgctxt "MainWindow|"
 msgid "Manage…"
 msgstr "Beheren…"
 
-#: src/binaries/widget/mainwindow.ui:624
+#: src/binaries/widget/mainwindow.ui:623
 msgctxt "MainWindow|"
 msgid "Remove…"
 msgstr "Verwijderen…"
 
-#: src/binaries/widget/mainwindow.ui:629
+#: src/binaries/widget/mainwindow.ui:628
 msgctxt "MainWindow|"
 msgid "Clean"
 msgstr "Opschonen"
 
-#: src/binaries/widget/mainwindow.ui:637
+#: src/binaries/widget/mainwindow.ui:636
 msgctxt "MainWindow|"
 msgid "Import from another campaign…"
 msgstr "Uit een andere campagne importeren…"
 
-#: src/binaries/widget/mainwindow.ui:649
+#: src/binaries/widget/mainwindow.ui:648
 msgctxt "MainWindow|"
 msgid "Dice3D"
 msgstr "Dobbelsteen-3D"
@@ -2531,7 +2985,7 @@ msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Gekopieerde afbeelding"
 
-#: src/libraries/core/src/controller/instantmessagingcontroller.cpp:137
+#: src/libraries/core/src/controller/instantmessagingcontroller.cpp:138
 msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr "Globaal"
@@ -2540,6 +2994,27 @@ msgstr "Globaal"
 msgctxt "TextController|"
 msgid "Text"
 msgstr "Tekst"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#, fuzzy
+#| msgctxt "ClientManager|"
+#| msgid "Connection to the server has been closed."
+msgctxt "NetworkController|"
+msgid "server thread has been closed"
+msgstr "Verbinding naar server is afgesloten."
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Server"
+msgctxt "NetworkController|"
+msgid "Server is off"
+msgstr "Server"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:206
+msgctxt "NetworkController|"
+msgid "server is on"
+msgstr ""
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -2673,7 +3148,7 @@ msgctxt "CharacterStateModel|"
 msgid "Image"
 msgstr "Afbeelding"
 
-#: src/libraries/core/src/model/chatroomsplittermodel.cpp:180
+#: src/libraries/core/src/model/chatroomsplittermodel.cpp:179
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
 msgstr "[naar rechts verplaatsen] Bron- of bestemmingschatroom bestaat niet."
@@ -2687,31 +3162,6 @@ msgstr "[naar links verplaatsen] Bron- of bestemmingschatroom bestaat niet."
 msgctxt "ColorModel|"
 msgid "Any color"
 msgstr "Een kleur"
-
-#: src/libraries/core/src/model/dicealiasmodel.cpp:37
-msgctxt "DiceAliasModel|"
-msgid "Pattern"
-msgstr "Patroon"
-
-#: src/libraries/core/src/model/dicealiasmodel.cpp:37
-msgctxt "DiceAliasModel|"
-msgid "Value"
-msgstr "Waarde"
-
-#: src/libraries/core/src/model/dicealiasmodel.cpp:37
-msgctxt "DiceAliasModel|"
-msgid "Regular Expression"
-msgstr "Reguliere expressie"
-
-#: src/libraries/core/src/model/dicealiasmodel.cpp:37
-msgctxt "DiceAliasModel|"
-msgid "Disable"
-msgstr "Uitschakelen"
-
-#: src/libraries/core/src/model/dicealiasmodel.cpp:37
-msgctxt "DiceAliasModel|"
-msgid "Comments"
-msgstr "Opmerkingen"
 
 #: src/libraries/core/src/model/historymodel.cpp:36
 msgctxt "HistoryModel|"
@@ -2978,27 +3428,27 @@ msgctxt "StateModel|"
 msgid "Any State"
 msgstr "Een staat"
 
-#: src/libraries/core/src/network/channelmodel.cpp:107
+#: src/libraries/core/src/network/channelmodel.cpp:106
 msgctxt "ChannelModel|"
 msgid "Bytes"
 msgstr "Bytes"
 
-#: src/libraries/core/src/network/channelmodel.cpp:107
+#: src/libraries/core/src/network/channelmodel.cpp:106
 msgctxt "ChannelModel|"
 msgid "KiB"
 msgstr "KiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:107
+#: src/libraries/core/src/network/channelmodel.cpp:106
 msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "MiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:446
+#: src/libraries/core/src/network/channelmodel.cpp:445
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "Kanaalwachtwoord"
 
-#: src/libraries/core/src/network/channelmodel.cpp:447
+#: src/libraries/core/src/network/channelmodel.cpp:446
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -3009,48 +3459,53 @@ msgctxt "CharacterDataModel|"
 msgid "No Avatar"
 msgstr "Geen avatar"
 
-#: src/libraries/core/src/network/characterdatamodel.cpp:147
+#: src/libraries/core/src/network/characterdatamodel.cpp:148
 msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Nieuw karakter"
 
-#: src/libraries/core/src/network/clientconnection.cpp:91
+#: src/libraries/core/src/network/clientconnection.cpp:90
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Socket is nul"
 
-#: src/libraries/core/src/network/clientconnection.cpp:96
+#: src/libraries/core/src/network/clientconnection.cpp:95
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Socket is niet beschrijfbaar"
 
-#: src/libraries/core/src/network/clientconnection.cpp:119
+#: src/libraries/core/src/network/clientconnection.cpp:118
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Transmissiefout :"
 
-#: src/libraries/core/src/network/clientmanager.cpp:130
+#: src/libraries/core/src/network/clientmanager.cpp:126
 msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "Verbinding naar server is afgesloten."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:8
+#: src/libraries/core/src/network/connectionprofile.cpp:7
 msgctxt "QObject|"
 msgid "Player"
 msgstr "Speler"
 
-#: src/libraries/core/src/network/rserver.cpp:44
+#: src/libraries/core/src/network/rserver.cpp:47
 msgctxt "RServer|"
 msgid "[Upnp] Port mapping has been done"
 msgstr "[Upnp] Port-mapping is gedaan"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:246
+#: src/libraries/core/src/network/rserver.cpp:92
+msgctxt "RServer|"
+msgid "[Server] Start Listening"
+msgstr ""
+
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Authenticatie als admin is mislukt: %2 - %1, verkeerd wachtwoord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:272
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3059,41 +3514,41 @@ msgstr ""
 "Authenticatie is mislukt:  %1 probeerde met de server te verbinden met een "
 "verkeerd wachtwoord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:290
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Gebruiker is er uit geknikkerd: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:480
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nieuwe inkomende verbinding!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:535
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "Verbinding met gebruiker %1 is verbroken!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:168
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:165
 msgctxt "UpnpNat|"
 msgid "Unable to read the URL in server answer"
 msgstr "Kan de URL in het antwoord van de server niet lezen"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:281
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:278
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr ""
 "Ophalen van base_URL uit XMLNode \"URLBase\" of describe_url is mislukt.\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:289
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:286
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Juiste type service vinden is mislukt: %1 %2 %3"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:342
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:339
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to add port mapping (%1/%2): error: %3\n"
@@ -3350,7 +3805,7 @@ msgctxt "QObject|"
 msgid "Webview"
 msgstr "Webweergave"
 
-#: src/libraries/dicephysics/data/dicemodel.cpp:281
+#: src/libraries/dicephysics/data/dicemodel.cpp:283
 #, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
@@ -3366,49 +3821,49 @@ msgctxt "SideMenu|"
 msgid "disable mouseArea"
 msgstr "muisgebied uitschakelen"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:177
+#: src/libraries/dicephysics/qml/SideMenu.qml:178
 msgctxt "SideMenu|"
 msgid "Collision sound:"
 msgstr "Geluid van botsing:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:189
+#: src/libraries/dicephysics/qml/SideMenu.qml:190
 msgctxt "SideMenu|"
 msgid "Dice Command:"
 msgstr "Dobbelsteencommando:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:205
+#: src/libraries/dicephysics/qml/SideMenu.qml:206
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
 msgstr "3D dobbelsteen in dialoog tonen"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:211
+#: src/libraries/dicephysics/qml/SideMenu.qml:212
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
 msgstr "3D-dobbelsteen verbergen na: %1s"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:212
+#: src/libraries/dicephysics/qml/SideMenu.qml:213
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
 msgstr "3D-dobbelsteen verdwijnt na een tijdje."
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:233
+#: src/libraries/dicephysics/qml/SideMenu.qml:234
 msgctxt "SideMenu|"
 msgid "Share rolls"
 msgstr "Worpen delen"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:234
+#: src/libraries/dicephysics/qml/SideMenu.qml:235
 msgctxt "SideMenu|"
 msgid "(Experimental)"
 msgstr "(Experimenteel)"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:246
+#: src/libraries/dicephysics/qml/SideMenu.qml:247
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Duration: %1s"
 msgstr "Tijdsduur: %1 s"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:247
+#: src/libraries/dicephysics/qml/SideMenu.qml:248
 msgctxt "SideMenu|"
 msgid ""
 "Rolls made by remote player will been shown on your screen for few seconds.\n"
@@ -3611,7 +4066,7 @@ msgid "Name"
 msgstr "Naam"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:42
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:27
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:32
 msgctxt "SideMenu|"
 msgid "Night Mode"
 msgstr "Nachtmodus"
@@ -3759,33 +4214,33 @@ msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
 msgstr "Ik ben de spelmeester"
 
-#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:26
+#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:27
 msgctxt "AddChatRoomDialog|"
 msgid "Title"
 msgstr "Titel"
 
-#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:35
+#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:36
 msgctxt "AddChatRoomDialog|"
 msgid "Everybody"
 msgstr "Iedereen"
 
 #. translator please, Keep it short.
-#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:87
+#: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:88
 msgctxt "AddChatRoomDialog|"
 msgid "Add Chatroom"
 msgstr "Chatroom toevoegen"
 
-#: src/libraries/qml_views/InstantMessaging/ChatView.qml:124
+#: src/libraries/qml_views/InstantMessaging/ChatView.qml:139
 msgctxt "ChatView|"
 msgid "close"
 msgstr "sluiten"
 
-#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:62
+#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:61
 msgctxt "DiceMessageDelegate|"
 msgid "Details"
 msgstr "Details"
 
-#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:69
+#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:68
 #, qt-format
 msgctxt "DiceMessageDelegate|"
 msgid "Details: %1"
@@ -3797,32 +4252,32 @@ msgctxt "DiceMessageDelegate|"
 msgid "Command: %1"
 msgstr "Commando: %1"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:165
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
-msgid "send"
-msgstr "verzenden"
+msgid "Send"
+msgstr ""
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:43
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:47
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:50
 msgctxt "InstantMessagingMain|"
 msgid "Add chatroom"
 msgstr "Chatroom toevoegen"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:51
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
 msgstr "Terugzetten naar standaard weergave"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
 msgstr "Aan hoofdgedeelte vastmaken"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Losmaken"
@@ -3837,29 +4292,32 @@ msgctxt "RecipiantsView|"
 msgid "All"
 msgstr "Allen"
 
-#: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:75
+#: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:79
 msgctxt "RecipiantsView|"
 msgid "Add User"
 msgstr "Gebruiker toevoegen"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:39
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:45
 msgctxt "SideMenu|"
 msgid "Sound Notification"
 msgstr "Melding met geluid"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:53
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:62
 msgctxt "SideMenu|"
 msgid "Select Font…"
 msgstr "Lettertype selecteren…"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:60
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:70
 msgctxt "SideMenu|"
 msgid "Font Family:"
 msgstr "Lettertypefamilie:"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:66
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
+#, fuzzy
+#| msgctxt "SideMenu|"
+#| msgid "Font size:"
 msgctxt "SideMenu|"
-msgid "Font size:"
+msgid "Font size Factor:"
 msgstr "Tekengrootte:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
@@ -5435,7 +5893,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr "Starten"
 
-#: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.cpp:117
+#: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.cpp:125
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Select directory"
 msgstr "Selecteer map"
@@ -5657,7 +6115,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Opslaan"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:571
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Kolommen tonen"
@@ -8007,7 +8465,7 @@ msgctxt "Image|"
 msgid "Stop Sharing"
 msgstr "Delen stoppen"
 
-#: src/libraries/rwidgets/mediacontainers/instantmessagingview.cpp:91
+#: src/libraries/rwidgets/mediacontainers/instantmessagingview.cpp:92
 msgctxt "InstantMessagingView|"
 msgid "Instant Messaging"
 msgstr "Instant Messaging"
@@ -8632,6 +9090,10 @@ msgstr "Slaapt"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Behekst"
+
+#~ msgctxt "InstantMessagingEditText|"
+#~ msgid "send"
+#~ msgstr "verzenden"
 
 #~ msgctxt "Main|"
 #~ msgid "Rolisteam 3D dice roller"
