@@ -1,0 +1,23 @@
+Source: roliserver
+Section: games
+Priority: optional
+Maintainer: Renaud Guezennec <renaud@rolisteam.org>
+Uploaders: Alban Crommer <alban@albancrommer.com>
+Build-Depends: debhelper (>= 10),
+               cdbs,
+               qt5-default,
+               qt5-qmake
+Standards-Version: 3.8.0
+Homepage: http://www.rolisteam.org
+
+Package: roliserver
+Section: games
+Architecture: any
+Depends: libqt5core5a,
+         libqt5gui5,
+         libqt5network5,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Manage easily your role playing games
+ Rolisteam can help you to manage a role playing game. It allows you to share
+ maps with your players, private or global chat and control music player.
