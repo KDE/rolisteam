@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-09-23 09:54+0300\n"
+"PO-Revision-Date: 2025-11-10 15:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -15,39 +15,28 @@ msgstr ""
 "X-Generator: Lokalize 23.04.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Альтернатива"
+msgstr "Альтернативи"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>формальний вираз: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Альтернатива"
+msgstr "Альтернатива %1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
-msgstr "Візерунок"
+msgstr "Взірець"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Команда"
@@ -55,52 +44,34 @@ msgstr "Команда"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Вимкнено"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Відкрити"
+msgstr "Увімкнено"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Назва:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Візерунок"
+msgstr "Взірець:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Команда"
+msgstr "Команда:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Формальний вираз"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Вимкнути"
@@ -108,116 +79,80 @@ msgstr "Вимкнути"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Зберегти і повернутися"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
-msgstr "Delete"
+msgstr "Вилучити"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "типовий"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Альтернатива кістки"
+msgstr "Кидання кісток"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Введіть вашу команду. Приклад: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Повернутися"
+msgstr "Запустити"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Макроси"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Назва"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Команда"
+msgstr "команда"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
-msgstr "Delete"
+msgstr "Вилучити"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Альтернатива кістки"
+msgstr "Кидання кісток"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Просторова кістка"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Макроси"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
-msgstr "Альтернатива"
+msgstr "Альтернативи"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Аркуш персонажів"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Параметри"
@@ -253,134 +188,89 @@ msgid "Comments"
 msgstr "Коментарі"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Просторова кістка"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Розмір кістки:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Зберегти профіль"
+msgstr "Останній профіль"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
-msgstr "Delete"
+msgstr "Вилучити"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Параметри"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Скопіювати профіль"
+msgstr "Вибрати профіль"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Параметри"
+msgstr "Параметри програми"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Дата зміни"
+msgstr "Темний режим:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Мова:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Про програму"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Права доступу"
+msgstr "Версія:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Стан:"
+msgstr "Дата:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "SHA1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Аркуш персонажів"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Ключ"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Значення"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
-msgstr "Delete"
+msgstr "Вилучити"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -409,52 +299,38 @@ msgstr "зображення (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Команда: %1"
+msgstr "Кількість: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Вікно допомоги у фільтруванні"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Змінити стан"
+msgstr "Початок відліку:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Крок лічильника:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Всі сторінки"
+msgstr "Встановити усі значення"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Замінити всі"
+msgstr "Правила заміни"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "…"
@@ -462,20 +338,14 @@ msgstr "…"
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Перегляд результатів:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Додати"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Вилучити"
@@ -691,9 +561,6 @@ msgid "Previous Page Button"
 msgstr "Кнопка попередньої сторінки"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Таблиця"
@@ -1995,7 +1862,7 @@ msgstr "Застосувати до усіх рядків"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Відкрити допоміжний засіб фільтрування"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -3009,25 +2876,19 @@ msgid "Text"
 msgstr "Текст"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:191
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "З'єднання з сервером було розірвано."
+msgstr "потік обробки сервера було закрито"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:202
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Сервер"
+msgstr "Сервер вимкнено"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "сервер увімкнено"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3512,7 +3373,7 @@ msgstr "[Upnp] Виконано прив'язку до портів"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Сервер] Розпочато очікування"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
@@ -4271,7 +4132,7 @@ msgstr "Команда: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Надіслати"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4329,12 +4190,9 @@ msgid "Font Family:"
 msgstr "Гарнітура шрифту:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Розмір шрифту:"
+msgstr "Коефіцієнт розміру шрифту:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"

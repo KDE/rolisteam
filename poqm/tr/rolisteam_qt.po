@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-09-24 09:12+0300\n"
+"PO-Revision-Date: 2025-11-10 18:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -12,42 +12,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Arma"
+msgstr "Armalar"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Düzenli ifade: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Arma"
+msgstr "Arma №%1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Desen"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Komut"
@@ -55,52 +44,34 @@ msgstr "Komut"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Kapalı"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Aç"
+msgstr "Açık"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Ad:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Desen"
+msgstr "Desen:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Komut"
+msgstr "Komut:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Düzenli İfade"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Devre Dışı Bırak"
@@ -108,116 +79,80 @@ msgstr "Devre Dışı Bırak"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Kaydet ve Geri"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Sil"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
-msgstr "öntanımlı"
+msgstr "Öntanımlı"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Zarlar Arması"
+msgstr "Zar Atımı"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Komutunuzu yazın; örneğni, 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Dönüş"
+msgstr "Çalıştır"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Makrolar"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Ad"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
 msgstr "Komut"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Sil"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Zarlar Arması"
+msgstr "Zar Atımı"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "3B Zarlar"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Makrolar"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
-msgstr "Arma"
+msgstr "Armalar"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Karakter Sayfası"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Ayarlar"
@@ -253,131 +188,86 @@ msgid "Comments"
 msgstr "Yorumlar"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "3B Zarlar"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
-msgstr "Zarlar boyutu:"
+msgstr "Zar boyutu:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Profilleri kaydet"
+msgstr "Son Profil"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Sil"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Ayarlar"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Profili klonla"
+msgstr "Profil Seç"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Ayarlar"
+msgstr "Uygulama Ayarları"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Değiştirilme Tarihi"
+msgstr "Koyu kip:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Dil:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Hakkında"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "İzin"
+msgstr "Sürüm:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Durum:"
+msgstr "Tarih:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "SHA1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Karakter Sayfası"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Anahtar"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Değer"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Sil"
@@ -409,52 +299,38 @@ msgstr "Görseller (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Komut: %1"
+msgstr "Sayım: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Doldurucu Yardımı İletişim Kutusu"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Durumu Değiştir"
+msgstr "Sayaç başlangıcı:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Adım sayacı:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Tüm sayfalar"
+msgstr "Tüm Değerleri Ayarla"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Tümünü Değiştir"
+msgstr "Değiştirme Kuralları"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "…"
@@ -462,20 +338,14 @@ msgstr "…"
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Sonuç önizlemesi:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Ekle"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Kaldır"
@@ -691,12 +561,9 @@ msgid "Previous Page Button"
 msgstr "Önceki Sayfa Düğmesi"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
-msgstr "Tablo"
+msgstr "Masa"
 
 #: src/binaries/rcse/dialog/aboutrcse.ui:14
 msgctxt "AboutRcse|"
@@ -1989,7 +1856,7 @@ msgstr "Tüm Satırlara Uygula"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Doldurucu Yardımcısını Aç"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -3004,25 +2871,19 @@ msgid "Text"
 msgstr "Metin"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:191
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "Sunucu bağlantısı kapatıldı."
+msgstr "Sunucu iş parçacığı kapatıldı"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:202
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Sunucu"
+msgstr "Sunucu Kapalı"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "Sunucu açık"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3505,7 +3366,7 @@ msgstr "[Upnp] Kapı eşlemleme tamamlandı"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Sunucu] Dinlemeye Başla"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
@@ -4262,7 +4123,7 @@ msgstr "Komut: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Gönder"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4320,12 +4181,9 @@ msgid "Font Family:"
 msgstr "Yazıtipi ailesi:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Yazıtipi puntosu:"
+msgstr "Yazıtipi puntosu çarpanı:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"

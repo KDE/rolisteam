@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-09-23 19:06+0200\n"
+"PO-Revision-Date: 2025-11-11 00:39+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -11,42 +11,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Alias"
+msgstr "Aliassen"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Alias"
+msgstr "Alias #%1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Patroon"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Commando"
@@ -54,52 +43,34 @@ msgstr "Commando"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Uit"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Openen"
+msgstr "Aan"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Naam:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Patroon"
+msgstr "Patroon:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Commando"
+msgstr "Commando:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Reguliere expressie"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Uitschakelen"
@@ -110,29 +81,20 @@ msgid "Save and back"
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Verwijderen"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "standaard"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Alias van dobbelsteen"
+msgstr "Dobbelsteenwaarden"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
@@ -140,83 +102,56 @@ msgid "Type your command e.g: 3d10…"
 msgstr ""
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Terug"
+msgstr "Uitvoeren"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Macro's"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Naam"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Commando"
+msgstr "commando"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Verwijderen"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Alias van dobbelsteen"
+msgstr "Dobbelsteenwaarden"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dobbelsteen-3D"
+msgstr "3D-dobbelsteen"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Macro's"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
-msgstr "Alias"
+msgstr "Aliassen"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Blad met karakter"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Instellingen"
@@ -252,131 +187,86 @@ msgid "Comments"
 msgstr "Opmerkingen"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dobbelsteen-3D"
+msgstr "3D-dobbelsteen"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Dobbelsteengrootte:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Profielen opslaan"
+msgstr "Laatste profiel"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Verwijderen"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Instellingen"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Profiel klonen"
+msgstr "Profiel selecteren"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Instellingen"
+msgstr "Instellingen van toepassing"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Datum gewijzigd"
+msgstr "Donkere modus:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Taal:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Info over"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Toestemming"
+msgstr "Versie:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Status:"
+msgstr "Datum:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Blad met karakters"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Sleutel"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Waarde"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Verwijderen"
@@ -408,12 +298,10 @@ msgstr "Afbeeldingen (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Commando: %1"
+msgstr "Aantal: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
@@ -421,12 +309,9 @@ msgid "Filler Assistant Dialog"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Status wijzigen"
+msgstr "Begin van teller:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
@@ -434,26 +319,17 @@ msgid "Counter Step:"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Alle pagina's"
+msgstr "Zet alle waarden"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Alles vervangen"
+msgstr "Vervangingsregels"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "..."
@@ -461,20 +337,14 @@ msgstr "..."
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Resultaatvoorbeeldweergave:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Toevoegen"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Verwijderen"
@@ -690,9 +560,6 @@ msgid "Previous Page Button"
 msgstr "Knop Vorige pagina"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Tabel"
@@ -2996,20 +2863,14 @@ msgid "Text"
 msgstr "Tekst"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:191
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "Verbinding naar server is afgesloten."
+msgstr "verbinding naar server is afgesloten"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:202
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Server"
+msgstr "Server is uit"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
@@ -4255,7 +4116,7 @@ msgstr "Commando: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Verzenden"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4313,12 +4174,9 @@ msgid "Font Family:"
 msgstr "Lettertypefamilie:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Tekengrootte:"
+msgstr "Factor van tekengrootte:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"

@@ -38,12 +38,9 @@ msgid "Pattern"
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Dice Command"
 msgctxt "AliasesPage|"
 msgid "Command"
-msgstr "骰子命令"
+msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
@@ -66,12 +63,9 @@ msgid "Pattern:"
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Dice Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "骰子命令"
+msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
 msgctxt "AliasesPage|"
@@ -89,12 +83,9 @@ msgid "Save and back"
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Image"
 msgctxt "AliasesPage|"
 msgid "Delete"
-msgstr "删除图像"
+msgstr ""
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
@@ -103,12 +94,9 @@ msgid "default"
 msgstr ""
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "骰子别名"
+msgstr ""
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
@@ -131,28 +119,19 @@ msgid "Name"
 msgstr ""
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Dice Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "骰子命令"
+msgstr ""
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Image"
 msgctxt "MacrosPage|"
 msgid "Delete"
-msgstr "删除图像"
+msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "骰子别名"
+msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:145
 msgctxt "Main|"
@@ -170,12 +149,9 @@ msgid "Aliases"
 msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "ImportDataFromCampaignDialog|"
-#| msgid "Character sheets"
 msgctxt "Main|"
 msgid "CharacterSheet"
-msgstr "角色表"
+msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:185
 msgctxt "Main|"
@@ -218,28 +194,19 @@ msgid "3D Dice"
 msgstr ""
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "PdfManager|"
-#| msgid "Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
-msgstr "大小:"
+msgstr ""
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "更改配置文件..."
+msgstr ""
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Image"
 msgctxt "ProfileSelector|"
 msgid "Delete"
-msgstr "删除图像"
+msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
 msgctxt "SettingsPage|"
@@ -247,12 +214,9 @@ msgid "Settings"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Sheet Properties"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "工作表属性"
+msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
 msgctxt "SettingsPage|"
@@ -270,12 +234,9 @@ msgid "Language:"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "About RCSE"
 msgctxt "SettingsPage|"
 msgid "About"
-msgstr "关于 RCSE"
+msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
 msgctxt "SettingsPage|"
@@ -293,12 +254,9 @@ msgid "Sha1:"
 msgstr ""
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "ImportDataFromCampaignDialog|"
-#| msgid "Character sheets"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
-msgstr "角色表"
+msgstr ""
 
 #: src/binaries/3DDicer/SheetPage.qml:32
 msgctxt "SheetPage|"
@@ -311,12 +269,9 @@ msgid "Value"
 msgstr ""
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Image"
 msgctxt "SheetPage|"
 msgid "Delete"
-msgstr "删除图像"
+msgstr ""
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -377,12 +332,9 @@ msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
@@ -390,20 +342,14 @@ msgid "Result preview:"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
-msgstr "添加"
+msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "HistoryViewerDialog|"
-#| msgid "remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #: src/binaries/rcse/borderlisteditor.cpp:28
 msgctxt "BorderListEditor|"
@@ -4206,12 +4152,9 @@ msgid "Font Family:"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Root Directory:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "根目录："
+msgstr ""
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
