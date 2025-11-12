@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2025-11-10 07:11+0100\n"
+"PO-Revision-Date: 2025-11-11 14:24+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1118,7 +1118,7 @@ msgstr "Odpri sliko"
 #: src/binaries/rcse/mainwindow.cpp:622 src/binaries/rcse/mainwindow.cpp:665
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet"
-msgstr "Shrani opis lika"
+msgstr "Shrani list karakterja"
 
 #: src/binaries/rcse/mainwindow.cpp:623 src/binaries/rcse/mainwindow.cpp:666
 msgctxt "rcse::MainWindow|"
@@ -1128,7 +1128,7 @@ msgstr "Opis lika Rolisteam (*.rcs)"
 #: src/binaries/rcse/mainwindow.cpp:730
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
-msgstr "Ali želite izbrisati trenutno kodo QML?"
+msgstr "Ali želite obrisati trenutno kodo QML?"
 
 #: src/binaries/rcse/mainwindow.cpp:731
 msgctxt "rcse::MainWindow|"
@@ -1142,12 +1142,12 @@ msgstr ""
 #: src/binaries/rcse/mainwindow.cpp:796
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet View"
-msgstr "Shrani pogled opisa lika"
+msgstr "Shrani pogled opisa karakterja"
 
 #: src/binaries/rcse/mainwindow.cpp:797
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet View (*.qml)"
-msgstr "Pogled opisa lika Rolisteam (*.qml)"
+msgstr "Pogled opisa karakterja Rolisteam (*.qml)"
 
 #: src/binaries/rcse/mainwindow.cpp:922
 msgctxt "rcse::MainWindow|"
@@ -1187,17 +1187,17 @@ msgstr "Podprti formati slik (*.jpg *.png *.svg *.gif)"
 #: src/binaries/rcse/mainwindow.cpp:953
 msgctxt "rcse::MainWindow|"
 msgid "Add character"
-msgstr "Dodaj lik"
+msgstr "Dodaj karakterja"
 
 #: src/binaries/rcse/mainwindow.cpp:954
 msgctxt "rcse::MainWindow|"
 msgid "Delete character"
-msgstr "Izbriši lik"
+msgstr "Izbriši karakterja"
 
 #: src/binaries/rcse/mainwindow.cpp:956
 msgctxt "rcse::MainWindow|"
 msgid "Character's Name"
-msgstr "Ime lika"
+msgstr "Ime karakterja"
 
 #: src/binaries/rcse/mainwindow.cpp:958
 msgctxt "rcse::MainWindow|"
@@ -1207,12 +1207,12 @@ msgstr "Uveljavi na izboru"
 #: src/binaries/rcse/mainwindow.cpp:959
 msgctxt "rcse::MainWindow|"
 msgid "Apply on all characters"
-msgstr "Uveljavi na vseh likih"
+msgstr "Uveljavi na vseh karakterjih"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:14
 msgctxt "MainWindow|"
 msgid "Unknown[*] - Rolisteam Character Sheet Editor"
-msgstr "Neznan[*] - Rollsteam urejevalnik lista lika"
+msgstr "Neznan[*] - Rollsteam urejevalnik lista karakterja"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:29
 msgctxt "MainWindow|"
@@ -1349,7 +1349,7 @@ msgstr "Pogled"
 #: src/binaries/rcse/mainwindow_rcse.ui:696
 msgctxt "MainWindow|"
 msgid "Characters"
-msgstr "Liki"
+msgstr "karakterji"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:716
 msgctxt "MainWindow|"
@@ -2344,7 +2344,7 @@ msgstr "Krmilka+Dvigalka+I"
 #: src/binaries/widget/mainwindow.ui:309
 msgctxt "MainWindow|"
 msgid "Character List"
-msgstr "Seznam likov"
+msgstr "Seznam karakterjev"
 
 #: src/binaries/widget/mainwindow.ui:320
 msgctxt "MainWindow|"
