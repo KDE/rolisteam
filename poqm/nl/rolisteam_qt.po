@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-11 00:39+0100\n"
+"PO-Revision-Date: 2025-11-13 17:45+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -78,7 +78,7 @@ msgstr "Uitschakelen"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Opslaan en terug"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
 msgctxt "AliasesPage|"
@@ -99,7 +99,7 @@ msgstr "Dobbelsteenwaarden"
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Typ uw commando e.g: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
 msgctxt "DiceRollPage|"
@@ -306,7 +306,7 @@ msgstr "Aantal: %1"
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Dialoog van vuller-rassistent"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
 msgctxt "AutoFillerDialog|"
@@ -316,7 +316,7 @@ msgstr "Begin van teller:"
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Stappen in de teller:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
 msgctxt "AutoFillerDialog|"
@@ -1854,7 +1854,7 @@ msgstr "Op alle regels toepassen"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Vuller-assistent"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -2875,7 +2875,7 @@ msgstr "Server is uit"
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "server is aan"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3358,7 +3358,7 @@ msgstr "[Upnp] Port-mapping is gedaan"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Server] Begin met luisteren"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
