@@ -23,6 +23,7 @@
 #include "ui_aboutrolisteam.h"
 #include <inja.hpp>
 #include <json.hpp>
+#include <version.h>
 
 #include <QFile>
 
@@ -33,15 +34,21 @@ constexpr auto description2{"description2"};
 constexpr auto websites{"websites"};
 constexpr auto official{"official"};
 constexpr auto tracker{"bugtracker"};
-
+constexpr auto versionField{"version"};
+constexpr auto versionSha1{"versionsha1"};
+constexpr auto versionDate{"versiondate"};
 } // namespace jsonkey
 
-AboutRolisteam::AboutRolisteam(QString version, QWidget* parent) : QDialog(parent), ui(new Ui::AboutRolisteam)
+AboutRolisteam::AboutRolisteam(QString versionText, QWidget* parent) : QDialog(parent), ui(new Ui::AboutRolisteam)
 {
     ui->setupUi(this);
-    ui->m_textLabel->setText(QString("Rolisteam v%1").arg(version));
+    ui->m_textLabel->setText(QString("Rolisteam"));
 
     inja::json data;
+    data[jsonkey::versionField]= version::FULL_VERSION;
+    data[jsonkey::versionSha1]= version::VERSION_SHA1;
+    data[jsonkey::versionDate]= version::VERSION_DATE;
+
     data[jsonkey::description]
         = tr("Rolisteam helps you to manage a tabletop role playing game with remote friends/players. It "
              "provides many features to share maps, pictures and it also includes tool to communicate with your "

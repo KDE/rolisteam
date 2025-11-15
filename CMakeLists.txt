@@ -32,6 +32,9 @@ else()
     find_package(Qt6 COMPONENTS Core Widgets Gui LinguistTools WebEngineCore WebEngineWidgets WebEngineQuick REQUIRED)
 endif()
 
+include(gitinfo)
+get_version_from_git()
+
 configure_file(version.h.in version.h @ONLY)
 
 if (CMAKE_BUILD_TYPE STREQUAL "Release" OR ${GENERATE_TS_FILES} )

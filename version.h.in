@@ -34,6 +34,9 @@ constexpr char const* rolisteam_site{"https://rolisteam.org"};
 
 constexpr auto liberapay_site{"https://liberapay.com/Rolisteam/donate"};
 constexpr auto patreon_site{"https://www.patreon.com/rolisteam"};
+constexpr auto FULL_VERSION{"@PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@.@PROJECT_VERSION_PATCH@"};
+constexpr auto VERSION_SHA1{"@VERSION_SHA1@"};
+constexpr auto VERSION_DATE{"@VERSION_DATE@"};
 }
 // clang-format on
 #endif // VERSION_H

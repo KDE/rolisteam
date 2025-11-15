@@ -3,6 +3,11 @@
     <meta name="qrichtext" content="1"/>
 </head>
 <body>
+<ul>
+    <li>Version: <bold>{{ version }}</bold></li>
+    <li>Date: <bold>{{ versiondate }}</bold></li>
+    <li>Sha1: <bold>{{ versionsha1 }}</bold></li>
+</ul>
 <p>{{ description }}</p>
 <p>{{ description2 }}</p>
 <p>{{ websites }}</p>

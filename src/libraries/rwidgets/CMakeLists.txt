@@ -259,6 +259,7 @@ set(QRC_SOURCES ${CMAKE_SOURCE_DIR}/rolisteam.qrc editors/noteeditor/src/textedi
 
 add_library(rwidgets SHARED ${SOURCES} ${HEADERS} ${UI_FILES} ${QRC_SOURCES} ${pdfSource} ${pdfUiFiles})
 set_target_properties(rwidgets PROPERTIES PUBLIC_HEADER "${HEADERS}")
+target_include_directories(rwidgets PRIVATE ${CMAKE_BINARY_DIR})
 target_compile_definitions(rwidgets PRIVATE RWIDGET_LIBRARY)
 
 target_link_libraries(rwidgets
