@@ -37,6 +37,7 @@ public:
 signals:
     void performCommand(QUndoCommand* command);
     void popCommand();
+    void rollDiceCommand(QStringList ids, QString cmd);
     void eventOccurs(const QString& msg, LogController::LogLevel level);
 };
 

@@ -364,7 +364,7 @@ void MarkDownHighlighter::highlightHeadline(QString text)
     // check for headline blocks with # in front of them
     if(match.hasMatch())
     {
-        int count= match.captured(1).count();
+        auto count= match.captured(1).size();
 
         // we just have H1 to H6
         count= qMin(count, 6);

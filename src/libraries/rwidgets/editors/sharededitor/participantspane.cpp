@@ -61,7 +61,7 @@ ParticipantsPane::ParticipantsPane(SharedNoteController* ctrl, QWidget* parent)
             {
                 auto item= static_cast<ParticipantItem*>(idx.internalPointer());
 
-                auto canMove= (item->uuid() != m_sharedCtrl->ownerId() & item->isLeaf());
+                auto canMove= ((item->uuid() != m_sharedCtrl->ownerId()) && item->isLeaf());
                 ui->m_demoteAction->setEnabled(canMove);
                 ui->m_promoteAction->setEnabled(canMove);
             });

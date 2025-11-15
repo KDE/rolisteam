@@ -454,7 +454,7 @@ target_link_libraries(core
     utils
     dice3d
     network)
-
+target_include_directories(core PRIVATE ${CMAKE_BINARY_DIR})
 target_include_directories(core PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
     PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

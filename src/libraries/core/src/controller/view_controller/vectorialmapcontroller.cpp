@@ -679,12 +679,12 @@ void VectorialMapController::rollInit(Core::CharacterScope scope)
 {
     auto items= m_vmapModel->items();
     auto list= sublist(scope, items);
-    emit performCommand(new RollInitCommand(list, m_diceParser));
+    addCommand(new RollInitCommand(list, m_diceParser));
 }
 
 void VectorialMapController::rollInit(QList<QPointer<vmap::CharacterItemController>> list)
 {
-    emit performCommand(new RollInitCommand(list, m_diceParser));
+    addCommand(new RollInitCommand(list, m_diceParser));
 }
 
 void VectorialMapController::setDiceParser(DiceRoller* parser)
@@ -705,7 +705,11 @@ void VectorialMapController::cleanUpInit(QList<QPointer<vmap::CharacterItemContr
 
 void VectorialMapController::runDiceCommand(QList<QPointer<vmap::CharacterItemController>> list, QString cmd)
 {
-    addCommand(new CleanUpRollCommand(list));
+    // addCommand(new RollComma(list));
+    QStringList ids;
+    std::transform(std::begin(list), std::end(list), std::back_inserter(ids),
+                   [](const QPointer<vmap::CharacterItemController>& p) { return p->uuid(); });
+    emit rollDiceCommand(ids, cmd);
 }
 
 void VectorialMapController::changeZValue(const QList<vmap::VisualItemController*>& list, StackOrder order)

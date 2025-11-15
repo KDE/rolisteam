@@ -26,6 +26,8 @@ CharacterField::Type TestField::getType()
 
 QVariant TestField::getData(int col, int role)
 {
+    Q_UNUSED(col)
+    Q_UNUSED(role)
     if(role == Qt::EditRole)
         return m_value;
     return {};
@@ -33,6 +35,8 @@ QVariant TestField::getData(int col, int role)
 
 bool TestField::setData(int col, QVariant value, int role)
 {
+    Q_UNUSED(col)
+    Q_UNUSED(role)
     m_value= value;
     return true;
 }

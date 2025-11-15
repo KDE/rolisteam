@@ -55,6 +55,7 @@
 #include <QFileInfo>
 #include <QFontComboBox>
 #include <QFontDatabase>
+#include <QInputDialog>
 #include <QMenu>
 #include <QMenuBar>
 #include <QMessageBox>
@@ -69,11 +70,8 @@
 #include <QTextList>
 #include <QToolBar>
 #include <QtDebug>
-#include <optional>
-#include <QInputDialog>
 
 #include "controller/view_controller/notecontroller.h"
-#include "worker/utilshelper.h"
 
 TextEdit::TextEdit(NoteController* note, QWidget* parent)
     : QMainWindow(parent), m_noteCtrl(note), m_textEdit(new QTextEdit(this))
@@ -188,13 +186,15 @@ void TextEdit::setupFileActions()
     }
 
     a= new QAction(tr("&Name..."), this);
-    connect(a, &QAction::triggered, this, [this](){
-        auto name = QInputDialog::getText(this, tr("Change note file name"), tr("Name"));
-        if(!name.isEmpty())
-        {
-            m_noteCtrl->setName(name);
-        }
-    });
+    connect(a, &QAction::triggered, this,
+            [this]()
+            {
+                auto name= QInputDialog::getText(this, tr("Change note file name"), tr("Name"));
+                if(!name.isEmpty())
+                {
+                    m_noteCtrl->setName(name);
+                }
+            });
     tb->addAction(a);
     menu->addAction(a);
 
@@ -261,7 +261,7 @@ void TextEdit::setupTextActions()
     menuBar()->addMenu(menu);
 
     actionTextBold= new QAction(QIcon(":/images/win/textbold.png"), tr("&Bold"), this);
-    actionTextBold->setShortcut(Qt::CTRL + Qt::Key_B);
+    actionTextBold->setShortcut(Qt::CTRL | Qt::Key_B);
     QFont bold;
     bold.setBold(true);
     actionTextBold->setFont(bold);
@@ -501,7 +501,7 @@ void TextEdit::textItalic()
 void TextEdit::textFamily(const QString& f)
 {
     QTextCharFormat fmt;
-    fmt.setFontFamily(f);
+    fmt.setFontFamilies({f});
     mergeFormatOnWordOrSelection(fmt);
 }
 

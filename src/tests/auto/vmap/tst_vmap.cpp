@@ -27,8 +27,12 @@ public:
     FakeItem(VisualItemController::ItemType itemType, VectorialMapController* ctrl)
         : VisualItemController(itemType, {}, ctrl){};
     void aboutToBeRemoved(){};
-    void setCorner(const QPointF& move, int corner,
-                   Core::TransformType transformType= Core::TransformType::NoTransform){};
+    void setCorner(const QPointF& move, int corner, Core::TransformType transformType= Core::TransformType::NoTransform)
+    {
+        Q_UNUSED(move);
+        Q_UNUSED(corner);
+        Q_UNUSED(transformType);
+    };
     QRectF rect() const { return {}; };
 };
 
@@ -105,7 +109,7 @@ void VMapTest::cleanup() {}
 
 void VMapTest::addNullItems()
 {
-    auto map= m_media->map();
+    // auto map= m_media->map();
     auto model= m_ctrl->model();
 
     model->appendItemController(nullptr);
@@ -326,7 +330,7 @@ void VMapTest::addItems_data()
          Core::SelectableTool::TEXT, Core::SelectableTool::TEXTBORDER, Core::SelectableTool::PEN,
          Core::SelectableTool::PATH, Core::SelectableTool::NonPlayableCharacter});
     ParamMap list;
-    int index= 0;
+    // int index= 0;
     for(unsigned int i= 0; i < data.size(); ++i)
     {
         auto comb_size= i + 1;
@@ -704,7 +708,7 @@ void VMapTest::saveAndLoad_data()
 
 void VMapTest::addEllipse()
 {
-    /*    EllipsItem item;
+    / *    EllipsItem item;
         AddVmapItemCommand cmd(&item, true, m_vmap.get());
         cmd.setUndoable(true);
         cmd.redo();
@@ -755,7 +759,7 @@ void VMapTest::addLine()
 }
 void VMapTest::addImage()
 {
-    /*    ImageItem item;
+    / *    ImageItem item;
         AddVmapItemCommand cmd(&item, true, m_vmap.get());
         cmd.setUndoable(true);
         cmd.redo();
@@ -955,7 +959,7 @@ void VMapTest::testMovableItems_data()
 
         // PlayersList* model = PlayersList::instance();
 
-        /*auto localPlayer = new Player(QStringLiteral("Obi"),QColor(Qt::darkBlue),false);
+        / *auto localPlayer = new Player(QStringLiteral("Obi"),QColor(Qt::darkBlue),false);
         auto localCharacter = new Character("Lynn Gray-Rike",QColor(Qt::darkBlue),false);
         auto item = new CharacterItem(localCharacter,QPoint(100,100));
         localPlayer->addCharacter(localCharacter);

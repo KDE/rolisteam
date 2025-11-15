@@ -43,7 +43,7 @@
 
 #include "network/connectionprofile.h"
 
-GameController::GameController(const QString& appname, const QString& version, QClipboard* clipboard, QObject* parent)
+GameController::GameController(const QString& appname, QClipboard* clipboard, QObject* parent)
     : QObject(parent)
     , m_diceParser(new DiceRoller)
     , m_logController(new LogController(true))
@@ -54,12 +54,11 @@ GameController::GameController(const QString& appname, const QString& version, Q
     , m_campaignManager(new campaign::CampaignManager(m_diceParser.get()))
     , m_contentCtrl(new ContentController(m_campaignManager.get(), m_playerController->model(),
                                           m_playerController->characterModel(), clipboard, m_networkCtrl.get()))
-    , m_preferences(new PreferencesManager(appname, QString("%1_%2/preferences").arg(appname, version)))
+    , m_preferences(new PreferencesManager(appname, QString("%1_%2/preferences").arg(appname, version::FULL_VERSION)))
     , m_instantMessagingCtrl(new InstantMessagingController(m_diceParser.get(), m_playerController->model()))
     , m_imUpdater(new InstantMessaging::InstantMessagingUpdater(m_instantMessagingCtrl.get()))
     , m_audioCtrl(new AudioController(m_campaignManager.get(), m_preferences.get()))
     , m_dicePhysicController(new Dice3DController)
-    , m_version(version)
     , m_undoStack(new QUndoStack)
     , m_autoSaveCtrl(new AutoSaveController(m_preferences.get()))
 {
@@ -129,6 +128,10 @@ GameController::GameController(const QString& appname, const QString& version, Q
     });
 
     connect(m_contentCtrl.get(), &ContentController::performCommand, this, &GameController::addCommand);
+    connect(m_contentCtrl.get(), &ContentController::rollDiceCommand, this, [this](const QStringList& list,const QString& cmd){
+        for(auto & id : list)
+            m_instantMessagingCtrl->rollDiceCommand(cmd, false, id);
+    });
     auto popCommand = [this]()
     {
         m_undoStack->setIndex(m_undoStack->index()-1);
@@ -215,14 +218,6 @@ void GameController::setCampaignRoot(const QString& path)
 {
     auto campaign= m_campaignManager->campaign();
     campaign->setRootDirectory(path);
-}
-
-void GameController::setVersion(const QString& version)
-{
-    if(version == m_version)
-        return;
-    m_version= version;
-    emit versionChanged();
 }
 
 void GameController::setLocalPlayerId(const QString& id)
@@ -391,7 +386,7 @@ void GameController::startCheckForUpdates()
     if(!m_preferences->value(QStringLiteral("MainWindow::MustBeChecked"), true).toBool())
         return;
 
-    auto updateChecker= new UpdateChecker(m_version, this);
+    auto updateChecker= new UpdateChecker(version::FULL_VERSION, this);
     updateChecker->startChecking();
     connect(updateChecker, &UpdateChecker::checkFinished, this,
             [this, updateChecker]()
@@ -434,7 +429,7 @@ void GameController::startTipOfDay() {}
 
 QString GameController::version() const
 {
-    return m_version;
+    return version::FULL_VERSION;
 }
 
 QString GameController::campaignRoot() const

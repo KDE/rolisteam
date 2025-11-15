@@ -66,10 +66,10 @@ void PlayerModelTest::addTest()
         QCOMPARE(name, data.data().toString());
     }
 
-    QJsonObject obj;
+    /*QJsonObject obj;
 
     m_participantsModel->saveModel(obj);
-    m_participantsModel->loadModel(obj);
+    m_participantsModel->loadModel(obj);*/
 
     for(auto p : players)
         m_participantsModel->removePlayer(p);

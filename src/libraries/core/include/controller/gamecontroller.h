@@ -37,6 +37,7 @@
 #include "diceparser_qobject/diceroller.h"
 #include "dicephysics/controllers/dice3dcontroller.h"
 #include "updater/media/instantmessagingupdater.h"
+#include "version.h"
 
 struct TipOfDay
 {
@@ -70,7 +71,7 @@ class CORE_EXPORT GameController : public QObject
     Q_PROPERTY(NetworkController* networkController READ networkController CONSTANT)
     Q_PROPERTY(Dice3DController* dicePhysicController READ dicePhysicController CONSTANT)
     Q_PROPERTY(QString campaignRoot READ campaignRoot WRITE setCampaignRoot NOTIFY campaignRootChanged)
-    Q_PROPERTY(QString version READ version WRITE setVersion NOTIFY versionChanged)
+    Q_PROPERTY(QString version READ version CONSTANT)
     Q_PROPERTY(QString localPlayerId READ localPlayerId NOTIFY localPlayerIdChanged)
     Q_PROPERTY(QString remoteVersion READ remoteVersion NOTIFY remoteVersionChanged)
     Q_PROPERTY(TipOfDay tipOfDay READ tipOfDay NOTIFY tipOfDayChanged)
@@ -81,8 +82,7 @@ class CORE_EXPORT GameController : public QObject
     Q_PROPERTY(campaign::CampaignManager* campaignManager READ campaignManager CONSTANT)
     Q_PROPERTY(campaign::Campaign* campaign READ campaign NOTIFY campaignChanged)
 public:
-    explicit GameController(const QString& appname, const QString& version, QClipboard* clipboard,
-                            QObject* parent= nullptr);
+    explicit GameController(const QString& appname, QClipboard* clipboard, QObject* parent= nullptr);
     ~GameController();
 
     NetworkController* networkController() const;
@@ -116,7 +116,6 @@ public:
 
 signals:
     void campaignRootChanged();
-    void versionChanged();
     void localPlayerIdChanged();
     void localIsGMChanged(bool);
     void updateAvailableChanged();
@@ -142,7 +141,6 @@ public slots:
     void postSettingInit();
 
     void setCampaignRoot(const QString& path);
-    void setVersion(const QString& version);
     void setUpdateAvailable(bool available);
     void setDataFromProfile(int profileIndex);
     void startConnection();
@@ -177,7 +175,6 @@ private:
     std::unique_ptr<AudioController> m_audioCtrl;
     std::unique_ptr<Dice3DController> m_dicePhysicController;
 
-    QString m_version;
     QString m_remoteVersion;
     bool m_updateAvailable= false;
     TipOfDay m_tipOfTheDay;

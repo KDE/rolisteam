@@ -257,6 +257,9 @@ void CampaignManager::importDataFrom(const QString& source, const QVector<Core::
             /*case Core::CampaignDataCategory::Themes:
                 m_editor->copyTheme(makeSource(THEME_FILE), placeDirectory(Campaign::Place::THEME_FILE));
                 break;*/
+        case Core::CampaignDataCategory::Themes:
+            // TODO implement me
+            break;
         }
         //, Maps, MindMaps, Notes, WebLink, PDFDoc, DiceAlias, CharacterStates, Themes, CharacterSheets,
     }

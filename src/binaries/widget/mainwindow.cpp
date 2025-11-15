@@ -261,7 +261,8 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     };
     m_preferences->registerLambda(QStringLiteral("VMAP::highlightColor"), func2);
 
-    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this, [this](bool b)
+    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this,
+            [this](bool b)
             { m_ui->m_toolBar->setToolButtonStyle(b ? Qt::ToolButtonTextBesideIcon : Qt::ToolButtonIconOnly); });
 
     auto setModified= [this] { setWindowModified(true); };
@@ -675,7 +676,7 @@ void MainWindow::linkActionToMenu()
     connect(m_ui->m_tileViewAction, &QAction::triggered, m_mdiArea.get(), &Workspace::tileSubWindows);
 
     connect(m_ui->m_fullScreenAct, &QAction::triggered, this,
-            [=](bool enable)
+            [this](bool enable)
             {
                 if(enable)
                 {
@@ -739,7 +740,7 @@ void MainWindow::linkActionToMenu()
     connect(m_ui->m_aboutAction, &QAction::triggered, this,
             [this]()
             {
-                AboutRolisteam diag(m_gameController->version(), this);
+                AboutRolisteam diag(this);
                 diag.exec();
             });
     connect(m_ui->m_onlineHelpAction, &QAction::triggered, this,

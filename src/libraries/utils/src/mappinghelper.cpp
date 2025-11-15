@@ -35,6 +35,8 @@ QRectF MappingHelper::maxRect(const QRectF& parentRect, const QRectF& childrenRe
 
 QRectF MappingHelper::mapRectInto(const QRectF& maxRect, const QRectF& viewRect, const QRectF& imageRect)
 {
+    Q_UNUSED(maxRect);
+    Q_UNUSED(viewRect);
     // maxRect => viewRect
     // imageRect => res
     auto res= imageRect;

@@ -173,11 +173,11 @@ const QList<QImage> PdfManager::images() const
 
     bool grayScale= ui->m_grayScale->isChecked();
 
-    QSize areaSize= ui->m_pdfView->viewport()->size();
+    /*QSize areaSize= ui->m_pdfView->viewport()->size();
     QSize widgetSize= ui->m_pdfView->size();
 
     auto v= ui->m_pdfView->verticalScrollBar()->pageStep();
-    auto h= ui->m_pdfView->horizontalScrollBar()->pageStep();
+    auto h= ui->m_pdfView->horizontalScrollBar()->pageStep();*/
 
     // Compute Size
     QSize size= QSize(ui->m_widthBox->value(), ui->m_heightBox->value());
@@ -202,7 +202,7 @@ const QList<QImage> PdfManager::images() const
         auto lst= pagesList.split(";");
         QRegularExpression range;
         range.setPattern("(\\d+)-(\\d+)");
-        for(const auto& line : lst)
+        for(const auto& line : std::as_const(lst))
         {
             auto match= range.match(line);
             if(match.hasMatch())

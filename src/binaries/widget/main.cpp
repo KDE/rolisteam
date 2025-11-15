@@ -39,7 +39,6 @@
 #include "mainwindow.h"
 #include "rolisteamapplication.h"
 #include "uiwatchdog.h"
-#include "version.h"
 
 #include "applicationstate.h"
 
@@ -117,7 +116,7 @@ void showResources()
 int main(int argc, char* argv[])
 {
     // Application creation
-    RolisteamApplication app(QString("rolisteam"), version::version, argc, argv);
+    RolisteamApplication app(QString("rolisteam"), argc, argv);
 
     Q_INIT_RESOURCE(viewsqml);
     Q_INIT_RESOURCE(charactersheet);

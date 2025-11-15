@@ -63,8 +63,7 @@ bool PaletteColor::readFrom(QJsonObject& json)
     m_role= static_cast<QPalette::ColorRole>(json["role"].toInt());
     m_group= static_cast<QPalette::ColorGroup>(json["group"].toInt());
     m_name= json["name"].toString();
-    QString colorName= json["color"].toString();
-    m_color.setNamedColor(colorName);
+    m_color= QColor::fromString(json["color"].toString());
     return true;
 }
 

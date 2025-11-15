@@ -72,7 +72,7 @@ void LabelWithOptions::setText(const QString& text)
 
 // end of label
 
-ActionDelegate::ActionDelegate(QObject* object) : m_label(new LabelWithOptions)
+ActionDelegate::ActionDelegate(QObject* parent) : QStyledItemDelegate(parent), m_label(new LabelWithOptions)
 {
     // m_label->setVisible(true);
 }
@@ -80,7 +80,7 @@ ActionDelegate::ActionDelegate(QObject* object) : m_label(new LabelWithOptions)
 QWidget* ActionDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& option,
                                       const QModelIndex& index) const
 {
-
+    Q_UNUSED(option)
     auto listIcon= index.data(ActionOnListModel::PossibleIcon).toStringList();
     auto listname= index.data(ActionOnListModel::PossibleAction).toStringList();
 

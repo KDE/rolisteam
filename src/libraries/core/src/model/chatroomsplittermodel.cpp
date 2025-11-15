@@ -217,7 +217,7 @@ void ChatroomSplitterModel::moveLeft(const QString& id, int index)
 
 FilterInstantMessagingModel* ChatroomSplitterModel::modelFromIndex(quint64 i)
 {
-    if(i < 0 || i >= m_filterModels.size())
+    if(i >= m_filterModels.size())
         return nullptr;
 
     return m_filterModels[i].get();

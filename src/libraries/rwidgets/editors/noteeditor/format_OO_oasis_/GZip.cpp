@@ -563,6 +563,7 @@ void GZipWriterPrivate::addEntry(EntryType type, const QString& fileName,
 
     // don't compress small files
     QZipWriter::CompressionPolicy compression= compressionPolicy;
+    Q_UNUSED(compression)
     if(compressionPolicy == QZipWriter::AutoCompress)
     {
 #ifdef HAVE_ZLIB

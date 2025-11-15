@@ -200,6 +200,7 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
                 ctrl->setPreferences(m_preferences);
                 connect(ctrl, &MediaControllerBase::performCommand, this, &ContentController::performCommand);
                 connect(ctrl, &MediaControllerBase::popCommand, this, &ContentController::popCommand);
+                connect(ctrl, &MediaControllerBase::rollDiceCommand, this, &ContentController::rollDiceCommand);
                 emit mediaControllerCreated(ctrl);
                 sendOffMediaController(ctrl);
                 auto it= m_mediaUpdaters.find(ctrl->contentType());

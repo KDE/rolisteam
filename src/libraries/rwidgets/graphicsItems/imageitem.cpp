@@ -135,6 +135,7 @@ void ImageItem::initImage()
 
 void ImageItem::setModifiers(Qt::KeyboardModifiers modifiers)
 {
+    Q_UNUSED(modifiers)
     // m_modifiers= modifiers;
 }
 
@@ -153,6 +154,7 @@ void ImageItem::setModifiers(Qt::KeyboardModifiers modifiers)
 }*/
 VisualItem* ImageItem::promoteTo(vmap::VisualItemController::ItemType type)
 {
+    Q_UNUSED(type)
     /*if(type == CHARACTER)
     {
         QFileInfo info(m_imagePath);

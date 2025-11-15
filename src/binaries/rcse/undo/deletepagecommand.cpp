@@ -26,12 +26,12 @@ DeletePageCommand::DeletePageCommand(EditorController* ctrl, FieldModel* model, 
     // m_canvas = m_list[m_currentPage];
 
     m_model->getFieldFromPage(m_pageId, m_subField);
-    for(auto item : m_subField)
+    /*for(auto item : m_subField)
     {
         auto field= dynamic_cast<FieldController*>(item);
         //      m_subCanvas.append(dynamic_cast<Canvas*>(field->getCanvasField()->scene()));
         //    m_subCurrentPage.append(field->getPage());
-    }
+    }*/
     m_deleteField= new DeleteFieldCommand(m_subField, m_subCanvas, m_model, m_subCurrentPage, this);
 
     setText(QObject::tr("Delete Page #%1").arg(m_pageId + 1));

@@ -336,6 +336,7 @@ Qt::DropActions NonPlayableCharacterModel::supportedDropActions() const
 bool NonPlayableCharacterModel::dropMimeData(const QMimeData* data, Qt::DropAction action, int row, int column,
                                              const QModelIndex& parent)
 {
+    Q_UNUSED(parent)
     if(column != NonPlayableCharacterModel::ColAvatar || action == Qt::IgnoreAction)
         return false;
 

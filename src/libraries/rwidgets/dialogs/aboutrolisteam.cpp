@@ -39,7 +39,7 @@ constexpr auto versionSha1{"versionsha1"};
 constexpr auto versionDate{"versiondate"};
 } // namespace jsonkey
 
-AboutRolisteam::AboutRolisteam(QString versionText, QWidget* parent) : QDialog(parent), ui(new Ui::AboutRolisteam)
+AboutRolisteam::AboutRolisteam(QWidget* parent) : QDialog(parent), ui(new Ui::AboutRolisteam)
 {
     ui->setupUi(this);
     ui->m_textLabel->setText(QString("Rolisteam"));

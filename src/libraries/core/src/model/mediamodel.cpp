@@ -106,7 +106,7 @@ MediaNode* findNode(const QString& path, MediaNode* root)
     QStringList parents= buildParentList(path, rootPath);
 
     auto tmp= root;
-    for(const auto& currentPath : parents)
+    for(const auto& currentPath : std::as_const(parents))
     {
         auto const& children= tmp->children();
         auto it= std::find_if(std::begin(children), std::end(children),
@@ -190,7 +190,7 @@ QString MediaNode::parentPath() const
 void MediaNode::removeChild(int i)
 {
     Q_ASSERT(!m_children.empty());
-    Q_ASSERT(i < m_children.size());
+    Q_ASSERT(i < static_cast<int>(m_children.size()));
     m_children.erase(m_children.begin() + i);
 }
 
@@ -402,7 +402,7 @@ void MediaModel::addMediaNode(Media* media)
     MediaNode* parentNode= m_root.get();
     QModelIndex parentIdx;
     QStringList parents= buildParentList(getParentPath(path), m_root->path());
-    for(const auto& parent : parents)
+    for(const auto& parent : std::as_const(parents))
     {
         auto node= findNode(parent, m_root.get());
         int i= findIndexOf(parentNode, node);
@@ -491,7 +491,7 @@ void MediaModel::dataChangedFor(MediaNode* node)
     MediaNode* parentNode= m_root.get();
     QModelIndex parentIdx;
     QStringList parents= buildParentList(getParentPath(path), m_root->path());
-    for(const auto& parent : parents)
+    for(const auto& parent : std::as_const(parents))
     {
         auto node= findNode(parent, m_root.get());
         int i= findIndexOf(parentNode, node);

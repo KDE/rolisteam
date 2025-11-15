@@ -72,7 +72,7 @@ void Section::insertChild(TreeSheetItem* item, int pos)
     if(nullptr == item)
         return;
 
-    m_data.append(item->path(), item);
+    m_data.insert(pos, item->path(), item);
     item->setParent(this);
 }
 int Section::indexOfChild(TreeSheetItem* item)
@@ -126,6 +126,8 @@ QList<CSItem*> Section::allChildren() const
                 res << csItem;
         }
         break;
+        case TreeSheetItem::CellValue:
+            break;
         }
     }
 
@@ -197,7 +199,7 @@ QVariant Section::valueFrom(ColumnId col, int role) const
     return res;
 }
 
-void Section::setValueFrom(ColumnId col, const QVariant& data) {}
+void Section::setValueFrom(ColumnId, const QVariant&) {}
 
 void Section::copySection(Section* oldSection)
 {

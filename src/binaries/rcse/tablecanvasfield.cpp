@@ -147,7 +147,7 @@ TableCanvasField::TableCanvasField(TableFieldController* field)
 }
 TableCanvasField::~TableCanvasField() {}
 
-void TableCanvasField::setMenu(QMenu& menu)
+void TableCanvasField::setMenu(QMenu&)
 {
     // menu.addAction(m_defineColumns);
 }

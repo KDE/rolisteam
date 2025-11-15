@@ -261,7 +261,7 @@ void TextItem::wheelEvent(QGraphicsSceneWheelEvent* event)
     if(!m_textCtrl)
         return;
 
-    if(!event->modifiers() & Qt::ControlModifier)
+    if(!(event->modifiers() & Qt::ControlModifier))
         VisualItem::wheelEvent(event);
 
     event->delta() > 0 ? m_textCtrl->increaseFontSize() : m_textCtrl->decreaseFontSize();
@@ -336,7 +336,7 @@ void TextItem::addActionContextMenu(QMenu& menu)
 
 void TextItem::sizeToTheContent()
 {
-    QRectF rectItem= m_textItem->boundingRect();
+    // QRectF rectItem= m_textItem->boundingRect();
     /*  setTransformOriginPoint(m_rect.center());
       if(rectItem.height() < m_rect.height() + 10)
       {

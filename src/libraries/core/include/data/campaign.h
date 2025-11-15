@@ -24,7 +24,6 @@
 #include <QString>
 #include <memory>
 
-#include "media/mediatype.h"
 #include <core_global.h>
 
 #include "model/characterstatemodel.h"
@@ -39,7 +38,7 @@ class Media;
 class NonPlayableCharacterModel;
 constexpr auto TRASH_FOLDER{".trash"};
 constexpr auto MODEL_FILE{"data.json"};
-// constexpr auto THEME_FILE{"theme.json"};
+constexpr auto THEME_FILE{"theme.json"};
 constexpr auto FIRST_AUDIO_PLAYER_FILE{"audioplayer1.json"};
 constexpr auto SECOND_AUDIO_PLAYER_FILE{"audioplayer2.json"};
 constexpr auto THIRD_AUDIO_PLAYER_FILE{"audioplayer3.json"};

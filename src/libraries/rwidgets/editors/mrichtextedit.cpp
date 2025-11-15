@@ -104,15 +104,15 @@ MRichTextEdit::MRichTextEdit(QWidget* parent) : QWidget(parent), m_ui(new Ui::MR
 
     // link
 
-    m_ui->f_link->setShortcut(Qt::CTRL + Qt::Key_L);
+    m_ui->f_link->setShortcut(Qt::CTRL | Qt::Key_L);
 
     connect(m_ui->f_link, SIGNAL(clicked(bool)), this, SLOT(textLink(bool)));
 
     // bold, italic & underline
 
-    m_ui->f_bold->setShortcut(Qt::CTRL + Qt::Key_B);
-    m_ui->f_italic->setShortcut(Qt::CTRL + Qt::Key_I);
-    m_ui->f_underline->setShortcut(Qt::CTRL + Qt::Key_U);
+    m_ui->f_bold->setShortcut(Qt::CTRL | Qt::Key_B);
+    m_ui->f_italic->setShortcut(Qt::CTRL | Qt::Key_I);
+    m_ui->f_underline->setShortcut(Qt::CTRL | Qt::Key_U);
 
     connect(m_ui->f_bold, SIGNAL(clicked()), this, SLOT(textBold()));
     connect(m_ui->f_italic, SIGNAL(clicked()), this, SLOT(textItalic()));
@@ -142,24 +142,23 @@ MRichTextEdit::MRichTextEdit(QWidget* parent) : QWidget(parent), m_ui(new Ui::MR
 
     // lists
 
-    m_ui->f_list_bullet->setShortcut(Qt::CTRL + Qt::Key_Minus);
-    m_ui->f_list_ordered->setShortcut(Qt::CTRL + Qt::Key_Equal);
+    m_ui->f_list_bullet->setShortcut(Qt::CTRL | Qt::Key_Minus);
+    m_ui->f_list_ordered->setShortcut(Qt::CTRL | Qt::Key_Equal);
 
     connect(m_ui->f_list_bullet, SIGNAL(clicked(bool)), this, SLOT(listBullet(bool)));
     connect(m_ui->f_list_ordered, SIGNAL(clicked(bool)), this, SLOT(listOrdered(bool)));
 
     // indentation
 
-    m_ui->f_indent_dec->setShortcut(Qt::CTRL + Qt::Key_Comma);
-    m_ui->f_indent_inc->setShortcut(Qt::CTRL + Qt::Key_Period);
+    m_ui->f_indent_dec->setShortcut(Qt::CTRL | Qt::Key_Comma);
+    m_ui->f_indent_inc->setShortcut(Qt::CTRL | Qt::Key_Period);
 
     connect(m_ui->f_indent_inc, SIGNAL(clicked()), this, SLOT(increaseIndentation()));
     connect(m_ui->f_indent_dec, SIGNAL(clicked()), this, SLOT(decreaseIndentation()));
 
     // font size
 
-    QFontDatabase db;
-    for(int& size : db.standardSizes())
+    for(int& size : QFontDatabase::standardSizes())
         m_ui->f_fontsize->addItem(QString::number(size));
 
     connect(m_ui->f_fontsize, &QComboBox::activated, this, [this](int) { textSize(m_ui->f_fontsize->currentText()); });
@@ -366,7 +365,7 @@ void MRichTextEdit::textStyle(int index)
     if(index == ParagraphMonospace)
     {
         fmt= cursor.charFormat();
-        fmt.setFontFamily("Monospace");
+        fmt.setFontFamilies({"Monospace"});
         fmt.setFontStyleHint(QFont::Monospace);
         fmt.setFontFixedPitch(true);
     }

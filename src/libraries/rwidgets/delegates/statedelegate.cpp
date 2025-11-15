@@ -29,6 +29,8 @@ StateDelegate::StateDelegate(CharacterStateModel* states, QObject* object)
 QWidget* StateDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem& option,
                                      const QModelIndex& index) const
 {
+    Q_UNUSED(option)
+    Q_UNUSED(index)
     auto wid= new QComboBox(parent);
     wid->setModel(m_stateModel);
     return wid;

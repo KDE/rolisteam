@@ -59,7 +59,7 @@ const QList<QPointer<CharacterVision>>& SightController::visionData() const
     return m_visions;
 }
 
-void SightController::setCorner(const QPointF& move, int corner, Core::TransformType tt) {}
+void SightController::setCorner(const QPointF&, int, Core::TransformType) {}
 
 void SightController::endGeometryChange() {}
 

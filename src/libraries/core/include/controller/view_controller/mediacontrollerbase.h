@@ -25,7 +25,6 @@
 #include <QObject>
 #include <QPointer>
 #include <QUrl>
-#include <memory>
 
 #include <core_global.h>
 #include <media/mediatype.h>
@@ -104,6 +103,7 @@ signals:
     void dataTypeChanged();
     void staticDataChanged();
     void sharingChanged();
+    void rollDiceCommand(QStringList list, QString cmd);
 
 public slots:
     void setName(const QString& name);

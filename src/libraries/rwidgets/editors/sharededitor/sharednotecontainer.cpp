@@ -37,10 +37,6 @@ SharedNoteContainer::SharedNoteContainer(SharedNoteController* ctrl, QWidget* pa
     setWidget(m_edit.get());
     setWindowIcon(QIcon::fromTheme("sharedEditor"));
     // m_edit->setFileName(getUriName());
-
-    connect(m_sharedCtrl, &SharedNoteController::ownerIdChanged, m_edit.get(), &SharedNote::setOwnerId);
-
-    m_edit->setOwnerId(m_sharedCtrl->ownerId());
 }
 
 /*void SharedNoteContainer::updateNoteToAll()

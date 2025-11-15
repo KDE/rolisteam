@@ -82,9 +82,6 @@ public:
     ParticipantModel::Permission permissionFor(const QModelIndex& index);
     ParticipantModel::Permission permissionFor(const QString& id);
 
-    void saveModel(QJsonObject& root);
-    void loadModel(QJsonObject& root);
-
 public slots:
     virtual void addNewPlayer(Player*);
     virtual void removePlayer(Player*);

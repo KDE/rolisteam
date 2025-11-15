@@ -125,8 +125,8 @@ QString eventToText(QKeyEvent* event)
     return result.join("+");
 }
 
-RolisteamApplication::RolisteamApplication(const QString& appName, const QString& version, int& argn, char* argv[])
-    : QApplication(argn, argv), m_game(GameController(appName, version, clipboard()))
+RolisteamApplication::RolisteamApplication(const QString& appName, int& argn, char* argv[])
+    : QApplication(argn, argv), m_game(GameController(appName, clipboard()))
 {
     setAttribute(Qt::AA_DontUseNativeMenuBar, true);
     connect(&m_game, &GameController::closingApp, this, [this]() { emit quitApp(); });
@@ -149,7 +149,7 @@ RolisteamApplication::RolisteamApplication(const QString& appName, const QString
     setOrganizationName(appName);
     setWindowIcon(QIcon(":/resources/rolisteam/logo/500-symbole.png")); // QIcon::fromTheme("500-symbole"));
 
-    setApplicationVersion(version);
+    setApplicationVersion(version::FULL_VERSION);
     readSettings();
 #ifdef QT_DEBUG
     // create remote object node

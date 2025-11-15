@@ -20,7 +20,7 @@
 #ifndef ADDITEMCOMMAND_H
 #define ADDITEMCOMMAND_H
 
-#include <QCoreApplication>>
+#include <QCoreApplication>
 #include <QPointer>
 #include <QUndoCommand>
 

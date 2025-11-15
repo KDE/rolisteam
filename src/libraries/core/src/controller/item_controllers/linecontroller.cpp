@@ -93,6 +93,7 @@ QRectF LineController::rect() const
 
 void LineController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
+    Q_UNUSED(tt)
     switch(corner)
     {
     case Start:

@@ -103,6 +103,7 @@ QRectF EllipseController::rect() const
 
 void EllipseController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
+    Q_UNUSED(tt)
     if(move.isNull())
         return;
 

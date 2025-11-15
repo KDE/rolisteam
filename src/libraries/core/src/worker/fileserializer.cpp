@@ -102,7 +102,7 @@ Core::MediaType FileSerializer::typeFromExtention(const QString& filename)
     auto ext= info.suffix();
 
     auto keys= hash.keys();
-    for(auto type : keys)
+    for(auto type : std::as_const(keys))
     {
         auto set= hash[type];
         if(set.contains(ext))
@@ -278,6 +278,7 @@ QFuture<bool> FileSerializer::writeFileIntoCampaign(const QString& destination, 
 QFuture<bool> FileSerializer::saveMediaController(MediaControllerBase* ctrl, const QString& id,
                                                   const QString& destination)
 {
+    Q_UNUSED(id)
     return campaign::FileSerializer::writeFileIntoCampaign(destination, IOHelper::saveController(ctrl));
 }
 
@@ -441,6 +442,9 @@ bool FileSerializer::hasContent(const QString& path, Core::CampaignDataCategory 
     case Core::CampaignDataCategory::AntagonistList:
         list.append(campaign::CHARACTER_ROOT);
         list.append(campaign::CHARACTER_MODEL);
+        break;
+    case Core::CampaignDataCategory::Themes:
+        list.append(campaign::THEME_FILE);
         break;
     }
 

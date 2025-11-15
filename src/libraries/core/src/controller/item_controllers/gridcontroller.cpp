@@ -65,7 +65,7 @@ void GridController::aboutToBeRemoved()
     emit removeItem();
 }
 
-void GridController::setCorner(const QPointF& move, int corner, Core::TransformType tt) {}
+void GridController::setCorner(const QPointF&, int, Core::TransformType) {}
 
 void GridController::endGeometryChange() {}
 

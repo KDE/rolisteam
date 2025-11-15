@@ -165,6 +165,9 @@ SelectConnectionProfileDialog::~SelectConnectionProfileDialog()
 
 void SelectConnectionProfileDialog::setArgumentProfile(QString host, int port, QByteArray password)
 {
+    Q_UNUSED(host)
+    Q_UNUSED(port)
+    Q_UNUSED(password)
     /*  ConnectionProfile* fromURL= new ConnectionProfile();
       fromURL->setTitle(tr("From URL"));
       fromURL->setName(tr("Unknown"));

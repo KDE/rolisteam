@@ -37,7 +37,7 @@ class RolisteamApplication : public QApplication
 {
     Q_OBJECT
 public:
-    RolisteamApplication(const QString& appName, const QString& version, int& argn, char* argv[]);
+    RolisteamApplication(const QString& appName, int& argn, char* argv[]);
 
     bool notify(QObject* receiver, QEvent* e);
 

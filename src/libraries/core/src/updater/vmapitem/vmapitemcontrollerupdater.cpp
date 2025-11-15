@@ -25,7 +25,7 @@
 #include "data/charactervision.h"
 #include "network/networkmessagereader.h"
 
-VMapItemControllerUpdater::VMapItemControllerUpdater(QObject* parent)
+VMapItemControllerUpdater::VMapItemControllerUpdater(QObject* parent) : QObject(parent)
 {
     // Force template generation
     /*sendOffVMapChanges<QRectF>(nullptr, "");

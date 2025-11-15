@@ -102,7 +102,8 @@ int main(int argc, char** argv)
 
     QQmlApplicationEngine qmlEngine;
     QObject::connect(&qmlEngine, &QQmlApplicationEngine::objectCreated, &qmlEngine,
-                     [](QObject* obj, const QUrl& url) { qDebug() << "object created: " << obj->objectName() << obj; });
+                     [](QObject* obj, const QUrl& url)
+                     { qDebug() << "object created: " << obj->objectName() << obj << url; });
     qmlEngine.addImportPath(QStringLiteral("qrc:/qml"));
     qmlEngine.addImportPath(QStringLiteral("qrc:/qml/rolistyle"));
     auto provider= new mindmap::NodeImageProvider(main.imgModel());

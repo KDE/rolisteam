@@ -20,9 +20,7 @@
 #include "data/campaigneditor.h"
 
 #include "data/campaign.h"
-#include "data/character.h"
 #include "data/media.h"
-#include "data/rolisteamtheme.h"
 #include "model/characterstatemodel.h"
 #include "model/nonplayablecharactermodel.h"
 #include "utils/iohelper.h"
@@ -139,6 +137,7 @@ bool CampaignEditor::loadDiceAlias(const QString& source)
 bool CampaignEditor::loadStates(const QString& source, const QString& srcDir, const QString& dest,
                                 const QString& destDir)
 {
+    Q_UNUSED(dest)
     if(!m_campaign)
         return false;
 
@@ -163,6 +162,7 @@ bool CampaignEditor::loadStates(const QString& source, const QString& srcDir, co
 bool CampaignEditor::loadNpcData(const QString& source, const QString& srcDir, const QString& dest,
                                  const QString& destDir)
 {
+    Q_UNUSED(dest)
     if(!m_campaign)
         return false;
 

@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
     QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme");
 
     { // Server/GM
-        auto controller= new GameController("Server", "1.0.0", QGuiApplication::clipboard());
+        auto controller= new GameController("Server", QGuiApplication::clipboard());
         auto network= controller->networkController();
         auto pro= network->currentProfile();
         pro->setServerMode(true);

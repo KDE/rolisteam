@@ -41,7 +41,7 @@ public:
      * @param version
      * @param parent
      */
-    explicit AboutRolisteam(QString version, QWidget* parent= 0);
+    explicit AboutRolisteam(QWidget* parent= 0);
     /**
      * @brief ~AboutRolisteam
      */

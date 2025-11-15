@@ -144,6 +144,7 @@ void PathController::endGeometryChange()
 
 void PathController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
+    Q_UNUSED(tt)
     if(m_points.empty())
         return;
     if(corner != qBound(0, corner, static_cast<int>(m_points.size() - 1)))

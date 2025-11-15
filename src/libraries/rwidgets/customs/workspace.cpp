@@ -71,7 +71,7 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
 
     if(m_instantCtrl)
     {
-        m_instantView = new InstantMessagingView(m_instantCtrl);
+        m_instantView= new InstantMessagingView(m_instantCtrl);
         m_instantMessageView= addSubWindow(m_instantView);
         m_instantMessageView->setGeometry(0, 0, 400, 600);
         m_instantMessageView->setAttribute(Qt::WA_DeleteOnClose, false);
@@ -84,19 +84,22 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
         connect(m_prevent.get(), &PreventClosing::visibilityObjectChanged, m_instantCtrl,
                 &InstantMessagingController::setVisible);
 
-        connect(m_instantCtrl, &InstantMessagingController::detachChanged, this, [this](){
-            if(m_instantCtrl->detached())
+        connect(
+            m_instantCtrl, &InstantMessagingController::detachChanged, this,
+            [this]()
             {
-                m_instantMessageView->setParent(nullptr);
-                m_instantMessageView->setVisible(true);
-            }
-            else
-            {
-                addSubWindow(m_instantMessageView);
-                m_instantMessageView->setVisible(true);
-            }
-        }, Qt::QueuedConnection);
-
+                if(m_instantCtrl->detached())
+                {
+                    m_instantMessageView->setParent(nullptr);
+                    m_instantMessageView->setVisible(true);
+                }
+                else
+                {
+                    addSubWindow(m_instantMessageView);
+                    m_instantMessageView->setVisible(true);
+                }
+            },
+            Qt::QueuedConnection);
     }
     if(m_ctrl)
         m_backgroundPicture= QPixmap(m_ctrl->workspaceFilename());
@@ -295,7 +298,7 @@ bool Workspace::updateTitleTab()
     int textLength= m_ctrl->maxLengthTabName();
     if((viewMode() == QMdiArea::TabbedView) && (shortName))
     {
-        /*auto values= m_actionSubWindowMap->values();
+        auto values= subWindowList(QMdiArea::CreationOrder);
         for(auto& subwindow : values)
         {
             auto title= subwindow->windowTitle();
@@ -305,7 +308,7 @@ bool Workspace::updateTitleTab()
                 title= title.left(textLength);
                 subwindow->setWindowTitle(title);
             }
-        }*/
+        }
     }
     else
     {

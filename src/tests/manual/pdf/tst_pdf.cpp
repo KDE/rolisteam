@@ -12,7 +12,7 @@
 #include <common_qml/theme.h>
 
 #include "controller/view_controller/pdfcontroller.h"
-#include "model/playermodel.h"
+//#include "model/playermodel.h"
 #include "test_root_path.h"
 
 int main(int argc, char* argv[])
@@ -28,8 +28,8 @@ int main(int argc, char* argv[])
     QQuickStyle::setFallbackStyle("Fusion");
     QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme");
 
-    PlayerModel* pmodel= new PlayerModel();
-    // auto model= new RemotePlayerModel(pmodel);
+    // PlayerModel* pmodel= new PlayerModel();
+    //  auto model= new RemotePlayerModel(pmodel);
 
     campaign::CampaignManager campaignManager(nullptr);
     campaignManager.openCampaign(QUrl(QString("file://%1/manual/pdf/campaign").arg(tests::root_path)));

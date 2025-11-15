@@ -121,7 +121,11 @@ public:
         }
         return false;
     }
-    bool isValid() { return doc.setContent(stream(), false, 0, 0, 0); }
+    bool isValid()
+    {
+        auto result= doc.setContent(stream(), QDomDocument::ParseOption::UseNamespaceProcessing);
+        return static_cast<bool>(result);
+    }
     QDomDocument Dom() { return doc; }
 
     QIODevice* device() { return d; }

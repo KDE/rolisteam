@@ -68,7 +68,7 @@ void SetBackgroundCommand::redo()
 
 AddBackGroundImagesCommand::AddBackGroundImagesCommand(EditorController* ctrl, const QList<QImage>& images,
                                                        QUndoCommand* parent)
-    : m_ctrl(ctrl), m_images(images)
+    : QUndoCommand(parent), m_ctrl(ctrl), m_images(images)
 {
 
     for(int i= m_ctrl->pageCount(); i < images.size(); ++i)

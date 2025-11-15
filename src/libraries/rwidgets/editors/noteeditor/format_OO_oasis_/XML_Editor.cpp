@@ -19,26 +19,23 @@ XMLTextEdit::XMLTextEdit(QWidget* parent) : QTextEdit(parent)
 bool XMLTextEdit::Conform()
 {
     QString errorStr;
-    int errorLine, errorColumn;
     QDomDocument doc;
-    return doc.setContent(text(), false, &errorStr, &errorLine, &errorColumn);
+    return doc.setContent(text()) ? true : false;
 }
 
 QDomDocument XMLTextEdit::xml_document()
 {
     QString errorStr;
-    int errorLine, errorColumn;
     QDomDocument doc;
-    doc.setContent(text(), false, &errorStr, &errorLine, &errorColumn);
+    doc.setContent(text());
     return doc;
 }
 
 void XMLTextEdit::setPlainText(const QString txt)
 {
     QString errorStr;
-    int errorLine, errorColumn;
     QDomDocument doc;
-    if(!doc.setContent(txt, false, &errorStr, &errorLine, &errorColumn))
+    if(!doc.setContent(txt))
     {
         QTextEdit::setPlainText(txt);
     }
@@ -53,18 +50,16 @@ void XMLTextEdit::Syntaxcheck()
     if(text().size() > 0)
     {
         QString errorStr;
-        int errorLine, errorColumn;
         QDomDocument doc;
-        if(!doc.setContent(text(), false, &errorStr, &errorLine, &errorColumn))
+        auto t= doc.setContent(text());
+        if(!t)
         {
             //////return doc.toString(5);
-            QMessageBox::information(
-                0, tr("Found xml error"),
-                tr("Check line %1 column %2 on string \"%3\"!").arg(errorLine - 1).arg(errorColumn - 1).arg(errorStr));
-
-            if(errorLine >= 0)
-            {
-            }
+            QMessageBox::information(0, tr("Found xml error"),
+                                     tr("Check line %1 column %2 on string \"%3\"!")
+                                         .arg(t.errorLine - 1)
+                                         .arg(t.errorColumn - 1)
+                                         .arg(t.errorMessage));
         }
         else
         {

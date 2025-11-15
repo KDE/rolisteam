@@ -345,7 +345,7 @@ QString NameGeneratorWidget::buildName(const QJsonObject& json)
         bool lastIndex= result.size() + 1 == len ? true : false;
         bool beforeLast= ((result.size() + 2) == len) ? true : false;
         QString duo;
-        if(result.count() == 1)
+        if(result.size() == 1)
         {
             duo= "0" + result;
         }

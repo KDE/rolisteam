@@ -185,6 +185,7 @@ QModelIndex CharacterSheetModel::parent(const QModelIndex& index) const
 
 TreeSheetItem* CharacterSheetModel::getProperItem(int row, int column, TreeSheetItem* field) const
 {
+    Q_UNUSED(row)
     CharacterSheet* sheet= getCharacterSheet(column - 1);
     if(!sheet || !field)
         return {};
@@ -757,7 +758,7 @@ void CharacterSheetModel::readModel(const QJsonObject& jsonObj, bool readRootSec
         m_rootSection->load(data);
     }
     QJsonArray characters= jsonObj["characters"].toArray();
-    for(const auto charJson : characters)
+    for(const auto charJson : std::as_const(characters))
     {
         qDebug() << "read characterfrom json";
         QJsonObject obj= charJson.toObject();

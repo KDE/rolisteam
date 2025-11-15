@@ -34,7 +34,6 @@
 #include "controller/view_controller/sharednotecontroller.h"
 #include "document.h"
 #include "enu.h"
-#include "utilities.h"
 
 SharedNote::SharedNote(SharedNoteController* ctrl, QWidget* parent)
     : QMainWindow(parent), m_sharedCtrl(ctrl), ui(new Ui::SharedNote)
@@ -52,13 +51,15 @@ SharedNote::SharedNote(SharedNoteController* ctrl, QWidget* parent)
     {
         if(!m_sharedCtrl)
             return;
-        setWindowTitle(tr("%1 - Shared Note Editor").arg(m_sharedCtrl->name()));
+
+        setWindowTitle(tr("%1[*] - Shared Note Editor (%2)")
+                           .arg(m_sharedCtrl->name(), m_sharedCtrl->permission() == ParticipantModel::readWrite ?
+                                                          tr("ReadWrite") :
+                                                          tr("ReadOnly")));
     };
 
     connect(m_sharedCtrl, &SharedNoteController::nameChanged, this, func);
-
-    connect(pane, &ParticipantsPane::memberCanNowRead, this, &SharedNote::populateDocumentForUser);
-    connect(pane, &ParticipantsPane::memberPermissionsChanged, this, &SharedNote::playerPermissionsChanged);
+    connect(m_sharedCtrl, &SharedNoteController::permissionChanged, this, func);
     connect(m_document, &Document::contentChanged, this, [this]() { setWindowModified(true); });
 
     findDialog= new FindDialog(this);
@@ -149,21 +150,7 @@ void SharedNote::closeEvent(QCloseEvent*)
     // bool okToQuit = true;
     /// @warning do something
 }
-void SharedNote::populateDocumentForUser(QString id)
-{
-    /*NetworkMessageWriter msg(NetMsg::SharedNoteCategory, NetMsg::updateTextAndPermission, NetworkMessage::OneOrMany);
-    QStringList ids;
-    ids << id;
-    msg.setRecipientList(ids, NetworkMessage::OneOrMany);
-    msg.string8(m_id);
-    m_document->fill(&msg);
-    msg.sendToServer();*/
-}
 
-void SharedNote::setOwnerId(const QString& id)
-{
-    updateWindowTitle();
-}
 bool SharedNote::eventFilter(QObject*, QEvent* event)
 {
     if(event->type() == QEvent::FileOpen)
@@ -319,14 +306,6 @@ void SharedNote::displaySharingPanel()
     m_document->displayParticipantPanel();
 }
 
-void SharedNote::updateDocumentToAll(NetworkMessageWriter* msg)
-{
-    /* if(nullptr != m_document)
-     {
-         m_document->fill(msg);
-     }*/
-}
-
 void SharedNote::on_actionText_Shift_Left_triggered()
 {
     m_document->shiftLeft();
@@ -409,16 +388,6 @@ void SharedNote::findReplaceTriggered(QString find, QString replace, Qt::CaseSen
     m_document->findReplace(find, replace, sensitivity, wrapAround, mode);
 }
 
-void SharedNote::playerPermissionsChanged(QString id, int perm)
-{
-    // QString toSend = QString("updateperm:%1").arg(permissions);
-    /*NetworkMessageWriter msg(NetMsg::SharedNoteCategory, NetMsg::updatePermissionOneUser);
-    msg.string8(m_id); // MediaId
-    msg.string8(id);   // playerId
-    msg.int8(perm);    // Permission
-    msg.sendToServer();*/
-}
-
 void SharedNote::setEditorFont(QFont font)
 {
     m_document->setEditorFont(font);
@@ -437,16 +406,6 @@ QString SharedNote::id() const
 void SharedNote::setId(const QString& id)
 {
     m_id= id;
-}
-
-void SharedNote::updateWindowTitle()
-{
-
-    /*PlayerModel* list= PlayerModel::instance();
-    Player* player= list->getLocalPlayer();
-    setWindowTitle(
-        tr("%1[*] - SharedNote - %2").arg(m_fileName, m_document->canWrite(player) ? tr("ReadWrite") :
-    tr("ReadOnly")));*/
 }
 
 void SharedNote::on_m_markdownPreview_triggered()

@@ -402,7 +402,11 @@ void NetworkController::kickUser(const QString& uuid, const QString& playerId)
     msg.sendToServer();
 }
 
-void NetworkController::addChannel(const QString& parentId) {}
+void NetworkController::addChannel(const QString& parentId)
+{
+    Q_UNUSED(parentId)
+    // TODO implement me
+}
 
 void NetworkController::resetChannel(const QString& channelId)
 {

@@ -114,8 +114,7 @@ void NodeStyleModel::initStyles()
     std::transform(colors.begin(), colors.end(), std::back_inserter(m_styles),[](const QString& colorstr) -> std::unique_ptr<NodeStyle> {
         QColor one(Qt::white);
         QColor text(Qt::black);
-        QColor color;
-        color.setNamedColor(colorstr);
+        QColor color = QColor::fromString(colorstr);
         auto style = new NodeStyle();
         style->setColorOne(one);
         style->setColorTwo(color);
@@ -127,8 +126,7 @@ void NodeStyleModel::initStyles()
     std::transform(colors.begin(), colors.end(), std::back_inserter(m_styles),[](const QString& colorstr){
         QColor one(Qt::black);
         QColor text(Qt::white);
-        QColor color;
-        color.setNamedColor(colorstr);
+        QColor color = QColor::fromString(colorstr);
         auto style = new NodeStyle();
         style->setColorOne(color);
         style->setColorTwo(one);

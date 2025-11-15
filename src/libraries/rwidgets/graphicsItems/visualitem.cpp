@@ -264,6 +264,9 @@ void VisualItem::keyPressEvent(QKeyEvent* event)
 
 void VisualItem::resizeContents(const QRectF& rect, int pointId, Core::TransformType transformType)
 {
+    Q_UNUSED(rect)
+    Q_UNUSED(pointId)
+    Q_UNUSED(transformType)
     /*    if(!rect.isValid() || isHoldSize())
         {
             return;
@@ -318,7 +321,10 @@ qreal VisualItem::opacityValue()
     return isGM ? m_ctrl->opacity() : isGmLayer ? 0.0 : m_ctrl->opacity();
 }
 
-void VisualItem::addActionContextMenu(QMenu& menu) {}
+void VisualItem::addActionContextMenu(QMenu& menu)
+{
+    Q_UNUSED(menu)
+}
 
 bool VisualItem::hasFocusOrChild()
 {

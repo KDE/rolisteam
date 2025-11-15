@@ -43,6 +43,7 @@ int TreeSheetItem::childrenCount() const
 
 TreeSheetItem* TreeSheetItem::childFromId(const QString& id) const
 {
+    Q_UNUSED(id)
     return nullptr;
 }
 

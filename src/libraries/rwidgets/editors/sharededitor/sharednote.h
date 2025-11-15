@@ -29,8 +29,6 @@
 //#include "preferencesdialog.h"
 
 class Player;
-class NetworkMessageReader;
-class NetworkMessageWriter;
 class SharedNoteController;
 
 namespace Ui
@@ -59,17 +57,12 @@ public:
     void writeSettings();
 
     void displaySharingPanel();
-    void setOwnerId(const QString& id);
 
     QString id() const;
     void setId(const QString& id);
 
 public slots:
-    void updateDocumentToAll(NetworkMessageWriter* msg);
     void textHasChanged(int pos, int charsRemoved, int charsAdded);
-
-    void playerPermissionsChanged(QString, int);
-    void populateDocumentForUser(QString id);
 
 protected:
     void closeEvent(QCloseEvent* event);

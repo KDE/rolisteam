@@ -232,7 +232,7 @@ int TableModel::indexOf(TreeSheetItem* item) const
 
     //    QList<QList<CellData*>> m_data;
     res= m_columns.size();
-    for(auto line : m_data)
+    for(const auto &line : m_data)
     {
         auto idx= line.indexOf(item);
 
@@ -449,6 +449,7 @@ void TableModel::loadDataItem(const QJsonArray& json, TreeSheetItem* parent)
 
 void TableModel::setChildFieldData(const QJsonObject& json)
 {
+    Q_UNUSED(json)
     /* for(auto& line : m_lines)
      {
          auto field= line->getFieldById(json["id"].toString());

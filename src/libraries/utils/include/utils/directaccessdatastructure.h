@@ -85,6 +85,13 @@ public:
         m_keys.append(key);
     };
 
+    void insert(int i, const T& key, const Y& value)
+    {
+        QWriteLocker locker(&m_lock);
+        m_data.insert(key, value);
+        m_keys.insert(i, key);
+    };
+
     void swapItemsAt(qsizetype i, qsizetype j)
     {
         if(i < 0 || i > m_keys.size() || j > m_keys.size() || j < 0)

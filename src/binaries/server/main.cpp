@@ -96,9 +96,6 @@ int main(int argc, char* argv[])
     app.setApplicationName(appName);
     app.setApplicationVersion(version::version);
 
-    // QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
-    // QString locale = QLocale::system().name();
-
     QCommandLineParser parser;
     parser.addHelpOption();
     parser.addVersionOption();
@@ -149,8 +146,8 @@ int main(int argc, char* argv[])
     new RolisteamDaemonAdaptor(&deamon);
 
     QDBusConnection connection= QDBusConnection::sessionBus();
-    bool rel= connection.registerService("org.rolisteam.server");
-    rel= connection.registerObject("/", &deamon);
+    connection.registerService("org.rolisteam.server");
+    connection.registerObject("/", &deamon);
 #endif
 
     if(askPrint)

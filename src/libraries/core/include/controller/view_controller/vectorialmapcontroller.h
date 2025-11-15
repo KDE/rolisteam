@@ -146,6 +146,7 @@ public:
     void normalizeSize(const QList<vmap::VisualItemController*>& list, Method method, const QPointF& mousePos);
     bool pasteData(const QMimeData& data) override;
     void setDiceParser(DiceRoller* parser);
+
 public slots:
     void showTransparentItems();
     void hideOtherLayers(bool b);
@@ -192,7 +193,6 @@ signals:
     void visualItemControllerCreated(vmap::VisualItemController* ctrl);
     void visualItemControllersRemoved(const QStringList& ids);
     void itemHasBeenStacked(const QStringList& first, const QStringList& second, bool network);
-
     void sendOffHighLightAt(const QPointF& p, const qreal& penSize, const QColor& color);
     void highLightAt(const QPointF& p, const qreal& penSize, const QColor& color);
 

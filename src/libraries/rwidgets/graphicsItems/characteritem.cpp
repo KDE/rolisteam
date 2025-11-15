@@ -45,6 +45,7 @@
 
 void updateListAlias(QList<DiceAlias*>& list)
 {
+    Q_UNUSED(list)
     /*auto preferences= PreferencesManager::getInstance();
     list.clear();
     int size= preferences->value("DiceAliasNumber", 0).toInt();
@@ -466,6 +467,7 @@ void CharacterItem::addChildPoint(ChildPointItem* item)
 
 void CharacterItem::wheelEvent(QGraphicsSceneWheelEvent* event)
 {
+    Q_UNUSED(event)
     /*    if((nullptr != m_character) && (event->modifiers() & Qt::AltModifier))
         {
             auto hp= m_character->getHealthPointsCurrent();

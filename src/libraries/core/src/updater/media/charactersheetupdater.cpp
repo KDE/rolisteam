@@ -219,6 +219,8 @@ void CharacterSheetUpdater::setUpFieldUpdate(CharacterSheet* sheet) const
 
 void CharacterSheetUpdater::updateTableFieldCell(CharacterSheet* sheet, const QString& path, int r, int c)
 {
+    Q_UNUSED(r)
+    Q_UNUSED(c)
     if(nullptr == sheet)
         return;
 

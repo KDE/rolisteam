@@ -232,6 +232,7 @@ void CampaignView::onAddChapter()
 
 void CampaignView::setCurrentChapter(const QString& chapter)
 {
+    Q_UNUSED(chapter)
     // if()
 }
 

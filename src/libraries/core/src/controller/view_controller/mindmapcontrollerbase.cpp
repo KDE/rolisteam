@@ -169,6 +169,8 @@ void MindMapControllerBase::setErrorMsg(const QString& msg)
 
 void MindMapControllerBase::importFile(const QString& path)
 {
+    Q_UNUSED(path)
+    // TODO implement me
     clearData();
     /*  if(!FileSerializer::readTextFile(m_itemModel.get(), path))
           setErrorMsg(tr("File can't be loaded: %1").arg(m_filename));*/
@@ -375,6 +377,10 @@ void MindMapControllerBase::addItem(mindmap::MindItem* node, bool network)
 
 bool MindMapControllerBase::pasteData(const QMimeData& mimeData)
 {
+    Q_UNUSED(mimeData);
+    // TODO implement me
+    // if image and one item is selected
+    // or text
     return false;
 }
 

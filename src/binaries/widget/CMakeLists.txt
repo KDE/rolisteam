@@ -48,7 +48,7 @@ add_executable(rolisteam WIN32 ${SOURCES} ${HEADERS} ${UIS} ${RESOURCE_FILES} ${
 qt6_add_statecharts(rolisteam applicationstate.scxml)
 target_include_directories(rolisteam PRIVATE ../../libraries ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 set_target_properties(rolisteam PROPERTIES WIN32_EXECUTABLE on MACOSX_BUNDLE on)
-
+target_include_directories(rolisteam PRIVATE ${CMAKE_BINARY_DIR})
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
 qt_add_repc_replicas(rolisteam
     maincontrollersource.rep

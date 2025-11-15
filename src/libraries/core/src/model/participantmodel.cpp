@@ -204,6 +204,7 @@ int ParticipantModel::rowCount(const QModelIndex& parent) const
 
 int ParticipantModel::columnCount(const QModelIndex& parent) const
 {
+    Q_UNUSED(parent)
     return 1;
 }
 
@@ -410,7 +411,7 @@ void ParticipantModel::setPlayerPermission(const QString& id, ParticipantModel::
     setPlayerInto(itemIdx, level);
 }
 
-void ParticipantModel::saveModel(QJsonObject& root)
+/*void ParticipantModel::saveModel(QJsonObject& root)
 {
 
     QJsonArray array;
@@ -436,7 +437,7 @@ void ParticipantModel::saveModel(QJsonObject& root)
 }
 void ParticipantModel::loadModel(QJsonObject& root)
 {
-    /*PlayerModel* playerList= PlayerModel::instance();
+    PlayerModel* playerList= PlayerModel::instance();
 
     QJsonArray hidden= root["hidden"].toArray();
     QJsonArray readOnly= root["readOnly"].toArray();
@@ -465,5 +466,5 @@ void ParticipantModel::loadModel(QJsonObject& root)
         Player* p= dynamic_cast<Player*>(playerList->getPerson(playerId.toString()));
         m_readWrite.append(p);
     }
-    endResetModel();*/
-}
+    endResetModel();
+}*/
