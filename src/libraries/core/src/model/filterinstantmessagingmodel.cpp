@@ -33,25 +33,40 @@ void FilterInstantMessagingModel::setFilterParameter(bool b, QStringList data)
 {
     if(m_allBut == b && m_filteredId == data)
         return;
-
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
     beginFilterChange();
     m_allBut= b;
     m_filteredId << data;
     endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
+    m_allBut= b;
+    m_filteredId << data;
+    invalidateFilter();
+#endif
 }
 
 void FilterInstantMessagingModel::removeFilterId(const QString& id)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
     beginFilterChange();
     m_filteredId.removeAll(id);
     endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
+    m_filteredId.removeAll(id);
+    invalidateFilter();
+#endif
 }
 
 void FilterInstantMessagingModel::addFilterId(const QString& id)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
     beginFilterChange();
     m_filteredId << id;
     endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
+    m_filteredId << id;
+    invalidateFilter();
+#endif
 }
 
 QVariant FilterInstantMessagingModel::get(int idx)
