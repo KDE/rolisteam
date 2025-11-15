@@ -1,6 +1,6 @@
 option(QML_CLI "enable compilation of QML client" OFF)
 
-
+find_package(QT NAMES Qt6 REQUIRED COMPONENTS Core)
 
 if(ANDROID)
     add_subdirectory(3DDicer)
@@ -12,7 +12,7 @@ else()
     add_subdirectory(widget)
     add_subdirectory(rcse)
     add_subdirectory(mindmap)
-    if(QT_VERSION_MAJOR EQUAL 6 AND QT_VERSION_MINOR GREATER_EQUAL 10)
+    if(${QT_VERSION_MAJOR} EQUAL 6 AND ${QT_VERSION_MINOR} GREATER_EQUAL 10)
         add_subdirectory(3DDicer)
     endif()
 endif()
