@@ -5090,7 +5090,7 @@ msgctxt "VColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "लाल: %1, हरा: %2, नीला: %3"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:53
 #, fuzzy
 #| msgctxt "AboutRolisteam|"
 #| msgid ""
@@ -5120,7 +5120,7 @@ msgstr ""
 "हैं। मौजूदा सुविधाएँ: मैप शेयरिंग (अनुमति प्रबंधन के साथ), इमेज शेयरिंग, बैकग्राउंड म्यूज़िक, "
 "पासा रोल वगैरह। रोलिस्टीम Qt5 में लिखा गया है"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
 msgid ""
 "You may modify and redistribute the program under the terms of the GPL "
@@ -5134,22 +5134,22 @@ msgstr ""
 "रोलिस्टीम का कॉपीराइट इसके योगदानकर्ताओं के पास है। योगदानकर्ताओं की पूरी सूची के लिए "
 "'COPYRIGHT' फ़ाइल देखें। हम इस कार्यक्रम के लिए कोई वारंटी नहीं देते हैं।"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:59
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:66
 msgctxt "AboutRolisteam|"
 msgid "Official Rolisteam Site"
 msgstr "आधिकारिक रोलिस्टीम साइट"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:60
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:67
 msgctxt "AboutRolisteam|"
 msgid "Web Sites:"
 msgstr "वेब साइटें:"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:68
 msgctxt "AboutRolisteam|"
 msgid "Bug Tracker"
 msgstr "बग ट्रैकर"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:72
 #, fuzzy
 #| msgctxt "CampaignManager|"
 #| msgid "Impossible to create campaign template at %1"
@@ -6274,267 +6274,267 @@ msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
 msgstr "एनपीसीमेकर"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:29
+#: src/libraries/rwidgets/docks/antagonistboard.ui:65
 msgctxt "AntagonistBoard|"
 msgid "Search:"
 msgstr "खोज:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:39
-#: src/libraries/rwidgets/docks/antagonistboard.ui:333
-#: src/libraries/rwidgets/docks/antagonistboard.ui:353
-#: src/libraries/rwidgets/docks/antagonistboard.ui:790
-#: src/libraries/rwidgets/docks/antagonistboard.ui:797
-#: src/libraries/rwidgets/docks/antagonistboard.ui:883
-#: src/libraries/rwidgets/docks/antagonistboard.ui:890
-#: src/libraries/rwidgets/docks/antagonistboard.ui:958
-#: src/libraries/rwidgets/docks/antagonistboard.ui:965
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1012
+#: src/libraries/rwidgets/docks/antagonistboard.ui:75
+#: src/libraries/rwidgets/docks/antagonistboard.ui:399
+#: src/libraries/rwidgets/docks/antagonistboard.ui:419
+#: src/libraries/rwidgets/docks/antagonistboard.ui:841
+#: src/libraries/rwidgets/docks/antagonistboard.ui:848
+#: src/libraries/rwidgets/docks/antagonistboard.ui:934
+#: src/libraries/rwidgets/docks/antagonistboard.ui:941
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr "..."
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:54
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:96
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr "विकसित"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:60
+#: src/libraries/rwidgets/docks/antagonistboard.ui:117
 msgctxt "AntagonistBoard|"
 msgid "Without"
 msgstr "बिना"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:67
-#: src/libraries/rwidgets/docks/antagonistboard.ui:127
-#: src/libraries/rwidgets/docks/antagonistboard.ui:134
-#: src/libraries/rwidgets/docks/antagonistboard.ui:206
-#: src/libraries/rwidgets/docks/antagonistboard.ui:237
-#: src/libraries/rwidgets/docks/antagonistboard.ui:244
+#: src/libraries/rwidgets/docks/antagonistboard.ui:124
+#: src/libraries/rwidgets/docks/antagonistboard.ui:184
+#: src/libraries/rwidgets/docks/antagonistboard.ui:191
+#: src/libraries/rwidgets/docks/antagonistboard.ui:263
+#: src/libraries/rwidgets/docks/antagonistboard.ui:294
+#: src/libraries/rwidgets/docks/antagonistboard.ui:301
 msgctxt "AntagonistBoard|"
 msgid "with"
 msgstr "साथ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:74
+#: src/libraries/rwidgets/docks/antagonistboard.ui:131
 msgctxt "AntagonistBoard|"
 msgid "Avatar:"
 msgstr "अवतार:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:84
+#: src/libraries/rwidgets/docks/antagonistboard.ui:141
 msgctxt "AntagonistBoard|"
 msgid "exclude:"
 msgstr "बहिष्कृत करें:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:94
+#: src/libraries/rwidgets/docks/antagonistboard.ui:151
 msgctxt "AntagonistBoard|"
 msgid "tags: "
 msgstr "टैग:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:104
+#: src/libraries/rwidgets/docks/antagonistboard.ui:161
 msgctxt "AntagonistBoard|"
 msgid "Actions:"
 msgstr "क्रियाएँ:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:117
+#: src/libraries/rwidgets/docks/antagonistboard.ui:174
 msgctxt "AntagonistBoard|"
 msgid "State:"
 msgstr "राज्य:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:141
-#: src/libraries/rwidgets/docks/antagonistboard.ui:192
-#: src/libraries/rwidgets/docks/antagonistboard.ui:199
-#: src/libraries/rwidgets/docks/antagonistboard.ui:223
-#: src/libraries/rwidgets/docks/antagonistboard.ui:230
+#: src/libraries/rwidgets/docks/antagonistboard.ui:198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:249
+#: src/libraries/rwidgets/docks/antagonistboard.ui:256
+#: src/libraries/rwidgets/docks/antagonistboard.ui:280
+#: src/libraries/rwidgets/docks/antagonistboard.ui:287
 msgctxt "AntagonistBoard|"
 msgid "without"
 msgstr "बिना"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:148
+#: src/libraries/rwidgets/docks/antagonistboard.ui:205
 msgctxt "AntagonistBoard|"
 msgid "exclude tags:"
 msgstr "टैग निकालें:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:161
+#: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
 msgid "Health:"
 msgstr "स्वास्थ्य:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:228
 msgctxt "AntagonistBoard|"
 msgid "full life"
 msgstr "पूर्ण जीवन"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:178
+#: src/libraries/rwidgets/docks/antagonistboard.ui:235
 msgctxt "AntagonistBoard|"
 msgid "Injured"
 msgstr "घायल"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:185
+#: src/libraries/rwidgets/docks/antagonistboard.ui:242
 msgctxt "AntagonistBoard|"
 msgid "Dead"
 msgstr "मृत"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:213
+#: src/libraries/rwidgets/docks/antagonistboard.ui:270
 msgctxt "AntagonistBoard|"
 msgid "Initiative Score:"
 msgstr "पहल स्कोर:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:251
+#: src/libraries/rwidgets/docks/antagonistboard.ui:308
 msgctxt "AntagonistBoard|"
 msgid "Properties:"
 msgstr "गुण:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:261
+#: src/libraries/rwidgets/docks/antagonistboard.ui:318
 msgctxt "AntagonistBoard|"
 msgid "Initiative Command:"
 msgstr "पहल आदेश:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:274
+#: src/libraries/rwidgets/docks/antagonistboard.ui:331
 msgctxt "AntagonistBoard|"
 msgid "Shapes:"
 msgstr "आकृतियाँ:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:287
-#: src/libraries/rwidgets/docks/antagonistboard.ui:417
+#: src/libraries/rwidgets/docks/antagonistboard.ui:344
+#: src/libraries/rwidgets/docks/antagonistboard.ui:569
 msgctxt "AntagonistBoard|"
 msgid "Color:"
 msgstr "रंग:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:373
+#: src/libraries/rwidgets/docks/antagonistboard.ui:454
 msgctxt "AntagonistBoard|"
 msgid "Info"
 msgstr "जानकारी"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:387
-msgctxt "AntagonistBoard|"
-msgid "Name:"
-msgstr "नाम:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:397
-msgctxt "AntagonistBoard|"
-msgid "Initiative Command"
-msgstr "पहल कमान"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:404
-msgctxt "AntagonistBoard|"
-msgid "2d10"
-msgstr "2डी10"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:451
-msgctxt "AntagonistBoard|"
-msgid "Initiative Value:"
-msgstr "पहल मूल्य:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:488
+#: src/libraries/rwidgets/docks/antagonistboard.ui:504
 msgctxt "AntagonistBoard|"
 msgid "Size:"
 msgstr "आकार:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:527
+#: src/libraries/rwidgets/docks/antagonistboard.ui:529
 msgctxt "AntagonistBoard|"
-msgid "Health Points"
-msgstr "स्वास्थ्य बिन्दु"
+msgid "Initiative Value:"
+msgstr "पहल मूल्य:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:548
+#: src/libraries/rwidgets/docks/antagonistboard.ui:542
 msgctxt "AntagonistBoard|"
-msgid "Min:"
-msgstr "न्यूनतम:"
+msgid "Name:"
+msgstr "नाम:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:578
+#: src/libraries/rwidgets/docks/antagonistboard.ui:549
 msgctxt "AntagonistBoard|"
-msgid "Current"
-msgstr "मौजूदा"
+msgid "Initiative Command"
+msgstr "पहल कमान"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:611
+#: src/libraries/rwidgets/docks/antagonistboard.ui:556
 msgctxt "AntagonistBoard|"
-msgid "Max"
-msgstr "अधिकतम"
+msgid "2d10"
+msgstr "2डी10"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:634
+#: src/libraries/rwidgets/docks/antagonistboard.ui:580
 msgctxt "AntagonistBoard|"
 msgid "Avatar"
 msgstr "अवतार"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:710
+#: src/libraries/rwidgets/docks/antagonistboard.ui:635
 msgctxt "AntagonistBoard|"
 msgid "Change"
 msgstr "परिवर्तन"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:736
+#: src/libraries/rwidgets/docks/antagonistboard.ui:666
+msgctxt "AntagonistBoard|"
+msgid "Health Points"
+msgstr "स्वास्थ्य बिन्दु"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:678
+msgctxt "AntagonistBoard|"
+msgid "Min:"
+msgstr "न्यूनतम:"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:707
+msgctxt "AntagonistBoard|"
+msgid "Current"
+msgstr "मौजूदा"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:739
+msgctxt "AntagonistBoard|"
+msgid "Max"
+msgstr "अधिकतम"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:787
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr "कार्रवाई"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:757
+#: src/libraries/rwidgets/docks/antagonistboard.ui:808
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr "कार्रवाई"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:823
+#: src/libraries/rwidgets/docks/antagonistboard.ui:874
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr "आकार"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:844
+#: src/libraries/rwidgets/docks/antagonistboard.ui:895
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr "आकार"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:916
+#: src/libraries/rwidgets/docks/antagonistboard.ui:967
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr "संपत्ति"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:922
+#: src/libraries/rwidgets/docks/antagonistboard.ui:988
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr "गुण"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1042
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr "क्रिया जोड़ें"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1045
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr "कार्रवाई जोड़ें"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1054
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1057
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr "कार्रवाई हटाएँ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1066
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1069
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr "आकार जोड़ें"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1081
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr "आकृति हटाएँ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1090
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1093
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr "संपत्ति जोड़ें"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1102
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1105
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr "संपत्ति हटाएँ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1114
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr "चरित्र जोड़ें"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr "वर्ण हटाएँ"
@@ -8068,27 +8068,27 @@ msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
 msgstr "नाम जनरेटर"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:31
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
 msgid "Male"
 msgstr "पुरुष"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:59
 msgctxt "NameGeneratorWidget|"
 msgid "Female"
 msgstr "महिला"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:68
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:83
 msgctxt "NameGeneratorWidget|"
 msgid "How many ?"
 msgstr "कितने ?"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:82
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:97
 msgctxt "NameGeneratorWidget|"
 msgid "Complex"
 msgstr "जटिल"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:108
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:104
 msgctxt "NameGeneratorWidget|"
 msgid "Generate"
 msgstr "उत्पन्न"
@@ -8098,106 +8098,106 @@ msgctxt "Convertor|"
 msgid "Unit Convertor"
 msgstr "कनवर्टर इकाई"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:29
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:41
 msgctxt "Convertor|"
 msgid "Category:"
 msgstr "वर्ग:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:37
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:197
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:49
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:209
 msgctxt "Convertor|"
 msgid "Temperature"
 msgstr "तापमान"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:42
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:202
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:54
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:214
 msgctxt "Convertor|"
 msgid "Distance"
 msgstr "दूरी"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:47
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:207
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:59
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:219
 msgctxt "Convertor|"
 msgid "Currency"
 msgstr "मुद्रा"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:52
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:212
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:64
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:224
 msgctxt "Convertor|"
 msgid "Volume"
 msgstr "आयतन"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:57
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:217
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:69
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:229
 msgctxt "Convertor|"
 msgid "Mass"
 msgstr "द्रव्यमान"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:65
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:77
 msgctxt "Convertor|"
 msgid "convert"
 msgstr "बदलना"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:72
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:79
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:234
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:241
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:84
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:91
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:246
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:253
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:273
 msgctxt "Convertor|"
 msgid "..."
 msgstr "..."
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:109
 msgctxt "Convertor|"
 msgid "From:"
 msgstr "से:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:128
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:140
 msgctxt "Convertor|"
 msgid "To"
 msgstr "को"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:189
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:201
 msgctxt "Convertor|"
 msgid "Category"
 msgstr "वर्ग"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:278
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:290
 msgctxt "Convertor|"
 msgid "Reverse"
 msgstr "रिवर्स"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:287
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
 msgctxt "Convertor|"
 msgid "Custom Rule"
 msgstr "कस्टम नियम"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:296
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
 msgctxt "Convertor|"
 msgid "Add"
 msgstr "जोड़ना"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
 msgctxt "Convertor|"
 msgid "Add Unit"
 msgstr "यूनिट जोड़ें"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
 msgctxt "Convertor|"
 msgid "Remove Unit"
 msgstr "यूनिट हटाएँ"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
 msgctxt "Convertor|"
 msgid "remove unit"
 msgstr "यूनिट हटाएँ"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
 msgid "Return"
 msgstr "वापस करना"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:335
 msgctxt "Convertor|"
 msgid "Return to convertor page"
 msgstr "कनवर्टर पृष्ठ पर वापस जाएँ"

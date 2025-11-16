@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2025-09-23 12:02+0200\n"
+"PO-Revision-Date: 2025-11-11 18:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -20,9 +20,6 @@ msgstr ""
 "X-Generator: Lokalize 25.04.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
 msgstr "Àlies"
@@ -31,28 +28,20 @@ msgstr "Àlies"
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Àlies"
+msgstr "Àlies núm. %1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Patró"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Ordre"
@@ -60,52 +49,34 @@ msgstr "Ordre"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Inactiu"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Obri"
+msgstr "Actiu"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Nom:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Patró"
+msgstr "Patró:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Ordre"
+msgstr "Ordre:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Expressió regular"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Desactiva"
@@ -113,116 +84,80 @@ msgstr "Desactiva"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Guarda i torna arrere"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Suprimix"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "predeterminat"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Àlies del dau"
+msgstr "Tira el dau"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Teclegeu l'ordre, p. ex.: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Retorna"
+msgstr "Executa"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Nom"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Ordre"
+msgstr "ordre"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Suprimix"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Àlies del dau"
+msgstr "Tira el dau"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Dau en 3D"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Macros"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
 msgstr "Àlies"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Full de personatge"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Configuració"
@@ -258,131 +193,86 @@ msgid "Comments"
 msgstr "Comentaris"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Dau en 3D"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Mida del dau:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Guarda els perfils"
+msgstr "Últim perfil"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Suprimix"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Configuració"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Clona un perfil"
+msgstr "Trieu el perfil"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Configuració"
+msgstr "Configureu l'aplicació"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Data de modificació"
+msgstr "Mode fosc:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Idioma:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Quant a"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Permisos"
+msgstr "Versió:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Estat:"
+msgstr "Data:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "SHA1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Full de personatge"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Clau"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Valor"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Suprimix"
@@ -414,52 +304,38 @@ msgstr "Imatges (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Ordre: %1"
+msgstr "Comptador: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Diàleg de l'assistent de farciment"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Canvia l'estat"
+msgstr "Comptador d'inici:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Comptador de passos:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Totes les pàgines"
+msgstr "Establix tots els valors"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Substituïx-ho tot"
+msgstr "Regles de substitució"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "…"
@@ -467,20 +343,14 @@ msgstr "…"
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Vista prèvia del resultat:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Afig"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Elimina"
@@ -696,9 +566,6 @@ msgid "Previous Page Button"
 msgstr "Botó de pàgina anterior"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Taula"
@@ -1993,7 +1860,7 @@ msgstr "Aplica a totes les línies"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Obri l'assistent de farciment"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -3008,25 +2875,19 @@ msgid "Text"
 msgstr "Text"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:191
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "S'ha tancat la connexió amb el servidor."
+msgstr "S'ha tancat el fil del servidor"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:202
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Servidor"
+msgstr "El servidor està inactiu"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "El servidor està actiu"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3514,7 +3375,7 @@ msgstr "[Upnp] S'ha fet el mapatge del port"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Servidor] Inicia l'escolta"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
@@ -4275,7 +4136,7 @@ msgstr "Ordre: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Envia"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4333,12 +4194,9 @@ msgid "Font Family:"
 msgstr "Família de la lletra:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Mida de la lletra:"
+msgstr "Factor de la mida de la lletra:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
@@ -4378,7 +4236,7 @@ msgstr "Port:"
 #: src/libraries/qml_views/views/ConnectionForm.qml:154
 msgctxt "ConnectionForm|"
 msgid "Host the game"
-msgstr "Hostatja un joc"
+msgstr "Allotja el joc"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:161
 msgctxt "ConnectionForm|"
@@ -4997,7 +4855,7 @@ msgctxt "VColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Roig: %1, verd: %2, blau: %3"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:53
 msgctxt "AboutRolisteam|"
 msgid ""
 "Rolisteam helps you to manage a tabletop role playing game with remote "
@@ -5018,7 +4876,7 @@ msgstr ""
 "gestió de permisos), compartició d'imatges, música de fons, tirades de daus, "
 "etc. Rolisteam està escrit en Qt"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
 msgid ""
 "You may modify and redistribute the program under the terms of the GPL "
@@ -5033,22 +4891,22 @@ msgstr ""
 "Vegeu el fitxer «COPYRIGHT» per a la llista completa de col·laboradors. No "
 "proporcionem cap garantia per a este programa."
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:59
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:66
 msgctxt "AboutRolisteam|"
 msgid "Official Rolisteam Site"
 msgstr "Lloc oficial de Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:60
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:67
 msgctxt "AboutRolisteam|"
 msgid "Web Sites:"
 msgstr "Llocs web:"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:68
 msgctxt "AboutRolisteam|"
 msgid "Bug Tracker"
 msgstr "Seguidor d'errors"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:72
 msgctxt "AboutRolisteam|"
 msgid "Impossible to read the template."
 msgstr "No és possible llegir la plantilla."
@@ -6145,267 +6003,267 @@ msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
 msgstr "Creador de PNJ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:29
+#: src/libraries/rwidgets/docks/antagonistboard.ui:65
 msgctxt "AntagonistBoard|"
 msgid "Search:"
 msgstr "Busca:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:39
-#: src/libraries/rwidgets/docks/antagonistboard.ui:333
-#: src/libraries/rwidgets/docks/antagonistboard.ui:353
-#: src/libraries/rwidgets/docks/antagonistboard.ui:790
-#: src/libraries/rwidgets/docks/antagonistboard.ui:797
-#: src/libraries/rwidgets/docks/antagonistboard.ui:883
-#: src/libraries/rwidgets/docks/antagonistboard.ui:890
-#: src/libraries/rwidgets/docks/antagonistboard.ui:958
-#: src/libraries/rwidgets/docks/antagonistboard.ui:965
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1012
+#: src/libraries/rwidgets/docks/antagonistboard.ui:75
+#: src/libraries/rwidgets/docks/antagonistboard.ui:399
+#: src/libraries/rwidgets/docks/antagonistboard.ui:419
+#: src/libraries/rwidgets/docks/antagonistboard.ui:841
+#: src/libraries/rwidgets/docks/antagonistboard.ui:848
+#: src/libraries/rwidgets/docks/antagonistboard.ui:934
+#: src/libraries/rwidgets/docks/antagonistboard.ui:941
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:54
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:96
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr "Avançat"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:60
+#: src/libraries/rwidgets/docks/antagonistboard.ui:117
 msgctxt "AntagonistBoard|"
 msgid "Without"
 msgstr "Sense"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:67
-#: src/libraries/rwidgets/docks/antagonistboard.ui:127
-#: src/libraries/rwidgets/docks/antagonistboard.ui:134
-#: src/libraries/rwidgets/docks/antagonistboard.ui:206
-#: src/libraries/rwidgets/docks/antagonistboard.ui:237
-#: src/libraries/rwidgets/docks/antagonistboard.ui:244
+#: src/libraries/rwidgets/docks/antagonistboard.ui:124
+#: src/libraries/rwidgets/docks/antagonistboard.ui:184
+#: src/libraries/rwidgets/docks/antagonistboard.ui:191
+#: src/libraries/rwidgets/docks/antagonistboard.ui:263
+#: src/libraries/rwidgets/docks/antagonistboard.ui:294
+#: src/libraries/rwidgets/docks/antagonistboard.ui:301
 msgctxt "AntagonistBoard|"
 msgid "with"
 msgstr "amb"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:74
+#: src/libraries/rwidgets/docks/antagonistboard.ui:131
 msgctxt "AntagonistBoard|"
 msgid "Avatar:"
 msgstr "Avatar:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:84
+#: src/libraries/rwidgets/docks/antagonistboard.ui:141
 msgctxt "AntagonistBoard|"
 msgid "exclude:"
 msgstr "exclou:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:94
+#: src/libraries/rwidgets/docks/antagonistboard.ui:151
 msgctxt "AntagonistBoard|"
 msgid "tags: "
 msgstr "etiquetes: "
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:104
+#: src/libraries/rwidgets/docks/antagonistboard.ui:161
 msgctxt "AntagonistBoard|"
 msgid "Actions:"
 msgstr "Accions:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:117
+#: src/libraries/rwidgets/docks/antagonistboard.ui:174
 msgctxt "AntagonistBoard|"
 msgid "State:"
 msgstr "Estat:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:141
-#: src/libraries/rwidgets/docks/antagonistboard.ui:192
-#: src/libraries/rwidgets/docks/antagonistboard.ui:199
-#: src/libraries/rwidgets/docks/antagonistboard.ui:223
-#: src/libraries/rwidgets/docks/antagonistboard.ui:230
+#: src/libraries/rwidgets/docks/antagonistboard.ui:198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:249
+#: src/libraries/rwidgets/docks/antagonistboard.ui:256
+#: src/libraries/rwidgets/docks/antagonistboard.ui:280
+#: src/libraries/rwidgets/docks/antagonistboard.ui:287
 msgctxt "AntagonistBoard|"
 msgid "without"
 msgstr "sense"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:148
+#: src/libraries/rwidgets/docks/antagonistboard.ui:205
 msgctxt "AntagonistBoard|"
 msgid "exclude tags:"
 msgstr "exclou les etiquetes:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:161
+#: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
 msgid "Health:"
 msgstr "Salut:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:228
 msgctxt "AntagonistBoard|"
 msgid "full life"
 msgstr "vida completa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:178
+#: src/libraries/rwidgets/docks/antagonistboard.ui:235
 msgctxt "AntagonistBoard|"
 msgid "Injured"
 msgstr "Ferit greu"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:185
+#: src/libraries/rwidgets/docks/antagonistboard.ui:242
 msgctxt "AntagonistBoard|"
 msgid "Dead"
 msgstr "Mort"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:213
+#: src/libraries/rwidgets/docks/antagonistboard.ui:270
 msgctxt "AntagonistBoard|"
 msgid "Initiative Score:"
 msgstr "Puntuació d'iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:251
+#: src/libraries/rwidgets/docks/antagonistboard.ui:308
 msgctxt "AntagonistBoard|"
 msgid "Properties:"
 msgstr "Propietats:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:261
+#: src/libraries/rwidgets/docks/antagonistboard.ui:318
 msgctxt "AntagonistBoard|"
 msgid "Initiative Command:"
 msgstr "Ordre d'iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:274
+#: src/libraries/rwidgets/docks/antagonistboard.ui:331
 msgctxt "AntagonistBoard|"
 msgid "Shapes:"
 msgstr "Formes:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:287
-#: src/libraries/rwidgets/docks/antagonistboard.ui:417
+#: src/libraries/rwidgets/docks/antagonistboard.ui:344
+#: src/libraries/rwidgets/docks/antagonistboard.ui:569
 msgctxt "AntagonistBoard|"
 msgid "Color:"
 msgstr "Color:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:373
+#: src/libraries/rwidgets/docks/antagonistboard.ui:454
 msgctxt "AntagonistBoard|"
 msgid "Info"
 msgstr "Informació"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:387
-msgctxt "AntagonistBoard|"
-msgid "Name:"
-msgstr "Nom:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:397
-msgctxt "AntagonistBoard|"
-msgid "Initiative Command"
-msgstr "Ordre d'iniciativa"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:404
-msgctxt "AntagonistBoard|"
-msgid "2d10"
-msgstr "2d10"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:451
-msgctxt "AntagonistBoard|"
-msgid "Initiative Value:"
-msgstr "Valor de la iniciativa:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:488
+#: src/libraries/rwidgets/docks/antagonistboard.ui:504
 msgctxt "AntagonistBoard|"
 msgid "Size:"
 msgstr "Mida:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:527
+#: src/libraries/rwidgets/docks/antagonistboard.ui:529
 msgctxt "AntagonistBoard|"
-msgid "Health Points"
-msgstr "Punts d'estat"
+msgid "Initiative Value:"
+msgstr "Valor de la iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:548
+#: src/libraries/rwidgets/docks/antagonistboard.ui:542
 msgctxt "AntagonistBoard|"
-msgid "Min:"
-msgstr "Mín.:"
+msgid "Name:"
+msgstr "Nom:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:578
+#: src/libraries/rwidgets/docks/antagonistboard.ui:549
 msgctxt "AntagonistBoard|"
-msgid "Current"
-msgstr "Actual"
+msgid "Initiative Command"
+msgstr "Ordre d'iniciativa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:611
+#: src/libraries/rwidgets/docks/antagonistboard.ui:556
 msgctxt "AntagonistBoard|"
-msgid "Max"
-msgstr "Màx"
+msgid "2d10"
+msgstr "2d10"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:634
+#: src/libraries/rwidgets/docks/antagonistboard.ui:580
 msgctxt "AntagonistBoard|"
 msgid "Avatar"
 msgstr "Avatar"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:710
+#: src/libraries/rwidgets/docks/antagonistboard.ui:635
 msgctxt "AntagonistBoard|"
 msgid "Change"
 msgstr "Canvia"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:736
+#: src/libraries/rwidgets/docks/antagonistboard.ui:666
+msgctxt "AntagonistBoard|"
+msgid "Health Points"
+msgstr "Punts d'estat"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:678
+msgctxt "AntagonistBoard|"
+msgid "Min:"
+msgstr "Mín.:"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:707
+msgctxt "AntagonistBoard|"
+msgid "Current"
+msgstr "Actual"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:739
+msgctxt "AntagonistBoard|"
+msgid "Max"
+msgstr "Màx"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:787
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr "Acció"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:757
+#: src/libraries/rwidgets/docks/antagonistboard.ui:808
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr "Accions"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:823
+#: src/libraries/rwidgets/docks/antagonistboard.ui:874
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:844
+#: src/libraries/rwidgets/docks/antagonistboard.ui:895
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr "Formes"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:916
+#: src/libraries/rwidgets/docks/antagonistboard.ui:967
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr "Propietat"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:922
+#: src/libraries/rwidgets/docks/antagonistboard.ui:988
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr "Propietats"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1042
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr "Afig una acció"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1045
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr "afig una acció"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1054
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1057
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr "Elimina l'acció"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1066
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1069
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr "Afig una forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1081
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr "Elimina la forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1090
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1093
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr "Afig una propietat"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1102
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1105
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr "Elimina la propietat"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1114
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr "Afig un personatge"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr "Elimina el personatge"
@@ -7950,27 +7808,27 @@ msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
 msgstr "Generació de noms"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:31
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
 msgid "Male"
 msgstr "Masculí"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:59
 msgctxt "NameGeneratorWidget|"
 msgid "Female"
 msgstr "Femení"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:68
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:83
 msgctxt "NameGeneratorWidget|"
 msgid "How many ?"
 msgstr "Quants?"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:82
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:97
 msgctxt "NameGeneratorWidget|"
 msgid "Complex"
 msgstr "Complex"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:108
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:104
 msgctxt "NameGeneratorWidget|"
 msgid "Generate"
 msgstr "Genera"
@@ -7980,106 +7838,106 @@ msgctxt "Convertor|"
 msgid "Unit Convertor"
 msgstr "Convertidor d'unitats"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:29
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:41
 msgctxt "Convertor|"
 msgid "Category:"
 msgstr "Categoria:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:37
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:197
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:49
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:209
 msgctxt "Convertor|"
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:42
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:202
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:54
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:214
 msgctxt "Convertor|"
 msgid "Distance"
 msgstr "Distància"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:47
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:207
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:59
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:219
 msgctxt "Convertor|"
 msgid "Currency"
 msgstr "Moneda"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:52
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:212
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:64
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:224
 msgctxt "Convertor|"
 msgid "Volume"
 msgstr "Volum"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:57
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:217
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:69
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:229
 msgctxt "Convertor|"
 msgid "Mass"
 msgstr "Massa"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:65
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:77
 msgctxt "Convertor|"
 msgid "convert"
 msgstr "convertix"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:72
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:79
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:234
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:241
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:84
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:91
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:246
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:253
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:273
 msgctxt "Convertor|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:109
 msgctxt "Convertor|"
 msgid "From:"
 msgstr "De:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:128
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:140
 msgctxt "Convertor|"
 msgid "To"
 msgstr "A"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:189
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:201
 msgctxt "Convertor|"
 msgid "Category"
 msgstr "Categoria"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:278
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:290
 msgctxt "Convertor|"
 msgid "Reverse"
 msgstr "Revers"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:287
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
 msgctxt "Convertor|"
 msgid "Custom Rule"
 msgstr "Regla personalitzada"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:296
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
 msgctxt "Convertor|"
 msgid "Add"
 msgstr "Afig"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
 msgctxt "Convertor|"
 msgid "Add Unit"
 msgstr "Afig una unitat"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
 msgctxt "Convertor|"
 msgid "Remove Unit"
 msgstr "Elimina la unitat"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
 msgctxt "Convertor|"
 msgid "remove unit"
 msgstr "elimina la unitat"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
 msgid "Return"
 msgstr "Retorna"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:335
 msgctxt "Convertor|"
 msgid "Return to convertor page"
 msgstr "Torna a la pàgina del convertidor"
@@ -9114,7 +8972,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "InstantMessagingEditText|"
-#~ msgid "send"
-#~ msgstr "Envia"

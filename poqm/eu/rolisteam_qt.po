@@ -4990,7 +4990,7 @@ msgctxt "VColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Gorria: %1, Berdea: %2, Urdina: %3"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:53
 msgctxt "AboutRolisteam|"
 msgid ""
 "Rolisteam helps you to manage a tabletop role playing game with remote "
@@ -5010,7 +5010,7 @@ msgstr ""
 "kudeatzailearekin), irudiak partekatzea, hondoko musika, dadoak jaurtitzea, "
 "eta abar. Rolisteam Qt5-ekin idatzita dago."
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
 msgid ""
 "You may modify and redistribute the program under the terms of the GPL "
@@ -5025,22 +5025,22 @@ msgstr ""
 "(copyright) du. Begiratu 'COPYRIGHT' fitxategia kolaboratzaileen zerrenda "
 "osorako. Ez dugu programa honetarako bermerik ematen."
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:59
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:66
 msgctxt "AboutRolisteam|"
 msgid "Official Rolisteam Site"
 msgstr "«Rolisteam» gune ofiziala"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:60
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:67
 msgctxt "AboutRolisteam|"
 msgid "Web Sites:"
 msgstr "Webguneak:"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:68
 msgctxt "AboutRolisteam|"
 msgid "Bug Tracker"
 msgstr "Akats aztarnaria"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:72
 msgctxt "AboutRolisteam|"
 msgid "Impossible to read the template."
 msgstr "Ezinezkoa da txantiloia irakurtzea."
@@ -6137,267 +6137,267 @@ msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
 msgstr "JepEgilea"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:29
+#: src/libraries/rwidgets/docks/antagonistboard.ui:65
 msgctxt "AntagonistBoard|"
 msgid "Search:"
 msgstr "Bilatu:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:39
-#: src/libraries/rwidgets/docks/antagonistboard.ui:333
-#: src/libraries/rwidgets/docks/antagonistboard.ui:353
-#: src/libraries/rwidgets/docks/antagonistboard.ui:790
-#: src/libraries/rwidgets/docks/antagonistboard.ui:797
-#: src/libraries/rwidgets/docks/antagonistboard.ui:883
-#: src/libraries/rwidgets/docks/antagonistboard.ui:890
-#: src/libraries/rwidgets/docks/antagonistboard.ui:958
-#: src/libraries/rwidgets/docks/antagonistboard.ui:965
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1012
+#: src/libraries/rwidgets/docks/antagonistboard.ui:75
+#: src/libraries/rwidgets/docks/antagonistboard.ui:399
+#: src/libraries/rwidgets/docks/antagonistboard.ui:419
+#: src/libraries/rwidgets/docks/antagonistboard.ui:841
+#: src/libraries/rwidgets/docks/antagonistboard.ui:848
+#: src/libraries/rwidgets/docks/antagonistboard.ui:934
+#: src/libraries/rwidgets/docks/antagonistboard.ui:941
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:54
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:96
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr "Aurreratua"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:60
+#: src/libraries/rwidgets/docks/antagonistboard.ui:117
 msgctxt "AntagonistBoard|"
 msgid "Without"
 msgstr "Gabe,"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:67
-#: src/libraries/rwidgets/docks/antagonistboard.ui:127
-#: src/libraries/rwidgets/docks/antagonistboard.ui:134
-#: src/libraries/rwidgets/docks/antagonistboard.ui:206
-#: src/libraries/rwidgets/docks/antagonistboard.ui:237
-#: src/libraries/rwidgets/docks/antagonistboard.ui:244
+#: src/libraries/rwidgets/docks/antagonistboard.ui:124
+#: src/libraries/rwidgets/docks/antagonistboard.ui:184
+#: src/libraries/rwidgets/docks/antagonistboard.ui:191
+#: src/libraries/rwidgets/docks/antagonistboard.ui:263
+#: src/libraries/rwidgets/docks/antagonistboard.ui:294
+#: src/libraries/rwidgets/docks/antagonistboard.ui:301
 msgctxt "AntagonistBoard|"
 msgid "with"
 msgstr "honekin,"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:74
+#: src/libraries/rwidgets/docks/antagonistboard.ui:131
 msgctxt "AntagonistBoard|"
 msgid "Avatar:"
 msgstr "Abatara:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:84
+#: src/libraries/rwidgets/docks/antagonistboard.ui:141
 msgctxt "AntagonistBoard|"
 msgid "exclude:"
 msgstr "kanporatu:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:94
+#: src/libraries/rwidgets/docks/antagonistboard.ui:151
 msgctxt "AntagonistBoard|"
 msgid "tags: "
 msgstr "etiketak: "
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:104
+#: src/libraries/rwidgets/docks/antagonistboard.ui:161
 msgctxt "AntagonistBoard|"
 msgid "Actions:"
 msgstr "Ekintzak:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:117
+#: src/libraries/rwidgets/docks/antagonistboard.ui:174
 msgctxt "AntagonistBoard|"
 msgid "State:"
 msgstr "Egoera:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:141
-#: src/libraries/rwidgets/docks/antagonistboard.ui:192
-#: src/libraries/rwidgets/docks/antagonistboard.ui:199
-#: src/libraries/rwidgets/docks/antagonistboard.ui:223
-#: src/libraries/rwidgets/docks/antagonistboard.ui:230
+#: src/libraries/rwidgets/docks/antagonistboard.ui:198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:249
+#: src/libraries/rwidgets/docks/antagonistboard.ui:256
+#: src/libraries/rwidgets/docks/antagonistboard.ui:280
+#: src/libraries/rwidgets/docks/antagonistboard.ui:287
 msgctxt "AntagonistBoard|"
 msgid "without"
 msgstr "gabe,"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:148
+#: src/libraries/rwidgets/docks/antagonistboard.ui:205
 msgctxt "AntagonistBoard|"
 msgid "exclude tags:"
 msgstr "kanporatu etiketak:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:161
+#: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
 msgid "Health:"
 msgstr "Osasuna:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:228
 msgctxt "AntagonistBoard|"
 msgid "full life"
 msgstr "bizitza osoa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:178
+#: src/libraries/rwidgets/docks/antagonistboard.ui:235
 msgctxt "AntagonistBoard|"
 msgid "Injured"
 msgstr "Zaurituta"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:185
+#: src/libraries/rwidgets/docks/antagonistboard.ui:242
 msgctxt "AntagonistBoard|"
 msgid "Dead"
 msgstr "Hilda"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:213
+#: src/libraries/rwidgets/docks/antagonistboard.ui:270
 msgctxt "AntagonistBoard|"
 msgid "Initiative Score:"
 msgstr "Ekimenaren puntuazioa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:251
+#: src/libraries/rwidgets/docks/antagonistboard.ui:308
 msgctxt "AntagonistBoard|"
 msgid "Properties:"
 msgstr "Propietateak:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:261
+#: src/libraries/rwidgets/docks/antagonistboard.ui:318
 msgctxt "AntagonistBoard|"
 msgid "Initiative Command:"
 msgstr "Ekimen-komandoa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:274
+#: src/libraries/rwidgets/docks/antagonistboard.ui:331
 msgctxt "AntagonistBoard|"
 msgid "Shapes:"
 msgstr "Formak:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:287
-#: src/libraries/rwidgets/docks/antagonistboard.ui:417
+#: src/libraries/rwidgets/docks/antagonistboard.ui:344
+#: src/libraries/rwidgets/docks/antagonistboard.ui:569
 msgctxt "AntagonistBoard|"
 msgid "Color:"
 msgstr "Kolorea:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:373
+#: src/libraries/rwidgets/docks/antagonistboard.ui:454
 msgctxt "AntagonistBoard|"
 msgid "Info"
 msgstr "Informazioa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:387
-msgctxt "AntagonistBoard|"
-msgid "Name:"
-msgstr "Izena:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:397
-msgctxt "AntagonistBoard|"
-msgid "Initiative Command"
-msgstr "Ekimen-komandoa"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:404
-msgctxt "AntagonistBoard|"
-msgid "2d10"
-msgstr "2d10"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:451
-msgctxt "AntagonistBoard|"
-msgid "Initiative Value:"
-msgstr "Ekimenaren balioa:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:488
+#: src/libraries/rwidgets/docks/antagonistboard.ui:504
 msgctxt "AntagonistBoard|"
 msgid "Size:"
 msgstr "Neurria:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:527
+#: src/libraries/rwidgets/docks/antagonistboard.ui:529
 msgctxt "AntagonistBoard|"
-msgid "Health Points"
-msgstr "Osasun-puntuak"
+msgid "Initiative Value:"
+msgstr "Ekimenaren balioa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:548
+#: src/libraries/rwidgets/docks/antagonistboard.ui:542
 msgctxt "AntagonistBoard|"
-msgid "Min:"
-msgstr "Min:"
+msgid "Name:"
+msgstr "Izena:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:578
+#: src/libraries/rwidgets/docks/antagonistboard.ui:549
 msgctxt "AntagonistBoard|"
-msgid "Current"
-msgstr "Unekoa"
+msgid "Initiative Command"
+msgstr "Ekimen-komandoa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:611
+#: src/libraries/rwidgets/docks/antagonistboard.ui:556
 msgctxt "AntagonistBoard|"
-msgid "Max"
-msgstr "Max"
+msgid "2d10"
+msgstr "2d10"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:634
+#: src/libraries/rwidgets/docks/antagonistboard.ui:580
 msgctxt "AntagonistBoard|"
 msgid "Avatar"
 msgstr "Abatara"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:710
+#: src/libraries/rwidgets/docks/antagonistboard.ui:635
 msgctxt "AntagonistBoard|"
 msgid "Change"
 msgstr "Aldatu"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:736
+#: src/libraries/rwidgets/docks/antagonistboard.ui:666
+msgctxt "AntagonistBoard|"
+msgid "Health Points"
+msgstr "Osasun-puntuak"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:678
+msgctxt "AntagonistBoard|"
+msgid "Min:"
+msgstr "Min:"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:707
+msgctxt "AntagonistBoard|"
+msgid "Current"
+msgstr "Unekoa"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:739
+msgctxt "AntagonistBoard|"
+msgid "Max"
+msgstr "Max"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:787
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr "Ekintza"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:757
+#: src/libraries/rwidgets/docks/antagonistboard.ui:808
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr "Ekintzak"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:823
+#: src/libraries/rwidgets/docks/antagonistboard.ui:874
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:844
+#: src/libraries/rwidgets/docks/antagonistboard.ui:895
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr "Formak"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:916
+#: src/libraries/rwidgets/docks/antagonistboard.ui:967
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr "Propietatea"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:922
+#: src/libraries/rwidgets/docks/antagonistboard.ui:988
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr "Propietateak"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1042
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr "Gehitu ekintza"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1045
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr "gehitu ekintza"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1054
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1057
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr "Kendu ekintza"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1066
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1069
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr "Gehitu forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1081
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr "Kendu forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1090
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1093
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr "Gehitu propietatea"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1102
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1105
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr "Kendu propietatea"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1114
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr "Gehitu pertsonaia"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr "Kendu pertsonaia"
@@ -7939,27 +7939,27 @@ msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
 msgstr "Izen sortzailea"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:31
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
 msgid "Male"
 msgstr "Gizonezkoa"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:59
 msgctxt "NameGeneratorWidget|"
 msgid "Female"
 msgstr "Emakumezkoa"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:68
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:83
 msgctxt "NameGeneratorWidget|"
 msgid "How many ?"
 msgstr "Zenbat?"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:82
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:97
 msgctxt "NameGeneratorWidget|"
 msgid "Complex"
 msgstr "Konplexua"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:108
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:104
 msgctxt "NameGeneratorWidget|"
 msgid "Generate"
 msgstr "Sortu"
@@ -7969,106 +7969,106 @@ msgctxt "Convertor|"
 msgid "Unit Convertor"
 msgstr "Unitate bihurtzailea"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:29
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:41
 msgctxt "Convertor|"
 msgid "Category:"
 msgstr "Kategoria:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:37
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:197
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:49
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:209
 msgctxt "Convertor|"
 msgid "Temperature"
 msgstr "Tenperatura"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:42
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:202
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:54
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:214
 msgctxt "Convertor|"
 msgid "Distance"
 msgstr "Distantzia"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:47
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:207
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:59
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:219
 msgctxt "Convertor|"
 msgid "Currency"
 msgstr "Moneta"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:52
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:212
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:64
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:224
 msgctxt "Convertor|"
 msgid "Volume"
 msgstr "Bolumena"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:57
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:217
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:69
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:229
 msgctxt "Convertor|"
 msgid "Mass"
 msgstr "Masa"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:65
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:77
 msgctxt "Convertor|"
 msgid "convert"
 msgstr "Bihurtu"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:72
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:79
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:234
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:241
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:84
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:91
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:246
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:253
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:273
 msgctxt "Convertor|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:109
 msgctxt "Convertor|"
 msgid "From:"
 msgstr "Honetatik:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:128
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:140
 msgctxt "Convertor|"
 msgid "To"
 msgstr "Honetara,"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:189
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:201
 msgctxt "Convertor|"
 msgid "Category"
 msgstr "Kategoria"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:278
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:290
 msgctxt "Convertor|"
 msgid "Reverse"
 msgstr "Alderantziz"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:287
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
 msgctxt "Convertor|"
 msgid "Custom Rule"
 msgstr "Neurrira ipinitako araua"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:296
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
 msgctxt "Convertor|"
 msgid "Add"
 msgstr "Gehitu"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
 msgctxt "Convertor|"
 msgid "Add Unit"
 msgstr "Gehitu unitatea"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
 msgctxt "Convertor|"
 msgid "Remove Unit"
 msgstr "Kendu unitatea"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
 msgctxt "Convertor|"
 msgid "remove unit"
 msgstr "Kendu unitatea"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
 msgid "Return"
 msgstr "Itzuli"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:335
 msgctxt "Convertor|"
 msgid "Return to convertor page"
 msgstr "Itzuli orrialde-bihurtzailera"

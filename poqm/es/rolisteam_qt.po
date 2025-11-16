@@ -4849,7 +4849,7 @@ msgctxt "VColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Rojo: %1, Verde: %2, Azul: %3"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:46
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:53
 msgctxt "AboutRolisteam|"
 msgid ""
 "Rolisteam helps you to manage a tabletop role playing game with remote "
@@ -4870,7 +4870,7 @@ msgstr ""
 "imágenes, música de fondo, lanzamiento de dados, etc. Rolisteam está escrito "
 "con Qt."
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:54
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
 msgid ""
 "You may modify and redistribute the program under the terms of the GPL "
@@ -4886,22 +4886,22 @@ msgstr ""
 "para ver la lista completa de colaboradores. No proporcionamos ninguna "
 "garantía para este programa."
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:59
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:66
 msgctxt "AboutRolisteam|"
 msgid "Official Rolisteam Site"
 msgstr "Sitio oficial de Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:60
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:67
 msgctxt "AboutRolisteam|"
 msgid "Web Sites:"
 msgstr "Sitios web:"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:68
 msgctxt "AboutRolisteam|"
 msgid "Bug Tracker"
 msgstr "Sistema de seguimiento de fallos"
 
-#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:65
+#: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:72
 msgctxt "AboutRolisteam|"
 msgid "Impossible to read the template."
 msgstr "No se ha podido leer la plantilla."
@@ -5997,267 +5997,267 @@ msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
 msgstr "Creador de PNJ"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:29
+#: src/libraries/rwidgets/docks/antagonistboard.ui:65
 msgctxt "AntagonistBoard|"
 msgid "Search:"
 msgstr "Buscar:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:39
-#: src/libraries/rwidgets/docks/antagonistboard.ui:333
-#: src/libraries/rwidgets/docks/antagonistboard.ui:353
-#: src/libraries/rwidgets/docks/antagonistboard.ui:790
-#: src/libraries/rwidgets/docks/antagonistboard.ui:797
-#: src/libraries/rwidgets/docks/antagonistboard.ui:883
-#: src/libraries/rwidgets/docks/antagonistboard.ui:890
-#: src/libraries/rwidgets/docks/antagonistboard.ui:958
-#: src/libraries/rwidgets/docks/antagonistboard.ui:965
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1012
+#: src/libraries/rwidgets/docks/antagonistboard.ui:75
+#: src/libraries/rwidgets/docks/antagonistboard.ui:399
+#: src/libraries/rwidgets/docks/antagonistboard.ui:419
+#: src/libraries/rwidgets/docks/antagonistboard.ui:841
+#: src/libraries/rwidgets/docks/antagonistboard.ui:848
+#: src/libraries/rwidgets/docks/antagonistboard.ui:934
+#: src/libraries/rwidgets/docks/antagonistboard.ui:941
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:54
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:96
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr "Avanzado"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:60
+#: src/libraries/rwidgets/docks/antagonistboard.ui:117
 msgctxt "AntagonistBoard|"
 msgid "Without"
 msgstr "Sin"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:67
-#: src/libraries/rwidgets/docks/antagonistboard.ui:127
-#: src/libraries/rwidgets/docks/antagonistboard.ui:134
-#: src/libraries/rwidgets/docks/antagonistboard.ui:206
-#: src/libraries/rwidgets/docks/antagonistboard.ui:237
-#: src/libraries/rwidgets/docks/antagonistboard.ui:244
+#: src/libraries/rwidgets/docks/antagonistboard.ui:124
+#: src/libraries/rwidgets/docks/antagonistboard.ui:184
+#: src/libraries/rwidgets/docks/antagonistboard.ui:191
+#: src/libraries/rwidgets/docks/antagonistboard.ui:263
+#: src/libraries/rwidgets/docks/antagonistboard.ui:294
+#: src/libraries/rwidgets/docks/antagonistboard.ui:301
 msgctxt "AntagonistBoard|"
 msgid "with"
 msgstr "con"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:74
+#: src/libraries/rwidgets/docks/antagonistboard.ui:131
 msgctxt "AntagonistBoard|"
 msgid "Avatar:"
 msgstr "Avatar:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:84
+#: src/libraries/rwidgets/docks/antagonistboard.ui:141
 msgctxt "AntagonistBoard|"
 msgid "exclude:"
 msgstr "excluir:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:94
+#: src/libraries/rwidgets/docks/antagonistboard.ui:151
 msgctxt "AntagonistBoard|"
 msgid "tags: "
 msgstr "etiquetas: "
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:104
+#: src/libraries/rwidgets/docks/antagonistboard.ui:161
 msgctxt "AntagonistBoard|"
 msgid "Actions:"
 msgstr "Acciones:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:117
+#: src/libraries/rwidgets/docks/antagonistboard.ui:174
 msgctxt "AntagonistBoard|"
 msgid "State:"
 msgstr "Estado:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:141
-#: src/libraries/rwidgets/docks/antagonistboard.ui:192
-#: src/libraries/rwidgets/docks/antagonistboard.ui:199
-#: src/libraries/rwidgets/docks/antagonistboard.ui:223
-#: src/libraries/rwidgets/docks/antagonistboard.ui:230
+#: src/libraries/rwidgets/docks/antagonistboard.ui:198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:249
+#: src/libraries/rwidgets/docks/antagonistboard.ui:256
+#: src/libraries/rwidgets/docks/antagonistboard.ui:280
+#: src/libraries/rwidgets/docks/antagonistboard.ui:287
 msgctxt "AntagonistBoard|"
 msgid "without"
 msgstr "sin"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:148
+#: src/libraries/rwidgets/docks/antagonistboard.ui:205
 msgctxt "AntagonistBoard|"
 msgid "exclude tags:"
 msgstr "excluir etiquetas:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:161
+#: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
 msgid "Health:"
 msgstr "Estado de salud:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:228
 msgctxt "AntagonistBoard|"
 msgid "full life"
 msgstr "vida completa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:178
+#: src/libraries/rwidgets/docks/antagonistboard.ui:235
 msgctxt "AntagonistBoard|"
 msgid "Injured"
 msgstr "Herido"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:185
+#: src/libraries/rwidgets/docks/antagonistboard.ui:242
 msgctxt "AntagonistBoard|"
 msgid "Dead"
 msgstr "Muerto"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:213
+#: src/libraries/rwidgets/docks/antagonistboard.ui:270
 msgctxt "AntagonistBoard|"
 msgid "Initiative Score:"
 msgstr "Puntuación de la iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:251
+#: src/libraries/rwidgets/docks/antagonistboard.ui:308
 msgctxt "AntagonistBoard|"
 msgid "Properties:"
 msgstr "Propiedades:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:261
+#: src/libraries/rwidgets/docks/antagonistboard.ui:318
 msgctxt "AntagonistBoard|"
 msgid "Initiative Command:"
 msgstr "Orden de iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:274
+#: src/libraries/rwidgets/docks/antagonistboard.ui:331
 msgctxt "AntagonistBoard|"
 msgid "Shapes:"
 msgstr "Formas:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:287
-#: src/libraries/rwidgets/docks/antagonistboard.ui:417
+#: src/libraries/rwidgets/docks/antagonistboard.ui:344
+#: src/libraries/rwidgets/docks/antagonistboard.ui:569
 msgctxt "AntagonistBoard|"
 msgid "Color:"
 msgstr "Color:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:373
+#: src/libraries/rwidgets/docks/antagonistboard.ui:454
 msgctxt "AntagonistBoard|"
 msgid "Info"
 msgstr "Información"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:387
-msgctxt "AntagonistBoard|"
-msgid "Name:"
-msgstr "Nombre:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:397
-msgctxt "AntagonistBoard|"
-msgid "Initiative Command"
-msgstr "Orden de iniciativa"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:404
-msgctxt "AntagonistBoard|"
-msgid "2d10"
-msgstr "2d10"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:451
-msgctxt "AntagonistBoard|"
-msgid "Initiative Value:"
-msgstr "Valor de iniciativa:"
-
-#: src/libraries/rwidgets/docks/antagonistboard.ui:488
+#: src/libraries/rwidgets/docks/antagonistboard.ui:504
 msgctxt "AntagonistBoard|"
 msgid "Size:"
 msgstr "Tamaño:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:527
+#: src/libraries/rwidgets/docks/antagonistboard.ui:529
 msgctxt "AntagonistBoard|"
-msgid "Health Points"
-msgstr "Puntos del estado de salud"
+msgid "Initiative Value:"
+msgstr "Valor de iniciativa:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:548
+#: src/libraries/rwidgets/docks/antagonistboard.ui:542
 msgctxt "AntagonistBoard|"
-msgid "Min:"
-msgstr "Mín:"
+msgid "Name:"
+msgstr "Nombre:"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:578
+#: src/libraries/rwidgets/docks/antagonistboard.ui:549
 msgctxt "AntagonistBoard|"
-msgid "Current"
-msgstr "Actual"
+msgid "Initiative Command"
+msgstr "Orden de iniciativa"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:611
+#: src/libraries/rwidgets/docks/antagonistboard.ui:556
 msgctxt "AntagonistBoard|"
-msgid "Max"
-msgstr "Máx"
+msgid "2d10"
+msgstr "2d10"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:634
+#: src/libraries/rwidgets/docks/antagonistboard.ui:580
 msgctxt "AntagonistBoard|"
 msgid "Avatar"
 msgstr "Avatar"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:710
+#: src/libraries/rwidgets/docks/antagonistboard.ui:635
 msgctxt "AntagonistBoard|"
 msgid "Change"
 msgstr "Cambiar"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:736
+#: src/libraries/rwidgets/docks/antagonistboard.ui:666
+msgctxt "AntagonistBoard|"
+msgid "Health Points"
+msgstr "Puntos del estado de salud"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:678
+msgctxt "AntagonistBoard|"
+msgid "Min:"
+msgstr "Mín:"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:707
+msgctxt "AntagonistBoard|"
+msgid "Current"
+msgstr "Actual"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:739
+msgctxt "AntagonistBoard|"
+msgid "Max"
+msgstr "Máx"
+
+#: src/libraries/rwidgets/docks/antagonistboard.ui:787
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr "Acción"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:757
+#: src/libraries/rwidgets/docks/antagonistboard.ui:808
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr "Acciones"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:823
+#: src/libraries/rwidgets/docks/antagonistboard.ui:874
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:844
+#: src/libraries/rwidgets/docks/antagonistboard.ui:895
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr "Formas"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:916
+#: src/libraries/rwidgets/docks/antagonistboard.ui:967
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr "Propiedad"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:922
+#: src/libraries/rwidgets/docks/antagonistboard.ui:988
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr "Propiedades"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1042
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr "Añadir acción"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1045
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr "añadir acción"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1054
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1057
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr "Eliminar acción"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1066
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1069
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr "Añadir forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1081
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr "Eliminar forma"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1090
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1093
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr "Añadir propiedad"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1102
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1105
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr "Eliminar propiedad"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1114
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr "Añadir personaje"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr "Eliminar personaje"
@@ -7800,27 +7800,27 @@ msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
 msgstr "Generador de nombres"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:31
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
 msgid "Male"
 msgstr "Masculino"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:59
 msgctxt "NameGeneratorWidget|"
 msgid "Female"
 msgstr "Femenino"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:68
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:83
 msgctxt "NameGeneratorWidget|"
 msgid "How many ?"
 msgstr "¿Cuántos?"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:82
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:97
 msgctxt "NameGeneratorWidget|"
 msgid "Complex"
 msgstr "Complejo"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:108
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:104
 msgctxt "NameGeneratorWidget|"
 msgid "Generate"
 msgstr "Generar"
@@ -7830,106 +7830,106 @@ msgctxt "Convertor|"
 msgid "Unit Convertor"
 msgstr "Conversor de unidades"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:29
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:41
 msgctxt "Convertor|"
 msgid "Category:"
 msgstr "Categoría:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:37
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:197
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:49
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:209
 msgctxt "Convertor|"
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:42
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:202
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:54
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:214
 msgctxt "Convertor|"
 msgid "Distance"
 msgstr "Distancia"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:47
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:207
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:59
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:219
 msgctxt "Convertor|"
 msgid "Currency"
 msgstr "Moneda"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:52
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:212
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:64
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:224
 msgctxt "Convertor|"
 msgid "Volume"
 msgstr "Volumen"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:57
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:217
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:69
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:229
 msgctxt "Convertor|"
 msgid "Mass"
 msgstr "Masa"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:65
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:77
 msgctxt "Convertor|"
 msgid "convert"
 msgstr "convertir"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:72
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:79
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:234
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:241
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:261
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:84
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:91
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:246
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:253
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:273
 msgctxt "Convertor|"
 msgid "..."
 msgstr "…"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:97
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:109
 msgctxt "Convertor|"
 msgid "From:"
 msgstr "De:"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:128
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:140
 msgctxt "Convertor|"
 msgid "To"
 msgstr "A"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:189
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:201
 msgctxt "Convertor|"
 msgid "Category"
 msgstr "Categoría"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:278
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:290
 msgctxt "Convertor|"
 msgid "Reverse"
 msgstr "Inverso"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:287
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
 msgctxt "Convertor|"
 msgid "Custom Rule"
 msgstr "Regla personalizada"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:296
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
 msgctxt "Convertor|"
 msgid "Add"
 msgstr "Añadir"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:299
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
 msgctxt "Convertor|"
 msgid "Add Unit"
 msgstr "Añadir unidad"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:308
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
 msgctxt "Convertor|"
 msgid "Remove Unit"
 msgstr "Eliminar unidad"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
 msgctxt "Convertor|"
 msgid "remove unit"
 msgstr "eliminar unidad"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
 msgid "Return"
 msgstr "Volver"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:335
 msgctxt "Convertor|"
 msgid "Return to convertor page"
 msgstr "Volver a la página del conversor"
