@@ -74,7 +74,7 @@ def build_appimage(path, version, app_name):
     run_process([linuxdeploy_path,"--appdir","../","AppDir","-e","AppDir/usr/bin/{}".format(app_name),"-i","../$ICON_PATH","-d","$DESKTOP_FILE_PATH","--plugin","qt","--output","appimage"],build_directory)
     appImageArray = glob.glob(build_directory+"*.AppImage")
     shutil.move(appImageArray[0],merge_path(path,"../"))
-    run_process(["make","install","INSTALL_ROOT=../AppDir/usr/bin/"],buildDirectory)
+    run_process(["make","install","INSTALL_ROOT=../AppDir/usr/bin/"],build_directory)
 
 def main():
     parser = argparse.ArgumentParser(description="Helper script to generate new rolisteam version.")

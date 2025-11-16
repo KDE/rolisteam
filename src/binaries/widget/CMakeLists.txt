@@ -83,5 +83,10 @@ target_link_libraries(rolisteam
         network
         dice3d )
 
+install(
+    PROGRAMS ${CMAKE_SOURCE_DIR}/resources/packaging/Linux/rolisteam.desktop
+    DESTINATION "share/applications"
+)
+
 include(install_helper)
 rinstallRT(rolisteam rolisteamComp)

@@ -183,6 +183,9 @@ target_include_directories(rcse PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/libraries
     ${CMAKE_BINARY_DIR})
 
-
+install(
+    PROGRAMS ${CMAKE_SOURCE_DIR}/resources/packaging/Linux/rcse.desktop
+    DESTINATION "share/applications"
+)
 include(install_helper)
 rinstallRT(rcse rcseComp)
