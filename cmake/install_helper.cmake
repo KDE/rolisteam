@@ -24,7 +24,7 @@ if(UNIX AND NOT APPLE)
       foreach(icon ${icons})
         install(
             FILES "${dirRoot}/${dir}/${icon}"
-            DESTINATION "share/icons/hicolor/${dir}/apps/${icon}")
+            DESTINATION "share/icons/hicolor/${dir}/apps")
       endforeach()
     endif()
   endforeach()
