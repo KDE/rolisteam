@@ -15,9 +15,19 @@ function(rinstallRT libname comp)
 endfunction()
 
 
-function(setupIcon target)
-if(WIN32)
-
+function(setupIcon dirRoot name)
+if(UNIX AND NOT APPLE)
+  file(GLOB subDirs RELATIVE ${dirRoot}  ${dirRoot}/*)
+  foreach(dir ${subDirs})
+    IF(IS_DIRECTORY ${dirRoot}/${dir})
+      file(GLOB icons RELATIVE ${dirRoot}/${dir}  ${dirRoot}/${dir}/${name}.*)
+      foreach(icon ${icons})
+        install(
+            FILES "${dirRoot}/${dir}/${icon}"
+            DESTINATION "share/icons/hicolor/${dir}/apps/${icon}")
+      endforeach()
+    endif()
+  endforeach()
 endif()
 endfunction()
 

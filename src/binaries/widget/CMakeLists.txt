@@ -83,6 +83,12 @@ target_link_libraries(rolisteam
         network
         dice3d )
 
+setupIcon("${CMAKE_SOURCE_DIR}/resources/packaging/Linux/icons" "rolisteam")
+#install(
+#    FILES "${CMAKE_SOURCE_DIR}/resources/packaging/Linux/icons/128x128/rolisteam.png"
+#    DESTINATION "share/icons/hicolor/128x128/apps/rolisteam.png"
+#)
+
 install(
     PROGRAMS ${CMAKE_SOURCE_DIR}/resources/packaging/Linux/rolisteam.desktop
     DESTINATION "share/applications"
