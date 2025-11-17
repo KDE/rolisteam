@@ -7465,25 +7465,17 @@ msgid "Always use default name "
 msgstr "ყოველთვის გამოიყენე ნაგულისხმევი სახელი "
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 გაზიარებული შენიშვნების რეაქტორი"
+msgstr "%1[*] - გაზიარებული შენიშვნების რედაქტორი (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "ჩაწერაწაკითხვადი"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "მხოლოდწასაკითხად"
