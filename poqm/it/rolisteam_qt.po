@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-09-23 22:47+0200\n"
+"PO-Revision-Date: 2025-11-15 23:27+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -12,13 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
 msgstr "Alias"
@@ -27,28 +24,20 @@ msgstr "Alias"
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Espressione regolare: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Alias"
+msgstr "Alias #%1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
-msgstr "Motivo"
+msgstr "Schema"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Comando"
@@ -56,52 +45,34 @@ msgstr "Comando"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Spento"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Apri"
+msgstr "Acceso"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Nome:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Motivo"
+msgstr "Schema:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Comando"
+msgstr "Comando:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Espressione regolare"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Disabilita"
@@ -109,116 +80,80 @@ msgstr "Disabilita"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Salva e indietro"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Elimina"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "predefinito"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Alias dei dadi"
+msgstr "Lancio dei dadi"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Digita il tuo comando, per es.: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Invio"
+msgstr "Esegui"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Macro"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Nome"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Comando"
+msgstr "comando"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Elimina"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Alias dei dadi"
+msgstr "Lancio dei dadi"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Dado in 3D"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Macro"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
 msgstr "Alias"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Scheda dei personaggi"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Impostazioni"
@@ -254,131 +189,86 @@ msgid "Comments"
 msgstr "Commenti"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "Dado in 3D"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Dimensione dei dadi:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Salva i profili"
+msgstr "Ultimo profilo"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Elimina"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Impostazioni"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Clona profilo"
+msgstr "Seleziona profilo"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Impostazioni"
+msgstr "Impostazioni applicazione"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Data di modifica"
+msgstr "Modalità scura:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Lingua:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
-msgstr "Informazioni"
+msgstr "Informazioni su"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Permesso"
+msgstr "Versione:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Stato:"
+msgstr "Data:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Scheda del personaggio"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Tasto"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Valore"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Elimina"
@@ -410,52 +300,38 @@ msgstr "Immagini (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Comando: %1"
+msgstr "Conteggio: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Finestra di dialogo Assistente alla compilazione"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Cambia stato"
+msgstr "Inizio contatore:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Passo contatore:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Tutte le pagine"
+msgstr "Imposta tutti i valori"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Sostituisci tutto"
+msgstr "Regole di sostituzione"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "..."
@@ -463,20 +339,14 @@ msgstr "..."
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Anteprima del risultato:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Aggiungi"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Rimuovi"
@@ -692,9 +562,6 @@ msgid "Previous Page Button"
 msgstr "Pulsante Pagina precedente"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Tabella"
@@ -1501,7 +1368,7 @@ msgstr "Edizione"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:751
+#: src/binaries/widget/mainwindow.cpp:752
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Aiuto"
@@ -1660,13 +1527,13 @@ msgid "Check Validity"
 msgstr "Controlla la validità"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:701
+#: src/binaries/widget/mainwindow.cpp:702
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "Ann&ulla"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:700
+#: src/binaries/widget/mainwindow.cpp:701
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Rifai"
@@ -1995,7 +1862,7 @@ msgstr "Applica a tutte le righe"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Apri assistente alla compilazione"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -2047,104 +1914,104 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Ottieni colore"
 
-#: src/binaries/server/main.cpp:108
+#: src/binaries/server/main.cpp:105
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Imposta il percorso del file di configurazione [obbligatorio]"
 
-#: src/binaries/server/main.cpp:111
+#: src/binaries/server/main.cpp:108
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "Stampa un file di configurazione predefinito sullo standard output"
 
-#: src/binaries/server/main.cpp:114
+#: src/binaries/server/main.cpp:111
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Richiedi la password e restituisci il suo hash."
 
-#: src/binaries/widget/mainwindow.cpp:485
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "PannelliLaterali"
 
-#: src/binaries/widget/mainwindow.cpp:490
+#: src/binaries/widget/mainwindow.cpp:491
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Pannelli laterali"
 
-#: src/binaries/widget/mainwindow.cpp:500
+#: src/binaries/widget/mainwindow.cpp:501
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Elenco dei giocatori"
 
-#: src/binaries/widget/mainwindow.cpp:501
+#: src/binaries/widget/mainwindow.cpp:502
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Tutti i documenti della campagna"
 
-#: src/binaries/widget/mainwindow.cpp:502
+#: src/binaries/widget/mainwindow.cpp:503
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Elenco degli avversari"
 
-#: src/binaries/widget/mainwindow.cpp:503
+#: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Lettore musicale"
 
-#: src/binaries/widget/mainwindow.cpp:504
+#: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Pannello del server"
 
-#: src/binaries/widget/mainwindow.cpp:505
+#: src/binaries/widget/mainwindow.cpp:506
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona di notifica"
 
-#: src/binaries/widget/mainwindow.cpp:520
+#: src/binaries/widget/mainwindow.cpp:521
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Strumenti GM"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:562
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "Definisci nome del documento"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:562
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nome:"
 
-#: src/binaries/widget/mainwindow.cpp:581
+#: src/binaries/widget/mainwindow.cpp:582
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Apri pagina web"
 
-#: src/binaries/widget/mainwindow.cpp:581
+#: src/binaries/widget/mainwindow.cpp:582
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "URL della pagina web:"
 
-#: src/binaries/widget/mainwindow.cpp:589
+#: src/binaries/widget/mainwindow.cpp:590
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Apri mappa"
 
-#: src/binaries/widget/mainwindow.cpp:589
+#: src/binaries/widget/mainwindow.cpp:590
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Mappa:"
 
-#: src/binaries/widget/mainwindow.cpp:603
-#: src/binaries/widget/mainwindow.cpp:642
-#: src/binaries/widget/mainwindow.cpp:872 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:604
+#: src/binaries/widget/mainwindow.cpp:643
+#: src/binaries/widget/mainwindow.cpp:873 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Apri campagna"
 
-#: src/binaries/widget/mainwindow.cpp:752
+#: src/binaries/widget/mainwindow.cpp:753
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
@@ -2152,12 +2019,12 @@ msgstr ""
 "La documentazione di %1 è disponibile in linea all'indirizzo:<br> <a href="
 "\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:787
+#: src/binaries/widget/mainwindow.cpp:788
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Supporto"
 
-#: src/binaries/widget/mainwindow.cpp:788
+#: src/binaries/widget/mainwindow.cpp:789
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -2165,7 +2032,7 @@ msgstr ""
 "La pagina delle donazioni di %1 è disponibile in linea all'indirizzo :<br> "
 "<a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:852
+#: src/binaries/widget/mainwindow.cpp:853
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2175,23 +2042,23 @@ msgstr ""
 "Vuoi salvare la campagna?\n"
 "Ultimo salvataggio: %1 min fa"
 
-#: src/binaries/widget/mainwindow.cpp:854
+#: src/binaries/widget/mainwindow.cpp:855
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Vuoi davvero uscire da Rolisteam?"
 
-#: src/binaries/widget/mainwindow.cpp:860
+#: src/binaries/widget/mainwindow.cpp:861
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Esci da %1"
 
-#: src/binaries/widget/mainwindow.cpp:939
+#: src/binaries/widget/mainwindow.cpp:940
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Notifica di aggiornamento"
 
-#: src/binaries/widget/mainwindow.cpp:940
+#: src/binaries/widget/mainwindow.cpp:941
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2202,107 +2069,107 @@ msgstr ""
 "un'occhiata alla <a href=\"https://www.rolisteam.org/download\">Pagina "
 "Download</a>"
 
-#: src/binaries/widget/mainwindow.cpp:950
+#: src/binaries/widget/mainwindow.cpp:951
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 si è appena unito al gioco."
 
-#: src/binaries/widget/mainwindow.cpp:954
+#: src/binaries/widget/mainwindow.cpp:955
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 non ha la versione corretta: %2."
 
-#: src/binaries/widget/mainwindow.cpp:960
+#: src/binaries/widget/mainwindow.cpp:961
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 lascia il gioco."
 
-#: src/binaries/widget/mainwindow.cpp:1043
+#: src/binaries/widget/mainwindow.cpp:1044
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Imposta rolisteam per utilizzare <porta> per la connessione"
 
-#: src/binaries/widget/mainwindow.cpp:1046
+#: src/binaries/widget/mainwindow.cpp:1047
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Imposta rolisteam per la connessione a <server>."
 
-#: src/binaries/widget/mainwindow.cpp:1049
+#: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Definisci il <ruolo>: gm o pc"
 
-#: src/binaries/widget/mainwindow.cpp:1051
+#: src/binaries/widget/mainwindow.cpp:1052
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Cancella le impostazioni e utilizza i parametri predefiniti"
 
-#: src/binaries/widget/mainwindow.cpp:1054
+#: src/binaries/widget/mainwindow.cpp:1055
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Definisci il <nomeutente>"
 
-#: src/binaries/widget/mainwindow.cpp:1057
+#: src/binaries/widget/mainwindow.cpp:1058
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 "Definisci la <websocketport> utile per il test di interfaccia automatico"
 
-#: src/binaries/widget/mainwindow.cpp:1058
+#: src/binaries/widget/mainwindow.cpp:1059
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Rimuovi il limite alla dimensione del file PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1061
+#: src/binaries/widget/mainwindow.cpp:1062
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "percorso del file di traduzione: <filetraduzione>"
 
-#: src/binaries/widget/mainwindow.cpp:1064
+#: src/binaries/widget/mainwindow.cpp:1065
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Definisci l'URL per la connessione al server: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1169
+#: src/binaries/widget/mainwindow.cpp:1170
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Apri %1"
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1267
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connesso"
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1267
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Non connesso"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1268
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Server"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1268
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
-#: src/binaries/widget/mainwindow.cpp:1274
+#: src/binaries/widget/mainwindow.cpp:1275
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "GM"
 
-#: src/binaries/widget/mainwindow.cpp:1280
+#: src/binaries/widget/mainwindow.cpp:1281
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Giocatore"
 
-#: src/binaries/widget/mainwindow.cpp:1308
+#: src/binaries/widget/mainwindow.cpp:1309
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Sconosciuto"
@@ -2845,24 +2712,24 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr "Rimuovi ultima riga"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:619
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:620
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr "Nome dei campi"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:657
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:658
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr "Sezione vuota %1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:664
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:665
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
 msgstr "Sezione_%1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:688
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:689
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Field %1"
@@ -2994,7 +2861,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Fornisci questo file agli sviluppatori di Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:465
+#: src/libraries/core/src/controller/contentcontroller.cpp:466
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Immagine copiata"
@@ -3010,25 +2877,19 @@ msgid "Text"
 msgstr "Testo"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:191
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "La connessione al server è stata chiusa."
+msgstr "Il thread col server è stato chiuso"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:202
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Server"
+msgstr "Il server è spento"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:206
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "Il server è acceso"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3308,27 +3169,27 @@ msgctxt "NonPlayableCharacterModel|"
 msgid "Init Command"
 msgstr "Comando di inizializzazione"
 
-#: src/libraries/core/src/model/palettemodel.cpp:76
+#: src/libraries/core/src/model/palettemodel.cpp:75
 msgctxt "PaletteModel|"
 msgid "Role"
 msgstr "Ruolo"
 
-#: src/libraries/core/src/model/palettemodel.cpp:76
+#: src/libraries/core/src/model/palettemodel.cpp:75
 msgctxt "PaletteModel|"
 msgid "Group"
 msgstr "Gruppo"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Active"
 msgstr "Attivo"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Disable"
 msgstr "Disabilita"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Inactive"
 msgstr "Inattivo"
@@ -3511,7 +3372,7 @@ msgstr "[Upnp] La mappatura delle porte è stata eseguita"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Server] Inizio l'ascolto"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
@@ -4269,7 +4130,7 @@ msgstr "Comando: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Invia"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4327,12 +4188,9 @@ msgid "Font Family:"
 msgstr "Famiglia di caratteri:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Dimensione dei caratteri:"
+msgstr "Fattore dimensione caratteri:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
@@ -6776,27 +6634,27 @@ msgctxt "MRichTextEdit|"
 msgid "Edit document source"
 msgstr "Modifica sorgente del documento"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:201
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:200
 msgctxt "MRichTextEdit|"
 msgid "Document source"
 msgstr "Sorgente del documento"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:300
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
 msgid "Create a link"
 msgstr "Crea un collegamento"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:300
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
 msgid "Link URL:"
 msgstr "URL del collegamento:"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:700
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:699
 msgctxt "MRichTextEdit|"
 msgid "Select an image"
 msgstr "Seleziona un'immagine"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:701
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:700
 msgctxt "MRichTextEdit|"
 msgid "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"
 msgstr "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; Tutti (*)"
@@ -6952,49 +6810,49 @@ msgctxt "OOReader|"
 msgid "Unable to convert document body!"
 msgstr "Impossibile convertire il corpo del documento!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:62
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:58
 msgctxt "XMLTextEdit|"
 msgid "Found xml error"
 msgstr "Trovato errore xml"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:63
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:59
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "Check line %1 column %2 on string \"%3\"!"
 msgstr "Controlla riga %1 colonna %2 alla stringa «%3»!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:71
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:66
 msgctxt "XMLTextEdit|"
 msgid "XML valid."
 msgstr "XML valido."
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:71
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:66
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "All tag are valid size %1."
 msgstr "Tutte le etichette hanno una dimensione valida %1."
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:77
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:72
 msgctxt "XMLTextEdit|"
 msgid "XML not found!"
 msgstr "XML non trovato!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:77
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:72
 msgctxt "XMLTextEdit|"
 msgid "Null size xml document!"
 msgstr "Documento xml di dimensioni nulle!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:92
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:87
 msgctxt "XMLTextEdit|"
 msgid "Zoom In CTRL/+"
 msgstr "Ingrandisci CTRL/+"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:93
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:88
 msgctxt "XMLTextEdit|"
 msgid "Zoom Out CTRL/-"
 msgstr "Rimpicciolisci CTRL/-"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:94
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:89
 msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
 msgstr "Controlla la sintassi xml"
@@ -7005,22 +6863,22 @@ msgctxt "NoteContainer|"
 msgid "%1 - Note"
 msgstr "%1 - Nota"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:173
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:171
 msgctxt "TextEdit|"
 msgid "File Actions"
 msgstr "Azioni file"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:176
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:174
 msgctxt "TextEdit|"
 msgid "&File"
 msgstr "&File"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:183
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:181
 msgctxt "TextEdit|"
 msgid "&Save"
 msgstr "&Salva"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:188
 msgctxt "TextEdit|"
 msgid "&Name..."
 msgstr "&Nome..."
@@ -7617,10 +7475,28 @@ msgid "Always use default name "
 msgstr "Usa sempre il nome predefinito "
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "SharedNote|"
+#| msgid "%1 - Shared Note Editor"
 msgctxt "SharedNote|"
-msgid "%1 - Shared Note Editor"
+msgid "%1[*] - Shared Note Editor (%2)"
 msgstr "%1 - Editor delle note condivise"
+
+#: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
+#, fuzzy
+#| msgctxt "MindMapView|"
+#| msgid "ReadWrite"
+msgctxt "SharedNote|"
+msgid "ReadWrite"
+msgstr "Lettura-scrittura"
+
+#: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
+#, fuzzy
+#| msgctxt "MindMapView|"
+#| msgid "ReadOnly"
+msgctxt "SharedNote|"
+msgid "ReadOnly"
+msgstr "Sola lettura"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:17
 msgctxt "SharedNote|"
@@ -8121,57 +7997,57 @@ msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Nuova unità"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:92
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
 msgctxt "CharacterItem|"
 msgid "Disk"
 msgstr "Disco"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
 msgctxt "CharacterItem|"
 msgid "Angle"
 msgstr "Angolo"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
 msgctxt "CharacterItem|"
 msgid "Reduce Life"
 msgstr "Riduci vita"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:96
 msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Aumenta vita"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:371
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:372
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Cambia stato"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "Forma della visione"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:410
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Azioni"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:412
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "Iniziativa"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:413
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:414
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "Cancella iniziativa"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:430
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:431
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Forme"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:437
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:438
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Cancella forma"

@@ -1489,7 +1489,7 @@ msgstr "Versio"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:751
+#: src/binaries/widget/mainwindow.cpp:752
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Ohje"
@@ -1651,13 +1651,13 @@ msgid "Check Validity"
 msgstr "Tarkista kelpoisuus"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:701
+#: src/binaries/widget/mainwindow.cpp:702
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "K&umoa"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:700
+#: src/binaries/widget/mainwindow.cpp:701
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "T&ee uudelleen"
@@ -2047,37 +2047,37 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Nouda väri"
 
-#: src/binaries/server/main.cpp:108
+#: src/binaries/server/main.cpp:105
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Aseta asetustiedoston sijainti [pakollinen]"
 
-#: src/binaries/server/main.cpp:111
+#: src/binaries/server/main.cpp:108
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "Tulosta oletusasetustiedosto vakiotulosvirtaan"
 
-#: src/binaries/server/main.cpp:114
+#: src/binaries/server/main.cpp:111
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Kysy salasana ja palauta sen tiivisteavain."
 
-#: src/binaries/widget/mainwindow.cpp:485
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "Sivupaneelit"
 
-#: src/binaries/widget/mainwindow.cpp:490
+#: src/binaries/widget/mainwindow.cpp:491
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Sivupaneelit"
 
-#: src/binaries/widget/mainwindow.cpp:500
+#: src/binaries/widget/mainwindow.cpp:501
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Pelaajaluettelo"
 
-#: src/binaries/widget/mainwindow.cpp:501
+#: src/binaries/widget/mainwindow.cpp:502
 #, fuzzy
 #| msgctxt "FieldView|"
 #| msgid "All columns"
@@ -2085,22 +2085,22 @@ msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Kaikki sarakkeet"
 
-#: src/binaries/widget/mainwindow.cpp:502
+#: src/binaries/widget/mainwindow.cpp:503
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Vastustajaluettelo"
 
-#: src/binaries/widget/mainwindow.cpp:503
+#: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Musiikkisoitin"
 
-#: src/binaries/widget/mainwindow.cpp:504
+#: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Palvelinpaneeli"
 
-#: src/binaries/widget/mainwindow.cpp:505
+#: src/binaries/widget/mainwindow.cpp:506
 #, fuzzy
 #| msgctxt "NotificationZone|"
 #| msgid "Notification Zone"
@@ -2108,7 +2108,7 @@ msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Ilmoitusalue"
 
-#: src/binaries/widget/mainwindow.cpp:520
+#: src/binaries/widget/mainwindow.cpp:521
 #, fuzzy
 #| msgctxt "ToolBox|"
 #| msgid "Tools"
@@ -2116,7 +2116,7 @@ msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Työkalut"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:562
 #, fuzzy
 #| msgctxt "Image|"
 #| msgid "Define the new name"
@@ -2124,7 +2124,7 @@ msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "Määritä uusi nimi"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:562
 #, fuzzy
 #| msgctxt "PersonEdit|"
 #| msgid "Name:"
@@ -2132,34 +2132,34 @@ msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: src/binaries/widget/mainwindow.cpp:581
+#: src/binaries/widget/mainwindow.cpp:582
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Avaa verkkosivu"
 
-#: src/binaries/widget/mainwindow.cpp:581
+#: src/binaries/widget/mainwindow.cpp:582
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "Verkkosivun osoite:"
 
-#: src/binaries/widget/mainwindow.cpp:589
+#: src/binaries/widget/mainwindow.cpp:590
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Avaa kartta"
 
-#: src/binaries/widget/mainwindow.cpp:589
+#: src/binaries/widget/mainwindow.cpp:590
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Kartta:"
 
-#: src/binaries/widget/mainwindow.cpp:603
-#: src/binaries/widget/mainwindow.cpp:642
-#: src/binaries/widget/mainwindow.cpp:872 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:604
+#: src/binaries/widget/mainwindow.cpp:643
+#: src/binaries/widget/mainwindow.cpp:873 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Avaa kampanja"
 
-#: src/binaries/widget/mainwindow.cpp:752
+#: src/binaries/widget/mainwindow.cpp:753
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2172,18 +2172,18 @@ msgstr ""
 "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 
-#: src/binaries/widget/mainwindow.cpp:787
+#: src/binaries/widget/mainwindow.cpp:788
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Tuki"
 
-#: src/binaries/widget/mainwindow.cpp:788
+#: src/binaries/widget/mainwindow.cpp:789
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "%1-lahjoitussivu löytyy verkosta osoitteesta:<br><a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:852
+#: src/binaries/widget/mainwindow.cpp:853
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
@@ -2193,23 +2193,23 @@ msgid ""
 "Last save: %1 min(s) ago"
 msgstr "Haluatko tyhjentää nykyisen QML-koodin?"
 
-#: src/binaries/widget/mainwindow.cpp:854
+#: src/binaries/widget/mainwindow.cpp:855
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:860
+#: src/binaries/widget/mainwindow.cpp:861
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Lopeta %1"
 
-#: src/binaries/widget/mainwindow.cpp:939
+#: src/binaries/widget/mainwindow.cpp:940
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Päivitysilmoitus"
 
-#: src/binaries/widget/mainwindow.cpp:940
+#: src/binaries/widget/mainwindow.cpp:941
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2223,106 +2223,106 @@ msgstr ""
 "Versio %1 on julkaista. Lisätietoa löytyy <a href=\"http://www.rolisteam.org/"
 "download\">lataussivulta</a>."
 
-#: src/binaries/widget/mainwindow.cpp:950
+#: src/binaries/widget/mainwindow.cpp:951
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 liittyi juuri peliin."
 
-#: src/binaries/widget/mainwindow.cpp:954
+#: src/binaries/widget/mainwindow.cpp:955
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 ei ole oikeaa versiota: %2"
 
-#: src/binaries/widget/mainwindow.cpp:960
+#: src/binaries/widget/mainwindow.cpp:961
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 poistui juuri pelistä."
 
-#: src/binaries/widget/mainwindow.cpp:1043
+#: src/binaries/widget/mainwindow.cpp:1044
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Aseta rolisteam käyttämään yhteyteen <porttia>"
 
-#: src/binaries/widget/mainwindow.cpp:1046
+#: src/binaries/widget/mainwindow.cpp:1047
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Aseta rolisteam yhdistämään <palvelimeen>."
 
-#: src/binaries/widget/mainwindow.cpp:1049
+#: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Määritä <rooli>: gm tai pc"
 
-#: src/binaries/widget/mainwindow.cpp:1051
+#: src/binaries/widget/mainwindow.cpp:1052
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Tyhjennä asetukset ja käytä oletusparametreja"
 
-#: src/binaries/widget/mainwindow.cpp:1054
+#: src/binaries/widget/mainwindow.cpp:1055
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Määritä <käyttäjätunnus>"
 
-#: src/binaries/widget/mainwindow.cpp:1057
+#: src/binaries/widget/mainwindow.cpp:1058
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1058
+#: src/binaries/widget/mainwindow.cpp:1059
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Poista PDF-tiedoston kokorajoitus"
 
-#: src/binaries/widget/mainwindow.cpp:1061
+#: src/binaries/widget/mainwindow.cpp:1062
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "käännöstiedoston sijainti: <käännöstiedosto>"
 
-#: src/binaries/widget/mainwindow.cpp:1064
+#: src/binaries/widget/mainwindow.cpp:1065
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Määritä palvelinyhteyden verkko-osoite: <verkko-osoite>"
 
-#: src/binaries/widget/mainwindow.cpp:1169
+#: src/binaries/widget/mainwindow.cpp:1170
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Avaa %1"
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1267
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Yhdistetty"
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1267
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Ei yhteyttä"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1268
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Palvelin"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1268
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Asiakas"
 
-#: src/binaries/widget/mainwindow.cpp:1274
+#: src/binaries/widget/mainwindow.cpp:1275
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "GM"
 
-#: src/binaries/widget/mainwindow.cpp:1280
+#: src/binaries/widget/mainwindow.cpp:1281
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Pelaaja"
 
-#: src/binaries/widget/mainwindow.cpp:1308
+#: src/binaries/widget/mainwindow.cpp:1309
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Tuntematon"
@@ -2871,24 +2871,24 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr "Poista viimeinen rivi"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:619
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:620
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr "Kentän nimi"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:657
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:658
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr "Tyhjä osio %1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:664
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:665
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
 msgstr "Osio_%1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:688
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:689
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Field %1"
@@ -3050,7 +3050,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Tarjoa tämä tiedosto Rolisteamin kehittäjille"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:465
+#: src/libraries/core/src/controller/contentcontroller.cpp:466
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Kopioitiin kuva"
@@ -3367,27 +3367,27 @@ msgctxt "NonPlayableCharacterModel|"
 msgid "Init Command"
 msgstr "Alustuskomento"
 
-#: src/libraries/core/src/model/palettemodel.cpp:76
+#: src/libraries/core/src/model/palettemodel.cpp:75
 msgctxt "PaletteModel|"
 msgid "Role"
 msgstr "Rooli"
 
-#: src/libraries/core/src/model/palettemodel.cpp:76
+#: src/libraries/core/src/model/palettemodel.cpp:75
 msgctxt "PaletteModel|"
 msgid "Group"
 msgstr "Ryhmä"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Active"
 msgstr "Aktiivinen"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Disable"
 msgstr "Poista käytöstä"
 
-#: src/libraries/core/src/model/palettemodel.cpp:77
+#: src/libraries/core/src/model/palettemodel.cpp:76
 msgctxt "PaletteModel|"
 msgid "Inactive"
 msgstr "Passiivinen"
@@ -6920,27 +6920,27 @@ msgctxt "MRichTextEdit|"
 msgid "Edit document source"
 msgstr "Muokkaa tiedoston lähdettä"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:201
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:200
 msgctxt "MRichTextEdit|"
 msgid "Document source"
 msgstr "Tiedoston lähde"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:300
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
 msgid "Create a link"
 msgstr "Luo linkki:"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:300
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
 msgid "Link URL:"
 msgstr "Linkin verkko-osoite:"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:700
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:699
 msgctxt "MRichTextEdit|"
 msgid "Select an image"
 msgstr "Valitse kuva"
 
-#: src/libraries/rwidgets/editors/mrichtextedit.cpp:701
+#: src/libraries/rwidgets/editors/mrichtextedit.cpp:700
 msgctxt "MRichTextEdit|"
 msgid "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"
 msgstr "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; Kaikki (*)"
@@ -7096,49 +7096,49 @@ msgctxt "OOReader|"
 msgid "Unable to convert document body!"
 msgstr "Tiedoston runkoa ei voitu muuntaa!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:62
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:58
 msgctxt "XMLTextEdit|"
 msgid "Found xml error"
 msgstr "Löytyi XML-virhe"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:63
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:59
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "Check line %1 column %2 on string \"%3\"!"
 msgstr "Tarkista rivi %1 sar %2 merkkijonossa ”%3”!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:71
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:66
 msgctxt "XMLTextEdit|"
 msgid "XML valid."
 msgstr "Kelvollinen XML."
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:71
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:66
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "All tag are valid size %1."
 msgstr ""
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:77
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:72
 msgctxt "XMLTextEdit|"
 msgid "XML not found!"
 msgstr "XML:ää ei löytynyt!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:77
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:72
 msgctxt "XMLTextEdit|"
 msgid "Null size xml document!"
 msgstr "Tyhjä XML-tiedosto!"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:92
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:87
 msgctxt "XMLTextEdit|"
 msgid "Zoom In CTRL/+"
 msgstr "Lähennä Ctrl++"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:93
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:88
 msgctxt "XMLTextEdit|"
 msgid "Zoom Out CTRL/-"
 msgstr "Loitonna Ctrl+-"
 
-#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:94
+#: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:89
 msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
 msgstr "Tarkista XML-syntaksi"
@@ -7149,22 +7149,22 @@ msgctxt "NoteContainer|"
 msgid "%1 - Note"
 msgstr "%1 – muistiinpano"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:173
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:171
 msgctxt "TextEdit|"
 msgid "File Actions"
 msgstr "Tiedostotoiminnot"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:176
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:174
 msgctxt "TextEdit|"
 msgid "&File"
 msgstr "&Tiedosto"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:183
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:181
 msgctxt "TextEdit|"
 msgid "&Save"
 msgstr "&Tallenna"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:190
+#: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:188
 #, fuzzy
 #| msgctxt "MediaModel|"
 #| msgid "Name"
@@ -7677,10 +7677,28 @@ msgid "Always use default name "
 msgstr "Käytä aina oletusnimeä"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, qt-format
+#, fuzzy, qt-format
+#| msgctxt "QObject|"
+#| msgid "Shared Notes"
 msgctxt "SharedNote|"
-msgid "%1 - Shared Note Editor"
-msgstr ""
+msgid "%1[*] - Shared Note Editor (%2)"
+msgstr "Jaetut muistiinpanot"
+
+#: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
+#, fuzzy
+#| msgctxt "ParticipantModel|"
+#| msgid "Read Write"
+msgctxt "SharedNote|"
+msgid "ReadWrite"
+msgstr "Luku ja kirjoitus"
+
+#: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
+#, fuzzy
+#| msgctxt "ParticipantModel|"
+#| msgid "Read Only"
+msgctxt "SharedNote|"
+msgid "ReadOnly"
+msgstr "Vain luku"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:17
 #, fuzzy
@@ -8188,57 +8206,57 @@ msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Uusi yksikkö"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:92
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
 msgctxt "CharacterItem|"
 msgid "Disk"
 msgstr "Levy"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
 msgctxt "CharacterItem|"
 msgid "Angle"
 msgstr "Kulma"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
 msgctxt "CharacterItem|"
 msgid "Reduce Life"
 msgstr "Vähennä elämää"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:96
 msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Lisää elämää"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:371
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:372
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Muuta tilaa"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:410
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Toiminnot"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:412
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:413
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:414
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:430
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:431
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Kuviot"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:437
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:438
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Tyhjennä kuvio"
