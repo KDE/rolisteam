@@ -91,7 +91,7 @@ QVariant DiceAliasModel::data(const QModelIndex& index, int role) const
     }
     else if(Qt::BackgroundRole == role)
     {
-        if(!diceAlias->isDisable())
+        if(diceAlias->isDisable())
         {
             return QColor(Qt::red).lighter();
         }

@@ -125,6 +125,9 @@ CampaignProperties::CampaignProperties(campaign::Campaign* capm, ThemeModel* the
     ui->m_stateView->setItemDelegateForColumn(1, new rwidgets::ColorDelegate(this));
     ui->m_stateView->setItemDelegateForColumn(
         2, new rwidgets::ImagePathDelegateItem(m_campaign->directory(campaign::Campaign::Place::STATE_ROOT), this));
+
+    horizontalHeader->resizeSections(QHeaderView::Stretch);
+    horizontalHeader->setSectionResizeMode(QHeaderView::Stretch);
 }
 
 CampaignProperties::~CampaignProperties()

@@ -1795,10 +1795,10 @@ void MessageHelper::fetchDiceAliasFromNetwork(NetworkMessageReader* msg, QList<D
         auto pattern= msg->string32();
         auto command= msg->string32();
         auto replace= msg->int8();
-        auto enable= msg->int8();
+        auto disable= msg->int8();
         auto comment= msg->string32();
 
-        list->append(new DiceAlias(pattern, command, comment, replace, !enable));
+        list->append(new DiceAlias(pattern, command, comment, replace, disable));
     }
 }
 
