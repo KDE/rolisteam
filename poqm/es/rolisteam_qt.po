@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-11-10 02:52+0100\n"
+"PO-Revision-Date: 2025-11-19 00:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -7475,25 +7475,17 @@ msgid "Always use default name "
 msgstr "Usar siempre el nombre predeterminado"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 - Editor de nota compartida"
+msgstr "%1[*]- Editor de nota compartida (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "Lectura y escritura"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "Solo lectura"

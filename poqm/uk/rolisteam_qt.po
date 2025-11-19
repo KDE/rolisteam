@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-10 15:07+0200\n"
+"PO-Revision-Date: 2025-11-17 13:51+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -7484,25 +7484,17 @@ msgid "Always use default name "
 msgstr "Завжди використовувати типову назву"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 — редактор спільних нотаток"
+msgstr "%1[*] – редактор спільних нотаток (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "Читання-запис"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "Лише читання"
