@@ -405,8 +405,14 @@ void GameController::startIpRetriever()
     tipChecker->startChecking();
 
     connect(tipChecker, &TipChecker::checkFinished, this,
-            [=]()
+            [this, tipChecker](TipChecker::ErrorType error)
             {
+                if(error == TipChecker::NoError)
+                {
+                    tipChecker->deleteLater();
+                    return;
+                }
+
                 auto id= m_preferences->value(QStringLiteral("MainWindow::lastTips"), 0).toInt();
                 if(tipChecker->hasArticle() && tipChecker->getId() + 1 > id)
                 {

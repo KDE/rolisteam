@@ -32,6 +32,12 @@ class CORE_EXPORT TipChecker : public QObject
 {
     Q_OBJECT
 public:
+    enum ErrorType
+    {
+        NoError,
+        NotFound,
+        NotJSon
+    };
     TipChecker(QObject* obj= nullptr);
 
     bool hasArticle();
@@ -44,7 +50,7 @@ public:
     void setId(int value);
 
 signals:
-    void checkFinished();
+    void checkFinished(TipChecker::ErrorType type);
 
 private slots:
     void readJSon(QNetworkReply* p);
@@ -56,7 +62,6 @@ private:
     int m_id;
     bool m_state= false;
     QNetworkAccessManager* m_manager= nullptr;
-    bool m_noErrror;
 };
 
 #endif // TIPCHECKER_H

@@ -127,8 +127,8 @@ bool CharacterShape::setData(int col, QVariant value, int role)
         }
         else if(col == 1)
         {
-            setImage(value.value<QImage>());
-            // setUri(value.toString());
+            // setImage(value.value<QImage>());
+            setUri(value.toString());
             set= true;
         }
     }

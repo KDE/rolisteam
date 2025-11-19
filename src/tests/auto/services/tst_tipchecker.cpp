@@ -63,6 +63,13 @@ void TipCheckerTest::doTest()
     spy.wait(1000);
     QCOMPARE(spy.count(), 1);
 
+    auto errorCode= spy.takeFirst();
+
+    if(errorCode.contains(TipChecker::NotFound))
+        QSKIP("Skip test because tip file not found");
+    else if(errorCode.contains(TipChecker::NotJSon))
+        QSKIP("Skip test because file is not json");
+
     QVERIFY(!m_tip->getArticleContent().isEmpty());
     QVERIFY(!m_tip->getArticleTitle().isEmpty());
     QVERIFY(m_tip->getUrl().isEmpty());

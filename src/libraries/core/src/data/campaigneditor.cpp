@@ -209,6 +209,13 @@ QString CampaignEditor::saveAvatar(const QString& id, const QByteArray& array)
     return dest;
 }
 
+QString CampaignEditor::saveShape(const QString& id, const QByteArray& array)
+{
+    auto dest= QString("%1/shape_%2.png").arg(m_campaign->directory(campaign::Campaign::Place::NPC_ROOT), id);
+    utils::IOHelper::writeFile(dest, array);
+    return dest;
+}
+
 bool CampaignEditor::addMedia(const QString& id, const QString& dest, const QByteArray& array)
 {
     QFileInfo file(dest);

@@ -87,8 +87,10 @@ NetworkController::NetworkController(QObject* parent)
 
 NetworkController::~NetworkController()
 {
-    m_serverThread->quit();
-    m_ipChecker->deleteLater();
+    if(m_serverThread)
+        m_serverThread->quit();
+    if(m_ipChecker)
+        m_ipChecker->deleteLater();
 }
 
 void NetworkController::dispatchMessage(QByteArray array)

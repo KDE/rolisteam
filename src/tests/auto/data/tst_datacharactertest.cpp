@@ -343,7 +343,7 @@ void DataCharacterTest::propertiesTest()
 
         CharacterShape shape2;
         shape2.setUri(Helper::imagePath());
-        QVERIFY(!shape2.getData(0, Qt::DecorationRole).value<QImage>().isNull());
+        QVERIFY(!shape2.getData(1, Qt::DecorationRole).value<QImage>().isNull());
 
         QVERIFY(shape2.getData(0, Qt::BackgroundRole).isNull());
 

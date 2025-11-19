@@ -34,6 +34,11 @@ class CORE_EXPORT UpdateChecker : public QObject
     Q_OBJECT
     Q_PROPERTY(bool needUpdate READ needUpdate NOTIFY needUpdateChanged)
 public:
+    enum ErrorType
+    {
+        NoError,
+        NotFound
+    };
     UpdateChecker(const QString& version, QObject* obj= nullptr);
 
     bool needUpdate();
@@ -42,7 +47,7 @@ public:
     QString getLatestVersion();
     QString getLatestVersionDate();
 signals:
-    void checkFinished();
+    void checkFinished(UpdateChecker::ErrorType type);
     void needUpdateChanged();
 
 private slots:
@@ -56,7 +61,6 @@ private:
     QString m_dateRemoteVersion;
     QString m_changeLog;
     std::unique_ptr<QNetworkAccessManager> m_manager;
-    bool m_noErrror= false;
 };
 
 #endif // UPDATECHECKER_H

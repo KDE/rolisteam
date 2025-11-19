@@ -1066,7 +1066,7 @@ QJsonObject IOHelper::npcToJsonObject(const campaign::NonPlayableCharacter* npc,
 
     QJsonArray actionArray;
     auto actionList= npc->actionList();
-    for(auto act : actionList)
+    for(auto act : std::as_const(actionList))
     {
         if(act == nullptr)
             continue;
@@ -1079,7 +1079,7 @@ QJsonObject IOHelper::npcToJsonObject(const campaign::NonPlayableCharacter* npc,
 
     QJsonArray propertyArray;
     auto properties= npc->propertiesList();
-    for(auto property : properties)
+    for(auto property : std::as_const(properties))
     {
         if(property == nullptr)
             continue;
@@ -1092,7 +1092,7 @@ QJsonObject IOHelper::npcToJsonObject(const campaign::NonPlayableCharacter* npc,
 
     QJsonArray shapeArray;
     auto shapes= npc->shapeList();
-    for(auto shape : shapes)
+    for(auto shape : std::as_const(shapes))
     {
         if(shape == nullptr)
             continue;

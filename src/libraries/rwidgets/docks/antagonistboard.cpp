@@ -380,12 +380,14 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
 
                 ImageSelectorController ctrl(false, ImageSelectorController::All, ImageSelectorController::Square);
                 ImageSelectorDialog dialog(&ctrl, this);
-                if(QDialog::Accepted != dialog.exec())
+                if(QDialog::Accepted != dialog.exec() || !m_editor)
                     return;
 
                 auto data= ctrl.finalImageData();
+
+                auto finalPath= m_editor->saveShape(QString("%1_%2").arg(m_currentItemId).arg(index.row()), data);
                 auto model= m_ctrl->shapeModel();
-                model->setData(index, IOHelper::dataToPixmap(data).toImage());
+                model->setData(index, finalPath);
             });
 
     connect(ui->m_sizeEdit, QOverload<int>::of(&QSpinBox::valueChanged), this,

@@ -51,6 +51,7 @@ public:
     bool createDefault(const QString& src);
 
     QString saveAvatar(const QString& id, const QByteArray& array);
+    QString saveShape(const QString& id, const QByteArray& array);
 
     QString mediaFullPathWithExtension(const QString& file, Core::ContentType type) const;
     QString mediaFullPath(const QString& file) const;

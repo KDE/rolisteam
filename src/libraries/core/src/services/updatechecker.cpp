@@ -64,8 +64,7 @@ void UpdateChecker::readXML(QNetworkReply* p)
 {
     if(p->error() != QNetworkReply::NoError)
     {
-        m_noErrror= false;
-        emit checkFinished();
+        emit checkFinished(UpdateChecker::NotFound);
         return;
     }
 
@@ -88,7 +87,7 @@ void UpdateChecker::readXML(QNetworkReply* p)
     m_remoteVersion= QString("%1.%2.%3").arg(major).arg(middle).arg(minor);
 
     setNeedUpdate(m_remoteVersion != m_localVersion);
-    emit checkFinished();
+    emit checkFinished(UpdateChecker::NoError);
 }
 
 void UpdateChecker::setNeedUpdate(bool b)

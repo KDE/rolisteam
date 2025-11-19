@@ -62,6 +62,11 @@ void UpdateTest::doTest()
     spy.wait(1000);
     QCOMPARE(spy.count(), 1);
 
+    auto r= spy.takeFirst();
+
+    if(r.contains(UpdateChecker::NotFound))
+        QSKIP("SKIP test because file not found ");
+
     QVERIFY(m_update->needUpdate());
     QVERIFY(!m_update->getLatestVersion().isEmpty());
     QVERIFY(!m_update->getLatestVersionDate().isEmpty());

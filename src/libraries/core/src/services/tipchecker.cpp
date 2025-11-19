@@ -33,10 +33,7 @@
  * UpdateChecker *
  *****************/
 
-TipChecker::TipChecker(QObject* obj) : QObject(obj)
-{
-    m_noErrror= true;
-}
+TipChecker::TipChecker(QObject* obj) : QObject(obj) {}
 
 bool TipChecker::hasArticle()
 {
@@ -70,8 +67,7 @@ void TipChecker::readJSon(QNetworkReply* p)
 {
     if(p->error() != QNetworkReply::NoError)
     {
-        m_noErrror= false;
-        emit checkFinished();
+        emit checkFinished(TipChecker::NotFound);
         return;
     }
 
@@ -80,8 +76,7 @@ void TipChecker::readJSon(QNetworkReply* p)
     QJsonDocument doc(QJsonDocument::fromJson(a, &error));
     if(error.error != QJsonParseError::NoError)
     {
-        m_noErrror= false;
-        emit checkFinished();
+        emit checkFinished(TipChecker::NotJSon);
         return;
     }
 
@@ -109,7 +104,7 @@ void TipChecker::readJSon(QNetworkReply* p)
             m_state= true;
         }
     }
-    emit checkFinished();
+    emit checkFinished(TipChecker::NoError);
 }
 
 int TipChecker::getId() const

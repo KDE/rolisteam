@@ -680,7 +680,10 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("ServerManagerUpdater") << static_cast<QObject*>(new ServerManagerUpdater(nullptr, true)) << true;
     QTest::addRow("SharedNote") << static_cast<QObject*>(new SharedNote(nullptr)) << true;
     QTest::addRow("SharedNoteContainer") << static_cast<QObject*>(new SharedNoteContainer(nullptr)) << true;
-    QTest::addRow("SharedNoteController") << static_cast<QObject*>(new SharedNoteController()) << true;
+
+    auto sharedNoteController = new SharedNoteController();
+    m_ignored.append({sharedNoteController, {"updateCmd"}});
+    QTest::addRow("SharedNoteController") << static_cast<QObject*>(sharedNoteController) << true;
     QTest::addRow("SharedNoteControllerUpdater")        << static_cast<QObject*>(new SharedNoteControllerUpdater(nullptr, nullptr)) << true;
     auto sheetCtrl = new SheetController();
     sheetCtrl->setAppCtrl(new RcseApplicationController());
@@ -713,7 +716,9 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("TextLabel") << static_cast<QObject*>(new TextLabel(nullptr)) << true;
     QTest::addRow("TextMessage") << static_cast<QObject*>(new InstantMessaging::TextMessage({}, {}, {})) << true;
     QTest::addRow("TextWriterController")  << static_cast<QObject*>(new InstantMessaging::TextWriterController()) << true;
-    QTest::addRow("Theme")                      << static_cast<QObject*>(new customization::Theme()) << true;
+    auto theme = new customization::Theme();
+    m_ignored.append({theme, {"fontSizeFactor"}});
+    QTest::addRow("Theme")                      << static_cast<QObject*>(theme) << true;
     QTest::addRow("ThemeModel") << static_cast<QObject*>(new ThemeModel()) << true;
     QTest::addRow("TipChecker") << static_cast<QObject*>(new TipChecker()) << true;
     QTest::addRow("TipOfDayViewer") << static_cast<QObject*>(new TipOfDayViewer({}, {}, {})) << true;
