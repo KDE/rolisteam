@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-12 20:37+0400\n"
+"PO-Revision-Date: 2025-11-19 20:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -7467,25 +7467,17 @@ msgid "Always use default name "
 msgstr "اِستخدم الاسم المبدئي دائمًا "
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 - محرر ملاحظات مشتركة"
+msgstr "%1[*] - محرر ملاحظات مشتركة (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "للقراءة و الكتابة"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "للقراءة فقط"

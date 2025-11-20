@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2025-11-11 18:33+0100\n"
+"PO-Revision-Date: 2025-11-18 12:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.11.80\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
@@ -7495,25 +7495,17 @@ msgid "Always use default name "
 msgstr "Toujours utiliser le nom par défaut"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 - Éditeur de notes partagées"
+msgstr "%1[*] - Éditeur de notes partagées (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
-msgstr "Lecture-écriture"
+msgstr "Lecture - Écriture"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "Lecture seule"
