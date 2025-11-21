@@ -1,5 +1,5 @@
-﻿#ifndef IMAGECONTROLLER_H
-#define IMAGECONTROLLER_H
+﻿#ifndef RCSE_IMAGECONTROLLER_H
+#define RCSE_IMAGECONTROLLER_H
 
 #include "charactersheet/imagemodel.h"
 #include <QObject>
@@ -9,6 +9,7 @@
 class QTableView;
 class QAction;
 class RolisteamImageProvider;
+namespace rcse {
 class ImageController : public QObject
 {
     Q_OBJECT
@@ -45,5 +46,5 @@ private:
     std::unique_ptr<charactersheet::ImageModel> m_model;
     QString m_uuid;
 };
-
+}
 #endif

@@ -446,7 +446,7 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("CampaignProperties") << static_cast<QObject*>(new CampaignProperties(new campaign::Campaign(), nullptr))                                        << true;
     QTest::addRow("CampaignUpdater") << static_cast<QObject*>(new campaign::CampaignUpdater(nullptr, new campaign::Campaign()))                                     << true; // 100
     QTest::addRow("CampaignView") << static_cast<QObject*>(new campaign::CampaignView()) << true;
-    QTest::addRow("Canvas")  << static_cast<QObject*>(new Canvas(new EditorController(new ImageController())))<< true ;
+    QTest::addRow("Canvas")  << static_cast<QObject*>(new Canvas(new EditorController(new rcse::ImageController())))<< true ;
     QTest::addRow("CanvasField")  << static_cast<QObject*>(new CanvasField(new FieldController(TreeSheetItem::FieldItem, true)))<< true ;
     QTest::addRow("CategoryModel obj") << static_cast<QObject*>(new GMTOOL::CategoryModel()) << true;
     QTest::addRow("CenteredCheckBox") << static_cast<QObject*>(new CenteredCheckBox()) << true;
@@ -513,7 +513,7 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("DiceRoller") << static_cast<QObject*>(new DiceRoller()) << true;
     QTest::addRow("Document") << static_cast<QObject*>(new Document(nullptr)) << true;
     QTest::addRow("DragableTableView") << static_cast<QObject*>(new DragableTableView()) << true;
-    QTest::addRow("EditorController")  << static_cast<QObject*>(new EditorController(new ImageController))<< true ;
+    QTest::addRow("EditorController")  << static_cast<QObject*>(new EditorController(new rcse::ImageController))<< true ;
     QTest::addRow("EllipsItem obj") << static_cast<QObject*>(new EllipsItem(nullptr)) << true;
     QTest::addRow("EllipseController") << static_cast<QObject*>(        new vmap::EllipseController({}, new VectorialMapController()))                                       << true;
     QTest::addRow("EllipseControllerUpdater") << static_cast<QObject*>(new EllipseControllerUpdater()) << true;

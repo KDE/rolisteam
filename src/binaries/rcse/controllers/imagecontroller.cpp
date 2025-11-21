@@ -12,6 +12,8 @@
 
 #include "charactersheet/imagemodel.h"
 #include "charactersheet/rolisteamimageprovider.h"
+namespace rcse {
+
 
 ImageController::ImageController(QObject* parent) : QObject(parent), m_model(new charactersheet::ImageModel())
 {
@@ -98,4 +100,5 @@ QSize ImageController::backgroundSize() const
 RolisteamImageProvider* ImageController::provider() const
 {
     return new RolisteamImageProvider(m_model.get());
+}
 }

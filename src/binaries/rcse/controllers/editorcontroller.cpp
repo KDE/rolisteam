@@ -35,7 +35,7 @@
 // undo
 #include "undo/setbackgroundimage.h"
 
-EditorController::EditorController(ImageController* imgCtrl, QObject* parent)
+EditorController::EditorController(rcse::ImageController* imgCtrl, QObject* parent)
     : QObject(parent), m_imageController(imgCtrl)
 {
     /*connect(m_view, &ItemEditor::openContextMenu, this, &EditorController::menuRequestedFromView);
@@ -327,7 +327,7 @@ void EditorController::addItem(int idx, QGraphicsItem* item)
     emit dataChanged();
 }
 
-ImageController* EditorController::imageController() const
+rcse::ImageController* EditorController::imageController() const
 {
     return m_imageController;
 }

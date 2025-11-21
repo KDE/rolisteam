@@ -14,7 +14,9 @@ class CodeEditor;
 class QTreeView;
 class ImageModel;
 class QQuickWidget;
+namespace rcse{
 class ImageController;
+}
 class CharacterController;
 class QmlGeneratorController : public QObject
 {
@@ -47,7 +49,7 @@ public:
     MockCharacter* mockCharacter() const;
 
     QStringList fonts() const;
-    void generateQML(const ImageController* ctrl);
+    void generateQML(const rcse::ImageController *ctrl);
 
     QString uuidCharacter() const;
 

@@ -30,14 +30,16 @@
 #include <memory>
 
 class ItemEditor;
+namespace rcse{
 class ImageController;
+}
 class EditorController : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(int currentPage READ currentPage WRITE setCurrentPage NOTIFY currentPageChanged)
     Q_PROPERTY(std::size_t pageCount READ pageCount NOTIFY pageCountChanged)
 public:
-    EditorController(ImageController* imgCtrl, QObject* parent= nullptr);
+    EditorController(rcse::ImageController* imgCtrl, QObject* parent= nullptr);
 
     const std::vector<Canvas*>& pageList() const;
     std::size_t pageCount() const;
@@ -52,7 +54,7 @@ public:
     void setImageBackground(int idx, const QPixmap& pix, const QString& filepath);
 
     void addItem(int idx, QGraphicsItem* item);
-    ImageController* imageController() const;
+    rcse::ImageController* imageController() const;
     QPixmap backgroundFromIndex(int i) const;
 public slots:
     int addPage();
@@ -76,7 +78,7 @@ signals:
     void performCommand(QUndoCommand* cmd);
 
 private:
-    QPointer<ImageController> m_imageController;
+    QPointer<rcse::ImageController> m_imageController;
     QPoint m_posMenu;
     std::vector<std::unique_ptr<Canvas>> m_canvasList;
     int m_currentPage= 0;

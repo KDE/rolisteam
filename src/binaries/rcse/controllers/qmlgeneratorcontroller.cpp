@@ -193,7 +193,7 @@ void QmlGeneratorController::setUuidCharacter(QString uuidCharacter)
     emit uuidCharacterChanged(m_uuidCharacter);
 }
 
-void QmlGeneratorController::generateQML(const ImageController* ctrl)
+void QmlGeneratorController::generateQML(const rcse::ImageController* ctrl)
 {
     QString key= ctrl->uuid();
     QStringList keyParts= key.split('_');
