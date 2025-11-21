@@ -7,7 +7,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 set(QT_REQUIRED_VERSION "6.3.0")
-find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core Widgets RemoteObjects)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core Widgets RemoteObjects WebSockets)
 
 
 set(root_dir ${PROJECT_SOURCE_DIR}/src)
@@ -251,6 +251,7 @@ target_link_libraries(tst_qobjects
         Qt6::Test
         Qt6::Widgets
         Qt6::RemoteObjects
+        Qt6::WebSockets
     PRIVATE
         core
         rwidgets
