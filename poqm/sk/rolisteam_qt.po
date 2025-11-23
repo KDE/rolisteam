@@ -504,9 +504,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Žiadne"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "Obrázok %1 nemá rovnakú veľkosť ako ostatné"
 
@@ -3571,7 +3573,7 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3579,7 +3581,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Pripojenie k serveru bolo ukončené."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3587,7 +3589,7 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Server"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -7096,7 +7098,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Uložiť"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Zobraziť stĺpce"

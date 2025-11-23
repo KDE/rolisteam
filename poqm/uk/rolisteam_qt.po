@@ -380,9 +380,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Немає"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "Зображення %1 має не ті розміри, що інші зображення"
 
@@ -2875,17 +2877,17 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Текст"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "потік обробки сервера було закрито"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Сервер вимкнено"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "сервер увімкнено"
@@ -5995,7 +5997,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Показати стовпчики"

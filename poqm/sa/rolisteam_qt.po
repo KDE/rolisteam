@@ -512,9 +512,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "न कश्चित्"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "%1 इत्यस्य चित्रस्य आकारः अन्येभ्यः समानः नास्ति"
 
@@ -3068,7 +3070,7 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "पाठ"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3076,7 +3078,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "सर्वरेण सह संयोजनं निरुद्धम् अस्ति ।"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3084,7 +3086,7 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "सर्वर"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -6267,7 +6269,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "रक्ष्"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "स्तम्भान् दर्शयतु"

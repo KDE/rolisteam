@@ -387,9 +387,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Brez"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "Slika %1 ni enake velikosti kot druge"
 
@@ -2878,17 +2880,17 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Besedilo"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "nit strežnika je bila zaprta"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Strežnik je izklopljen"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "strežnik je vklopljen"
@@ -5993,7 +5995,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Shrani"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Pokaži stolpce"

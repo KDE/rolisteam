@@ -379,9 +379,9 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Žádný"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
 #, qt-format
-msgctxt "ImageController|"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr ""
 
@@ -2845,17 +2845,17 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -5923,7 +5923,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Uložit"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Zobrazit sloupce"

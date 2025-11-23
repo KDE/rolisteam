@@ -518,9 +518,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Neniu"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "Bildo %1 ne havas la saman grandecon ol la aliaj"
 
@@ -3070,7 +3072,7 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Teksto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3078,7 +3080,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Konekto al la servilo estis fermita."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3086,7 +3088,7 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servilo"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -6217,7 +6219,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Konservi"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Montri Kolumnojn"

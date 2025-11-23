@@ -508,9 +508,11 @@ msgctxt "BorderListEditor|"
 msgid "None"
 msgstr "Nada"
 
-#: src/binaries/rcse/controllers/imagecontroller.cpp:47
-#, qt-format
-msgctxt "ImageController|"
+#: src/binaries/rcse/controllers/imagecontroller.cpp:49
+#, fuzzy, qt-format
+#| msgctxt "ImageController|"
+#| msgid "Image %1 has not the same size than the others"
+msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "A imagem %1 não tem o mesmo tamanho que as outras"
 
@@ -3580,7 +3582,7 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Texto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:191
+#: src/libraries/core/src/controller/networkcontroller.cpp:193
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3588,7 +3590,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Foi fechada a ligação ao servidor."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:202
+#: src/libraries/core/src/controller/networkcontroller.cpp:204
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3596,7 +3598,7 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servidor"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:206
+#: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -7108,7 +7110,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Gravar"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:573
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Mostrar as Colunas"
