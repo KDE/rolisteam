@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-11-19 00:58+0100\n"
+"PO-Revision-Date: 2025-11-23 12:19+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -385,9 +385,7 @@ msgid "None"
 msgstr "Ninguno"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "La imagen %1 no tiene el mismo tamaño que las demás"

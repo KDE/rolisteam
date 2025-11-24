@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2025-11-17 06:08+0100\n"
+"PO-Revision-Date: 2025-11-23 08:11+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -388,12 +388,10 @@ msgid "None"
 msgstr "Brez"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
-msgstr "Slika %1 ni enake velikosti kot druge"
+msgstr "Slika %1 ni enake velikosti kot ostale"
 
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:24
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:173

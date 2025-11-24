@@ -380,9 +380,7 @@ msgid "None"
 msgstr "არაფერი"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "გამოსახულებას %1 იგივე ზომა, რაც სხვებს, არ გააჩნია"

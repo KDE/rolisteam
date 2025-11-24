@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-19 20:33+0300\n"
+"PO-Revision-Date: 2025-11-23 12:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -381,12 +381,10 @@ msgid "None"
 msgstr "Yok"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
-msgstr "%1 görselinin boyutu diğerlerinden ayrımlı"
+msgstr "%1 görselinin boyutu diğerleriyle aynı değil"
 
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:24
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:173
