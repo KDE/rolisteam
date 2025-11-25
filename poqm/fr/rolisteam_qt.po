@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2025-11-18 12:30+0100\n"
+"PO-Revision-Date: 2025-11-24 19:32+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -382,12 +382,10 @@ msgid "None"
 msgstr "Aucun"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
-msgstr "L'image %1 n'a pas la même taille que les autres"
+msgstr "L'image %1 n'a pas la même taille que les autres."
 
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:24
 #: src/binaries/rcse/controllers/qmlgeneratorcontroller.cpp:173
