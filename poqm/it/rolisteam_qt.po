@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-23 20:10+0100\n"
+"PO-Revision-Date: 2025-12-06 18:06+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2100,7 +2100,7 @@ msgstr "Imposta rolisteam per la connessione a <server>."
 #: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
-msgstr "Definisci il <ruolo>: gm o pc"
+msgstr "Definisci il <ruolo>: GM o PC"
 
 #: src/binaries/widget/mainwindow.cpp:1052
 msgctxt "MainWindow|"
