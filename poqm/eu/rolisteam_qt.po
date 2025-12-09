@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-09-27 13:58+0200\n"
+"PO-Revision-Date: 2025-12-08 21:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -17,42 +17,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Goitizena"
+msgstr "Goitizenak"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:32
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Goitizena"
+msgstr "Goitizena %1 zk."
 
 #: src/binaries/3DDicer/AliasesPage.qml:33
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Eredua"
 
 #: src/binaries/3DDicer/AliasesPage.qml:34
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Komandoa"
@@ -60,52 +49,34 @@ msgstr "Komandoa"
 #: src/binaries/3DDicer/AliasesPage.qml:35
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Itzalita"
 
 #: src/binaries/3DDicer/AliasesPage.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Ireki"
+msgstr "Piztuta"
 
 #: src/binaries/3DDicer/AliasesPage.qml:76
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Izena:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:86
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Eredua"
+msgstr "Eredua:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:97
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Komandoa"
+msgstr "Komandoa:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:108
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Adierazpen erregularra"
 
 #: src/binaries/3DDicer/AliasesPage.qml:115
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Ezgaitu"
@@ -113,116 +84,80 @@ msgstr "Ezgaitu"
 #: src/binaries/3DDicer/AliasesPage.qml:125
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Gorde eta itzuli"
 
 #: src/binaries/3DDicer/AliasesPage.qml:144
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Ezabatu"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:326
 #: src/binaries/3DDicer/dicemaincontroller.cpp:347
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "lehenetsia"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Dadoaren goitizena"
+msgstr "Dado jaurtiketak"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:123
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Tekleatu zure komandoa adib.: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:134
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Itzuli"
+msgstr "Exekutatu"
 
 #: src/binaries/3DDicer/MacrosPage.qml:8
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Makroak"
 
 #: src/binaries/3DDicer/MacrosPage.qml:31
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Izena"
 
 #: src/binaries/3DDicer/MacrosPage.qml:39
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Komandoa"
+msgstr "komandoa"
 
 #: src/binaries/3DDicer/MacrosPage.qml:59
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Ezabatu"
 
 #: src/binaries/3DDicer/Main.qml:135
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Dadoaren goitizena"
+msgstr "Dado jaurtiketak"
 
 #: src/binaries/3DDicer/Main.qml:145
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "3Dko dadoa"
 
 #: src/binaries/3DDicer/Main.qml:155
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Makroak"
 
 #: src/binaries/3DDicer/Main.qml:165
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
-msgstr "Goitizena"
+msgstr "Goitizenak"
 
 #: src/binaries/3DDicer/Main.qml:175
-#, fuzzy
-#| msgctxt "campaign::CampaignDock|"
-#| msgid "CharacterSheet"
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Pertsonaia-orria"
 
 #: src/binaries/3DDicer/Main.qml:185
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Ezarpenak"
@@ -258,131 +193,86 @@ msgid "Comments"
 msgstr "Iruzkinak"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:11
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice3D"
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr "Dice3D"
+msgstr "3Dko dadoa"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:78
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Dadoaren neurria:"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Gorde profilak"
+msgstr "Azken profila"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Ezabatu"
 
 #: src/binaries/3DDicer/SettingsPage.qml:8
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Ezarpenak"
 
 #: src/binaries/3DDicer/SettingsPage.qml:37
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Klonatu profila"
+msgstr "Hautatu profila"
 
 #: src/binaries/3DDicer/SettingsPage.qml:50
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Ezarpenak"
+msgstr "Aplikazioaren ezarpenak"
 
 #: src/binaries/3DDicer/SettingsPage.qml:63
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Data aldatu da"
+msgstr "Modu iluna:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:75
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Hizkuntza:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:95
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Honi buruz"
 
 #: src/binaries/3DDicer/SettingsPage.qml:102
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Baimena"
+msgstr "Bertsioa:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:110
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Egoera:"
+msgstr "Data:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:118
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr ""
+msgstr "SHA1:"
 
 #: src/binaries/3DDicer/SheetPage.qml:8
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character Sheet"
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Pertsonaiaren orria"
 
 #: src/binaries/3DDicer/SheetPage.qml:32
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Gakoa"
 
 #: src/binaries/3DDicer/SheetPage.qml:40
-#, fuzzy
-#| msgctxt "FieldModel|"
-#| msgid "Value"
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Balioa"
 
 #: src/binaries/3DDicer/SheetPage.qml:60
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Ezabatu"
@@ -414,73 +304,53 @@ msgstr "Irudiak (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Komandoa: %1"
+msgstr "Kopurua: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "Betegarri laguntzailearen elkarrizketa-koadroa"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Aldatu egoera"
+msgstr "Zenbagailuaren hasiera:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
 msgid "Counter Step:"
-msgstr ""
+msgstr "Zenbatzailearen urratsa:"
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Orrialde guztiak"
+msgstr "Ezarri balio guztiak"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Ordeztu dena"
+msgstr "Ordezkapen arauak"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
-msgstr "…"
+msgstr "..."
 
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Emaitzaren aurreikuspegia:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Gehitu"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Kendu"
@@ -516,9 +386,7 @@ msgid "None"
 msgstr "Bat ere ez"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "%1 irudiak ez du besteen neurri bera"
@@ -698,9 +566,6 @@ msgid "Previous Page Button"
 msgstr "Aurreko orrialdea botoia"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Taula"
@@ -1996,7 +1861,7 @@ msgstr "Erabili lerro guztietan"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "Ireki betegarri laguntzailea"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -3008,25 +2873,19 @@ msgid "Text"
 msgstr "Testua"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:193
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "Zerbitzarirako konexioa itxi egin da."
+msgstr "zerbitzariaren haria itxi egin da"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:204
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Zerbitzaria"
+msgstr "Zerbitzaria itzalita dago"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:208
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "zerbitzaria piztuta dago"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:42
 msgctxt "ThemeModel|"
@@ -3511,7 +3370,7 @@ msgstr "[UPnP] Atakak mapatzea egin da"
 #: src/libraries/core/src/network/rserver.cpp:92
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Zerbitzaria] Hasi entzuten"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:247
 #, qt-format
@@ -4270,7 +4129,7 @@ msgstr "Komandoa: %1"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
-msgstr ""
+msgstr "Bidali"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:46
 msgctxt "InstantMessagingMain|"
@@ -4328,12 +4187,9 @@ msgid "Font Family:"
 msgstr "Letra-tipo familia:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Letra-tipo neurria:"
+msgstr "Letra-neurriaren biderkagaia:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
@@ -7616,28 +7472,20 @@ msgid "Always use default name "
 msgstr "Beti erabili izen lehenetsia"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1 - Ohar-partekatu editorea"
+msgstr "%1[*] - Ohar-editore partekatua (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadWrite"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "Irakurri-idatzi"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
-msgstr "Irakurtzeko soilik"
+msgstr "Solik-irakurtzeko"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:17
 msgctxt "SharedNote|"
