@@ -253,7 +253,6 @@ void ColorSelector::checkPermissionColor()
     // player
     if(!m_isGM)
     {
-        PreferencesManager::getInstance()->registerValue("Fog_color", QColor(0, 0, 0), false);
         m_maskColor->setToolTip(tr("Hide (GM only)"));
         m_unveilColor->setToolTip(tr("Unveil (GM only)"));
         m_maskColor->setEnabled(false);
@@ -261,7 +260,6 @@ void ColorSelector::checkPermissionColor()
     }
     else // GM
     {
-        PreferencesManager::getInstance()->registerValue("Fog_color", QColor(50, 50, 50), false);
         m_maskColor->setToolTip(tr("Hide"));
         m_unveilColor->setToolTip(tr("Unveil"));
         m_maskColor->setEnabled(true);

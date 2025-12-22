@@ -49,7 +49,11 @@ ImageSelectorDialog::ImageSelectorDialog(ImageSelectorController* ctrl, QWidget*
     connect(ui->m_pasteAct, &QAction::triggered, m_ctrl, &ImageSelectorController::imageFromClipboard);
     connect(ui->m_openFileAct, &QAction::triggered, this, &ImageSelectorDialog::openImage);
     connect(m_ctrl, &ImageSelectorController::titleChanged, this,
-            [this]() { ui->m_titleLineEdit->setText(m_ctrl->title()); });
+            [this]()
+            {
+                if(ui->m_titleLineEdit->text() != m_ctrl->title())
+                    ui->m_titleLineEdit->setText(m_ctrl->title());
+            });
     connect(ui->m_titleLineEdit, &QLineEdit::textEdited, this,
             [this]() { m_ctrl->setTitle(ui->m_titleLineEdit->text()); });
 
