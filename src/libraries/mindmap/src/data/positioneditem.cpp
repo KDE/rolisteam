@@ -259,8 +259,10 @@ void PositionedItem::removeLink(LinkController* link)
 
     if(it == m_subNodelinks.end())
         return;
-
     m_subNodelinks.erase(it);
+
+    if(m_subNodelinks.empty())
+        emit hasLinkChanged();
 }
 
 void PositionedItem::setLinkVisibility()
