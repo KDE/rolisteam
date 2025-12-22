@@ -95,6 +95,9 @@ QVariant ContentModel::data(const QModelIndex& index, int role) const
 
 bool ContentModel::appendMedia(MediaControllerBase* media)
 {
+    if(!media) // no null media in model
+        return false;
+
     auto size= static_cast<int>(m_medias.size());
     std::unique_ptr<MediaControllerBase> ctrl(media);
     beginInsertRows(QModelIndex(), size, size);

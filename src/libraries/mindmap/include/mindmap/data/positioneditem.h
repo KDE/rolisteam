@@ -86,7 +86,7 @@ public slots:
     void setWidth(qreal w);
     void setHeight(qreal h);
     void setMass(int m);
-    void setParentNode(PositionedItem* parent);
+    void setParentNode(mindmap::PositionedItem* parent);
     void setLinkVisibility();
     void translate(const QPointF& motion);
     void setOpen(bool b);

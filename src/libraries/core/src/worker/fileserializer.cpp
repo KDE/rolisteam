@@ -539,6 +539,8 @@ bool FileSerializer::writeContentModel(const QString& destination, ContentModel*
 
     for(auto const& ctrl : ctrls)
     {
+        if(!ctrl)
+            continue;
         list << ctrl->uuid();
     }
 
