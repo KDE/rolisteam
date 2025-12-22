@@ -237,11 +237,6 @@ void PreferencesDialog::save() const
     m_preferences->registerValue("Messaging::SaveChatrooms", ui->m_saveChatRoomCB->isChecked());
 
     // General
-    QColor color;
-    int opacity= ui->m_opacitySlider->value();
-    color.setRgb(opacity, opacity, opacity);
-    m_preferences->registerValue("Fog_color", color);
-    m_preferences->registerValue("Mask_color", ui->m_fogColor->color());
     m_preferences->registerValue("PictureAdjust", ui->m_pictureAdjust->isChecked());
     m_preferences->registerValue("FullScreenAtStarting", ui->m_fullScreenCheckbox->isChecked());
     m_preferences->registerValue("shortNameInTabMode", ui->m_shortNameCb->isChecked());
@@ -286,29 +281,24 @@ void PreferencesDialog::load()
 
     ui->m_displayTimePage->setValue(m_preferences->value("waitingTimeBetweenPage", 300).toInt());
 
-    ui->m_highLightPenWidth->setValue(m_preferences->value("VMAP::highlightPenWidth", 6).toInt());
-    ui->m_mapItemHighlightColor->setColor(
-        m_preferences->value("VMAP::highlightColor", QColor(Qt::red)).value<QColor>());
-
     ui->m_systemTranslation->setChecked(m_ctrl->systemLang());
     ui->m_customTranslation->setChecked(m_ctrl->hasCustomFile());
     ui->m_translationSelector->setCurrentIndex(m_ctrl->currentLangIndex());
     ui->m_translationFileEdit->setUrl(QUrl::fromUserInput(m_ctrl->customFilePath()));
 
+    ui->m_fullScreenCheckbox->setChecked(m_preferences->value("FullScreenAtStarting", true).toBool());
+    ui->m_pictureAdjust->setChecked(m_preferences->value("PictureAdjust", true).toBool());
     ////////////////////////
     // MAP
     ///////////////////////
     // Fog of WAR
-    QColor fog= m_preferences->value("Fog_color", QColor(Qt::black)).value<QColor>();
-    ui->m_opacitySlider->setValue(m_preferences->value("Fog_opacity", fog.red()).toInt());
-    ui->m_opacitySpin->setValue(m_preferences->value("Fog_opacity", fog.red()).toInt());
-    ui->m_fogColor->setColor(m_preferences->value("Mask_color", QColor(Qt::darkMagenta)).value<QColor>());
-    ui->m_fullScreenCheckbox->setChecked(m_preferences->value("FullScreenAtStarting", true).toBool());
+    ui->m_highLightPenWidth->setValue(m_preferences->value("VMAP::highlightPenWidth", 6).toInt());
+    ui->m_mapItemHighlightColor->setColor(
+        m_preferences->value("VMAP::highlightColor", QColor(Qt::red)).value<QColor>());
 
     // Default Permission
     ui->m_defaultMapModeCombo->setCurrentIndex(
         ui->m_defaultMapModeCombo->findData(m_preferences->value("defaultPermissionMap", 0).toInt()));
-    ui->m_pictureAdjust->setChecked(m_preferences->value("PictureAdjust", true).toBool());
 
     // theme
     // initializeStyle();
@@ -449,10 +439,10 @@ void PreferencesDialog::performDiag()
     htmlResult+= result;
     htmlResult+= tr("</ul>End of Image Format");
     result= "";
-    QFontDatabase database;
+    auto families= QFontDatabase::families();
     htmlResult+= tr("<h2>Font families:</h2><ul>");
     linePattern= "<li>%1</li>";
-    for(auto& family : database.families())
+    for(auto& family : families)
     {
         result+= linePattern.arg(family);
     }
@@ -478,22 +468,23 @@ void PreferencesDialog::performDiag()
                         << "audio/wav"
                         << "audio/webm"
                         << "audio/flac"; //
-                                         /*  for(const QString &type : commonAudioMimeType)
-                                           {
-                                               switch (QMediaPlayer::hasSupport(type))
-                                               {
-                                               case QMultimedia::NotSupported:
-                                                   result+=tr("<li>Unsupported format: %1</li>").arg(type);
-                                                   break;
-                                               case QMultimedia::MaybeSupported:
-                                                   result+=tr("<li>Maybe supported format: %1</li>").arg(type);
-                                                   break;
-                                               case QMultimedia::ProbablySupported:
-                                               case QMultimedia::PreferredService:
-                                                   result+= tr("<li>Supported format: %1</li>").arg(type);
-                                                   break;
-                                               }
-                                           }*/
+
+    /*  for(const QString &type : commonAudioMimeType)
+      {
+          switch (QMediaPlayer::hasSupport(type))
+          {
+          case QMultimedia::NotSupported:
+              result+=tr("<li>Unsupported format: %1</li>").arg(type);
+              break;
+          case QMultimedia::MaybeSupported:
+              result+=tr("<li>Maybe supported format: %1</li>").arg(type);
+              break;
+          case QMultimedia::ProbablySupported:
+          case QMultimedia::PreferredService:
+              result+= tr("<li>Supported format: %1</li>").arg(type);
+              break;
+          }
+      }*/
     htmlResult+= result;
     htmlResult+= tr("</ul>End of Supported Audio file formats");
 

@@ -73,7 +73,7 @@ public:
     virtual ~PreferencesDialog();
 
 public slots:
-    void show(PreferenceTab tab= PreferenceTab::General);
+    void show(PreferencesDialog::PreferenceTab tab= PreferenceTab::General);
     void backgroundChanged();
     void manageHeartBeat();
     void manageMessagingPref();
