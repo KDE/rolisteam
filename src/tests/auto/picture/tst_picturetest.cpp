@@ -177,9 +177,9 @@ void PictureTest::respectShape()
                                              static_cast<ImageSelectorController::Shape>(shape), dir));
     m_ctrl->setVisualSize(QSize{547, 333});
     m_ctrl->setRect(geometry);
-    m_ctrl->setImageData(utils::IOHelper::loadFile(path));
 
     QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    m_ctrl->setImageData(utils::IOHelper::loadFile(path));
 
     waitPixmapChanged.wait();
     QCOMPARE(waitPixmapChanged.count(), count);
