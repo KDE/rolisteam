@@ -724,7 +724,7 @@ constexpr auto JSON_CHAR_INIT_SCORE_DEFINED("InitScoreDefined");
 
 namespace Mindmap
 {
-constexpr auto JSON_CTRL_DEFAULT_INDEX_STYLE{"defaultIndexStyle"};
+/*constexpr auto JSON_CTRL_DEFAULT_INDEX_STYLE{"defaultIndexStyle"};
 constexpr auto JSON_CTRL_SPACING{"spacing"};
 constexpr auto JSON_CTRL_LINK_LABEL_VISIBILITY{"linklabelvisibility"};
 
@@ -764,7 +764,7 @@ constexpr auto JSON_PACK_PACKAGES{"packages"};
 constexpr auto JSON_IMGS{"images"};
 constexpr auto JSON_IMG_ID{"id"};
 constexpr auto JSON_IMG_DATA{"data"};
-constexpr auto JSON_IMG_URL{"url"};
+constexpr auto JSON_IMG_URL{"url"};*/
 } // namespace Mindmap
 
 namespace Audio

@@ -26,6 +26,7 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QMimeData>
+#include <QPointer>
 #include <QString>
 #include <QVariant>
 #include <core_global.h>
@@ -50,7 +51,8 @@ class AudioPlayerController;
 namespace mindmap
 {
 class MindMapControllerBase;
-}
+class MindItem;
+} // namespace mindmap
 
 namespace campaign
 {

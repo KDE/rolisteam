@@ -29,6 +29,7 @@ private:
     std::unique_ptr<PlayerModel> m_playerModel;
     std::unique_ptr<CharacterModel> m_characterModel;
     std::unique_ptr<LocalPersonModel> m_localPersonModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 void CharacterModelTest::init()
@@ -37,12 +38,12 @@ void CharacterModelTest::init()
     m_characterModel.reset(new CharacterModel());
     m_localPersonModel.reset(new LocalPersonModel());
 
-    new QAbstractItemModelTester(m_playerModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_playerModel.get()));
 
     m_characterModel->setSourceModel(m_playerModel.get());
     m_localPersonModel->setSourceModel(m_playerModel.get());
-    new QAbstractItemModelTester(m_characterModel.get());
-    new QAbstractItemModelTester(m_localPersonModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_characterModel.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_localPersonModel.get()));
 }
 
 CharacterModelTest::CharacterModelTest()= default;

@@ -582,19 +582,19 @@ void RGraphicsView::createAction()
                 scene()->update();
             });
 
-    m_backOrderAction= new QAction(tr("Back"));
+    m_backOrderAction= new QAction(tr("Back"), this);
     m_backOrderAction->setIcon(QIcon::fromTheme("order_back"));
     m_backOrderAction->setData(VectorialMapController::BACK);
 
-    m_frontOrderAction= new QAction(tr("Front"));
+    m_frontOrderAction= new QAction(tr("Front"), this);
     m_frontOrderAction->setIcon(QIcon::fromTheme("order_front"));
     m_frontOrderAction->setData(VectorialMapController::FRONT);
 
-    m_lowerAction= new QAction(tr("Lower"));
+    m_lowerAction= new QAction(tr("Lower"), this);
     m_lowerAction->setIcon(QIcon::fromTheme("order_lower"));
     m_lowerAction->setData(VectorialMapController::LOWER);
 
-    m_raiseAction= new QAction(tr("Raise"));
+    m_raiseAction= new QAction(tr("Raise"), this);
     m_raiseAction->setIcon(QIcon::fromTheme("order_raise"));
     m_raiseAction->setData(VectorialMapController::RAISE);
 

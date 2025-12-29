@@ -57,7 +57,7 @@ void PlayerController::resetLocalPlayer()
     if(m_localPlayer)
         return;
 
-    m_localPlayer= new Player();
+    m_localPlayer= new Player();// TODO FIX that should not be created like that.
     connect(m_localPlayer, &Player::uuidChanged, this, &PlayerController::localPlayerIdChanged);
     connect(m_localPlayer, &Player::uuidChanged, m_model.get(), &PlayerModel::setLocalPlayerId);
 

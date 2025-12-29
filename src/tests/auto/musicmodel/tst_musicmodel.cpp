@@ -45,6 +45,7 @@ private slots:
 
 private:
     std::unique_ptr<MusicModel> m_model;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 
 TestMusicModel::TestMusicModel() {}
@@ -52,7 +53,7 @@ TestMusicModel::TestMusicModel() {}
 void TestMusicModel::init()
 {
     m_model.reset(new MusicModel(new PreferencesManager("anan", "annta")));
-    new QAbstractItemModelTester(m_model.get());
+    m_tester.reset(new QAbstractItemModelTester(m_model.get()));
 }
 
 void TestMusicModel::addTest()

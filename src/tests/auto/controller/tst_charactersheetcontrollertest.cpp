@@ -49,16 +49,16 @@ private:
     std::unique_ptr<CharacterSheetController> m_ctrl;
     std::unique_ptr<CharacterModel> m_characterModel;
     std::unique_ptr<PlayerModel> m_playerModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_testers;
 };
 
 void CharacterSheetControllerTest::init()
 {
     m_playerModel.reset(new PlayerModel());
     m_characterModel.reset(new CharacterModel());
-    new QAbstractItemModelTester(m_playerModel.get());
+    m_testers.push_back(std::make_unique<QAbstractItemModelTester>(m_playerModel.get()));
     m_characterModel->setSourceModel(m_playerModel.get());
-    new QAbstractItemModelTester(m_characterModel.get());
-    // m_characterModel.get(),
+    m_testers.push_back(std::make_unique<QAbstractItemModelTester>(m_characterModel.get()));
     m_ctrl.reset(new CharacterSheetController());
 
     CharacterSheetController::setCharacterModel(m_characterModel.get());
@@ -69,7 +69,7 @@ void CharacterSheetControllerTest::cleanupTestCase() {}
 void CharacterSheetControllerTest::gameMasterTest()
 {
     QCOMPARE(m_ctrl->gameMasterId(), QString());
-    new QAbstractItemModelTester(m_ctrl->model());
+    m_testers.push_back(std::make_unique<QAbstractItemModelTester>(m_ctrl->model()));
 
     QSignalSpy spy(m_ctrl.get(), &CharacterSheetController::gameMasterIdChanged);
 

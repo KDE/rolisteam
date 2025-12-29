@@ -51,7 +51,7 @@ public:
     bool enabled() const;
     bool hasSelection() const;
 
-    const std::vector<mindmap::MindItem*>& selectedNodes() const;
+    const std::vector<QPointer<MindItem> > &selectedNodes() const;
 signals:
     void enabledChanged();
     void lastSelectedChanged();
@@ -68,7 +68,7 @@ private:
     void setLastSelectedId(const QString& id);
 
 private:
-    std::vector<mindmap::MindItem*> m_selection;
+    std::vector<QPointer<mindmap::MindItem>> m_selection;
     bool m_enabled= false;
     QUndoStack* m_undoStack;
     QString m_lastSelectedId;

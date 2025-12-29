@@ -30,6 +30,20 @@ AddItemCommand::AddItemCommand(mindmap::MindItemModel* nodeModel, MindItem::Type
                                QPointF pos)
     : m_nodeModel(nodeModel), m_idParent(idParent), m_type(type), m_pos(pos)
 {
+    setText(tr("Add item of type: %1 to mindmap").arg(type));
+}
+
+void AddItemCommand::undo()
+{
+    for(auto const& item : std::as_const(m_nodes))
+    {
+        m_nodeModel->removeItem(item);
+    }
+    m_nodes.clear();
+}
+
+void AddItemCommand::redo()
+{
     auto item= m_nodeModel->createItem(m_type);
     m_nodes.append(item);
     switch(m_type)
@@ -70,25 +84,11 @@ AddItemCommand::AddItemCommand(mindmap::MindItemModel* nodeModel, MindItem::Type
             p->setPosition(m_pos);
     }
 
-    setText(tr("Add item of type: %1 to mindmap").arg(type));
-}
-
-void AddItemCommand::undo()
-{
-    for(auto const& item : std::as_const(m_nodes))
-    {
-        m_nodeModel->removeItem(item);
-    }
-}
-
-void AddItemCommand::redo()
-{
-    if(m_nodes.isEmpty())
-        return;
-
     m_nodeModel->appendItem(m_nodes);
 }
 
+/// Add link
+///
 AddLinkCommand::AddLinkCommand(MindItemModel* nodeModel, const QString& idStart, const QString& idEnd)
     : m_nodeModel(nodeModel), m_idStart(idStart), m_idEnd(idEnd)
 {

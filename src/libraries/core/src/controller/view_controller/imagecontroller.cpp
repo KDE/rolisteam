@@ -172,7 +172,7 @@ void ImageController::checkMovie()
     if(m_data.isEmpty())
         return;
 
-    auto buf= new QBuffer(&m_data);
+    auto buf= new QBuffer(&m_data, this);
     buf->open(QIODevice::ReadOnly);
 
     m_movie.reset(new QMovie(buf, QByteArray(), this));

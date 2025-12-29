@@ -95,6 +95,14 @@ TableModel::TableModel(TreeSheetItem* item) : m_parent(item)
     // constructor
 }
 
+TableModel::~TableModel()
+{
+    for(auto list : std::as_const(m_data))
+        qDeleteAll(list);
+    m_data.clear();
+    qDeleteAll(m_columns);
+}
+
 int TableModel::rowCount(const QModelIndex& parent) const
 {
     if(parent.isValid())

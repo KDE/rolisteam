@@ -78,13 +78,14 @@ private slots:
 private:
     std::unique_ptr<PlayerModel> m_playerModel;
     std::unique_ptr<InstantMessagingController> m_imCtrl;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 ChatWindowTest::ChatWindowTest() {}
 
 void ChatWindowTest::init()
 {
     m_playerModel.reset(new PlayerModel);
-    new QAbstractItemModelTester(m_playerModel.get());
+    m_tester.reset(new QAbstractItemModelTester(m_playerModel.get()));
     m_imCtrl.reset(new InstantMessagingController(nullptr, m_playerModel.get()));
 }
 void ChatWindowTest::errorMessageTest()

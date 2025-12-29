@@ -73,6 +73,7 @@ private slots:
     void patternModel();
 
 private:
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 ModelTest::ModelTest() {}
@@ -95,8 +96,8 @@ void ModelTest::participantsModel()
     model->setOwnerId(p1->uuid());
     QCOMPARE(model->ownerId(), p1->uuid());
 
-    new QAbstractItemModelTester(player.get());
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(player.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
 
     QCOMPARE(model->getPermissionFor(p1), ParticipantsModel::Hidden);
 
@@ -151,8 +152,8 @@ void ModelTest::playerProxyModel()
 
     model->setSourceModel(player.get());
 
-    new QAbstractItemModelTester(player.get());
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(player.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
 
     Player* p1= new Player;
     p1->setGM(true);
@@ -176,7 +177,7 @@ void ModelTest::playerProxyModel()
 void ModelTest::historyModel()
 {
     history::HistoryModel model;
-    new QAbstractItemModelTester(&model);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(&model));
 
     auto max= Helper::generate<int>(1, 10);
     model.setMaxCapacity(max);
@@ -237,8 +238,8 @@ void ModelTest::filteredPlayerModel()
 
     model->setSourceModel(player.get());
 
-    new QAbstractItemModelTester(player.get());
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(player.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
 
     Player* p1= new Player;
     p1->setGM(true);
@@ -265,7 +266,7 @@ void ModelTest::shortcutModel()
 {
     ShortCutModel model;
 
-    new QAbstractItemModelTester(&model);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(&model));
 
     QCOMPARE(model.rowCount(), 0);
 
@@ -354,28 +355,28 @@ void ModelTest::shortcutVisitor()
     QWidget wid;
     wid.setObjectName(Helper::randomString());
 
-    auto act= new QAction(Helper::randomString());
+    auto act= new QAction(Helper::randomString(), this);
     act->setShortcut(QKeySequence::New);
     wid.addAction(act);
 
-    act= new QAction(Helper::randomString());
+    act= new QAction(Helper::randomString(), this);
     act->setShortcut(QKeySequence::Open);
     wid.addAction(act);
 
-    act= new QAction(Helper::randomString());
+    act= new QAction(Helper::randomString(), this);
     act->setShortcut(QKeySequence("Ctrl+E"));
     wid.addAction(act);
 
     ShortcutVisitor visitor;
     QWidget wid2;
 
-    act= new QAction(Helper::randomString());
+    act= new QAction(Helper::randomString(), this);
     act->setShortcut(Helper::randomString(1));
     wid2.addAction(act);
 
     QWidget wid22(&wid2);
 
-    act= new QAction(Helper::randomString());
+    act= new QAction(Helper::randomString(), this);
     act->setShortcut(Helper::randomString(1));
     wid22.addAction(act);
 
@@ -384,11 +385,11 @@ void ModelTest::shortcutVisitor()
     {
         QWidget wid3;
 
-        act= new QAction(Helper::randomString());
+        act= new QAction(Helper::randomString(), this);
         act->setShortcut(Helper::randomString(1));
         wid3.addAction(act);
 
-        act= new QAction(Helper::randomString());
+        act= new QAction(Helper::randomString(), this);
         act->setShortcut(Helper::randomString(1));
         wid3.addAction(act);
 
@@ -420,8 +421,8 @@ void ModelTest::singleContentTypeModel()
 
     singleModel->setSourceModel(contentModel.get());
 
-    new QAbstractItemModelTester(singleModel.get());
-    new QAbstractItemModelTester(contentModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(singleModel.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(contentModel.get()));
 
     auto id= Helper::randomString();
     auto data= new WebpageController(id);
@@ -440,8 +441,8 @@ void ModelTest::languageModel()
     // Q_INIT_RESOURCE(translations);
 
     auto langModel= std::make_unique<LanguageModel>();
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(langModel.get()));
 
-    new QAbstractItemModelTester(langModel.get());
     auto syst= QLocale::system();
 
     if(langModel->rowCount() == 0)
@@ -467,7 +468,7 @@ void ModelTest::languageModel()
 void ModelTest::colorModel()
 {
     auto model= std::make_unique<ColorModel>();
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
     auto src= new campaign::NonPlayableCharacterModel(new CharacterStateModel());
     model->setSourceModel(src);
 
@@ -488,12 +489,14 @@ void ModelTest::colorModel()
     npc->setColor(Helper::randomColor());
 
     model->setData(model->index(0, 0), Helper::randomColor(), campaign::NonPlayableCharacterModel::RoleColor);
+
+    delete src;
 }
 
 void ModelTest::themeModel()
 {
     auto model= std::make_unique<ThemeModel>();
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
 
     model->theme(10);
     model->theme("uuid");
@@ -525,9 +528,9 @@ void ModelTest::themeModel()
 void ModelTest::stateModel()
 {
     auto model= std::make_unique<StateModel>();
-    new QAbstractItemModelTester(model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model.get()));
     auto states= new CharacterStateModel();
-    new QAbstractItemModelTester(states);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(states));
 
     CharacterState alive;
     alive.setLabel("Alive");
@@ -596,6 +599,9 @@ void ModelTest::stateModel()
         src->data(src->index(0, 0), i);
         src->setData(src->index(0, 0), QVariant(), i);
     }
+
+
+    delete src;
 }
 #include "model/patternmodel.h"
 void ModelTest::patternModel()

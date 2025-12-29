@@ -209,6 +209,7 @@ private slots:
 private:
     std::unique_ptr<campaign::NonPlayableCharacterModel> m_sourceModel;
     std::unique_ptr<campaign::FilteredCharacterModel> m_filterModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 TestAntaFilter::TestAntaFilter(QObject* parent) : QObject(parent) {}
@@ -217,12 +218,12 @@ void TestAntaFilter::init()
 {
     m_sourceModel.reset(new campaign::NonPlayableCharacterModel(nullptr));
     m_filterModel.reset(new campaign::FilteredCharacterModel());
-    new QAbstractItemModelTester(m_sourceModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_sourceModel.get()));
 
     initModel(m_sourceModel.get());
     m_filterModel->setSourceModel(m_sourceModel.get());
 
-    new QAbstractItemModelTester(m_filterModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_filterModel.get()));
 }
 
 void TestAntaFilter::cleanup() {}

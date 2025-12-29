@@ -304,7 +304,12 @@ Character::Character(const QString& uuid, const QString& name, const QColor& col
     read(data);
 }*/
 
-Character::~Character() {}
+Character::~Character()
+{
+    qDeleteAll(m_shapeList);
+    qDeleteAll(m_actionList);
+    qDeleteAll(m_propertyList);
+}
 
 QList<CharacterShape*> Character::shapeList() const
 {

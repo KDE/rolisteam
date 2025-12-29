@@ -49,7 +49,7 @@ bool SelectionController::enabled() const
     return m_enabled;
 }
 
-const std::vector<mindmap::MindItem*>& SelectionController::selectedNodes() const
+const std::vector<QPointer<mindmap::MindItem>>& SelectionController::selectedNodes() const
 {
     return m_selection;
 }
@@ -87,12 +87,14 @@ void SelectionController::removeFromSelection(mindmap::MindItem* node)
 void SelectionController::clearSelection()
 {
     std::for_each(m_selection.begin(), m_selection.end(),
-                  [this](mindmap::MindItem* node)
+                  [this](const QPointer<mindmap::MindItem>& node)
                   {
+                      if(node.isNull())
+                          return;
                       node->setSelected(false);
                       if(node->type() == mindmap::MindItem::NodeType || node->type() == mindmap::MindItem::PackageType)
                       {
-                          auto mindNode= dynamic_cast<PositionedItem*>(node);
+                          auto mindNode= dynamic_cast<PositionedItem*>(node.data());
                           disconnect(mindNode, &PositionedItem::itemDragged, this, &SelectionController::movingNode);
                       }
                   });
@@ -105,8 +107,8 @@ void SelectionController::movingNode(const QPointF& motion)
 {
     std::vector<QPointer<PositionedItem>> vec;
     std::transform(m_selection.begin(), m_selection.end(), std::back_inserter(vec),
-                   [](mindmap::MindItem* node)
-                   { return QPointer<PositionedItem>(dynamic_cast<PositionedItem*>(node)); });
+                   [](const QPointer<mindmap::MindItem>& node)
+                   { return QPointer<PositionedItem>(dynamic_cast<PositionedItem*>(node.data())); });
     auto cmd= new DragNodeCommand(motion, vec);
 
     m_undoStack->push(cmd);

@@ -66,7 +66,7 @@ public:
     Qt::ItemFlags flags(const QModelIndex& index) const override;
 
     QRectF contentRect() const;
-    std::vector<mindmap::MindItem*>& items(mindmap::MindItem::Type type);
+    std::vector<std::unique_ptr<mindmap::MindItem>>& items(mindmap::MindItem::Type type);
     std::vector<mindmap::PositionedItem*> positionnedItems() const;
     mindmap::MindItem* item(const QString& id) const;
     mindmap::PositionedItem* positionItem(const QString& id) const;
@@ -80,7 +80,7 @@ public:
     void removeItemFromPackage(const QString& id, bool network);
 
 public slots:
-    mindmap::MindItem* createItem(MindItem::Type type);
+    mindmap::MindItem* createItem(mindmap::MindItem::Type type);
     bool removeItem(const mindmap::MindItem* node);
     void openItem(const QString& id, bool status);
     void setImageUriToNode(const QString& id);
@@ -100,9 +100,9 @@ private:
     void removeAllSubItem(const mindmap::PositionedItem* item, QSet<QString>& items);
 
 private:
-    std::vector<mindmap::MindItem*> m_links;
-    std::vector<mindmap::MindItem*> m_packages;
-    std::vector<mindmap::MindItem*> m_nodes;
+    std::vector<std::unique_ptr<mindmap::MindItem>> m_links;
+    std::vector<std::unique_ptr<mindmap::MindItem>> m_packages;
+    std::vector<std::unique_ptr<mindmap::MindItem>> m_nodes;
     QPointer<ImageModel> m_imgModel;
     int m_defaultStyleIndex= 0;
 };

@@ -74,6 +74,7 @@ private:
     std::unique_ptr<MindMapUpdater> m_updater;
     std::unique_ptr<ContentModel> m_contentModel;
     std::unique_ptr<FilteredContentModel> m_mindmapModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 void MindMapTest::init()
@@ -99,14 +100,14 @@ void MindMapTest::updaterTest()
     m_contentModel->appendMedia(m_ctrl.get());
     m_updater->addMediaController(m_ctrl.get());
 
-    auto node= std::make_unique<mindmap::MindNode>();
+    auto node= new mindmap::MindNode();
     auto id= Helper::randomString();
     node->setId(id);
 
-    auto node2= std::make_unique<mindmap::MindNode>();
+    auto node2= new mindmap::MindNode();
     auto id2= Helper::randomString();
     node2->setId(id2);
-    m_ctrl->addNode({node.get(), node2.get()}, false);
+    m_ctrl->addNode({node, node2}, false);
 
     m_ctrl->addLink(id, id2);
 
@@ -120,16 +121,16 @@ void MindMapTest::updaterTest()
     node2->setText(Helper::randomString());
     m_ctrl->addPackage({0, 0});
 
-    Helper::testAllProperties(node2.get(), {}, true);
+    Helper::testAllProperties(node2, {}, true);
 
     auto model= m_ctrl->itemModel();
 
     if(model)
     {
-        auto& items= model->items(mindmap::MindItem::LinkType);
+        auto const& items= model->items(mindmap::MindItem::LinkType);
         QCOMPARE(items.size(), 2);
-        for(auto link : items)
-            Helper::testAllProperties(link, {}, true);
+        for(auto const& link : items)
+            Helper::testAllProperties(link.get(), {}, true);
     }
 
     auto list= sender.messageData();
@@ -148,7 +149,7 @@ void MindMapTest::packageTest()
     auto package= std::make_unique<mindmap::PackageNode>();
     auto model= package->model();
 
-    new QAbstractItemModelTester(model);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model));
 
     QSignalSpy spy(package.get(), &mindmap::PackageNode::minimumMarginChanged);
     auto value= Helper::generate(26, 100);
@@ -189,10 +190,10 @@ void MindMapTest::packageTest()
 
 void MindMapTest::addRemoveImageTest()
 {
-    auto node= std::make_unique<mindmap::MindNode>();
+    auto node= new mindmap::MindNode();
     auto id= Helper::randomString();
     node->setId(id);
-    m_ctrl->addNode({node.get()}, false);
+    m_ctrl->addNode({node}, false);
 
     auto imagePath= Helper::imagePath();
     m_ctrl->addImageFor(id, imagePath, {});
@@ -231,31 +232,31 @@ void MindMapTest::addRemoveImageTest()
 
 void MindMapTest::AddLinkTest()
 {
-    auto node= std::make_unique<mindmap::MindNode>();
+    auto node= new mindmap::MindNode();
     auto id= Helper::randomString();
     node->setId(id);
 
-    auto node2= std::make_unique<mindmap::MindNode>();
+    auto node2= new mindmap::MindNode();
     auto id2= Helper::randomString();
     node2->setId(id2);
 
-    m_ctrl->addNode({node.get(), node2.get()}, false);
+    m_ctrl->addNode({node, node2}, false);
 
     m_ctrl->addLink(id, id2);
 
-    auto items= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
+    auto const& items= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
     QCOMPARE(items.size(), 1);
     QVERIFY(m_ctrl->canUndo());
 
     m_ctrl->undo();
 
-    items= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
-    QCOMPARE(items.size(), 0);
+    auto const& items2= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
+    QCOMPARE(items2.size(), 0);
     QVERIFY(m_ctrl->canRedo());
 
     m_ctrl->redo();
-    items= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
-    QCOMPARE(items.size(), 1);
+    auto const& items3= m_ctrl->itemModel()->items(mindmap::MindItem::LinkType);
+    QCOMPARE(items3.size(), 1);
 }
 
 void MindMapTest::addItemAndUndoTest()
@@ -289,24 +290,32 @@ void MindMapTest::reparentTest()
     node2->setId(child2Id);*/
 
     m_ctrl->addNode(QString());
-    auto items= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
+
+    auto const& items= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
     QCOMPARE(items.size(), 1);
 
-    auto main= dynamic_cast<mindmap::MindNode*>(items[0]);
+    auto main= dynamic_cast<mindmap::MindNode*>(items[0].get());
     auto mainId= main->id();
 
     m_ctrl->addNode(mainId);
-    items= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
+    auto const& items1= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
     QCOMPARE(items.size(), 2);
 
-    auto second= dynamic_cast<mindmap::MindNode*>(items[1]);
+    auto second= dynamic_cast<mindmap::MindNode*>(items1[1].get());
     // auto secondId = second->id();
 
+    /*
+     *
+     * Main -> second
+     *      -> third
+     *
+     */
+
     m_ctrl->addNode(mainId);
-    items= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
+    auto const& items2= m_ctrl->itemModel()->items(mindmap::MindItem::NodeType);
     QCOMPARE(items.size(), 3);
 
-    auto third= dynamic_cast<mindmap::MindNode*>(items[2]);
+    auto third= dynamic_cast<mindmap::MindNode*>(items2[2].get());
     auto thirdId= third->id();
 
     QSet<mindmap::LinkController*> a;
@@ -330,7 +339,7 @@ void MindMapTest::reparentTest()
 
     QSet<mindmap::LinkController*> b2;
     QCOMPARE(third->subNodeCount(b2), 0);
-    QCOMPARE(third->parentNode(), main);
+    QCOMPARE(third->parentNode(), second);
     QCOMPARE(second->parentNode(), main);
 
     m_ctrl->undo();
@@ -385,15 +394,15 @@ void MindMapTest::selectionCtrl()
 
     auto selection= ctrl->selectedNodes();
     int i= 0;
-    for(auto item : selection)
+    for(const auto& item : selection)
     {
         auto pos= positions[i];
-        auto pItem= dynamic_cast<mindmap::PositionedItem*>(item);
+        auto pItem= dynamic_cast<mindmap::PositionedItem*>(item.data());
         QCOMPARE(pItem->position(), pos + move);
         ++i;
     }
 
-    for(auto item : selection)
+    for(const auto& item : selection)
     {
         ctrl->removeFromSelection(item);
     }
@@ -406,6 +415,7 @@ void MindMapTest::selectionCtrl()
         QPointF pos(Helper::generate(0, 1000), Helper::generate(0, 1000));
         node->setPosition(pos);
         ctrl->addToSelection(node);
+        nodes.append(node);
     }
     if(nodeCount > 0)
         QVERIFY(ctrl->hasSelection());
@@ -419,6 +429,7 @@ void MindMapTest::selectionCtrl()
 
     delete ctrl;
     delete undo;
+    qDeleteAll(nodes);
 }
 
 void MindMapTest::selectionCtrl_data()
@@ -462,7 +473,7 @@ void MindMapTest::remoteAddTest()
     QCOMPARE(itemModel->rowCount(), 3);
     QCOMPARE(itemAdded.count(), 3);
 
-    auto links= itemModel->items(mindmap::MindItem::LinkType);
+    auto const& links= itemModel->items(mindmap::MindItem::LinkType);
     QCOMPARE(links.size(), 1);
 
     QTimer timer;
@@ -485,6 +496,10 @@ void MindMapTest::remoteAddTest()
         QVERIFY(realLink->startPoint() != QPointF());
         QVERIFY(realLink->endPoint() != QPointF());
     }
+
+    delete link;
+    delete node1;
+    delete node2;
 }
 void MindMapTest::removeNodeAndLinkTest()
 {
@@ -500,26 +515,22 @@ void MindMapTest::removeNodeAndLinkTest()
     auto& nodes= itemModel->items(mindmap::MindItem::NodeType);
 
     QCOMPARE(itemModel->rowCount(), 0);
-    qDebug() << "removeNode: 1";
     int d= 0;
     QList<QStringList> idLevels;
     for(const auto& level : nodetree)
     {
         QStringList currentLevelIds;
         int index= 0;
-        qDebug() << "removeNode: 2";
         for(auto c : level)
         {
-            qDebug() << "removeNode: 3";
             for(int i= 0; i < c; ++i)
             {
-                qDebug() << "removeNode: 4";
                 if(d == 0)
                 {
                     m_ctrl->addNode(QString());
                     if(!nodes.empty())
                     {
-                        auto last= nodes[nodes.size() - 1];
+                        auto last= nodes[nodes.size() - 1].get();
 
                         currentLevelIds << last->id();
                     }
@@ -529,7 +540,7 @@ void MindMapTest::removeNodeAndLinkTest()
 
                     auto parentId= idLevels[idLevels.size() - 1].at(index);
                     m_ctrl->addNode(parentId);
-                    auto last= nodes[nodes.size() - 1];
+                    auto last= nodes[nodes.size() - 1].get();
                     currentLevelIds << last->id();
                 }
             }
@@ -539,19 +550,14 @@ void MindMapTest::removeNodeAndLinkTest()
         ++d;
     }
 
-    qDebug() << "removeNode: 5";
     QCOMPARE(itemModel->rowCount(), linkCount + nodeCount);
 
-    qDebug() << "removeNode: 6";
     m_ctrl->undo();
 
-    qDebug() << "removeNode: 7";
     QCOMPARE(itemModel->rowCount(), std::max(nodeCount - 1, 0) + std::max(linkCount - 1, 0));
 
-    qDebug() << "removeNode: 8";
     m_ctrl->redo();
 
-    qDebug() << "removeNode: 9";
     QCOMPARE(itemModel->rowCount(), nodeCount + linkCount);
 
     if(indexToRemove < 0)
@@ -562,25 +568,20 @@ void MindMapTest::removeNodeAndLinkTest()
 
     auto selectionCtrl= m_ctrl->selectionController();
 
-    qDebug() << "removeNode: 10";
-    auto last= nodes[indexToRemove];
+    auto last= nodes[indexToRemove].get();
     selectionCtrl->addToSelection(last);
     m_ctrl->removeSelection();
 
     QCOMPARE(itemModel->rowCount(), restingNodes + restingLinks);
-    qDebug() << "removeNode: 11";
     QCOMPARE(nodeSpy.count(), nodeCount - restingNodes + linkCount - restingLinks);
 
     m_ctrl->undo();
-    qDebug() << "removeNode: 12";
     QCOMPARE(itemModel->rowCount(), nodeCount + linkCount);
     nodeSpy.clear();
 
-    qDebug() << "removeNode: 13";
     m_ctrl->redo();
 
     QCOMPARE(itemModel->rowCount(), restingNodes + restingLinks);
-    qDebug() << "removeNode: 14";
     QCOMPARE(nodeSpy.count(), nodeCount - restingNodes + linkCount - restingLinks);
 }
 
@@ -635,7 +636,7 @@ void MindMapTest::getAndSetTest()
     space->setRunning(true);
 
     auto styleModel= dynamic_cast<mindmap::NodeStyleModel*>(m_ctrl->styleModel());
-    new QAbstractItemModelTester(styleModel);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(styleModel));
 
     for(int i= 0; i < styleModel->rowCount(); ++i)
     {
@@ -672,7 +673,7 @@ void MindMapTest::getAndSetTest()
     m_ctrl->refresh();
 
     auto imgModel= m_ctrl->imgModel();
-    new QAbstractItemModelTester(imgModel);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(imgModel));
 
     auto id= Helper::randomString();
     auto path= QUrl::fromLocalFile(Helper::imagePath());

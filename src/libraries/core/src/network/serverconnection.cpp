@@ -40,6 +40,11 @@ ServerConnection::~ServerConnection()
         delete m_stateMachine;
         m_stateMachine= nullptr;
     }
+    if(m_socket)
+    {
+        m_socket->deleteLater();
+        m_socket = nullptr;
+    }
 }
 
 void ServerConnection::resetStateMachine()

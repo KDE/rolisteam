@@ -57,9 +57,9 @@ void SpacingController::computeInLoop()
     {
         auto const& packages= m_model->items(MindItem::PackageType);
         QList<PositionedItem*> packagedChildren;
-        for(auto item : packages)
+        for(auto const& item : packages)
         {
-            auto pack= dynamic_cast<PackageNode*>(item);
+            auto pack= dynamic_cast<PackageNode*>(item.get());
             packagedChildren.append(pack->children());
         }
 
@@ -68,7 +68,7 @@ void SpacingController::computeInLoop()
         std::vector<PositionedItem*> allNodes;
         allNodes.reserve(items.size());
         std::transform(std::begin(items), std::end(items), std::back_inserter(allNodes),
-                       [](MindItem* item) { return dynamic_cast<PositionedItem*>(item); });
+                       [](const std::unique_ptr<mindmap::MindItem>& item) { return dynamic_cast<PositionedItem*>(item.get()); });
 
         allNodes.erase(std::remove_if(std::begin(allNodes), std::end(allNodes),
                                       [packagedChildren](PositionedItem* item)
@@ -79,10 +79,10 @@ void SpacingController::computeInLoop()
         {
             applyCoulombsLaw(node, allNodes);
         }
-        auto const allLinks= m_model->items(MindItem::LinkType);
+        auto const& allLinks= m_model->items(MindItem::LinkType);
         for(auto& item : allLinks)
         {
-            auto link= dynamic_cast<LinkController*>(item);
+            auto link= dynamic_cast<LinkController*>(item.get());
             if(!link)
                 continue;
 

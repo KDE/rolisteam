@@ -128,7 +128,7 @@ private:
 private:
     std::unique_ptr<Section> m_rootSection;
     std::unique_ptr<Formula::FormulaManager> m_formulaManager;
-    QList<Column*> m_colunm;
+    std::vector<std::unique_ptr<Column>> m_colunms;
     QStringList m_alignList;
 };
 

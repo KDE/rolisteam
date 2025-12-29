@@ -200,6 +200,8 @@ void ImageItemController::checkMovie()
         img.loadFromData(m_data);
         setImage(img);
     }
+
+    delete buf;
 }
 
 void ImageItemController::endGeometryChange()

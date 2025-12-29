@@ -21,6 +21,7 @@
 #define REPARENTINGNODECOMMAND_H
 
 #include "mindmap/mindmap_global.h"
+#include <QCoreApplication>
 #include <QPointer>
 #include <QUndoCommand>
 
@@ -33,19 +34,20 @@ class PositionedItem;
 
 class MINDMAP_EXPORT ReparentingNodeCommand : public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(ReparentingNodeCommand)
 public:
     ReparentingNodeCommand(MindItemModel* nodeModel, PositionedItem* newParent, const QString& id);
     void undo() override;
     void redo() override;
 
 private:
-    QPointer<PositionedItem> m_mindNode;
-    QPointer<PositionedItem> m_oldParent;
-    QPointer<LinkController> m_oldLink;
-    QPointer<LinkController> m_newLink;
+    PositionedItem* reparenting(PositionedItem* newParent, const QString& id);
 
+private:
     QPointer<MindItemModel> m_nodeModel;
     QPointer<PositionedItem> m_newParent;
+    QPointer<PositionedItem> m_oldParent;
+    QString m_nodeId;
 };
 } // namespace mindmap
 #endif // REPARENTINGNODECOMMAND_H

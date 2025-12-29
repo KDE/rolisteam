@@ -69,6 +69,7 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
         auto buf= m_pdfCtrl->buffer();
         if(buf->open(QIODevice::ReadOnly))
             m_document->load(buf);
+        delete buf;
     }
 
     connect(m_pdfCtrl, &PdfController::staticDataChanged, this,
@@ -80,6 +81,7 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
                 auto buf= m_pdfCtrl->buffer();
                 if(buf->open(QIODevice::ReadOnly))
                     m_document->load(buf);
+                delete buf;
             });
 
     auto updateTitle = [this]()

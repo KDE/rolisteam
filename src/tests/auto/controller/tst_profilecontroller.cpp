@@ -41,13 +41,14 @@ private:
     std::unique_ptr<ProfileModel> m_profileModel;
     std::unique_ptr<SelectConnProfileController> m_ctrl;
     std::unique_ptr<QUndoStack> m_stack;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 Q_DECLARE_METATYPE(CharacterInfo)
 void ProfileControllerTest::init()
 {
     m_profileModel.reset(new ProfileModel());
     m_ctrl.reset(new SelectConnProfileController(m_profileModel.get(), nullptr));
-    new QAbstractItemModelTester(m_profileModel.get());
+    m_tester.reset(new QAbstractItemModelTester(m_profileModel.get()));
 }
 
 void ProfileControllerTest::clone()

@@ -35,6 +35,7 @@ class SideMenuControllerTest : public QObject
 
 public:
     SideMenuControllerTest();
+    void initModel(mindmap::MindItemModel* model);
 
 private slots:
     void init();
@@ -44,6 +45,7 @@ private slots:
 private:
     std::unique_ptr<mindmap::SideMenuController> m_ctrl;
     std::unique_ptr<MindMapController> m_mindmap;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 SideMenuControllerTest::SideMenuControllerTest() {}
@@ -54,9 +56,9 @@ void SideMenuControllerTest::init()
     m_ctrl.reset(new mindmap::SideMenuController());
 }
 
-void initModel(mindmap::MindItemModel* model)
+void SideMenuControllerTest::initModel(mindmap::MindItemModel* model)
 {
-    new QAbstractItemModelTester(model);
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(model));
 
     // l.first->setText("foo");
     // l.first->setId("toto");

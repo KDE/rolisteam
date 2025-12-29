@@ -37,6 +37,7 @@ public:
 
 private slots:
     void init();
+    void cleanup();
     void testPreferenceRegisterValue();
     void testNotOverridePreferenceValue();
     void testOverridePreferenceValue();
@@ -51,7 +52,10 @@ private:
 };
 
 PreferencesTest::PreferencesTest() {}
-
+void PreferencesTest::cleanup()
+{
+    delete m_preferences;
+}
 void PreferencesTest::init()
 {
     m_preferences= new PreferencesManager("Rolisteam", "tests");

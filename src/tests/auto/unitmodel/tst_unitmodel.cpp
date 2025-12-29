@@ -55,7 +55,7 @@ TestUnitModel::TestUnitModel() {}
 void TestUnitModel::init()
 {
     m_model.reset(new UnitModel());
-    new QAbstractItemModelTester(m_model.get());
+    new QAbstractItemModelTester(m_model.get(), this);
 }
 
 void TestUnitModel::addTest()
@@ -68,7 +68,7 @@ void TestUnitModel::addTest()
     QVERIFY(m_model->rowCount() == 0);
 
     int i= 0;
-    for(auto name : nameList)
+    for(const auto &name : nameList)
     {
         auto symbol= symbolList[i];
         auto cat= category[i];

@@ -20,11 +20,13 @@
 #ifndef REMOVENODECOMMAND_H
 #define REMOVENODECOMMAND_H
 
-#include <QList>
+#include <QCoreApplication>
+#include <QJsonArray>
 #include <QObject>
 #include <QPointer>
 #include <QUndoCommand>
 #include <mindmap/mindmap_global.h>
+
 namespace mindmap
 {
 class MindItem;
@@ -32,17 +34,16 @@ class LinkController;
 class MindItemModel;
 class MINDMAP_EXPORT RemoveNodeCommand : public QUndoCommand
 {
+    Q_DECLARE_TR_FUNCTIONS(RemoveNodeCommand)
 public:
-    RemoveNodeCommand(const QString& idmap, const std::vector<MindItem*>& selection, MindItemModel* nodeModel);
+    RemoveNodeCommand(const std::vector<QPointer<MindItem>>& selection, MindItemModel* nodeModel);
     void undo() override;
     void redo() override;
 
 private:
-    QList<QPointer<MindItem>> m_selection;
-    QList<QPointer<LinkController>> m_links;
     QPointer<MindItemModel> m_nodeModel;
-
-    QString m_idmap;
+    QJsonArray m_nodeData;
+    QJsonArray m_linkData;
 };
 } // namespace mindmap
 #endif // REMOVENODECOMMAND_H

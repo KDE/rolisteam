@@ -38,6 +38,7 @@ private slots:
 private:
     std::unique_ptr<ContentModel> m_model;
     std::unique_ptr<FilteredContentModel> m_filteredModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 ContentModelTest::ContentModelTest() {}
@@ -47,10 +48,10 @@ void ContentModelTest::init()
     m_model.reset(new ContentModel());
     m_filteredModel.reset(new FilteredContentModel(Core::ContentType::VECTORIALMAP));
 
-    new QAbstractItemModelTester(m_model.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_model.get()));
 
     m_filteredModel->setSourceModel(m_model.get());
-    new QAbstractItemModelTester(m_filteredModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_filteredModel.get()));
 }
 
 void ContentModelTest::testFilteredData()

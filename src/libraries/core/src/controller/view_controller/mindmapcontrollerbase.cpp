@@ -41,7 +41,6 @@
 #include "mindmap/data/positioneditem.h"
 #include "mindmap/model/imagemodel.h"
 #include "mindmap/model/nodestylemodel.h"
-#include "mindmap/worker/fileserializer.h"
 #include "utils/iohelper.h"
 #include "worker/campaignfinder.h"
 
@@ -300,7 +299,7 @@ void MindMapControllerBase::removeLink(const QStringList& id, bool network)
 {
     if(!readWrite() && !network)
         return;
-    std::vector<MindItem*> res;
+    std::vector<QPointer<MindItem>> res;
     std::transform(std::begin(id), std::end(id), std::back_inserter(res),
                    [this](const QString& id) { return m_itemModel->item(id); });
 
@@ -309,7 +308,7 @@ void MindMapControllerBase::removeLink(const QStringList& id, bool network)
     if(res.empty())
         return;
 
-    auto cmd= new mindmap::RemoveNodeCommand(uuid(), res, m_itemModel.get());
+    auto cmd= new mindmap::RemoveNodeCommand(res, m_itemModel.get());
     m_stack.push(cmd);
 }
 
@@ -317,7 +316,7 @@ void MindMapControllerBase::removeNode(const QStringList& id, bool network)
 {
     if(!readWrite() && !network)
         return;
-    std::vector<MindItem*> res;
+    std::vector<QPointer<MindItem>> res;
     std::transform(std::begin(id), std::end(id), std::back_inserter(res),
                    [this](const QString& id) { return m_itemModel->item(id); });
 
@@ -326,7 +325,7 @@ void MindMapControllerBase::removeNode(const QStringList& id, bool network)
     if(res.empty())
         return;
 
-    auto cmd= new mindmap::RemoveNodeCommand(uuid(), res, m_itemModel.get());
+    auto cmd= new mindmap::RemoveNodeCommand(res, m_itemModel.get());
     m_stack.push(cmd);
 }
 
@@ -392,7 +391,7 @@ void MindMapControllerBase::reparenting(MindItem* parent, const QString& id)
 void MindMapControllerBase::removeSelection()
 {
     auto nodes= m_selectionController->selectedNodes();
-    auto cmd= new mindmap::RemoveNodeCommand(uuid(), nodes, m_itemModel.get());
+    auto cmd= new mindmap::RemoveNodeCommand(nodes, m_itemModel.get());
     m_stack.push(cmd);
     m_selectionController->clearSelection();
 }

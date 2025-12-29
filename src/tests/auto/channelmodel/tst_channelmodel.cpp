@@ -50,6 +50,7 @@ private slots:
 
 private:
     std::unique_ptr<ChannelModel> m_model;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 
 TestChannelModel::TestChannelModel() {}
@@ -57,7 +58,7 @@ TestChannelModel::TestChannelModel() {}
 void TestChannelModel::init()
 {
     m_model.reset(new ChannelModel());
-    new QAbstractItemModelTester(m_model.get());
+    m_tester.reset(new QAbstractItemModelTester(m_model.get()));
 }
 
 void TestChannelModel::addTest()
@@ -66,7 +67,7 @@ void TestChannelModel::addTest()
     QFETCH(QByteArray, password);
     QFETCH(int, expected);
 
-    for(auto channel : channels)
+    for(const auto &channel : channels)
     {
         m_model->addChannel(channel, password);
     }

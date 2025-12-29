@@ -59,6 +59,11 @@ ParticipantItem::ParticipantItem(const QString& name) : m_name(name) {}
 
 ParticipantItem::ParticipantItem(Player* player) : m_player(player) {}
 
+ParticipantItem::~ParticipantItem()
+{
+    qDeleteAll(m_children);
+}
+
 bool ParticipantItem::isLeaf() const
 {
     return (m_player != nullptr);

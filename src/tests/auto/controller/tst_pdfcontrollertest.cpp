@@ -22,6 +22,7 @@
 #include <QClipboard>
 #include <QSignalSpy>
 #include <QUrl>
+#include <QBuffer>
 
 #include "controller/view_controller/pdfcontroller.h"
 #include "test_root_path.h"
@@ -76,7 +77,8 @@ void PdfControllorTest::create()
     QCOMPARE(m_ctrl->data(), expected);
 
     m_ctrl->setData(m_ctrl->data());
-    m_ctrl->buffer();
+    auto buf = m_ctrl->buffer();
+    delete buf;
 }
 
 void PdfControllorTest::create_data()

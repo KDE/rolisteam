@@ -34,6 +34,7 @@ public:
         UnitRole
     };
     UnitModel(QObject* parent= nullptr);
+    ~UnitModel();
 
     QVariant data(const QModelIndex& index, int role) const;
     int rowCount(const QModelIndex& parent= QModelIndex()) const;

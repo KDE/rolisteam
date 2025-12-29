@@ -61,6 +61,8 @@ void IpCheckerTest::doTest()
 
     spy.wait(1000);
 
+    if(spy.count() == 0)
+        QSKIP("Service is not reachable");
     QCOMPARE(spy.count(), 1);
 
     QVERIFY(!m_ipCheck->ipAddress().isEmpty());

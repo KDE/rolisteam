@@ -255,7 +255,12 @@ int PositionedItem::subNodeCount(QSet<LinkController*>& alreadySeen) const
 
 void PositionedItem::removeLink(LinkController* link)
 {
-    auto it= std::find(m_subNodelinks.begin(), m_subNodelinks.end(), link);
+    auto it= std::find_if(m_subNodelinks.begin(), m_subNodelinks.end(),
+                          [link](const QPointer<LinkController>& ctrl)
+                          {
+                              qDebug() << ctrl.isNull() << ctrl.data() << link;
+                              return link == ctrl.data();
+                          });
 
     if(it == m_subNodelinks.end())
         return;

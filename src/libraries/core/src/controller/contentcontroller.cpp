@@ -83,7 +83,7 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
     CharacterSheetController::setCharacterModel(characterModel);
     SharedNoteController::setPlayerModel(playerModel);
     CharacterFinder::setPlayerModel(playerModel);
-    MindMapController::setRemotePlayerModel(new RemotePlayerModel(playerModel));
+    MindMapController::setRemotePlayerModel(new RemotePlayerModel(playerModel));//TODO remote it
 
     connect(m_sessionModel.get(), &QFileSystemModel::rootPathChanged, this, &ContentController::mediaRootChanged);
 
@@ -93,15 +93,19 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
     ReceiveEvent::registerNetworkReceiver(NetMsg::MediaCategory, this);
 
     auto fModel= new FilteredContentModel(Core::ContentType::VECTORIALMAP);
+    fModel->setParent(this);
     fModel->setSourceModel(m_contentModel.get());
 
     auto fModel2= new FilteredContentModel(Core::ContentType::SHAREDNOTE);
+    fModel2->setParent(this);
     fModel2->setSourceModel(m_contentModel.get());
 
     auto fModel3= new FilteredContentModel(Core::ContentType::MINDMAP);
+    fModel3->setParent(this);
     fModel3->setSourceModel(m_contentModel.get());
 
     auto fModel4= new FilteredContentModel(Core::ContentType::CHARACTERSHEET);
+    fModel4->setParent(this);
     fModel4->setSourceModel(m_contentModel.get());
 
     std::unique_ptr<VMapUpdater> vmapUpdater(new VMapUpdater(campaign, fModel));

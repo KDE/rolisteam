@@ -49,6 +49,7 @@ private slots:
 
 private:
     std::unique_ptr<DiceAliasModel> m_model;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 
 TestDiceAliasModel::TestDiceAliasModel() {}
@@ -56,7 +57,7 @@ TestDiceAliasModel::TestDiceAliasModel() {}
 void TestDiceAliasModel::init()
 {
     m_model.reset(new DiceAliasModel());
-    new QAbstractItemModelTester(m_model.get());
+    m_tester.reset(new QAbstractItemModelTester(m_model.get()));
 }
 
 void TestDiceAliasModel::addDefaultAlias()

@@ -53,6 +53,15 @@ bool CategoryModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourcePar
 //////////////////////
 UnitModel::UnitModel(QObject* parent) : QAbstractListModel(parent) {}
 
+UnitModel::~UnitModel()
+{
+    for(auto& list : std::as_const(m_data))
+    {
+        qDeleteAll(list);
+    }
+    m_data.clear();
+}
+
 Unit* UnitModel::indexToUnit(const QModelIndex& index) const
 {
     return getUnitByIndex(index.row());

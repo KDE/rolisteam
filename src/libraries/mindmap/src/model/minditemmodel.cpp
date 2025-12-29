@@ -30,8 +30,10 @@
 
 namespace mindmap
 {
-std::tuple<std::vector<MindItem*>&, int> getVector(std::vector<MindItem*>& links, std::vector<MindItem*>& package,
-                                                   std::vector<MindItem*>& node, MindItem::Type type)
+std::tuple<std::vector<std::unique_ptr<MindItem>>&, int> getVector(std::vector<std::unique_ptr<MindItem>>& links,
+                                                                   std::vector<std::unique_ptr<MindItem>>& package,
+                                                                   std::vector<std::unique_ptr<MindItem>>& node,
+                                                                   MindItem::Type type)
 {
 
     if(type == MindItem::LinkType)
@@ -42,8 +44,9 @@ std::tuple<std::vector<MindItem*>&, int> getVector(std::vector<MindItem*>& links
         return {node, links.size() + package.size()};
 }
 
-MindItem* itemFromIndex(int r, const std::vector<MindItem*>& links, const std::vector<MindItem*>& packages,
-                        const std::vector<MindItem*>& nodes)
+MindItem* itemFromIndex(int r, const std::vector<std::unique_ptr<MindItem>>& links,
+                        const std::vector<std::unique_ptr<MindItem>>& packages,
+                        const std::vector<std::unique_ptr<MindItem>>& nodes)
 {
     auto linkCount= static_cast<int>(links.size());
     auto packageCount= static_cast<int>(packages.size());
@@ -53,18 +56,18 @@ MindItem* itemFromIndex(int r, const std::vector<MindItem*>& links, const std::v
 
     if(r < linkCount)
     {
-        mindNode= links[r];
+        mindNode= links[r].get();
     }
     else
     {
         r-= linkCount;
         if(r < packageCount)
-            mindNode= packages[r];
+            mindNode= packages[r].get();
         else
         {
             r-= packageCount;
             if(r < nodeCount)
-                mindNode= nodes[r];
+                mindNode= nodes[r].get();
         }
     }
     return mindNode;
@@ -152,21 +155,22 @@ void MindItemModel::update(const QString& id, int role)
         return;
 
     int row= 0;
+    auto findFunc= [current](const std::unique_ptr<MindItem>& item) { return current == item.get(); };
     if(current->type() == MindItem::LinkType)
     {
-        auto it= std::find(std::begin(m_links), std::end(m_links), current);
+        auto it= std::find_if(std::begin(m_links), std::end(m_links), findFunc);
         if(it != std::end(m_links))
             row= std::distance(std::begin(m_links), it);
     }
     else if(current->type() == MindItem::PackageType)
     {
-        auto it= std::find(std::begin(m_packages), std::end(m_packages), current);
+        auto it= std::find_if(std::begin(m_packages), std::end(m_packages), findFunc);
         if(it != std::end(m_packages))
             row= std::distance(std::begin(m_packages), it) + m_links.size();
     }
     else if(current->type() == MindItem::NodeType)
     {
-        auto it= std::find(std::begin(m_nodes), std::end(m_nodes), current);
+        auto it= std::find_if(std::begin(m_nodes), std::end(m_nodes), findFunc);
         if(it != std::end(m_nodes))
             row= std::distance(std::begin(m_nodes), it) + m_links.size() + m_packages.size();
     }
@@ -176,12 +180,13 @@ void MindItemModel::update(const QString& id, int role)
 
 void MindItemModel::setImageUriToNode(const QString& id)
 {
-    auto it= std::find_if(m_nodes.begin(), m_nodes.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it= std::find_if(m_nodes.begin(), m_nodes.end(),
+                          [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
     if(it == m_nodes.end())
         return;
 
     auto dis= std::distance(m_nodes.begin(), it);
-    auto node= dynamic_cast<MindNode*>(*it);
+    auto node= dynamic_cast<MindNode*>(it->get());
     if(!node)
         return;
 
@@ -211,18 +216,6 @@ QHash<int, QByteArray> MindItemModel::roleNames() const
 
 void MindItemModel::clear()
 {
-
-    QVector<MindItem*> backup;
-    backup.reserve(rowCount());
-    for(auto const& l : m_links)
-        backup.append(l);
-
-    for(auto const& l : m_packages)
-        backup.append(l);
-
-    for(auto const& l : m_nodes)
-        backup.append(l);
-
     beginResetModel();
     m_links.clear();
     m_packages.clear();
@@ -232,12 +225,12 @@ void MindItemModel::clear()
 
 bool MindItemModel::isPackageChild(const QString& id)
 {
-    for(auto item : m_packages)
+    for(auto const& item : m_packages)
     {
-        if(!item)
+        if(!item.get())
             continue;
 
-        auto package= dynamic_cast<mindmap::PackageNode*>(item);
+        auto package= dynamic_cast<mindmap::PackageNode*>(item.get());
         if(!package)
             continue;
 
@@ -249,12 +242,12 @@ bool MindItemModel::isPackageChild(const QString& id)
 
 void MindItemModel::removeItemFromPackage(const QString& id, bool network)
 {
-    for(auto item : m_packages)
+    for(auto const& item : m_packages)
     {
-        if(!item)
+        if(!item.get())
             continue;
 
-        auto package= dynamic_cast<mindmap::PackageNode*>(item);
+        auto package= dynamic_cast<mindmap::PackageNode*>(item.get());
         if(!package)
             continue;
 
@@ -273,7 +266,7 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
 
         // prevent adding twice the same
         auto it= std::find_if(std::begin(vec), std::end(vec),
-                              [node](const MindItem* item) { return item->id() == node->id(); });
+                              [node](const std::unique_ptr<MindItem>& item) { return item->id() == node->id(); });
         if(it != std::end(vec))
             continue;
 
@@ -281,7 +274,6 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
 
         if(node->type() == MindItem::LinkType)
         {
-
             auto link= dynamic_cast<mindmap::LinkController*>(node);
             if(link)
             {
@@ -289,7 +281,9 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
                         [this, link]()
                         {
                             QModelIndex parent;
-                            auto it= std::find(m_links.begin(), m_links.end(), link);
+                            auto it= std::find_if(m_links.begin(), m_links.end(),
+                                                  [link](const std::unique_ptr<MindItem>& item)
+                                                  { return item->id() == link->id(); });
                             if(it == m_links.end())
                                 return;
                             auto offset= std::distance(m_links.begin(), it);
@@ -322,7 +316,8 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
         }
 
         beginInsertRows(QModelIndex(), row, row);
-        vec.push_back(node);
+        std::unique_ptr<mindmap::MindItem> uni(node);
+        vec.push_back(std::move(uni));
         endInsertRows();
     }
     if(!network)
@@ -335,7 +330,7 @@ std::vector<PositionedItem*> MindItemModel::positionnedItems() const
 
     for(auto const& item : m_packages)
     {
-        auto pack= dynamic_cast<PositionedItem*>(item);
+        auto pack= dynamic_cast<PositionedItem*>(item.get());
 
         if(!pack)
             continue;
@@ -345,7 +340,7 @@ std::vector<PositionedItem*> MindItemModel::positionnedItems() const
 
     for(auto const& item : m_nodes)
     {
-        auto pack= dynamic_cast<PositionedItem*>(item);
+        auto pack= dynamic_cast<PositionedItem*>(item.get());
 
         if(!pack)
             continue;
@@ -392,10 +387,14 @@ void MindItemModel::removeAllSubItem(const mindmap::PositionedItem* item, QSet<Q
 {
     QList<const mindmap::MindItem*> links{};
 
+    /*[current](const std::unique_ptr<MindItem>& item){
+        return current == item.get();
+    }*/
+
     std::for_each(std::begin(m_links), std::end(m_links),
-                  [&links, item, this](const mindmap::MindItem* tmp)
+                  [&links, item, this](const std::unique_ptr<MindItem>& tmp)
                   {
-                      auto const link= dynamic_cast<const mindmap::LinkController*>(tmp);
+                      auto const link= dynamic_cast<const mindmap::LinkController*>(tmp.get());
                       Q_ASSERT(link);
                       if(link->relatedTo(item->id()))
                       {
@@ -408,7 +407,9 @@ void MindItemModel::removeAllSubItem(const mindmap::PositionedItem* item, QSet<Q
                   [this, &items](const mindmap::MindItem* tmp)
                   {
                       items << tmp->id();
-                      auto it= std::find(std::begin(m_links), std::end(m_links), tmp);
+                      auto it= std::find_if(std::begin(m_links), std::end(m_links),
+                                            [tmp](const std::unique_ptr<mindmap::MindItem>& node)
+                                            { return node.get() == tmp; });
 
                       if(it == std::end(m_links))
                           return;
@@ -420,9 +421,9 @@ void MindItemModel::removeAllSubItem(const mindmap::PositionedItem* item, QSet<Q
                   });
 
     std::for_each(std::begin(m_nodes), std::end(m_nodes),
-                  [item](mindmap::MindItem* tmp)
+                  [item](const std::unique_ptr<mindmap::MindItem>& tmp)
                   {
-                      auto pItem= dynamic_cast<PositionedItem*>(tmp);
+                      auto pItem= dynamic_cast<PositionedItem*>(tmp.get());
 
                       if(!pItem)
                           return;
@@ -442,7 +443,8 @@ bool MindItemModel::removeItem(const MindItem* item)
     QSet<QString> items{item->id()};
     auto [vec, offset]= getVector(m_links, m_packages, m_nodes, item->type());
 
-    auto it= std::find(vec.begin(), vec.end(), item);
+    auto it= std::find_if(vec.begin(), vec.end(),
+                          [item](const std::unique_ptr<MindItem>& node) { return item == node.get(); });
 
     if(it == std::end(m_nodes))
         return false;
@@ -497,37 +499,40 @@ MindItem* MindItemModel::item(const QString& id) const
 {
     // MindItem* result= nullptr;
 
-    auto it= std::find_if(m_nodes.begin(), m_nodes.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it= std::find_if(m_nodes.begin(), m_nodes.end(),
+                          [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
 
     if(it != m_nodes.end())
-        return *it;
+        return it->get();
 
-    auto it2= std::find_if(m_links.begin(), m_links.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it2= std::find_if(m_links.begin(), m_links.end(),
+                           [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
 
     if(it2 != m_links.end())
-        return *it2;
+        return it2->get();
 
-    auto it3
-        = std::find_if(m_packages.begin(), m_packages.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it3= std::find_if(m_packages.begin(), m_packages.end(),
+                           [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
 
     if(it3 != m_packages.end())
-        return *it3;
+        return it3->get();
 
     return nullptr;
 }
 
 PositionedItem* MindItemModel::positionItem(const QString& id) const
 {
-    auto it= std::find_if(m_nodes.begin(), m_nodes.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it= std::find_if(m_nodes.begin(), m_nodes.end(),
+                          [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
 
     if(it != m_nodes.end())
-        return dynamic_cast<PositionedItem*>(*it);
+        return dynamic_cast<PositionedItem*>(it->get());
 
-    auto it3
-        = std::find_if(m_packages.begin(), m_packages.end(), [id](const MindItem* node) { return node->id() == id; });
+    auto it3= std::find_if(m_packages.begin(), m_packages.end(),
+                           [id](const std::unique_ptr<MindItem>& node) { return node->id() == id; });
 
     if(it3 != m_packages.end())
-        return dynamic_cast<PositionedItem*>(*it3);
+        return dynamic_cast<PositionedItem*>(it3->get());
 
     return nullptr;
 }
@@ -538,7 +543,7 @@ QRectF MindItemModel::contentRect() const
 
     for(auto const& item : m_nodes)
     {
-        auto node= dynamic_cast<PositionedItem*>(item);
+        auto node= dynamic_cast<PositionedItem*>(item.get());
         if(!node)
             continue;
         rect= node->boundingRect().united(rect);
@@ -546,7 +551,7 @@ QRectF MindItemModel::contentRect() const
 
     for(auto const& item : m_packages)
     {
-        auto pack= dynamic_cast<PositionedItem*>(item);
+        auto pack= dynamic_cast<PositionedItem*>(item.get());
         if(!pack)
             continue;
         rect= pack->boundingRect().united(rect);
@@ -554,7 +559,7 @@ QRectF MindItemModel::contentRect() const
     return rect;
 }
 
-std::vector<MindItem*>& MindItemModel::items(MindItem::Type type)
+std::vector<std::unique_ptr<mindmap::MindItem>>& MindItemModel::items(MindItem::Type type)
 {
     return std::get<0>(getVector(m_links, m_packages, m_nodes, type));
 }
@@ -563,9 +568,9 @@ std::vector<LinkController*> MindItemModel::sublink(const QString& id) const
 {
     std::vector<LinkController*> vec;
 
-    for(auto item : m_links)
+    for(auto const& item : m_links)
     {
-        auto link= dynamic_cast<LinkController*>(item);
+        auto link= dynamic_cast<LinkController*>(item.get());
         if(!link)
             continue;
 
@@ -614,9 +619,9 @@ PositionedItem* MindItemModel::parentNode(const QString& id)
 {
     PositionedItem* res= nullptr;
     auto it= std::find_if(std::begin(m_links), std::end(m_links),
-                          [id](MindItem* item)
+                          [id](const std::unique_ptr<MindItem>& item)
                           {
-                              auto link= dynamic_cast<LinkController*>(item);
+                              auto link= dynamic_cast<LinkController*>(item.get());
                               if(!link)
                                   return false;
                               auto endPoint= link->end();
@@ -628,7 +633,7 @@ PositionedItem* MindItemModel::parentNode(const QString& id)
 
     if(it != std::end(m_links))
     {
-        auto found= dynamic_cast<LinkController*>((*it));
+        auto found= dynamic_cast<LinkController*>(it->get());
         if(found)
             res= found->start();
     }

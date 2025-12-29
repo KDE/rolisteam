@@ -59,17 +59,24 @@ void Column::setPos(const TreeSheetItem::ColumnId& pos)
 FieldModel::FieldModel(QObject* parent)
     : QAbstractItemModel(parent), m_rootSection{new Section()}, m_formulaManager{new Formula::FormulaManager()}
 {
-    m_colunm << new Column(tr("Id"), TreeSheetItem::ID) << new Column(tr("Label"), TreeSheetItem::LABEL)
-             << new Column(tr("Value"), TreeSheetItem::VALUE)
-             << new Column(tr("Possible Values"), TreeSheetItem::VALUES)
-             << new Column(tr("Formula"), TreeSheetItem::FORMULA) << new Column(tr("Type"), TreeSheetItem::TYPE)
-             << new Column(tr("x"), TreeSheetItem::X) << new Column(tr("y"), TreeSheetItem::Y)
-             << new Column(tr("Width"), TreeSheetItem::WIDTH) << new Column(tr("Height"), TreeSheetItem::HEIGHT)
-             << new Column(tr("Font Adaptation"), TreeSheetItem::FitFont) << new Column(tr("Font"), TreeSheetItem::FONT)
-             << new Column(tr("Text-align"), TreeSheetItem::TEXT_ALIGN)
-             << new Column(tr("Text Color"), TreeSheetItem::TEXTCOLOR)
-             << new Column(tr("Bg Color"), TreeSheetItem::BGCOLOR) << new Column(tr("Border"), TreeSheetItem::BORDER)
-             << new Column(tr("Page"), TreeSheetItem::PAGE) << new Column(tr("ToolTip"), TreeSheetItem::TOOLTIP);
+    m_colunms.push_back(std::make_unique<Column>(tr("Id"), TreeSheetItem::ID));
+    m_colunms.push_back(std::make_unique<Column>(tr("Label"), TreeSheetItem::LABEL));
+    m_colunms.push_back(std::make_unique<Column>(tr("Value"), TreeSheetItem::VALUE));
+    m_colunms.push_back(std::make_unique<Column>(tr("Possible Values"), TreeSheetItem::VALUES));
+    m_colunms.push_back(std::make_unique<Column>(tr("Formula"), TreeSheetItem::FORMULA));
+    m_colunms.push_back(std::make_unique<Column>(tr("Type"), TreeSheetItem::TYPE));
+    m_colunms.push_back(std::make_unique<Column>(tr("x"), TreeSheetItem::X));
+    m_colunms.push_back(std::make_unique<Column>(tr("y"), TreeSheetItem::Y));
+    m_colunms.push_back(std::make_unique<Column>(tr("Width"), TreeSheetItem::WIDTH));
+    m_colunms.push_back(std::make_unique<Column>(tr("Height"), TreeSheetItem::HEIGHT));
+    m_colunms.push_back(std::make_unique<Column>(tr("Font Adaptation"), TreeSheetItem::FitFont));
+    m_colunms.push_back(std::make_unique<Column>(tr("Font"), TreeSheetItem::FONT));
+    m_colunms.push_back(std::make_unique<Column>(tr("Text-align"), TreeSheetItem::TEXT_ALIGN));
+    m_colunms.push_back(std::make_unique<Column>(tr("Text Color"), TreeSheetItem::TEXTCOLOR));
+    m_colunms.push_back(std::make_unique<Column>(tr("Bg Color"), TreeSheetItem::BGCOLOR));
+    m_colunms.push_back(std::make_unique<Column>(tr("Border"), TreeSheetItem::BORDER));
+    m_colunms.push_back(std::make_unique<Column>(tr("Page"), TreeSheetItem::PAGE));
+    m_colunms.push_back(std::make_unique<Column>(tr("ToolTip"), TreeSheetItem::TOOLTIP));
 
     m_alignList << tr("TopRight") << tr("TopMiddle") << tr("TopLeft") << tr("CenterRight") << tr("CenterMiddle")
                 << tr("CenterLeft") << tr("BottomRight") << tr("BottomMiddle") << tr("BottomLeft");
@@ -86,7 +93,7 @@ QVariant FieldModel::data(const QModelIndex& index, int role) const
     if(nullptr == treeitem)
         return {};
 
-    TreeSheetItem::ColumnId colId= m_colunm[index.column()]->getPos();
+    TreeSheetItem::ColumnId colId= m_colunms[index.column()]->getPos();
 
     QVariant res;
 
@@ -126,7 +133,7 @@ bool FieldModel::setData(const QModelIndex& index, const QVariant& value, int ro
 
     auto valStr= value.toString();
 
-    if(TreeSheetItem::VALUE == m_colunm[index.column()]->getPos() && valStr.startsWith("="))
+    if(TreeSheetItem::VALUE == m_colunms[index.column()]->getPos() && valStr.startsWith("="))
     {
         QHash<QString, QString> hash= buildDicto();
         m_formulaManager->setConstantHash(hash);
@@ -143,7 +150,7 @@ bool FieldModel::setData(const QModelIndex& index, const QVariant& value, int ro
     }
     else
     {
-        treeitem->setValueFrom(m_colunm[index.column()]->getPos(), valStr);
+        treeitem->setValueFrom(m_colunms[index.column()]->getPos(), valStr);
     }
 
     emit valuesChanged(treeitem->valueFrom(TreeSheetItem::ID, Qt::DisplayRole).toString(), valStr);
@@ -210,14 +217,14 @@ int FieldModel::rowCount(const QModelIndex& parent) const
 int FieldModel::columnCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent)
-    return m_colunm.count();
+    return m_colunms.size();
 }
 
 QVariant FieldModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if((role == Qt::DisplayRole) && (orientation == Qt::Horizontal))
     {
-        return m_colunm[section]->getName();
+        return m_colunms[section]->getName();
     }
     else
     {
@@ -269,15 +276,15 @@ Qt::ItemFlags FieldModel::flags(const QModelIndex& index) const
         return Qt::NoItemFlags;
 
     // TreeSheetItem* childItem = static_cast<TreeSheetItem*>(index.internalPointer());
-    if(m_colunm[index.column()]->getPos() == TreeSheetItem::ID)
+    if(m_colunms[index.column()]->getPos() == TreeSheetItem::ID)
     {
         return Qt::ItemIsEnabled | Qt::ItemIsEditable | Qt::ItemIsSelectable;
     }
-    else if(m_colunm[index.column()]->getPos() == TreeSheetItem::TYPE)
+    else if(m_colunms[index.column()]->getPos() == TreeSheetItem::TYPE)
     {
         return Qt::ItemIsEnabled | Qt::ItemIsEditable | Qt::ItemIsSelectable;
     }
-    else if(m_colunm[index.column()]->getPos() == TreeSheetItem::FONT)
+    else if(m_colunms[index.column()]->getPos() == TreeSheetItem::FONT)
     {
         return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
     }
@@ -337,7 +344,7 @@ void FieldModel::updateItem(CSItem* item)
     int ind= m_rootSection->indexOfChild(item);
     if(ind >= 0)
     {
-        emit dataChanged(createIndex(ind, 0, item), createIndex(ind, m_colunm.size(), item));
+        emit dataChanged(createIndex(ind, 0, item), createIndex(ind, m_colunms.size(), item));
         emit modelChanged();
     }
     else
@@ -368,7 +375,7 @@ void FieldModel::updateItem(CSItem* item)
             if(itemtmp == m_rootSection.get())
             {
                 first= index(itemtmp->indexOfChild(next), 0, first);
-                second= index(itemtmp->indexOfChild(next), m_colunm.size(), second);
+                second= index(itemtmp->indexOfChild(next), m_colunms.size(), second);
             }
         }
         emit dataChanged(first, second);
@@ -475,7 +482,7 @@ void FieldModel::setValueForAll(QModelIndex& index)
     if(index.isValid())
     {
         TreeSheetItem* childItem= static_cast<TreeSheetItem*>(index.internalPointer());
-        m_rootSection->setValueForAll(childItem, m_colunm[index.column()]->getPos());
+        m_rootSection->setValueForAll(childItem, m_colunms[index.column()]->getPos());
     }
 }
 

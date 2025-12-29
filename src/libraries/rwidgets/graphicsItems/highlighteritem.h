@@ -44,6 +44,7 @@ public:
      */
     HighlighterItem(PreferencesManager* preference, const QPointF& center, int penSize, const QColor& penColor,
                     QGraphicsItem* parent= nullptr, bool autoDestruction= true);
+    ~HighlighterItem();
     /**
      * @brief paint the ellipse at the correct position
      */
@@ -71,7 +72,7 @@ private:
     QPointF m_center;
     QColor m_color;
     quint16 m_penSize;
-    QPropertyAnimation* m_animation;
+    std::unique_ptr<QPropertyAnimation> m_animation;
 };
 
 #endif // HIGHLIGHTERITEM_H

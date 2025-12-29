@@ -99,7 +99,7 @@ void Channel::sendMessage(NetworkMessage* msg, ServerConnection* emitter, bool m
 {
     if(msg->getRecipientMode() == NetworkMessage::All)
     {
-        sendToAll(msg, emitter);
+        sendToAll(msg, emitter, !mustBeSaved);
         if(mustBeSaved)
         {
             m_dataToSend.append(msg);
@@ -108,7 +108,7 @@ void Channel::sendMessage(NetworkMessage* msg, ServerConnection* emitter, bool m
     }
     else if(msg->getRecipientMode() == NetworkMessage::OneOrMany)
     {
-        sendToMany(msg, emitter);
+        sendToMany(msg, emitter, false);
     }
 }
 void Channel::sendToMany(NetworkMessage* msg, ServerConnection* tcp, bool deleteMsg)

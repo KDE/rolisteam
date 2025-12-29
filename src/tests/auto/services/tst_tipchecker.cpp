@@ -61,6 +61,8 @@ void TipCheckerTest::doTest()
     m_tip->startChecking();
 
     spy.wait(1000);
+    if(spy.count() == 0)
+        QSKIP("Service not reached");
     QCOMPARE(spy.count(), 1);
 
     auto errorCode= spy.takeFirst();

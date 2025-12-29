@@ -210,10 +210,10 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
                                 [ctrl](const QString& id) { MessageHelper::sendOffRemoveImageInfo(id, ctrl); });
 
     // connect existing  data
-    auto nodes= nodeModel->items(mindmap::MindItem::NodeType);
+    auto const& nodes= nodeModel->items(mindmap::MindItem::NodeType);
     for(auto const& i : nodes)
     {
-        auto n= dynamic_cast<mindmap::MindNode*>(i);
+        auto n= dynamic_cast<mindmap::MindNode*>(i.get());
         if(!n)
             continue;
         info.connections << connect(n, &mindmap::MindNode::textChanged, this,
@@ -234,10 +234,10 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
             { sendOffChange<QString>(idCtrl, QStringLiteral("description"), n, NetMsg::UpdateNode); });
     }
 
-    auto links= nodeModel->items(mindmap::MindItem::LinkType);
-    for(auto i : links)
+    auto const& links= nodeModel->items(mindmap::MindItem::LinkType);
+    for(auto const& i : links)
     {
-        auto link= dynamic_cast<mindmap::LinkController*>(i);
+        auto link= dynamic_cast<mindmap::LinkController*>(i.get());
         if(!link)
             continue;
 
@@ -251,10 +251,10 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
             { sendOffChange<mindmap::ArrowDirection>(idCtrl, QStringLiteral("direction"), link, NetMsg::UpdateLink); });
     }
 
-    auto packages= nodeModel->items(mindmap::MindItem::PackageType);
-    for(auto i : packages)
+    auto const& packages= nodeModel->items(mindmap::MindItem::PackageType);
+    for(auto const& i : packages)
     {
-        auto pack= dynamic_cast<mindmap::PackageNode*>(i);
+        auto pack= dynamic_cast<mindmap::PackageNode*>(i.get());
         if(!pack)
             continue;
 

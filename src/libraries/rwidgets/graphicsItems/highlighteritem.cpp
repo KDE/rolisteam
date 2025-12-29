@@ -45,19 +45,24 @@ HighlighterItem::HighlighterItem(PreferencesManager* pref, const QPointF& center
     initAnimation(autoDestruction);
 }
 
+HighlighterItem::~HighlighterItem()
+{
+
+}
+
 void HighlighterItem::initAnimation(bool autoDestruction)
 {
     if(!autoDestruction)
         return;
 
-    m_animation= new QPropertyAnimation(this, "radius");
+    m_animation.reset(new QPropertyAnimation(this, "radius"));
     m_animation->setDuration(m_preferences ? m_preferences->value("Map_Highlighter_time", 1000).toInt() : 1000);
     m_animation->setStartValue(0);
     m_animation->setEndValue(m_preferences ? m_preferences->value("Map_Highlighter_radius", 100).toInt() : 100);
     m_animation->setEasingCurve(QEasingCurve::Linear);
     m_animation->setLoopCount(m_preferences ? m_preferences->value("Map_Highlighter_loop", 3).toInt() : 3);
 
-    connect(m_animation, &QPropertyAnimation::finished, this,
+    connect(m_animation.get(), &QPropertyAnimation::finished, this,
             [this]()
             {
                 // setVisible(false);

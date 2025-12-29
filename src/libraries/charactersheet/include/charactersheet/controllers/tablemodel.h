@@ -47,6 +47,7 @@ public:
         IdRole
     };
     TableModel(TreeSheetItem* parent);
+    ~TableModel();
 
     // MVC Functions
     int rowCount(const QModelIndex& parent= QModelIndex()) const override;

@@ -60,6 +60,8 @@ void UpdateTest::doTest()
     m_update->startChecking();
 
     spy.wait(1000);
+    if(spy.count() == 0)
+        QSKIP("SKIP service is not reachable.");
     QCOMPARE(spy.count(), 1);
 
     auto r= spy.takeFirst();

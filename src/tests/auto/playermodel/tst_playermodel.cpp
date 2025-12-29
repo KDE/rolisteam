@@ -24,6 +24,7 @@ private slots:
 private:
     std::unique_ptr<PlayerModel> m_playerModel;
     std::unique_ptr<ParticipantModel> m_participantsModel;
+    std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
 };
 
 void PlayerModelTest::init()
@@ -31,8 +32,8 @@ void PlayerModelTest::init()
     m_playerModel.reset(new PlayerModel());
     m_participantsModel.reset(new ParticipantModel("", m_playerModel.get()));
 
-    new QAbstractItemModelTester(m_playerModel.get());
-    new QAbstractItemModelTester(m_participantsModel.get());
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_playerModel.get()));
+    m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_participantsModel.get()));
 
     // m_participantsModel->setSourceModel(m_playerModel.get());
 }

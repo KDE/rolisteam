@@ -44,13 +44,14 @@ private slots:
 private:
     PaletteModel* m_paletteModel;
     PaletteColor* m_paletteColor;
+    std::unique_ptr<QAbstractItemModelTester> m_tester;
 };
 PaletteModelTest::PaletteModelTest() {}
 void PaletteModelTest::initTestCase()
 {
     m_paletteModel= new PaletteModel(this);
     m_paletteColor= new PaletteColor(QColor(), "WindowText", QPalette::Active, QPalette::WindowText);
-    new QAbstractItemModelTester(m_paletteModel);
+    m_tester.reset(new QAbstractItemModelTester(m_paletteModel));
 }
 
 void PaletteModelTest::getAndSetTest()

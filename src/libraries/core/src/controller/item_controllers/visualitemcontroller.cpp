@@ -31,9 +31,9 @@ namespace vmap
 
 VisualItemController::VisualItemController(ItemType itemType, const std::map<QString, QVariant>& params,
                                            VectorialMapController* ctrl, QObject* parent)
-    : QObject(nullptr), m_ctrl(ctrl), m_itemType(itemType), m_uuid(QUuid::createUuid().toString(QUuid::WithoutBraces))
+    : QObject(parent), m_ctrl(ctrl), m_itemType(itemType), m_uuid(QUuid::createUuid().toString(QUuid::WithoutBraces))
 {
-    Q_UNUSED(parent)
+
     if(m_ctrl)
     {
         connect(m_ctrl, &VectorialMapController::layerChanged, this, &VisualItemController::selectableChanged);

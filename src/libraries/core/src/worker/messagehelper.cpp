@@ -443,12 +443,12 @@ void fillUpMessageWithMindmap(NetworkMessageWriter& msg, MindMapController* ctrl
     auto nodeModel= dynamic_cast<mindmap::MindItemModel*>(ctrl->itemModel());
     auto imageModel= ctrl->imgModel();
 
-    auto nodes= nodeModel->items(mindmap::MindItem::Type::NodeType);
+    auto const& nodes= nodeModel->items(mindmap::MindItem::Type::NodeType);
 
     msg.uint64(static_cast<quint64>(nodes.size()));
-    for(auto i : nodes)
+    for(auto const& i : nodes)
     {
-        auto node= dynamic_cast<mindmap::MindNode*>(i);
+        auto node= dynamic_cast<mindmap::MindNode*>(i.get());
 
         if(!node)
             continue;
@@ -466,9 +466,9 @@ void fillUpMessageWithMindmap(NetworkMessageWriter& msg, MindMapController* ctrl
 
     auto const& links= nodeModel->items(mindmap::MindItem::Type::LinkType);
     msg.uint64(links.size());
-    for(auto i : links)
+    for(auto const& i : links)
     {
-        auto link= dynamic_cast<mindmap::LinkController*>(i);
+        auto link= dynamic_cast<mindmap::LinkController*>(i.get());
 
         if(!link)
             continue;
@@ -481,12 +481,12 @@ void fillUpMessageWithMindmap(NetworkMessageWriter& msg, MindMapController* ctrl
         msg.string16(link->text());
     }
 
-    auto packs= nodeModel->items(mindmap::MindItem::Type::PackageType);
+    auto const& packs= nodeModel->items(mindmap::MindItem::Type::PackageType);
 
     msg.uint64(packs.size());
     for(auto const& i : packs)
     {
-        auto pack= dynamic_cast<mindmap::PackageNode*>(i);
+        auto pack= dynamic_cast<mindmap::PackageNode*>(i.get());
         if(!pack)
             continue;
 

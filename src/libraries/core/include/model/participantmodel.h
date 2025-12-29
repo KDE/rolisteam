@@ -31,6 +31,8 @@ public:
     ParticipantItem(const QString& name);
     ParticipantItem(Player* player);
 
+    ~ParticipantItem();
+
     bool isLeaf() const;
     QString name() const;
     QString uuid() const;
