@@ -802,132 +802,132 @@ msgctxt "FieldModel|"
 msgid "Id"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:62
+#: src/binaries/rcse/fieldmodel.cpp:63
 msgctxt "FieldModel|"
 msgid "Label"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:63
+#: src/binaries/rcse/fieldmodel.cpp:64
 msgctxt "FieldModel|"
 msgid "Value"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:64
+#: src/binaries/rcse/fieldmodel.cpp:65
 msgctxt "FieldModel|"
 msgid "Possible Values"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:65
+#: src/binaries/rcse/fieldmodel.cpp:66
 msgctxt "FieldModel|"
 msgid "Formula"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:65
+#: src/binaries/rcse/fieldmodel.cpp:67
 msgctxt "FieldModel|"
 msgid "Type"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:66
+#: src/binaries/rcse/fieldmodel.cpp:68
 msgctxt "FieldModel|"
 msgid "x"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:66
+#: src/binaries/rcse/fieldmodel.cpp:69
 msgctxt "FieldModel|"
 msgid "y"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:67
+#: src/binaries/rcse/fieldmodel.cpp:70
 msgctxt "FieldModel|"
 msgid "Width"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:67
+#: src/binaries/rcse/fieldmodel.cpp:71
 msgctxt "FieldModel|"
 msgid "Height"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:68
+#: src/binaries/rcse/fieldmodel.cpp:72
 msgctxt "FieldModel|"
 msgid "Font Adaptation"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:68
+#: src/binaries/rcse/fieldmodel.cpp:73
 msgctxt "FieldModel|"
 msgid "Font"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:69
+#: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
 msgid "Text-align"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:70
+#: src/binaries/rcse/fieldmodel.cpp:75
 msgctxt "FieldModel|"
 msgid "Text Color"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:71
+#: src/binaries/rcse/fieldmodel.cpp:76
 msgctxt "FieldModel|"
 msgid "Bg Color"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:71
+#: src/binaries/rcse/fieldmodel.cpp:77
 msgctxt "FieldModel|"
 msgid "Border"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:72
+#: src/binaries/rcse/fieldmodel.cpp:78
 msgctxt "FieldModel|"
 msgid "Page"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:72
+#: src/binaries/rcse/fieldmodel.cpp:79
 msgctxt "FieldModel|"
 msgid "ToolTip"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:74
+#: src/binaries/rcse/fieldmodel.cpp:81
 msgctxt "FieldModel|"
 msgid "TopRight"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:74
+#: src/binaries/rcse/fieldmodel.cpp:81
 msgctxt "FieldModel|"
 msgid "TopMiddle"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:74
+#: src/binaries/rcse/fieldmodel.cpp:81
 msgctxt "FieldModel|"
 msgid "TopLeft"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:74
+#: src/binaries/rcse/fieldmodel.cpp:81
 msgctxt "FieldModel|"
 msgid "CenterRight"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:74
+#: src/binaries/rcse/fieldmodel.cpp:81
 msgctxt "FieldModel|"
 msgid "CenterMiddle"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:75
+#: src/binaries/rcse/fieldmodel.cpp:82
 msgctxt "FieldModel|"
 msgid "CenterLeft"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:75
+#: src/binaries/rcse/fieldmodel.cpp:82
 msgctxt "FieldModel|"
 msgid "BottomRight"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:75
+#: src/binaries/rcse/fieldmodel.cpp:82
 msgctxt "FieldModel|"
 msgid "BottomMiddle"
 msgstr ""
 
-#: src/binaries/rcse/fieldmodel.cpp:75
+#: src/binaries/rcse/fieldmodel.cpp:82
 msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr ""
@@ -2800,7 +2800,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr ""
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:466
+#: src/libraries/core/src/controller/contentcontroller.cpp:470
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr ""
@@ -3133,17 +3133,17 @@ msgctxt "PaletteModel|"
 msgid "Inactive"
 msgstr ""
 
-#: src/libraries/core/src/model/participantmodel.cpp:126
+#: src/libraries/core/src/model/participantmodel.cpp:131
 msgctxt "ParticipantModel|"
 msgid "Read Write"
 msgstr ""
 
-#: src/libraries/core/src/model/participantmodel.cpp:127
+#: src/libraries/core/src/model/participantmodel.cpp:132
 msgctxt "ParticipantModel|"
 msgid "Read Only"
 msgstr ""
 
-#: src/libraries/core/src/model/participantmodel.cpp:128
+#: src/libraries/core/src/model/participantmodel.cpp:133
 msgctxt "ParticipantModel|"
 msgid "Hidden"
 msgstr ""
@@ -3923,7 +3923,7 @@ msgctxt "QObject|"
 msgid "Add %1 image"
 msgstr ""
 
-#: src/libraries/mindmap/src/command/additemcommand.cpp:73
+#: src/libraries/mindmap/src/command/additemcommand.cpp:33
 #, qt-format
 msgctxt "AddItemCommand|"
 msgid "Add item of type: %1 to mindmap"
@@ -3937,6 +3937,17 @@ msgstr ""
 #: src/libraries/mindmap/src/command/removeimagefromnodecommand.cpp:33
 msgctxt "QObject|"
 msgid "Removing image from node"
+msgstr ""
+
+#: src/libraries/mindmap/src/command/removenodecommand.cpp:45
+#, qt-format
+msgctxt "RemoveNodeCommand|"
+msgid "Remove %1 Item(s)"
+msgstr ""
+
+#: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
+msgctxt "ReparentingNodeCommand|"
+msgid "Reparenting item"
 msgstr ""
 
 #: src/libraries/mindmap/src/data/link.cpp:35
@@ -4223,28 +4234,28 @@ msgctxt "ColorSelector|"
 msgid "Erase"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/colorselector.cpp:257
+#: src/libraries/rwidgets/customs/colorselector.cpp:256
 msgctxt "ColorSelector|"
 msgid "Hide (GM only)"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/colorselector.cpp:258
+#: src/libraries/rwidgets/customs/colorselector.cpp:257
 msgctxt "ColorSelector|"
 msgid "Unveil (GM only)"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/colorselector.cpp:265
+#: src/libraries/rwidgets/customs/colorselector.cpp:263
 msgctxt "ColorSelector|"
 msgid "Hide"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/colorselector.cpp:266
+#: src/libraries/rwidgets/customs/colorselector.cpp:264
 msgctxt "ColorSelector|"
 msgid "Unveil"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/colorselector.cpp:317
-#: src/libraries/rwidgets/customs/colorselector.cpp:333
+#: src/libraries/rwidgets/customs/colorselector.cpp:315
+#: src/libraries/rwidgets/customs/colorselector.cpp:331
 #, qt-format
 msgctxt "ColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
@@ -4990,7 +5001,7 @@ msgctxt "HistoryViewerDialog|"
 msgid "remove"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/imageselectordialog.cpp:155
+#: src/libraries/rwidgets/dialogs/imageselectordialog.cpp:159
 msgctxt "ImageSelectorDialog|"
 msgid "Open Image file"
 msgstr ""
@@ -5242,70 +5253,70 @@ msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:316
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:306
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:411
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:411
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:442
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:433
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:440
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:463
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:498
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:515
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:506
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr ""
 
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:508
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:526
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:525
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:516
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr ""
@@ -5327,55 +5338,45 @@ msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:41
 msgctxt "PreferencesDialogBox|"
-msgid "Fog Of War:"
-msgstr ""
-
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:72
-msgctxt "PreferencesDialogBox|"
 msgid "Default Map Permission:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:99
-msgctxt "PreferencesDialogBox|"
-msgid "Opacity Value:"
-msgstr ""
-
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:135
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:70
 msgctxt "PreferencesDialogBox|"
 msgid "Item Highlight Color"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:166
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:101
 msgctxt "PreferencesDialogBox|"
 msgid "Pen Width Highlight:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:180
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:115
 msgctxt "PreferencesDialogBox|"
 msgid "Only apply on future maps."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:190
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:125
 msgctxt "PreferencesDialogBox|"
 msgid "Behaviour"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:196
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:131
 msgctxt "PreferencesDialogBox|"
 msgid "Check for Update"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:206
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:141
 msgctxt "PreferencesDialogBox|"
 msgid "Don't show \"Tips of the day\""
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:213
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:148
 msgctxt "PreferencesDialogBox|"
 msgid "Full Screen at launch"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:222
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:157
 msgctxt "PreferencesDialogBox|"
 msgid ""
 "<html><head/><body><p>Some users have experienced disconnection while they "
@@ -5383,292 +5384,292 @@ msgid ""
 "message to prevent that behaviour.</p></body></html>"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:225
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:160
 msgctxt "PreferencesDialogBox|"
 msgid "Keep connection alive"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:247
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:182
 msgctxt "PreferencesDialogBox|"
 msgid "Every "
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:264
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:199
 msgctxt "PreferencesDialogBox|"
 msgid "s"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:277
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:212
 msgctxt "PreferencesDialogBox|"
 msgid "All subwindows will have a short title (making tab shorter)"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:215
 msgctxt "PreferencesDialogBox|"
 msgid "Short title in Tabview"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:302
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:237
 msgctxt "PreferencesDialogBox|"
 msgid "Max Length:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:261
 msgctxt "PreferencesDialogBox|"
 msgid "Pictures fit their Windows (at the opening)"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:339
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:274
 msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:345
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
 msgctxt "PreferencesDialogBox|"
 msgid "Use system language"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:357
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:292
 msgctxt "PreferencesDialogBox|"
 msgid "Available translations:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:382
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:317
 msgctxt "PreferencesDialogBox|"
 msgid "Custom translation"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:391
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
 msgctxt "PreferencesDialogBox|"
 msgid "Translation File:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:406
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:341
 msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:412
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:347
 msgctxt "PreferencesDialogBox|"
 msgid "Time between page:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:370
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:457
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:392
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:463
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:398
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:486
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:421
 msgctxt "PreferencesDialogBox|"
 msgid "* : need restart"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:494
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:429
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:500
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:506
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:441
 msgctxt "PreferencesDialogBox|"
 msgid "Path:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:516
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:451
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:523
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:556
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:589
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:458
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:491
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:524
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:533
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:539
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:474
 msgctxt "PreferencesDialogBox|"
 msgid "Path"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:549
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:484
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:517
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:566
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:572
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:507
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:547
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:620
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:555
 msgctxt "PreferencesDialogBox|"
 msgid "Themes"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:626
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:561
 msgctxt "PreferencesDialogBox|"
 msgid "Theme"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:636
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:571
 msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:643
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:578
 msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:650
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:585
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:601
 msgctxt "PreferencesDialogBox|"
 msgid "Copy"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:673
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:608
 msgctxt "PreferencesDialogBox|"
 msgid "Delete"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:690
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:625
 msgctxt "PreferencesDialogBox|"
 msgid "Css:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:632
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:723
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:658
 msgctxt "PreferencesDialogBox|"
 msgid "Background"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:731
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
 msgctxt "PreferencesDialogBox|"
 msgid "Color:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:762
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
 msgctxt "PreferencesDialogBox|"
 msgid "Image:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:776
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:711
 msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:784
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:719
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:789
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:794
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:729
 msgctxt "PreferencesDialogBox|"
 msgid "Center"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:799
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:734
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:804
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:739
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:809
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:744
 msgctxt "PreferencesDialogBox|"
 msgid "Scaled"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:814
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:749
 msgctxt "PreferencesDialogBox|"
 msgid "Filled"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:819
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:754
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:834
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:769
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:863
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:798
 msgctxt "PreferencesDialogBox|"
 msgid "Color Palette"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:875
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:810
 msgctxt "PreferencesDialogBox|"
 msgid "*: need restart"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:895
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:830
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:902
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:915
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:850
 msgctxt "PreferencesDialogBox|"
 msgid "Diagnostic"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:943
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:878
 msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr ""
@@ -7797,7 +7798,7 @@ msgctxt "QObject|"
 msgid "OTHER"
 msgstr ""
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:162
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:171
 msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr ""
@@ -8203,18 +8204,18 @@ msgctxt "MindMapView|"
 msgid "ReadOnly"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:87
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:89
 #, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:313
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:315
 msgctxt "PdfViewer|"
 msgid "Sharing Pdf File"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:314
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:316
 msgctxt "PdfViewer|"
 msgid ""
 "PDF transfer can be really heavy.\n"
@@ -8755,32 +8756,32 @@ msgctxt "ToolBox|"
 msgid "Opacity:"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:83
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:84
 msgctxt "TestCharacterStateModel|"
 msgid "Healthy"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:87
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:88
 msgctxt "TestCharacterStateModel|"
 msgid "Lightly Wounded"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:91
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:92
 msgctxt "TestCharacterStateModel|"
 msgid "Seriously injured"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:95
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:96
 msgctxt "TestCharacterStateModel|"
 msgid "Dead"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:99
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:100
 msgctxt "TestCharacterStateModel|"
 msgid "Sleeping"
 msgstr ""
 
-#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:103
+#: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:104
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
