@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-23 14:39+0200\n"
+"PO-Revision-Date: 2025-12-30 09:48+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -4017,18 +4017,15 @@ msgid "Removing image from node"
 msgstr "Вилучення зображення з вузла"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Пересунути %n запис"
+msgstr "Пересунути %1 записи"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Зміна батьківського елемента запису"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2025-11-23 08:11+0100\n"
+"PO-Revision-Date: 2025-12-30 06:52+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4016,18 +4016,15 @@ msgid "Removing image from node"
 msgstr "Odstranjevanje slike iz vozlišča"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Premakni %n element"
+msgstr "Premakni %1 element(ov)"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Ponovno dodeli nadrejeni element"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"

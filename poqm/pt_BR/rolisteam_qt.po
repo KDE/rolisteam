@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-23 07:14-0300\n"
+"PO-Revision-Date: 2025-12-30 06:22-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
 msgctxt "AliasesPage|"
@@ -4006,18 +4006,15 @@ msgid "Removing image from node"
 msgstr "Removendo imagem do nó"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Mover %n item"
+msgstr "Remover %1 item(ns)"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Reparentando item"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"

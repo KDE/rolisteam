@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-11-23 12:36+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"PO-Revision-Date: 2025-12-30 13:02+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
 msgctxt "AliasesPage|"
@@ -4008,18 +4008,15 @@ msgid "Removing image from node"
 msgstr "Görsel, düğümden kaldırılıyor"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "%n ögeyi taşı"
+msgstr "%1 Ögeyi Kaldır"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Öge üst ilişkisi yeniden oluşturuluyor"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"

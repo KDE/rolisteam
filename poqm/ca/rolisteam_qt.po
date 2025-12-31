@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2025-11-23 09:37+0100\n"
+"PO-Revision-Date: 2025-12-30 08:48+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
 msgctxt "AliasesPage|"
@@ -4022,18 +4022,15 @@ msgid "Removing image from node"
 msgstr "Eliminació d'imatge del node"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Mou %n element"
+msgstr "Elimina %1 element/s"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Torna a emparent un element"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"
