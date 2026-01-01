@@ -3979,12 +3979,10 @@ msgid "Removing image from node"
 msgstr ""
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid "Move Item"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "移动项目"
+msgstr ""
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
@@ -8822,11 +8820,3 @@ msgstr ""
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "Fog Of War:"
-#~ msgstr "战争迷雾："
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "Opacity Value:"
-#~ msgstr "不透明度:"
