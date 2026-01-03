@@ -14,11 +14,13 @@ function(get_version_from_git)
     )
 
     execute_process(
-        COMMAND "${GIT_EXECUTABLE} rev-parse --short=8 HEAD"
+        COMMAND ${GIT_EXECUTABLE} rev-parse --short=8 HEAD
         WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
         OUTPUT_VARIABLE GIT_SHA1
         OUTPUT_STRIP_TRAILING_WHITESPACE
+        RESULT_VARIABLE GIT_RSHA1
     )
+    message("Info: ${CMAKE_SOURCE_DIR}: ${GIT_EXECUTABLE} - ${GIT_SHA1}")
 
 set(VERSION_SHA1 ${GIT_SHA1})
 set(VERSION_DATE ${GIT_DATE})
