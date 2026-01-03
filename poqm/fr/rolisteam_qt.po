@@ -1,18 +1,18 @@
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
 # SPDX-FileCopyrightText: 2025 Renaud Guezennec <renaud.guezennec@gmail.com>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2025-11-24 19:32+0100\n"
+"PO-Revision-Date: 2026-01-01 20:09+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.11.80\n"
+"X-Generator: Lokalize 25.12.0\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:8
@@ -4023,18 +4023,15 @@ msgid "Removing image from node"
 msgstr "Suppression d'une image à partir du nœud"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Déplacer %n élément(s)"
+msgstr "Supprimer %1 élément(s)"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr ""
+msgstr "Réaffectation du parent de l'élément"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"
