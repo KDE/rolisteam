@@ -60,9 +60,6 @@ public:
     template <typename T>
     void sendOffChange(const QString& mapId, const QString& property, QObject* node, NetMsg::Action b);
 
-private slots:
-    void itemAdded(const QList<mindmap::MindItem*>& items);
-
 private:
     void setConnection(MindMapController* ctrl);
     void disconnectController(MindMapController* media);

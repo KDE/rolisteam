@@ -83,7 +83,7 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
     CharacterSheetController::setCharacterModel(characterModel);
     SharedNoteController::setPlayerModel(playerModel);
     CharacterFinder::setPlayerModel(playerModel);
-    MindMapController::setRemotePlayerModel(new RemotePlayerModel(playerModel));//TODO remote it
+    MindMapController::setRemotePlayerModel(new RemotePlayerModel(playerModel)); // TODO remove it
 
     connect(m_sessionModel.get(), &QFileSystemModel::rootPathChanged, this, &ContentController::mediaRootChanged);
 

@@ -479,9 +479,3 @@ NetWorkReceiver::SendType MindMapUpdater::processMessage(NetworkMessageReader* m
     }
     return res;
 }
-
-void MindMapUpdater::itemAdded(const QList<mindmap::MindItem*>& items)
-{
-    Q_UNUSED(items)
-    // TODO
-}
