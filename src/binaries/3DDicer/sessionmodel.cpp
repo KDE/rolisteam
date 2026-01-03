@@ -79,6 +79,16 @@ QStringList SessionModel::sessionNames() const
     return res;
 }
 
+int SessionModel::indexFromName(const QString& name) const
+{
+    auto it= std::find_if(std::begin(m_sessions), std::end(m_sessions),
+                          [name](const std::unique_ptr<Session>& session) { return session->name() == name; });
+
+    if(it == std::end(m_sessions))
+        return -1;
+    return std::distance(std::begin(m_sessions), it);
+}
+
 void SessionModel::addSession(const QString& name)
 {
     beginInsertRows(QModelIndex(), m_sessions.size(), m_sessions.size());

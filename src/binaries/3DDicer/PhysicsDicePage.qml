@@ -5,6 +5,7 @@ import QtQuick.Dialogs
 import QtQml
 import dicely
 import DicePhysics
+import Walker
 
 Panel {
     id: root
@@ -87,6 +88,10 @@ Panel {
                     Layout.fillWidth: true
                     visible: DiceMainController.show3dMenu
 
+                    WalkerItem.description: qsTr("Change dice size.")
+                    WalkerItem.weight: 201
+
+
                     onValueChanged:  {
                         root.ctrl.factor = _factor.value;
                     }
@@ -123,71 +128,75 @@ Panel {
                     }
                 }
 
-                Repeater {
-                    model: colors
-
-                    RowLayout {
-                        Layout.fillWidth: true
-                        visible: DiceMainController.show3dMenu
-                        Label {
-                            text: "D%1".arg(model.side)
+                ColumnLayout {
+                    Layout.fillWidth: true
+                    WalkerItem.description: qsTr("Add or remove any type of dice.")
+                    WalkerItem.weight: 202
+                    Repeater {
+                        model: colors
+                        RowLayout {
                             Layout.fillWidth: true
-                            font.pointSize: Theme.textFieldFontSize
-                        }
-
-                        ToolButton {
-                            icon.source: "qrc:/assets/remove.svg"
-                            icon.color: Theme.transparent
-                            icon.width: Theme.iconSize
-                            icon.height: Theme.iconSize
-                            onClicked:  {
-                                root.ctrl.removeDice(model.type)
+                            visible: DiceMainController.show3dMenu
+                            Label {
+                                text: "D%1".arg(model.side)
+                                Layout.fillWidth: true
+                                font.pointSize: Theme.textFieldFontSize
                             }
-                        }
 
-
-                        Label {
-                            id: label
-                            property int value: root.ctrl.diceCount(model.type)
-                            text: value
-                            font.pointSize: Theme.textFieldFontSize
-                            Connections {
-                                target: root.ctrl
-                                function onCountChanged() {
-                                    label.value = root.ctrl.diceCount(model.type)
+                            ToolButton {
+                                icon.source: "qrc:/assets/remove.svg"
+                                icon.color: Theme.transparent
+                                icon.width: Theme.iconSize
+                                icon.height: Theme.iconSize
+                                onClicked:  {
+                                    root.ctrl.removeDice(model.type)
                                 }
                             }
-                        }
 
-                        ToolButton {
-                            icon.source: "qrc:/assets/plus3.svg"
-                            icon.color: Theme.transparent
-                            icon.width: Theme.iconSize
-                            icon.height: Theme.iconSize
-                            onClicked:{
-                                root.ctrl.addDice(model.type)
-                            }
-                        }
 
-                        ToolButton {
-                            Layout.preferredWidth: height
-                            Layout.fillHeight: true
-                            Layout.minimumHeight: Theme.colorButtonSize
-                            contentItem: Rectangle {
-                                id: rect
-                                color: root.ctrl.diceColor(model.type)
-
+                            Label {
+                                id: label
+                                property int value: root.ctrl.diceCount(model.type)
+                                text: value
+                                font.pointSize: Theme.textFieldFontSize
                                 Connections {
                                     target: root.ctrl
-                                    function onColorChanged() {
-                                        rect.color = root.ctrl.diceColor(model.type)
+                                    function onCountChanged() {
+                                        label.value = root.ctrl.diceCount(model.type)
                                     }
                                 }
                             }
-                            onClicked: {
-                                colorDialog.selectedColor = root.ctrl.diceColor(model.type)
-                                colorDialog.side = model.side
-                                colorDialog.open()
+
+                            ToolButton {
+                                icon.source: "qrc:/assets/plus3.svg"
+                                icon.color: Theme.transparent
+                                icon.width: Theme.iconSize
+                                icon.height: Theme.iconSize
+                                onClicked:{
+                                    root.ctrl.addDice(model.type)
+                                }
+                            }
+
+                            ToolButton {
+                                Layout.preferredWidth: height
+                                Layout.fillHeight: true
+                                Layout.minimumHeight: Theme.colorButtonSize
+                                contentItem: Rectangle {
+                                    id: rect
+                                    color: root.ctrl.diceColor(model.type)
+
+                                    Connections {
+                                        target: root.ctrl
+                                        function onColorChanged() {
+                                            rect.color = root.ctrl.diceColor(model.type)
+                                        }
+                                    }
+                                }
+                                onClicked: {
+                                    colorDialog.selectedColor = root.ctrl.diceColor(model.type)
+                                    colorDialog.side = model.side
+                                    colorDialog.open()
+                                }
                             }
                         }
                     }
@@ -204,6 +213,8 @@ Panel {
                         visible: DiceMainController.show3dMenu
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: loader.item.selectAll()
+                        WalkerItem.description: qsTr("Select all dice.")
+                        WalkerItem.weight: 203
                     }
                     ToolButton {
                         //selection rect
@@ -216,6 +227,8 @@ Panel {
                         checked: loader.item.rectSelect
                         Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
                         onClicked: loader.item.rectSelect = true
+                        WalkerItem.description: qsTr("Selection by rectangle.")
+                        WalkerItem.weight: 204
                     }
                     ToolButton {
                         // hide menu
@@ -227,6 +240,8 @@ Panel {
                         onClicked: {
                             DiceMainController.show3dMenu = !DiceMainController.show3dMenu
                         }
+                        WalkerItem.description: qsTr("Show/Hide menu.")
+                        WalkerItem.weight: 205
                     }
                 }
             }

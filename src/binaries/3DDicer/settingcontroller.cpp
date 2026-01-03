@@ -41,3 +41,8 @@ Session* SettingController::currentSession() const
 {
     return m_sessions->session(m_currentSessionIndex);
 }
+
+int SettingController::sessionIndex(const QString& name) const
+{
+    return m_sessions->indexFromName(name);
+}

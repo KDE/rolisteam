@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import dicely
+import Walker
 
 Panel {
     id: root
@@ -20,27 +21,46 @@ Panel {
             width:view.width
             height: lyt.implicitHeight + 2 * Theme.padding
             property bool edition: false
+            WalkerItem.description: qsTr("Sheet Item")
+            WalkerItem.weight: 502
+            WalkerItem.onExit: {
+                edition = !edition
+            }
             RowLayout {
                 id: lyt
                 anchors.margins: Theme.margin
                 anchors.fill: parent
                 TextField {
+                    id: keyField
                     enabled: edition
                     Layout.fillWidth: true
                     text: model.key
                     onEditingFinished: model.key = text
                     placeholderText: qsTr("Key")
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.description: qsTr("Edit sheet Item name")
+                    WalkerItem.weight: 503
+                    WalkerItem.onEnter: {
+                        edition = !edition
+                        keyField.text = qsTr("Intelligence")
+                    }
                 }
                 TextField {
+                    id: valueField
                     enabled: edition
                     Layout.minimumWidth: Theme.minimalTextField
                     text: model.value
                     onEditingFinished: model.value = text
                     placeholderText: qsTr("Value")
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.description: qsTr("Edit sheet Item name")
+                    WalkerItem.weight: 504
+                    WalkerItem.onEnter: {
+                        valueField.text = "5"
+                    }
                 }
                 ToolButton {
+                    id: saveBtn
                     icon.source: edition ?  "qrc:/assets/check.svg" :  "qrc:/assets/edit.svg"
                     icon.width: Theme.iconSize * 2
                     icon.height: Theme.iconSize * 2
@@ -49,6 +69,11 @@ Panel {
                     flat: true
                     opacity: swipe.position === 0 ? 1.0 : 0.0
                     enabled: swipe.position === 0
+                    WalkerItem.description: qsTr("Save Sheet item")
+                    WalkerItem.weight: 505
+                    WalkerItem.onExit: {
+                        edition = !edition
+                    }
                     onClicked: {
                         edition = !edition
                     }
@@ -70,6 +95,11 @@ Panel {
                 opacity: swipe.position === 0 ? 0.0 : 1.0
 
                 SwipeDelegate.onClicked: DiceMainController.propertiesModel.removeField(index)
+                WalkerItem.description: qsTr("Save Sheet item")
+                WalkerItem.weight: 506
+                WalkerItem.onEnter: {
+                    swipe.position = 1.0
+                }
 
                 background: Rectangle {
                     color: deleteLabel.SwipeDelegate.pressed ? Qt.darker(Theme.deleteBtnColor, 1.1) : Theme.deleteBtnColor
@@ -87,6 +117,11 @@ Panel {
         icon.color: Theme.transparent
         background: Item {}
         flat: true
+        WalkerItem.description: qsTr("Add sheet item")
+        WalkerItem.weight: 501
+        WalkerItem.onEnter: {
+            DiceMainController.propertiesModel.addField()
+        }
         onClicked: {
             DiceMainController.propertiesModel.addField()
         }

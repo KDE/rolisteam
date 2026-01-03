@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import dicely
+import Walker
 
 Panel {
     id: root
@@ -14,6 +15,8 @@ Panel {
         model: DiceMainController.macros
         spacing: Theme.spacing
         clip: true
+        WalkerItem.description: qsTr("Macro List")
+        WalkerItem.weight: 302
 
         delegate: SwipeDelegate {
             id: delegate
@@ -25,19 +28,32 @@ Panel {
                 anchors.margins: Theme.margin
                 anchors.fill: parent
                 TextField {
+                    id: nameField
                     enabled: edition
                     text: model.name
                     onEditingFinished: model.name = text
                     placeholderText: qsTr("Name")
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.description: qsTr("Set macro name.")
+                    WalkerItem.weight: 304
+                    WalkerItem.onEnter: {
+                        nameField.text = qsTr("Attack")
+                    }
                 }
                 TextField {
+                    id: cmdField
                     enabled: edition
                     Layout.fillWidth: true
                     text: model.command
                     onEditingFinished: model.command = text
                     placeholderText: qsTr("command")
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.description: qsTr("Set macro value.")
+                    WalkerItem.weight: 305
+                    WalkerItem.onEnter: {
+                        cmdField.text = qsTr("1d20+3")
+                    }
+
                 }
                 ToolButton {
                     icon.source: edition ?  "qrc:/assets/check.svg" :  "qrc:/assets/edit.svg"
@@ -51,8 +67,17 @@ Panel {
                     onClicked: {
                         edition = !edition
                     }
+                    WalkerItem.description: qsTr("Edit/Save current Macro")
+                    WalkerItem.weight: 303
+                    WalkerItem.onExit: {
+                        edition = true
+                    }
                 }
             }
+
+            WalkerItem.description: qsTr("Add Macro List\n\nTo remove it: Swipe right.")
+            WalkerItem.weight: 303
+
 
             swipe.right: ToolButton {
                 id: deleteLabel
@@ -69,6 +94,16 @@ Panel {
                 opacity: swipe.position === 0 ? 0.0 : 1.0
 
                 SwipeDelegate.onClicked: DiceMainController.macros.removeMacro(index)
+
+
+                WalkerItem.description: qsTr("To remove it:\n Swipe right and click on the button.")
+                WalkerItem.weight: 306
+                WalkerItem.onEnter: {
+                    swipe.position = 1
+                }
+                WalkerItem.onExit: {
+                    DiceMainController.macros.removeMacro(index)
+                }
 
                 background: Rectangle {
                     color: deleteLabel.SwipeDelegate.pressed ? Qt.darker(Theme.deleteBtnColor, 1.1) : Theme.deleteBtnColor
@@ -88,6 +123,12 @@ Panel {
         flat: true
         onClicked: {
             DiceMainController.macros.addMacro()
+        }
+        WalkerItem.description: qsTr("Add empty macro")
+        WalkerItem.weight: 301
+        WalkerItem.onExit: {
+            if(view.count === 0)
+                DiceMainController.macros.addMacro()
         }
     }
 }

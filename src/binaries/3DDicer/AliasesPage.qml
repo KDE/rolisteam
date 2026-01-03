@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import dicely
+import Walker
 
 Panel {
     id: root
@@ -15,6 +16,8 @@ Panel {
         spacing: Theme.spacing
         clip: true
         property int editIndex: -1
+        WalkerItem.weight: 402
+        WalkerItem.description: qsTr("Alias List")
 
         delegate: SwipeDelegate {
             id: pane
@@ -22,6 +25,7 @@ Panel {
             height: pane.editMode ? edit.implicitHeight : lyt.implicitHeight + 2 * Theme.padding
             visible: view.editIndex === index || view.editIndex < 0
             property bool editMode: false
+
 
             RowLayout {
                 id: lyt
@@ -47,6 +51,11 @@ Panel {
                     sourceSize.height: Theme.iconSize * 2
                     fillMode: Image.PreserveAspectFit
                     visible: swipe.position === 0
+                    WalkerItem.weight: 401
+                    WalkerItem.description: qsTr("Edit alias")
+                    WalkerItem.onExit: {
+                        pane.editMode = true
+                    }
                 }
             }
             background:  Rectangle {
@@ -77,32 +86,50 @@ Panel {
                     font.pointSize: Theme.textFieldFontSize
                 }
                 TextField {
+                    id: nameField
                     text: model.comment
                     onTextEdited: model.comment = text
                     Layout.fillWidth: true
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.weight: 402
+                    WalkerItem.description: qsTr("Set alias name")
+                    WalkerItem.onEnter: {
+                        nameField.text="My Game"
+                    }
                 }
                 Label {
                     text: qsTr("Pattern:")
                     font.pointSize: Theme.textFieldFontSize
                 }
                 TextField {
+                    id: patternField
                     text: model.pattern
                     placeholderText: "K, (.*)C(.*)"
                     onTextEdited: model.pattern = text
                     Layout.fillWidth: true
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.weight: 403
+                    WalkerItem.description: qsTr("Pattern which triggers the replace.")
+                    WalkerItem.onExit: {
+                        patternField.text = "(.*)MG"
+                    }
                 }
                 Label {
                     text: qsTr("Command:")
                     font.pointSize: Theme.textFieldFontSize
                 }
                 TextField {
+                    id: cmdField
                     text: model.command
                     placeholderText: "d10e10k, \\1d10e10c[>=\\2]"
                     onTextEdited: model.command = text
                     Layout.fillWidth: true
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.weight: 404
+                    WalkerItem.description: qsTr("Real command")
+                    WalkerItem.onExit: {
+                        cmdField.text = "d10e10c[>7]"
+                    }
                 }
                 Switch {
                     text: qsTr("Regular expression")
@@ -116,6 +143,8 @@ Panel {
                     checked: model.disable
                     onToggled: model.disable = checked
                     font.pointSize: Theme.textFieldFontSize
+                    WalkerItem.weight: 405
+                    WalkerItem.description: qsTr("Disable")
                 }
                 ToolButton {
                     icon.source: "qrc:/assets/check.svg"
@@ -132,6 +161,8 @@ Panel {
                         border.color: Theme.borderColor
                         color: Theme.placeHolderTextColor
                     }
+                    WalkerItem.weight: 406
+                    WalkerItem.description: qsTr("Save the alias")
 
                     onClicked: {
                         pane.editMode = false
@@ -155,6 +186,11 @@ Panel {
 
                 SwipeDelegate.onClicked: DiceMainController.aliases.deleteAt(index)
 
+                WalkerItem.weight: 407
+                WalkerItem.description: qsTr("Delete")
+                WalkerItem.onEnter: {
+                    swipe.position = 1.
+                }
                 background: Rectangle {
                     color: deleteLabel.SwipeDelegate.pressed ? Qt.darker(Theme.deleteBtnColor, 1.1) : Theme.deleteBtnColor
                     radius: Theme.radius
@@ -172,6 +208,11 @@ Panel {
         flat: true
         background: Item {}
         onClicked: {
+            DiceMainController.addAlias()
+        }
+        WalkerItem.weight: 401
+        WalkerItem.description: qsTr("Add alias")
+        WalkerItem.onExit: {
             DiceMainController.addAlias()
         }
     }

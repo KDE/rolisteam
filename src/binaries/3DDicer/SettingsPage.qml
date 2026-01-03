@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import dicely
+import Walker
 
 Panel {
     id: root
@@ -43,6 +44,11 @@ Panel {
                     interactive: flick.height-appSettings.height < profileSelector.contentHeight
                     Layout.fillWidth: true
                 }
+                WalkerItem.description: qsTr("Select Profile")
+                WalkerItem.weight: 601
+                WalkerItem.onEnter: {
+                    group.checkedButton = group.buttons[0]
+                }
 
             }
             ExpansionPanel {
@@ -51,6 +57,11 @@ Panel {
                 Layout.fillWidth: true
                 Layout.fillHeight: group.checkedButton === appSettings.button
                 opacity: hasSelection && group.checkedButton !== appSettings.button ? 0.0 : 1.0
+                WalkerItem.description: qsTr("Application Settings")
+                WalkerItem.weight: 603
+                WalkerItem.onEnter: {
+                    group.checkedButton = group.buttons[1]
+                }
                 GridLayout {
                     columns: 2
                     rowSpacing: Theme.spacing
@@ -68,6 +79,14 @@ Panel {
                         checked: Theme.darkMode
                         onClicked: {
                             Theme.darkMode = darkModeSw.checked
+                        }
+                        WalkerItem.description: qsTr("Set/Unset dark mode.")
+                        WalkerItem.weight: 604
+                        WalkerItem.onEnter: {
+                            Theme.darkMode = !Theme.darkMode
+                        }
+                        WalkerItem.onExit: {
+                            Theme.darkMode = !Theme.darkMode
                         }
                     }
                     Label {
@@ -87,6 +106,20 @@ Panel {
                             if(DiceMainController.lang !== langSelector.currentValue)
                                 DiceMainController.lang = langSelector.currentValue
                         }
+                        WalkerItem.description: qsTr("Change language.")
+                        WalkerItem.weight: 605
+                    }
+                    Label {
+                        Layout.leftMargin: Theme.margin
+                        text: qsTr("Ui Tour:")
+                        font.pixelSize: Theme.finalDiceResultFontSize
+                    }
+                    Button {
+                        Layout.fillWidth: true
+                        text: qsTr("Start")
+                        onClicked: {
+                            startUiTour()
+                        }
                     }
                 }
             }
@@ -95,6 +128,15 @@ Panel {
                 text: qsTr("About")
                 Layout.fillWidth: true
                 opacity: hasSelection && group.checkedButton !== about.button ? 0.0 : 1.0
+                WalkerItem.description: qsTr("Version information.")
+                WalkerItem.weight: 606
+                WalkerItem.onEnter: {
+                    group.checkedButton = group.buttons[2]
+                }
+                WalkerItem.onExit: {
+                    group.checkState = Qt.Unchecked
+                    group.previous = null
+                }
                 GridLayout {
                     columns: 2
                     Layout.alignment: Qt.AlignTop | Qt.AlignHCenter
@@ -142,6 +184,8 @@ Panel {
             background: Item {}
             Layout.alignment: Qt.AlignLeft | Qt.AlignVCenter
             flat: true
+            WalkerItem.description: qsTr("Add Profile.")
+            WalkerItem.weight: 602
             onClicked: {
                 DiceMainController.settingsCtrl.sessions.addSession()
             }
@@ -159,6 +203,10 @@ Panel {
             background: Item {}
             Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
             flat: true
+            WalkerItem.description: qsTr("Documentation.")
+            WalkerItem.weight: 607
+
+
             onClicked: Qt.openUrlExternally("https://invent.kde.org/rolisteam/rolisteam-diceparser/-/blob/master/HelpMe.md?ref_type=heads")
         }
     }

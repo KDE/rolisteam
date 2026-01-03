@@ -30,6 +30,7 @@ public:
 public slots:
     void addSession(const QString& name= QString());
     void removeSession(int index);
+    int indexFromName(const QString& name) const;
 
 signals:
     void sessionAdded(int index);

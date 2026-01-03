@@ -61,6 +61,9 @@ FILES
     assets/external.svg
     assets/trashbin.svg
     assets/lock.svg
+    assets/finish.svg
+    assets/next.svg
+    assets/previous.svg
 )
 
 set_property(TARGET dicelyVerse PROPERTY QT_EXCLUDE_SOURCES_FROM_TRANSLATION "assets/*.svg")
@@ -141,10 +144,10 @@ PRIVATE
     Qt6::QuickControls2
     diceparser_shared
     dice3d
+    WalkerComponent
 )
 
-target_link_libraries(dicelyVerse PRIVATE Qt6::Core)
-target_link_libraries(dicelyVerse PRIVATE Qt6::Core)
+qt_finalize_target(dicelyVerse)
 
 
 include(GNUInstallDirs)

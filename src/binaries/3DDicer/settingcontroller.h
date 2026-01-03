@@ -23,6 +23,7 @@ public:
 
     int currentSessionIndex() const;
     void setCurrentSessionIndex(int newCurrentSessionIndex);
+    int sessionIndex(const QString& index) const;
     int sessionCount() const;
     QString sessionName() const;
 

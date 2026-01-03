@@ -39,6 +39,7 @@ class DiceMainController : public QObject
     Q_PROPERTY(ThemeController* themeCtrl READ themeCtrl WRITE setThemeCtrl NOTIFY themeCtrlChanged FINAL)
     Q_PROPERTY(QRangeModel* langModel READ langModel CONSTANT)
     Q_PROPERTY(QString lang READ lang WRITE setLang NOTIFY langChanged FINAL)
+    Q_PROPERTY(UiTourStatus uiTourStatus READ uiTourStatus WRITE setUiTourStatus NOTIFY uiTourStatusChanged FINAL)
     // clang-format on
 public:
     enum Page
@@ -59,7 +60,19 @@ public:
         MacroPanel
     };
     Q_ENUM(PanelMode)
+
+    enum UiTourStatus
+    {
+        UnDone,
+        Active,
+        Done
+    };
+    Q_ENUM(UiTourStatus)
     explicit DiceMainController(QObject* parent= nullptr);
+    DiceMainController(const DiceMainController&)= delete;
+    DiceMainController(DiceMainController&&)= delete;
+    DiceMainController& operator=(const DiceMainController&)= delete;
+    DiceMainController& operator=(DiceMainController&&)= delete;
     void setCurrentPage(DiceMainController::Page newCurrentPage);
 
     RollModel* model() const;
@@ -106,6 +119,9 @@ public:
     QString lang() const;
     void setLang(const QString& newLang);
 
+    UiTourStatus uiTourStatus() const;
+    void setUiTourStatus(UiTourStatus newUiTour);
+
 public slots:
     void runCommand(const QString& cmd);
     void addAlias();
@@ -123,8 +139,8 @@ signals:
     void show3dMenuChanged();
     void darkModeChanged();
     void themeCtrlChanged();
-
     void langChanged();
+    void uiTourStatusChanged();
 
 private:
     void saveInCurrentProfile();
@@ -148,6 +164,7 @@ private:
     bool m_darkMode{false};
     QPointer<ThemeController> m_themeCtrl;
     QString m_lang;
+    UiTourStatus m_uiTour{UnDone};
 };
 
 #endif // DICEMAINCONTROLLER_H

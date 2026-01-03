@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls
 import dicely
+import Walker
 
 Panel {
     id: root
@@ -14,6 +15,9 @@ Panel {
         model: DiceMainController.model
         spacing: 5
         clip: true
+        WalkerItem.description: qsTr("Roll dice:\nList with all results.")
+        WalkerItem.weight: 103
+
 
         delegate: ItemDelegate {
             required property string result
@@ -23,6 +27,8 @@ Panel {
             required property string details
             width:view.width
             height: lyt.implicitHeight + padding
+            WalkerItem.description: qsTr("Result of our first roll.\nPress and Hold to rework this command.")
+            WalkerItem.weight: 104
             ColumnLayout {
                 id: lyt
                 anchors.fill: parent
@@ -41,6 +47,8 @@ Panel {
                         flat: true
                         background: Item{}
                         rotation: checked ? 45 : 0
+                        WalkerItem.description: qsTr("Click here\nto display all details about the result.")
+                        WalkerItem.weight: 105
                     }
                     Label {
                         text: result
@@ -58,6 +66,8 @@ Panel {
                             icon.color: Theme.transparent
                             display: AbstractButton.IconOnly
                             onClicked: DiceMainController.runCommand(command)
+                            WalkerItem.description: qsTr("Click here\nto roll again the command.")
+                            WalkerItem.weight: 106
                         }
                         Label {
                             text: time
@@ -129,6 +139,11 @@ Panel {
                                 DiceMainController.runCommand(cmdField.text)
                                 cmdField.text = ""
                             }
+                            WalkerItem.description: qsTr("Type command here.")
+                            WalkerItem.weight: 101
+                            WalkerItem.onEnter: {
+                                cmdField.text = "3d10e10k2"
+                            }
                         }
                         ToolButton {
                             text: qsTr("Run")
@@ -144,6 +159,12 @@ Panel {
                             scale: pressed ? 0.8 : 1.0
                             background: Item{}
                             onClicked: {
+                                DiceMainController.runCommand(cmdField.text)
+                                cmdField.text = ""
+                            }
+                            WalkerItem.description: qsTr("Click here\nto run the command.")
+                            WalkerItem.weight: 102
+                            WalkerItem.onExit: {
                                 DiceMainController.runCommand(cmdField.text)
                                 cmdField.text = ""
                             }

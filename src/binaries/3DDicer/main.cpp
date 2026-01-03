@@ -16,6 +16,8 @@ void showResources()
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
+    Q_INIT_RESOURCE(qmake_Walker);
+    // showResources();
     app.setApplicationDisplayName("DicelyVerse");
     app.setApplicationName("DicelyVerse");
     app.setOrganizationName("rolisteam");

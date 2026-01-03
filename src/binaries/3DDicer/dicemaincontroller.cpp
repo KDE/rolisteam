@@ -299,6 +299,7 @@ void DiceMainController::saveData()
     settings->setValue("sessionNames", m_settingsCtrl->sessions()->sessionNames()); // TODO change me
     settings->setValue("currentSession", m_settingsCtrl->currentSessionIndex());
     settings->setValue("lang", m_lang);
+    settings->setValue("UiTour", m_uiTour);
     if(m_themeCtrl)
         settings->setValue("darkMode", m_themeCtrl->darkMode());
 
@@ -325,6 +326,7 @@ void DiceMainController::loadData()
     std::unique_ptr<QSettings> settings(computeSettingsPath());
     auto names= settings->value("sessionNames", {tr("default")}).toStringList();
     setLang(settings->value("lang", QString()).toString());
+    setUiTourStatus(static_cast<UiTourStatus>(settings->value("UiTour", UnDone).toInt()));
 
     for(const auto& n : std::as_const(names))
     {
@@ -454,4 +456,17 @@ void DiceMainController::setLang(const QString& newLang)
         return;
     m_lang= newLang;
     emit langChanged();
+}
+
+DiceMainController::UiTourStatus DiceMainController::uiTourStatus() const
+{
+    return m_uiTour;
+}
+
+void DiceMainController::setUiTourStatus(DiceMainController::UiTourStatus newUiTour)
+{
+    if(m_uiTour == newUiTour)
+        return;
+    m_uiTour= newUiTour;
+    emit uiTourStatusChanged();
 }
