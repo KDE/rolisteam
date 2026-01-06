@@ -19,148 +19,354 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.12.0\n"
 
-#: src/binaries/3DDicer/AliasesPage.qml:8
+#: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
 msgid "Aliases"
 msgstr "Goitizenak"
 
-#: src/binaries/3DDicer/AliasesPage.qml:32
+#: src/binaries/3DDicer/AliasesPage.qml:20
+#, fuzzy
+#| msgctxt "PlayerModel|"
+#| msgid "Players List"
+msgctxt "AliasesPage|"
+msgid "Alias List"
+msgstr "Jokalarien zerrenda"
+
+#: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 msgstr "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 
-#: src/binaries/3DDicer/AliasesPage.qml:32
+#: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
 msgstr "Goitizena %1 zk."
 
-#: src/binaries/3DDicer/AliasesPage.qml:33
+#: src/binaries/3DDicer/AliasesPage.qml:37
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Eredua"
 
-#: src/binaries/3DDicer/AliasesPage.qml:34
+#: src/binaries/3DDicer/AliasesPage.qml:38
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Komandoa"
 
-#: src/binaries/3DDicer/AliasesPage.qml:35
+#: src/binaries/3DDicer/AliasesPage.qml:39
 msgctxt "AliasesPage|"
 msgid "Off"
 msgstr "Itzalita"
 
-#: src/binaries/3DDicer/AliasesPage.qml:35
+#: src/binaries/3DDicer/AliasesPage.qml:39
 msgctxt "AliasesPage|"
 msgid "On"
 msgstr "Piztuta"
 
-#: src/binaries/3DDicer/AliasesPage.qml:76
+#: src/binaries/3DDicer/AliasesPage.qml:55
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Edit Channel"
+msgctxt "AliasesPage|"
+msgid "Edit alias"
+msgstr "Editatu kanala"
+
+#: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Izena:"
 
-#: src/binaries/3DDicer/AliasesPage.qml:86
+#: src/binaries/3DDicer/AliasesPage.qml:95
+#, fuzzy
+#| msgctxt "CharacterSheetModel|"
+#| msgid "Fields name"
+msgctxt "AliasesPage|"
+msgid "Set alias name"
+msgstr "Eremuen izena"
+
+#: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
 msgid "Pattern:"
 msgstr "Eredua:"
 
-#: src/binaries/3DDicer/AliasesPage.qml:97
+#: src/binaries/3DDicer/AliasesPage.qml:112
+msgctxt "AliasesPage|"
+msgid "Pattern which triggers the replace."
+msgstr ""
+
+#: src/binaries/3DDicer/AliasesPage.qml:118
 msgctxt "AliasesPage|"
 msgid "Command:"
 msgstr "Komandoa:"
 
-#: src/binaries/3DDicer/AliasesPage.qml:108
+#: src/binaries/3DDicer/AliasesPage.qml:129
+#, fuzzy
+#| msgctxt "MacrosPage|"
+#| msgid "command"
+msgctxt "AliasesPage|"
+msgid "Real command"
+msgstr "komandoa"
+
+#: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Adierazpen erregularra"
 
-#: src/binaries/3DDicer/AliasesPage.qml:115
+#: src/binaries/3DDicer/AliasesPage.qml:142
+#: src/binaries/3DDicer/AliasesPage.qml:147
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Ezgaitu"
 
-#: src/binaries/3DDicer/AliasesPage.qml:125
+#: src/binaries/3DDicer/AliasesPage.qml:154
 msgctxt "AliasesPage|"
 msgid "Save and back"
 msgstr "Gorde eta itzuli"
 
-#: src/binaries/3DDicer/AliasesPage.qml:144
+#: src/binaries/3DDicer/AliasesPage.qml:165
+#, fuzzy
+#| msgctxt "PlayerWidget|"
+#| msgid "Save Playlist"
+msgctxt "AliasesPage|"
+msgid "Save the alias"
+msgstr "gorde jotze-zerrenda"
+
+#: src/binaries/3DDicer/AliasesPage.qml:175
+#: src/binaries/3DDicer/AliasesPage.qml:190
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: src/binaries/3DDicer/dicemaincontroller.cpp:326
-#: src/binaries/3DDicer/dicemaincontroller.cpp:347
+#: src/binaries/3DDicer/AliasesPage.qml:214
+#, fuzzy
+#| msgctxt "DiceBookMarkModel|"
+#| msgid "Alias"
+msgctxt "AliasesPage|"
+msgid "Add alias"
+msgstr "Goitizena"
+
+#: src/binaries/3DDicer/dicemaincontroller.cpp:327
+#: src/binaries/3DDicer/dicemaincontroller.cpp:349
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "lehenetsia"
 
-#: src/binaries/3DDicer/DiceRollPage.qml:8
+#: src/binaries/3DDicer/DiceRollPage.qml:9
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
 msgstr "Dado jaurtiketak"
 
-#: src/binaries/3DDicer/DiceRollPage.qml:123
+#: src/binaries/3DDicer/DiceRollPage.qml:18
+msgctxt "DiceRollPage|"
+msgid ""
+"Roll dice:\n"
+"List with all results."
+msgstr ""
+
+#: src/binaries/3DDicer/DiceRollPage.qml:30
+msgctxt "DiceRollPage|"
+msgid ""
+"Result of our first roll.\n"
+"Press and Hold to rework this command."
+msgstr ""
+
+#: src/binaries/3DDicer/DiceRollPage.qml:50
+msgctxt "DiceRollPage|"
+msgid ""
+"Click here\n"
+"to display all details about the result."
+msgstr ""
+
+#: src/binaries/3DDicer/DiceRollPage.qml:69
+msgctxt "DiceRollPage|"
+msgid ""
+"Click here\n"
+"to roll again the command."
+msgstr ""
+
+#: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
 msgstr "Tekleatu zure komandoa adib.: 3d10…"
 
-#: src/binaries/3DDicer/DiceRollPage.qml:134
+#: src/binaries/3DDicer/DiceRollPage.qml:142
+#, fuzzy
+#| msgctxt "DiceRollPage|"
+#| msgid "Type your command e.g: 3d10…"
+msgctxt "DiceRollPage|"
+msgid "Type command here."
+msgstr "Tekleatu zure komandoa adib.: 3d10…"
+
+#: src/binaries/3DDicer/DiceRollPage.qml:149
 msgctxt "DiceRollPage|"
 msgid "Run"
 msgstr "Exekutatu"
 
-#: src/binaries/3DDicer/MacrosPage.qml:8
+#: src/binaries/3DDicer/DiceRollPage.qml:165
+msgctxt "DiceRollPage|"
+msgid ""
+"Click here\n"
+"to run the command."
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
 msgid "Macros"
 msgstr "Makroak"
 
-#: src/binaries/3DDicer/MacrosPage.qml:31
+#: src/binaries/3DDicer/MacrosPage.qml:18
+#, fuzzy
+#| msgctxt "MacrosPage|"
+#| msgid "Macros"
+msgctxt "MacrosPage|"
+msgid "Macro List"
+msgstr "Makroak"
+
+#: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Izena"
 
-#: src/binaries/3DDicer/MacrosPage.qml:39
+#: src/binaries/3DDicer/MacrosPage.qml:37
+msgctxt "MacrosPage|"
+msgid "Set macro name."
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:40
+msgctxt "MacrosPage|"
+msgid "Attack"
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:49
 msgctxt "MacrosPage|"
 msgid "command"
 msgstr "komandoa"
 
-#: src/binaries/3DDicer/MacrosPage.qml:59
+#: src/binaries/3DDicer/MacrosPage.qml:51
+#, fuzzy
+#| msgctxt "AutoFillerDialog|"
+#| msgid "Set All values"
+msgctxt "MacrosPage|"
+msgid "Set macro value."
+msgstr "Ezarri balio guztiak"
+
+#: src/binaries/3DDicer/MacrosPage.qml:54
+msgctxt "MacrosPage|"
+msgid "1d20+3"
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:70
+msgctxt "MacrosPage|"
+msgid "Edit/Save current Macro"
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:78
+msgctxt "MacrosPage|"
+msgid ""
+"Add Macro List\n"
+"\n"
+"To remove it: Swipe right."
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:84
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: src/binaries/3DDicer/Main.qml:135
+#: src/binaries/3DDicer/MacrosPage.qml:99
+msgctxt "MacrosPage|"
+msgid ""
+"To remove it:\n"
+" Swipe right and click on the button."
+msgstr ""
+
+#: src/binaries/3DDicer/MacrosPage.qml:127
+msgctxt "MacrosPage|"
+msgid "Add empty macro"
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:152
+msgctxt "Main|"
+msgid ""
+"Tabbar:\n"
+"Each tab manages one main feature."
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
 msgid "Dice Rolls"
 msgstr "Dado jaurtiketak"
 
-#: src/binaries/3DDicer/Main.qml:145
+#: src/binaries/3DDicer/Main.qml:165
+msgctxt "Main|"
+msgid ""
+"Roll dice:\n"
+"All results are displayed here."
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
 msgid "3D Dice"
 msgstr "3Dko dadoa"
 
-#: src/binaries/3DDicer/Main.qml:155
+#: src/binaries/3DDicer/Main.qml:182
+msgctxt "Main|"
+msgid ""
+"3D Dice:\n"
+"Roll your dice in 3D."
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
 msgid "Macros"
 msgstr "Makroak"
 
-#: src/binaries/3DDicer/Main.qml:165
+#: src/binaries/3DDicer/Main.qml:198
+msgctxt "Main|"
+msgid ""
+"Macros:\n"
+"Preset of often used commands."
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:206
 msgctxt "Main|"
 msgid "Aliases"
 msgstr "Goitizenak"
 
-#: src/binaries/3DDicer/Main.qml:175
+#: src/binaries/3DDicer/Main.qml:214
+msgctxt "Main|"
+msgid ""
+"Aliases:\n"
+"Shortcut commands"
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:222
 msgctxt "Main|"
 msgid "CharacterSheet"
 msgstr "Pertsonaia-orria"
 
-#: src/binaries/3DDicer/Main.qml:185
+#: src/binaries/3DDicer/Main.qml:230
+msgctxt "Main|"
+msgid ""
+"CharacterSheet:\n"
+"Store character's values"
+msgstr ""
+
+#: src/binaries/3DDicer/Main.qml:238
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Ezarpenak"
+
+#: src/binaries/3DDicer/Main.qml:246
+#, fuzzy
+#| msgctxt "PreferencesDialogBox|"
+#| msgid "Application Language*"
+msgctxt "Main|"
+msgid ""
+"Application Settings:\n"
+"Language, Version…"
+msgstr "Aplikazioa-hizkuntza*"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -192,15 +398,46 @@ msgctxt "DiceAliasModel|"
 msgid "Comments"
 msgstr "Iruzkinak"
 
-#: src/binaries/3DDicer/PhysicsDicePage.qml:11
+#: src/binaries/3DDicer/PhysicsDicePage.qml:12
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
 msgstr "3Dko dadoa"
 
-#: src/binaries/3DDicer/PhysicsDicePage.qml:78
+#: src/binaries/3DDicer/PhysicsDicePage.qml:79
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Dadoaren neurria:"
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:91
+msgctxt "PhysicsDicePage|"
+msgid "Change dice size."
+msgstr ""
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:133
+msgctxt "PhysicsDicePage|"
+msgid "Add or remove any type of dice."
+msgstr ""
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:216
+#, fuzzy
+#| msgctxt "MRichTextEdit|"
+#| msgid "Select an image"
+msgctxt "PhysicsDicePage|"
+msgid "Select all dice."
+msgstr "Hautatu irudi bat"
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:230
+msgctxt "PhysicsDicePage|"
+msgid "Selection by rectangle."
+msgstr ""
+
+#: src/binaries/3DDicer/PhysicsDicePage.qml:243
+#, fuzzy
+#| msgctxt "VmapTopBar|PC = playable character"
+#| msgid "Show/Hide PC name"
+msgctxt "PhysicsDicePage|"
+msgid "Show/Hide menu."
+msgstr "Erakutsi/Ezkutatu JParen izena"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -212,70 +449,169 @@ msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: src/binaries/3DDicer/SettingsPage.qml:8
+#: src/binaries/3DDicer/SettingsPage.qml:9
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: src/binaries/3DDicer/SettingsPage.qml:37
+#: src/binaries/3DDicer/SettingsPage.qml:38
+#: src/binaries/3DDicer/SettingsPage.qml:47
 msgctxt "SettingsPage|"
 msgid "Select Profile"
 msgstr "Hautatu profila"
 
-#: src/binaries/3DDicer/SettingsPage.qml:50
+#: src/binaries/3DDicer/SettingsPage.qml:56
 msgctxt "SettingsPage|"
 msgid "App Settings"
 msgstr "Aplikazioaren ezarpenak"
 
-#: src/binaries/3DDicer/SettingsPage.qml:63
+#: src/binaries/3DDicer/SettingsPage.qml:60
+#, fuzzy
+#| msgctxt "SettingsPage|"
+#| msgid "App Settings"
+msgctxt "SettingsPage|"
+msgid "Application Settings"
+msgstr "Aplikazioaren ezarpenak"
+
+#: src/binaries/3DDicer/SettingsPage.qml:74
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
 msgstr "Modu iluna:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:75
+#: src/binaries/3DDicer/SettingsPage.qml:83
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Set/Unset Channel Password"
+msgctxt "SettingsPage|"
+msgid "Set/Unset dark mode."
+msgstr "Ezarri/kendu kanaleko pasahitza"
+
+#: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
 msgid "Language:"
 msgstr "Hizkuntza:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:95
+#: src/binaries/3DDicer/SettingsPage.qml:109
+#, fuzzy
+#| msgctxt "campaign::AntagonistBoard|"
+#| msgid "Change Image"
+msgctxt "SettingsPage|"
+msgid "Change language."
+msgstr "Aldatu irudia"
+
+#: src/binaries/3DDicer/SettingsPage.qml:114
+msgctxt "SettingsPage|"
+msgid "Ui Tour:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:119
+#, fuzzy
+#| msgctxt "PreferencesDialogBox|"
+#| msgid "Start"
+msgctxt "SettingsPage|"
+msgid "Start"
+msgstr "Hasi"
+
+#: src/binaries/3DDicer/SettingsPage.qml:128
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Honi buruz"
 
-#: src/binaries/3DDicer/SettingsPage.qml:102
+#: src/binaries/3DDicer/SettingsPage.qml:131
+#, fuzzy
+#| msgctxt "PreferencesDialogBox|"
+#| msgid "Player Information"
+msgctxt "SettingsPage|"
+msgid "Version information."
+msgstr "Jokalariaren informazioa"
+
+#: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
 msgid "Version:"
 msgstr "Bertsioa:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:110
+#: src/binaries/3DDicer/SettingsPage.qml:152
 msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "Data:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:118
+#: src/binaries/3DDicer/SettingsPage.qml:160
 msgctxt "SettingsPage|"
 msgid "Sha1:"
 msgstr "SHA1:"
 
-#: src/binaries/3DDicer/SheetPage.qml:8
+#: src/binaries/3DDicer/SettingsPage.qml:187
+#, fuzzy
+#| msgctxt "SheetProperties|"
+#| msgid "Add Font file"
+msgctxt "SettingsPage|"
+msgid "Add Profile."
+msgstr "Gehitu letra-tipo fitxategia"
+
+#: src/binaries/3DDicer/SettingsPage.qml:206
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "online documentation"
+msgctxt "SettingsPage|"
+msgid "Documentation."
+msgstr "lerroko dokumentazioa"
+
+#: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
 msgid "Character Sheet"
 msgstr "Pertsonaiaren orria"
 
-#: src/binaries/3DDicer/SheetPage.qml:32
+#: src/binaries/3DDicer/SheetPage.qml:24
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Delete Item"
+msgctxt "SheetPage|"
+msgid "Sheet Item"
+msgstr "Ezabatu elementua"
+
+#: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Gakoa"
 
-#: src/binaries/3DDicer/SheetPage.qml:40
+#: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
+#, fuzzy
+#| msgctxt "UserListView|"
+#| msgid "Edit name"
+msgctxt "SheetPage|"
+msgid "Edit sheet Item name"
+msgstr "Editatu izena"
+
+#: src/binaries/3DDicer/SheetPage.qml:45
+msgctxt "SheetPage|"
+msgid "Intelligence"
+msgstr ""
+
+#: src/binaries/3DDicer/SheetPage.qml:54
 msgctxt "SheetPage|"
 msgid "Value"
 msgstr "Balioa"
 
-#: src/binaries/3DDicer/SheetPage.qml:60
+#: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid "Save CharacterSheet View"
+msgctxt "SheetPage|"
+msgid "Save Sheet item"
+msgstr "Gorde pertsonaien-orri ikuspegia"
+
+#: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Ezabatu"
+
+#: src/binaries/3DDicer/SheetPage.qml:120
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "add %1 item"
+msgctxt "SheetPage|"
+msgid "Add sheet item"
+msgstr "Gehitu %1 elementua"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -9193,10 +9529,6 @@ msgstr "Sorginduta"
 #~ msgctxt "main|"
 #~ msgid "RMindMap"
 #~ msgstr "RGogoetaMapa"
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "Player Information"
-#~ msgstr "Jokalariaren informazioa"
 
 #~ msgctxt "PreferencesDialogBox|"
 #~ msgid "Music path"
