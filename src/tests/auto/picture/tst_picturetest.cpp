@@ -80,7 +80,7 @@ void PictureTest::create()
     auto clip= qGuiApp->clipboard();
     clip->clear();
     QVERIFY(!m_ctrl->hasContentToPaste());
-    clip->setPixmap(IOHelper::dataToPixmap(utils::IOHelper::loadFile(":/img/girafe3.jpg")));
+    clip->setPixmap(IOHelper::dataToPixmap(utils::IOHelper::loadFile(":/img/girafe.jpg")));
     QVERIFY(m_ctrl->hasContentToPaste());
 
     QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::addressChanged);
@@ -120,18 +120,20 @@ void PictureTest::create()
     QVERIFY(!m_ctrl->canDrop());
     QVERIFY(!m_ctrl->canDownload());
     QVERIFY(m_ctrl->canPaste());
-    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
+    QSignalSpy visualSizeSpy(m_ctrl.get(), &ImageSelectorController::visualSizeChanged);
+    QSignalSpy pixmapSpy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
 
-    m_ctrl->setImageData(utils::IOHelper::loadFile(":/img/girafe3.jpg"));
+    m_ctrl->setImageData(utils::IOHelper::loadFile(":/img/girafe.jpg"));
     QVERIFY(!m_ctrl->dataInShape());
 
-    waitPixmapChanged.wait();
+    waitPixmapChanged.wait(10);
     QCOMPARE(waitPixmapChanged.count(), 1);
 
     m_ctrl->setVisualSize({300, 300});
 
-    waitPixmapChanged.wait();
-    QCOMPARE(waitPixmapChanged.count(), 2);
+    visualSizeSpy.wait(10);
+    QCOMPARE(visualSizeSpy.count(), 1);
     m_ctrl->setRect(r);
     auto final= IOHelper::dataToPixmap(m_ctrl->finalImageData());
     QVERIFY(!final.isNull());
@@ -162,6 +164,8 @@ void PictureTest::create()
     QVERIFY(!m_ctrl->canDrop());
     QVERIFY(!m_ctrl->canDownload());
     QVERIFY(!m_ctrl->canPaste());
+
+    QCOMPARE(pixmapSpy.count(), 2);
 }
 
 void PictureTest::respectShape()
@@ -178,10 +182,10 @@ void PictureTest::respectShape()
     m_ctrl->setVisualSize(QSize{547, 333});
     m_ctrl->setRect(geometry);
 
-    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
     m_ctrl->setImageData(utils::IOHelper::loadFile(path));
 
-    waitPixmapChanged.wait();
+    waitPixmapChanged.wait(10);
     QCOMPARE(waitPixmapChanged.count(), count);
     QCOMPARE(m_ctrl->rectInShape(), expected);
 }
@@ -195,22 +199,22 @@ void PictureTest::respectShape_data()
     QTest::addColumn<int>("count");
 
     QTest::addRow("any with any with img") << static_cast<int>(ImageSelectorController::AnyShape)
-                                           << QRect(20, 20, 300, 23) << ":/img/girafe3.jpg" << true << 1;
+                                           << QRect(20, 20, 300, 23) << ":/img/girafe.jpg" << true << 1;
     QTest::addRow("any with any with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 23) << QString{} << false << 0;
 
     QTest::addRow("any with square with img") << static_cast<int>(ImageSelectorController::AnyShape)
-                                              << QRect(20, 20, 300, 300) << ":/img/girafe3.jpg" << true << 1;
+                                              << QRect(20, 20, 300, 300) << ":/img/girafe.jpg" << true << 1;
     QTest::addRow("any with square with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
     QTest::addRow("square with square with img") << static_cast<int>(ImageSelectorController::Square)
-                                                 << QRect(20, 20, 300, 300) << ":/img/girafe3.jpg" << true << 1;
+                                                 << QRect(20, 20, 300, 300) << ":/img/girafe.jpg" << true << 1;
     QTest::addRow("square with square with no img")
         << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
     QTest::addRow("square with any with img") << static_cast<int>(ImageSelectorController::Square)
-                                              << QRect(20, 20, 200, 300) << ":/img/girafe3.jpg" << false << 1;
+                                              << QRect(20, 20, 200, 300) << ":/img/girafe.jpg" << false << 1;
     QTest::addRow("square with any with no img")
         << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 200, 300) << QString{} << false << 0;
 }
@@ -230,7 +234,7 @@ void PictureTest::setImageFromClipboard()
     QCOMPARE(spy.count(), 0);
     QVERIFY(m_ctrl->imageData().isEmpty());
 
-    clip->setPixmap(IOHelper::dataToPixmap(utils::IOHelper::loadFile(":/img/girafe3.jpg")));
+    clip->setPixmap(IOHelper::dataToPixmap(utils::IOHelper::loadFile(":/img/girafe.jpg")));
 
     m_ctrl->imageFromClipboard();
     spy.wait();
@@ -243,14 +247,14 @@ void PictureTest::setImageFromClipboard()
 
     QVERIFY(m_ctrl->imageData().isEmpty());
     m_ctrl->imageFromClipboard();
-    spy2.wait();
+    spy2.wait(10);
     QCOMPARE(spy2.count(), 0);
     QVERIFY(m_ctrl->imageData().isEmpty());
 
-    clip->setImage(utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe3.jpg")));
+    clip->setImage(utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe.jpg")));
 
     m_ctrl->imageFromClipboard();
-    spy2.wait();
+    spy2.wait(10);
     QCOMPARE(spy2.count(), 1);
     QVERIFY(!m_ctrl->imageData().isEmpty());
 
@@ -264,7 +268,7 @@ void PictureTest::setImageFromClipboard()
     clip->setMimeData(mimedata);
     m_ctrl->imageFromClipboard();
 
-    spy2.wait();
+    spy2.wait(10);
     QCOMPARE(spy2.count(), 1);
     QVERIFY(!m_ctrl->imageData().isEmpty());
     // clip->clear();
@@ -275,7 +279,7 @@ void PictureTest::setImageFromClipboard()
 
 void PictureTest::readImageFromFile()
 {
-    QFile file(":/img/girafe3.jpg");
+    QFile file(":/img/girafe.jpg");
     QByteArray dataArray;
     if(file.open(QIODevice::ReadOnly))
     {
@@ -289,7 +293,7 @@ void PictureTest::readImageFromFile()
         path= tfile.fileName();
     }
 
-    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
 
     m_ctrl->downloadImageFrom(QUrl::fromUserInput(path));
 
@@ -306,7 +310,7 @@ void PictureTest::readImageFromFile()
 void PictureTest::readImageFromUrl()
 {
     auto server= Helper::initWebServer();
-    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
 
     m_ctrl->downloadImageFrom(QUrl::fromUserInput("http://127.0.0.1:9090/image/Seppun_tashime.jpg"));
 
@@ -331,7 +335,7 @@ void PictureTest::readAllImageSize()
 
     QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
 
-    auto img= utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe3.jpg"));
+    auto img= utils::IOHelper::dataToImage(utils::IOHelper::loadFile(":/img/girafe.jpg"));
 
     auto imgW= img.copy(0, 0, imageSize.width(), imageSize.height());
 

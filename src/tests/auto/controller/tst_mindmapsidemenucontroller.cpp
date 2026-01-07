@@ -98,26 +98,27 @@ void SideMenuControllerTest::criteria()
     QFETCH(int, count);
 
     initModel(m_mindmap->itemModel());
+    constexpr int delay= 1;
 
     QSignalSpy spyCtrl(m_ctrl.get(), &SideMenuController::controllerChanged);
     QSignalSpy spyPat(m_ctrl.get(), &SideMenuController::patternChanged);
     QSignalSpy spyCrit(m_ctrl.get(), &SideMenuController::criteriaChanged);
 
     m_ctrl->setController(m_mindmap.get());
-    spyCtrl.wait(10);
+    spyCtrl.wait(delay);
     QCOMPARE(spyCtrl.count(), 1);
     m_ctrl->setController(m_mindmap.get());
-    spyCtrl.wait(10);
+    spyCtrl.wait(delay);
     QCOMPARE(spyCtrl.count(), 1);
     QCOMPARE(m_ctrl->controller(), m_mindmap.get());
 
     if(m_ctrl->pattern() != pattern)
     {
         m_ctrl->setPattern(pattern);
-        spyPat.wait(10);
+        spyPat.wait(delay);
         QCOMPARE(spyPat.count(), 1);
         m_ctrl->setPattern(pattern);
-        spyPat.wait(10);
+        spyPat.wait(delay);
         QCOMPARE(spyPat.count(), 1);
         QCOMPARE(m_ctrl->pattern(), pattern);
     }
@@ -125,10 +126,10 @@ void SideMenuControllerTest::criteria()
     if(m_ctrl->criteria() != criteria)
     {
         m_ctrl->setCriteria(static_cast<FilteredModel::Criteria>(criteria));
-        spyCrit.wait(10);
+        spyCrit.wait(delay);
         QCOMPARE(spyCrit.count(), 1);
         m_ctrl->setCriteria(static_cast<FilteredModel::Criteria>(criteria));
-        spyCrit.wait(10);
+        spyCrit.wait(delay);
         QCOMPARE(spyCrit.count(), 1);
         QCOMPARE(m_ctrl->criteria(), criteria);
     }

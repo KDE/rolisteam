@@ -192,9 +192,9 @@ void CampaignTest::campaignModel()
     view->setModel(model);
     view->setVisible(true);
 
-    QTest::qWait(2000);
-    delete view;
-    delete model;
+    // QTest::qWait(2000);
+    view->deleteLater();
+    model->deleteLater();
 }
 
 void CampaignTest::campaignModel_data()
@@ -253,9 +253,8 @@ void CampaignTest::addAndRemoveMedia()
 
     QCOMPARE(model->rowCount(), expected);
 
-    QTest::qWait(2000);
-    delete view;
-    delete model;
+    view->deleteLater();
+    model->deleteLater();
 }
 
 void CampaignTest::addAndRemoveMedia_data()
@@ -337,14 +336,14 @@ void CampaignTest::copyCampaign()
     }
     m_manager->saveCampaign();
 
-    QTest::qWait(2000);
+    // QTest::qWait(2000);
 
     QTemporaryDir dir;
     if(dir.isValid())
     {
         auto path= dir.path();
         m_manager->copyCampaign(QUrl::fromUserInput(path));
-        QTest::qWait(2000);
+        QTest::qWait(1000);
 
         QDir copyDir(path);
 
@@ -454,7 +453,7 @@ void CampaignTest::importFromAnotherCampaign()
     }
     m_manager->saveCampaign();
 
-    QTest::qWait(delay);
+    // QTest::qWait(delay);
 
     QTemporaryDir dir;
     if(dir.isValid())
@@ -464,7 +463,7 @@ void CampaignTest::importFromAnotherCampaign()
         create(path);
         m_manager->importDataFrom(oldCampaignPath, categories);
         // m_manager->reload();
-        QTest::qWait(delay);
+        //  QTest::qWait(delay);
         m_manager->saveCampaign();
         QTest::qWait(delay);
 
@@ -685,7 +684,7 @@ void CampaignTest::campaignManagerTest()
                                                         {Helper::randomString(), Core::CampaignAction::ManageAction},
                                                         {Helper::randomString(), Core::CampaignAction::DeleteAction}};
 
-    for(auto pair : actions)
+    for(const auto& pair : actions)
     {
         m_manager->performAction(pair.first, pair.second);
     }

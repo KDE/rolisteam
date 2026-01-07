@@ -62,7 +62,7 @@ void ThemeTest::getAndSet()
     m_theme->setNightMode(true);
     m_theme->setNightMode(false);
 
-    spy.wait();
+    spy.wait(10);
     QCOMPARE(spy.count(), 2);
 
     {

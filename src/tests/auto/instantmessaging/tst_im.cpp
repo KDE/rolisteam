@@ -141,7 +141,7 @@ void InstantMessagingTest::sendMessage()
 
     global->addMessage(text, url, personId, name);
 
-    spy.wait(2000);
+    spy.wait(100);
 
     QCOMPARE(spy.count(), 1);
     QCOMPARE(model->rowCount(), 1);

@@ -631,8 +631,7 @@ void VectorialMapController::showTransparentItems()
 {
     auto const& items= m_vmapModel->items();
     QList<vmap::VisualItemController*> list;
-    std::transform(std::begin(items), std::end(items), std::back_inserter(list),
-                   [](vmap::VisualItemController* item)
+    std::transform(std::begin(items), std::end(items), std::back_inserter(list), [](vmap::VisualItemController* item)
                    { return qFuzzyCompare(item->opacity(), 0.0) ? item : nullptr; });
     list.removeAll(nullptr);
     emit performCommand(new ShowTransparentItemCommand(list));

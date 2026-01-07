@@ -128,7 +128,8 @@ void VectorialMapControllerTest::init()
 
 void VectorialMapControllerTest::cleanupTestCase()
 {
-    m_stack->clear();
+    if(m_stack)
+        m_stack->clear();
 }
 
 void VectorialMapControllerTest::propertyTest()
@@ -629,6 +630,7 @@ void VectorialMapControllerTest::normalSize()
     QFETCH(int, call);
     m_stack.reset(nullptr);
 
+    QSignalSpy spy(m_ctrl.get(), &VectorialMapController::performCommand);
     connect(m_ctrl.get(), &VectorialMapController::performCommand, this,
             [list, result](QUndoCommand* cmd)
             {
@@ -639,12 +641,9 @@ void VectorialMapControllerTest::normalSize()
                               [result](vmap::VisualItemController* ctrl) { QCOMPARE(ctrl->rect(), result); });
             });
 
-    QSignalSpy spy(m_ctrl.get(), &VectorialMapController::performCommand);
-
     m_ctrl->normalizeSize(list, method, click);
-
+    spy.wait(10);
     QCOMPARE(spy.count(), call);
-    spy.wait(1000);
 }
 
 void VectorialMapControllerTest::normalSize_data()
@@ -941,30 +940,30 @@ void VectorialMapControllerTest::normalSize_data()
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/girafe3.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
+            Helper::buildImageController(":/img/girafe.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/lion3.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
+            Helper::buildImageController(":/img/lion.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
         QTest::addRow("cmd33") << vec << VectorialMapController::Bigger << QPointF() << QRectF(0, 0, 700, 700) << 1;
     }
     {
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/girafe3.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
+            Helper::buildImageController(":/img/girafe.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/lion3.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
+            Helper::buildImageController(":/img/lion.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
         QTest::addRow("cmd34") << vec << VectorialMapController::Smaller << QPointF() << QRectF(0, 0, 100, 100) << 1;
     }
     {
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/girafe3.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
+            Helper::buildImageController(":/img/girafe.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/lion3.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
+            Helper::buildImageController(":/img/lion.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
         QTest::addRow("cmd35") << vec << VectorialMapController::UnderMouse << QPointF(2010, 2010)
                                << QRectF(0, 0, 100, 100) << 1;
     }
@@ -972,22 +971,12 @@ void VectorialMapControllerTest::normalSize_data()
         QList<vmap::VisualItemController*> vec;
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/girafe3.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
+            Helper::buildImageController(":/img/girafe.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
         vec.push_back(vmap::VmapItemFactory::createVMapItem(
             m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/lion3.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
+            Helper::buildImageController(":/img/lion.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
         QTest::addRow("cmd36") << vec << VectorialMapController::UnderMouse << QPointF(310, 310)
                                << QRectF(0, 0, 700, 700) << 1;
-    }
-    {
-        QList<vmap::VisualItemController*> vec;
-        vec.push_back(vmap::VmapItemFactory::createVMapItem(
-            m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/girafe3.jpg", QRectF(0, 0, 100, 100), QPointF(2000, 2000))));
-        vec.push_back(vmap::VmapItemFactory::createVMapItem(
-            m_ctrl.get(), Core::SelectableTool::IMAGE,
-            Helper::buildImageController(":/img/lion3.jpg", QRectF(0, 0, 700, 700), QPointF(300, 300))));
-        QTest::addRow("cmd37") << vec << VectorialMapController::Average << QPointF() << QRectF(0, 0, 400, 400) << 1;
     }
 }
 

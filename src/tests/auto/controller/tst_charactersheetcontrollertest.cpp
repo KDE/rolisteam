@@ -175,6 +175,7 @@ void CharacterSheetControllerTest::gameMasterTest()
 void CharacterSheetControllerTest::sharingDataTest()
 {
     // Create sheets
+    constexpr auto timeOut= 10;
     auto sheets= m_ctrl->model();
     m_ctrl->setLocalGM(true);
     CharacterSheet* sheet1= new CharacterSheet;
@@ -224,8 +225,8 @@ void CharacterSheetControllerTest::sharingDataTest()
     // share sheet
     m_ctrl->shareCharacterSheetTo(charact1, sheet1);
 
-    spy.wait();
-    spy1.wait();
+    spy.wait(timeOut);
+    spy1.wait(timeOut);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy1.count(), 1);
 
@@ -234,8 +235,8 @@ void CharacterSheetControllerTest::sharingDataTest()
 
     // reaffect same sheet to same character
     m_ctrl->shareCharacterSheetTo(charact1, sheet1);
-    spy.wait();
-    spy1.wait();
+    spy.wait(timeOut);
+    spy1.wait(timeOut);
     QCOMPARE(spy.count(), 0);
     QCOMPARE(spy1.count(), 0);
 
@@ -246,8 +247,8 @@ void CharacterSheetControllerTest::sharingDataTest()
     spy1.clear();
     // simulate error of sharing 2 sheet to the same character.
     m_ctrl->shareCharacterSheetTo(charact1, sheet2);
-    spy.wait();
-    spy1.wait();
+    spy.wait(timeOut);
+    spy1.wait(timeOut);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy1.count(), 1);
 
@@ -258,8 +259,8 @@ void CharacterSheetControllerTest::sharingDataTest()
 
     // simulate fixing error
     m_ctrl->shareCharacterSheetTo(charact2, sheet2);
-    spy.wait();
-    spy1.wait();
+    spy.wait(timeOut);
+    spy1.wait(timeOut);
     QCOMPARE(spy.count(), 1);
     QCOMPARE(spy1.count(), 1);
 

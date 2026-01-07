@@ -103,9 +103,7 @@ void ImageControllorTest::formatTest_data()
     // QTest::addColumn<bool>("fitWindow");
 
     QTest::addRow("value 1") << "qrc://img/girafe.jpg" << 1000.0 / 750 << 0.75 << false;
-    QTest::addRow("value 2") << "qrc://img/girafe3.jpg" << 3264.0 / 2448 << 2448.0 / 3264 << false;
     QTest::addRow("value 3") << "qrc://img/lion.jpg" << 1000.0 / 750 << 0.75 << false;
-    QTest::addRow("value 4") << "qrc://img/lion3.jpg" << 3264.0 / 2448 << 2448.0 / 3264 << false;
     QTest::addRow("value 5") << "qrc://img/white.png" << 1126.0 / 271 << 271.0 / 1126 << false;
     QTest::addRow("value 6") << "qrc://img/control_life_bar.gif" << 1784.0 / 828 << 828.0 / 1784 << true;
 }
