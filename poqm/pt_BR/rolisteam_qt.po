@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
 # SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-12-30 06:22-0300\n"
+"PO-Revision-Date: 2026-01-06 07:16-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,12 +20,9 @@ msgid "Aliases"
 msgstr "Apelidos"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Lista de jogadores"
+msgstr "Lista de apelidos"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -60,12 +57,9 @@ msgid "On"
 msgstr "Ligado"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Edit Channel"
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "Editar canal"
+msgstr "Editar apelido"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
@@ -73,12 +67,9 @@ msgid "Name:"
 msgstr "Nome:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Nome do campo"
+msgstr "Definir nome do apelido"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -88,7 +79,7 @@ msgstr "Padrão:"
 #: src/binaries/3DDicer/AliasesPage.qml:112
 msgctxt "AliasesPage|"
 msgid "Pattern which triggers the replace."
-msgstr ""
+msgstr "Padrão que aciona a substituição."
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
 msgctxt "AliasesPage|"
@@ -96,12 +87,9 @@ msgid "Command:"
 msgstr "Comando:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "comando"
+msgstr "Comando real"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -120,12 +108,9 @@ msgid "Save and back"
 msgstr "Salvar e retornar"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Salvar lista de músicas"
+msgstr "Salvar o apelido"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -134,12 +119,9 @@ msgid "Delete"
 msgstr "Excluir"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Apelido"
+msgstr "Adicionar apelido"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
@@ -158,6 +140,8 @@ msgid ""
 "Roll dice:\n"
 "List with all results."
 msgstr ""
+"Rolar dados:\n"
+"Listar todos os resultados."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:30
 msgctxt "DiceRollPage|"
@@ -165,6 +149,8 @@ msgid ""
 "Result of our first roll.\n"
 "Press and Hold to rework this command."
 msgstr ""
+"Resultado da nossa primeira rolagem.\n"
+"Pressione e segure para repetir este comando."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:50
 msgctxt "DiceRollPage|"
@@ -172,6 +158,8 @@ msgid ""
 "Click here\n"
 "to display all details about the result."
 msgstr ""
+"Clique aqui\n"
+"para exibir todos os detalhes sobre o resultado."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:69
 msgctxt "DiceRollPage|"
@@ -179,6 +167,8 @@ msgid ""
 "Click here\n"
 "to roll again the command."
 msgstr ""
+"Clique aqui\n"
+"para rolar o comando novamente."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
@@ -186,12 +176,9 @@ msgid "Type your command e.g: 3d10…"
 msgstr "Digite seu comando, por exemplo: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:142
-#, fuzzy
-#| msgctxt "DiceRollPage|"
-#| msgid "Type your command e.g: 3d10…"
 msgctxt "DiceRollPage|"
 msgid "Type command here."
-msgstr "Digite seu comando, por exemplo: 3d10…"
+msgstr "Digite seu comando aqui."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:149
 msgctxt "DiceRollPage|"
@@ -204,6 +191,8 @@ msgid ""
 "Click here\n"
 "to run the command."
 msgstr ""
+"Clique aqui\n"
+"para executar o comando."
 
 #: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
@@ -211,12 +200,9 @@ msgid "Macros"
 msgstr "Macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "Macros"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Macros"
+msgstr "Lista de macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -226,12 +212,12 @@ msgstr "Nome"
 #: src/binaries/3DDicer/MacrosPage.qml:37
 msgctxt "MacrosPage|"
 msgid "Set macro name."
-msgstr ""
+msgstr "Definir nome da macro."
 
 #: src/binaries/3DDicer/MacrosPage.qml:40
 msgctxt "MacrosPage|"
 msgid "Attack"
-msgstr ""
+msgstr "Ataque"
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
 msgctxt "MacrosPage|"
@@ -239,22 +225,19 @@ msgid "command"
 msgstr "comando"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Set All values"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Definir todos os valores"
+msgstr "Definir valor da macro."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr ""
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
 msgid "Edit/Save current Macro"
-msgstr ""
+msgstr "Editar/Salvar macro atual"
 
 #: src/binaries/3DDicer/MacrosPage.qml:78
 msgctxt "MacrosPage|"
@@ -263,6 +246,9 @@ msgid ""
 "\n"
 "To remove it: Swipe right."
 msgstr ""
+"Adicionar lista de macros\n"
+"\n"
+"Para remover: Deslize para a direita."
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
 msgctxt "MacrosPage|"
@@ -275,11 +261,13 @@ msgid ""
 "To remove it:\n"
 " Swipe right and click on the button."
 msgstr ""
+"Para remover:\n"
+" Deslize para a direita e clique no botão."
 
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
 msgid "Add empty macro"
-msgstr ""
+msgstr "Adicionar macro vazia"
 
 #: src/binaries/3DDicer/Main.qml:152
 msgctxt "Main|"
@@ -287,6 +275,8 @@ msgid ""
 "Tabbar:\n"
 "Each tab manages one main feature."
 msgstr ""
+"Barra de abas:\n"
+"Cada aba gerencia uma funcionalidade principal."
 
 #: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
@@ -299,6 +289,8 @@ msgid ""
 "Roll dice:\n"
 "All results are displayed here."
 msgstr ""
+"Rolar dado:\n"
+"Todos os resultados são exibidos aqui."
 
 #: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
@@ -311,6 +303,8 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
+"Dado 3D:\n"
+"Role seus dados em 3D."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
@@ -323,6 +317,8 @@ msgid ""
 "Macros:\n"
 "Preset of often used commands."
 msgstr ""
+"Macros:\n"
+"Conjunto predefinido de comandos frequentemente usados."
 
 #: src/binaries/3DDicer/Main.qml:206
 msgctxt "Main|"
@@ -335,6 +331,8 @@ msgid ""
 "Aliases:\n"
 "Shortcut commands"
 msgstr ""
+"Apelidos:\n"
+"Atalhos de comandos"
 
 #: src/binaries/3DDicer/Main.qml:222
 msgctxt "Main|"
@@ -347,6 +345,8 @@ msgid ""
 "CharacterSheet:\n"
 "Store character's values"
 msgstr ""
+"Ficha do personagem:\n"
+"Armazena valores do personagem"
 
 #: src/binaries/3DDicer/Main.qml:238
 msgctxt "Main|"
@@ -354,14 +354,13 @@ msgid "Settings"
 msgstr "Configurações"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Idioma do aplicativo*"
+msgstr ""
+"Configurações do aplicativo:\n"
+"Idioma, versão…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -406,33 +405,27 @@ msgstr "Tamanho do dado:"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
 msgid "Change dice size."
-msgstr ""
+msgstr "Alterar tamanho do dado."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:133
 msgctxt "PhysicsDicePage|"
 msgid "Add or remove any type of dice."
-msgstr ""
+msgstr "Adicione ou remova qualquer tipo de dado."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Selecionar uma imagem"
+msgstr "Seleciona todos os dados."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
 msgid "Selection by rectangle."
-msgstr ""
+msgstr "Seleção por retângulo."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "VmapTopBar|PC = playable character"
-#| msgid "Show/Hide PC name"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Mostrar/Ocultar nome do personagem jogável"
+msgstr "Mostrar/Ocultar menu."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -461,9 +454,6 @@ msgid "App Settings"
 msgstr "Configurações do aplicativo"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
-#, fuzzy
-#| msgctxt "SettingsPage|"
-#| msgid "App Settings"
 msgctxt "SettingsPage|"
 msgid "Application Settings"
 msgstr "Configurações do aplicativo"
@@ -474,12 +464,9 @@ msgid "Dark Mode:"
 msgstr "Modo escuro:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set/Unset Channel Password"
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr "Definir/Redefinir senha do canal"
+msgstr "Ativar/desativar modo escuro."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
@@ -487,22 +474,16 @@ msgid "Language:"
 msgstr "Idioma:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "Alterar imagem"
+msgstr "Alterar idioma."
 
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
-msgstr ""
+msgstr "Tour pela UI:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Iniciar"
@@ -515,7 +496,7 @@ msgstr "Sobre"
 #: src/binaries/3DDicer/SettingsPage.qml:131
 msgctxt "SettingsPage|"
 msgid "Version information."
-msgstr ""
+msgstr "Informação da versão."
 
 #: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
@@ -533,20 +514,14 @@ msgid "Sha1:"
 msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Adicionar arquivo de fonte"
+msgstr "Adicionar perfil."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "online documentation"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "documentação online"
+msgstr "Documentação."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -554,30 +529,24 @@ msgid "Character Sheet"
 msgstr "Ficha do personagem"
 
 #: src/binaries/3DDicer/SheetPage.qml:24
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Item"
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "Excluir item"
+msgstr "Item da ficha"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
 msgid "Key"
-msgstr "chave"
+msgstr "Chave"
 
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
-#, fuzzy
-#| msgctxt "UserListView|"
-#| msgid "Edit name"
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "Editar nome"
+msgstr "Editar nome do item da ficha"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
 msgid "Intelligence"
-msgstr ""
+msgstr "Inteligência"
 
 #: src/binaries/3DDicer/SheetPage.qml:54
 msgctxt "SheetPage|"
@@ -585,12 +554,9 @@ msgid "Value"
 msgstr "Valor"
 
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Save CharacterSheet View"
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "Salvar visão da Ficha do personagem"
+msgstr "Salvar item da ficha"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
@@ -598,12 +564,9 @@ msgid "Delete"
 msgstr "Excluir"
 
 #: src/binaries/3DDicer/SheetPage.qml:120
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "add %1 item"
 msgctxt "SheetPage|"
 msgid "Add sheet item"
-msgstr "adicionar %1 item"
+msgstr "Adicionar item da ficha"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"

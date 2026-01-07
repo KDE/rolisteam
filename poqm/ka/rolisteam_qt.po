@@ -19,12 +19,9 @@ msgid "Aliases"
 msgstr "ფსევდონიმები"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "მოთამაშეების სია"
+msgstr "ფსევდონიმების სია"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -59,12 +56,9 @@ msgid "On"
 msgstr "ჩართ"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Edit Channel"
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "არხის ჩასწორება"
+msgstr "ფსევდონიმის ჩასწორება"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
@@ -72,12 +66,9 @@ msgid "Name:"
 msgstr "სახელი:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "ველის სახელი"
+msgstr "ფსევდონიმის სახელის დაყენება"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -87,7 +78,7 @@ msgstr "შაბლონი:"
 #: src/binaries/3DDicer/AliasesPage.qml:112
 msgctxt "AliasesPage|"
 msgid "Pattern which triggers the replace."
-msgstr ""
+msgstr "ნიმუში, რომელიც იწვევს ჩანაცვლებას."
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
 msgctxt "AliasesPage|"
@@ -95,12 +86,9 @@ msgid "Command:"
 msgstr "ბრძანება:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "ბრძანება"
+msgstr "რეალური ბრძანება"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -119,12 +107,9 @@ msgid "Save and back"
 msgstr "შენახვა და უკან"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "დასაკრავი სიის შენახვა"
+msgstr "ფსევდონიმის შენახვა"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -133,12 +118,9 @@ msgid "Delete"
 msgstr "წაშლა"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "სინონიმი"
+msgstr "ფსევდონიმის დამატება"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
@@ -157,6 +139,8 @@ msgid ""
 "Roll dice:\n"
 "List with all results."
 msgstr ""
+"კამათლის გაგორება:\n"
+"სია ყველა შედეგით."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:30
 msgctxt "DiceRollPage|"
@@ -164,6 +148,8 @@ msgid ""
 "Result of our first roll.\n"
 "Press and Hold to rework this command."
 msgstr ""
+"პირველი გაგორების შედეგი.\n"
+"დააჭირეთ და გეჭიროთ ამ ბრძანების თავიდან გასაშვებად."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:50
 msgctxt "DiceRollPage|"
@@ -171,6 +157,8 @@ msgid ""
 "Click here\n"
 "to display all details about the result."
 msgstr ""
+"დააწკაპუნეთ აქ\n"
+"შედეგის შესახებ ყველა დეტალის საჩვენებლად."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:69
 msgctxt "DiceRollPage|"
@@ -178,6 +166,8 @@ msgid ""
 "Click here\n"
 "to roll again the command."
 msgstr ""
+"დააწკაპუნეთ აქ\n"
+"ბრძანების კიდევ ერთხელ გასაგორებლად."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
@@ -185,12 +175,9 @@ msgid "Type your command e.g: 3d10…"
 msgstr "აკრიფეთ თქვენი ბრძანება, მაგ.: 3D10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:142
-#, fuzzy
-#| msgctxt "DiceRollPage|"
-#| msgid "Type your command e.g: 3d10…"
 msgctxt "DiceRollPage|"
 msgid "Type command here."
-msgstr "აკრიფეთ თქვენი ბრძანება, მაგ.: 3D10…"
+msgstr "აკრიფეთ თქვენი ბრძანება აქ."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:149
 msgctxt "DiceRollPage|"
@@ -203,6 +190,8 @@ msgid ""
 "Click here\n"
 "to run the command."
 msgstr ""
+"დააწკაპუნეთ აქ\n"
+"ბრძანების გასაშვებად."
 
 #: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
@@ -210,12 +199,9 @@ msgid "Macros"
 msgstr "მაკროები"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "Macros"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "მაკროები"
+msgstr "მაკროების სია"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -225,12 +211,12 @@ msgstr "სახელი"
 #: src/binaries/3DDicer/MacrosPage.qml:37
 msgctxt "MacrosPage|"
 msgid "Set macro name."
-msgstr ""
+msgstr "მაკროს სახელის დაყენება."
 
 #: src/binaries/3DDicer/MacrosPage.qml:40
 msgctxt "MacrosPage|"
 msgid "Attack"
-msgstr ""
+msgstr "შეტევა"
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
 msgctxt "MacrosPage|"
@@ -238,22 +224,19 @@ msgid "command"
 msgstr "ბრძანება"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Set All values"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "ყველა მნიშვნელობის დაყენება"
+msgstr "მაკროს მნიშვნელობის დაყენება."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr ""
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
 msgid "Edit/Save current Macro"
-msgstr ""
+msgstr "მიმდინარე მაკროს ჩასწორება/შენახვა"
 
 #: src/binaries/3DDicer/MacrosPage.qml:78
 msgctxt "MacrosPage|"
@@ -262,6 +245,9 @@ msgid ""
 "\n"
 "To remove it: Swipe right."
 msgstr ""
+"მაკროების სიის დამატება\n"
+"\n"
+"მის წასაშლელად: გაუსვით მარჯვნივ."
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
 msgctxt "MacrosPage|"
@@ -274,11 +260,13 @@ msgid ""
 "To remove it:\n"
 " Swipe right and click on the button."
 msgstr ""
+"წასაშლელად:\n"
+"გაუსვით მარჯვნივ და დააწკაპუნეთ ღილაკზე."
 
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
 msgid "Add empty macro"
-msgstr ""
+msgstr "ცარიელი მაკროს დამატება"
 
 #: src/binaries/3DDicer/Main.qml:152
 msgctxt "Main|"
@@ -286,6 +274,8 @@ msgid ""
 "Tabbar:\n"
 "Each tab manages one main feature."
 msgstr ""
+"ჩანართების პანელი:\n"
+"თითოეული ჩანართი ერთ მთავარ თვისებას მართავს."
 
 #: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
@@ -298,6 +288,8 @@ msgid ""
 "Roll dice:\n"
 "All results are displayed here."
 msgstr ""
+"კამათლის გაგორება:\n"
+"ყველა შედეგი აქაა ნაჩვენები."
 
 #: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
@@ -310,6 +302,8 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
+"3D კამათლები:\n"
+"გააგორეთ თქვენი კამათლები 3D-ში."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
@@ -322,6 +316,8 @@ msgid ""
 "Macros:\n"
 "Preset of often used commands."
 msgstr ""
+"მაკროები:\n"
+"ხშირად გამოყენებული ბრძანებების პრესეტი."
 
 #: src/binaries/3DDicer/Main.qml:206
 msgctxt "Main|"
@@ -334,6 +330,8 @@ msgid ""
 "Aliases:\n"
 "Shortcut commands"
 msgstr ""
+"ფსევდონიმები:\n"
+"ბრძანების მალსახმობები"
 
 #: src/binaries/3DDicer/Main.qml:222
 msgctxt "Main|"
@@ -346,6 +344,8 @@ msgid ""
 "CharacterSheet:\n"
 "Store character's values"
 msgstr ""
+"სიმბოლოების ფურცელი:\n"
+"სიმბოლოს მნიშვნელობების შენახვა"
 
 #: src/binaries/3DDicer/Main.qml:238
 msgctxt "Main|"
@@ -353,14 +353,13 @@ msgid "Settings"
 msgstr "მორგება"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "აპლიკაციის ენა*"
+msgstr ""
+"აპლიკაციის მორგება:\n"
+"ენა, ვერსია…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -405,33 +404,27 @@ msgstr "კამათლის ზომა:"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
 msgid "Change dice size."
-msgstr ""
+msgstr "კამათლის ზომის შეცვლა."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:133
 msgctxt "PhysicsDicePage|"
 msgid "Add or remove any type of dice."
-msgstr ""
+msgstr "ნებისმიერი ტიპის კამათლის დამატება, ან წაშლა."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "მონიშნეთ გამოსახულება"
+msgstr "ყველა კამათლის მონიშვნა."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
 msgid "Selection by rectangle."
-msgstr ""
+msgstr "მონიშვნა მართკუთხედით."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "VmapTopBar|PC = playable character"
-#| msgid "Show/Hide PC name"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "ჩვენება / დამალვა"
+msgstr "მენიუს ჩვენება/დამალვა."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -460,12 +453,9 @@ msgid "App Settings"
 msgstr "აპის მორგება"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
-#, fuzzy
-#| msgctxt "SettingsPage|"
-#| msgid "App Settings"
 msgctxt "SettingsPage|"
 msgid "Application Settings"
-msgstr "აპის მორგება"
+msgstr "აპლიკაციის მორგება"
 
 #: src/binaries/3DDicer/SettingsPage.qml:74
 msgctxt "SettingsPage|"
@@ -473,12 +463,9 @@ msgid "Dark Mode:"
 msgstr "მუქი რეჟიმი:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set/Unset Channel Password"
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr "არხის პაროლის დაყენება/მოხსნა"
+msgstr "მუქი რეჟიმის ჩართვა/გამორთვა."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
@@ -486,25 +473,19 @@ msgid "Language:"
 msgstr "ენა:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "გამოსახულების შეცვლა"
+msgstr "ენის შეცვლა."
 
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
-msgstr ""
+msgstr "ინტერფეისის ტური:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
-msgstr "გაშვება"
+msgstr "დაწყება"
 
 #: src/binaries/3DDicer/SettingsPage.qml:128
 msgctxt "SettingsPage|"
@@ -512,12 +493,9 @@ msgid "About"
 msgstr "შესახებ"
 
 #: src/binaries/3DDicer/SettingsPage.qml:131
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Player Information"
 msgctxt "SettingsPage|"
 msgid "Version information."
-msgstr "მოთამაშის ინფორმაცია"
+msgstr "ვერსიის ინფორმაცია."
 
 #: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
@@ -535,20 +513,14 @@ msgid "Sha1:"
 msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "ფონტის ფაილის დამატება"
+msgstr "პროფილის დამატება."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "online documentation"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "ონლაინ-დოკუმენტაცია"
+msgstr "დოკუმენტაცია."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -556,12 +528,9 @@ msgid "Character Sheet"
 msgstr "სიმბოლოების ცხრილი"
 
 #: src/binaries/3DDicer/SheetPage.qml:24
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Item"
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "ელემენტის წაშლა"
+msgstr "ფურცლის ელემენტი"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
@@ -569,17 +538,14 @@ msgid "Key"
 msgstr "გასაღები"
 
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
-#, fuzzy
-#| msgctxt "UserListView|"
-#| msgid "Edit name"
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "ფენის ჩასწორება"
+msgstr "ფურცლის ელემენტის სახელის ჩასწორება"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
 msgid "Intelligence"
-msgstr ""
+msgstr "დაზვერვა"
 
 #: src/binaries/3DDicer/SheetPage.qml:54
 msgctxt "SheetPage|"
@@ -587,12 +553,9 @@ msgid "Value"
 msgstr "მნიშვნელობა"
 
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Save CharacterSheet View"
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "CharacterSheet-ის ხედის შენახვა"
+msgstr "ფურცლის ელემენტის შენახვა"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
@@ -600,12 +563,9 @@ msgid "Delete"
 msgstr "წაშლა"
 
 #: src/binaries/3DDicer/SheetPage.qml:120
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "add %1 item"
 msgctxt "SheetPage|"
 msgid "Add sheet item"
-msgstr "%1 ჩანაწერის დამატება"
+msgstr "ფურცლის ელემენტის დამატება"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"

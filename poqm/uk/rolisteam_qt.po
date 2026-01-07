@@ -1,8 +1,8 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2022, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-12-30 09:48+0200\n"
+"PO-Revision-Date: 2026-01-06 09:11+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,12 +20,9 @@ msgid "Aliases"
 msgstr "Альтернативи"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Список гравців"
+msgstr "Список альтернатив"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -60,12 +57,9 @@ msgid "On"
 msgstr "Увімкнено"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Edit Channel"
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "Змінити канал"
+msgstr "Редагувати альтернативу"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
@@ -73,12 +67,9 @@ msgid "Name:"
 msgstr "Назва:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Назва полів"
+msgstr "Встановити назву альтернативи"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -88,7 +79,7 @@ msgstr "Взірець:"
 #: src/binaries/3DDicer/AliasesPage.qml:112
 msgctxt "AliasesPage|"
 msgid "Pattern which triggers the replace."
-msgstr ""
+msgstr "Взірець, за яким буде ініційовано заміну."
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
 msgctxt "AliasesPage|"
@@ -96,12 +87,9 @@ msgid "Command:"
 msgstr "Команда:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "команда"
+msgstr "Справжня команда"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -120,12 +108,9 @@ msgid "Save and back"
 msgstr "Зберегти і повернутися"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Зберегти список відтворення"
+msgstr "Зберегти альтернативу"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -134,12 +119,9 @@ msgid "Delete"
 msgstr "Вилучити"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Альтернатива"
+msgstr "Додати альтернативу"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
@@ -158,6 +140,8 @@ msgid ""
 "Roll dice:\n"
 "List with all results."
 msgstr ""
+"Кидання кістки:\n"
+"Список з усіма результатами."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:30
 msgctxt "DiceRollPage|"
@@ -165,6 +149,8 @@ msgid ""
 "Result of our first roll.\n"
 "Press and Hold to rework this command."
 msgstr ""
+"Результат першого кидання.\n"
+"Натисніть і утримуйте, щоб переробити цю команду."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:50
 msgctxt "DiceRollPage|"
@@ -172,6 +158,8 @@ msgid ""
 "Click here\n"
 "to display all details about the result."
 msgstr ""
+"Натисніть тут,\n"
+"щоб переглянути усі подробиці щодо результату."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:69
 msgctxt "DiceRollPage|"
@@ -179,6 +167,8 @@ msgid ""
 "Click here\n"
 "to roll again the command."
 msgstr ""
+"Натисніть тут,\n"
+"щоб запустити команду знову."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
@@ -186,12 +176,9 @@ msgid "Type your command e.g: 3d10…"
 msgstr "Введіть вашу команду. Приклад: 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:142
-#, fuzzy
-#| msgctxt "DiceRollPage|"
-#| msgid "Type your command e.g: 3d10…"
 msgctxt "DiceRollPage|"
 msgid "Type command here."
-msgstr "Введіть вашу команду. Приклад: 3d10…"
+msgstr "Тут слід ввести команду."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:149
 msgctxt "DiceRollPage|"
@@ -204,6 +191,8 @@ msgid ""
 "Click here\n"
 "to run the command."
 msgstr ""
+"Натисніть тут,\n"
+"щоб віддати команду."
 
 #: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
@@ -211,12 +200,9 @@ msgid "Macros"
 msgstr "Макроси"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "Macros"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Макроси"
+msgstr "Список макросів"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -226,12 +212,12 @@ msgstr "Назва"
 #: src/binaries/3DDicer/MacrosPage.qml:37
 msgctxt "MacrosPage|"
 msgid "Set macro name."
-msgstr ""
+msgstr "Встановити назву макроса."
 
 #: src/binaries/3DDicer/MacrosPage.qml:40
 msgctxt "MacrosPage|"
 msgid "Attack"
-msgstr ""
+msgstr "Атака"
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
 msgctxt "MacrosPage|"
@@ -239,22 +225,19 @@ msgid "command"
 msgstr "команда"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Set All values"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Встановити усі значення"
+msgstr "Встановити значення макроса."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr ""
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
 msgid "Edit/Save current Macro"
-msgstr ""
+msgstr "Змінити/Зберегти поточний макрос"
 
 #: src/binaries/3DDicer/MacrosPage.qml:78
 msgctxt "MacrosPage|"
@@ -263,6 +246,9 @@ msgid ""
 "\n"
 "To remove it: Swipe right."
 msgstr ""
+"Додати список макросів\n"
+"\n"
+"Вилучення: перетягування праворуч."
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
 msgctxt "MacrosPage|"
@@ -275,11 +261,13 @@ msgid ""
 "To remove it:\n"
 " Swipe right and click on the button."
 msgstr ""
+"Вилучення:\n"
+" перетягування праворуч і натискання кнопки."
 
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
 msgid "Add empty macro"
-msgstr ""
+msgstr "Додати порожній макрос"
 
 #: src/binaries/3DDicer/Main.qml:152
 msgctxt "Main|"
@@ -287,6 +275,8 @@ msgid ""
 "Tabbar:\n"
 "Each tab manages one main feature."
 msgstr ""
+"Панель вкладок:\n"
+"кожна вкладка керує однією основою можливістю."
 
 #: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
@@ -299,6 +289,8 @@ msgid ""
 "Roll dice:\n"
 "All results are displayed here."
 msgstr ""
+"Кидання кістки:\n"
+"тут показано усі результати."
 
 #: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
@@ -311,6 +303,8 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
+"Просторова кістка:\n"
+"викидання кістки у просторі."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
@@ -323,6 +317,8 @@ msgid ""
 "Macros:\n"
 "Preset of often used commands."
 msgstr ""
+"Макрос:\n"
+"набір часто використовуваних команд."
 
 #: src/binaries/3DDicer/Main.qml:206
 msgctxt "Main|"
@@ -335,6 +331,8 @@ msgid ""
 "Aliases:\n"
 "Shortcut commands"
 msgstr ""
+"Альтернативи:\n"
+"команди-скорочення"
 
 #: src/binaries/3DDicer/Main.qml:222
 msgctxt "Main|"
@@ -347,6 +345,8 @@ msgid ""
 "CharacterSheet:\n"
 "Store character's values"
 msgstr ""
+"Аркуш персонажів:\n"
+"зберегти значення персонажа"
 
 #: src/binaries/3DDicer/Main.qml:238
 msgctxt "Main|"
@@ -354,14 +354,13 @@ msgid "Settings"
 msgstr "Параметри"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Мова програми*"
+msgstr ""
+"Параметри програми:\n"
+"мова, версія…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -406,33 +405,27 @@ msgstr "Розмір кістки:"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
 msgid "Change dice size."
-msgstr ""
+msgstr "Змінити розмір кістки."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:133
 msgctxt "PhysicsDicePage|"
 msgid "Add or remove any type of dice."
-msgstr ""
+msgstr "Додати або вилучити кістку будь-якого типу."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Виберіть зображення"
+msgstr "Вибрати усі кістки."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
 msgid "Selection by rectangle."
-msgstr ""
+msgstr "Позначення прямокутною рамкою."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "VmapTopBar|PC = playable character"
-#| msgid "Show/Hide PC name"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Показати/Сховати ім'я персонажа"
+msgstr "Показати/Сховати меню."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -461,12 +454,9 @@ msgid "App Settings"
 msgstr "Параметри програми"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
-#, fuzzy
-#| msgctxt "SettingsPage|"
-#| msgid "App Settings"
 msgctxt "SettingsPage|"
 msgid "Application Settings"
-msgstr "Параметри програми"
+msgstr "Параметри програм"
 
 #: src/binaries/3DDicer/SettingsPage.qml:74
 msgctxt "SettingsPage|"
@@ -474,12 +464,9 @@ msgid "Dark Mode:"
 msgstr "Темний режим:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set/Unset Channel Password"
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr "Встановити/Зняти пароль каналу"
+msgstr "Встановити/Зняти темний режим."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
@@ -487,25 +474,19 @@ msgid "Language:"
 msgstr "Мова:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "Змінити зображення"
+msgstr "Змінити мовую"
 
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
-msgstr ""
+msgstr "Огляд інтерфейсу:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
-msgstr "Початок"
+msgstr "Почати"
 
 #: src/binaries/3DDicer/SettingsPage.qml:128
 msgctxt "SettingsPage|"
@@ -513,12 +494,9 @@ msgid "About"
 msgstr "Про програму"
 
 #: src/binaries/3DDicer/SettingsPage.qml:131
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Player Information"
 msgctxt "SettingsPage|"
 msgid "Version information."
-msgstr "Відомості щодо гравця"
+msgstr "Дані щодо версії."
 
 #: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
@@ -536,20 +514,14 @@ msgid "Sha1:"
 msgstr "SHA1:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Додати файл шрифту"
+msgstr "Додати профіль."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "online documentation"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "документація в інтернеті"
+msgstr "Документація."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -557,12 +529,9 @@ msgid "Character Sheet"
 msgstr "Аркуш персонажів"
 
 #: src/binaries/3DDicer/SheetPage.qml:24
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Item"
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "Вилучити запис"
+msgstr "Запис аркуша"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
@@ -570,17 +539,14 @@ msgid "Key"
 msgstr "Ключ"
 
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
-#, fuzzy
-#| msgctxt "UserListView|"
-#| msgid "Edit name"
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "Редагування ім'я"
+msgstr "Редагувати назву запису аркуша"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
 msgid "Intelligence"
-msgstr ""
+msgstr "Інтелект"
 
 #: src/binaries/3DDicer/SheetPage.qml:54
 msgctxt "SheetPage|"
@@ -588,12 +554,9 @@ msgid "Value"
 msgstr "Значення"
 
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Save CharacterSheet View"
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "Збереження компонування аркуша персонажів"
+msgstr "Зберегти запис аркуша"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
@@ -601,12 +564,9 @@ msgid "Delete"
 msgstr "Вилучити"
 
 #: src/binaries/3DDicer/SheetPage.qml:120
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "add %1 item"
 msgctxt "SheetPage|"
 msgid "Add sheet item"
-msgstr "додати %1 запис"
+msgstr "Додати запис аркуша"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
