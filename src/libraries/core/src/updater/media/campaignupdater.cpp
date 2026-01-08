@@ -19,6 +19,9 @@
  ***************************************************************************/
 #include "updater/media/campaignupdater.h"
 
+#include <QDir>
+#include <QtConcurrent>
+
 #include "common/logcategory.h"
 #include "data/campaign.h"
 #include "data/media.h"
@@ -28,8 +31,9 @@
 #include "model/dicealiasmodel.h"
 #include "model/nonplayablecharactermodel.h"
 #include "worker/fileserializer.h"
+#include "worker/iohelper.h"
 #include "worker/messagehelper.h"
-#include <QDir>
+#include "worker/utilshelper.h"
 
 namespace campaign
 {
@@ -67,8 +71,9 @@ void CampaignUpdater::setCampaign(Campaign* campaign)
             return;
         auto const& states= m_campaign->stateModel()->statesList();
         if(!states.empty())
-            FileSerializer::writeStatesIntoCampaign(m_campaign->rootDirectory(),
-                                                    FileSerializer::statesToArray(states, m_campaign->rootDirectory()));
+            IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(m_campaign->rootDirectory(), campaign::STATE_MODEL),
+                                             FileSerializer::statesToArray(states, m_campaign->rootDirectory()));
+
         updateStateModel();
         auto list= new QList<CharacterState*>();
         std::transform(std::begin(states), std::end(states), std::back_inserter(*list),
@@ -91,8 +96,9 @@ void CampaignUpdater::setCampaign(Campaign* campaign)
     {
         auto const& npcs= m_campaign->npcModel()->npcList();
         if(!npcs.empty())
-            FileSerializer::writeNpcIntoCampaign(m_campaign->rootDirectory(),
-                                                 FileSerializer::npcToArray(npcs, m_campaign->rootDirectory()));
+            IOHelper::writeJsonArrayIntoFile(
+                QString("%1/%2").arg(m_campaign->rootDirectory(), campaign::CHARACTER_MODEL),
+                FileSerializer::npcToArray(npcs, m_campaign->rootDirectory()));
     };
     connect(npcModel, &NonPlayableCharacterModel::characterAdded, this, updateNpcModel);
     connect(npcModel, &NonPlayableCharacterModel::characterRemoved, this, updateNpcModel);
@@ -100,7 +106,10 @@ void CampaignUpdater::setCampaign(Campaign* campaign)
     connect(npcModel, &NonPlayableCharacterModel::modelReset, this, updateNpcModel);
 
     auto updateCampaign= [this]()
-    { FileSerializer::writeCampaignInfo(m_campaign->rootDirectory(), FileSerializer::campaignToObject(m_campaign)); };
+    {
+        IOHelper::writeJsonObjectIntoFile(QString("%1/%2").arg(m_campaign->rootDirectory(), campaign::MODEL_FILE),
+                                          FileSerializer::campaignToObject(m_campaign));
+    };
 
     connect(m_campaign, &Campaign::nameChanged, this, updateCampaign);
     connect(m_campaign, &Campaign::currentChapterChanged, this, updateCampaign);
@@ -161,24 +170,36 @@ void CampaignUpdater::saveDataInto(const QString& path)
 {
     if(path.isEmpty() || !m_ready)
         return;
+
     // Dice Aliases
     const auto& newAliases= m_campaign->diceAliases()->aliases();
-    FileSerializer::writeDiceAliasIntoCampaign(path, FileSerializer::dicesToArray(newAliases));
+    auto aliases= FileSerializer::dicesToArray(newAliases);
 
     // States
-    auto const& states= m_campaign->stateModel()->statesList();
-    if(!states.empty())
-        FileSerializer::writeStatesIntoCampaign(path, FileSerializer::statesToArray(states, path));
+    auto const& newStates= m_campaign->stateModel()->statesList();
+    auto states= FileSerializer::statesToArray(newStates, path);
 
     // NPC
-    auto const& npcs= m_campaign->npcModel()->npcList();
-    if(!npcs.empty())
-        FileSerializer::writeNpcIntoCampaign(path, FileSerializer::npcToArray(npcs, m_campaign->rootDirectory()));
+    auto const& newNpcs= m_campaign->npcModel()->npcList();
+    auto npcs= FileSerializer::npcToArray(newNpcs, path);
 
     // Campaign Info
-    FileSerializer::writeCampaignInfo(path, FileSerializer::campaignToObject(m_campaign));
+    auto campaign= FileSerializer::campaignToObject(m_campaign);
 
-    emit dataSaved();
+    // clang-format off
+    helper::utils::setContinuation<bool>(QtConcurrent::run(
+        [aliases, states, npcs, campaign, path]()
+        {
+            FileSerializer::writeCampaignInfo(path, aliases, campaign, npcs,states);
+            return true;
+        }),
+        this,
+        [this](bool b)
+        {
+            Q_UNUSED(b)
+            emit dataSaved();
+        });
+    // clang-format on
 }
 
 void CampaignUpdater::setLocalIsGM(bool b)
@@ -233,7 +254,8 @@ void CampaignUpdater::updateDiceAliases()
                       aliases->append(new DiceAlias(*p));
                   });
 
-    FileSerializer::writeDiceAliasIntoCampaign(m_campaign->rootDirectory(), FileSerializer::dicesToArray(newAliases));
+    IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(m_campaign->rootDirectory(), campaign::DICE_ALIAS_MODEL),
+                                     FileSerializer::dicesToArray(newAliases));
     updateDiceModel();
 }
 

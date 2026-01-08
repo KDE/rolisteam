@@ -44,6 +44,7 @@ CampaignManager::CampaignManager(DiceRoller* diceparser, QObject* parent)
     connect(this, &CampaignManager::campaignLoaded, m_campaignUpdater.get(), &CampaignUpdater::updateDiceAliases);
     connect(this, &CampaignManager::campaignLoaded, this, [this]() { m_campaignUpdater->setReady(true); });
     connect(m_campaignUpdater.get(), &CampaignUpdater::dataSaved, this, &CampaignManager::autoSavedNeeded);
+    connect(m_campaignUpdater.get(), &CampaignUpdater::dataSaved, this, &CampaignManager::campaignSaved);
 }
 
 CampaignManager::~CampaignManager()= default;
@@ -121,7 +122,6 @@ void CampaignManager::saveCampaign()
         return;
     m_campaignUpdater->save();
     setLastSave();
-    emit campaignSaved();
 }
 
 void CampaignManager::reload()

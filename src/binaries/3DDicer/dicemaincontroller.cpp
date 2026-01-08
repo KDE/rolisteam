@@ -4,7 +4,7 @@
 
 #include "dicelyverse/version.h"
 #include "diceparser/dicealias.h"
-#include "worker/fileserializer.h"
+#include "worker/fileserializerhelper.h"
 #include <QJsonArray>
 #include <QMap>
 #include <QStandardPaths>

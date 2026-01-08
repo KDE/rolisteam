@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope
+  xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+  s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+  <s:Body>
+    <u:AddPortMapping
+      xmlns:u="{{ service }}">
+      <NewRemoteHost></NewRemoteHost>
+      <NewExternalPort>{{ port }}</NewExternalPort>
+      <NewProtocol>TCP</NewProtocol>
+      <NewInternalPort>{{ port }}</NewInternalPort>
+      <NewInternalClient>{{ ip }}</NewInternalClient>
+      <NewEnabled>1</NewEnabled>
+      <NewPortMappingDescription>RolisteamServer</NewPortMappingDescription>
+      <NewLeaseDuration>0</NewLeaseDuration>
+    </u:AddPortMapping>
+  </s:Body>
+</s:Envelope>

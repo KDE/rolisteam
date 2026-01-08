@@ -359,6 +359,7 @@ void CampaignTest::copyCampaign()
         {
             auto copy= copyListFile[i];
             auto source= sourceListFile[i];
+            qDebug() << copy << source << "size";
             QVERIFY2(copy.size() == source.size(), copy.absoluteFilePath().toStdString().c_str());
 
             QFile copyFile(copy.absoluteFilePath());
@@ -459,26 +460,22 @@ void CampaignTest::importFromAnotherCampaign()
     if(dir.isValid())
     {
         m_manager.reset(new campaign::CampaignManager(m_diceparser.get()));
+        QSignalSpy spy(m_manager.get(), &campaign::CampaignManager::campaignSaved);
         auto path= dir.path();
         create(path);
         m_manager->importDataFrom(oldCampaignPath, categories);
         // m_manager->reload();
         //  QTest::qWait(delay);
         m_manager->saveCampaign();
-        QTest::qWait(delay);
+        spy.wait(delay);
+        QCOMPARE(spy.count(), 1);
 
         auto importedFile= fileAndDirRecusive(path);
         auto sourceListFile= fileAndDirRecusive(root1.path());
 
         if(expectedEguality)
         {
-            // if(importedFile.size() != sourceListFile.size())
-            //                qDebug() << importedFile << sourceListFile;
             QCOMPARE(importedFile.size(), sourceListFile.size());
-        }
-
-        if(expectedEguality)
-        {
             for(int i= 0; i < importedFile.size(); ++i)
             {
                 auto copy= importedFile[i];
@@ -486,8 +483,6 @@ void CampaignTest::importFromAnotherCampaign()
                 if(copy.absoluteFilePath().endsWith(campaign::MODEL_FILE))
                     continue;
 
-                // if(copy.size() != source.size())
-                //                    qDebug() << "size issue" << copy.size() << source.size();
                 QVERIFY2(copy.size() == source.size(), copy.absoluteFilePath().toStdString().c_str());
 
                 QFile copyFile(copy.absoluteFilePath());

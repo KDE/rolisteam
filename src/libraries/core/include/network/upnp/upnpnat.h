@@ -1,8 +1,8 @@
 #ifndef UPNPNAT_H
 #define UPNPNAT_H
 
-
 #include <QHostAddress>
+#include <QNetworkAccessManager>
 #include <QObject>
 #include <string>
 #include <vector>
@@ -70,12 +70,12 @@ signals:
 private slots:
     void setStatus(UpnpNat::NAT_STAT status);
     void setLocalIp(const QString& ip);
+    void processXML();
+    void processAnswer(QNetworkReply* reply);
 
 private:
     void readDescription();  //
     bool parseDescription(); //
-    void tcpConnect(const QString& host, int port, std::function<void()> onConnected,
-                    std::function<void()> onReadReady);
     bool parse_mapping_info();
 
 private:
@@ -93,9 +93,9 @@ private:
     QString m_localIp;
     QHostAddress m_subnet;
     int m_mask;
-
-    std::unique_ptr<QTcpSocket> m_tcpSocket;
+    QNetworkAccessManager m_manager;
     QUdpSocket* m_udpSocketV4;
+    QByteArray m_data;
 };
 
 #endif

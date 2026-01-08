@@ -29,8 +29,8 @@ qt_add_executable(dicelyVerse
     main.cpp
     model/dicealiasmodel.cpp
     model/dicealiasmodel.h
-    worker/fileserializer.cpp
-    worker/fileserializer.h
+    worker/fileserializerhelper.cpp
+    worker/fileserializerhelper.h
 )
 
 qt_add_resources(dicelyVerse assets

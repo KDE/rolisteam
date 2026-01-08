@@ -17,7 +17,7 @@
  *   Free Software Foundation, Inc.,                                       *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
-#include "worker/fileserializer.h"
+#include "worker/fileserializerhelper.h"
 
 #include "dice3dcontroller.h"
 #include "diceparser/dicealias.h"

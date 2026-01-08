@@ -120,21 +120,24 @@ void PictureTest::create()
     QVERIFY(!m_ctrl->canDrop());
     QVERIFY(!m_ctrl->canDownload());
     QVERIFY(m_ctrl->canPaste());
-    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
+    QSignalSpy waitImageDataChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
+    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
     QSignalSpy visualSizeSpy(m_ctrl.get(), &ImageSelectorController::visualSizeChanged);
     QSignalSpy pixmapSpy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
 
     m_ctrl->setImageData(utils::IOHelper::loadFile(":/img/girafe.jpg"));
     QVERIFY(!m_ctrl->dataInShape());
 
-    waitPixmapChanged.wait(10);
-    QCOMPARE(waitPixmapChanged.count(), 1);
+    waitImageDataChanged.wait(10);
+    QCOMPARE(waitImageDataChanged.count(), 1);
 
     m_ctrl->setVisualSize({300, 300});
 
     visualSizeSpy.wait(10);
     QCOMPARE(visualSizeSpy.count(), 1);
     m_ctrl->setRect(r);
+
+    waitPixmapChanged.wait(1000);
     auto final= IOHelper::dataToPixmap(m_ctrl->finalImageData());
     QVERIFY(!final.isNull());
 
@@ -165,6 +168,7 @@ void PictureTest::create()
     QVERIFY(!m_ctrl->canDownload());
     QVERIFY(!m_ctrl->canPaste());
 
+    pixmapSpy.wait(1000);
     QCOMPARE(pixmapSpy.count(), 2);
 }
 
@@ -182,11 +186,14 @@ void PictureTest::respectShape()
     m_ctrl->setVisualSize(QSize{547, 333});
     m_ctrl->setRect(geometry);
 
-    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
+    QSignalSpy waitImageDataChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
+    QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
     m_ctrl->setImageData(utils::IOHelper::loadFile(path));
 
-    waitPixmapChanged.wait(10);
-    QCOMPARE(waitPixmapChanged.count(), count);
+    waitImageDataChanged.wait(10);
+    QCOMPARE(waitImageDataChanged.count(), count);
+
+    waitPixmapChanged.wait(1000);
     QCOMPARE(m_ctrl->rectInShape(), expected);
 }
 
@@ -224,7 +231,7 @@ void PictureTest::finalImage() {}
 void PictureTest::setImageFromClipboard()
 {
     auto server= Helper::initWebServer();
-    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy spy(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
 
     auto clip= qGuiApp->clipboard();
     clip->clear();
@@ -242,7 +249,7 @@ void PictureTest::setImageFromClipboard()
     QVERIFY(!m_ctrl->imageData().isEmpty());
 
     m_ctrl.reset(new ImageSelectorController());
-    QSignalSpy spy2(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
+    QSignalSpy spy2(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
     clip->clear();
 
     QVERIFY(m_ctrl->imageData().isEmpty());

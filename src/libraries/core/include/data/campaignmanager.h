@@ -84,7 +84,6 @@ signals:
     void autoSavedNeeded();
     void campaignSaved();
     void antagonistCtrlChanged();
-
     void lastSaveChanged();
 
 private:

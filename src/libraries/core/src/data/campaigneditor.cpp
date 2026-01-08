@@ -91,7 +91,7 @@ bool CampaignEditor::copyMedia(const QString& source, const QString& dest, Core:
     auto listFile= IOHelper::mediaList(source, type);
     if(listFile.isEmpty())
         return false;
-    for(auto const& file : listFile)
+    for(auto const& file : std::as_const(listFile))
     {
         addMedia(QUuid::createUuid().toString(QUuid::WithoutBraces), QString("%1/%2").arg(dest, file),
                  utils::IOHelper::loadFile(QString("%1/%2").arg(source, file)));

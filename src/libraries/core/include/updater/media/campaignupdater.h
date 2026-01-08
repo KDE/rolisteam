@@ -60,7 +60,6 @@ public slots:
 signals:
     void localIsGMChanged();
     void dataSaved();
-
     void readyChanged();
 
 private:

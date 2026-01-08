@@ -95,6 +95,14 @@ void UpnpTest::doTest()
     if(discoveryEnd.count() == 0)
         return;
     QCOMPARE(discoveryEnd.count(), 1);
+    auto args= discoveryEnd.takeFirst();
+
+    if(!args.at(0).toBool())
+    {
+        QSKIP("No UPnP: skip test");
+        return;
+    }
+
     QCOMPARE(m_upnat->lastError(), QString());
 
     mappingSpy.wait(1000);
@@ -105,9 +113,6 @@ void UpnpTest::doTest()
     QCOMPARE(m_upnat->status(), UpnpNat::NAT_STAT::NAT_ERROR);
     m_upnat->setLastError("Error test");
     m_upnat->setLastError("Error test2");
-
-    m_upnat->discovery();
-    discoveryEnd.wait(10000);
 }
 
 QTEST_MAIN(UpnpTest);

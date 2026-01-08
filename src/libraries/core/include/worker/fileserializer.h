@@ -69,10 +69,11 @@ public:
     static QJsonArray npcToArray(const std::vector<std::unique_ptr<campaign::NonPlayableCharacter>>& vec,
                                  const QString& destination);
 
-    static void writeStatesIntoCampaign(const QString& destination, const QJsonArray& array);
-    static void writeDiceAliasIntoCampaign(const QString& destination, const QJsonArray& array);
-    static void writeCampaignInfo(const QString& destination, const QJsonObject& object);
-    static void writeNpcIntoCampaign(const QString& destination, const QJsonArray& array);
+    // static void writeStatesIntoCampaign(const QString& destination, const QJsonArray& array);
+    // static void writeDiceAliasIntoCampaign(const QString& destination, const QJsonArray& array);
+    static void writeCampaignInfo(const QString& destination, const QJsonArray& dice, const QJsonObject& campaignInfo,
+                                  const QJsonArray& npcs, const QJsonArray& state);
+    // static void writeNpcIntoCampaign(const QString& destination, const QJsonArray& array);
     static bool createCampaignDirectory(const QString& path);
     static QFuture<bool> writeFileIntoCampaign(const QString& destination, const QByteArray& array);
     static bool writeJsonIntoMedias(const QString& destination, const QJsonObject& objet, const QString& ctrlId);

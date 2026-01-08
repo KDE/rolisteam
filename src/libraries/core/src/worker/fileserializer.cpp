@@ -234,39 +234,13 @@ QJsonArray FileSerializer::dicesToArray(const std::vector<std::unique_ptr<DiceAl
     return array;
 }
 
-void FileSerializer::writeStatesIntoCampaign(const QString& destination, const QJsonArray& array)
+void FileSerializer::writeCampaignInfo(const QString& destination, const QJsonArray& dice,
+                                       const QJsonObject& campaignInfo, const QJsonArray& npcs, const QJsonArray& state)
 {
-    if(array.isEmpty())
-        return;
-    auto r= QtConcurrent::run(
-        [destination, array]()
-        { IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::STATE_MODEL), array); });
-
-    Q_UNUSED(r)
-}
-
-void FileSerializer::writeNpcIntoCampaign(const QString& destination, const QJsonArray& array)
-{
-    auto r= QtConcurrent::run(
-        [destination, array]()
-        { IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::CHARACTER_MODEL), array); });
-    Q_UNUSED(r)
-}
-
-void FileSerializer::writeDiceAliasIntoCampaign(const QString& destination, const QJsonArray& array)
-{
-    auto r= QtConcurrent::run(
-        [destination, array]()
-        { IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::DICE_ALIAS_MODEL), array); });
-    Q_UNUSED(r)
-}
-
-void FileSerializer::writeCampaignInfo(const QString& destination, const QJsonObject& object)
-{
-    auto r= QtConcurrent::run(
-        [destination, object]()
-        { IOHelper::writeJsonObjectIntoFile(QString("%1/%2").arg(destination, campaign::MODEL_FILE), object); });
-    Q_UNUSED(r)
+    IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::DICE_ALIAS_MODEL), dice);
+    IOHelper::writeJsonObjectIntoFile(QString("%1/%2").arg(destination, campaign::MODEL_FILE), campaignInfo);
+    IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::CHARACTER_MODEL), npcs);
+    IOHelper::writeJsonArrayIntoFile(QString("%1/%2").arg(destination, campaign::STATE_MODEL), state);
 }
 
 QFuture<bool> FileSerializer::writeFileIntoCampaign(const QString& destination, const QByteArray& array)

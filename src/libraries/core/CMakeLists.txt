@@ -95,7 +95,15 @@ set(Network_SRC
     src/data/charactervision.cpp
 )
 
+
+
 add_library(network SHARED ${Network_SRC} ${Network_HEADER})
+qt_add_resources(network templates
+  PREFIX
+  /
+FILES
+  src/network/upnp/mapport.xml
+)
 set_target_properties(network PROPERTIES PUBLIC_HEADER "${Network_HEADER}")
 set_target_properties(network PROPERTIES COMPILE_DEFINITIONS "UNIT_TEST=1")
 target_compile_definitions(network PRIVATE NETWORK_LIBRARY)
@@ -123,6 +131,7 @@ else()
         common_core
         utils
         charactersheet
+        inja
  )
 endif()
 
