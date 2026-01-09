@@ -4003,7 +4003,7 @@ msgctxt "Campaign|"
 msgid "Comment"
 msgstr "Comentário"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:56
+#: src/libraries/core/src/data/campaignmanager.cpp:57
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Impossible to create campaign template at %1"
@@ -4451,31 +4451,23 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "O utilizador %1 foi desligado!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:165
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
 msgctxt "UpnpNat|"
 msgid "Unable to read the URL in server answer"
 msgstr "Não é possível ler o URL na resposta do servidor"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:278
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr ""
 "Não foi possível obter o 'base_URL' do XMLNode \"URLBase\" ou o "
 "'describe_url'.\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:286
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Não foi possível encontrar o tipo de serviço adequado: %1 %2 %3"
-
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:339
-#, fuzzy, qt-format
-#| msgctxt "UpnpNat|"
-#| msgid "Fail to add port mapping (%1/%2) : error :\n"
-msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2): error: %3\n"
-msgstr "Não foi possível criar a associação de portos (%1/%2) : erro :\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -4622,13 +4614,13 @@ msgctxt "QObject|"
 msgid "Close %1"
 msgstr "Fechar o %1"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:198
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:219
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "'%1' is not empty"
 msgstr "O '%1' não está vazio"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:207
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:228
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "Could not create '%1'"
@@ -10862,6 +10854,13 @@ msgstr "A Dormir"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Enfeitiçado"
+
+#, fuzzy
+#~| msgctxt "UpnpNat|"
+#~| msgid "Fail to add port mapping (%1/%2) : error :\n"
+#~ msgctxt "UpnpNat|"
+#~ msgid "Fail to add port mapping (%1/%2): error: %3\n"
+#~ msgstr "Não foi possível criar a associação de portos (%1/%2) : erro :\n"
 
 #, fuzzy
 #~| msgctxt "RGraphicsView|"

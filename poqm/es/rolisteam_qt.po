@@ -1,13 +1,14 @@
 # Spanish translations for rolisteam_qt.po package.
-# Copyright (C) 2022-2025 This file is copyright:
+# Copyright (C) 2022-2026 This file is copyright:
 # This file is distributed under the same license as the rolisteam package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"PO-Revision-Date: 2025-12-31 18:27+0100\n"
+"POT-Creation-Date: 2026-01-09 00:48+0100\n"
+"PO-Revision-Date: 2026-01-09 00:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -24,12 +25,9 @@ msgid "Aliases"
 msgstr "Alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Lista de jugadores"
+msgstr "Lista de alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -64,12 +62,9 @@ msgid "On"
 msgstr "Activado"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Edit Channel"
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "Editar canal"
+msgstr "Editar alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
@@ -77,12 +72,9 @@ msgid "Name:"
 msgstr "Nombre:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Nombre de los campos"
+msgstr "Definir nombre del alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -100,12 +92,9 @@ msgid "Command:"
 msgstr "Orden:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "orden"
+msgstr "Orden real"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -124,12 +113,9 @@ msgid "Save and back"
 msgstr "Guardar y volver"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Guardar lista de reproducción"
+msgstr "Guardar el alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -138,12 +124,9 @@ msgid "Delete"
 msgstr "Borrar"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Alias"
+msgstr "Añadir alias"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
@@ -190,12 +173,9 @@ msgid "Type your command e.g: 3d10…"
 msgstr "Escriba la orden (por ejemplo, 3d10…)"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:142
-#, fuzzy
-#| msgctxt "DiceRollPage|"
-#| msgid "Type your command e.g: 3d10…"
 msgctxt "DiceRollPage|"
 msgid "Type command here."
-msgstr "Escriba la orden (por ejemplo, 3d10…)"
+msgstr "Escriba la orden aquí."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:149
 msgctxt "DiceRollPage|"
@@ -208,6 +188,8 @@ msgid ""
 "Click here\n"
 "to run the command."
 msgstr ""
+"Pulse aquí\n"
+"para ejecutar la orden."
 
 #: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
@@ -215,12 +197,9 @@ msgid "Macros"
 msgstr "Macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MacrosPage|"
-#| msgid "Macros"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Macros"
+msgstr "Lista de macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -230,12 +209,12 @@ msgstr "Nombre"
 #: src/binaries/3DDicer/MacrosPage.qml:37
 msgctxt "MacrosPage|"
 msgid "Set macro name."
-msgstr ""
+msgstr "Definir nombre de macro."
 
 #: src/binaries/3DDicer/MacrosPage.qml:40
 msgctxt "MacrosPage|"
 msgid "Attack"
-msgstr ""
+msgstr "Atacar"
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
 msgctxt "MacrosPage|"
@@ -243,22 +222,19 @@ msgid "command"
 msgstr "orden"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Set All values"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Definir todos los valores"
+msgstr "Definir valor de macro."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr ""
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
 msgid "Edit/Save current Macro"
-msgstr ""
+msgstr "Editar/guardar macro actual"
 
 #: src/binaries/3DDicer/MacrosPage.qml:78
 msgctxt "MacrosPage|"
@@ -283,7 +259,7 @@ msgstr ""
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
 msgid "Add empty macro"
-msgstr ""
+msgstr "Añadir macro vacía"
 
 #: src/binaries/3DDicer/Main.qml:152
 msgctxt "Main|"
@@ -431,12 +407,9 @@ msgid "Selection by rectangle."
 msgstr ""
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "VmapTopBar|PC = playable character"
-#| msgid "Show/Hide PC name"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Mostrar/ocultar nombre del PJ"
+msgstr "Mostrar/ocultar menú"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -465,9 +438,6 @@ msgid "App Settings"
 msgstr "Preferencias de la aplicación"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
-#, fuzzy
-#| msgctxt "SettingsPage|"
-#| msgid "App Settings"
 msgctxt "SettingsPage|"
 msgid "Application Settings"
 msgstr "Preferencias de la aplicación"
@@ -491,12 +461,9 @@ msgid "Language:"
 msgstr "Idioma:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "Cambiar imagen"
+msgstr "Cambiar idioma."
 
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
@@ -504,9 +471,6 @@ msgid "Ui Tour:"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Iniciar"
@@ -519,7 +483,7 @@ msgstr "Acerca de"
 #: src/binaries/3DDicer/SettingsPage.qml:131
 msgctxt "SettingsPage|"
 msgid "Version information."
-msgstr ""
+msgstr "Información de la versión."
 
 #: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
@@ -537,20 +501,14 @@ msgid "Sha1:"
 msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Añadir archivo de tipo de letra"
+msgstr "Añadir perfil."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "online documentation"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "documentación en línea"
+msgstr "Documentación."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -581,7 +539,7 @@ msgstr "Editar nombre"
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
 msgid "Intelligence"
-msgstr ""
+msgstr "Inteligencia"
 
 #: src/binaries/3DDicer/SheetPage.qml:54
 msgctxt "SheetPage|"
@@ -3289,7 +3247,7 @@ msgctxt "Campaign|"
 msgid "Comment"
 msgstr "Comentario"
 
-#: src/libraries/core/src/data/campaignmanager.cpp:56
+#: src/libraries/core/src/data/campaignmanager.cpp:57
 #, qt-format
 msgctxt "CampaignManager|"
 msgid "Impossible to create campaign template at %1"
@@ -3738,29 +3696,23 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "El usuario %1 ha sido desconectado"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:165
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
 msgctxt "UpnpNat|"
 msgid "Unable to read the URL in server answer"
 msgstr "No se ha podido leer la URL en la respuesta del servidor"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:278
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr ""
 "No se ha podido obtener el «URLBase» o el «describe_url» de «base_URL from "
 "XMLNode».\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:286
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "No se ha podido encontrar el tipo de servicio adecuado: %1 %2 %3"
-
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:339
-#, qt-format
-msgctxt "UpnpNat|"
-msgid "Fail to add port mapping (%1/%2): error: %3\n"
-msgstr "No se ha podido añadir la asignación de puerto (%1/%2): error: %3\n"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -3907,13 +3859,13 @@ msgctxt "QObject|"
 msgid "Close %1"
 msgstr "Cerrar %1"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:198
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:219
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "'%1' is not empty"
 msgstr "«%1» no está vacío"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:207
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:228
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "Could not create '%1'"
@@ -9307,3 +9259,7 @@ msgstr "Durmiente"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Hechizado"
+
+#~ msgctxt "UpnpNat|"
+#~ msgid "Fail to add port mapping (%1/%2): error: %3\n"
+#~ msgstr "No se ha podido añadir la asignación de puerto (%1/%2): error: %3\n"
