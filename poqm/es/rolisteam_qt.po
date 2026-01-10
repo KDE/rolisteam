@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-01-09 00:48+0100\n"
+"PO-Revision-Date: 2026-01-09 17:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -84,7 +84,7 @@ msgstr "Patrón:"
 #: src/binaries/3DDicer/AliasesPage.qml:112
 msgctxt "AliasesPage|"
 msgid "Pattern which triggers the replace."
-msgstr ""
+msgstr "Patrón que activa la sustitución."
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
 msgctxt "AliasesPage|"
@@ -145,6 +145,8 @@ msgid ""
 "Roll dice:\n"
 "List with all results."
 msgstr ""
+"Lanzamiento de datos:\n"
+"Lista con todos los resultados."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:30
 msgctxt "DiceRollPage|"
@@ -152,6 +154,8 @@ msgid ""
 "Result of our first roll.\n"
 "Press and Hold to rework this command."
 msgstr ""
+"Resultado de la primera tirada.\n"
+"Mantenga pulsado para reorganizar esta orden."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:50
 msgctxt "DiceRollPage|"
@@ -159,6 +163,8 @@ msgid ""
 "Click here\n"
 "to display all details about the result."
 msgstr ""
+"Pulse aquí para\n"
+"mostrar los detalles del resultado."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:69
 msgctxt "DiceRollPage|"
@@ -166,6 +172,8 @@ msgid ""
 "Click here\n"
 "to roll again the command."
 msgstr ""
+"Pulse aquí para\n"
+"volver a lanzar la orden."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
@@ -243,6 +251,9 @@ msgid ""
 "\n"
 "To remove it: Swipe right."
 msgstr ""
+"Añadir lista de macros\n"
+"\n"
+"Para eliminarla: deslizar a la derecha."
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
 msgctxt "MacrosPage|"
@@ -255,6 +266,8 @@ msgid ""
 "To remove it:\n"
 " Swipe right and click on the button."
 msgstr ""
+"Para eliminarla:\n"
+"Deslizar a la derecha y pulsar el botón."
 
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
@@ -267,6 +280,8 @@ msgid ""
 "Tabbar:\n"
 "Each tab manages one main feature."
 msgstr ""
+"Barra de pestañas:\n"
+"Cada pestaña gestiona una función principal."
 
 #: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
@@ -279,6 +294,8 @@ msgid ""
 "Roll dice:\n"
 "All results are displayed here."
 msgstr ""
+"Lanzamiento de dados:\n"
+"Todos los resultados se muestran aquí."
 
 #: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
@@ -291,6 +308,8 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
+"Dados 3D:\n"
+"Lanzar los dados en 3D."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
@@ -303,6 +322,8 @@ msgid ""
 "Macros:\n"
 "Preset of often used commands."
 msgstr ""
+"Macros:\n"
+"Preajustes de las órdenes más usadas."
 
 #: src/binaries/3DDicer/Main.qml:206
 msgctxt "Main|"
@@ -315,6 +336,8 @@ msgid ""
 "Aliases:\n"
 "Shortcut commands"
 msgstr ""
+"Alias:\n"
+"Órdenes de atajos de teclado"
 
 #: src/binaries/3DDicer/Main.qml:222
 msgctxt "Main|"
@@ -327,6 +350,8 @@ msgid ""
 "CharacterSheet:\n"
 "Store character's values"
 msgstr ""
+"Hoja de personaje:\n"
+"Guardar los valores del personaje"
 
 #: src/binaries/3DDicer/Main.qml:238
 msgctxt "Main|"
@@ -334,14 +359,13 @@ msgid "Settings"
 msgstr "Preferencias"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Idioma de la aplicación*"
+msgstr ""
+"Configuración de la aplicación:\n"
+"Idioma, versión…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -386,25 +410,22 @@ msgstr "Tamaño de los dados:"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
 msgid "Change dice size."
-msgstr ""
+msgstr "Cambiar tamaño de los dados."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:133
 msgctxt "PhysicsDicePage|"
 msgid "Add or remove any type of dice."
-msgstr ""
+msgstr "Añadir o eliminar cualquier tipo de dado."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Seleccionar una imagen"
+msgstr "Seleccionar todos los dados."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
 msgid "Selection by rectangle."
-msgstr ""
+msgstr "Selección por rectángulo."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
 msgctxt "PhysicsDicePage|"
@@ -448,12 +469,9 @@ msgid "Dark Mode:"
 msgstr "Modo oscuro:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set/Unset Channel Password"
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr "Asignar/quitar contraseña del canal"
+msgstr "Activar/desactivar el modo oscuro."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
@@ -468,7 +486,7 @@ msgstr "Cambiar idioma."
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
-msgstr ""
+msgstr "Recorrido Ui:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
 msgctxt "SettingsPage|"
@@ -516,12 +534,9 @@ msgid "Character Sheet"
 msgstr "Hoja de personaje"
 
 #: src/binaries/3DDicer/SheetPage.qml:24
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Item"
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "Borrar elemento"
+msgstr "Elemento de la hoja"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
@@ -529,12 +544,9 @@ msgid "Key"
 msgstr "Tecla"
 
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
-#, fuzzy
-#| msgctxt "UserListView|"
-#| msgid "Edit name"
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "Editar nombre"
+msgstr "Editar nombre del elemento de la hoja"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
@@ -547,12 +559,9 @@ msgid "Value"
 msgstr "Valor"
 
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Save CharacterSheet View"
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "Guardar vista de hoja de personaje"
+msgstr "Guardar elemento de la hoja"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
@@ -560,12 +569,9 @@ msgid "Delete"
 msgstr "Borrar"
 
 #: src/binaries/3DDicer/SheetPage.qml:120
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "add %1 item"
 msgctxt "SheetPage|"
 msgid "Add sheet item"
-msgstr "añadir %1 elemento"
+msgstr "Añadir elemento a la hoja"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
