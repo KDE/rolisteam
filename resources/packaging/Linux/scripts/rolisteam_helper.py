@@ -47,7 +47,7 @@ def copyAll(source, destination):
             if os.path.isdir(file):
                 print("CopyTree else: {}".format(file))
                 shutil.copytree(file, os.path.join(destinationFull,fname), symlinks=True)
-            else:
+            elif not file.endswith(".debug"):
                 print("Copy2 : {}".format(file))
                 shutil.copy2(file, destinationFull, follow_symlinks=False)
 
