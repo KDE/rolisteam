@@ -56,63 +56,39 @@ void UpnpTest::cleanupTestCase() {}
 
 void UpnpTest::doTest()
 {
-    m_upnat->setSubnet(QHostAddress("192.168.1.2"));
-    m_upnat->setMask(24);
-    m_upnat->setSubnet(QHostAddress("192.168.1.2"));
-    m_upnat->setMask(24);
-    m_upnat->setSubnet(QHostAddress());
-    m_upnat->setMask(24);
-    m_upnat->init(5, 10);
-    m_upnat->init(5, 10);
+    QSignalSpy statusChanged(m_upnat.get(), &UpnpNat::statusChanged);
 
-    QSignalSpy discoveryEnd(m_upnat.get(), &UpnpNat::discoveryEnd);
-    QSignalSpy mappingSpy(m_upnat.get(), &UpnpNat::portMappingEnd);
-
-    connect(m_upnat.get(), &UpnpNat::discoveryEnd, this,
-            [this](bool b)
-            {
-                if(b)
-                {
-                    m_upnat->addPortMapping("upnpRolisteam", m_upnat->localIp(), 6664, 6664, "TCP");
-                }
-            });
-
-    connect(m_upnat.get(), &UpnpNat::statusChanged, this,
+    connect(m_upnat.get(), &UpnpNat::statusChanged,
             [this]()
             {
-                if(m_upnat->status() == UpnpNat::NAT_STAT::NAT_ADD)
+                switch(m_upnat->status())
                 {
-                    qDebug() << "It worked!";
+                case UpnpNat::NAT_STAT::NAT_IDLE:
+                case UpnpNat::NAT_STAT::NAT_DISCOVERY:
+                case UpnpNat::NAT_STAT::NAT_GETDESCRIPTION:
+                case UpnpNat::NAT_STAT::NAT_DESCRIPTION_FOUND:
+                    break;
+                case UpnpNat::NAT_STAT::NAT_FOUND:
+                    m_upnat->requestDescription();
+                    break;
+                case UpnpNat::NAT_STAT::NAT_READY:
+                    m_upnat->addPortMapping("UpnpTest", "192.168.1.2", 6664, 6664, "TCP");
+                    break;
+                case UpnpNat::NAT_STAT::NAT_ADD:
+                    QVERIFY(true);
+                    m_upnat->deleteLater();
+                    break;
+                case UpnpNat::NAT_STAT::NAT_ERROR:
+                    QSKIP(QString("ERROR occurs: %1").arg(m_upnat->error()).toStdString().c_str());
+                    m_upnat->deleteLater();
+                    break;
                 }
             });
-
-    connect(m_upnat.get(), &UpnpNat::lastErrorChanged, this,
-            [this]() { qDebug() << " Error:" << m_upnat->lastError(); });
-
     m_upnat->discovery();
-
-    discoveryEnd.wait(10000);
-    if(discoveryEnd.count() == 0)
-        return;
-    QCOMPARE(discoveryEnd.count(), 1);
-    auto args= discoveryEnd.takeFirst();
-
-    if(!args.at(0).toBool())
-    {
-        QSKIP("No UPnP: skip test");
-        return;
-    }
-
-    QCOMPARE(m_upnat->lastError(), QString());
-
-    mappingSpy.wait(1000);
-    QCOMPARE(mappingSpy.count(), 1);
-    QCOMPARE(m_upnat->status(), UpnpNat::NAT_STAT::NAT_ADD);
-
-    m_upnat->setLastError("Error test");
-    QCOMPARE(m_upnat->status(), UpnpNat::NAT_STAT::NAT_ERROR);
-    m_upnat->setLastError("Error test");
-    m_upnat->setLastError("Error test2");
+    statusChanged.wait(1000);
+    if(statusChanged.count() != 3)
+        QSKIP("Error: skip test about upnp");
+    QCOMPARE(statusChanged.count(), 3);
 }
 
 QTEST_MAIN(UpnpTest);

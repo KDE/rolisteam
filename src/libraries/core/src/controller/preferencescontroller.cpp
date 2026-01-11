@@ -25,6 +25,7 @@
 
 #include "controller/gamecontroller.h"
 #include "data/rolisteamtheme.h"
+#include "iohelper.h"
 #include "model/characterstatemodel.h"
 #include "model/dicealiasmodel.h"
 #include "model/languagemodel.h"
@@ -35,6 +36,11 @@
 
 #define GRAY_SCALE 191
 
+namespace keys
+{
+constexpr auto darkOrangeFile{":/stylesheet/resources/stylesheet/darkorange.qss"};
+}
+
 void initializeThemeModel(ThemeModel* model)
 {
     // normal
@@ -43,10 +49,7 @@ void initializeThemeModel(ThemeModel* model)
         ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
 
     // DarkOrange
-    QFile styleFile(":/stylesheet/resources/stylesheet/darkorange.qss");
-    styleFile.open(QFile::ReadOnly);
-    QByteArray bytes= styleFile.readAll();
-    QString css(bytes);
+    QString css(utils::IOHelper::loadFile(keys::darkOrangeFile));
     model->addTheme(new RolisteamTheme(
         "darkorange", QPalette(), ThemeModel::tr("darkorange"), css, QStyleFactory::create("fusion"),
         ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
@@ -74,49 +77,6 @@ void initializeThemeModel(ThemeModel* model)
         ":/resources/rolistheme/workspacebackground.jpg", 0, QColor(GRAY_SCALE, GRAY_SCALE, GRAY_SCALE), false));
 }
 
-/*appendAlias(new DiceAlias("l5r", "D10k"));
-model->addAlias(new DiceAlias("l5R", "D10K"));
-model->addAlias(new DiceAlias("DF", "D[-1-1]"));
-model->addAlias(new DiceAlias("nwod", "D10e10c[>7]"));
-model->addAlias(new DiceAlias("(.*)wod(.*)", "\\1d10e[=10]c[>=\\2]-@c[=1]", false));*/
-
-// healthy
-/*CharacterState* state= new CharacterState();
-state->setId("0");
-state->setColor(Qt::black);
-state->setLabel(CharacterStateModel::tr("Healthy"));
-model->addState(state);
-
-state= new CharacterState();
-state->setId("1");
-state->setColor(QColor(255, 100, 100));
-state->setLabel(CharacterStateModel::tr("Lightly Wounded"));
-model->addState(state);
-
-state= new CharacterState();
-state->setId("2");
-state->setColor(QColor(255, 0, 0));
-state->setLabel(CharacterStateModel::tr("Seriously injured"));
-model->addState(state);
-
-state= new CharacterState();
-state->setId("4");
-state->setColor(Qt::gray);
-state->setLabel(CharacterStateModel::tr("Dead"));
-model->addState(state);
-
-state= new CharacterState();
-state->setId("5");
-state->setColor(QColor(80, 80, 255));
-state->setLabel(CharacterStateModel::tr("Sleeping"));
-model->addState(state);
-
-state= new CharacterState();
-state->setId("6");
-state->setColor(QColor(0, 200, 0));
-state->setLabel(CharacterStateModel::tr("Bewitched"));
-model->addState(state);*/
-
 PreferencesController::PreferencesController(QObject* parent)
     : AbstractControllerInterface(parent), m_themeModel(new ThemeModel), m_languageModel(new LanguageModel)
 {
@@ -134,6 +94,7 @@ void PreferencesController::setGameController(GameController* game)
 
     emit preferencesChanged();
     emit externalToolChanged();
+    setGameCtrl(game);
 }
 
 QAbstractItemModel* PreferencesController::languageModel() const
@@ -544,4 +505,17 @@ void PreferencesController::setCurrentThemeTitle(const QString& title)
 
     theme->setName(title);
     emit currentThemeChanged();
+}
+
+GameController* PreferencesController::gameCtrl() const
+{
+    return m_gameCtrl;
+}
+
+void PreferencesController::setGameCtrl(GameController* newGameCtrl)
+{
+    if(m_gameCtrl == newGameCtrl)
+        return;
+    m_gameCtrl= newGameCtrl;
+    emit gameCtrlChanged();
 }

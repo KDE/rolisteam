@@ -4,98 +4,64 @@
 #include <QHostAddress>
 #include <QNetworkAccessManager>
 #include <QObject>
-#include <string>
-#include <vector>
+#include <memory.h>
 
 #include "network_global.h"
 
-constexpr int DefaultTimeOut{10};
-constexpr int DefaultInterval{200};
-
-class QTcpSocket;
 class QUdpSocket;
 class NETWORK_EXPORT UpnpNat : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString lastError READ lastError NOTIFY lastErrorChanged)
-    Q_PROPERTY(QString localIp READ localIp NOTIFY localIpChanged)
-    Q_PROPERTY(QHostAddress subnet READ subnet WRITE setSubnet NOTIFY subnetChanged)
-    Q_PROPERTY(int mast READ mask WRITE setMask NOTIFY maskChanged)
+    Q_PROPERTY(QString error READ error NOTIFY errorChanged)
+    Q_PROPERTY(QString localIp READ localIp WRITE setLocalIp NOTIFY localIpChanged)
 public:
     enum class NAT_STAT
     {
-        NAT_INIT= 0,
+        NAT_IDLE= 0,
+        NAT_DISCOVERY,
         NAT_FOUND,
-        NAT_TCP_CONNECTED,
         NAT_GETDESCRIPTION,
         NAT_DESCRIPTION_FOUND,
-        NAT_GETCONTROL,
+        NAT_READY,
         NAT_ADD,
-        NAT_DEL,
-        NAT_GET,
         NAT_ERROR
     };
     UpnpNat(QObject* parent= nullptr);
     virtual ~UpnpNat();
-    void init(int time_out= DefaultTimeOut, int interval= DefaultInterval); // init
-    QString lastError() const { return m_last_error; }                      // get last error
+    QString error() const { return m_error; }
     QString localIp() const;
     NAT_STAT status() const;
-    QHostAddress subnet() const;
-    int mask() const;
+
 public slots:
     void discovery(); // find router
-    /****
-     **** description: port mapping name
-     **** destination_ip: internal ip address
-     **** port_ex:external: external listen port
-     **** destination_port: internal port
-     **** protocal: TCP or UDP
-     ***/
     void addPortMapping(const QString& description, const QString& destination_ip, unsigned short int port_ex,
                         unsigned short int port_in, const QString& protocol); // add port mapping
-    void setLastError(const QString& error);
-    void setSubnet(const QHostAddress& subnet);
-    void setMask(int mask);
+    void requestDescription();
+    void setLocalIp(const QString& ip);
 
 signals:
-    void lastErrorChanged();
-    void discoveryEnd(bool b);
-    void portMappingEnd(bool b);
+    void errorChanged();
     void statusChanged();
     void localIpChanged();
-    void subnetChanged();
-    void maskChanged();
 
 private slots:
     void setStatus(UpnpNat::NAT_STAT status);
-    void setLocalIp(const QString& ip);
-    void processXML();
+    void setError(const QString& error);
+    void processXML(QNetworkReply* reply);
     void processAnswer(QNetworkReply* reply);
 
 private:
-    void readDescription();  //
-    bool parseDescription(); //
-    bool parse_mapping_info();
-
-private:
-    NAT_STAT m_status;
-    int m_time_out;
-    int m_interval;
-    QString m_service_type;
-    QString m_describe_url;
-    QString m_control_url;
-    QString m_base_url;
-    QString m_service_describe_url;
-    QString m_description_info;
-    QString m_last_error;
-    QString m_mapping_info;
+    NAT_STAT m_status{NAT_STAT::NAT_IDLE};
+    QString m_serviceType;
+    QString m_describeUrl;
+    QString m_controlUrl;
+    QString m_baseUrl;
+    QString m_serviceDescribeUrl;
+    QString m_error;
+    QString m_mappingInfo;
     QString m_localIp;
-    QHostAddress m_subnet;
-    int m_mask;
     QNetworkAccessManager m_manager;
-    QUdpSocket* m_udpSocketV4;
-    QByteArray m_data;
+    std::unique_ptr<QUdpSocket> m_udpSocketV4;
 };
 
 #endif

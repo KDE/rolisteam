@@ -92,6 +92,8 @@ void ProfileModel::appendProfile(ConnectionProfile* profile)
                 auto idx= indexOf(profile);
                 emit dataChanged(index(idx, 0), index(idx, 0), {NameRole});
             });
+    connect(profile, &ConnectionProfile::portChanged, profile,
+            [this, profile]() { emit profilePortChanged(indexOf(profile)); });
 
     beginInsertRows(QModelIndex(), idx, idx);
     m_connectionProfileList.push_back(std::unique_ptr<ConnectionProfile>(std::move(profile)));

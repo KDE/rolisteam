@@ -48,6 +48,7 @@ class CORE_EXPORT PreferencesController : public AbstractControllerInterface
     Q_PROPERTY(int currentLangIndex READ currentLangIndex WRITE setCurrentLangIndex NOTIFY currentLangIndexChanged)
     Q_PROPERTY(QStringList currentLangPath READ currentLangPath NOTIFY currentLangIndexChanged)
     Q_PROPERTY(PreferencesManager preferences READ preferences NOTIFY preferencesChanged)
+    Q_PROPERTY(GameController* gameCtrl READ gameCtrl NOTIFY gameCtrlChanged FINAL)
 
 public:
     explicit PreferencesController(QObject* parent= nullptr);
@@ -81,6 +82,8 @@ public:
 
     void setPreferencesManager(PreferencesManager* manager);
 
+    GameController* gameCtrl() const;
+
 signals:
     void currentThemeIndexChanged();
     void currentLangIndexChanged();
@@ -90,6 +93,8 @@ signals:
     void preferencesChanged();
     void externalToolChanged();
     void currentThemeChanged();
+
+    void gameCtrlChanged();
 
 public slots:
     void savePreferences();
@@ -117,6 +122,9 @@ public slots:
     void setCurrentThemeTitle(const QString& title);
 
 private:
+    void setGameCtrl(GameController* newGameCtrl);
+
+private:
     std::unique_ptr<ThemeModel> m_themeModel;
     std::unique_ptr<LanguageModel> m_languageModel;
 
@@ -127,6 +135,7 @@ private:
     QString m_customFilePath;
 
     QPointer<PreferencesManager> m_preferences;
+    QPointer<GameController> m_gameCtrl;
 };
 
 #endif // PREFERENCESCONTROLLER_H

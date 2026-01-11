@@ -46,6 +46,8 @@
 #include <QMediaPlayer>
 #endif
 
+#include "controller/gamecontroller.h"
+#include "controller/networkcontroller.h"
 #include "media/mediatype.h"
 #include "model/thememodel.h"
 
@@ -76,6 +78,32 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
                 m_preferences= m_ctrl->preferences();
                 load();
             });
+    auto updateIpModel= [this]()
+    {
+        qDebug() << "[UPNP] gameCtrol changed";
+        auto game= m_ctrl->gameCtrl();
+        if(!game)
+            return;
+        auto network= game->networkController();
+        if(!network)
+            return;
+        qDebug() << "[UPNP] gameCtrol changed valid:" << network->localIpModel();
+        ui->m_networkSelector->setModel(network->localIpModel());
+        connect(ui->m_networkSelector, &QComboBox::currentIndexChanged, this,
+                [this]()
+                {
+                    auto pref= m_ctrl->preferences();
+                    auto ip= ui->m_networkSelector->currentText();
+                    if(!pref || ip.isEmpty())
+                        return;
+                    pref->registerValue("Upnp_localIp", ip);
+                });
+
+        ui->m_networkSelector->setVisible(ui->m_networkSelector->count() > 0);
+        ui->m_upnpNetworkLbl->setVisible(ui->m_networkSelector->count() > 0);
+    };
+    connect(m_ctrl, &PreferencesController::gameCtrlChanged, this, updateIpModel);
+    updateIpModel();
     m_preferences= m_ctrl->preferences();
     load();
 

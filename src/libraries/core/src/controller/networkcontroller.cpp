@@ -21,8 +21,10 @@
 
 #include <QLoggingCategory>
 #include <QMetaObject>
+#include <QNetworkInterface>
 #include <QThread>
 
+#include "common/logcategory.h"
 #include "controller/gamecontroller.h"
 #include "controller/playercontroller.h"
 #include "network/clientmanager.h"
@@ -30,6 +32,7 @@
 #include "network/networkmessage.h"
 #include "network/receiveevent.h"
 #include "network/rserver.h"
+#include "network/upnp/upnpnat.h"
 #include "services/ipchecker.h"
 #include "utils/countdownobject.h"
 #include "worker/iohelper.h"
@@ -39,6 +42,12 @@
 #include "worker/playermessagehelper.h"
 
 QLoggingCategory rNetwork("rolisteam.network");
+
+namespace keys
+{
+constexpr auto upnpEnabled{"Upnp_enabled"};
+constexpr auto upnpLocalIp{"Upnp_localIp"};
+} // namespace keys
 
 void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
 {
@@ -53,16 +62,24 @@ NetworkController::NetworkController(QObject* parent)
     , m_profileModel(new ProfileModel)
     , m_channelModel(new ChannelModel)
     , m_countDown(new CountDownObject(5, 10))
+    , m_upnpNat(new UpnpNat)
 {
     qRegisterMetaType<RServer::ServerState>();
     SettingsHelper::readConnectionProfileModel(m_profileModel.get());
 
     ReceiveEvent::registerNetworkReceiver(NetMsg::AdministrationCategory, this);
 
+    for(auto const& address : QNetworkInterface::allAddresses())
+    {
+        if(address.protocol() == QAbstractSocket::IPv4Protocol && address != QHostAddress(QHostAddress::LocalHost))
+        {
+            m_localIps.append(address.toString());
+        }
+    }
+
     connect(m_clientManager.get(), &ClientManager::connectionStateChanged, this,
             [this](ClientManager::ConnectionState state)
             {
-                qDebug() << "NETWORKCONTROLLER - ConnectionState" << state;
                 setConnected(state == ClientManager::AUTHENTIFIED);
                 setConnecting(state == ClientManager::CONNECTING);
             });
@@ -74,15 +91,51 @@ NetworkController::NetworkController(QObject* parent)
     connect(m_clientManager.get(), &ClientManager::moveToAnotherChannel, this, &NetworkController::tableChanged);
     connect(m_countDown.get(), &CountDownObject::triggered, this, &NetworkController::startServer);
 
+    connect(m_profileModel.get(), &ProfileModel::profilePortChanged, this,
+            [this](int idx)
+            {
+                if(idx == m_selectedProfileIndex)
+                    runUpnpNat();
+            });
     connect(this, &NetworkController::selectedProfileIndexChanged, this, [this]() { emit isGMChanged(isGM()); });
     connect(this, &NetworkController::selectedProfileIndexChanged, this, &NetworkController::hostingChanged);
     connect(this, &NetworkController::selectedProfileIndexChanged, this, &NetworkController::askForGMChanged);
     connect(this, &NetworkController::selectedProfileIndexChanged, this, &NetworkController::hostChanged);
     connect(this, &NetworkController::selectedProfileIndexChanged, this, &NetworkController::portChanged);
     connect(this, &NetworkController::selectedProfileIndexChanged, this, &NetworkController::serverPasswordChanged);
+    connect(this, &NetworkController::selectedProfileIndexChanged, this, [this]() { runUpnpNat(); });
 
     connect(m_clientManager.get(), &ClientManager::authentificationSuccessed, this,
             [this]() { setGroups(m_currentGroups | Group::ADMIN); });
+
+    connect(m_upnpNat.get(), &UpnpNat::statusChanged, this,
+            [this]()
+            {
+                switch(m_upnpNat->status())
+                {
+                case UpnpNat::NAT_STAT::NAT_IDLE:
+                case UpnpNat::NAT_STAT::NAT_DISCOVERY:
+                case UpnpNat::NAT_STAT::NAT_GETDESCRIPTION:
+                case UpnpNat::NAT_STAT::NAT_DESCRIPTION_FOUND:
+                    break;
+                case UpnpNat::NAT_STAT::NAT_FOUND:
+                    m_upnpNat->requestDescription();
+                    break;
+                case UpnpNat::NAT_STAT::NAT_READY:
+                    m_upnpNat->addPortMapping("RolisteamServer", m_upnpNat->localIp(), port(), port(), "TCP");
+                    break;
+                case UpnpNat::NAT_STAT::NAT_ADD:
+                    qCInfo(ServerLogCat) << tr("[Upnp] Successful mapping port: ") << port();
+                    break;
+                case UpnpNat::NAT_STAT::NAT_ERROR:
+                    qCWarning(ServerLogCat) << "[Upnp]" << m_upnpNat->error();
+                    break;
+                }
+            });
+    auto t= new QTimer();
+    connect(t, &QTimer::timeout, this, [this]() { runUpnpNat(); });
+
+    t->start(500000);
 }
 
 NetworkController::~NetworkController()
@@ -105,6 +158,38 @@ void NetworkController::dispatchMessage(QByteArray array)
             tmp->processMessage(&data);
         }
     }
+}
+
+void NetworkController::readIpAddress()
+{
+    if(!m_prefs)
+        return;
+    auto enabled= m_prefs->value(keys::upnpEnabled, true).toBool();
+
+    if(!enabled)
+        return;
+
+    auto ip= m_prefs->value(keys::upnpLocalIp, "").toString();
+
+    if(ip.isEmpty() && !m_localIps.isEmpty())
+        ip= m_localIps.first();
+
+    if(ip.isEmpty())
+    {
+        qCWarning(ServerLogCat) << tr("[Upnp] No ip address has been found.");
+        return;
+    }
+
+    m_upnpNat->setLocalIp(ip);
+}
+
+void NetworkController::runUpnpNat()
+{
+    if(!hosting())
+        return;
+
+    readIpAddress();
+    m_upnpNat->discovery();
 }
 
 ProfileModel* NetworkController::profileModel() const
@@ -329,6 +414,14 @@ QByteArray NetworkController::serverPassword() const
     return currentProfile() ? currentProfile()->password() : QByteArray();
 }
 
+QStringListModel* NetworkController::localIpModel() const
+{
+    static auto model= new QStringListModel();
+    if(model->rowCount() == 0)
+        model->setStringList(m_localIps);
+    return model;
+}
+
 QByteArray NetworkController::adminPassword() const
 {
     return m_admindPw;
@@ -337,6 +430,12 @@ QByteArray NetworkController::adminPassword() const
 void NetworkController::setGameController(GameController* game)
 {
     m_gameCtrl= game;
+    auto pref= m_gameCtrl->preferencesManager();
+
+    if(!pref || m_prefs == pref)
+        return;
+
+    m_prefs= pref;
 }
 
 void NetworkController::sendOffConnectionInfo()

@@ -5,15 +5,12 @@
 #include "network/rserver.h"
 #include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
-#include "network/upnp/upnpnat.h"
 
 RServer::RServer(const QMap<QString, QVariant>& parameter, bool internal, QObject* parent)
     : QTcpServer(parent), m_corConnection(new TimeAccepter()), m_data(parameter), m_internal(internal)
 {
     if(m_data.contains("ThreadCount"))
         m_threadCount= m_data.value("ThreadCount", m_threadCount).toInt();
-    connect(this, &RServer::portChanged, this, &RServer::runUpnpNat);
-    runUpnpNat();
     initServerConnections();
 }
 
@@ -26,33 +23,6 @@ RServer::~RServer()
         info.m_thread->quit();
         info.m_thread->wait(1000);
     }
-}
-
-void RServer::runUpnpNat()
-{
-    auto nat= new UpnpNat(this);
-    nat->init(5, 10);
-    connect(nat, &UpnpNat::discoveryEnd, this,
-            [this, nat](bool b)
-            {
-                qDebug() << "discover ends" << nat;
-                if(b)
-                    nat->addPortMapping("Roliserver", nat->localIp(), m_port, m_port, "TCP");
-            });
-    connect(nat, &UpnpNat::statusChanged, this,
-            [this, nat]()
-            {
-                if(nat->status() == UpnpNat::NAT_STAT::NAT_ADD)
-                {
-                    emit eventOccured(tr("[Upnp] Port mapping has been done"), LogController::LogLevel::Features);
-                    nat->deleteLater();
-                }
-            });
-
-    connect(nat, &UpnpNat::lastErrorChanged, this,
-            [nat]() { qCWarning(ServerLogCat) << "[Upnp]" << nat->lastError(); });
-
-    nat->discovery();
 }
 
 void RServer::initServerConnections()

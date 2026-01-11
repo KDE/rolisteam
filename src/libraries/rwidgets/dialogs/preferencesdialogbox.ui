@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>570</width>
-    <height>975</height>
+    <height>1083</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -264,6 +264,33 @@
              <bool>true</bool>
             </property>
            </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QCheckBox" name="m_upnpEnabled">
+              <property name="text">
+               <string>Send Upnp Port mapping request</string>
+              </property>
+              <property name="checked">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="m_upnpNetworkLbl">
+              <property name="text">
+               <string>Upnp Network:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="m_networkSelector"/>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>

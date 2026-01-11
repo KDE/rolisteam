@@ -25,6 +25,7 @@
 #include <QHash>
 #include <QObject>
 #include <QPointer>
+#include <QStringListModel>
 #include <memory>
 
 #include "network/networkmessage.h"
@@ -41,7 +42,8 @@ class QAbstractItemModel;
 class GameController;
 class IpChecker;
 class CountDownObject;
-
+class PreferencesManager;
+class UpnpNat;
 /**
  * @brief The NetworkController class is the controller on client side to use network API
  */
@@ -64,6 +66,7 @@ class CORE_EXPORT NetworkController : public AbstractControllerInterface, public
     Q_PROPERTY(int selectedProfileIndex READ selectedProfileIndex WRITE setSelectedProfileIndex NOTIFY
                    selectedProfileIndexChanged FINAL)
     Q_PROPERTY(NetworkController::Groups groups READ groups WRITE setGroups NOTIFY groupsChanged FINAL)
+    Q_PROPERTY(QStringListModel* localIpModel READ localIpModel CONSTANT)
 public:
     enum Group
     {
@@ -90,6 +93,7 @@ public:
 
     QByteArray adminPassword() const;
     QByteArray serverPassword() const;
+    QStringListModel* localIpModel() const;
 
     void setGameController(GameController* game) override;
 
@@ -145,7 +149,7 @@ public slots:
 
 private slots:
     void sendOffConnectionInfo();
-
+    void runUpnpNat();
     void setLastError(const QString& error);
     void dispatchMessage(QByteArray array);
 
@@ -153,6 +157,7 @@ private:
     void startServer();
     void startClient();
     void stopClient();
+    void readIpAddress();
 
 private:
     std::unique_ptr<ClientManager> m_clientManager;
@@ -162,9 +167,11 @@ private:
     std::unique_ptr<ChannelModel> m_channelModel;
     std::unique_ptr<IpChecker> m_ipChecker;
     std::unique_ptr<CountDownObject> m_countDown;
+    std::unique_ptr<UpnpNat> m_upnpNat;
     QPointer<GameController> m_gameCtrl;
+    QPointer<PreferencesManager> m_prefs;
     QHash<NetMsg::Category, NetWorkReceiver*> m_receiverMap;
-
+    QStringList m_localIps;
     QMap<QString, QVariant> m_serverParameters;
 
     // QByteArray m_serverPw;

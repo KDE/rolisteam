@@ -94,6 +94,7 @@ private slots:
     void checkProfile(ConnectionProfile* profile);
 
 signals:
+    void profilePortChanged(int profile);
     void profileAdded(ConnectionProfile* prof);
     void profileRemoved(int i);
 
