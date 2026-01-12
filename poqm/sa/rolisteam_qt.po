@@ -3400,7 +3400,20 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "पाठ"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:193
+#: src/libraries/core/src/controller/networkcontroller.cpp:128
+msgctxt "NetworkController|"
+msgid "[Upnp] Successful mapping port: "
+msgstr ""
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "NetworkController|"
+msgid "[Upnp] No ip address has been found."
+msgstr "[Upnp] पोर्ट् मैपिङ्ग् कृतम् अस्ति"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:278
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3408,7 +3421,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "सर्वरेण सह संयोजनं निरुद्धम् अस्ति ।"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:204
+#: src/libraries/core/src/controller/networkcontroller.cpp:289
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3416,27 +3429,27 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "सर्वर"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:208
+#: src/libraries/core/src/controller/networkcontroller.cpp:293
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:42
+#: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "मूलभूतम्‌"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:51
+#: src/libraries/core/src/controller/preferencescontroller.cpp:54
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "अन्धकारे"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:73
+#: src/libraries/core/src/controller/preferencescontroller.cpp:76
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "अन्धकारसंलयनम्"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:357
+#: src/libraries/core/src/controller/preferencescontroller.cpp:318
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr " (प्रतिलिपि)"
@@ -3812,13 +3825,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "डुप्लिकेट प्लेयर अथवा uuid"
 
-#: src/libraries/core/src/model/profilemodel.cpp:114
+#: src/libraries/core/src/model/profilemodel.cpp:116
 #: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
 msgctxt "QObject|"
 msgid "Unknown Character"
 msgstr "अज्ञात चरित्र"
 
-#: src/libraries/core/src/model/profilemodel.cpp:163
+#: src/libraries/core/src/model/profilemodel.cpp:165
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (क्लोन्)"
@@ -3897,12 +3910,7 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "खिलाडी"
 
-#: src/libraries/core/src/network/rserver.cpp:47
-msgctxt "RServer|"
-msgid "[Upnp] Port mapping has been done"
-msgstr "[Upnp] पोर्ट् मैपिङ्ग् कृतम् अस्ति"
-
-#: src/libraries/core/src/network/rserver.cpp:92
+#: src/libraries/core/src/network/rserver.cpp:62
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
@@ -3937,21 +3945,46 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "उपयोक्ता %1 विच्छिन्नः अस्ति!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:97
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
-msgid "Unable to read the URL in server answer"
+msgid "Unable to read the beginning of server answer"
 msgstr "सर्वर उत्तरे URL पठितुं असमर्थः"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:105
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
+msgctxt "UpnpNat|"
+msgid "Unable to read the end of server answer"
+msgstr "सर्वर उत्तरे URL पठितुं असमर्थः"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:139
+#, fuzzy
+#| msgctxt "NodeSettingPopup|"
+#| msgid "Description: "
+msgctxt "UpnpNat|"
+msgid "Description file is empty"
+msgstr "वर्णनम्‌: "
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr "XMLNode \"URLBase\" अथवा describe_url इत्यस्मात् base_URL प्राप्तुं असफलः ।\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:207
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "सम्यक् सेवाप्रकारं अन्वेष्टुं असफलम्: %1 %2 %3"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:256
+#, qt-format
+msgctxt "UpnpNat|"
+msgid "Something went wrong: %1"
+msgstr ""
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5902,43 +5935,43 @@ msgctxt "PersonDialog|"
 msgid "Color:"
 msgstr "वर्ण:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:69
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
 msgstr "जीएम केवलम्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:70
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
 msgid "PC Move"
 msgstr "PC Move"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:73
 msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "प्राधान्यानि"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:306
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "चित्राणि (*.png*.xpm*.jpg*.gif*.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Css सम्पादक"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "Css"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 #, fuzzy, qt-format
 #| msgctxt "PreferencesDialog|"
 #| msgid "<li>Image Format : %1 value %2</li>"
@@ -5946,49 +5979,49 @@ msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>चित्रस्वरूपम् : %1 मूल्यं %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:433
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>समर्थिताः चित्रस्वरूपाः : १.</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:440
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>प्रतिबिम्बस्वरूपस्य समाप्तिः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>फन्ट् परिवाराः : १.</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>फॉन्ट्-परिवारानाम् अन्तः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>श्रव्यसञ्चिकास्वरूपाः समर्थनम् : १.</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>समर्थितस्य श्रव्यसञ्चिकास्वरूपस्य समाप्तिः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:506
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "निर्यात Rolisteam विषयवस्तु"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:508
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "रोलिस्टीम विषयः %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:516
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "आयात रोलिस्टीम थीम"
@@ -6094,72 +6127,88 @@ msgctxt "PreferencesDialogBox|"
 msgid "Pictures fit their Windows (at the opening)"
 msgstr "चित्राणि तेषां विण्डोज (उद्घाटनसमये) उपयुक्तानि सन्ति ।"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:274
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "PreferencesDialogBox|"
+msgid "Send Upnp Port mapping request"
+msgstr "[Upnp] पोर्ट् मैपिङ्ग् कृतम् अस्ति"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "&Network"
+msgctxt "PreferencesDialogBox|"
+msgid "Upnp Network:"
+msgstr "&जाल"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
 msgstr "अनुप्रयोग भाषा*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:307
 msgctxt "PreferencesDialogBox|"
 msgid "Use system language"
 msgstr "प्रणालीभाषायाः उपयोगं कुर्वन्तु"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:292
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:319
 msgctxt "PreferencesDialogBox|"
 msgid "Available translations:"
 msgstr "उपलब्धाः अनुवादाः :"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:317
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:344
 msgctxt "PreferencesDialogBox|"
 msgid "Custom translation"
 msgstr "अनुकूलित अनुवाद"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:353
 msgctxt "PreferencesDialogBox|"
 msgid "Translation File:"
 msgstr "अनुवाद सञ्चिका:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:341
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:368
 msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
 msgstr "वर्णपत्रम्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:347
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:374
 msgctxt "PreferencesDialogBox|"
 msgid "Time between page:"
 msgstr "पृष्ठस्य मध्ये समयः :"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:370
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:397
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
 msgstr "ms"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:392
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
 msgstr "सन्देशप्रसारणम्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:398
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:421
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:448
 msgctxt "PreferencesDialogBox|"
 msgid "* : need restart"
 msgstr "* : पुनः आरम्भस्य आवश्यकता अस्ति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:429
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:456
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:462
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:441
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 #, fuzzy
 #| msgctxt "HistoryModel|"
 #| msgid "Path"
@@ -6167,7 +6216,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Path:"
 msgstr "पथं"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:451
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:478
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Characters"
@@ -6175,15 +6224,15 @@ msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
 msgstr "वर्णाः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:458
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:491
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:524
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:485
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:518
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:551
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 #, fuzzy
 #| msgctxt "NewFileDialog|"
 #| msgid "MindMap"
@@ -6191,7 +6240,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
 msgstr "मन मानचित्र"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:474
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 #, fuzzy
 #| msgctxt "HistoryModel|"
 #| msgid "Path"
@@ -6199,8 +6248,8 @@ msgctxt "PreferencesDialogBox|"
 msgid "Path"
 msgstr "पथं"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:484
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:517
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:511
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:544
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Characters"
@@ -6208,7 +6257,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
 msgstr "वर्णाः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:528
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Editor"
@@ -6216,7 +6265,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
 msgstr "सम्पादक"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:507
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 #, fuzzy
 #| msgctxt "FieldModel|"
 #| msgid "Label"
@@ -6224,148 +6273,148 @@ msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
 msgstr "नामपत्र"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:547
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:555
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
 msgid "Themes"
 msgstr "विषयाः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:561
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:588
 msgctxt "PreferencesDialogBox|"
 msgid "Theme"
 msgstr "विषयवस्तु"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:571
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:598
 msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
 msgstr "वर्तमान विषयः*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:578
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:605
 msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
 msgstr "विषयनाम"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:585
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
 msgstr "शैल्याः :"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:601
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 msgctxt "PreferencesDialogBox|"
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:608
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:635
 msgctxt "PreferencesDialogBox|"
 msgid "Delete"
 msgstr "लुप्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:625
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:652
 msgctxt "PreferencesDialogBox|"
 msgid "Css:"
 msgstr "Css:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:632
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:659
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
 msgstr "सम्पादन..."
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:658
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:685
 msgctxt "PreferencesDialogBox|"
 msgid "Background"
 msgstr "पृष्ठभूमि"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:693
 msgctxt "PreferencesDialogBox|"
 msgid "Color:"
 msgstr "वर्ण:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
 msgctxt "PreferencesDialogBox|"
 msgid "Image:"
 msgstr "छवि:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:711
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:738
 msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
 msgstr "स्थितिः :"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:719
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:746
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
 msgstr "TopLeftCorner इति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:751
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
 msgstr "BottomLeftCorner इति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:729
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:756
 msgctxt "PreferencesDialogBox|"
 msgid "Center"
 msgstr "केंद्र"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:734
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:761
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
 msgstr "TopRightCorner इति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:739
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:766
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
 msgstr "BottomRightCorner इति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:744
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:771
 msgctxt "PreferencesDialogBox|"
 msgid "Scaled"
 msgstr "स्केल कृतम्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:749
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:776
 msgctxt "PreferencesDialogBox|"
 msgid "Filled"
 msgstr "पूरित"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:754
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:781
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
 msgstr "पुनः पुनः"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:769
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
 msgstr "पासा हाइलाइट रङ्ग"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:798
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
 msgid "Color Palette"
 msgstr "रङ्ग पॅलेट"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:810
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
 msgctxt "PreferencesDialogBox|"
 msgid "*: need restart"
 msgstr "*: पुनः आरम्भस्य आवश्यकता अस्ति"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:830
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:857
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
 msgstr "आयात…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:864
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
 msgstr "निर्यात…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:850
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:877
 msgctxt "PreferencesDialogBox|"
 msgid "Diagnostic"
 msgstr "निदानात्मकम्"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:878
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:905
 msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr "प्रारंभः"

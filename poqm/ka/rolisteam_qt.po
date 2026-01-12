@@ -3166,37 +3166,50 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "ტექსტი"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:193
+#: src/libraries/core/src/controller/networkcontroller.cpp:128
+msgctxt "NetworkController|"
+msgid "[Upnp] Successful mapping port: "
+msgstr ""
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "NetworkController|"
+msgid "[Upnp] No ip address has been found."
+msgstr "[Upnp] პორტების გადამისამართება შესრულებულია"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:278
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "სერვერამდე კავშირი დაიხურა"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:204
+#: src/libraries/core/src/controller/networkcontroller.cpp:289
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "სერვერი გამორთულია"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:208
+#: src/libraries/core/src/controller/networkcontroller.cpp:293
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "სერვერი არის"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:42
+#: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "ნაგულისხმევი"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:51
+#: src/libraries/core/src/controller/preferencescontroller.cpp:54
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "darkorange"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:73
+#: src/libraries/core/src/controller/preferencescontroller.cpp:76
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "darkfusion"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:357
+#: src/libraries/core/src/controller/preferencescontroller.cpp:318
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr " (ასლი)"
@@ -3572,13 +3585,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "მოთამაშე ან UUID დუბლირდება"
 
-#: src/libraries/core/src/model/profilemodel.cpp:114
+#: src/libraries/core/src/model/profilemodel.cpp:116
 #: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
 msgctxt "QObject|"
 msgid "Unknown Character"
 msgstr "უცნობი სიმბოლო"
 
-#: src/libraries/core/src/model/profilemodel.cpp:163
+#: src/libraries/core/src/model/profilemodel.cpp:165
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (კლონი)"
@@ -3654,12 +3667,7 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "დამკვრელი"
 
-#: src/libraries/core/src/network/rserver.cpp:47
-msgctxt "RServer|"
-msgid "[Upnp] Port mapping has been done"
-msgstr "[Upnp] პორტების გადამისამართება შესრულებულია"
-
-#: src/libraries/core/src/network/rserver.cpp:92
+#: src/libraries/core/src/network/rserver.cpp:62
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[სერვერი] მოსმენის დაწყება"
@@ -3695,22 +3703,47 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "მომხმარებელი %1 გაითიშა!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:97
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
-msgid "Unable to read the URL in server answer"
+msgid "Unable to read the beginning of server answer"
 msgstr "სერვერის პასუხიდან URL-ის წაკითხვის სეცდომა"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:105
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
+msgctxt "UpnpNat|"
+msgid "Unable to read the end of server answer"
+msgstr "სერვერის პასუხიდან URL-ის წაკითხვის სეცდომა"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:139
+#, fuzzy
+#| msgctxt "NodeSettingPopup|"
+#| msgid "Description: "
+msgctxt "UpnpNat|"
+msgid "Description file is empty"
+msgstr "აღწერა: "
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr ""
 "XMLNode \"URLBase\"-დან base_URL-ის ან describe_url-ის მიღება შეუძლებელია.\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:207
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "სერვისის სწორი ტიპის აღმოჩენის შეცდომა: %1 %2 %3"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:256
+#, qt-format
+msgctxt "UpnpNat|"
+msgid "Something went wrong: %1"
+msgstr ""
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5603,91 +5636,91 @@ msgctxt "PersonDialog|"
 msgid "Color:"
 msgstr "ფერი:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:69
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
 msgstr "მხოლოდ GM"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:70
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
 msgid "PC Move"
 msgstr "PC გადაადგილება"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:73
 msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "PC All"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "მორგება"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:306
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "გამოსახულებები (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Css რედაქტორი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "Css"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>გამოსახულების ფორმატი: %1 მნიშვნელობა %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:433
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>გამოსახულების მხარდაჭერილი ფორმატები:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:440
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>გამოსახულების ფორმატის დასასრული"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>ფონტის ოჯახები:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>ფონტის ოჯახების დასასრული"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>აუდიო ფაილის ფორმატების მხარდაჭერა:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>მხარდაჭერილი აუდიო ფაილების დასასრული"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:506
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Rolisteam-ის თემის გატანა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:508
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Rolisteam-ის ტემა: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:516
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Rolisteam-ის თემის შემოტანა"
@@ -5794,257 +5827,273 @@ msgctxt "PreferencesDialogBox|"
 msgid "Pictures fit their Windows (at the opening)"
 msgstr "სურათები მათ ფანჯრებში ეტევა (გახსნისას)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:274
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "PreferencesDialogBox|"
+msgid "Send Upnp Port mapping request"
+msgstr "[Upnp] პორტების გადამისამართება შესრულებულია"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "&Network"
+msgctxt "PreferencesDialogBox|"
+msgid "Upnp Network:"
+msgstr "&ქსელი"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
 msgstr "აპლიკაციის ენა*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:307
 msgctxt "PreferencesDialogBox|"
 msgid "Use system language"
 msgstr "სისტემის ენის გამოყენება"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:292
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:319
 msgctxt "PreferencesDialogBox|"
 msgid "Available translations:"
 msgstr "ხელმისაწვდომი თარგმანები:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:317
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:344
 msgctxt "PreferencesDialogBox|"
 msgid "Custom translation"
 msgstr "მომხმარებლის თარგმანი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:353
 msgctxt "PreferencesDialogBox|"
 msgid "Translation File:"
 msgstr "თარგმნის ფაილი:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:341
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:368
 msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
 msgstr "სიმბოლოების ცხრილი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:347
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:374
 msgctxt "PreferencesDialogBox|"
 msgid "Time between page:"
 msgstr "დრო გვერდებს შორის:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:370
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:397
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
 msgstr "მწმ"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:392
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
 msgstr "შეტყობინებები"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:398
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
 msgstr "ჩატის ოთახების მონაცემების შენახვა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:421
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:448
 msgctxt "PreferencesDialogBox|"
 msgid "* : need restart"
 msgstr "* : საჭიროა გადატვირთვა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:429
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:456
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
 msgstr "გარე რედაქტორები"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:462
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
 msgstr "RCSE"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:441
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 msgctxt "PreferencesDialogBox|"
 msgid "Path:"
 msgstr "ბილიკი:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:451
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:478
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
 msgstr "პარამეტრები:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:458
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:491
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:524
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:485
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:518
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:551
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
 msgstr "%1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
 msgstr "MindMap"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:474
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 msgctxt "PreferencesDialogBox|"
 msgid "Path"
 msgstr "ბილიკი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:484
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:517
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:511
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:544
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
 msgstr "პარამეტრები"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:528
 msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
 msgstr "ტექსტური რედაქტორი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:507
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
 msgstr "ტექსტური ჭდე"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:547
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
 msgstr "%1 ადგილმჭერია ფაილის სახელისთვის."
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:555
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
 msgid "Themes"
 msgstr "თემები"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:561
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:588
 msgctxt "PreferencesDialogBox|"
 msgid "Theme"
 msgstr "თემა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:571
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:598
 msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
 msgstr "მიმდინარე თემა*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:578
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:605
 msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
 msgstr "თემის სახელი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:585
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
 msgstr "სტილები:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:601
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 msgctxt "PreferencesDialogBox|"
 msgid "Copy"
 msgstr "კოპირება"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:608
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:635
 msgctxt "PreferencesDialogBox|"
 msgid "Delete"
 msgstr "წაშლა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:625
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:652
 msgctxt "PreferencesDialogBox|"
 msgid "Css:"
 msgstr "Css:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:632
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:659
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
 msgstr "ჩასწორება..."
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:658
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:685
 msgctxt "PreferencesDialogBox|"
 msgid "Background"
 msgstr "ფონი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:693
 msgctxt "PreferencesDialogBox|"
 msgid "Color:"
 msgstr "ფერი:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
 msgctxt "PreferencesDialogBox|"
 msgid "Image:"
 msgstr "გამოსახულება:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:711
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:738
 msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
 msgstr "მდებარეობა:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:719
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:746
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
 msgstr "ზედამარცხენაკუთხე"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:751
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
 msgstr "ქვედამარცხენაკუთხე"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:729
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:756
 msgctxt "PreferencesDialogBox|"
 msgid "Center"
 msgstr "ცენტრი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:734
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:761
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
 msgstr "ზედამარჯვენაკუთხე"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:739
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:766
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
 msgstr "ქვედამარჯვენაკუთხე"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:744
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:771
 msgctxt "PreferencesDialogBox|"
 msgid "Scaled"
 msgstr "გადიდებული"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:749
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:776
 msgctxt "PreferencesDialogBox|"
 msgid "Filled"
 msgstr "შევსებული"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:754
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:781
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
 msgstr "გამეორდა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:769
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
 msgstr "გაგორების გამოკვეთის ფერი"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:798
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
 msgid "Color Palette"
 msgstr "ფერის პალიტრა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:810
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
 msgctxt "PreferencesDialogBox|"
 msgid "*: need restart"
 msgstr "*: საჭიროა გადატვირთვა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:830
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:857
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
 msgstr "შემოტანა…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:864
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
 msgstr "გატანა…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:850
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:877
 msgctxt "PreferencesDialogBox|"
 msgid "Diagnostic"
 msgstr "დიაგნოსტიკა"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:878
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:905
 msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr "გაშვება"

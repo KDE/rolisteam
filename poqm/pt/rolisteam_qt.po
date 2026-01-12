@@ -3909,7 +3909,20 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Texto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:193
+#: src/libraries/core/src/controller/networkcontroller.cpp:128
+msgctxt "NetworkController|"
+msgid "[Upnp] Successful mapping port: "
+msgstr ""
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "NetworkController|"
+msgid "[Upnp] No ip address has been found."
+msgstr "[UPNP] Foi criada a associação de portos"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:278
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3917,7 +3930,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Foi fechada a ligação ao servidor."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:204
+#: src/libraries/core/src/controller/networkcontroller.cpp:289
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3925,27 +3938,27 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servidor"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:208
+#: src/libraries/core/src/controller/networkcontroller.cpp:293
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:42
+#: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "predefinição"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:51
+#: src/libraries/core/src/controller/preferencescontroller.cpp:54
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "laranja-escuro"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:73
+#: src/libraries/core/src/controller/preferencescontroller.cpp:76
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "fusão-escura"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:357
+#: src/libraries/core/src/controller/preferencescontroller.cpp:318
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr " (cópia)"
@@ -4324,13 +4337,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "Jogador ou UUID duplicado"
 
-#: src/libraries/core/src/model/profilemodel.cpp:114
+#: src/libraries/core/src/model/profilemodel.cpp:116
 #: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
 msgctxt "QObject|"
 msgid "Unknown Character"
 msgstr "Personagem Desconhecido"
 
-#: src/libraries/core/src/model/profilemodel.cpp:163
+#: src/libraries/core/src/model/profilemodel.cpp:165
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (clone)"
@@ -4409,12 +4422,7 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Jogador"
 
-#: src/libraries/core/src/network/rserver.cpp:47
-msgctxt "RServer|"
-msgid "[Upnp] Port mapping has been done"
-msgstr "[UPNP] Foi criada a associação de portos"
-
-#: src/libraries/core/src/network/rserver.cpp:92
+#: src/libraries/core/src/network/rserver.cpp:62
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
@@ -4451,23 +4459,48 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "O utilizador %1 foi desligado!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:97
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
-msgid "Unable to read the URL in server answer"
+msgid "Unable to read the beginning of server answer"
 msgstr "Não é possível ler o URL na resposta do servidor"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:105
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
+msgctxt "UpnpNat|"
+msgid "Unable to read the end of server answer"
+msgstr "Não é possível ler o URL na resposta do servidor"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:139
+#, fuzzy
+#| msgctxt "NodeSettingPopup|"
+#| msgid "Description: "
+msgctxt "UpnpNat|"
+msgid "Description file is empty"
+msgstr "Descrição: "
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr ""
 "Não foi possível obter o 'base_URL' do XMLNode \"URLBase\" ou o "
 "'describe_url'.\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:207
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Não foi possível encontrar o tipo de serviço adequado: %1 %2 %3"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:256
+#, qt-format
+msgctxt "UpnpNat|"
+msgid "Something went wrong: %1"
+msgstr ""
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -6614,7 +6647,7 @@ msgctxt "PersonDialog|"
 msgid "Color:"
 msgstr "Cor:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:69
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 #, fuzzy
 #| msgctxt "ParticipantModel|"
 #| msgid "Read Only"
@@ -6622,38 +6655,38 @@ msgctxt "PreferencesDialog|"
 msgid "GM Only"
 msgstr "Apenas para Leitura"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:70
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
 msgid "PC Move"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:73
 msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Preferências"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:306
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Imagens (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Editor de CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 #, fuzzy, qt-format
 #| msgctxt "PreferencesDialog|"
 #| msgid "<li>Image Format : %1 value %2</li>"
@@ -6661,49 +6694,49 @@ msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Formato da Imagem : %1 valor %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:433
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Formatos de Imagens Suportados:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:440
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Fim do Formato da Imagem"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Famílias de tipos de letra:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Fim das famílias de tipos de letra"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Formatos de ficheiros de áudio suportados:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Fim dos formatos de ficheiros de áudio suportados"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:506
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Exportar o Tema do Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:508
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Tema do Rolisteam: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:516
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importar um Tema do Rolisteam"
@@ -6821,7 +6854,20 @@ msgctxt "PreferencesDialogBox|"
 msgid "Pictures fit their Windows (at the opening)"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:274
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "PreferencesDialogBox|"
+msgid "Send Upnp Port mapping request"
+msgstr "[UPNP] Foi criada a associação de portos"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
+msgctxt "PreferencesDialogBox|"
+msgid "Upnp Network:"
+msgstr ""
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 #, fuzzy
 #| msgctxt "TextEdit|"
 #| msgid "Application"
@@ -6829,22 +6875,22 @@ msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
 msgstr "Aplicação"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:307
 msgctxt "PreferencesDialogBox|"
 msgid "Use system language"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:292
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:319
 msgctxt "PreferencesDialogBox|"
 msgid "Available translations:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:317
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:344
 msgctxt "PreferencesDialogBox|"
 msgid "Custom translation"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:353
 #, fuzzy
 #| msgctxt "AboutRolisteam|"
 #| msgid "Translators"
@@ -6852,7 +6898,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Translation File:"
 msgstr "Tradutores"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:341
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:368
 #, fuzzy
 #| msgctxt "QObject|"
 #| msgid "Character Sheet"
@@ -6860,17 +6906,17 @@ msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
 msgstr "Folha da Personagem"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:347
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:374
 msgctxt "PreferencesDialogBox|"
 msgid "Time between page:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:370
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:397
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:392
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 #, fuzzy
 #| msgctxt "InstantMessagingView|"
 #| msgid "Instant Messaging"
@@ -6878,27 +6924,27 @@ msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
 msgstr "Mensagens Instantâneas"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:398
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:421
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:448
 msgctxt "PreferencesDialogBox|"
 msgid "* : need restart"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:429
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:456
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:462
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:441
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 #, fuzzy
 #| msgctxt "HistoryModel|"
 #| msgid "Path"
@@ -6906,7 +6952,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Path:"
 msgstr "Localização"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:451
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:478
 #, fuzzy
 #| msgctxt "ConnectionForm|"
 #| msgid "Characters"
@@ -6914,15 +6960,15 @@ msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
 msgstr "Personagens"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:458
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:491
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:524
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:485
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:518
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:551
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 #, fuzzy
 #| msgctxt "NewFileDialog|"
 #| msgid "MindMap"
@@ -6930,7 +6976,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
 msgstr "Mapa Mental"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:474
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 #, fuzzy
 #| msgctxt "HistoryModel|"
 #| msgid "Path"
@@ -6938,8 +6984,8 @@ msgctxt "PreferencesDialogBox|"
 msgid "Path"
 msgstr "Localização"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:484
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:517
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:511
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:544
 #, fuzzy
 #| msgctxt "ConnectionForm|"
 #| msgid "Characters"
@@ -6947,7 +6993,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
 msgstr "Personagens"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:528
 #, fuzzy
 #| msgctxt "PreferencesDialog|"
 #| msgid "Css Editor"
@@ -6955,7 +7001,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
 msgstr "Editor de CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:507
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 #, fuzzy
 #| msgctxt "FieldModel|"
 #| msgid "Label"
@@ -6963,23 +7009,23 @@ msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
 msgstr "Legenda"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:547
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:555
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
 msgid "Themes"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:561
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:588
 msgctxt "PreferencesDialogBox|"
 msgid "Theme"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:571
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:598
 #, fuzzy
 #| msgctxt "NonPlayableCharacterModel|"
 #| msgid "Current HP"
@@ -6987,7 +7033,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
 msgstr "Saúde Actual"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:578
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:605
 #, fuzzy
 #| msgctxt "PersonEdit|"
 #| msgid "Name:"
@@ -6995,7 +7041,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
 msgstr "Nome:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:585
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 #, fuzzy
 #| msgctxt "NodeSettingPopup|"
 #| msgid "Node Styles"
@@ -7003,7 +7049,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
 msgstr "Estilos dos Nós"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:601
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 #, fuzzy
 #| msgctxt "TextEdit|"
 #| msgid "&Copy"
@@ -7011,7 +7057,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Copy"
 msgstr "&Copiar"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:608
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:635
 #, fuzzy
 #| msgctxt "campaign::CampaignView|"
 #| msgid "Delete"
@@ -7019,12 +7065,12 @@ msgctxt "PreferencesDialogBox|"
 msgid "Delete"
 msgstr "Remover"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:625
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:652
 msgctxt "PreferencesDialogBox|"
 msgid "Css:"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:632
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:659
 #, fuzzy
 #| msgctxt "TextEdit|"
 #| msgid "&Edit"
@@ -7032,7 +7078,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
 msgstr "&Editar"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:658
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:685
 #, fuzzy
 #| msgctxt "ImageModel|"
 #| msgid "Is Background"
@@ -7040,7 +7086,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Background"
 msgstr "É um Fundo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:693
 #, fuzzy
 #| msgctxt "PersonEdit|"
 #| msgid "Color:"
@@ -7048,7 +7094,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Color:"
 msgstr "Cor:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
 #, fuzzy
 #| msgctxt "TypeDelegate|"
 #| msgid "Image"
@@ -7056,7 +7102,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Image:"
 msgstr "Imagem"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:711
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:738
 #, fuzzy
 #| msgctxt "FieldView|"
 #| msgid "Position columns"
@@ -7064,7 +7110,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
 msgstr "Colunas da posição"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:719
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:746
 #, fuzzy
 #| msgctxt "AlignmentDelegate|"
 #| msgid "TopLeft"
@@ -7072,7 +7118,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
 msgstr "Cima-Esquerda"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:751
 #, fuzzy
 #| msgctxt "AlignmentDelegate|"
 #| msgid "BottomLeft"
@@ -7080,7 +7126,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
 msgstr "Baixo-Esquerda"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:729
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:756
 #, fuzzy
 #| msgctxt "MindMenu|"
 #| msgid "Center"
@@ -7088,7 +7134,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "Center"
 msgstr "Centro"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:734
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:761
 #, fuzzy
 #| msgctxt "AlignmentDelegate|"
 #| msgid "TopRight"
@@ -7096,7 +7142,7 @@ msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
 msgstr "Cima-Direita"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:739
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:766
 #, fuzzy
 #| msgctxt "AlignmentDelegate|"
 #| msgid "BottomRight"
@@ -7104,22 +7150,22 @@ msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
 msgstr "Baixo-Direita"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:744
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:771
 msgctxt "PreferencesDialogBox|"
 msgid "Scaled"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:749
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:776
 msgctxt "PreferencesDialogBox|"
 msgid "Filled"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:754
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:781
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:769
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 #, fuzzy
 #| msgctxt "ToolBox|"
 #| msgid "Highlighter"
@@ -7127,32 +7173,32 @@ msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
 msgstr "Realce"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:798
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
 msgid "Color Palette"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:810
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
 msgctxt "PreferencesDialogBox|"
 msgid "*: need restart"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:830
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:857
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:864
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:850
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:877
 msgctxt "PreferencesDialogBox|"
 msgid "Diagnostic"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:878
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:905
 msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr ""

@@ -3402,7 +3402,20 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Teksto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:193
+#: src/libraries/core/src/controller/networkcontroller.cpp:128
+msgctxt "NetworkController|"
+msgid "[Upnp] Successful mapping port: "
+msgstr ""
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "NetworkController|"
+msgid "[Upnp] No ip address has been found."
+msgstr "[Upnp] Portmapado estas farita"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:278
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3410,7 +3423,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Konekto al la servilo estis fermita."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:204
+#: src/libraries/core/src/controller/networkcontroller.cpp:289
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3418,27 +3431,27 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servilo"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:208
+#: src/libraries/core/src/controller/networkcontroller.cpp:293
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:42
+#: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
 msgid "default"
 msgstr "defaŭlto"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:51
+#: src/libraries/core/src/controller/preferencescontroller.cpp:54
 msgctxt "ThemeModel|"
 msgid "darkorange"
 msgstr "mallumoranĝo"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:73
+#: src/libraries/core/src/controller/preferencescontroller.cpp:76
 msgctxt "ThemeModel|"
 msgid "darkfusion"
 msgstr "darkfusion"
 
-#: src/libraries/core/src/controller/preferencescontroller.cpp:357
+#: src/libraries/core/src/controller/preferencescontroller.cpp:318
 msgctxt "PreferencesController|"
 msgid " (copy)"
 msgstr "(kopio)"
@@ -3814,13 +3827,13 @@ msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "Duobligita ludanto aŭ uuid"
 
-#: src/libraries/core/src/model/profilemodel.cpp:114
+#: src/libraries/core/src/model/profilemodel.cpp:116
 #: src/libraries/core/src/undoCmd/addlocalcharactercommand.cpp:36
 msgctxt "QObject|"
 msgid "Unknown Character"
 msgstr "Nekonata Karaktero"
 
-#: src/libraries/core/src/model/profilemodel.cpp:163
+#: src/libraries/core/src/model/profilemodel.cpp:165
 msgctxt "ProfileModel|"
 msgid " (clone)"
 msgstr " (klono)"
@@ -3899,12 +3912,7 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Ludanto"
 
-#: src/libraries/core/src/network/rserver.cpp:47
-msgctxt "RServer|"
-msgid "[Upnp] Port mapping has been done"
-msgstr "[Upnp] Portmapado estas farita"
-
-#: src/libraries/core/src/network/rserver.cpp:92
+#: src/libraries/core/src/network/rserver.cpp:62
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
@@ -3942,21 +3950,46 @@ msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
 msgstr "Uzanto %1 estas malkonektita!"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:114
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:97
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
-msgid "Unable to read the URL in server answer"
+msgid "Unable to read the beginning of server answer"
 msgstr "Ne eblas legi la URL en servila respondo"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:215
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:105
+#, fuzzy
+#| msgctxt "UpnpNat|"
+#| msgid "Unable to read the URL in server answer"
+msgctxt "UpnpNat|"
+msgid "Unable to read the end of server answer"
+msgstr "Ne eblas legi la URL en servila respondo"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:139
+#, fuzzy
+#| msgctxt "NodeSettingPopup|"
+#| msgid "Description: "
+msgctxt "UpnpNat|"
+msgid "Description file is empty"
+msgstr "Priskribo:"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
 msgid "Fail to get base_URL from XMLNode \"URLBase\" or describe_url.\n"
 msgstr "Malsukcesas ricevi base_URL de XMLNode \"URLBase\" aŭ describe_url.\n"
 
-#: src/libraries/core/src/network/upnp/upnpnat.cpp:223
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:207
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Malsukcesas trovi taŭgan servotipo: %1 %2 %3"
+
+#: src/libraries/core/src/network/upnp/upnpnat.cpp:256
+#, qt-format
+msgctxt "UpnpNat|"
+msgid "Something went wrong: %1"
+msgstr ""
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5873,43 +5906,43 @@ msgctxt "PersonDialog|"
 msgid "Color:"
 msgstr "Koloro:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:69
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
 msgstr "Nur GM"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:70
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
 msgid "PC Move"
 msgstr "PC-Movo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:73
 msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:156
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Preferoj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:306
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Bildoj (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Css Redaktoro"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:401
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "Css"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:432
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
 #, fuzzy, qt-format
 #| msgctxt "PreferencesDialog|"
 #| msgid "<li>Image Format : %1 value %2</li>"
@@ -5917,49 +5950,49 @@ msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Formato de bildo : %1 valoro %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:433
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Subtenataj Bildaj Formatoj:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:440
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Fino de Bilda Formato"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:443
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Tiparaj familioj:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:450
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Fino de Font-familioj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:453
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Subteno de sondosierformatoj:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:489
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Fino de Subtenataj sondosierformatoj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:506
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Eksporti Rolisteam-etoson"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:508
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Rolisteam-Etoso: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:516
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importi Rolisteam-etoson"
@@ -6065,257 +6098,273 @@ msgctxt "PreferencesDialogBox|"
 msgid "Pictures fit their Windows (at the opening)"
 msgstr "Bildoj konvenas al siaj Vindozo (ĉe la malfermo)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:274
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
+#, fuzzy
+#| msgctxt "RServer|"
+#| msgid "[Upnp] Port mapping has been done"
+msgctxt "PreferencesDialogBox|"
+msgid "Send Upnp Port mapping request"
+msgstr "[Upnp] Portmapado estas farita"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "&Network"
+msgctxt "PreferencesDialogBox|"
+msgid "Upnp Network:"
+msgstr "&Reto"
+
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
 msgstr "Apliklingvo*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:280
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:307
 msgctxt "PreferencesDialogBox|"
 msgid "Use system language"
 msgstr "Uzi sistemlingvon"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:292
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:319
 msgctxt "PreferencesDialogBox|"
 msgid "Available translations:"
 msgstr "Haveblaj tradukoj:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:317
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:344
 msgctxt "PreferencesDialogBox|"
 msgid "Custom translation"
 msgstr "Propra traduko"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:326
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:353
 msgctxt "PreferencesDialogBox|"
 msgid "Translation File:"
 msgstr "Tradukdosiero:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:341
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:368
 msgctxt "PreferencesDialogBox|"
 msgid "Character Sheet"
 msgstr "Karaktera Folio"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:347
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:374
 msgctxt "PreferencesDialogBox|"
 msgid "Time between page:"
 msgstr "Tempo inter paĝo:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:370
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:397
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
 msgstr "ms"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:392
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
 msgstr "Mesaĝado"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:398
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
 msgid "Save chatrooms data"
 msgstr "Konservi babilejajn datumojn"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:421
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:448
 msgctxt "PreferencesDialogBox|"
 msgid "* : need restart"
 msgstr "* : necesas rekomenci"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:429
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:456
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
 msgstr "Eksteraj Redaktiloj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:435
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:462
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
 msgstr "RCSE"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:441
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 msgctxt "PreferencesDialogBox|"
 msgid "Path:"
 msgstr "Vojo:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:451
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:478
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
 msgstr "Parametroj:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:458
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:491
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:524
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:485
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:518
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:551
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
 msgstr "%1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
 msgstr "MensMapo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:474
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 msgctxt "PreferencesDialogBox|"
 msgid "Path"
 msgstr "Vojo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:484
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:517
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:511
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:544
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
 msgstr "Parametroj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:528
 msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
 msgstr "Tekstredaktilo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:507
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
 msgstr "TekstEtikedo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:547
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
 msgstr "%1 estas lokokupilo por la nomo de la dosiero."
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:555
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
 msgid "Themes"
 msgstr "Etosoj"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:561
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:588
 msgctxt "PreferencesDialogBox|"
 msgid "Theme"
 msgstr "Etoso"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:571
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:598
 msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
 msgstr "Aktuala Etoso*"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:578
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:605
 msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
 msgstr "Etosonomo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:585
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
 msgstr "Stiloj:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:601
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 msgctxt "PreferencesDialogBox|"
 msgid "Copy"
 msgstr "Kopii"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:608
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:635
 msgctxt "PreferencesDialogBox|"
 msgid "Delete"
 msgstr "Forigi"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:625
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:652
 msgctxt "PreferencesDialogBox|"
 msgid "Css:"
 msgstr "Css:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:632
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:659
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
 msgstr "Redakti..."
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:658
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:685
 msgctxt "PreferencesDialogBox|"
 msgid "Background"
 msgstr "Fono"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:666
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:693
 msgctxt "PreferencesDialogBox|"
 msgid "Color:"
 msgstr "Koloro:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:697
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
 msgctxt "PreferencesDialogBox|"
 msgid "Image:"
 msgstr "Bildo:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:711
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:738
 msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
 msgstr "Pozicio:"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:719
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:746
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
 msgstr "SupraMaldekstra Angulo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:724
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:751
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
 msgstr "Malsupra Maldekstra Angulo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:729
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:756
 msgctxt "PreferencesDialogBox|"
 msgid "Center"
 msgstr "Centro"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:734
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:761
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
 msgstr "Supra Dekstra Angulo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:739
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:766
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
 msgstr "Malsupra Dekstra Angulo"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:744
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:771
 msgctxt "PreferencesDialogBox|"
 msgid "Scaled"
 msgstr "Skvamita"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:749
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:776
 msgctxt "PreferencesDialogBox|"
 msgid "Filled"
 msgstr "Plenigita"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:754
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:781
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
 msgstr "Ripetis"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:769
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
 msgstr "Ĵetkuboj Highlight Koloro"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:798
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
 msgid "Color Palette"
 msgstr "Kolora Paletro"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:810
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
 msgctxt "PreferencesDialogBox|"
 msgid "*: need restart"
 msgstr "*: bezonas rekomenci"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:830
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:857
 msgctxt "PreferencesDialogBox|"
 msgid "Import…"
 msgstr "Importi…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:837
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:864
 msgctxt "PreferencesDialogBox|"
 msgid "Export…"
 msgstr "Eksporti…"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:850
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:877
 msgctxt "PreferencesDialogBox|"
 msgid "Diagnostic"
 msgstr "Diagnoza"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:878
+#: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:905
 msgctxt "PreferencesDialogBox|"
 msgid "Start"
 msgstr "Komenci"
