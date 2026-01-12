@@ -22,6 +22,10 @@
 
 #include "controller/view_controller/notecontroller.h"
 
+#ifdef Q_OS_MAC
+#include <QMenuBar>
+#endif
+
 NoteContainer::NoteContainer(NoteController* note, QWidget* parent)
     : MediaContainer(note, MediaContainer::ContainerType::NoteContainer, parent)
     , m_noteCtrl(note)
