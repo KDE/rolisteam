@@ -3169,15 +3169,12 @@ msgstr "ტექსტი"
 #: src/libraries/core/src/controller/networkcontroller.cpp:128
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr ""
+msgstr "[Upnp] პორტის წარმატებული გადამისამართება: "
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:179
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[Upnp] პორტების გადამისამართება შესრულებულია"
+msgstr "[Upnp] IP მისამართი ვერ ვიპოვე."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:278
 msgctxt "NetworkController|"
@@ -3704,28 +3701,19 @@ msgid "User %1 has been disconnected!"
 msgstr "მომხმარებელი %1 გაითიშა!"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:97
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the beginning of server answer"
-msgstr "სერვერის პასუხიდან URL-ის წაკითხვის სეცდომა"
+msgstr "სერვერის პასუხის დასაწყისის წაკითხვა შეუძლებელია"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "სერვერის პასუხიდან URL-ის წაკითხვის სეცდომა"
+msgstr "სერვერის პასუხის დასასრულის წაკითხვა შეუძლებელია"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "აღწერა: "
+msgstr "აღწერის ფაილი ცარიელია"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3743,7 +3731,7 @@ msgstr "სერვისის სწორი ტიპის აღმოჩ
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Something went wrong: %1"
-msgstr ""
+msgstr "რაღაც არასწორია: %1"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5828,20 +5816,14 @@ msgid "Pictures fit their Windows (at the opening)"
 msgstr "სურათები მათ ფანჯრებში ეტევა (გახსნისას)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[Upnp] პორტების გადამისამართება შესრულებულია"
+msgstr "Upnp პორტის გადამისამართების მოთხოვნის გაგზავნა"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "&Network"
 msgctxt "PreferencesDialogBox|"
 msgid "Upnp Network:"
-msgstr "&ქსელი"
+msgstr "Upnp ქსელი:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
@@ -7190,7 +7172,7 @@ msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
 msgstr "XML-ის სინტაქსის შემოწმება"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:37
+#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:41
 #, qt-format
 msgctxt "NoteContainer|"
 msgid "%1 - Note"

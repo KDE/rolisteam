@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-06 07:16-0300\n"
+"PO-Revision-Date: 2026-01-12 08:44-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3166,15 +3166,12 @@ msgstr "Texto"
 #: src/libraries/core/src/controller/networkcontroller.cpp:128
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr ""
+msgstr "[Upnp] Mapeamento de porta bem-sucedido: "
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:179
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[Upnp] O mapeamento de portas foi feito"
+msgstr "[Upnp] Nenhum endereço IP foi encontrado."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:278
 msgctxt "NetworkController|"
@@ -3703,28 +3700,19 @@ msgid "User %1 has been disconnected!"
 msgstr "O usuário %1 foi desconectado!"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:97
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the beginning of server answer"
-msgstr "Não foi possível ler a URL na resposta do servidor"
+msgstr "Não foi possível ler o início da resposta do servidor"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "Não foi possível ler a URL na resposta do servidor"
+msgstr "Não foi possível ler o fim da resposta do servidor"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "Descrição: "
+msgstr "O arquivo de descrição está vazio"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3741,7 +3729,7 @@ msgstr "Falha ao encontrar o tipo de serviço adequado: %1 %2 %3"
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Something went wrong: %1"
-msgstr ""
+msgstr "Algo deu errado: %1"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5825,20 +5813,14 @@ msgid "Pictures fit their Windows (at the opening)"
 msgstr "As imagens se encaixam em suas janelas (na abertura)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[Upnp] O mapeamento de portas foi feito"
+msgstr "Enviar solicitação de mapeamento de porta UPnP"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "&Network"
 msgctxt "PreferencesDialogBox|"
 msgid "Upnp Network:"
-msgstr "&Rede"
+msgstr "Rede UPnP:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
@@ -7187,7 +7169,7 @@ msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
 msgstr "Verificar sintaxe xml"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:37
+#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:41
 #, qt-format
 msgctxt "NoteContainer|"
 msgid "%1 - Note"

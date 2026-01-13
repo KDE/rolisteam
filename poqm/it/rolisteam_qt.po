@@ -7234,7 +7234,7 @@ msgctxt "XMLTextEdit|"
 msgid "Check xml syntax"
 msgstr "Controlla la sintassi xml"
 
-#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:37
+#: src/libraries/rwidgets/editors/noteeditor/src/notecontainer.cpp:41
 #, qt-format
 msgctxt "NoteContainer|"
 msgid "%1 - Note"
