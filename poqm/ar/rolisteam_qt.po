@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-08 14:36+0400\n"
+"PO-Revision-Date: 2026-01-14 08:48+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3168,15 +3168,12 @@ msgstr "النص"
 #: src/libraries/core/src/controller/networkcontroller.cpp:128
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr ""
+msgstr "[Upnp] نجاح تعيين المنفذ: "
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:179
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[Upnp] إنجاز تعيين المنفذ"
+msgstr "[Upnp] لم يُعثر على عنوان الآي بي."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:278
 msgctxt "NetworkController|"
@@ -3702,28 +3699,19 @@ msgid "User %1 has been disconnected!"
 msgstr "قطع اتصال المستخدم %1!"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:97
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the beginning of server answer"
-msgstr "غير قادر على قراءة عنوان URL في رد الخادم"
+msgstr "تعذر قراءة بداية رد الخادم"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "غير قادر على قراءة عنوان URL في رد الخادم"
+msgstr "تعذر قراءة نهاية رد الخادم"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "الوصف: "
+msgstr "ملف الوصف فارغ"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3740,7 +3728,7 @@ msgstr "فشل العثور على نوع الخدمة المناسب: %1 %2 %3"
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Something went wrong: %1"
-msgstr ""
+msgstr "حدث خطأ ما: %1"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5830,20 +5818,14 @@ msgid "Pictures fit their Windows (at the opening)"
 msgstr "اجعل الصور تناسب نوافذها (عند الفتح)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[Upnp] إنجاز تعيين المنفذ"
+msgstr "إرسال طلب تعيين منفذ Upnp"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "&Network"
 msgctxt "PreferencesDialogBox|"
 msgid "Upnp Network:"
-msgstr "&شبكة"
+msgstr "شبكة Upnp:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
