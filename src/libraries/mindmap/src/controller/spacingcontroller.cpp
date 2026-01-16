@@ -68,7 +68,8 @@ void SpacingController::computeInLoop()
         std::vector<PositionedItem*> allNodes;
         allNodes.reserve(items.size());
         std::transform(std::begin(items), std::end(items), std::back_inserter(allNodes),
-                       [](const std::unique_ptr<mindmap::MindItem>& item) { return dynamic_cast<PositionedItem*>(item.get()); });
+                       [](const std::unique_ptr<mindmap::MindItem>& item)
+                       { return dynamic_cast<PositionedItem*>(item.get()); });
 
         allNodes.erase(std::remove_if(std::begin(allNodes), std::end(allNodes),
                                       [packagedChildren](PositionedItem* item)
@@ -105,6 +106,9 @@ void SpacingController::computeInLoop()
 
 void SpacingController::applyCoulombsLaw(PositionedItem* node, std::vector<PositionedItem*> nodeList)
 {
+    if(!node)
+        return;
+
     if(!node->isVisible())
         return;
     auto globalRepulsionForce= QVector2D();
