@@ -80,6 +80,7 @@ private:
 void MindMapTest::init()
 {
     m_ctrl.reset(new MindMapController("test_id"));
+    m_ctrl->setSpacing(false);
 
     m_contentModel.reset(new ContentModel());
     m_mindmapModel.reset(new FilteredContentModel(Core::ContentType::MINDMAP));
