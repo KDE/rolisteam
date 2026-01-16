@@ -56,7 +56,6 @@ set(documentation README.md HelpMe.md)
 
 configure_file(scripts/generate_coverage.sh.in generate_coverage.sh @ONLY)
 
-
 if(EXISTS ${IFW_PATH})
 set(icons
     resources/rolisteam/logo/rolisteam.ico
@@ -65,3 +64,13 @@ set(icons
 
 install(FILES ${icons} DESTINATION logo COMPONENT rolisteamComp)
 endif()
+
+include(KDEInstallDirs OPTIONAL RESULT_VARIABLE installDir)
+
+if(NOT "${installDir}" STREQUAL "NOTFOUND")
+install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
+install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
+endif()
+
+
