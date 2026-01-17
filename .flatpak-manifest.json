@@ -18,29 +18,6 @@
            "sources": [
                 { "type": "git", "url": "https://invent.kde.org/rolisteam/rolisteam.git" }
             ]
-        },
-        {
-            "name": "rolisteam-data",
-            "buildsystem": "simple",
-            "build-commands": [
-                "install -Dm644 org.rolisteam.rolisteam.desktop /app/share/applications/org.rolisteam.rolisteam.desktop",
-                "install -Dm644 org.rolisteam.rolisteam.appdata.xml /app/share/appdata/org.rolisteam.rolisteam.appdata.xml",
-                "install -Dm644 org.rolisteam.rolisteam.svg /app/share/icons/hicolor/scalable/apps/org.rolisteam.rolisteam.svg"
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "org.rolisteam.rolisteam.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "org.rolisteam.rolisteam.appdata.xml"
-                },
-                {
-                    "type": "file",
-                    "path": "org.rolisteam.rolisteam.svg"
-                }
-            ]
         }
     ]    
 }

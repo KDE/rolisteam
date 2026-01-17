@@ -106,9 +106,8 @@ MindMapControllerBase::~MindMapControllerBase()
 
     auto styles= m_styleModel.release();
     auto model= m_itemModel.release();
-    auto spacingCtrl= m_spacingController.release();
+    m_spacingController.release()->deleteLater();
 
-    delete spacingCtrl;
     delete model;
     delete styles;
 }
