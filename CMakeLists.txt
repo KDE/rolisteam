@@ -7,10 +7,11 @@ if (MSVC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 19.14)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX "/experimental:external /external:I ")
 endif()
 
+find_package(ECM REQUIRED NO_MODULE)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 set(CMAKE_CURRENT_BINARY_DIR ON)
 set(CMAKE_AUTORCC ON)
 add_compile_definitions(QT_DISABLE_DEPRECATED_BEFORE=0x050F00)
@@ -65,12 +66,14 @@ set(icons
 install(FILES ${icons} DESTINATION logo COMPONENT rolisteamComp)
 endif()
 
-include(KDEInstallDirs OPTIONAL RESULT_VARIABLE installDir)
+include(KDEInstallDirs6 RESULT_VARIABLE installDir) # OPTIONAL RESULT_VARIABLE installDir
 
 if(NOT "${installDir}" STREQUAL "NOTFOUND")
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps)
+else()
+message("KDEInstallDirs6 not found")
 endif()
 
 
