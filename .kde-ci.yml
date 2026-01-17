@@ -10,6 +10,5 @@ Options:
   run-tests: True
   cmake-options: '-DBUILD_TESTING=ON -DCODE_COVERAGE=ON'
   require-passing-tests-on: ['Linux']
-  per-test-timeout: 1000
   setup-x-environment: True
   run-gcovr: True
