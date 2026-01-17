@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2026-01-10 20:54+0100\n"
+"PO-Revision-Date: 2026-01-14 13:04+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -3173,15 +3173,12 @@ msgstr "Texte"
 #: src/libraries/core/src/controller/networkcontroller.cpp:128
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr ""
+msgstr "[Upnp] Correspondance de port réussie :"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:179
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[UPnP] Le mappage de ports a été réalisé."
+msgstr "[UPnP] Aucune adresse IP n'a été trouvée."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:278
 msgctxt "NetworkController|"
@@ -3720,20 +3717,14 @@ msgid "Unable to read the beginning of server answer"
 msgstr "Impossible de lire le début de la réponse du serveur"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the beginning of server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "Impossible de lire le début de la réponse du serveur"
+msgstr "Impossible de lire le fin de la réponse du serveur"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "Description :"
+msgstr "Le fichier de description est vide."
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3752,7 +3743,7 @@ msgstr "Impossible de trouver un type adapté de service : %1 %2 %3"
 #, qt-format
 msgctxt "UpnpNat|"
 msgid "Something went wrong: %1"
-msgstr ""
+msgstr "Quelque chose s'est mal passé : %1"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -5847,20 +5838,14 @@ msgid "Pictures fit their Windows (at the opening)"
 msgstr "Les images s'adaptent à leurs fenêtres (Lors de l'ouverture)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[UPnP] Le mappage de ports a été réalisé."
+msgstr "Envoyer une demande de mise en correspondance « UPnP » des ports."
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "&Network"
 msgctxt "PreferencesDialogBox|"
 msgid "Upnp Network:"
-msgstr "&Réseau"
+msgstr "Réseau « UPNP » :"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
