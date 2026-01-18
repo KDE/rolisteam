@@ -7,7 +7,7 @@ if (MSVC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 19.14)
     set(CMAKE_INCLUDE_SYSTEM_FLAG_CXX "/experimental:external /external:I ")
 endif()
 
-find_package(ECM REQUIRED NO_MODULE)
+find_package(ECM NO_MODULE)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -66,7 +66,7 @@ set(icons
 install(FILES ${icons} DESTINATION logo COMPONENT rolisteamComp)
 endif()
 
-include(KDEInstallDirs6 RESULT_VARIABLE installDir) # OPTIONAL RESULT_VARIABLE installDir
+include(KDEInstallDirs6 OPTIONAL RESULT_VARIABLE installDir) # OPTIONAL RESULT_VARIABLE installDir
 
 if(NOT "${installDir}" STREQUAL "NOTFOUND")
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.desktop DESTINATION ${KDE_INSTALL_APPDIR})
