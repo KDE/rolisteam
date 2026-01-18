@@ -21,6 +21,10 @@
 #include "sharednotecontainer.h"
 #include "controller/view_controller/sharednotecontroller.h"
 
+#ifdef Q_OS_MAC
+#include <QMenuBar>
+#endif
+
 SharedNoteContainer::SharedNoteContainer(SharedNoteController* ctrl, QWidget* parent)
     : MediaContainer(ctrl, MediaContainer::ContainerType::SharedNoteContainer, parent)
     , m_sharedCtrl(ctrl)
