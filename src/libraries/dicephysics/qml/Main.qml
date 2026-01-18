@@ -40,8 +40,47 @@ ApplicationWindow {
         factor: menu.factor
         parentWidth: root.width
         parentHeight: root.height
+        Action {
+            id: selectAllAct
+            text: qsTr("Select All dice")
+            icon.source:"qrc:/dice3d/icons/selectall.svg"
+            shortcut: StandardKey.SelectAll
+            onTriggered: dicePlan.selectAll()
+        }
+        Action {
+            id: resetSelectAct
+            text: qsTr("Remove Selection")
+            icon.source: "qrc:/dice3d/icons/removeSelect.svg"
+            shortcut: "Ctrl+Shift+A"
+            onTriggered: dicePlan.resetSelection()
+        }
+        Action {
+            id: selectRectAct
+            text: qsTr("Selection by zone")
+            icon.source: "qrc:/dice3d/icons/selectRect.svg"
+            shortcut: "Ctrl+r"
+            onTriggered: dicePlan.startRectSelection()
+        }
+        Action {
+            id: removeAllDice
+            text: qsTr("Remove all dice")
+            icon.source: "qrc:/dice3d/icons/deleteall.svg"
+            icon.color: "transparent"
+            onTriggered: Dice3DCtrl.cleanUp()
+        }
+        Action {
+            id: resetSettings
+            text: qsTr("Reset Settings")
+            icon.source: "qrc:/dice3d/icons/resetSettings.svg"
+            onTriggered: Dice3DCtrl.reset()
+        }
         SideMenu {
             id: menu
+            selectAll: selectAllAct
+            resetSelection:resetSelectAct
+            rectSelection: selectRectAct
+            deleteAll: removeAllDice
+            resetSettings: resetSettings
         }
 
         RoundButton {

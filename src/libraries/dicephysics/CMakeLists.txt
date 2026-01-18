@@ -68,6 +68,11 @@ set(ASSETS
     assets/meshes/d100.mesh
     assets/icons/menuIcon.svg
     assets/icons/dice3d.svg
+    assets/icons/selectall.svg
+    assets/icons/removeSelect.svg
+    assets/icons/selectRect.svg
+    assets/icons/deleteall.svg
+    assets/icons/resetSettings.svg
     assets/sounds/onedice.wav
     assets/sounds/rolling.wav
 )

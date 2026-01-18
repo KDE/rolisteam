@@ -32,6 +32,9 @@ Item {
             ma.select(obj)
         }
     }
+    function startRectSelection() {
+        ma.rectSelect = true
+    }
 
     function resetSelection() {
         ma.clear()

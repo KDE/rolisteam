@@ -137,6 +137,8 @@ public:
     bool normalDialogMode() const;
     void setNormalDialogMode(bool newNormalDialogMode);
 
+public slots:
+    void cleanUp();
     void reset();
 
 signals:

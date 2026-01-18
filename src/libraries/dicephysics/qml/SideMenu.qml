@@ -10,6 +10,11 @@ Drawer {
 
     property alias mouseEnabled: mouseCtrl.checked
     property alias factor: _factor.value
+    required property Action selectAll
+    required property Action resetSelection
+    required property Action rectSelection
+    required property Action deleteAll
+    required property Action resetSettings
 
     height: root.height
     width: _toolBar.width + 40
@@ -143,7 +148,7 @@ Drawer {
 
                     ToolButton {
                         icon.name: "list-add"
-                        //icon.color: "transparent"
+                        icon.color: "transparent"
                         onClicked:{
                             Dice3DCtrl.addDice(model.type)
                         }
@@ -171,7 +176,27 @@ Drawer {
                     }
                 }
             }
-
+            GridLayout {
+                id: gridLyt
+                Layout.fillWidth: true
+                columns: Math.floor(gridLyt.width / (iconSize*1.2))
+                property int iconSize: 50
+                property list<Action> allActions: [drawer.selectAll, drawer.resetSelection, drawer.rectSelection, drawer.deleteAll, drawer.resetSettings]
+                Repeater {
+                    model: gridLyt.allActions
+                    ToolButton {
+                        action: modelData
+                        display: ToolButton.IconOnly
+                        Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+                        ToolTip.text: action.text
+                        ToolTip.visible: hovered
+                        hoverEnabled: true
+                        icon.width: gridLyt.iconSize
+                        icon.height: gridLyt.iconSize
+                        icon.color: action.icon.color
+                    }
+                }
+            }
             RowLayout {
                 visible: false
                 Label {
@@ -188,11 +213,9 @@ Drawer {
             RowLayout {
                 Label {
                     text: qsTr("Dice Command:")
+                    ToolTip.text: Dice3DCtrl.dicePart
+                    ToolTip.visible: command.focus
                 }
-                Label {
-                    text: Dice3DCtrl.dicePart
-                }
-
                 TextField {
                     id: command
                     onTextEdited: {
