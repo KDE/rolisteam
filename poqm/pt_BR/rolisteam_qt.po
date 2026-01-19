@@ -3988,59 +3988,99 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Rolagem 3D: Distância %1 - Tempo %2 - Rotação %3"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:59
+#: src/libraries/dicephysics/qml/Main.qml:45
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Select all dice."
+msgctxt "Main|"
+msgid "Select All dice"
+msgstr "Seleciona todos os dados."
+
+#: src/libraries/dicephysics/qml/Main.qml:52
+#, fuzzy
+#| msgctxt "MindMenu|"
+#| msgid "Remove Selection"
+msgctxt "Main|"
+msgid "Remove Selection"
+msgstr "Remover seleção"
+
+#: src/libraries/dicephysics/qml/Main.qml:59
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Selection by rectangle."
+msgctxt "Main|"
+msgid "Selection by zone"
+msgstr "Seleção por retângulo."
+
+#: src/libraries/dicephysics/qml/Main.qml:66
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Select all dice."
+msgctxt "Main|"
+msgid "Remove all dice"
+msgstr "Seleciona todos os dados."
+
+#: src/libraries/dicephysics/qml/Main.qml:73
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Settings"
+msgctxt "Main|"
+msgid "Reset Settings"
+msgstr "Configurações"
+
+#: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
 msgid "Dice Size:"
 msgstr "Tamanho do dado:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:77
+#: src/libraries/dicephysics/qml/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "disable mouseArea"
 msgstr "desativar área do mouse"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:178
+#: src/libraries/dicephysics/qml/SideMenu.qml:203
 msgctxt "SideMenu|"
 msgid "Collision sound:"
 msgstr "Som de colisão:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:190
+#: src/libraries/dicephysics/qml/SideMenu.qml:215
 msgctxt "SideMenu|"
 msgid "Dice Command:"
 msgstr "Comando de dado:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:206
+#: src/libraries/dicephysics/qml/SideMenu.qml:229
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
 msgstr "Mostrar dados 3D na caixa de diálogo"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:212
+#: src/libraries/dicephysics/qml/SideMenu.qml:235
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
 msgstr "Ocultar dado 3D após: %1s"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:213
+#: src/libraries/dicephysics/qml/SideMenu.qml:236
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
 msgstr "Painel do dado 3D após um tempo determinado."
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:234
+#: src/libraries/dicephysics/qml/SideMenu.qml:257
 msgctxt "SideMenu|"
 msgid "Share rolls"
 msgstr "Compartilhar rolagem de dado"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:235
+#: src/libraries/dicephysics/qml/SideMenu.qml:258
 msgctxt "SideMenu|"
 msgid "(Experimental)"
 msgstr "(Experimental)"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:247
+#: src/libraries/dicephysics/qml/SideMenu.qml:270
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Duration: %1s"
 msgstr "Duração: %1s"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:248
+#: src/libraries/dicephysics/qml/SideMenu.qml:271
 msgctxt "SideMenu|"
 msgid ""
 "Rolls made by remote player will been shown on your screen for few seconds.\n"

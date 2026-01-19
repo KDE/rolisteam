@@ -3990,59 +3990,99 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D გაგორება: მანძილი %1 - დრო %2 - ბრუნვა %3"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:59
+#: src/libraries/dicephysics/qml/Main.qml:45
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Select all dice."
+msgctxt "Main|"
+msgid "Select All dice"
+msgstr "ყველა კამათლის მონიშვნა."
+
+#: src/libraries/dicephysics/qml/Main.qml:52
+#, fuzzy
+#| msgctxt "MindMenu|"
+#| msgid "Remove Selection"
+msgctxt "Main|"
+msgid "Remove Selection"
+msgstr "მონიშვნულის წაშლა"
+
+#: src/libraries/dicephysics/qml/Main.qml:59
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Selection by rectangle."
+msgctxt "Main|"
+msgid "Selection by zone"
+msgstr "მონიშვნა მართკუთხედით."
+
+#: src/libraries/dicephysics/qml/Main.qml:66
+#, fuzzy
+#| msgctxt "PhysicsDicePage|"
+#| msgid "Select all dice."
+msgctxt "Main|"
+msgid "Remove all dice"
+msgstr "ყველა კამათლის მონიშვნა."
+
+#: src/libraries/dicephysics/qml/Main.qml:73
+#, fuzzy
+#| msgctxt "Main|"
+#| msgid "Settings"
+msgctxt "Main|"
+msgid "Reset Settings"
+msgstr "მორგება"
+
+#: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
 msgid "Dice Size:"
 msgstr "ზომა:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:77
+#: src/libraries/dicephysics/qml/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "disable mouseArea"
 msgstr "mouseArea-ის გათიშვა"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:178
+#: src/libraries/dicephysics/qml/SideMenu.qml:203
 msgctxt "SideMenu|"
 msgid "Collision sound:"
 msgstr "შეჯახების ხმა:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:190
+#: src/libraries/dicephysics/qml/SideMenu.qml:215
 msgctxt "SideMenu|"
 msgid "Dice Command:"
 msgstr "კამათლის ბრძანება:"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:206
+#: src/libraries/dicephysics/qml/SideMenu.qml:229
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
 msgstr "3D კამათლის ჩვენება დიალოგში"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:212
+#: src/libraries/dicephysics/qml/SideMenu.qml:235
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
 msgstr "3D კამათლის დამალვის დრო: %1წმ"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:213
+#: src/libraries/dicephysics/qml/SideMenu.qml:236
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
 msgstr "3D კამათლის პანელი რაღაც დროის შემდეგ გაქრება."
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:234
+#: src/libraries/dicephysics/qml/SideMenu.qml:257
 msgctxt "SideMenu|"
 msgid "Share rolls"
 msgstr "გაგორებების გაზიარება"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:235
+#: src/libraries/dicephysics/qml/SideMenu.qml:258
 msgctxt "SideMenu|"
 msgid "(Experimental)"
 msgstr "(ექსპერიმენტული)"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:247
+#: src/libraries/dicephysics/qml/SideMenu.qml:270
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Duration: %1s"
 msgstr "ხანგრძლივობა: %1წმ"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:248
+#: src/libraries/dicephysics/qml/SideMenu.qml:271
 msgctxt "SideMenu|"
 msgid ""
 "Rolls made by remote player will been shown on your screen for few seconds.\n"

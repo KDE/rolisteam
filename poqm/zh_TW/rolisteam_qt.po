@@ -4222,7 +4222,44 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:59
+#: src/libraries/dicephysics/qml/Main.qml:45
+#, fuzzy
+#| msgctxt "MRichTextEdit|"
+#| msgid "Select an image"
+msgctxt "Main|"
+msgid "Select All dice"
+msgstr "選擇一張影像"
+
+#: src/libraries/dicephysics/qml/Main.qml:52
+#, fuzzy
+#| msgctxt "ButtonGrid|"
+#| msgid "Remove Selection"
+msgctxt "Main|"
+msgid "Remove Selection"
+msgstr "移除選取"
+
+#: src/libraries/dicephysics/qml/Main.qml:59
+msgctxt "Main|"
+msgid "Selection by zone"
+msgstr ""
+
+#: src/libraries/dicephysics/qml/Main.qml:66
+#, fuzzy
+#| msgctxt "MRichTextEdit|"
+#| msgid "Select an image"
+msgctxt "Main|"
+msgid "Remove all dice"
+msgstr "選擇一張影像"
+
+#: src/libraries/dicephysics/qml/Main.qml:73
+#, fuzzy
+#| msgctxt "InstantMessagingMain|"
+#| msgid "Settings"
+msgctxt "Main|"
+msgid "Reset Settings"
+msgstr "設定"
+
+#: src/libraries/dicephysics/qml/SideMenu.qml:64
 #, fuzzy
 #| msgctxt "PdfManager|"
 #| msgid "Size:"
@@ -4230,17 +4267,17 @@ msgctxt "SideMenu|"
 msgid "Dice Size:"
 msgstr "大小："
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:77
+#: src/libraries/dicephysics/qml/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "disable mouseArea"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:178
+#: src/libraries/dicephysics/qml/SideMenu.qml:203
 msgctxt "SideMenu|"
 msgid "Collision sound:"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:190
+#: src/libraries/dicephysics/qml/SideMenu.qml:215
 #, fuzzy
 #| msgctxt "CampaignProperties|"
 #| msgid "Dice Command"
@@ -4248,23 +4285,23 @@ msgctxt "SideMenu|"
 msgid "Dice Command:"
 msgstr "骰子命令"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:206
+#: src/libraries/dicephysics/qml/SideMenu.qml:229
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:212
+#: src/libraries/dicephysics/qml/SideMenu.qml:235
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:213
+#: src/libraries/dicephysics/qml/SideMenu.qml:236
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:234
+#: src/libraries/dicephysics/qml/SideMenu.qml:257
 #, fuzzy
 #| msgctxt "CharacterSheetWindow|"
 #| msgid "Share To"
@@ -4272,18 +4309,18 @@ msgctxt "SideMenu|"
 msgid "Share rolls"
 msgstr "分享到"
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:235
+#: src/libraries/dicephysics/qml/SideMenu.qml:258
 msgctxt "SideMenu|"
 msgid "(Experimental)"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:247
+#: src/libraries/dicephysics/qml/SideMenu.qml:270
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Duration: %1s"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:248
+#: src/libraries/dicephysics/qml/SideMenu.qml:271
 msgctxt "SideMenu|"
 msgid ""
 "Rolls made by remote player will been shown on your screen for few seconds.\n"
@@ -9696,10 +9733,6 @@ msgstr ""
 #~ msgctxt "MainWindow|"
 #~ msgid "unknown"
 #~ msgstr "未知"
-
-#~ msgctxt "ButtonGrid|"
-#~ msgid "Remove Selection"
-#~ msgstr "移除選取"
 
 #~ msgctxt "TableCanvasField|"
 #~ msgid "Properties"
