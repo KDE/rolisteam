@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-13 06:46+0200\n"
+"PO-Revision-Date: 2026-01-19 08:30+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -4000,44 +4000,29 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Пр. кидання: Відстань %1 - Час %2 - Обертання %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Вибрати усі кістки."
+msgstr "Вибрати усі кістки"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "Вилучити позначене"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Selection by rectangle."
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "Позначення прямокутною рамкою."
+msgstr "Позначення за зоною"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Вибрати усі кістки."
+msgstr "Вилучити усі кістки"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "Параметри"
+msgstr "Повернути початкові параметри"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2026-01-12 09:53+0100\n"
+"PO-Revision-Date: 2026-01-19 09:12+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3999,44 +3999,29 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll : Razdalja %1 - Čas %2 - Vrtenje %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Izberite vse kocke."
+msgstr "Izberi vse kocke"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "Odstrani izbor"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Selection by rectangle."
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "Izbor s pravokotnikom."
+msgstr "Izbor s cono"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Izberite vse kocke."
+msgstr "Odstrani vse kocke"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "Nastavitve"
+msgstr "Ponovno nastavi nastavitve"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"

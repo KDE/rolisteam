@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-14 08:48+0400\n"
+"PO-Revision-Date: 2026-01-19 22:05+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3988,44 +3988,29 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# رمية ثلاثية الأبعاد: المسافة %1 - الوقت %2 - الدوران %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "اختر كل النرد."
+msgstr "اختر كل النرد"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "أزِل التحديد"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Selection by rectangle."
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "الاختيار بالمستطيل."
+msgstr "الاختيار بالمنطقة"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "اختر كل النرد."
+msgstr "أزل كل النرد."
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "إعدادات"
+msgstr "صفّر اﻹعدادات"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"

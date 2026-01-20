@@ -3991,44 +3991,29 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D გაგორება: მანძილი %1 - დრო %2 - ბრუნვა %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "ყველა კამათლის მონიშვნა."
+msgstr "ყველა კამათლის მონიშვნა"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
-msgstr "მონიშვნულის წაშლა"
+msgstr "მონიშნულის წაშლა"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Selection by rectangle."
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "მონიშვნა მართკუთხედით."
+msgstr "მონიშვნა ზონით"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "ყველა კამათლის მონიშვნა."
+msgstr "ყველა კამათლის წაშლა"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "მორგება"
+msgstr "პარამეტრების ჩამოყრა"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-01-12 10:36+0100\n"
+"PO-Revision-Date: 2026-01-19 09:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -4005,44 +4005,29 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll: Distància %1 - Temps %2 - Gir %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Selecciona tots els daus."
+msgstr "Selecciona tots els daus"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "Elimina la selecció"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Selection by rectangle."
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "Selecció per rectangle."
+msgstr "Selecció per zona"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "PhysicsDicePage|"
-#| msgid "Select all dice."
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Selecciona tots els daus."
+msgstr "Elimina tots els daus"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "Configuració"
+msgstr "Reinicia la configuració"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"

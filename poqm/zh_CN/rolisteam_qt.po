@@ -3943,12 +3943,9 @@ msgid "Select All dice"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "PlayerWidgetUI|"
-#| msgid "Remove selected directory"
 msgctxt "Main|"
 msgid "Remove Selection"
-msgstr "移除选定的目录"
+msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:59
 msgctxt "Main|"
@@ -3956,20 +3953,14 @@ msgid "Selection by zone"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Remove Page"
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "删除页面"
+msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Reset Ids"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "重置 ID"
+msgstr ""
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
