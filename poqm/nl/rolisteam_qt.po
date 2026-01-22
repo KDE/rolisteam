@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-19 11:06+0100\n"
+"PO-Revision-Date: 2026-01-21 11:43+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -7468,7 +7468,7 @@ msgstr "Vervangen door:"
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:110
 msgctxt "FindDialog|"
 msgid "Ignore Case"
-msgstr "Negeer hoofd- en kleine letters"
+msgstr "Negeer hoofdletters"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:120
 msgctxt "FindDialog|"
