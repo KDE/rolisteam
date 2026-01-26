@@ -145,8 +145,10 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
 
     connect(ui->m_systemTranslation, &QCheckBox::toggled, m_ctrl, &PreferencesController::setSystemLang);
     connect(ui->m_customTranslation, &QCheckBox::toggled, m_ctrl, &PreferencesController::setHasCustomFile);
-    connect(ui->m_translationSelector, QOverload<int>::of(&QComboBox::currentIndexChanged), m_ctrl,
+
+    connect(ui->m_translationSelector, &QComboBox::activated, m_ctrl,
             &PreferencesController::setCurrentLangIndex);
+
     connect(ui->m_translationFileEdit, &FileDirChooser::pathChanged, m_ctrl,
             [this](const QUrl& url) { m_ctrl->setCustomFile(url.toLocalFile()); });
 
@@ -210,8 +212,11 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
     connect(ui->m_importBtn, &QPushButton::clicked, this, &PreferencesDialog::importTheme);
     connect(ui->m_deleteTheme, &QPushButton::clicked, this, &PreferencesDialog::deleteTheme);
 
+
     connect(m_ctrl, &PreferencesController::currentLangIndexChanged, this,
             [this]() { ui->m_translationSelector->setCurrentIndex(m_ctrl->currentLangIndex()); });
+
+    ui->m_translationSelector->setCurrentIndex(m_ctrl->currentLangIndex());
 
     updateTranslationPref();
 }

@@ -71,7 +71,7 @@ QVariant LanguageModel::data(const QModelIndex& index, int role) const
 
     auto lang= m_languageInfoList[index.row()];
 
-    return QString("%1 - %2").arg(lang.languageName, lang.commonLanguageName);
+    return QString("%1 (%3) - %2").arg(lang.languageName, lang.commonLanguageName, lang.code);
 }
 
 QStringList LanguageModel::pathFromIndex(const QModelIndex& index)
