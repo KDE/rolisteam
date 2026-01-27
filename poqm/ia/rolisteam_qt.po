@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-22 16:02+0100\n"
+"PO-Revision-Date: 2026-01-26 17:54+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -20,18 +20,15 @@ msgid "Aliases"
 msgstr "Aliases"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Lista de jocatores"
+msgstr "Lista de alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr "regex"
+msgstr "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -50,7 +47,6 @@ msgid "Command"
 msgstr "Commando"
 
 #: src/binaries/3DDicer/AliasesPage.qml:39
-#, fuzzy
 msgctxt "AliasesPage|"
 msgid "Off"
 msgstr "De-Activate (Off)"
@@ -71,12 +67,9 @@ msgid "Name:"
 msgstr "Nomine:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Nomine de campos"
+msgstr "Assigna Nomine de alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -89,20 +82,14 @@ msgid "Pattern which triggers the replace."
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
 msgstr "Commando:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "Commando"
+msgstr "Commando real"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -130,26 +117,17 @@ msgstr "Salveguarda lista de reproduction"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Dele"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Alias"
+msgstr "Adde Alias"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "Predefinite"
@@ -257,10 +235,9 @@ msgid "Set macro value."
 msgstr "Tote le paginas"
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
-#, fuzzy
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr "2d10"
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
@@ -276,9 +253,6 @@ msgid ""
 msgstr ""
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Dele"
@@ -452,17 +426,11 @@ msgid "Show/Hide menu."
 msgstr "Monstra/Cela nomine de PC"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Salveguarda profilos"
+msgstr "Ultime Profilo"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Dele"
@@ -479,12 +447,9 @@ msgid "Select Profile"
 msgstr "Selige profilo"
 
 #: src/binaries/3DDicer/SettingsPage.qml:56
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Preferentias"
+msgstr "Preferentias de App"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
 msgctxt "SettingsPage|"
@@ -492,12 +457,9 @@ msgid "Application Settings"
 msgstr "Preferentias de application"
 
 #: src/binaries/3DDicer/SettingsPage.qml:74
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Modo obscur"
+msgstr "Modo obscur:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
 #, fuzzy
@@ -508,15 +470,11 @@ msgid "Set/Unset dark mode."
 msgstr "Fixa/De-fixa Contrasigno de Canal"
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
-#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Language:"
 msgstr "Linguage:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
 msgstr "Cambia linguage"
@@ -527,17 +485,11 @@ msgid "Ui Tour:"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:119
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Initia"
 
 #: src/binaries/3DDicer/SettingsPage.qml:128
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "A proposito"
@@ -553,34 +505,24 @@ msgid "Version:"
 msgstr "Version:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:152
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "Data:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:160
-#, fuzzy
 msgctxt "SettingsPage|"
 msgid "Sha1:"
-msgstr "Sha-256"
+msgstr "Sha1:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Adde file de font"
+msgstr "Adde Profilo."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Document source"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "Documentation"
+msgstr "Documentation."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -588,12 +530,9 @@ msgid "Character Sheet"
 msgstr "Folio de Personage"
 
 #: src/binaries/3DDicer/SheetPage.qml:24
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete Item"
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "Dele elemento"
+msgstr "Elemento de Folio"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
@@ -601,12 +540,9 @@ msgid "Key"
 msgstr "Clave"
 
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
-#, fuzzy
-#| msgctxt "UserListView|"
-#| msgid "Edit name"
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "Modifica nomine"
+msgstr "Modifica nomine deElemento de folio"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
@@ -619,28 +555,19 @@ msgid "Value"
 msgstr "Valor"
 
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Save CharacterSheet View"
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "Salveguarda Vista de CharacterSheet (Folio de Personages)"
+msgstr "Salveguarda elemento de Folio"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Dele"
 
 #: src/binaries/3DDicer/SheetPage.qml:120
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "add %1 item"
 msgctxt "SheetPage|"
 msgid "Add sheet item"
-msgstr "Adde elemento %1"
+msgstr "Adde elemento de folio"
 
 #: src/binaries/mindmap/main.cpp:93 src/binaries/rcse/main.cpp:76
 msgctxt "QObject|"
@@ -669,12 +596,10 @@ msgstr "Imagines (*.png)"
 
 #: src/binaries/rcse/autofillerdialog.cpp:24
 #: src/binaries/rcse/autofillerdialog.ui:28
-#, fuzzy, qt-format
-#| msgctxt "DiceMessageDelegate|"
-#| msgid "Command: %1"
+#, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Computo"
+msgstr "Computo: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
@@ -682,12 +607,9 @@ msgid "Filler Assistant Dialog"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:35
-#, fuzzy
-#| msgctxt "CharacterItem|"
-#| msgid "Change State"
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Cambia Stato"
+msgstr "Startar de computator:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
@@ -695,35 +617,25 @@ msgid "Counter Step:"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Tote le paginas"
+msgstr "Assigna OMNE valores"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
-#, fuzzy
-#| msgctxt "FindDialog|"
-#| msgid "Replace All"
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Reimplacia Toto"
+msgstr "Regulas de Reimplaciamento"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "..."
 msgctxt "AutoFillerDialog|"
 msgid "..."
 msgstr "..."
 
 #: src/binaries/rcse/autofillerdialog.ui:144
-#, fuzzy
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr "Vista preliminar del resultato"
+msgstr "Vista preliminar del resultato:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
 msgctxt "AutoFillerDialog|"
@@ -946,9 +858,6 @@ msgid "Previous Page Button"
 msgstr "Button de previe pagina"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Tabella"
@@ -4554,7 +4463,6 @@ msgid "Command: %1"
 msgstr "Commando: %1"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
-#, fuzzy
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
 msgstr "Invia"
@@ -7316,12 +7224,9 @@ msgid "&Save"
 msgstr "&Salveguarda"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:188
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Nomine"
+msgstr "&Nomine..."
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 #, fuzzy
@@ -7837,12 +7742,10 @@ msgid "Always use default name "
 msgstr ""
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
-#, fuzzy, qt-format
-#| msgctxt "SharedNote|"
-#| msgid "%1 - Shared Note Editor"
+#, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "Editor de Nota Compartite"
+msgstr "%1[*] - Editor de Nota Compartite (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
 msgctxt "SharedNote|"
@@ -7850,9 +7753,6 @@ msgid "ReadWrite"
 msgstr "Lectura Scriptura"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "MindMapView|"
-#| msgid "ReadOnly"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "Solmente de lectura"
@@ -8758,12 +8658,10 @@ msgid "ReadOnly"
 msgstr "Solmente de lectura"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:89
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - (PDF)"
+msgstr "%1 - PDFViewer (Visor de PDF)"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:315
 msgctxt "PdfViewer|"
