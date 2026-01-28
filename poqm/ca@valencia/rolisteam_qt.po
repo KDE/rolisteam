@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-01-19 09:15+0100\n"
+"PO-Revision-Date: 2026-01-26 19:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -8163,7 +8163,7 @@ msgstr "Nom rus"
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:14
 msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
-msgstr "Generació de noms"
+msgstr "Generador de noms"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
