@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-19 18:07+0100\n"
+"PO-Revision-Date: 2026-01-31 19:58+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3528,7 +3528,7 @@ msgstr "Sola lettura"
 #: src/libraries/core/src/model/participantsmodel.cpp:33
 msgctxt "ParticipantsModel|"
 msgid "Hidden"
-msgstr "Nascosto"
+msgstr "Nascosti"
 
 #: src/libraries/core/src/model/patternmodel.cpp:34
 msgctxt "PatternModel|"
@@ -3571,7 +3571,7 @@ msgstr ""
 #: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
 msgid "NPC"
-msgstr "NPC"
+msgstr "NPC (personaggio non giocabile)"
 
 #: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
@@ -4764,7 +4764,7 @@ msgstr "Rimuovi brano"
 #: src/libraries/rwidgets/customs/playerwidget.cpp:143
 msgctxt "PlayerWidget|"
 msgid "Add song to the list"
-msgstr "Aggiungi brano all'elenco"
+msgstr "Aggiungi brano alla scaletta"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:144
 msgctxt "PlayerWidget|"
@@ -6202,7 +6202,7 @@ msgstr "Tutti i permessi"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
 msgid "Hidden"
-msgstr "Nascosto"
+msgstr "Nascosta"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
@@ -6843,7 +6843,7 @@ msgstr "Permesso: tutto"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:126
 msgctxt "VmapTopBar|"
 msgid "Visibility: Hidden"
-msgstr "Visibilità: nascosto"
+msgstr "Visibilità: nascosta"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:132
 msgctxt "VmapTopBar|"
@@ -9255,7 +9255,7 @@ msgstr "Testo con bordo"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
-msgstr "Ripristina il contatore NPC"
+msgstr "Reimposta contatore NPC"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
 msgctxt "ToolBox|"
