@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-26 17:54+0100\n"
+"PO-Revision-Date: 2026-02-02 18:35+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -105,7 +105,7 @@ msgstr "Dishabilita"
 #: src/binaries/3DDicer/AliasesPage.qml:154
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Salveguarda e retorna"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
 #, fuzzy
@@ -219,9 +219,6 @@ msgid "Attack"
 msgstr ""
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
 msgstr "commando"
@@ -3692,12 +3689,9 @@ msgid "Unable to read the end of server answer"
 msgstr "Incapace a leger le URL in le responsa del servitor"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "Description: "
+msgstr "File de description es vacue"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3711,10 +3705,10 @@ msgid "Fail to find proper service type: %1 %2 %3"
 msgstr "Falle a trovar proprie typo de servicio: %1 %2 %3"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:256
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "UpnpNat|"
 msgid "Something went wrong: %1"
-msgstr "Alcun cosa falleva "
+msgstr "Alcun cosa falleva : %1"
 
 #: src/libraries/core/src/services/ipchecker.cpp:37
 msgctxt "IpChecker|"
@@ -3987,12 +3981,9 @@ msgid "Remove Selection"
 msgstr "Remove Selection"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Selection"
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "Selection"
+msgstr "Selection per zona"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
 #, fuzzy
@@ -8678,9 +8669,10 @@ msgstr ""
 "Tu vole continuar e compartir le PDF?"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:14
+#, fuzzy
 msgctxt "PdfViewer|"
 msgid "PdfViewer"
-msgstr ""
+msgstr "%1 - PDFViewer (Visor de PDF)"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:25
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:35
