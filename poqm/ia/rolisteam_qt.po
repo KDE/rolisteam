@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-02 18:35+0100\n"
+"PO-Revision-Date: 2026-02-05 14:06+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -108,12 +108,9 @@ msgid "Save and back"
 msgstr "Salveguarda e retorna"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Salveguarda lista de reproduction"
+msgstr "Salveguarda le alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -133,12 +130,9 @@ msgid "default"
 msgstr "Predefinite"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:9
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Alias de Datos"
+msgstr "Dice Rolls (Lancear de cubos)"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:18
 msgctxt "DiceRollPage|"
@@ -196,12 +190,9 @@ msgid "Macros"
 msgstr "Macros"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character List"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Lista de Characteres"
+msgstr "Macro Lista"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -224,12 +215,9 @@ msgid "command"
 msgstr "commando"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Tote le paginas"
+msgstr "Assigna valor de macro."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
@@ -274,12 +262,9 @@ msgid ""
 msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:156
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Alias de Datos"
+msgstr "Dice Rolls (Lancear de cubos)"
 
 #: src/binaries/3DDicer/Main.qml:165
 msgctxt "Main|"
@@ -342,14 +327,13 @@ msgid "Settings"
 msgstr "Preferentias"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Linguage de Application"
+msgstr ""
+"Preferentias de Application:\n"
+"Linguage, Version..."
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -402,12 +386,9 @@ msgid "Add or remove any type of dice."
 msgstr ""
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Selige un image"
+msgstr "Selige tote cubos"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
@@ -415,12 +396,9 @@ msgid "Selection by rectangle."
 msgstr ""
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "VmapTopBar|PC = playable character"
-#| msgid "Show/Hide PC name"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Monstra/Cela nomine de PC"
+msgstr "Monstra/Cela menu"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -459,12 +437,9 @@ msgid "Dark Mode:"
 msgstr "Modo obscur:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set/Unset Channel Password"
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr "Fixa/De-fixa Contrasigno de Canal"
+msgstr "Assigna/De-assigna modo obscur."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
@@ -2227,12 +2202,9 @@ msgid "GM Tools"
 msgstr "Instrumentos GM"
 
 #: src/binaries/widget/mainwindow.cpp:562
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Define le nove nomine"
+msgstr "Define nomine de documento"
 
 #: src/binaries/widget/mainwindow.cpp:562
 msgctxt "MainWindow|"
@@ -2287,14 +2259,14 @@ msgstr ""
 "%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:853
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid "Do you want to save the campaign?"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "Do you want to save the campaign?\n"
 "Last save: %1 min(s) ago"
-msgstr "Tu vole salveguardr le campania ?"
+msgstr ""
+"Tu vole salveguardr le campania ?\n"
+"Ultine salvamento; %1 min(s) ante"
 
 #: src/binaries/widget/mainwindow.cpp:855
 msgctxt "MainWindow|"
@@ -3134,28 +3106,19 @@ msgid "[Upnp] Successful mapping port: "
 msgstr ""
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:179
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[Upnp] Mappar de Porto ha essite facite"
+msgstr "[Upnp] Necun adresse ip ha essite trovate"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:278
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "Connexion al servitor ha essite claudite."
+msgstr "thread de servitor ha essite claudite"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:289
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Server"
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Servitor"
+msgstr "Servitor es off"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:293
 msgctxt "NetworkController|"
@@ -3673,20 +3636,14 @@ msgid "User %1 has been disconnected!"
 msgstr "Usator %1 ha essite disconnectite!"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:97
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the beginning of server answer"
-msgstr "Incapace a leger le URL in le responsa del servitor"
+msgstr "Incapace a leger le initio del responsa del servitor"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
-#, fuzzy
-#| msgctxt "UpnpNat|"
-#| msgid "Unable to read the URL in server answer"
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "Incapace a leger le URL in le responsa del servitor"
+msgstr "Incapace a leger le fin del responsa del servitor"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
 msgctxt "UpnpNat|"
@@ -3968,12 +3925,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:45
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Selige un image"
+msgstr "Selige tote cubos"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
@@ -3986,12 +3940,9 @@ msgid "Selection by zone"
 msgstr "Selection per zona"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Selige un image"
+msgstr "Remove Tote cubos"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
 msgctxt "Main|"
@@ -4324,13 +4275,10 @@ msgid "Removing image from node"
 msgstr "Remover imagine ab nodo"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Move %n elemento(s)"
+msgstr "Remove %1 Elemento(s)"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
@@ -4408,12 +4356,9 @@ msgid "Color:"
 msgstr "Color:"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "I'm the Game Master"
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
-msgstr "Io es le Maestro de Joco (GM)"
+msgstr "Io es le Maestro de Joco "
 
 #: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:27
 msgctxt "AddChatRoomDialog|"
@@ -4469,12 +4414,9 @@ msgid "Add chatroom"
 msgstr "Adde sala de conversation"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Fixa predefinite"
+msgstr "Refixa al vista predefinite"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
 msgctxt "InstantMessagingMain|"
@@ -4517,12 +4459,9 @@ msgid "Font Family:"
 msgstr "Familia de Font:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Dimension de Font:"
+msgstr "Factor de Dimension de Font:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
@@ -5019,12 +4958,9 @@ msgid "Remove"
 msgstr "Remove"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:533
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Remove selected Items"
 msgctxt "RGraphicsView|"
 msgid "Delete all selected items"
-msgstr "Remove elementos seligite"
+msgstr "Dele omne elementos seligite"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:543
 msgctxt "RGraphicsView|"
@@ -5831,20 +5767,14 @@ msgid "Pictures fit their Windows (at the opening)"
 msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
-#, fuzzy
-#| msgctxt "RServer|"
-#| msgid "[Upnp] Port mapping has been done"
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[Upnp] Mappar de Porto ha essite facite"
+msgstr "Invia requesta de  Mappar de Porto Upnp"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "&Network"
 msgctxt "PreferencesDialogBox|"
 msgid "Upnp Network:"
-msgstr "&Rete"
+msgstr "Rete Upnp"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
@@ -7220,12 +7150,9 @@ msgid "&Name..."
 msgstr "&Nomine..."
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Change Profile…"
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Cambiar Profilo…"
+msgstr "Cambiar nomine de file de nota"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 msgctxt "TextEdit|"
@@ -8669,10 +8596,9 @@ msgstr ""
 "Tu vole continuar e compartir le PDF?"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:14
-#, fuzzy
 msgctxt "PdfViewer|"
 msgid "PdfViewer"
-msgstr "%1 - PDFViewer (Visor de PDF)"
+msgstr " PDFViewer (Visor de PDF)"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:25
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:35
