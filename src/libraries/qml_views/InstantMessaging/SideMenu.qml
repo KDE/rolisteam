@@ -26,79 +26,83 @@ Drawer {
 
     Pane {
         id: pane
-            GridLayout {
-                columns: 2
-                   Label {
-                        text: qsTr("Night Mode")
-                        font: control.font
-                        Layout.fillWidth: true
-                    }
-                    Switch {
-                        id: nightSwitch
-                        checked: InstantMessagerManager.ctrl.nightMode
-                        onCheckedChanged: {
-                            InstantMessagerManager.ctrl.nightMode = nightSwitch.checked
-                        }
-                    }
-
-                    Label {
-                        text: qsTr("Sound Notification")
-                        font: control.font
-                        Layout.fillWidth: true
-                    }
-                    Switch {
-                        id: sound
-                        checked: true
-                        onCheckedChanged: {
-                            InstantMessagerManager.ctrl.sound = sound.checked
-                        }
-                    }
-
-
-                Button {
-                    Layout.columnSpan: 2
-                    Layout.alignment: Qt.AlignHCenter
-                    Layout.fillWidth: true
-                    text: qsTr("Select Font…")
-                    font: control.font
-                    onClicked: {
-                        fontDial.open()
-                    }
-                }
-
-                Label {
-                    text: qsTr("Font Family:")
-                    font: control.font
-                }
-                Label {
-                    Layout.fillWidth: true
-                    Layout.maximumWidth: 250
-                    elide: Text.ElideRight
-                    text: InstantMessagerManager.ctrl.imFont.family
-                    font: control.font
-                }
-                Label {
-                    text: qsTr("Font size Factor:")
-                    font: control.font
-                }
-                Label {
-                    text: Theme.fontSizeFactor.toFixed(2)
-                }
-                    Slider {
-                        id: sizeFactor
-                        from: 0.2
-                        value: Theme.fontSizeFactor
-                        Layout.fillWidth: true
-                        to: 5.0
-                        onMoved: {
-                            if(Theme.fontSizeFactor !== sizeFactor.value)
-                                Theme.fontSizeFactor = sizeFactor.value
-                        }
-                    }
-                    ToolButton {
-                        icon.name: "reset"
-                        onClicked: Theme.fontSizeFactor = 1.0
-                    }
+        GridLayout {
+            id: layout
+            columns: 2
+            Label {
+                text: qsTr("Night Mode")
+                font: control.font
+                Layout.fillWidth: true
             }
+            Switch {
+                id: nightSwitch
+                checked: InstantMessagerManager.ctrl.nightMode
+                onCheckedChanged: {
+                    InstantMessagerManager.ctrl.nightMode = nightSwitch.checked
+                }
+            }
+
+            Label {
+                text: qsTr("Sound Notification")
+                font: control.font
+                Layout.fillWidth: true
+            }
+            Switch {
+                id: sound
+                checked: true
+                onCheckedChanged: {
+                    InstantMessagerManager.ctrl.sound = sound.checked
+                }
+            }
+
+
+            Button {
+                Layout.columnSpan: 2
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                text: qsTr("Select Font…")
+                font: control.font
+                onClicked: {
+                    fontDial.open()
+                }
+            }
+
+            Label {
+                text: qsTr("Font Family:")
+                font: control.font
+            }
+            Label {
+                Layout.fillWidth: true
+                Layout.maximumWidth: 250
+                elide: Text.ElideRight
+                text: InstantMessagerManager.ctrl.imFont.family
+                font: control.font
+            }
+            Label {
+                text: qsTr("Font size Factor:")
+                font: control.font
+            }
+            Label {
+                text: Theme.fontSizeFactor.toFixed(2)
+            }
+            Slider {
+                id: sizeFactor
+                from: 0.2
+                value: Theme.fontSizeFactor
+                Layout.fillWidth: true
+                to: 5.0
+                onPressedChanged: {
+                    if(sizeFactor.pressed)
+                        return;
+                    if(Theme.fontSizeFactor !== sizeFactor.value) {
+                        Theme.fontSizeFactor = sizeFactor.value
+                    }
+                }
+            }
+            ToolButton {
+                icon.name: "reset"
+                onClicked: Theme.fontSizeFactor = 1.0
+            }
+        }
     }
 }
