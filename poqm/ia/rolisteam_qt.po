@@ -4201,7 +4201,7 @@ msgid "Name"
 msgstr "Nomine"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:42
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:32
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:33
 msgctxt "SideMenu|"
 msgid "Night Mode"
 msgstr "Modo de Nocte"
@@ -4443,22 +4443,22 @@ msgctxt "RecipiantsView|"
 msgid "Add User"
 msgstr "Adde usator"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:45
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:46
 msgctxt "SideMenu|"
 msgid "Sound Notification"
 msgstr "Notification de sono"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:62
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:63
 msgctxt "SideMenu|"
 msgid "Select Font…"
 msgstr "Selectiona le Font…"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:70
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:71
 msgctxt "SideMenu|"
 msgid "Font Family:"
 msgstr "Familia de Font:"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
 msgstr "Factor de Dimension de Font:"

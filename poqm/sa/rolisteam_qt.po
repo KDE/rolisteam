@@ -4542,7 +4542,7 @@ msgid "Name"
 msgstr "नामः"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:42
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:32
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:33
 msgctxt "SideMenu|"
 msgid "Night Mode"
 msgstr "रात्रि मोड"
@@ -4814,22 +4814,22 @@ msgctxt "RecipiantsView|"
 msgid "Add User"
 msgstr "उपयोक्तारं प्रतिबन्धयन्तु"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:45
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:46
 msgctxt "SideMenu|"
 msgid "Sound Notification"
 msgstr "ध्वनि सूचना"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:62
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:63
 msgctxt "SideMenu|"
 msgid "Select Font…"
 msgstr "Font... इति चयनं कुर्वन्तु..."
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:70
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:71
 msgctxt "SideMenu|"
 msgid "Font Family:"
 msgstr "फ़ॉन्ट परिवारः :"
 
-#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:81
+#: src/libraries/qml_views/InstantMessaging/SideMenu.qml:82
 #, fuzzy
 #| msgctxt "SideMenu|"
 #| msgid "Font size:"
