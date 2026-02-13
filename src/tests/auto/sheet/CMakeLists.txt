@@ -12,7 +12,7 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core Wid
 add_executable(tst_sheet tst_sheet.cpp ../assets/resources.qrc
     ../../../binaries/rcse/fieldmodel.h
     ../../../binaries/rcse/fieldmodel.cpp)
-target_link_libraries(tst_sheet PUBLIC Qt6::Core Qt6::Test Qt6::Widgets PRIVATE core rwidgets rmindmap common_core common_widget common_qml helper utils diceparser_shared diceparser_qobject charactersheet charactersheet_formula charactersheet_widgets)
+target_link_libraries(tst_sheet PUBLIC Qt6::Core Qt6::Test Qt6::Widgets PRIVATE core rwidgets rmindmap common_core common_widget common_qml dice3d  instantmessaging helper utils diceparser_shared diceparser_qobject charactersheet charactersheet_formula charactersheet_widgets)
 target_include_directories(tst_sheet PUBLIC ../helper ../../../binaries/)
 add_test(NAME tst_vmap COMMAND tst_vmap)
 

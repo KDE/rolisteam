@@ -9,5 +9,5 @@ set(QT_REQUIRED_VERSION "6.3.0")
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core)
 
 add_executable(tst_playermodel tst_playermodel.cpp)
-target_link_libraries(tst_playermodel PUBLIC Qt6::Core Qt6::Test PRIVATE core core rwidgets instantmessaging common_core common_widget common_qml network)
+target_link_libraries(tst_playermodel PUBLIC Qt6::Core Qt6::Test PRIVATE core rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d rwidgets instantmessaging common_core common_widget common_qml network)
 add_test(NAME tst_playermodel COMMAND tst_playermodel)

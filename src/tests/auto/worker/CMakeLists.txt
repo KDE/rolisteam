@@ -10,6 +10,6 @@ set(QT_REQUIRED_VERSION "6.3.0")
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core)
 
 add_executable(tst_worker tst_worker.cpp ../assets/resources.qrc)
-target_link_libraries(tst_worker PUBLIC Qt6::Core Qt6::Test PRIVATE core instantmessaging common_core rmindmap common_widget common_qml utils network helper)
+target_link_libraries(tst_worker PUBLIC Qt6::Core Qt6::Test PRIVATE core instantmessaging common_core rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d common_qml instantmessaging common_core rmindmap common_widget common_qml utils network helper)
 target_include_directories(tst_worker PUBLIC ../helper)
 add_test(NAME tst_worker COMMAND tst_worker)

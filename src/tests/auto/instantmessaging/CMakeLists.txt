@@ -29,6 +29,7 @@ target_link_libraries(tst_im
     network
     diceparser_qobject
     diceparser_shared
+    rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d
     charactersheet_widgets
     qml_components
   )

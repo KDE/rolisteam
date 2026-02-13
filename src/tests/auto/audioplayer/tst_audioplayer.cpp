@@ -102,12 +102,12 @@ void TestAudioPlayer::mode()
 {
     m_audioController->addSong(
         {QUrl("qrc:/music/07.mp3"),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "break.mp3")),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "warning.mp3")),
-         QUrl::fromUserInput(QString("file://%1/resources/%2").arg(tests::root_path, "error.mp3"))});
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "warning.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "error.mp3"))});
     auto model= m_audioController->model();
     m_audioController->setPlayingMode(AudioPlayerController::PlayingMode::NEXT);
     QSignalSpy spy(m_audioController.get(), &AudioPlayerController::stateChanged);
@@ -144,18 +144,20 @@ void TestAudioPlayer::mode()
 
     spy.clear();
     m_audioController->next();
-    QVERIFY(model->indexOfCurrent() == 1);
+    QCOMPARE(model->indexOfCurrent(), 1);
+
     m_audioController->setPlayingMode(AudioPlayerController::PlayingMode::LOOP);
 
     spy.wait(TIME_SONG);
     spy.wait(TIME_SONG);
 
+    qDebug() << "spy count:"<<spy.count();
     arg= spy.takeLast();
 
     QCOMPARE(arg[0].toInt(), AudioPlayerController::PlayingState);
 
     m_audioController->next();
-    QVERIFY(model->indexOfCurrent() == 1);
+    QCOMPARE(model->indexOfCurrent(), 1);
 
     spy.clear();
     m_audioController->pause();

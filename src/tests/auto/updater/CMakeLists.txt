@@ -9,6 +9,6 @@ set(QT_REQUIRED_VERSION "6.3.0")
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core)
 
 add_executable(tst_updater tst_vmapupdatertest.cpp)
-target_link_libraries(tst_updater PUBLIC Qt6::Core Qt6::Test PRIVATE core instantmessaging common_core common_widget common_qml rmindmap network)
+target_link_libraries(tst_updater PUBLIC Qt6::Core Qt6::Test PRIVATE core instantmessaging rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d common_qml instantmessaging common_core common_core common_widget common_qml rmindmap network)
 target_include_directories(tst_updater  PUBLIC ../helper ../../libraries/mindmap/include)
 add_test(NAME tst_updater COMMAND tst_updater)

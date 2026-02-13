@@ -31,6 +31,7 @@ PRIVATE
     charactersheet
     charactersheet_formula
     charactersheet_widgets
+    rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d
     qml_components
     qml_views)
 

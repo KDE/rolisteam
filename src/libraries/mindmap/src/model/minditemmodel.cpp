@@ -446,7 +446,7 @@ bool MindItemModel::removeItem(const MindItem* item)
     auto it= std::find_if(vec.begin(), vec.end(),
                           [item](const std::unique_ptr<MindItem>& node) { return item == node.get(); });
 
-    if(it == std::end(m_nodes))
+    if(it == std::end(vec))
         return false;
 
     auto idx= offset + static_cast<int>(std::distance(vec.begin(), it));

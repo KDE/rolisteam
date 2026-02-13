@@ -288,18 +288,19 @@ void WorkerTest::convertionHelperTest_data()
     QTest::addColumn<ulong>("size");
     QTest::addColumn<Type>("type");
 
-    QTest::addRow("cmd1") << QVariant::fromValue(true) << sizeof(bool) << Type::Bool;
-    QTest::addRow("cmd2") << QVariant::fromValue(static_cast<qint64>(23)) << sizeof(qint64) << Type::Integer;
-    QTest::addRow("cmd3") << QVariant::fromValue(23.0) << sizeof(qreal) << Type::Real;
-    QTest::addRow("cmd4") << QVariant::fromValue(Core::ScaleUnit::FEET) << sizeof(quint8) << Type::ScaleUnit;
-    QTest::addRow("cmd5") << QVariant::fromValue(Core::PermissionMode::GM_ONLY) << sizeof(quint8)
+
+    QTest::addRow("cmd1") << QVariant::fromValue(true) << static_cast<ulong>(sizeof(bool)) << Type::Bool;
+    QTest::addRow("cmd2") << QVariant::fromValue(static_cast<qint64>(23)) << static_cast<ulong>(sizeof(qint64)) << Type::Integer;
+    QTest::addRow("cmd3") << QVariant::fromValue(23.0) << static_cast<ulong>(sizeof(qreal)) << Type::Real;
+    QTest::addRow("cmd4") << QVariant::fromValue(Core::ScaleUnit::FEET) << static_cast<ulong>(sizeof(quint8)) << Type::ScaleUnit;
+    QTest::addRow("cmd5") << QVariant::fromValue(Core::PermissionMode::GM_ONLY) << static_cast<ulong>(sizeof(quint8))
                           << Type::PermissionMode;
-    QTest::addRow("cmd6") << QVariant::fromValue(Core::GridPattern::HEXAGON) << sizeof(Core::GridPattern)
+    QTest::addRow("cmd6") << QVariant::fromValue(Core::GridPattern::HEXAGON) << static_cast<ulong>(sizeof(Core::GridPattern))
                           << Type::GridPattern;
-    QTest::addRow("cmd7") << QVariant::fromValue(Core::Layer::GRIDLAYER) << sizeof(Core::Layer) << Type::Layer;
-    QTest::addRow("cmd8") << QVariant::fromValue(Core::VisibilityMode::FOGOFWAR) << sizeof(quint8)
+    QTest::addRow("cmd7") << QVariant::fromValue(Core::Layer::GRIDLAYER) << static_cast<ulong>(sizeof(Core::Layer)) << Type::Layer;
+    QTest::addRow("cmd8") << QVariant::fromValue(Core::VisibilityMode::FOGOFWAR) << static_cast<ulong>(sizeof(quint8))
                           << Type::VisibilityMode;
-    QTest::addRow("cmd9") << QVariant::fromValue(QColor(Qt::blue)) << sizeof(unsigned int) << Type::Color;
+    QTest::addRow("cmd9") << QVariant::fromValue(QColor(Qt::blue)) << static_cast<ulong>(sizeof(unsigned int)) << Type::Color;
     QImage img= QImage::fromData(Helper::imageData());
 
     QByteArray data2;
@@ -309,11 +310,11 @@ void WorkerTest::convertionHelperTest_data()
 
     QTest::addRow("cmd10") << QVariant::fromValue(img) << static_cast<ulong>(sizeof(quint32) + data2.size())
                            << Type::Image;
-    QTest::addRow("cmd11") << QVariant::fromValue(QPointF{10.0, 100.0}) << sizeof(qreal) + sizeof(qreal)
+    QTest::addRow("cmd11") << QVariant::fromValue(QPointF{10.0, 100.0}) << static_cast<ulong>(sizeof(qreal) + sizeof(qreal))
                            << Type::PointF;
-    QTest::addRow("cmd12") << QVariant::fromValue(QRectF{10.0, 100.0, 100., 100.}) << 4 * sizeof(qreal) << Type::RectF;
+    QTest::addRow("cmd12") << QVariant::fromValue(QRectF{10.0, 100.0, 100., 100.}) << static_cast<ulong>(4 * sizeof(qreal)) << Type::RectF;
 
-    QTest::addRow("cmd13") << QVariant::fromValue(static_cast<quint16>(250)) << sizeof(quint16) << Type::uint16;
+    QTest::addRow("cmd13") << QVariant::fromValue(static_cast<quint16>(250)) << static_cast<ulong>(sizeof(quint16)) << Type::uint16;
     auto data= Helper::randomData();
     QTest::addRow("cmd14") << QVariant::fromValue(data) << static_cast<ulong>(sizeof(quint32) + data.size())
                            << Type::ByteArray;
@@ -328,12 +329,12 @@ void WorkerTest::convertionHelperTest_data()
     QTest::addRow("cmd16") << QVariant::fromValue(vec) << static_cast<ulong>(sizeof(quint64) + sizeof(qreal) * 4)
                            << Type::VecPoint;
 
-    QTest::addRow("cmd17") << QVariant::fromValue(CharacterVision::SHAPE::ANGLE) << sizeof(quint8) << Type::ShapeVision;
-    QTest::addRow("cmd18") << QVariant::fromValue(QSize(100, 100)) << sizeof(QSize) << Type::Size;
-    QTest::addRow("cmd19") << QVariant::fromValue(ParticipantModel::Permission::hidden) << sizeof(quint8)
+    QTest::addRow("cmd17") << QVariant::fromValue(CharacterVision::SHAPE::ANGLE) << static_cast<ulong>(sizeof(quint8)) << Type::ShapeVision;
+    QTest::addRow("cmd18") << QVariant::fromValue(QSize(100, 100)) << static_cast<ulong>(sizeof(QSize)) << Type::Size;
+    QTest::addRow("cmd19") << QVariant::fromValue(ParticipantModel::Permission::hidden) << static_cast<ulong>(sizeof(quint8))
                            << Type::PermissionParticipiant;
     QTest::addRow("cmd20") << QVariant::fromValue(mindmap::ArrowDirection::EndToStart)
-                           << sizeof(mindmap::ArrowDirection) << Type::ArrowDirection;
+                           << static_cast<ulong>(sizeof(mindmap::ArrowDirection)) << Type::ArrowDirection;
 }
 
 QTEST_MAIN(WorkerTest);

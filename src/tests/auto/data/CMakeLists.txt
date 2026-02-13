@@ -11,7 +11,7 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core)
 
 # test player
 add_executable(tst_player tst_dataplayertest.cpp)
-target_link_libraries(tst_player PUBLIC Qt6::Core Qt6::Test PRIVATE core core rwidgets instantmessaging common_core common_widget common_qml network helper)
+target_link_libraries(tst_player PUBLIC Qt6::Core Qt6::Test PRIVATE core rwidgets rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d instantmessaging common_core common_widget common_qml network helper)
 target_include_directories(tst_player PUBLIC ../helper)
 add_test(NAME tst_player COMMAND tst_player)
 
@@ -34,6 +34,11 @@ target_link_libraries(tst_character
         common_core
         common_widget
         common_qml
+        utils
+        rmindmap
+        diceparser_qobject
+        diceparser_shared
+        dice3d
         network
         helper
         charactersheet
@@ -44,27 +49,27 @@ add_test(NAME tst_character COMMAND tst_character)
 
 # test cleveruri
 add_executable(tst_cleveruri tst_datacleveruritest.cpp ../assets/resources.qrc)
-target_link_libraries(tst_cleveruri PUBLIC Qt6::Core Qt6::Test PRIVATE core core rwidgets instantmessaging common_core common_widget common_qml network helper)
+target_link_libraries(tst_cleveruri PUBLIC Qt6::Core Qt6::Test PRIVATE core utils rmindmap diceparser_qobject charactersheet dice3d diceparser_shared rwidgets instantmessaging common_core common_widget common_qml network helper)
 target_include_directories(tst_cleveruri PUBLIC ../helper)
 add_test(NAME tst_cleveruri COMMAND tst_cleveruri)
 
 
 # test diceshortcut
 add_executable(tst_diceshortcut tst_diceshortcut.cpp)
-target_link_libraries(tst_diceshortcut PUBLIC Qt6::Core Qt6::Test PRIVATE core helper)
+target_link_libraries(tst_diceshortcut PUBLIC Qt6::Core Qt6::Test PRIVATE core helper rmindmap qml_views common_qml instantmessaging common_core  diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d)
 target_include_directories(tst_diceshortcut PUBLIC ../helper)
 add_test(NAME tst_diceshortcut COMMAND tst_diceshortcut)
 
 # test resource node
 add_executable(tst_resourcenode tst_resourcenode.cpp)
-target_link_libraries(tst_resourcenode PUBLIC Qt6::Core Qt6::Test PRIVATE core helper)
+target_link_libraries(tst_resourcenode PUBLIC Qt6::Core Qt6::Test PRIVATE core helper rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components common_qml instantmessaging common_core charactersheet_widgets charactersheet dice3d)
 target_include_directories(tst_resourcenode PUBLIC ../helper)
 add_test(NAME tst_resourcenode COMMAND tst_resourcenode)
 
 
 # test resource node
 add_executable(tst_rolisteammimedata tst_rolisteammimedata.cpp)
-target_link_libraries(tst_rolisteammimedata PUBLIC Qt6::Core Qt6::Test PRIVATE core helper)
+target_link_libraries(tst_rolisteammimedata PUBLIC Qt6::Core Qt6::Test PRIVATE core helper rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d common_qml instantmessaging common_core )
 target_include_directories(tst_rolisteammimedata PUBLIC ../helper)
 add_test(NAME tst_rolisteammimedata COMMAND tst_rolisteammimedata)
 
@@ -74,7 +79,7 @@ add_test(NAME tst_rolisteammimedata COMMAND tst_rolisteammimedata)
 
 # test resource node
 add_executable(tst_mediafactory tst_mediafactory.cpp)
-target_link_libraries(tst_mediafactory PUBLIC Qt6::Core Qt6::Test PRIVATE core rmindmap rwidgets charactersheet instantmessaging common_core common_widget common_qml utils helper network )
+target_link_libraries(tst_mediafactory PUBLIC Qt6::Core Qt6::Test PRIVATE core rmindmap rwidgets rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d charactersheet instantmessaging common_core common_widget common_qml utils helper network )
 target_include_directories(tst_mediafactory PUBLIC ../helper)
 add_test(NAME tst_mediafactory COMMAND tst_mediafactory)
 

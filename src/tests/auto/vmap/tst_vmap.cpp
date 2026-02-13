@@ -81,7 +81,8 @@ void VMapTest::init()
 {
     if(m_pmedia)
     {
-        delete m_media.release();
+        m_pmedia->deleteLater();
+        //delete m_media.release();
     }
 
     if(m_pctrl)

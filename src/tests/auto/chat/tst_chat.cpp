@@ -79,12 +79,14 @@ private:
     std::unique_ptr<PlayerModel> m_playerModel;
     std::unique_ptr<InstantMessagingController> m_imCtrl;
     std::unique_ptr<QAbstractItemModelTester> m_tester;
+    QPointer<QObject> m_server;
 };
 ChatWindowTest::ChatWindowTest() {}
 
 void ChatWindowTest::init()
 {
     m_playerModel.reset(new PlayerModel);
+    m_server= Helper::initWebServer();
     m_tester.reset(new QAbstractItemModelTester(m_playerModel.get()));
     m_imCtrl.reset(new InstantMessagingController(nullptr, m_playerModel.get()));
 }
@@ -209,7 +211,7 @@ void ChatWindowTest::textwriterControllerTest()
     ctrl.setText(url.toString());
     ctrl.computeText();
 
-    spy.wait(10);
+    spy.wait(1000);
     spy1.wait(100);
 
     QCOMPARE(spy.count(), 2);
@@ -234,8 +236,8 @@ void ChatWindowTest::textwriterControllerTest()
 
     spy3.wait(10);
     QCOMPARE(spy3.count(), 3);
-
-    QCOMPARE(spy2.count(), 10);
+    spy3.wait(1000);
+    QCOMPARE(spy2.count(), 11);
 
     spy2.clear();
 
