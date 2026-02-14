@@ -157,8 +157,6 @@ void CampaignView::contextMenuEvent(QContextMenuEvent* event)
 {
     m_index= indexAt(event->pos());
 
-    qDebug() << m_index << event->pos();
-
     auto nodeType= m_index.data(MediaModel::Role_Type).value<Core::MediaType>();
     auto isDir= m_index.data(MediaModel::Role_IsDir).toBool();
     auto path= m_index.data(MediaModel::Role_Path).toString();

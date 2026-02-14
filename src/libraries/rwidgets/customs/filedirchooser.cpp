@@ -32,20 +32,35 @@ FileDirChooser::FileDirChooser(QWidget* parent, const QString& ext, Mode mode)
     : QWidget(parent), m_ext(ext), m_directory(mode)
 {
     // Childrens
-    m_lineEdit= new QLineEdit(this);
+    m_lineEdit.reset(new QLineEdit());
     if(m_directory == SaveExistingFile)
         m_lineEdit->setText(QDir::homePath());
     QPushButton* button= new QPushButton(QStringLiteral("..."), this);
 
     // Layout
     QHBoxLayout* layout= new QHBoxLayout;
-    layout->addWidget(m_lineEdit, 1);
+    layout->addWidget(m_lineEdit.get(), 1);
     layout->addWidget(button, 0);
     setLayout(layout);
 
     // Connections
     connect(button, &QPushButton::clicked, this, &FileDirChooser::browse);
-    connect(m_lineEdit, &QLineEdit::editingFinished, this, [this]() { emit pathChanged(url()); });
+    connect(m_lineEdit.get(), &QLineEdit::textChanged, this,
+            [this]()
+            {
+                if(!m_warmUnexist)
+                {
+                    m_lineEdit->setStyleSheet("");
+                    return;
+                }
+                auto text= m_lineEdit->text();
+
+                if(text.startsWith("file:"))
+                    text= QUrl(m_lineEdit->text()).toLocalFile();
+                m_lineEdit->setStyleSheet(
+                    QString("background: #%1").arg(QFileInfo::exists(text) ? "9AD9AB" : "F0A2A4"));
+            });
+    connect(m_lineEdit.get(), &QLineEdit::editingFinished, this, [this]() { emit pathChanged(url()); });
 
     // Misc
     button->setMaximumWidth(28);
@@ -126,4 +141,17 @@ void FileDirChooser::browse()
         m_lineEdit->setText(urlTmp.toString());
         emit pathChanged(url());
     }
+}
+
+bool FileDirChooser::warmUnexist() const
+{
+    return m_warmUnexist;
+}
+
+void FileDirChooser::setWarmUnexist(bool newWarmUnexist)
+{
+    if(m_warmUnexist == newWarmUnexist)
+        return;
+    m_warmUnexist= newWarmUnexist;
+    emit warmUnexistChanged();
 }

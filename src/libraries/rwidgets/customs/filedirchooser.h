@@ -34,6 +34,7 @@
 class RWIDGET_EXPORT FileDirChooser : public QWidget
 {
     Q_OBJECT
+    Q_PROPERTY(bool warmUnexist READ warmUnexist WRITE setWarmUnexist NOTIFY warmUnexistChanged FINAL)
 public:
     enum Mode
     {
@@ -78,20 +79,25 @@ public:
 
     void setExt(const QString& ext);
 
+    bool warmUnexist() const;
+    void setWarmUnexist(bool newWarmUnexist);
+
 signals:
     /**
      * @brief pathChanged
      */
     void pathChanged(const QUrl& path);
+    void warmUnexistChanged();
 
 public slots:
     void browse();
 
 private:
-    QLineEdit* m_lineEdit= nullptr;
+    std::unique_ptr<QLineEdit> m_lineEdit;
     QString m_filter;
     QString m_ext;
     Mode m_directory= Directory;
+    bool m_warmUnexist{true};
 };
 
 #endif // DIRCHOOSER_H

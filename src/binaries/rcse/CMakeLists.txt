@@ -117,9 +117,17 @@ set(UI_files mainwindow_rcse.ui
         dialog/codeeditordialog.ui)
 
 set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rcse/logo/rcse.rc)
-add_executable(rcse WIN32 ${sources} ${headers} ${UI_files} ${ressources} ${RC_FILE}
+
+
+set(rcse_icns ${CMAKE_SOURCE_DIR}/resources/rcse/logo/rcse.icns)
+set_source_files_properties(${rcse_icns} PROPERTIES
+       MACOSX_PACKAGE_LOCATION "Resources")
+
+add_executable(rcse WIN32 MACOSX_BUNDLE ${rcse_icns} ${sources}  ${headers} ${UI_files} ${ressources} ${RC_FILE}
     autofillerdialog.h autofillerdialog.cpp autofillerdialog.ui
      )
+
+
 
 qt_add_resources(rcse "templates"
 PREFIX

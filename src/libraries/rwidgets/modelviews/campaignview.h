@@ -51,17 +51,13 @@ signals:
     void openAs(const QString& id, const QString& path, Core::ContentType type);
     void openExternally(const QString& id, const QString& path, Core::ContentType type);
     void currentChapterChanged();
-
     void textEditorAvailableChanged();
-
     void mindmapAvailableChanged();
-
     void rcseAvailableChanged();
 
 private slots:
     void setCurrentChapter(const QString& chapter);
     void onAddChapter();
-
     void addOpenAsActs(QMenu* menu, Core::MediaType type);
 
 private:

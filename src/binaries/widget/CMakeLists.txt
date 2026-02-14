@@ -43,7 +43,12 @@ set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/rolisteam.qrc  ${CMAKE_SOURCE_DIR}/resour
 if("${CAMKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set_source_files_properties("${CMAKE_CURRENT_BINARY_DIR}/rolisteam_autogen/mocs_compilation.cpp" PROPERTIES COMPILE_FLAGS "-Wno-undefined-reinterpret-cast -Wno-useless-cast")
 endif()
-add_executable(rolisteam WIN32 ${SOURCES} ${HEADERS} ${UIS} ${RESOURCE_FILES} ${RC_FILE})
+
+set(rolisteam_icns ${CMAKE_SOURCE_DIR}/resources/rolisteam/logo/rolisteam.icns)
+set_source_files_properties(${rolisteam_icns} PROPERTIES
+       MACOSX_PACKAGE_LOCATION "Resources")
+
+add_executable(rolisteam WIN32 MACOSX_BUNDLE ${rolisteam_icns} ${SOURCES} ${HEADERS} ${UIS} ${RESOURCE_FILES} ${RC_FILE})
 
 qt6_add_statecharts(rolisteam applicationstate.scxml)
 target_include_directories(rolisteam PRIVATE ../../libraries ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
@@ -84,10 +89,7 @@ target_link_libraries(rolisteam
         dice3d )
 
 setupIcon("${CMAKE_SOURCE_DIR}/resources/packaging/Linux/icons" "rolisteam")
-#install(
-#    FILES "${CMAKE_SOURCE_DIR}/resources/packaging/Linux/icons/128x128/rolisteam.png"
-#    DESTINATION "share/icons/hicolor/128x128/apps/rolisteam.png"
-#)
+
 
 install(
     PROGRAMS ${CMAKE_SOURCE_DIR}/resources/packaging/Linux/rolisteam.desktop
