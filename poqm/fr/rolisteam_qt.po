@@ -4678,17 +4678,17 @@ msgctxt "ColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Rouge : %1, Vert : %2, Bleu : %3"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:108
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:123
 msgctxt "FileDirChooser|"
 msgid "Select directory"
 msgstr "Sélectionner un dossier"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:113
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:128
 msgctxt "FileDirChooser|"
 msgid "Open File"
 msgstr "Ouvrir un fichier"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:117
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:132
 msgctxt "FileDirChooser|"
 msgid "Save File"
 msgstr "Enregistrer le fichier"
@@ -5684,76 +5684,76 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "Totalité des PJ"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:186
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Préférences"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:339
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Éditeur « CSS »"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:465
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Format d'image : %1. Valeur %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:466
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Formats d'images pris en charge :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:473
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Fin du format d'images"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:476
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Familles de polices :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:483
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Fin des familles de polices"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:486
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Prise en charge des formats de fichiers Audio :</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Fin des formats pris en charge de fichiers audio"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:539
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Exporter un thème de Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:541
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:550
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Thème de Rolisteam : %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:549
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Importer un thème de Rolisteam"
@@ -9083,12 +9083,12 @@ msgctxt "campaign::CampaignView|"
 msgid "Shared Notes"
 msgstr "Notes partagées"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:183
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:181
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
 msgstr "Ouvrir comme…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:195
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:193
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
 msgstr "Afficher / masquer une colonne"

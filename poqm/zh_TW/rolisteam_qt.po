@@ -4947,17 +4947,17 @@ msgctxt "ColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "紅：%1，綠：%2，藍：%3"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:108
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:123
 msgctxt "FileDirChooser|"
 msgid "Select directory"
 msgstr "選擇目錄"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:113
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:128
 msgctxt "FileDirChooser|"
 msgid "Open File"
 msgstr "開啟檔案"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:117
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:132
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Save View"
@@ -5971,28 +5971,28 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:186
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "偏好設定"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:339
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "影像檔 (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr ""
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:465
 #, fuzzy, qt-format
 #| msgctxt "PreferencesDialog|"
 #| msgid "<li>Image Format : %1 value %2</li>"
@@ -6000,49 +6000,49 @@ msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>影像格式：%1 數值 %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:466
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>支援的影像格式：</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:473
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>影像格式結尾"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:476
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>字型家族：</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:483
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>字型家族結尾"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:486
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>音效檔案格式支援：</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>音效檔案格式支援結尾"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:539
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "匯出 Rolisteam 主題"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:541
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:550
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Rolisteam 主題：%1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:549
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "匯入 Rolisteam 主題"
@@ -9357,12 +9357,12 @@ msgctxt "campaign::CampaignView|"
 msgid "Shared Notes"
 msgstr "共享筆記"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:183
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:181
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
 msgstr "開啟為…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:195
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:193
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
 msgstr "顯示/隱藏欄位"

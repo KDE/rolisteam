@@ -4675,17 +4675,17 @@ msgctxt "ColorSelector|"
 msgid "Red: %1, Green: %2, Blue: %3"
 msgstr "Червоний: %1, Зелений: %2, Синій: %3"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:108
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:123
 msgctxt "FileDirChooser|"
 msgid "Select directory"
 msgstr "Виберіть теку"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:113
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:128
 msgctxt "FileDirChooser|"
 msgid "Open File"
 msgstr "Відкриття файла"
 
-#: src/libraries/rwidgets/customs/filedirchooser.cpp:117
+#: src/libraries/rwidgets/customs/filedirchooser.cpp:132
 msgctxt "FileDirChooser|"
 msgid "Save File"
 msgstr "Зберегти файл"
@@ -5678,76 +5678,76 @@ msgctxt "PreferencesDialog|"
 msgid "PC All"
 msgstr "Усе ІП"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:184
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:186
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Preferences"
 msgstr "Налаштування"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:334
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:339
 msgctxt "PreferencesDialog|"
 msgid "Images (*.png *.xpm *.jpg *.gif *.bmp)"
 msgstr "зображення (*.png *.xpm *.jpg *.gif *.bmp)"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css Editor"
 msgstr "Редактор CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:429
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:434
 msgctxt "PreferencesDialog|"
 msgid "Css"
 msgstr "CSS"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:460
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:465
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "<li>Image Format: %1 value %2</li>"
 msgstr "<li>Формат зображення: значення %1 %2</li>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:461
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:466
 msgctxt "PreferencesDialog|"
 msgid "<h2>Supported Image Formats:</h2><ul>"
 msgstr "<h2>Підтримувані формати файлів</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:468
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:473
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Image Format"
 msgstr "</ul>Кінець формату зображення"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:471
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:476
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
 msgstr "<h2>Сімейства шрифтів:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:478
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:483
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
 msgstr "</ul>Кінець сімейств шрифтів"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:481
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:486
 msgctxt "PreferencesDialog|"
 msgid "<h2>Audio file formats Support:</h2><ul>"
 msgstr "<h2>Підтримка форматів звукових файлів:</h2><ul>"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:517
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:522
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Supported Audio file formats"
 msgstr "</ul>Кінець записів підтримуваних форматів звукових файлів"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:534
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:539
 msgctxt "PreferencesDialog|"
 msgid "Export Rolisteam Theme"
 msgstr "Експортувати тему Rolisteam"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:536
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:545
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:541
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:550
 #, qt-format
 msgctxt "PreferencesDialog|"
 msgid "Rolisteam Theme: %1"
 msgstr "Тема Rolisteam: %1"
 
-#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:544
+#: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:549
 msgctxt "PreferencesDialog|"
 msgid "Import Rolisteam Theme"
 msgstr "Імпортувати тему Rolisteam"
@@ -9075,12 +9075,12 @@ msgctxt "campaign::CampaignView|"
 msgid "Shared Notes"
 msgstr "Спільні нотатки"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:183
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:181
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
 msgstr "Відкрити як…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:195
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:193
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
 msgstr "Показати/Приховати стовпчик"
