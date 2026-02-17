@@ -91,8 +91,6 @@ set(HEADERS
   editors/sharededitor/sharednote.h
   editors/sharededitor/sharednotecontainer.h
   editors/sharededitor/utilities.h
-  gmtoolbox/DiceBookMark/dicebookmarkmodel.h
-  gmtoolbox/DiceBookMark/dicebookmarkwidget.h
   gmtoolbox/NameGenerator/namegeneratorwidget.h
   gmtoolbox/UnitConvertor/convertor.h
   gmtoolbox/UnitConvertor/convertoroperator.h
@@ -200,8 +198,6 @@ set(SOURCES
   editors/sharededitor/sharednote.cpp
   editors/sharededitor/sharednotecontainer.cpp
   editors/sharededitor/utilities.cpp
-  gmtoolbox/DiceBookMark/dicebookmarkmodel.cpp
-  gmtoolbox/DiceBookMark/dicebookmarkwidget.cpp
   gmtoolbox/NameGenerator/namegeneratorwidget.cpp
   gmtoolbox/UnitConvertor/convertor.cpp
   gmtoolbox/UnitConvertor/convertoroperator.cpp

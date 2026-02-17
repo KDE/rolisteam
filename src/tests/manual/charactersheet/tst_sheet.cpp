@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     auto img= ctrl.imageModel();
     auto root= ctrl.rootJson();
     QString qml;
-    ModelHelper::loadCharacterSheet(path.toLocalFile(), model, img, root, qml);
+    // ModelHelper::loadCharacterSheet(path.toLocalFile(), model, img, root, qml);
     ctrl.setQmlCode(qml);
     ctrl.setRootJson(root);
 

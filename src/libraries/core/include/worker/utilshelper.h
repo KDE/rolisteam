@@ -31,6 +31,11 @@
 #include "network/network_type.h"
 #include <core_global.h>
 
+class ChildPointItem;
+namespace vmap
+{
+class VisualItemController;
+} // namespace vmap
 namespace helper
 {
 namespace utils
@@ -47,7 +52,9 @@ CORE_EXPORT QString typeToIconPath(Core::ContentType);
 CORE_EXPORT QString typeToString(Core::ContentType);
 CORE_EXPORT Core::ContentType mediaTypeToContentType(Core::MediaType type);
 CORE_EXPORT Core::ContentType extensionToContentType(const QString& filename);
-
+CORE_EXPORT QRectF computeRectangularCorner(const QPointF& move, int corner, Core::TransformType tt, const QRectF& rect,
+                                            int min);
+CORE_EXPORT void updateChildPosition(QVector<ChildPointItem*>& children, vmap::VisualItemController* ctrl);
 template <typename T>
 void setContinuation(QFuture<T> future, QObject* obj, std::function<void(T)> callback)
 {

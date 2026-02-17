@@ -156,8 +156,8 @@ int main(int argc, char* argv[])
 #endif
 
 #ifndef UNIT_TESTS
-    // UiWatchdog dog;
-    // dog.start();
+    UiWatchdog dog;
+    dog.start();
 #endif
     ApplicationState states;
     SelectConnectionProfileDialog connectionDialog(app.gameCtrl());

@@ -62,8 +62,6 @@ class NonPlayableCharacter;
 class CORE_EXPORT IOHelper
 {
 public:
-    IOHelper();
-
     // Import data from campaign
     static bool mergePlayList(const QString& source, const QString& dest);
     static bool copyArrayModelAndFile(const QString& source, const QString& sourceDir, const QString& dest,

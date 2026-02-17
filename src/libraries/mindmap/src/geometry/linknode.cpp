@@ -37,8 +37,8 @@ void LinkNode::setColor(const QColor& color)
     m_material.setColor(color);
     markDirty(QSGNode::DirtyMaterial);
 }
-void LinkNode::update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox,
-                      const QRectF& endBox)
+QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox,
+                        const QRectF& endBox)
 {
     qreal arrowLength= 10.0;
     qreal arrowWidth= 8.0;
@@ -140,5 +140,7 @@ void LinkNode::update(const QRectF& rect, LinkController::Orientation orient, co
         vertices[5].set(static_cast<float>(startArrow.x() + diameter), static_cast<float>(startArrow.y() + diameter));
     }
     markDirty(QSGNode::DirtyGeometry);
+
+    return line;
 }
 } // namespace mindmap

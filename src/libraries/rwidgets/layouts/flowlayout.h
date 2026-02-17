@@ -27,7 +27,6 @@
 class RWIDGET_EXPORT FlowLayout : public QLayout
 {
 public:
-    explicit FlowLayout(QWidget* parent, int margin= -1, int hSpacing= -1, int vSpacing= -1);
     explicit FlowLayout(int margin= -1, int hSpacing= -1, int vSpacing= -1);
     ~FlowLayout();
 

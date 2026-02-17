@@ -98,8 +98,12 @@ QSGNode* LinkItem::updatePaintNode(QSGNode* node, QQuickItem::UpdatePaintNodeDat
     }
 
     if(m_controller)
-        link->update(QRectF{0, 0, width(), height()}, m_controller->orientation(), m_controller->startBox(),
-                     m_controller->endBox());
+    {
+        auto line= link->update(QRectF{0, 0, width(), height()}, m_controller->orientation(), m_controller->startBox(),
+                                m_controller->endBox());
+        setHorizontalOffset(line.center().x());
+        setVerticalOffset(line.center().y());
+    }
     return link;
 }
 
@@ -139,7 +143,7 @@ void LinkItem::setController(LinkController* newController)
     m_controller= newController;
     emit controllerChanged();
 
-    auto updateOffset= [this]()
+    /*auto updateOffset= [this]()
     {
         auto endBox= m_controller->endBox();
         auto startBox= m_controller->startBox();
@@ -222,10 +226,10 @@ void LinkItem::setController(LinkController* newController)
         setHorizontalOffset(line.center().x());
         setVerticalOffset(line.center().y());
     };
-    connect(m_controller, &LinkController::startBoxChanged, this, updateOffset);
-    connect(m_controller, &LinkController::endBoxChanged, this, updateOffset);
-    connect(m_controller, &LinkController::startChanged, this, updateOffset);
-    connect(m_controller, &LinkController::endChanged, this, updateOffset);
+     connect(m_controller, &LinkController::startBoxChanged, this, updateOffset);
+     connect(m_controller, &LinkController::endBoxChanged, this, updateOffset);
+     connect(m_controller, &LinkController::startChanged, this, updateOffset);
+     connect(m_controller, &LinkController::endChanged, this, updateOffset);*/
 }
 
 bool LinkItem::editing() const

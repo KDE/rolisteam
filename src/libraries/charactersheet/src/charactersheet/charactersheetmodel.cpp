@@ -197,20 +197,6 @@ TreeSheetItem* CharacterSheetModel::getProperItem(int row, int column, TreeSheet
         res= sheet->setValue(field->path(), QString(), QString());
     }
 
-    /*if(field->parentTreeItem() == nullptr)
-        return sheet->getFieldAt(row);
-
-    auto parent= field->parentTreeItem();
-
-    QString parentPath= parent->path();
-
-    auto parentItem= sheet->getFieldFromKey(parentPath);
-
-    if(!parentItem)
-        return nullptr;
-
-    return parentItem->childAt(row);*/
-
     return res;
 }
 
@@ -669,7 +655,7 @@ TreeSheetItem* CharacterSheetModel::addSection(QString title)
     return sec;
 }
 
-void CharacterSheetModel::addLine(const QModelIndex& index)
+/*void CharacterSheetModel::addLine(const QModelIndex& index)
 {
     QModelIndex parent= index;
     TreeSheetItem* parentItem= nullptr;
@@ -702,7 +688,7 @@ void CharacterSheetModel::addLine(TreeSheetItem* parentItem, QString name, const
     checkTableItem();
     endInsertRows();
     emit dataCharacterChange();
-}
+}*/
 bool CharacterSheetModel::hasChildren(const QModelIndex& parent) const
 {
     if(!parent.isValid()) // root

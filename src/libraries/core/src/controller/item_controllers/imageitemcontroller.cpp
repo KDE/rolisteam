@@ -98,48 +98,7 @@ void ImageItemController::setImage(QPixmap pix)
 
 void ImageItemController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
-    Q_UNUSED(tt);
-    if(move.isNull())
-        return;
-
-    auto rect= m_rect;
-    qreal x2= rect.right();
-    qreal y2= rect.bottom();
-    qreal x= rect.x();
-    qreal y= rect.y();
-    switch(corner)
-    {
-    case TopLeft:
-        x+= move.x();
-        y+= move.y();
-        break;
-    case TopRight:
-        x2+= move.x();
-        y+= move.y();
-        break;
-    case BottomRight:
-        x2+= move.x();
-        y2+= move.y();
-        break;
-    case BottomLeft:
-        x+= move.x();
-        y2+= move.y();
-        break;
-    }
-
-    if(std::abs(x2 - x) < minimalSize)
-    {
-        x2= x + minimalSize;
-    }
-    if(std::abs(y2 - y) < minimalSize)
-    {
-        y2= y + minimalSize;
-    }
-
-    rect.setCoords(x, y, x2, y2);
-    if(!rect.isValid())
-        rect= rect.normalized();
-    setRect(rect);
+    setRect(helper::utils::computeRectangularCorner(move, corner, tt, m_rect, minimalSize));
 }
 
 void ImageItemController::aboutToBeRemoved()

@@ -86,10 +86,10 @@ bool operator==(const Unit& unitA, const Unit& unitB)
 {
     return unitA.name() == unitB.name();
 }
-bool operator==(Unit& unitA, const Unit& unitB)
+/*bool operator==(Unit& unitA, const Unit& unitB)
 {
     return unitA.name() == unitB.name();
-}
+}*/
 
 bool sameUnit(QPair<const Unit*, const Unit*> pair)
 {

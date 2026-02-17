@@ -286,5 +286,53 @@ Core::ContentType extensionToContentType(const QString& filename)
     return Core::ContentType::UNKNOWN;
 }
 
+QRectF computeRectangularCorner(const QPointF& move, int corner, Core::TransformType tt, const QRectF& rectOrigin,
+                                int min)
+{
+    Q_UNUSED(tt);
+    if(move.isNull())
+        return rectOrigin;
+
+    auto rect= rectOrigin;
+    qreal x2= rect.right();
+    qreal y2= rect.bottom();
+    qreal x= rect.x();
+    qreal y= rect.y();
+    switch(corner)
+    {
+    case Core::TopLeft:
+        x+= move.x();
+        y+= move.y();
+        break;
+    case Core::TopRight:
+        x2+= move.x();
+        y+= move.y();
+        break;
+    case Core::BottomRight:
+        x2+= move.x();
+        y2+= move.y();
+        break;
+    case Core::BottomLeft:
+        x+= move.x();
+        y2+= move.y();
+        break;
+    }
+
+    if(std::abs(x2 - x) < min)
+    {
+        x2= x + min;
+    }
+    if(std::abs(y2 - y) < min)
+    {
+        y2= y + min;
+    }
+
+    rect.setCoords(x, y, x2, y2);
+    if(!rect.isValid())
+        rect= rect.normalized();
+
+    return rect;
+}
+
 } // namespace utils
 } // namespace helper

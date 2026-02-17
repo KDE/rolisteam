@@ -82,8 +82,6 @@ T* convertField(CharacterField* field)
 }
 } // namespace
 
-IOHelper::IOHelper() {}
-
 /*bool IOHelper::loadToken(campaign::NonPlayableCharacter* character, const QString& root,
                          std::map<QString, QVariant>& params)
 {

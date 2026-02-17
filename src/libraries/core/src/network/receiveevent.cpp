@@ -22,8 +22,8 @@
 #include <QCoreApplication>
 #include <QTimer>
 
-#include "network/receiveevent.h"
 #include "network/networkmessagereader.h"
+#include "network/receiveevent.h"
 
 /****************
  * ReceiveEvent *
@@ -58,12 +58,6 @@ void ReceiveEvent::postToReceiver()
     quint16 key= makeKey(m_data.category(), m_data.action());
     if(s_receiverMap.contains(key))
         QCoreApplication::postEvent(s_receiverMap.value(key), this, Qt::LowEventPriority);
-}
-
-void ReceiveEvent::repostLater() const
-{
-    if(m_repost < 25)
-        new DelayReceiveEvent(*this);
 }
 
 NetworkLink* ReceiveEvent::link() const
@@ -120,22 +114,4 @@ bool ReceiveEvent::hasNetworkReceiverFor(NetMsg::Category categorie)
 QList<NetWorkReceiver*> ReceiveEvent::getNetWorkReceiverFor(NetMsg::Category categorie)
 {
     return ms_netWorkReceiverMap.values(categorie);
-}
-
-/*********************
- * DelayReceiveEvent *
- *********************/
-
-DelayReceiveEvent::DelayReceiveEvent(const ReceiveEvent& event)
-{
-    m_event= new ReceiveEvent(event);
-    QTimer::singleShot(200, this, SLOT(postEvent()));
-}
-
-DelayReceiveEvent::~DelayReceiveEvent() {}
-
-void DelayReceiveEvent::postEvent()
-{
-    m_event->postToReceiver();
-    deleteLater();
 }

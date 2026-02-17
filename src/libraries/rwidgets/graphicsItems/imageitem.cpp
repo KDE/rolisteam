@@ -17,7 +17,7 @@ ImageItem::ImageItem(vmap::ImageItemController* ctrl) : VisualItem(ctrl), m_imgC
 
     m_promoteTypeList << vmap::VisualItemController::ItemType::CHARACTER;
 
-    for(int i= 0; i <= vmap::ImageItemController::BottomLeft; ++i)
+    for(int i= 0; i <= Core::BottomLeft; ++i)
     {
         ChildPointItem* tmp= new ChildPointItem(m_imgCtrl, i, this);
         tmp->setMotion(ChildPointItem::MOUSE);
@@ -61,7 +61,7 @@ void ImageItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
 }
 void ImageItem::setNewEnd(const QPointF& p)
 {
-    m_imgCtrl->setCorner(p, vmap::ImageItemController::BottomRight);
+    m_imgCtrl->setCorner(p, Core::BottomRight);
 }
 
 void ImageItem::updateChildPosition()

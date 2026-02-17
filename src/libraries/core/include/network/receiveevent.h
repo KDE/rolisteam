@@ -49,10 +49,6 @@ public:
     void postToReceiver();
 
     /**
-     * @brief Post again this same event after a delay.
-     */
-    void repostLater() const;
-    /**
      * @brief link
      * @return
      */
@@ -107,22 +103,4 @@ private:
     static QMap<quint16, QObject*> s_receiverMap;
     static QMultiMap<NetMsg::Category, NetWorkReceiver*> ms_netWorkReceiverMap;
 };
-/**
- * @brief The DelayReceiveEvent class
- */
-class NETWORK_EXPORT DelayReceiveEvent : public QObject
-{
-    Q_OBJECT
-
-public:
-    DelayReceiveEvent(const ReceiveEvent& event);
-    ~DelayReceiveEvent();
-
-private:
-    ReceiveEvent* m_event;
-
-private slots:
-    void postEvent();
-};
-
 #endif

@@ -194,11 +194,11 @@ void CharacterItemController::setCorner(const QPointF& move, int corner, Core::T
 
     switch(corner)
     {
-    case TopLeft:
+    case Core::TopLeft:
         x+= motion;
         y+= motion;
         break;
-    case TopRight:
+    case Core::TopRight:
         if(qFuzzyCompare(move.x(), motion))
         {
             x2+= motion;
@@ -210,11 +210,11 @@ void CharacterItemController::setCorner(const QPointF& move, int corner, Core::T
             y+= motion;
         }
         break;
-    case BottomRight:
+    case Core::BottomRight:
         x2+= motion;
         y2+= motion;
         break;
-    case BottomLeft:
+    case Core::BottomLeft:
         if(qFuzzyCompare(move.x(), motion))
         {
             x+= motion;

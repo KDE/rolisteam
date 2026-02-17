@@ -28,33 +28,6 @@
 #include "ui_playerwidget.h"
 #define FACTOR_WAIT 4
 
-QString getExistingFile(const QString& rootDir, const QString& pathOnGM)
-{
-    QFileInfo info(pathOnGM);
-
-    auto list= pathOnGM.split("/");
-    QStringList result;
-    for(auto& item : list)
-    {
-        result.prepend(item);
-    }
-    QString consumedPath= "";
-
-    for(auto& item : result)
-    {
-        if(consumedPath.isEmpty())
-            consumedPath= item;
-        else
-            consumedPath= item + "/" + consumedPath;
-        auto temp= QStringLiteral("%1/%2").arg(rootDir, consumedPath);
-        if(QFile::exists(temp))
-        {
-            return temp;
-        }
-    }
-    return rootDir + "/" + info.fileName(); // error message
-}
-
 PlayerWidget::PlayerWidget(AudioPlayerController* ctrl, QWidget* parent)
     : QWidget(parent), m_ctrl(ctrl), m_ui(new Ui::PlayerWidgetUI)
 {
@@ -288,11 +261,9 @@ void PlayerWidget::setupUi()
 
     connect(m_repeatAct, &QAction::triggered, this,
             [this](bool b) { m_ctrl->setPlayingMode(b ? AudioPlayerController::LOOP : AudioPlayerController::NEXT); });
-    connect(m_uniqueAct, &QAction::triggered, this,
-            [this](bool b)
+    connect(m_uniqueAct, &QAction::triggered, this, [this](bool b)
             { m_ctrl->setPlayingMode(b ? AudioPlayerController::UNIQUE : AudioPlayerController::NEXT); });
-    connect(m_shuffleAct, &QAction::triggered, this,
-            [this](bool b)
+    connect(m_shuffleAct, &QAction::triggered, this, [this](bool b)
             { m_ctrl->setPlayingMode(b ? AudioPlayerController::SHUFFLE : AudioPlayerController::NEXT); });
 
     connect(m_loadTableTopAudioPlayListAct, &QAction::triggered, this, &PlayerWidget::openPlayList);

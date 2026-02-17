@@ -207,39 +207,6 @@ void TextController::updateTextPosition()
 
 void TextController::setCorner(const QPointF& move, int corner, Core::TransformType tt)
 {
-    Q_UNUSED(tt)
-    if(move.isNull())
-        return;
-
-    auto rect= m_borderRect;
-    qreal x2= rect.right();
-    qreal y2= rect.bottom();
-    qreal x= rect.x();
-    qreal y= rect.y();
-    switch(corner)
-    {
-    case TopLeft:
-        x+= move.x();
-        y+= move.y();
-        break;
-    case TopRight:
-        x2+= move.x();
-        y+= move.y();
-        break;
-    case BottomRight:
-        x2+= move.x();
-        y2+= move.y();
-        break;
-    case BottomLeft:
-        x+= move.x();
-        y2+= move.y();
-        break;
-    }
-    rect.setCoords(x, y, x2, y2);
-    if(!rect.isValid())
-        rect= rect.normalized();
-    setBorderRect(rect);
-
-    // updateTextPosition();
+    setBorderRect(helper::utils::computeRectangularCorner(move, corner, tt, m_borderRect, 0));
 }
 } // namespace vmap

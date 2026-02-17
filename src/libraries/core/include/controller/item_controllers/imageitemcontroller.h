@@ -38,13 +38,6 @@ class CORE_EXPORT ImageItemController : public VisualItemController
     Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
     Q_PROPERTY(qreal ratio READ ratio NOTIFY rectChanged)
 public:
-    enum Corner
-    {
-        TopLeft,
-        TopRight,
-        BottomRight,
-        BottomLeft
-    };
     ImageItemController(const std::map<QString, QVariant>& params, VectorialMapController* ctrl,
                         QObject* parent= nullptr);
 

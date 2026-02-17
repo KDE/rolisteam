@@ -73,7 +73,7 @@ public:
     bool hasChildren(const QModelIndex& parent) const;
 
     void addSection(/*int index*/);
-    void addLine(const QModelIndex& index);
+    // void addLine(const QModelIndex& index);
     TreeSheetItem* indexToSection(const QModelIndex& index);
     QModelIndex indexToSectionIndex(const QModelIndex& index);
     CharacterSheet* getCharacterSheet(int id) const;
@@ -82,7 +82,7 @@ public:
     void readModel(const QJsonObject& file, bool readRootSection);
 
     TreeSheetItem* addSection(QString title);
-    void addLine(TreeSheetItem* parentItem, QString name, const QModelIndex& parent);
+    // void addLine(TreeSheetItem* parentItem, QString name, const QModelIndex& parent);
 
     void setRootSection(Section* rootSection);
     Section* getRootSection() const;

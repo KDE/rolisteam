@@ -74,14 +74,7 @@ public:
         HIGHLIGHTER
     };
     Q_ENUM(ItemType)
-    enum Corner
-    {
-        TopLeft= 0,
-        TopRight,
-        BottomRight,
-        BottomLeft,
-    };
-    Q_ENUM(Corner)
+
     VisualItemController(VisualItemController::ItemType itemType, const std::map<QString, QVariant>& params,
                          VectorialMapController* ctrl, QObject* parent= nullptr);
     ~VisualItemController();
@@ -162,9 +155,7 @@ signals:
     void zOrderChanged(qreal);
     void removedChanged();
     void parentUuidChanged();
-
     void networkUpdateChanged();
-
     void scenePosChanged();
 
 public slots:

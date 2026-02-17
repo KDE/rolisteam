@@ -174,7 +174,8 @@ void CharacterSheetControllerTest::gameMasterTest()
 
 void CharacterSheetControllerTest::sharingDataTest()
 {
-    // Create sheets
+    // QElapsedTimer timer;
+    //  Create sheets
     constexpr auto timeOut= 10;
     auto sheets= m_ctrl->model();
     m_ctrl->setLocalGM(true);

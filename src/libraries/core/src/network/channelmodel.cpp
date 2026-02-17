@@ -286,23 +286,16 @@ QModelIndex ChannelModel::addChannelToIndex(Channel* channel, const QModelIndex&
 }
 bool ChannelModel::addChannelToChannel(Channel* child, Channel* parent)
 {
-    if(child == nullptr)
+    if(child == nullptr || parent == nullptr)
         return false;
 
     bool result= false;
-    if(nullptr == parent)
-    {
-        auto index= addChannelToIndex(child, QModelIndex());
-        result= index.isValid();
-    }
-    else
-    {
-        QModelIndex index= channelToIndex(parent);
-        beginInsertRows(index, parent->childCount(), parent->childCount());
-        parent->addChild(child);
-        endInsertRows();
-        result= true;
-    }
+    QModelIndex index= channelToIndex(parent);
+
+    beginInsertRows(index, parent->childCount(), parent->childCount());
+    parent->addChild(child);
+    endInsertRows();
+    result= true;
     return result;
 }
 

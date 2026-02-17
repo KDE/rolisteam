@@ -36,7 +36,7 @@ RectItem::RectItem(vmap::RectController* ctrl) : VisualItem(ctrl), m_rectCtrl(ct
     connect(m_rectCtrl, &vmap::RectController::rectChanged, this, [this]() { updateChildPosition(); });
     connect(m_rectCtrl, &vmap::RectController::rotationChanged, this, [this]() { updateChildPosition(); });
 
-    for(int i= 0; i <= vmap::RectController::BottomLeft; ++i)
+    for(int i= 0; i <= Core::BottomLeft; ++i)
     {
         ChildPointItem* tmp= new ChildPointItem(m_rectCtrl, i, this);
         tmp->setMotion(ChildPointItem::MOUSE);

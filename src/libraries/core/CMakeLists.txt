@@ -244,7 +244,6 @@ set(HEADERS
   ${inc}/services/updatechecker.h
   ${inc}/undoCmd/addfogofwarchangecommand.h
   ${inc}/undoCmd/addlocalcharactercommand.h
-  ${inc}/undoCmd/addnonplayablecharactercommand.h
   ${inc}/undoCmd/addvmapitem.h
   ${inc}/undoCmd/changecoloritem.h
   ${inc}/undoCmd/changesizevmapitem.h
@@ -388,7 +387,6 @@ set(SOURCES
   src/services/updatechecker.cpp
   src/undoCmd/addfogofwarchangecommand.cpp
   src/undoCmd/addlocalcharactercommand.cpp
-  src/undoCmd/addnonplayablecharactercommand.cpp
   src/undoCmd/anchorvmapitemcommand.cpp
   src/undoCmd/addvmapitem.cpp
   src/undoCmd/changecoloritem.cpp

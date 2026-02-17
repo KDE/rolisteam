@@ -378,7 +378,7 @@ bool fetchDice3d(Dice3DController* ctrl, const QByteArray& data)
     return true;
 }
 
-bool loadCharacterSheet(const QString& path, CharacterSheetModel* model, charactersheet::ImageModel* imgModel,
+/*bool loadCharacterSheet(const QString& path, CharacterSheetModel* model, charactersheet::ImageModel* imgModel,
                         QJsonObject& root, QString& qmlCode)
 {
     if(path.isEmpty())
@@ -424,7 +424,7 @@ bool loadCharacterSheet(const QString& path, CharacterSheetModel* model, charact
     model->readModel(jsonObj, true);
     // displayError(m_errorList);
     return true;
-}
+}*/
 void fetchCharacterStateModel(const QJsonArray& obj, CharacterStateModel* model, const QString& rootDir)
 {
     for(const auto& stateRef : obj)

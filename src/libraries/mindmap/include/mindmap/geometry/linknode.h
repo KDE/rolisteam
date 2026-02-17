@@ -34,7 +34,7 @@ class MINDMAP_EXPORT LinkNode : public QSGGeometryNode
 public:
     LinkNode();
     void setColor(const QColor& color);
-    void update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox, const QRectF& endBox);
+    QLineF update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox, const QRectF& endBox);
 
 private:
     QSGFlatColorMaterial m_material;

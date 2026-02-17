@@ -179,7 +179,7 @@ TextItem::TextItem(vmap::TextController* ctrl)
                 m_textCtrl->setTextRect(rect);
             });
 
-    for(int i= 0; i <= vmap::TextController::BottomLeft; ++i)
+    for(int i= 0; i <= Core::BottomLeft; ++i)
     {
         ChildPointItem* tmp= new ChildPointItem(m_textCtrl, i, this);
         tmp->setMotion(ChildPointItem::MOUSE);

@@ -101,26 +101,10 @@ NETWORK_EXPORT Q_ENUM_NS(CampaignAction)
     };
 NETWORK_EXPORT Q_ENUM_NS(CampaignDataCategory)
 
-    NETWORK_EXPORT inline uint qHash(Core::ContentType type, uint seed)
-{
-    return ::qHash(static_cast<uint>(type), seed);
-}
-
-NETWORK_EXPORT inline uint qHash(Core::MediaType type, uint seed)
-{
-    return ::qHash(static_cast<uint>(type), seed);
-}
-
-NETWORK_EXPORT inline uint qHash(Core::CampaignDataCategory type, uint seed)
-{
-    return ::qHash(static_cast<uint>(type), seed);
-}
-
-enum class DataType
-{
-    StaticData,
-    DynamicData
-};
+    enum class DataType {
+        StaticData,
+        DynamicData
+    };
 
 NETWORK_EXPORT Q_ENUM_NS(DataType)
 
@@ -232,6 +216,14 @@ NETWORK_EXPORT Q_ENUM_NS(SelectableTool)
         MapLayer
     };
 NETWORK_EXPORT Q_ENUM_NS(Properties)
+
+    enum Corner {
+        TopLeft= 0,
+        TopRight,
+        BottomRight,
+        BottomLeft,
+    };
+NETWORK_EXPORT Q_ENUM_NS(Corner)
 
     enum class Layer : quint8 {
         GROUND,
