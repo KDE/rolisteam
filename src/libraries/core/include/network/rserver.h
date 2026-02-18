@@ -23,11 +23,9 @@ struct NETWORK_EXPORT ThreadInfo
 class NETWORK_EXPORT RServer : public QTcpServer
 {
     Q_OBJECT
-    Q_PROPERTY(qint64 port READ port WRITE setPort NOTIFY portChanged)
     Q_PROPERTY(ServerState state READ state NOTIFY stateChanged)
     Q_PROPERTY(int threadCount READ threadCount CONSTANT)
     Q_PROPERTY(bool internal READ internal CONSTANT)
-
 public:
     enum ServerState
     {
@@ -41,13 +39,10 @@ public:
 
     virtual bool listen();
     virtual void close();
-    virtual qint64 port() const;
 
     bool internal() const;
     int threadCount() const;
     RServer::ServerState state() const;
-
-    void setPort(int p);
 
 protected:
     virtual void incomingConnection(qintptr descriptor) override; // qint64, qHandle, qintptr, uint
@@ -73,7 +68,6 @@ private:
     std::unique_ptr<ServerManagerUpdater> m_updater;
     const QMap<QString, QVariant>& m_data;
     ServerState m_state{Idle};
-    quint16 m_port{6660};
     bool m_internal{true};
 };
 #endif // RSERVER_H

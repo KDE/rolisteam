@@ -27,6 +27,7 @@
 #include "common/logcategory.h"
 #include "controller/gamecontroller.h"
 #include "controller/playercontroller.h"
+#include "media/networktype.h"
 #include "network/clientmanager.h"
 #include "network/connectionprofile.h"
 #include "network/networkmessage.h"
@@ -42,12 +43,6 @@
 #include "worker/playermessagehelper.h"
 
 QLoggingCategory rNetwork("rolisteam.network");
-
-namespace keys
-{
-constexpr auto upnpEnabled{"Upnp_enabled"};
-constexpr auto upnpLocalIp{"Upnp_localIp"};
-} // namespace keys
 
 void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
 {
@@ -164,12 +159,12 @@ void NetworkController::readIpAddress()
 {
     if(!m_prefs)
         return;
-    auto enabled= m_prefs->value(keys::upnpEnabled, true).toBool();
+    auto enabled= m_prefs->value(network::upnp::upnpEnabled, true).toBool();
 
     if(!enabled)
         return;
 
-    auto ip= m_prefs->value(keys::upnpLocalIp, "").toString();
+    auto ip= m_prefs->value(network::upnp::upnpLocalIp, "").toString();
 
     if(ip.isEmpty() && !m_localIps.isEmpty())
         ip= m_localIps.first();
@@ -254,7 +249,9 @@ void NetworkController::stopClient()
 
 void NetworkController::startServer()
 {
-    m_serverParameters= {{"ServerPassword", serverPassword()}, {"AdminPassword", adminPassword()}};
+    m_serverParameters= {{network::configkeys::serverPassword, serverPassword()},
+                         {network::configkeys::adminPassword, adminPassword()},
+                         {network::configkeys::port, port()}};
 
     if(m_server)
     {
@@ -268,8 +265,6 @@ void NetworkController::startServer()
         connect(m_server.get(), &RServer::eventOccured, this, &NetworkController::eventOccurs);
         m_serverThread.reset(new QThread);
     }
-
-    m_server->setPort(port());
 
     connect(m_serverThread.get(), &QThread::started, m_server.get(), &RServer::listen);
     connect(m_serverThread.get(), &QThread::finished, this,

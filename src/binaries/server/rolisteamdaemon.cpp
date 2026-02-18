@@ -7,6 +7,8 @@
 #include <QFileInfo>
 #include <QSettings>
 
+#include "media/networktype.h"
+
 RolisteamDaemon::RolisteamDaemon(QObject* parent) : QObject(parent), m_logController(new LogController(true, this))
 {
     m_server.reset(new RServer(m_parameters, false));
@@ -19,28 +21,29 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
         return false;
 
     QSettings settings(filepath, QSettings::IniFormat);
+    namespace nc= network::configkeys;
 
-    int port= settings.value("port").toInt();
-    auto password= QByteArray::fromBase64(settings.value("ServerPassword").toByteArray());
-    QString range= settings.value("IpRange").toString();
-    QString ipBan= settings.value("IpBan").toString();
-    QString connectionMax= settings.value("ConnectionMax").toString();
-    QString timeStart= settings.value("TimeStart").toString();
-    QString timeEnd= settings.value("TimeEnd").toString();
-    QString ipMode= settings.value("IpMode").toString();
-    auto adminPassword= QByteArray::fromBase64(settings.value("AdminPassword").toByteArray());
-    int threadCount= settings.value("ThreadCount").toInt();
-    int channelCount= settings.value("ChannelCount").toInt();
-    int timeToRetry= settings.value("TimeToRetry").toInt();
-    int tryCount= settings.value("TryCount").toInt();
-    int logLevel= settings.value("LogLevel").toInt();
-    QString maxMemorySize= settings.value("MaxMemorySize").toString();
-    bool deepInspectionLog= settings.value("DeepInspectionLog").toBool();
+    int port= settings.value(nc::port).toInt();
+    auto password= QByteArray::fromBase64(settings.value(nc::serverPassword).toByteArray());
+    QString range= settings.value(network::configkeys::ipRange).toString();
+    QString ipBan= settings.value(network::configkeys::ipBan).toString();
+    QString connectionMax= settings.value(network::configkeys::connectionMax).toString();
+    QString timeStart= settings.value(network::configkeys::timeStart).toString();
+    QString timeEnd= settings.value(nc::timeEnd).toString();
+    QString ipMode= settings.value(nc::ipMode).toString();
+    auto adminPassword= QByteArray::fromBase64(settings.value(nc::adminPassword).toByteArray());
+    int threadCount= settings.value(nc::threadCount).toInt();
+    int channelCount= settings.value(nc::channelCount).toInt();
+    int timeToRetry= settings.value(nc::timeToRetry).toInt();
+    int tryCount= settings.value(nc::tryCount).toInt();
+    int logLevel= settings.value(nc::logLevel).toInt();
+    QString maxMemorySize= settings.value(nc::memorySize).toString();
+    bool deepInspectionLog= settings.value(nc::deepInspection).toBool();
 
     if(threadCount <= 0)
         return false;
 
-    QString pathToLog= settings.value("LogFile").toString();
+    QString pathToLog= settings.value(nc::logFile).toString();
 
     quint64 memorySize= 0;
     quint64 factor= 0;
@@ -74,23 +77,23 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
 
     m_logController->setCurrentModes(modes);
 
-    m_parameters.insert("port", port);
-    m_parameters.insert("ServerPassword", password);
-    m_parameters.insert("IpRange", range);
-    m_parameters.insert("IpBan", listIpBan);
-    m_parameters.insert("ConnectionMax", connectionMax);
-    m_parameters.insert("TimeStart", timeStart);
-    m_parameters.insert("TimeEnd", timeEnd);
-    m_parameters.insert("AdminPassword", adminPassword);
-    m_parameters.insert("IpMode", ipMode);                       // v4 v6 any
-    m_parameters.insert("ThreadCount", threadCount);             // thread count
-    m_parameters.insert("ChannelCount", channelCount);           // channel count
-    m_parameters.insert("TimeToRetry", timeToRetry);             // TimeToRetry
-    m_parameters.insert("TryCount", tryCount);                   // TimeToRetry
-    m_parameters.insert("LogLevel", logLevel);                   // loglevel
-    m_parameters.insert("LogFile", pathToLog);                   // logpath
-    m_parameters.insert("DeepInspectionLog", deepInspectionLog); // logpath
-    m_parameters.insert("MemorySize", memorySize);               // max memory size
+    m_parameters.insert(network::configkeys::port, port);
+    m_parameters.insert(network::configkeys::serverPassword, password);
+    m_parameters.insert(network::configkeys::ipRange, range);
+    m_parameters.insert(network::configkeys::ipBan, listIpBan);
+    m_parameters.insert(network::configkeys::connectionMax, connectionMax);
+    m_parameters.insert(network::configkeys::timeStart, timeStart);
+    m_parameters.insert(network::configkeys::timeEnd, timeEnd);
+    m_parameters.insert(network::configkeys::adminPassword, adminPassword);
+    m_parameters.insert(network::configkeys::ipMode, ipMode);                    // v4 v6 any
+    m_parameters.insert(network::configkeys::threadCount, threadCount);          // thread count
+    m_parameters.insert(network::configkeys::channelCount, channelCount);        // channel count
+    m_parameters.insert(network::configkeys::timeToRetry, timeToRetry);          // TimeToRetry
+    m_parameters.insert(network::configkeys::tryCount, tryCount);                // TimeToRetry
+    m_parameters.insert(network::configkeys::logLevel, logLevel);                // loglevel
+    m_parameters.insert(network::configkeys::logFile, pathToLog);                // logpath
+    m_parameters.insert(network::configkeys::deepInspection, deepInspectionLog); // logpath
+    m_parameters.insert(network::configkeys::memorySize, memorySize);            // max memory size
 
     return true;
 }

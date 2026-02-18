@@ -1,4 +1,5 @@
 ﻿#include "network/serverconnectionmanager.h"
+#include "media/networktype.h"
 #include "network/channelmodel.h"
 #include "network/ipbanaccepter.h"
 #include "network/iprangeaccepter.h"
@@ -22,7 +23,7 @@ void sendEventToClient(ServerConnection* client, ServerConnection::ConnectionEve
 ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& parameters, QObject* parent)
     : QObject(parent), m_model(new ChannelModel), m_parameters(parameters)
 {
-    int chCount= parameters.value("ChannelCount", 1).toInt();
+    int chCount= parameters.value(network::configkeys::channelCount, 1).toInt();
     int count= m_model->rowCount(QModelIndex());
     for(int i= count; i < chCount; ++i)
     {
@@ -181,7 +182,7 @@ void ServerConnectionManager::checkAuthAsAdmin(ServerConnection* client)
 
 void ServerConnectionManager::memoryChannelChanged(quint64 size)
 {
-    if(size > m_parameters["memorySize"].toULongLong())
+    if(size > m_parameters[network::configkeys::memorySize].toULongLong())
     {
         m_model->emptyChannelMemory();
     }

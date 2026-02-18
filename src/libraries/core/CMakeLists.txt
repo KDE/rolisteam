@@ -58,7 +58,8 @@ set(Network_HEADER
     ${inc}/worker/playermessagehelper.h
     ${inc}/updater/controller/servermanagerupdater.h
     ${inc}/network/upnp/upnpnat.h
-     ${inc}/data/charactervision.h
+    ${inc}/data/charactervision.h
+    ${inc}/media/networktype.h
 )
 
 set(Network_SRC

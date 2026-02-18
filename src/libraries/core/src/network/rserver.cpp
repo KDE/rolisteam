@@ -2,6 +2,7 @@
 #include <QMessageLogger>
 
 #include "common/logcategory.h"
+#include "media/networktype.h"
 #include "network/rserver.h"
 #include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
@@ -9,8 +10,8 @@
 RServer::RServer(const QMap<QString, QVariant>& parameter, bool internal, QObject* parent)
     : QTcpServer(parent), m_corConnection(new TimeAccepter()), m_data(parameter), m_internal(internal)
 {
-    if(m_data.contains("ThreadCount"))
-        m_threadCount= m_data.value("ThreadCount", m_threadCount).toInt();
+    if(m_data.contains(network::configkeys::threadCount))
+        m_threadCount= m_data.value(network::configkeys::threadCount, m_threadCount).toInt();
     initServerConnections();
 }
 
@@ -53,7 +54,7 @@ void RServer::initServerConnections()
 
 bool RServer::listen()
 {
-    if(!QTcpServer::listen(QHostAddress::Any, m_port))
+    if(!QTcpServer::listen(QHostAddress::Any, m_data[network::configkeys::port].toInt()))
     {
         emit eventOccured(errorString(), LogController::LogLevel::Error);
         return false;
@@ -75,11 +76,6 @@ void RServer::close()
     setState(RServer::Idle);
 }
 
-qint64 RServer::port() const
-{
-    return m_port;
-}
-
 bool RServer::internal() const
 {
     return m_internal;
@@ -93,14 +89,6 @@ int RServer::threadCount() const
 RServer::ServerState RServer::state() const
 {
     return m_state;
-}
-
-void RServer::setPort(int p)
-{
-    if(p == m_port)
-        return;
-    m_port= p;
-    emit portChanged();
 }
 
 void RServer::incomingConnection(qintptr descriptor)
