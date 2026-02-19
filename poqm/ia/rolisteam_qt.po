@@ -3100,27 +3100,27 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Texto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] Necun adresse ip ha essite trovate"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "thread de servitor ha essite claudite"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servitor es off"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -3598,18 +3598,18 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Jocator"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Authentication como Administrator falle: %2 - %1, Contrasigno errate."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3618,18 +3618,18 @@ msgstr ""
 "Authentication falle:  - %1essaya a connecter al servitor con contrasigno "
 "errate."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Usator ha essite calcate fora: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nove Connexion in Arrivata!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

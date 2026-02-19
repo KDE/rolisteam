@@ -3171,27 +3171,27 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Текст"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[Upnp] Успішне прив'язування порту:  "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] Не знайдено IP-адреси"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "потік обробки сервера було закрито"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Сервер вимкнено"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "сервер увімкнено"
@@ -3671,12 +3671,12 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Гравець"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Сервер] Розпочато очікування"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
@@ -3684,7 +3684,7 @@ msgstr ""
 "Не вдалося пройти розпізнавання від імені адміністратора: %2 - %1, "
 "помилковий пароль."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3693,18 +3693,18 @@ msgstr ""
 "Помилка розпізнавання: спроба %1 з'єднатися із сервером із помилковим "
 "паролем."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Користувача викинуто: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Нове вхідне з'єднання!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

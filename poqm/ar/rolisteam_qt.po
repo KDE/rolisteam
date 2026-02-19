@@ -3165,27 +3165,27 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "النص"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[Upnp] نجاح تعيين المنفذ: "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] لم يُعثر على عنوان الآي بي."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "خيط الخادم مُغلق"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "الخادم مغلق"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "الخادم يعمل"
@@ -3663,36 +3663,36 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "اللاعب"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[الخادم] بدء الاستماع"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "فشل الاستيثاق كمسؤول: %2 - %1، كلمة مرور خاطئة."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
 "Authentification fails: %1 try to connect to the server with wrong password."
 msgstr "فشل الاستيثاق: حاول %1 الاتصال بالخادم بكلمة مرور خاطئة."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "طرد المستخدم: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "اتصال وارد جديد!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

@@ -3208,12 +3208,12 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Testua"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 #, fuzzy
 #| msgctxt "RServer|"
 #| msgid "[Upnp] Port mapping has been done"
@@ -3221,17 +3221,17 @@ msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[UPnP] Atakak mapatzea egin da"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "zerbitzariaren haria itxi egin da"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Zerbitzaria itzalita dago"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "zerbitzaria piztuta dago"
@@ -3711,18 +3711,18 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Jokalaria"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Zerbitzaria] Hasi entzuten"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Admin gisa autentifikazioak huts egin du: %2 - %1, pasahitz okerra."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3731,18 +3731,18 @@ msgstr ""
 "Autentifikazioak huts egiten du: %1 zerbitzarira pasahitz okerrarekin "
 "konektatzen saiatu da."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Erabiltzailea kanporatu izan da: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Sarrerako konexio berria!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-19 10:27+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"PO-Revision-Date: 2026-02-18 18:14+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -2247,7 +2247,7 @@ msgstr "Rakipler listesi"
 #: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Music Player"
-msgstr "Müzik Çalar"
+msgstr "Müzikçalar"
 
 #: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
@@ -3166,27 +3166,27 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Metin"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[UPnP] Başarıyla eşlemlenen kapı: "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[UPnP] Bulunan IP adresi yok."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Sunucu iş parçacığı kapatıldı"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Sunucu Kapalı"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "Sunucu açık"
@@ -3664,18 +3664,18 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Oyuncu"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Sunucu] Dinlemeye Başla"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Yönetici olarak kimlik doğrulama başarısız: %2 — %1, hatalı parola."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3683,18 +3683,18 @@ msgid ""
 msgstr ""
 "Kimlik doğrulama başarısız: Hatalı parolayla sunucuya %1 bağlanma denemesi."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Kullanıcı kovuldu: %2 — %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Yeni Gelen Bağlantı!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
@@ -5531,12 +5531,12 @@ msgstr "Tema"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:96
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Playlist audioplayer 2"
-msgstr "Ses çalar çalma listesi 2"
+msgstr "Sesçalar çalma listesi 2"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:103
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Playlist audioplayer 3"
-msgstr "Ses çalar çalma listesi 3"
+msgstr "Sesçalar çalma listesi 3"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:110
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5546,7 +5546,7 @@ msgstr "Notlar"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:117
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Playlist audioplayer 1"
-msgstr "Ses çalar çalma listesi 1"
+msgstr "Sesçalar çalma listesi 1"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:124
 msgctxt "ImportDataFromCampaignDialog|"

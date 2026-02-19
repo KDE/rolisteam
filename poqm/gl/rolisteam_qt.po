@@ -3342,12 +3342,12 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "Texto"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:128
+#: src/libraries/core/src/controller/networkcontroller.cpp:123
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:179
+#: src/libraries/core/src/controller/networkcontroller.cpp:174
 #, fuzzy
 #| msgctxt "RServer|"
 #| msgid "[Upnp] Port mapping has been done"
@@ -3355,7 +3355,7 @@ msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[UPnP] Completouse a asociación de portos."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:278
+#: src/libraries/core/src/controller/networkcontroller.cpp:273
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3363,7 +3363,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "Pechouse a conexión co servidor."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:289
+#: src/libraries/core/src/controller/networkcontroller.cpp:284
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3371,7 +3371,7 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "Servidor"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:293
+#: src/libraries/core/src/controller/networkcontroller.cpp:288
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
@@ -3849,19 +3849,19 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "Participante"
 
-#: src/libraries/core/src/network/rserver.cpp:62
+#: src/libraries/core/src/network/rserver.cpp:63
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:247
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr ""
 "A autenticación de administración fallou: %2 — %1, contrasinal incorrecto."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:274
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3870,18 +3870,18 @@ msgstr ""
 "A autenticación fallou: %1 intentou conectar ao servidor cun contrasinal "
 "incorrecto."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:295
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Botouse a persoa usuaria: %2 — %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:461
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nova conexión entrante."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:516
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
