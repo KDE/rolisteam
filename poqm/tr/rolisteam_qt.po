@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-18 18:14+0300\n"
+"PO-Revision-Date: 2026-02-20 14:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -692,7 +692,7 @@ msgstr "%1 karakter değeri, %2 olarak tanımlandı"
 #: src/binaries/rcse/controllers/rcseapplicationcontroller.cpp:38
 msgctxt "RcseApplicationController|"
 msgid "only the GM"
-msgstr "yalnızca oyun görevlisi"
+msgstr "yalnızca oy"
 
 #: src/binaries/rcse/controllers/rcseapplicationcontroller.cpp:38
 msgctxt "RcseApplicationController|"
@@ -2262,7 +2262,7 @@ msgstr "Bildirim Bölgesi"
 #: src/binaries/widget/mainwindow.cpp:521
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "OG Araçları"
+msgstr "OY Araçları"
 
 #: src/binaries/widget/mainwindow.cpp:562
 msgctxt "MainWindow|"
@@ -2389,7 +2389,7 @@ msgstr "Rolisteam’i <server> sunucusuna bağlanacak biçimde ayarla"
 #: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
-msgstr "<rol> tanımla: og veya ok"
+msgstr "<rol> tanımla: oy veya ok"
 
 #: src/binaries/widget/mainwindow.cpp:1052
 msgctxt "MainWindow|"
@@ -2452,7 +2452,7 @@ msgstr "İstemci"
 #: src/binaries/widget/mainwindow.cpp:1275
 msgctxt "MainWindow|"
 msgid "GM"
-msgstr "OG"
+msgstr "OY"
 
 #: src/binaries/widget/mainwindow.cpp:1281
 msgctxt "MainWindow|"
@@ -3417,7 +3417,7 @@ msgstr "Açıklama"
 #: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
 msgctxt "NonPlayableCharacterModel|"
 msgid "GM Details"
-msgstr "OG Ayrıntıları"
+msgstr "OY Ayrıntıları"
 
 #: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
 msgctxt "NonPlayableCharacterModel|"
@@ -4427,7 +4427,7 @@ msgstr "Renk:"
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
-msgstr "Ben, Oyun Görevlisiyim"
+msgstr "Oyunun yöneticisiyim"
 
 #: src/libraries/qml_views/InstantMessaging/AddChatRoomDialog.qml:27
 msgctxt "AddChatRoomDialog|"
@@ -4640,12 +4640,12 @@ msgstr "Sil"
 #: src/libraries/rwidgets/customs/colorselector.cpp:256
 msgctxt "ColorSelector|"
 msgid "Hide (GM only)"
-msgstr "Gizle (Yalnızca (OG)"
+msgstr "Gizle (Yalnızca OY)"
 
 #: src/libraries/rwidgets/customs/colorselector.cpp:257
 msgctxt "ColorSelector|"
 msgid "Unveil (GM only)"
-msgstr "Açığa Çıkar (Yalnızca OG)"
+msgstr "Açığa Çıkar (Yalnızca OY)"
 
 #: src/libraries/rwidgets/customs/colorselector.cpp:263
 msgctxt "ColorSelector|"
@@ -5651,7 +5651,7 @@ msgstr "Renk:"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
-msgstr "Yalnızca OG"
+msgstr "Yalnızca OY"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
@@ -6820,7 +6820,7 @@ msgstr "Yukarıdaki Izgara"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:90
 msgctxt "VmapTopBar|"
 msgid "Permission: GM only"
-msgstr "İzin: Yalnızca OG"
+msgstr "İzin: Yalnızca OY"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:96
 msgctxt "VmapTopBar|"

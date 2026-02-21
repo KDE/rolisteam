@@ -6888,12 +6888,12 @@ msgstr "Mono Spatio"
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:122
 msgctxt "MRichTextEdit|"
 msgid "Remove character formatting"
-msgstr "Remove formattar de character"
+msgstr "Remove fnormatar de character"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:127
 msgctxt "MRichTextEdit|"
 msgid "Remove all formatting"
-msgstr "Remove omne formattar"
+msgstr "Remove omne fnormatar"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:131
 msgctxt "MRichTextEdit|"
@@ -6928,7 +6928,7 @@ msgstr "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; Omne (*)"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:56
 msgctxt "MRichTextEdit|"
 msgid "Paragraph formatting"
-msgstr "Formattar de paragrapho"
+msgstr "Fnormatar de paragrapho"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:79
 msgctxt "MRichTextEdit|"
