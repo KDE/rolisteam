@@ -10,3 +10,8 @@ translations/*.ts
 translations/*.qm
 po/*
 poqm/*/*.mo
+.axivion-cache
+.axivion/*
+axivion/*
+axivion_*
+build_axivion
