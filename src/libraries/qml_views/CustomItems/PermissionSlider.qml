@@ -28,6 +28,7 @@ Slider {
     background: Rectangle {
             x: control.leftPadding
             y: control.topPadding + control.availableHeight / 2 - height / 2
+            objectName: "background"
             implicitWidth: control.width
             implicitHeight: control.availableHeight / 4
             width: control.availableWidth
@@ -36,6 +37,7 @@ Slider {
             color: control.style.backgroundColor
 
             Rectangle {
+                objectName: "line"
                 width: control.visualPosition * parent.width
                 height: parent.height
                 color: control.value <= 1 ? control.style.readOnlyPermColor : control.style.writePermColor
@@ -46,6 +48,7 @@ Slider {
                 radius: control.height / 2
                 height: control.height
                 width: control.height
+                objectName: "begin"
                 color: control.style.roundColor
                 border.color: control.style.borderColor
                 border.width: control.style.borderWidth
@@ -58,6 +61,7 @@ Slider {
                 height: control.height
                 width: control.height
                 color: control.style.roundColor
+                objectName: "middle"
                 border.color: control.style.borderColor
                 border.width: control.style.borderWidth
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -69,6 +73,7 @@ Slider {
                 height: control.height
                 width: control.height
                 color: control.style.roundColor
+                objectName: "end"
                 border.color: control.style.borderColor
                 border.width: control.style.borderWidth
                 anchors.right: parent.right

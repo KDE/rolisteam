@@ -22,18 +22,21 @@ GridLayout{
     signal saveMap()
 
     IconButton {//undo
+        objectName: "undo"
         source: _root.styleSheet.undoIcon
         enabled: _root.ctrl.canUndo
         onClicked: _root.ctrl.undo()
         tooltip: qsTr("Undo")
     }
     IconButton {//redo
+        objectName: "redo"
         source: _root.styleSheet.redoIcon
         enabled: _root.ctrl.canRedo
         onClicked: _root.ctrl.redo()
         tooltip: qsTr("Redo")
     }
     IconButton {
+        objectName: "save"
         source: _root.styleSheet.saveIcon
         onClicked: _root.saveMap()
         enabled: _root.ctrl.readWrite
@@ -42,11 +45,13 @@ GridLayout{
 
     IconButton {
         tooltip: qsTr("Open Drawer")
+        objectName: "drawer"
         source: _root.styleSheet.listIcon
         onClicked: _root.openDrawer()
     }
     IconButton {//add node
         id: _addRoot
+        objectName: "addroot"
         source: _root.styleSheet.addIcon
         enabled: _root.ctrl.readWrite
         tooltip: qsTr("Add Root")
@@ -54,6 +59,7 @@ GridLayout{
     }
     IconButton {//add package
         id: _pack
+        objectName: "addpack"
         source: _root.styleSheet.editIcon
         checkable: true
         enabled: _root.ctrl.readWrite
@@ -70,6 +76,7 @@ GridLayout{
     IconButton {//Add gray arrow
         id: addArrow
         tooltip: qsTr("Add Arrow")
+        objectName: "addarrow"
         source: _root.styleSheet.addGrayArrow
         checkable: true
         enabled: _root.ctrl.readWrite
@@ -82,6 +89,7 @@ GridLayout{
         }
     }
     IconButton {//remove selection
+        objectName: "removesel"
         tooltip: qsTr("Remove selected Items")
         source: _root.styleSheet.trashIcon
         enabled: _root.ctrl.hasSelection && _root.ctrl.readWrite
@@ -90,21 +98,25 @@ GridLayout{
 
     IconButton {
         tooltip: qsTr("Refresh")
+        objectName: "refresh"
         source: _root.styleSheet.refreshIcon
         onClicked: _root.ctrl.refresh()
     }
     IconButton {//
         tooltip: qsTr("Export As PNG")
+        objectName: "export"
         source: _root.styleSheet.exportIcon
         onClicked: _root.exportScene()
     }
     IconButton {//
+        objectName: "hidelittlemap"
         tooltip: _root.showLittleMap ? qsTr("Hide small map") : qsTr("Show small map")
         source: _root.styleSheet.litteMapIcon
         onClicked: _root.showLittleMap = !_root.showLittleMap
     }
     IconButton {//
         id: spacing
+        objectName: "spacing"
         tooltip: qsTr("Automatic Spacing")
         checkable: true
         source: _root.styleSheet.spacingIcon
