@@ -121,7 +121,7 @@ void pageMangament(inja::json& data, int page, CSItem::TypeField type)
     if(page >= 0)
         res= QStringLiteral("sheetCtrl.currentPage == %1? true : false").arg(page);
     else if(type == CSItem::NEXTPAGE)
-        res= QStringLiteral("sheetCtrl.currentPage != root.maxPage");
+        res= QStringLiteral("sheetCtrl.currentPage != sheetCtrl.pageMax");
     else if(type == CSItem::PREVIOUSPAGE)
         res= QStringLiteral("sheetCtrl.currentPage != 0");
     else
