@@ -6,6 +6,9 @@
 {{ indent }}    showImage:true
 {{ indent }}    tooltip: "{{ toolTip }}"
 {{ indent }}    onClicked: {
-{{ indent }}        root.page += next ? 1 : -1
+{{ indent }}        if(next)
+{{ indent }}            sheetCtrl.nextPage()
+{{ indent }}        else
+{{ indent }}            sheetCtrl.previousPage()
 {{ indent }}    }
 {{ indent }}}
