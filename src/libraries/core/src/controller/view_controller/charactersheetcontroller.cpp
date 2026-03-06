@@ -279,7 +279,10 @@ bool CharacterSheetController::alreadySharing(const QString& charactersheetId) c
 {
     auto const& it= std::find_if(std::begin(m_sheetData), std::end(m_sheetData),
                                  [charactersheetId](const CharacterSheetInfo& data)
-                                 { return (data.m_characterId == charactersheetId); });
+                                 {
+                                     qDebug() << data.m_characterId << data.m_sheetId << charactersheetId;
+                                     return (data.m_sheetId == charactersheetId);
+                                 });
 
     return it != std::end(m_sheetData);
 }
