@@ -156,8 +156,7 @@ void EditorController::spreadItemEqualy(QList<FieldController*> ctrls, bool hori
     ctrls.erase(ctrls.cend() - 1);
 
     qreal itemSpace= 0.0;
-    std::for_each(ctrls.begin(), ctrls.end(),
-                  [horizon, &itemSpace](FieldController* item)
+    std::for_each(ctrls.begin(), ctrls.end(), [horizon, &itemSpace](FieldController* item)
                   { itemSpace+= horizon ? item->width() : item->height(); });
 
     availableDistance= endAvailableSpace - beginAvailableSpace - itemSpace;
@@ -207,6 +206,7 @@ int EditorController::addPage()
     }
     auto can= canvas.get();
     canvas->setPageId(page + 1);
+    canvas->setCurrentTool(m_tool);
     connect(canvas.get(), &Canvas::performCommand, this, &EditorController::performCommand);
     connect(canvas.get(), &Canvas::dropFileOnCanvas, this, &EditorController::loadImageFromUrl);
     m_canvasList.push_back(std::move(canvas));
@@ -244,6 +244,7 @@ void EditorController::setCurrentPage(int currentPage)
 
 void EditorController::setCurrentTool(Canvas::Tool tool)
 {
+    m_tool= tool;
     for(auto& canvas : m_canvasList)
     {
         canvas->setCurrentTool(tool);

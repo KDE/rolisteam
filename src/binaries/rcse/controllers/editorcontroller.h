@@ -30,7 +30,8 @@
 #include <memory>
 
 class ItemEditor;
-namespace rcse{
+namespace rcse
+{
 class ImageController;
 }
 class EditorController : public QObject
@@ -80,6 +81,7 @@ signals:
 private:
     QPointer<rcse::ImageController> m_imageController;
     QPoint m_posMenu;
+    Canvas::Tool m_tool{Canvas::NONE};
     std::vector<std::unique_ptr<Canvas>> m_canvasList;
     int m_currentPage= 0;
 };
