@@ -1,4 +1,5 @@
 ﻿#include "network/serverconnectionmanager.h"
+#include "common/logcategory.h"
 #include "media/networktype.h"
 #include "network/channelmodel.h"
 #include "network/ipbanaccepter.h"
@@ -57,41 +58,6 @@ int ServerConnectionManager::countConnection() const
     return m_connections.count();
 }
 
-/*bool ServerConnectionManager::startListening()
-{
-    qDebug() << "Start listening:";
-    if(!m_server)
-    {
-        m_server.reset(new RServer(getValue(QStringLiteral("ThreadCount")).toInt()));
-        connect(m_server.get(), &RServer::accepting, this, &ServerManager::accept, Qt::QueuedConnection);
-        connect(m_server.get(), &RServer::finished, this, [this]() { setState(Stopped); });
-    }
-
-    if(m_server->listen(QHostAddress::Any, static_cast<quint16>(getValue(QStringLiteral("port")).toInt())))
-    {
-        setState(Listening);
-        emit eventOccured(tr("Rolisteam Server is on!"), LogController::Info);
-    }
-    else
-    {
-        setState(Error);
-        emit eventOccured(m_server->errorString(), LogController::Error);
-        if(m_tryCount < getValue(QStringLiteral("TryCount")).toInt()
-           || getValue(QStringLiteral("TryCount")).toInt() == 0)
-        {
-            emit eventOccured(tr("Retry start server in %1s!").arg(getValue(QStringLiteral("TimeToRetry")).toInt()),
-                              LogController::Info);
-            QTimer::singleShot(getValue(QStringLiteral("TimeToRetry")).toInt(), this, SLOT(startListening()));
-        }
-        else
-        {
-            emit eventOccured(tr("Retry count reached. Server stops trying."), LogController::Info);
-            setState(Stopped); // on error
-        }
-    }
-    return state() == Listening;
-}*/
-
 void ServerConnectionManager::messageReceived(QByteArray array)
 {
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
@@ -106,7 +72,7 @@ void ServerConnectionManager::initClient()
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
     if(nullptr != client)
     {
-        qDebug() << "client insert" << client << client->name();
+        qCDebug(ServerLogCat) << "client insert" << client << client->name();
         m_connections.insert(client->getSocket(), client);
         sendEventToClient(client, ServerConnection::CheckSuccessEvent);
     }
@@ -125,7 +91,7 @@ void ServerConnectionManager::serverAcceptClient(ServerConnection* client)
 {
     if(nullptr == client)
     {
-        qDebug() << "client is null";
+        qCDebug(ServerLogCat) << "client is null";
         return;
     }
 
@@ -143,10 +109,10 @@ void ServerConnectionManager::serverAcceptClient(ServerConnection* client)
 
 void ServerConnectionManager::checkAuthToServer(ServerConnection* client)
 {
-    qDebug() << "check auth to server";
+    qCDebug(ServerLogCat) << "check auth to server";
     if(nullptr == client)
         return;
-    qDebug() << "cilent is fully defined" << client->isFullyDefined();
+    qCDebug(ServerLogCat) << "cilent is fully defined" << client->isFullyDefined();
 
     QMap<QString, QVariant> data(m_parameters);
     data["currentIp"]= client->getIpAddress();
@@ -157,12 +123,12 @@ void ServerConnectionManager::checkAuthToServer(ServerConnection* client)
         m_model->addConnectionToDefaultChannel(client);
         sendEventToClient(client, ServerConnection::ServerAuthSuccessEvent);
         // sendOffModel(client);
-        qDebug() << "server auth successed";
+        qCDebug(ServerLogCat) << "server auth successed";
     }
     else
     {
         sendEventToClient(client, ServerConnection::ServerAuthFailEvent);
-        qDebug() << "server auth failed";
+        qCDebug(ServerLogCat) << "server auth failed";
     }
 }
 
@@ -372,7 +338,7 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
     break;
     case NetMsg::SetChannelList:
     {
-        qDebug() << "Server received channellist";
+        qCDebug(ServerLogCat) << "Server received channellist";
         /*if(isAdmin)
         {
             QByteArray data= msg->byteArray32();
@@ -480,7 +446,7 @@ void ServerConnectionManager::accept(qintptr handle, ServerConnection* connectio
         connection, &ServerConnection::itemChanged, this,
         []()
         {
-            qDebug() << "connection ItemChanged";
+            qCDebug(ServerLogCat) << "connection ItemChanged";
             // sendOffModelToAll();
         },
         Qt::QueuedConnection);
@@ -523,22 +489,22 @@ void ServerConnectionManager::removeSocket(QTcpSocket* socket)
     if(!socket || !m_connections.contains(socket))
         return;
 
-    qDebug() << this << "removing socket = " << socket;
+    qCDebug(ServerLogCat) << this << "removing socket = " << socket;
 
     if(socket->isOpen())
     {
-        qDebug() << this << "socket is open, attempting to close it " << socket;
+        qCDebug(ServerLogCat) << this << "socket is open, attempting to close it " << socket;
         QMetaObject::invokeMethod(socket, &QTcpSocket::close);
     }
 
-    qDebug() << this << "deleting socket" << socket;
+    qCDebug(ServerLogCat) << this << "deleting socket" << socket;
     auto client= m_connections.value(socket);
     m_connections.remove(socket);
 
     QMetaObject::invokeMethod(socket, &QTcpSocket::deleteLater);
     client->deleteLater();
 
-    qDebug() << this << "client count = " << m_connections.count();
+    qCDebug(ServerLogCat) << this << "client count = " << m_connections.count();
 }
 
 void ServerConnectionManager::setChannelPassword(QString chanId, QByteArray passwd)
