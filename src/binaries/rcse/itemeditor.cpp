@@ -18,16 +18,19 @@ QList<FieldController*> cleanSelection(const QList<QGraphicsItem*>& items, bool&
         auto field= dynamic_cast<CanvasField*>(item);
         if(nullptr == field)
             return false;
-        return static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
+        return !static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
     };
 
     allSame= std::all_of(std::begin(items), std::end(items),
-                         [](QGraphicsItem* item)
+                         [items](QGraphicsItem* item)
                          {
+                             auto first= dynamic_cast<CanvasField*>(items.front());
                              auto field= dynamic_cast<CanvasField*>(item);
-                             if(nullptr == field)
+                             if(nullptr == field || nullptr == first)
                                  return false;
-                             return static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable);
+
+                             return (static_cast<bool>(field->flags() & QGraphicsItem::ItemIsMovable)
+                                     == static_cast<bool>(first->flags() & QGraphicsItem::ItemIsMovable));
                          });
 
     if(!items.isEmpty())
@@ -205,8 +208,8 @@ void ItemEditor::contextMenuEvent(QContextMenuEvent* event)
     if(!scene())
         return;
 
-    bool allSame;
-    bool locked;
+    bool allSame{false};
+    bool locked{false};
     m_selection= cleanSelection(scene()->selectedItems(), locked, allSame);
     auto list= cleanSelection(items(pos), locked, allSame);
 
