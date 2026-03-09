@@ -3207,28 +3207,22 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr "Remove Last line"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:620
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:606
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr "Fields name"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:658
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:644
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr "Empty Section %1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:665
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:651
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
 msgstr "Section_%1"
-
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:689
-#, qt-format
-msgctxt "CharacterSheetModel|"
-msgid "Field %1"
-msgstr "Field %1"
 
 #: src/libraries/charactersheet/src/charactersheet/imagemodel.cpp:15
 msgctxt "ImageModel|"
@@ -3862,12 +3856,12 @@ msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "MiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:445
+#: src/libraries/core/src/network/channelmodel.cpp:438
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "Channel Password"
 
-#: src/libraries/core/src/network/channelmodel.cpp:446
+#: src/libraries/core/src/network/channelmodel.cpp:439
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -4352,67 +4346,67 @@ msgid ""
 "Then, you'll see your own 3D dice."
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:28
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:29
 msgctxt "ButtonGrid|"
 msgid "Undo"
 msgstr "Undo"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:34
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:36
 msgctxt "ButtonGrid|"
 msgid "Redo"
 msgstr "Redo"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:40
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:43
 msgctxt "ButtonGrid|"
 msgid "Save Map"
 msgstr "Save Map"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:44
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:47
 msgctxt "ButtonGrid|"
 msgid "Open Drawer"
 msgstr "Open Drawer"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:52
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:57
 msgctxt "ButtonGrid|"
 msgid "Add Root"
 msgstr "Add Root"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:60
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:66
 msgctxt "ButtonGrid|"
 msgid "Add Package"
 msgstr "Add Package"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:72
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:78
 msgctxt "ButtonGrid|"
 msgid "Add Arrow"
 msgstr "Add Arrow"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:85
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:93
 msgctxt "ButtonGrid|"
 msgid "Remove selected Items"
 msgstr "Remove selected Items"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:100
 msgctxt "ButtonGrid|"
 msgid "Refresh"
 msgstr "Refresh"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:97
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:106
 msgctxt "ButtonGrid|"
 msgid "Export As PNG"
 msgstr "Export As PNG"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Hide small map"
 msgstr "Hide small map"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Show small map"
 msgstr "Show small map"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:108
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:120
 msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Automatic Spacing"
@@ -4998,108 +4992,108 @@ msgctxt "rwidgets::ImagePathEditor|"
 msgid "Get picture for Character State"
 msgstr "Get picture for Character State"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:82
+#: src/libraries/rwidgets/customs/playerwidget.cpp:55
 msgctxt "PlayerWidget|"
 msgid "Play"
 msgstr "Play"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:83
+#: src/libraries/rwidgets/customs/playerwidget.cpp:56
 msgctxt "PlayerWidget|"
 msgid "Pause"
 msgstr "Pause"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:84
+#: src/libraries/rwidgets/customs/playerwidget.cpp:57
 msgctxt "PlayerWidget|"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:86
+#: src/libraries/rwidgets/customs/playerwidget.cpp:59
 msgctxt "PlayerWidget|"
 msgid "Stop at the end"
 msgstr "Stop at the end"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:91
+#: src/libraries/rwidgets/customs/playerwidget.cpp:64
 msgctxt "PlayerWidget|"
 msgid "Play in loop"
 msgstr "Play in loop"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:96
+#: src/libraries/rwidgets/customs/playerwidget.cpp:69
 msgctxt "PlayerWidget|"
 msgid "Shuffle Mode"
 msgstr "Shuffle Mode"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:100
+#: src/libraries/rwidgets/customs/playerwidget.cpp:73
 msgctxt "PlayerWidget|"
 msgid "Mute Volume"
 msgstr "Mute Volume"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:104
+#: src/libraries/rwidgets/customs/playerwidget.cpp:77
 msgctxt "PlayerWidget|"
 msgid "load TableTopAudio.com playlist"
 msgstr "load TableTopAudio.com playlist"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:106
+#: src/libraries/rwidgets/customs/playerwidget.cpp:79
 msgctxt "PlayerWidget|"
 msgid "Open Playlist"
 msgstr "Open Playlist"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:109
+#: src/libraries/rwidgets/customs/playerwidget.cpp:82
 msgctxt "PlayerWidget|"
 msgid "Save Playlist"
 msgstr "Save Playlist"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:112
+#: src/libraries/rwidgets/customs/playerwidget.cpp:85
 msgctxt "PlayerWidget|"
 msgid "Clear"
 msgstr "Clear"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:116
+#: src/libraries/rwidgets/customs/playerwidget.cpp:89
 msgctxt "PlayerWidget|"
 msgid "Add Songs"
 msgstr "Add Songs"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:119
+#: src/libraries/rwidgets/customs/playerwidget.cpp:92
 msgctxt "PlayerWidget|"
 msgid "Open Stream"
 msgstr "Open Stream"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:121
+#: src/libraries/rwidgets/customs/playerwidget.cpp:94
 msgctxt "PlayerWidget|"
 msgid "Remove Song"
 msgstr "Remove Song"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:143
+#: src/libraries/rwidgets/customs/playerwidget.cpp:116
 msgctxt "PlayerWidget|"
 msgid "Add song to the list"
 msgstr "Add song to the list"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:144
+#: src/libraries/rwidgets/customs/playerwidget.cpp:117
 msgctxt "PlayerWidget|"
 msgid "Remove selected file"
 msgstr "Remove selected file"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:185
+#: src/libraries/rwidgets/customs/playerwidget.cpp:158
 msgctxt "PlayerWidget|"
 msgid "Add new directory"
 msgstr "Add new folder"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:327
+#: src/libraries/rwidgets/customs/playerwidget.cpp:298
 msgctxt "PlayerWidget|"
 msgid "Add song"
 msgstr "Add song"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:328
+#: src/libraries/rwidgets/customs/playerwidget.cpp:299
 #, qt-format
 msgctxt "PlayerWidget|"
 msgid "Audio files (%1)"
 msgstr "Audio files (%1)"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:340
+#: src/libraries/rwidgets/customs/playerwidget.cpp:311
 msgctxt "PlayerWidget|"
 msgid "Attention!"
 msgstr "Attention!"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:341
+#: src/libraries/rwidgets/customs/playerwidget.cpp:312
 msgctxt "PlayerWidget|"
 msgid ""
 "You are about to load an new playlist. All previously load file will be "
@@ -5108,28 +5102,28 @@ msgstr ""
 "You are about to load an new playlist. All previously load file will be "
 "dropped."
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
 msgctxt "PlayerWidget|"
 msgid "Open Play List"
 msgstr "Open Play List"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 msgctxt "PlayerWidget|"
 msgid "PlayList (*.m3u)"
 msgstr "PlayList (*.m3u)"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 msgctxt "PlayerWidget|"
 msgid "Open audio Stream"
 msgstr "Open audio Stream"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 msgctxt "PlayerWidget|"
 msgid "URL"
 msgstr "URL"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 msgctxt "PlayerWidget|"
 msgid "Save Play List"
 msgstr "Save Play List"
@@ -8708,57 +8702,57 @@ msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "New Unit"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:77
 msgctxt "CharacterItem|"
 msgid "Disk"
 msgstr "Disk"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:78
 msgctxt "CharacterItem|"
 msgid "Angle"
 msgstr "Angle"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:79
 msgctxt "CharacterItem|"
 msgid "Reduce Life"
 msgstr "Reduce Life"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:96
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:80
 msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Increase Life"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:372
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Change State"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "Vision Shape"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Actions"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:412
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "Initiative"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:414
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "Clean Initiative"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:431
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Shapes"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:438
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Clean Shape"
@@ -9725,6 +9719,10 @@ msgstr "Sleeping"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Bewitched"
+
+#~ msgctxt "CharacterSheetModel|"
+#~ msgid "Field %1"
+#~ msgstr "Field %1"
 
 #~ msgctxt "UpnpNat|"
 #~ msgid "Unable to read the URL in server answer"

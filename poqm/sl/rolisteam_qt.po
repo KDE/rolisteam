@@ -3010,28 +3010,22 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr "Odstrani zadnjo vrstico"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:620
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:606
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr "Ime polj"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:658
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:644
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr "Prazen razdelek %1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:665
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:651
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
 msgstr "Razdelek_%1"
-
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:689
-#, qt-format
-msgctxt "CharacterSheetModel|"
-msgid "Field %1"
-msgstr "Polje %1"
 
 #: src/libraries/charactersheet/src/charactersheet/imagemodel.cpp:15
 msgctxt "ImageModel|"
@@ -3626,12 +3620,12 @@ msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "MiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:445
+#: src/libraries/core/src/network/channelmodel.cpp:438
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "Geslo kanala"
 
-#: src/libraries/core/src/network/channelmodel.cpp:446
+#: src/libraries/core/src/network/channelmodel.cpp:439
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -4085,67 +4079,67 @@ msgstr ""
 "vašem zaslonu.\n"
 "Nato boste videli svoje 3D kocke."
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:28
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:29
 msgctxt "ButtonGrid|"
 msgid "Undo"
 msgstr "Razveljavi"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:34
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:36
 msgctxt "ButtonGrid|"
 msgid "Redo"
 msgstr "Ponovi"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:40
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:43
 msgctxt "ButtonGrid|"
 msgid "Save Map"
 msgstr "Shrani zemljevid"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:44
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:47
 msgctxt "ButtonGrid|"
 msgid "Open Drawer"
 msgstr "Odpri predal"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:52
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:57
 msgctxt "ButtonGrid|"
 msgid "Add Root"
 msgstr "Dodaj koren"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:60
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:66
 msgctxt "ButtonGrid|"
 msgid "Add Package"
 msgstr "Dodaj paket"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:72
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:78
 msgctxt "ButtonGrid|"
 msgid "Add Arrow"
 msgstr "Dodaj puščico"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:85
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:93
 msgctxt "ButtonGrid|"
 msgid "Remove selected Items"
 msgstr "Odstrani izbrane postavke"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:100
 msgctxt "ButtonGrid|"
 msgid "Refresh"
 msgstr "Osveži"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:97
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:106
 msgctxt "ButtonGrid|"
 msgid "Export As PNG"
 msgstr "Izvozi kot PNG"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Hide small map"
 msgstr "Skrij majhen zemljevid"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Show small map"
 msgstr "Prikaži majhen zemljevid"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:108
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:120
 msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr "Samodejni razmik"
@@ -4694,108 +4688,108 @@ msgctxt "rwidgets::ImagePathEditor|"
 msgid "Get picture for Character State"
 msgstr "Dobi sliko za stanje likov"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:82
+#: src/libraries/rwidgets/customs/playerwidget.cpp:55
 msgctxt "PlayerWidget|"
 msgid "Play"
 msgstr "Predvajaj"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:83
+#: src/libraries/rwidgets/customs/playerwidget.cpp:56
 msgctxt "PlayerWidget|"
 msgid "Pause"
 msgstr "Premor"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:84
+#: src/libraries/rwidgets/customs/playerwidget.cpp:57
 msgctxt "PlayerWidget|"
 msgid "Stop"
 msgstr "Ustavi"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:86
+#: src/libraries/rwidgets/customs/playerwidget.cpp:59
 msgctxt "PlayerWidget|"
 msgid "Stop at the end"
 msgstr "Ustavi se na koncu"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:91
+#: src/libraries/rwidgets/customs/playerwidget.cpp:64
 msgctxt "PlayerWidget|"
 msgid "Play in loop"
 msgstr "Predvajaj v zanki"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:96
+#: src/libraries/rwidgets/customs/playerwidget.cpp:69
 msgctxt "PlayerWidget|"
 msgid "Shuffle Mode"
 msgstr "Premešani način"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:100
+#: src/libraries/rwidgets/customs/playerwidget.cpp:73
 msgctxt "PlayerWidget|"
 msgid "Mute Volume"
 msgstr "Nemo"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:104
+#: src/libraries/rwidgets/customs/playerwidget.cpp:77
 msgctxt "PlayerWidget|"
 msgid "load TableTopAudio.com playlist"
 msgstr "nalaganje seznama predvajanja TableTopAudio.com"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:106
+#: src/libraries/rwidgets/customs/playerwidget.cpp:79
 msgctxt "PlayerWidget|"
 msgid "Open Playlist"
 msgstr "Odpri seznam predvajanja"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:109
+#: src/libraries/rwidgets/customs/playerwidget.cpp:82
 msgctxt "PlayerWidget|"
 msgid "Save Playlist"
 msgstr "Shrani seznam predvajanj"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:112
+#: src/libraries/rwidgets/customs/playerwidget.cpp:85
 msgctxt "PlayerWidget|"
 msgid "Clear"
 msgstr "Počisti"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:116
+#: src/libraries/rwidgets/customs/playerwidget.cpp:89
 msgctxt "PlayerWidget|"
 msgid "Add Songs"
 msgstr "Dodaj pesmi"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:119
+#: src/libraries/rwidgets/customs/playerwidget.cpp:92
 msgctxt "PlayerWidget|"
 msgid "Open Stream"
 msgstr "Odpri tok"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:121
+#: src/libraries/rwidgets/customs/playerwidget.cpp:94
 msgctxt "PlayerWidget|"
 msgid "Remove Song"
 msgstr "Odstrani pesem"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:143
+#: src/libraries/rwidgets/customs/playerwidget.cpp:116
 msgctxt "PlayerWidget|"
 msgid "Add song to the list"
 msgstr "Dodaj pesem na seznam"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:144
+#: src/libraries/rwidgets/customs/playerwidget.cpp:117
 msgctxt "PlayerWidget|"
 msgid "Remove selected file"
 msgstr "Odstrani izbrano datoteko"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:185
+#: src/libraries/rwidgets/customs/playerwidget.cpp:158
 msgctxt "PlayerWidget|"
 msgid "Add new directory"
 msgstr "Dodaj nov imenik"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:327
+#: src/libraries/rwidgets/customs/playerwidget.cpp:298
 msgctxt "PlayerWidget|"
 msgid "Add song"
 msgstr "Dodaj pesem"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:328
+#: src/libraries/rwidgets/customs/playerwidget.cpp:299
 #, qt-format
 msgctxt "PlayerWidget|"
 msgid "Audio files (%1)"
 msgstr "Zvočne datoteke (%1)"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:340
+#: src/libraries/rwidgets/customs/playerwidget.cpp:311
 msgctxt "PlayerWidget|"
 msgid "Attention!"
 msgstr "Pozor!"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:341
+#: src/libraries/rwidgets/customs/playerwidget.cpp:312
 msgctxt "PlayerWidget|"
 msgid ""
 "You are about to load an new playlist. All previously load file will be "
@@ -4804,28 +4798,28 @@ msgstr ""
 "Naložili boste nov seznam predvajanja. Vse prej naložene datoteke bodo "
 "opuščene."
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
 msgctxt "PlayerWidget|"
 msgid "Open Play List"
 msgstr "Odpri seznam predvajanja"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 msgctxt "PlayerWidget|"
 msgid "PlayList (*.m3u)"
 msgstr "Seznam predvajanja (*.m3u)"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 msgctxt "PlayerWidget|"
 msgid "Open audio Stream"
 msgstr "Odpri zvočni tok"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 msgctxt "PlayerWidget|"
 msgid "URL"
 msgstr "URL"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 msgctxt "PlayerWidget|"
 msgid "Save Play List"
 msgstr "Shrani seznam predvajanja"
@@ -8340,57 +8334,57 @@ msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Nova enota"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:77
 msgctxt "CharacterItem|"
 msgid "Disk"
 msgstr "Disk"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:78
 msgctxt "CharacterItem|"
 msgid "Angle"
 msgstr "Kot"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:79
 msgctxt "CharacterItem|"
 msgid "Reduce Life"
 msgstr "Skrajšaj življenjsko dobo"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:96
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:80
 msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Podaljšaj življenjsko dobo"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:372
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Spremeni stanje"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "Oblika vida"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Dejanja"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:412
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "Pobuda"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:414
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "Čista pobuda"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:431
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Liki"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:438
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Čista oblika"
@@ -9324,6 +9318,10 @@ msgstr "V spanju"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Začarani"
+
+#~ msgctxt "CharacterSheetModel|"
+#~ msgid "Field %1"
+#~ msgstr "Polje %1"
 
 #~ msgctxt "UpnpNat|"
 #~ msgid "Unable to read the URL in server answer"

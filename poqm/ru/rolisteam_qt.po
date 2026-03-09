@@ -3087,28 +3087,22 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr ""
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:620
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:606
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr ""
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:658
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:644
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr ""
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:665
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:651
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
 msgstr ""
-
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:689
-#, fuzzy, qt-format
-msgctxt "CharacterSheetModel|"
-msgid "Field %1"
-msgstr "Поле"
 
 #: src/libraries/charactersheet/src/charactersheet/imagemodel.cpp:15
 #, fuzzy
@@ -3758,12 +3752,12 @@ msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "МиБ"
 
-#: src/libraries/core/src/network/channelmodel.cpp:445
+#: src/libraries/core/src/network/channelmodel.cpp:438
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "Пароль канала"
 
-#: src/libraries/core/src/network/channelmodel.cpp:446
+#: src/libraries/core/src/network/channelmodel.cpp:439
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -4223,73 +4217,73 @@ msgid ""
 "Then, you'll see your own 3D dice."
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:28
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:29
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Undo"
 msgstr "Отменить"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:34
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:36
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Redo"
 msgstr "Повторить"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:40
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:43
 msgctxt "ButtonGrid|"
 msgid "Save Map"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:44
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:47
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Open Drawer"
 msgstr "Открыть панель"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:52
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:57
 msgctxt "ButtonGrid|"
 msgid "Add Root"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:60
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:66
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Add Package"
 msgstr "Добавить пакет"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:72
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:78
 msgctxt "ButtonGrid|"
 msgid "Add Arrow"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:85
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:93
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Remove selected Items"
 msgstr "Удаление выделенных элементов"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:92
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:100
 #, fuzzy
 msgctxt "ButtonGrid|"
 msgid "Refresh"
 msgstr "Обновить"
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:97
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:106
 msgctxt "ButtonGrid|"
 msgid "Export As PNG"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Hide small map"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:102
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:113
 msgctxt "ButtonGrid|"
 msgid "Show small map"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:108
+#: src/libraries/mindmap/resources/qml/ButtonGrid.qml:120
 msgctxt "ButtonGrid|"
 msgid "Automatic Spacing"
 msgstr ""
@@ -4880,144 +4874,144 @@ msgctxt "rwidgets::ImagePathEditor|"
 msgid "Get picture for Character State"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:82
+#: src/libraries/rwidgets/customs/playerwidget.cpp:55
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Play"
 msgstr "Воспроизвести"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:83
+#: src/libraries/rwidgets/customs/playerwidget.cpp:56
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Pause"
 msgstr "Приостановить"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:84
+#: src/libraries/rwidgets/customs/playerwidget.cpp:57
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Stop"
 msgstr "Остановить"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:86
+#: src/libraries/rwidgets/customs/playerwidget.cpp:59
 msgctxt "PlayerWidget|"
 msgid "Stop at the end"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:91
+#: src/libraries/rwidgets/customs/playerwidget.cpp:64
 msgctxt "PlayerWidget|"
 msgid "Play in loop"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:96
+#: src/libraries/rwidgets/customs/playerwidget.cpp:69
 msgctxt "PlayerWidget|"
 msgid "Shuffle Mode"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:100
+#: src/libraries/rwidgets/customs/playerwidget.cpp:73
 msgctxt "PlayerWidget|"
 msgid "Mute Volume"
 msgstr "Выключить звук"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:104
+#: src/libraries/rwidgets/customs/playerwidget.cpp:77
 msgctxt "PlayerWidget|"
 msgid "load TableTopAudio.com playlist"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:106
+#: src/libraries/rwidgets/customs/playerwidget.cpp:79
 msgctxt "PlayerWidget|"
 msgid "Open Playlist"
 msgstr "Открыть список воспроизведения"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:109
+#: src/libraries/rwidgets/customs/playerwidget.cpp:82
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Save Playlist"
 msgstr "Сохранение списка воспроизведения"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:112
+#: src/libraries/rwidgets/customs/playerwidget.cpp:85
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Clear"
 msgstr "Очистить"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:116
+#: src/libraries/rwidgets/customs/playerwidget.cpp:89
 msgctxt "PlayerWidget|"
 msgid "Add Songs"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:119
+#: src/libraries/rwidgets/customs/playerwidget.cpp:92
 msgctxt "PlayerWidget|"
 msgid "Open Stream"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:121
+#: src/libraries/rwidgets/customs/playerwidget.cpp:94
 msgctxt "PlayerWidget|"
 msgid "Remove Song"
 msgstr "Удалить песню"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:143
+#: src/libraries/rwidgets/customs/playerwidget.cpp:116
 msgctxt "PlayerWidget|"
 msgid "Add song to the list"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:144
+#: src/libraries/rwidgets/customs/playerwidget.cpp:117
 msgctxt "PlayerWidget|"
 msgid "Remove selected file"
 msgstr "Удалить выбранный файл"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:185
+#: src/libraries/rwidgets/customs/playerwidget.cpp:158
 msgctxt "PlayerWidget|"
 msgid "Add new directory"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:327
+#: src/libraries/rwidgets/customs/playerwidget.cpp:298
 msgctxt "PlayerWidget|"
 msgid "Add song"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:328
+#: src/libraries/rwidgets/customs/playerwidget.cpp:299
 #, fuzzy, qt-format
 msgctxt "PlayerWidget|"
 msgid "Audio files (%1)"
 msgstr "Звуковые файлы"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:340
+#: src/libraries/rwidgets/customs/playerwidget.cpp:311
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "Attention!"
 msgstr "Внимание"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:341
+#: src/libraries/rwidgets/customs/playerwidget.cpp:312
 msgctxt "PlayerWidget|"
 msgid ""
 "You are about to load an new playlist. All previously load file will be "
 "dropped."
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
 msgctxt "PlayerWidget|"
 msgid "Open Play List"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:350
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:321
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "PlayList (*.m3u)"
 msgstr "Списки воспроизведения (*.m3u)"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 msgctxt "PlayerWidget|"
 msgid "Open audio Stream"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:359
+#: src/libraries/rwidgets/customs/playerwidget.cpp:330
 #, fuzzy
 msgctxt "PlayerWidget|"
 msgid "URL"
 msgstr "URL"
 
-#: src/libraries/rwidgets/customs/playerwidget.cpp:429
+#: src/libraries/rwidgets/customs/playerwidget.cpp:400
 msgctxt "PlayerWidget|"
 msgid "Save Play List"
 msgstr ""
@@ -8689,61 +8683,61 @@ msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Новый раздел"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:93
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:77
 #, fuzzy
 msgctxt "CharacterItem|"
 msgid "Disk"
 msgstr "Диск"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:94
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:78
 #, fuzzy
 msgctxt "CharacterItem|"
 msgid "Angle"
 msgstr "Угол"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:95
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:79
 msgctxt "CharacterItem|"
 msgid "Reduce Life"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:96
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:80
 msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:372
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
 #, fuzzy
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Изменить состояние"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:411
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Действия"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:412
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:414
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:431
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
 #, fuzzy
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Фигуры"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:438
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr ""
@@ -9741,6 +9735,11 @@ msgstr "в ожидании"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "CharacterSheetModel|"
+#~ msgid "Field %1"
+#~ msgstr "Поле"
 
 #~ msgctxt "RcseApplicationController|"
 #~ msgid "Yes"
