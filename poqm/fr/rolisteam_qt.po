@@ -1270,47 +1270,47 @@ msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr "En bas à gauche"
 
-#: src/binaries/rcse/itemeditor.cpp:62
+#: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
 msgid "Fit the view"
 msgstr "Ajuster à la vue"
 
-#: src/binaries/rcse/itemeditor.cpp:65
+#: src/binaries/rcse/itemeditor.cpp:68
 msgctxt "ItemEditor|"
 msgid "Lock item"
 msgstr "Verrouiller un élément"
 
-#: src/binaries/rcse/itemeditor.cpp:67
+#: src/binaries/rcse/itemeditor.cpp:70
 msgctxt "ItemEditor|"
 msgid "Align on Y"
 msgstr "Aligner en Y"
 
-#: src/binaries/rcse/itemeditor.cpp:68
+#: src/binaries/rcse/itemeditor.cpp:71
 msgctxt "ItemEditor|"
 msgid "Align on X"
 msgstr "Aligner en X"
 
-#: src/binaries/rcse/itemeditor.cpp:69
+#: src/binaries/rcse/itemeditor.cpp:72
 msgctxt "ItemEditor|"
 msgid "Same Width"
 msgstr "Même largeur"
 
-#: src/binaries/rcse/itemeditor.cpp:70
+#: src/binaries/rcse/itemeditor.cpp:73
 msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Même hauteur"
 
-#: src/binaries/rcse/itemeditor.cpp:71
+#: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
 msgstr "Dupliquer"
 
-#: src/binaries/rcse/itemeditor.cpp:72
+#: src/binaries/rcse/itemeditor.cpp:75
 msgctxt "ItemEditor|"
 msgid "Vertical equidistribution"
 msgstr "Distribution verticale homogène"
 
-#: src/binaries/rcse/itemeditor.cpp:73
+#: src/binaries/rcse/itemeditor.cpp:76
 msgctxt "ItemEditor|"
 msgid "Horizontal equidistribution"
 msgstr "Distribution horizontale homogène"
@@ -3671,7 +3671,7 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Serveur] Début de l'écoute"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
@@ -3679,7 +3679,7 @@ msgstr ""
 "L'authentification comme administrateur a échoué : %2 - %1. Mot de passe "
 "incorrect."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3688,18 +3688,18 @@ msgstr ""
 "L'authentification a échoué : %1 tentatives pour se connecter au serveur "
 "avec un mot de passe incorrect."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "L'utilisateur a été exclus : %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nouvelle connexion entrante !"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

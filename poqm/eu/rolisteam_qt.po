@@ -1314,47 +1314,47 @@ msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr "Behean ezkerrean"
 
-#: src/binaries/rcse/itemeditor.cpp:62
+#: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
 msgid "Fit the view"
 msgstr "Egokitu ikuspegia"
 
-#: src/binaries/rcse/itemeditor.cpp:65
+#: src/binaries/rcse/itemeditor.cpp:68
 msgctxt "ItemEditor|"
 msgid "Lock item"
 msgstr "Giltzatu elementua"
 
-#: src/binaries/rcse/itemeditor.cpp:67
+#: src/binaries/rcse/itemeditor.cpp:70
 msgctxt "ItemEditor|"
 msgid "Align on Y"
 msgstr "Lerrokatu «Y»rekiko"
 
-#: src/binaries/rcse/itemeditor.cpp:68
+#: src/binaries/rcse/itemeditor.cpp:71
 msgctxt "ItemEditor|"
 msgid "Align on X"
 msgstr "Lerrokatu «X»rekiko"
 
-#: src/binaries/rcse/itemeditor.cpp:69
+#: src/binaries/rcse/itemeditor.cpp:72
 msgctxt "ItemEditor|"
 msgid "Same Width"
 msgstr "Zabalera berdina"
 
-#: src/binaries/rcse/itemeditor.cpp:70
+#: src/binaries/rcse/itemeditor.cpp:73
 msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Altuera berdina"
 
-#: src/binaries/rcse/itemeditor.cpp:71
+#: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
 msgstr "Bikoiztu"
 
-#: src/binaries/rcse/itemeditor.cpp:72
+#: src/binaries/rcse/itemeditor.cpp:75
 msgctxt "ItemEditor|"
 msgid "Vertical equidistribution"
 msgstr "Berdinbanaketa bertikala"
 
-#: src/binaries/rcse/itemeditor.cpp:73
+#: src/binaries/rcse/itemeditor.cpp:76
 msgctxt "ItemEditor|"
 msgid "Horizontal equidistribution"
 msgstr "Berdinbanaketa horizontala"
@@ -3710,13 +3710,13 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Zerbitzaria] Hasi entzuten"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Admin gisa autentifikazioak huts egin du: %2 - %1, pasahitz okerra."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3725,18 +3725,18 @@ msgstr ""
 "Autentifikazioak huts egiten du: %1 zerbitzarira pasahitz okerrarekin "
 "konektatzen saiatu da."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Erabiltzailea kanporatu izan da: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Sarrerako konexio berria!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

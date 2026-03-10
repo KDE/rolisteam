@@ -1268,47 +1268,47 @@ msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr "Linksonder"
 
-#: src/binaries/rcse/itemeditor.cpp:62
+#: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
 msgid "Fit the view"
 msgstr "De weergave laten passen"
 
-#: src/binaries/rcse/itemeditor.cpp:65
+#: src/binaries/rcse/itemeditor.cpp:68
 msgctxt "ItemEditor|"
 msgid "Lock item"
 msgstr "Item vergrendelen"
 
-#: src/binaries/rcse/itemeditor.cpp:67
+#: src/binaries/rcse/itemeditor.cpp:70
 msgctxt "ItemEditor|"
 msgid "Align on Y"
 msgstr "Op Y uitlijnen"
 
-#: src/binaries/rcse/itemeditor.cpp:68
+#: src/binaries/rcse/itemeditor.cpp:71
 msgctxt "ItemEditor|"
 msgid "Align on X"
 msgstr "Op X uitlijnen"
 
-#: src/binaries/rcse/itemeditor.cpp:69
+#: src/binaries/rcse/itemeditor.cpp:72
 msgctxt "ItemEditor|"
 msgid "Same Width"
 msgstr "Zelfde breedte"
 
-#: src/binaries/rcse/itemeditor.cpp:70
+#: src/binaries/rcse/itemeditor.cpp:73
 msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Zelfde hoogte"
 
-#: src/binaries/rcse/itemeditor.cpp:71
+#: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
 msgstr "Dupliceren"
 
-#: src/binaries/rcse/itemeditor.cpp:72
+#: src/binaries/rcse/itemeditor.cpp:75
 msgctxt "ItemEditor|"
 msgid "Vertical equidistribution"
 msgstr "Verticaal gelijk verdelen"
 
-#: src/binaries/rcse/itemeditor.cpp:73
+#: src/binaries/rcse/itemeditor.cpp:76
 msgctxt "ItemEditor|"
 msgid "Horizontal equidistribution"
 msgstr "Horizontaal gelijk verdelen"
@@ -3655,13 +3655,13 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Server] Begin met luisteren"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Authenticatie als admin is mislukt: %2 - %1, verkeerd wachtwoord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3670,18 +3670,18 @@ msgstr ""
 "Authenticatie is mislukt:  %1 probeerde met de server te verbinden met een "
 "verkeerd wachtwoord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Gebruiker is er uit geknikkerd: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nieuwe inkomende verbinding!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

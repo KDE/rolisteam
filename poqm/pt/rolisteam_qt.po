@@ -1449,47 +1449,47 @@ msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr "Baixo-Esquerda"
 
-#: src/binaries/rcse/itemeditor.cpp:62
+#: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
 msgid "Fit the view"
 msgstr "Ajustar à área"
 
-#: src/binaries/rcse/itemeditor.cpp:65
+#: src/binaries/rcse/itemeditor.cpp:68
 msgctxt "ItemEditor|"
 msgid "Lock item"
 msgstr "Bloquear o item"
 
-#: src/binaries/rcse/itemeditor.cpp:67
+#: src/binaries/rcse/itemeditor.cpp:70
 msgctxt "ItemEditor|"
 msgid "Align on Y"
 msgstr "Alinhar em Y"
 
-#: src/binaries/rcse/itemeditor.cpp:68
+#: src/binaries/rcse/itemeditor.cpp:71
 msgctxt "ItemEditor|"
 msgid "Align on X"
 msgstr "Alinhar em X"
 
-#: src/binaries/rcse/itemeditor.cpp:69
+#: src/binaries/rcse/itemeditor.cpp:72
 msgctxt "ItemEditor|"
 msgid "Same Width"
 msgstr "Mesma Largura"
 
-#: src/binaries/rcse/itemeditor.cpp:70
+#: src/binaries/rcse/itemeditor.cpp:73
 msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Mesma Altura"
 
-#: src/binaries/rcse/itemeditor.cpp:71
+#: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
 msgstr "Duplicar"
 
-#: src/binaries/rcse/itemeditor.cpp:72
+#: src/binaries/rcse/itemeditor.cpp:75
 msgctxt "ItemEditor|"
 msgid "Vertical equidistribution"
 msgstr "Distribuição equivalente na vertical"
 
-#: src/binaries/rcse/itemeditor.cpp:73
+#: src/binaries/rcse/itemeditor.cpp:76
 msgctxt "ItemEditor|"
 msgid "Horizontal equidistribution"
 msgstr "Distribuição equivalente na horizontal"
@@ -4421,13 +4421,13 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "A autenticação como administrador falhou: %2 - %1 - senha errada."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -4436,18 +4436,18 @@ msgstr ""
 "A autenticação como administrador falhou: %1 tentativa(s) de ligação ao "
 "servidor com a senha errada."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "O utilizador foi expulso: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nova Ligação Recebida!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"

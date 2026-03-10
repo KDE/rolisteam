@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-02-24 15:50+0300\n"
+"PO-Revision-Date: 2026-03-09 21:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1269,47 +1269,47 @@ msgctxt "FieldModel|"
 msgid "BottomLeft"
 msgstr "SolAlt"
 
-#: src/binaries/rcse/itemeditor.cpp:62
+#: src/binaries/rcse/itemeditor.cpp:65
 msgctxt "ItemEditor|"
 msgid "Fit the view"
 msgstr "Görünümü Sığdır"
 
-#: src/binaries/rcse/itemeditor.cpp:65
+#: src/binaries/rcse/itemeditor.cpp:68
 msgctxt "ItemEditor|"
 msgid "Lock item"
 msgstr "Ögeyi Kilitle"
 
-#: src/binaries/rcse/itemeditor.cpp:67
+#: src/binaries/rcse/itemeditor.cpp:70
 msgctxt "ItemEditor|"
 msgid "Align on Y"
 msgstr "Y’ye Hizala"
 
-#: src/binaries/rcse/itemeditor.cpp:68
+#: src/binaries/rcse/itemeditor.cpp:71
 msgctxt "ItemEditor|"
 msgid "Align on X"
 msgstr "X’e Hizala"
 
-#: src/binaries/rcse/itemeditor.cpp:69
+#: src/binaries/rcse/itemeditor.cpp:72
 msgctxt "ItemEditor|"
 msgid "Same Width"
 msgstr "Aynı Genişlik"
 
-#: src/binaries/rcse/itemeditor.cpp:70
+#: src/binaries/rcse/itemeditor.cpp:73
 msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Aynı Yükseklik"
 
-#: src/binaries/rcse/itemeditor.cpp:71
+#: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
 msgstr "Çoğalt"
 
-#: src/binaries/rcse/itemeditor.cpp:72
+#: src/binaries/rcse/itemeditor.cpp:75
 msgctxt "ItemEditor|"
 msgid "Vertical equidistribution"
 msgstr "Dikey Eşit Dağıtım"
 
-#: src/binaries/rcse/itemeditor.cpp:73
+#: src/binaries/rcse/itemeditor.cpp:76
 msgctxt "ItemEditor|"
 msgid "Horizontal equidistribution"
 msgstr "Yatay Eşit Dağıtım"
@@ -1353,7 +1353,7 @@ msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
-"%1 bağış sayfası çevrimiçi olarak şurada bulunabilir:<br> <a href=\"https://"
+"%1 bağış sayfası çevrim içi olarak şurada bulunabilir:<br> <a href=\"https://"
 "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 
 #: src/binaries/rcse/mainwindow.cpp:453
@@ -1371,7 +1371,7 @@ msgstr "Yardım"
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
-"Rolisteam Karakter Sayfası Düzenleyicisi belgelendirmesi çevrimiçi olarak "
+"Rolisteam Karakter Sayfası Düzenleyicisi belgelendirmesi çevrim içi olarak "
 "şurada bulunabilir:<br> <a href=\"%1\">%1</a>"
 
 #: src/binaries/rcse/mainwindow.cpp:503
@@ -2306,7 +2306,7 @@ msgstr "Sefer Aç"
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
-"%1 belgelendirmesi çevrimiçi olarak şurada bulunabilir:<br> <a href=\"%2\">"
+"%1 belgelendirmesi çevrim içi olarak şurada bulunabilir:<br> <a href=\"%2\">"
 "%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:788
@@ -2319,8 +2319,8 @@ msgstr "Destek"
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
-"%1 bağış sayfası çevrimiçi olarak şurada bulunabilir:<br> <a href=\"%2\">%2</"
-"a>"
+"%1 bağış sayfası çevrim içi olarak şurada bulunabilir:<br> <a href=\"%2\">"
+"%2</a>"
 
 #: src/binaries/widget/mainwindow.cpp:853
 #, qt-format
@@ -2582,7 +2582,7 @@ msgstr "Rolisteam Yardımı"
 #: src/binaries/widget/mainwindow.ui:232
 msgctxt "MainWindow|"
 msgid "online documentation"
-msgstr "Çevrimiçi Belgelendirme"
+msgstr "Çevrim İçi Belgelendirme"
 
 #: src/binaries/widget/mainwindow.ui:235
 msgctxt "MainWindow|"
@@ -2622,7 +2622,7 @@ msgstr "Kontrol+E"
 #: src/binaries/widget/mainwindow.ui:295
 msgctxt "MainWindow|"
 msgid "Online Picture"
-msgstr "Çevrimiçi Resim"
+msgstr "Çevrim İçi Resim"
 
 #: src/binaries/widget/mainwindow.ui:298
 msgctxt "MainWindow|"
@@ -3663,13 +3663,13 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Sunucu] Dinlemeye Başla"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:248
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Yönetici olarak kimlik doğrulama başarısız: %2 — %1, hatalı parola."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3677,18 +3677,18 @@ msgid ""
 msgstr ""
 "Kimlik doğrulama başarısız: Hatalı parolayla sunucuya %1 bağlanma denemesi."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:296
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Kullanıcı kovuldu: %2 — %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Yeni Gelen Bağlantı!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:517
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
