@@ -161,9 +161,9 @@ public slots:
     void addImageFor(const QString& idNode, const QString& path, const QByteArray& data);
     void removeImageFor(const QString& nodeId);
     void addItemIntoPackage(const QString& idNode, const QString& idPack, bool network= false);
+    void addNewItemIntoPackage(const QString& idPack);
     void removeItemFromPackage(const QString& idNode, bool network= false);
     void refresh();
-    // void openImage(const QString& id, const QUrl& path);
     void removeImage(const QString& id, bool network);
     void removeLink(const QStringList& id, bool network);
     void removeNode(const QStringList& id, bool network);

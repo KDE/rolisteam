@@ -29,6 +29,7 @@
 #include <QUrl>
 // #include <random>
 
+#include "mindmap/command/AddChildToPackageCommand.h"
 #include "mindmap/command/addimagetonodecommand.h"
 #include "mindmap/command/additemcommand.h"
 #include "mindmap/command/removeimagefromnodecommand.h"
@@ -449,6 +450,14 @@ void MindMapControllerBase::addItemIntoPackage(const QString& idNode, const QStr
 
     pack->addChild(node, network);
     node->setLocked(true);
+}
+
+void MindMapControllerBase::addNewItemIntoPackage(const QString& idPack)
+{
+    if(!readWrite())
+        return;
+    auto cmd= new mindmap::AddChildToPackageCommand(m_itemModel.get(), idPack);
+    m_stack.push(cmd);
 }
 
 void MindMapControllerBase::removeItemFromPackage(const QString& idNode, bool network)

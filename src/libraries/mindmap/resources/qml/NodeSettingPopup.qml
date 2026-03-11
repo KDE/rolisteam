@@ -1,9 +1,12 @@
 import QtQuick
+import QtCore
 import QtQuick.Controls
 import QtQuick.Layouts
+import QtQuick.Dialogs
 import mindmap
 import CustomItems
 import mindmapcpp
+
 
 Popup {
     id: _root
@@ -13,6 +16,46 @@ Popup {
     property bool hasAvatar : false
 
     implicitHeight: flickable.contentHeight + 2*_root.padding
+
+    FileDialog {
+        id: openDialog
+        title: qsTr("Choose Image...")
+        nameFilters: ["Images (*.png *.jpg *.jpeg *.svg *.gif)"]
+
+        onAccepted: {
+            var data="";
+            _root.ctrl.addImageFor(_root.node.id, openDialog.selectedFile, data)
+        }
+        currentFolder: StandardPaths.standardLocations(StandardPaths.PicturesLocation)[0]
+    }
+
+    Dialog {
+        id: urlDialog
+        title: qsTr("Set image url")
+        standardButtons: img.status == Image.Ready ?  Dialog.Ok | Dialog.Cancel : Dialog.Cancel
+
+        ColumnLayout {
+            RowLayout {
+                Label {
+                    text: qsTr("Url")
+                }
+                TextField {
+                    id: urlEdit
+                }
+            }
+            Image {
+                id: img
+                Layout.fillHeight: true
+                Layout.fillWidth: true
+                source: urlEdit.text
+            }
+        }
+        onAccepted: {
+            var data="";
+            _root.ctrl.addImageFor(_root.node.id, urlEdit.text, data)
+        }
+        //onRejected: console.log("Cancel clicked")
+    }
 
     ScrollView {
         id: flickable
@@ -53,12 +96,21 @@ Popup {
                     onEditingFinished: _root.node.tagsText = text
                 }
                 Label {
-                    text: qsTr("Action:")
+                    text: qsTr("Avatar:")
                 }
                 RowLayout {
                     Layout.fillWidth: true
                     Button {
-                        text: qsTr("Remove Avatar")
+                        text: qsTr("Load")
+                        onClicked: openDialog.open()
+                    }
+                    Button {
+                        text: qsTr("Set URL")
+                        visible: false
+                        onClicked: urlDialog.open()
+                    }
+                    Button {
+                        text: qsTr("Remove")
                         enabled:  _root.hasAvatar
                         onClicked: _root.ctrl.removeImageFor(_root.node.id)
                     }

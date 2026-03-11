@@ -31,6 +31,7 @@ MindLink {
             id: label
             x: root.horizontalOffset - width/2
             y: root.verticalOffset - height/2
+            objectName: root.objectName
             readOnly: !root.editing
             enabled: root.writable
             focus: root.editing

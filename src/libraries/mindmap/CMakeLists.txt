@@ -101,6 +101,7 @@ SOURCES
     ${inc_dir}/qmlItems/linkitem.h
     src/data/mindnode.cpp
     ${inc_dir}/data/mindnode.h
+    SOURCES ${inc_dir}/command/AddChildToPackageCommand.h src/command/AddChildToPackageCommand.cpp
 )
 
 target_link_libraries(rmindmap PUBLIC Qt6::Core Qt6::Svg Qt6::Svg Qt6::Qml Qt6::Quick Qt6::QuickControls2 PRIVATE utils)

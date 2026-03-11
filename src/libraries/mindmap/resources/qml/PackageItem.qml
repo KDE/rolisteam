@@ -26,9 +26,21 @@ Rectangle {
     height: _handle.y + _handle.height //objectItem.height
 
     radius: 10
+    property size minimalSize: Qt.size(textEdit.x + textEdit.contentWidth + actionList.width, textEdit.y + textEdit.contentHeight)
+    onMinimalSizeChanged: {
+        packageItem.minimumMargin = _root.minimalSize.height
+    }
 
-    onWidthChanged: packageItem.width = width
-    onHeightChanged: packageItem.height = height
+
+    onWidthChanged: {
+        if(packageItem.width !== width)
+            packageItem.width = width
+    }
+    onHeightChanged: {
+        if(packageItem.height !== height)
+            packageItem.height = height
+
+    }
 
     color: _root.style.backgroundColor
     border.color: _root.style.borderColor
@@ -84,17 +96,17 @@ Rectangle {
         id: textEdit
 
         anchors.top: parent.top
-        anchors.topMargin: 5+_root.radius
+        anchors.topMargin: _root.radius
         anchors.leftMargin: 5+_root.radius
         anchors.left: parent.left
         anchors.right: parent.right
+        objectName: _root.objectName
 
         enabled: _root.readWrite && _root.editable
 
         text: _root.packageItem.text
         color: _root.style.borderColor
         onEditingFinished: {
-            console.log("Title package edit finished")
             _root.packageItem.text = textEdit.text
             _root.editable = true
         }
@@ -109,8 +121,18 @@ Rectangle {
         x: _root.packageItem.width - width
         y: _root.packageItem.height - height
 
+
         DragHandler {
             id: handleDrag
+            cursorShape: Qt.SizeFDiagCursor
+            xAxis.minimum: _root.minimalSize.width
+            yAxis.minimum: _root.minimalSize.height
+            Component.onCompleted: forceActiveFocus()
+        }
+        HoverHandler {
+            onHoveredChanged: console.log("hoverHandler hovered changed: "+hovered)
+            cursorShape: Qt.SizeAllCursor
+            grabPermissions: PointerHandler.CanTakeOverFromAnything
         }
     }
 
@@ -125,9 +147,10 @@ Rectangle {
     }
 
     ToolButton {
+        id: actionList
         anchors.right: parent.right
         anchors.top: parent.top
-        visible: _root.editable
+        //visible: _root.editable
         property QtObject style: Theme.styleSheet("mindmap")
 
         //anchors.centerIn: parent

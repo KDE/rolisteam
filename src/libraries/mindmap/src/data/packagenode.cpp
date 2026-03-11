@@ -114,6 +114,8 @@ PackageNode::PackageNode(QObject* parent) : PositionedItem{MindItem::PackageType
 
     connect(this, &PackageNode::widthChanged, this, &PackageNode::performLayout);
     connect(this, &PackageNode::heightChanged, this, &PackageNode::performLayout);
+    connect(this, &PackageNode::minimumMarginChanged, this, &PackageNode::performLayout);
+
     connect(this, &PackageNode::visibleChanged, this,
             [this](bool visible)
             {
@@ -158,68 +160,74 @@ void PackageNode::performLayout()
     if(children.isEmpty())
         return;
 
-    auto const itemCount= static_cast<std::size_t>(children.size());
-    auto const w= width();
+    const int w= width();
+    const int itemCount= children.size();
 
-    std::vector<int> vec;
-    std::transform(std::begin(children), std::end(children), std::back_inserter(vec),
-                   [](PositionedItem* item) { return item->width(); });
-    auto maxWidth= *std::max_element(std::begin(vec), std::end(vec));
+    std::vector<int> widths;
+    widths.reserve(itemCount);
 
-    std::size_t itemPerLine= 1;
-    while(maxWidth < (width() * 0.75) && itemCount > itemPerLine)
+    for(auto item : children)
+        widths.push_back(item->width());
+
+    auto computeMaxRowWidth= [&](int itemsPerLine)
     {
-        ++itemPerLine;
-        int maxW= 0;
-        std::vector<int> rows;
-        rows.reserve(itemPerLine);
-        for(auto w : vec)
+        int maxRowWidth= 0;
+        int rowWidth= 0;
+        int count= 0;
+
+        for(auto itemW : widths)
         {
-            if(rows.size() < itemPerLine)
+            rowWidth+= itemW;
+            count++;
+
+            if(count == itemsPerLine)
             {
-                rows.push_back(w);
-            }
-            else
-            {
-                maxW= std::max(std::accumulate(std::begin(rows), std::end(rows), 0), maxW);
-                rows.clear();
+                maxRowWidth= std::max(maxRowWidth, rowWidth);
+                rowWidth= 0;
+                count= 0;
             }
         }
-        maxW= std::max(std::accumulate(std::begin(rows), std::end(rows), 0), maxW);
-        rows.clear();
-        maxWidth= maxW;
-        qDebug() << itemPerLine << " maxwidth:" << maxWidth;
-    }
 
-    if(maxWidth > width())
+        if(count != 0)
+            maxRowWidth= std::max(maxRowWidth, rowWidth);
+
+        return maxRowWidth;
+    };
+
+    int itemPerLine= 1;
+
+    while(itemPerLine < itemCount && computeMaxRowWidth(itemPerLine + 1) < w)
     {
-        --itemPerLine;
+        itemPerLine++;
     }
-    // auto const itemPerLine= std::min(static_cast<int>((w - m_minimumMargin) / (m_sizeItem + m_minimumMargin)),
-    //                                static_cast<int>(itemCount));
 
-    auto currentMarge= (w - maxWidth) / (itemPerLine + 1);
+    int maxWidth= computeMaxRowWidth(itemPerLine);
+    int margin= (w - maxWidth) / (itemPerLine + 1);
 
-    auto currentX= itemPerLine == itemCount ? currentMarge : m_minimumMargin;
-    auto currentY= m_minimumMargin;
+    int currentX= (itemPerLine == itemCount) ? margin : m_minimumMargin;
+    const int startLine= currentX;
+    int currentY= m_minimumMargin;
 
-    unsigned int i= 0;
+    int i= 0;
     qreal maxH= 0.;
+
+    QPointF base= position();
+
     for(auto item : std::as_const(children))
     {
-        auto p= position();
-        QPointF a{currentX + p.x(), currentY + p.y()};
-        // qDebug() << a;
-        item->setPosition(a);
+        item->setPosition({base.x() + currentX, base.y() + currentY});
 
-        currentX+= item->width() + currentMarge;
-        maxH= std::max(item->height(), maxH);
+        currentX+= item->width() + margin;
+        maxH= std::max(maxH, item->height());
+
         ++i;
-        if(i >= itemPerLine)
+
+        if(i == itemPerLine)
         {
             currentY+= maxH + m_minimumMargin;
-            currentX= m_minimumMargin;
+            currentX= startLine;
             maxH= 0.;
+            i= 0;
         }
     }
 }

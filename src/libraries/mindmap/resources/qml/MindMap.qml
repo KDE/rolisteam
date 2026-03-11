@@ -65,6 +65,7 @@ Flickable {
             y: objectItem.topLeftCorner.y
             width: objectItem.normalizedWidth
             height: objectItem.normalizedHeight
+            objectName: "link_%1".arg(index)
             color: _flick.styleSheet.linkColor
             opacity: objectItem.constraint ? 1.0 : 0.4
             controller: objectItem
@@ -98,12 +99,13 @@ Flickable {
         PackageItem {
             id: item
             packageItem: objectItem
+            objectName: "package_%1".arg(index)
             visible: objectItem.visible
             selected: objectItem.selected
             title: objectItem.text
             readWrite: _flick.ctrl.readWrite
             onAddItem: (itemid)=>{
-                           _flick.ctrl.addItemIntoPackage(itemid, objectItem.id)
+                _flick.ctrl.addItemIntoPackage(itemid, objectItem.id)
             }
             onMenu: {
                 contextMenu.packageItem = packageItem
@@ -148,6 +150,7 @@ Flickable {
             nodeStyle: _flick.ctrl.style(objectItem.styleIndex)
             readWrite: _flick.ctrl.readWrite
             focus: true
+            objectName: "node_%1".arg(index)
             description: objectItem.description
             text : objectItem.text
             source: hasPicture ? "image://nodeImages/%1".arg(objectItem.id) : ""
@@ -220,12 +223,19 @@ Flickable {
 
     Menu {
         id: contextMenu
-        title: qsTr("Detach")
+        title: qsTr("Package Settings")
         property QtObject packageItem
         property alias subnodes: repeater.model
 
         onClosed: {
             contextMenu.subnodes = null
+        }
+
+        MenuItem {
+            text: qsTr("Add Subnode")
+            onTriggered: {
+                _flick.ctrl.addNewItemIntoPackage(contextMenu.packageItem.id)
+            }
         }
 
         Instantiator {
@@ -235,6 +245,7 @@ Flickable {
                  text: model.text
                  onTriggered: {
                      contextMenu.packageItem.removeChild(model.childId)
+                     contextMenu.close()
                  }
              }
 
@@ -263,6 +274,7 @@ Flickable {
                 required property bool isVisible
                 required property bool hasPicture
                 required property int type
+                required property int index
                 sourceComponent: type == MindItem.PackageType ? packComp : type == MindItem.LinkType ? linkComp : nodeComp
             }
         }

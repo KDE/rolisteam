@@ -3,8 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Customization
 
-Pane
-{
+Pane {
     id: root
     //Properties
     property QtObject style: Theme.styleSheet("Controls")
@@ -128,6 +127,7 @@ Pane
                 text: root.currentNode.text
                 enabled: root.readWrite && root.isEditable
                 color: root.nodeStyle.textColor
+                objectName: root.objectName
                 Layout.alignment: Qt.AlignHCenter
                 onEnabledChanged: focus = enabled
                 focus: true
@@ -151,8 +151,9 @@ Pane
             anchors.horizontalCenter: dragMouse.horizontalCenter
             topPadding: 0
             padding: 0
+            objectName: "child_%1".arg(root.objectName)
             contentItem: Text {
-                text: control.checked ?  "▲" : "▼"
+                text: "child_%1".arg(root.objectName) //control.checked ?  "▲" : "▼"
                 color: control.foreground
             }
 
@@ -170,6 +171,7 @@ Pane
             onClicked: {
                 root.addChild()
             }
+            objectName: "addchild_%1".arg(root.objectName)
             contentItem: Item{}
             background: Rectangle {
                 radius: root.radius
@@ -185,6 +187,7 @@ Pane
             visible: root.readWrite
             anchors.verticalCenter: dragMouse.top
             anchors.horizontalCenter: dragMouse.right
+            objectName: "settings_%1".arg(root.objectName)
             text: "▼"
             contentItem: Text {
                 topPadding: 0
@@ -298,6 +301,7 @@ Pane
 
     background: Rectangle {
         radius: root.radius
+        objectName: "rect_%1".arg(root.objectName)
         border.width: (root.dropOver || root.selected) ? 4 : 1
         border.color: root.dropOver ? root.style.overColor : root.selected ? root.style.highlightColor : root.style.textColor
         gradient: Gradient {
