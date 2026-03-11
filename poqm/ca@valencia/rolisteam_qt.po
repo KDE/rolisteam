@@ -9323,7 +9323,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "CharacterSheetModel|"
-#~ msgid "Field %1"
-#~ msgstr "Camp %1"
