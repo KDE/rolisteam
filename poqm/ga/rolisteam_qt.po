@@ -4072,14 +4072,19 @@ msgid ""
 "%1"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:72
+#: src/libraries/mindmap/resources/qml/MindMap.qml:73
 msgctxt "MindMap|"
 msgid "is linked"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:223
+#: src/libraries/mindmap/resources/qml/MindMap.qml:226
 msgctxt "MindMap|"
-msgid "Detach"
+msgid "Package Settings"
+msgstr ""
+
+#: src/libraries/mindmap/resources/qml/MindMap.qml:235
+msgctxt "MindMap|"
+msgid "Add Subnode"
 msgstr ""
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
@@ -4117,37 +4122,62 @@ msgctxt "MindMenu|"
 msgid "Automatic Spacing"
 msgstr ""
 
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
+msgctxt "NodeSettingPopup|"
+msgid "Choose Image..."
+msgstr ""
+
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
+msgctxt "NodeSettingPopup|"
+msgid "Set image url"
+msgstr ""
+
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
+msgctxt "NodeSettingPopup|"
+msgid "Url"
+msgstr ""
+
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:77
 msgctxt "NodeSettingPopup|"
 msgid "Description: "
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:42
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:85
 msgctxt "NodeSettingPopup|"
 msgid "Description"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:48
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:91
 msgctxt "NodeSettingPopup|"
 msgid "tags:"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:56
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
 msgctxt "NodeSettingPopup|"
-msgid "Action:"
+msgid "Avatar:"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:61
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
 msgctxt "NodeSettingPopup|"
-msgid "Remove Avatar"
+msgid "Load"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:70
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
+msgctxt "NodeSettingPopup|"
+msgid "Set URL"
+msgstr ""
+
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
+msgctxt "NodeSettingPopup|"
+msgid "Remove"
+msgstr ""
+
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:122
 msgctxt "NodeSettingPopup|"
 msgid "Node Styles"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:97
+#: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:149
 msgctxt "NodeSettingPopup|"
 msgid "Text"
 msgstr ""
@@ -4208,6 +4238,11 @@ msgstr ""
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:197
 msgctxt "SideMenu|"
 msgid "Tags"
+msgstr ""
+
+#: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
+msgctxt "AddChildToPackageCommand|"
+msgid "Add Node to Package"
 msgstr ""
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
