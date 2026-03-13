@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -4183,20 +4183,14 @@ msgid "is linked"
 msgstr "მიბმულია"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:226
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Reset Settings"
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "პარამეტრების ჩამოყრა"
+msgstr "პაკეტის პარამეტრები"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:235
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add subchannel"
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "ქვეარხის დამატება"
+msgstr "ქვეკვანძის დამატება"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4234,25 +4228,19 @@ msgid "Automatic Spacing"
 msgstr "ავტომატური გამოტოვება"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "გამოსახულების შეცვლა"
+msgstr "გამოსახულების არჩევა..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "მონიშნეთ გამოსახულება"
+msgstr "გამოსახულების Url-ის დაყენება"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
 msgid "Url"
-msgstr ""
+msgstr "Url"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:77
 msgctxt "NodeSettingPopup|"
@@ -4270,33 +4258,21 @@ msgid "tags:"
 msgstr "ჭდეები:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "Avatar:"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
 msgstr "ავატარი:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Load QML"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "QML-ის ჩატვირთვა"
+msgstr "ჩატვირთვა"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Set Layer"
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "ფენის დაყენება"
+msgstr "URL-ის დაყენება"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
 msgstr "წაშლა"
@@ -4370,12 +4346,9 @@ msgid "Tags"
 msgstr "ჭდეები"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Add Package"
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "პაკეტის დამატება"
+msgstr "კვანძის დამატება პაკეტისთვის"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format

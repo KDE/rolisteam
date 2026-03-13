@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-21 11:43+0100\n"
+"PO-Revision-Date: 2026-03-12 10:37+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -4176,20 +4176,14 @@ msgid "is linked"
 msgstr "is gekoppeld"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:226
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Reset Settings"
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "Instellingen resetten"
+msgstr "Pakketinstellingen"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:235
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add subchannel"
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "Subchannel toevoegen"
+msgstr "Subnode toevoegen"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4227,25 +4221,19 @@ msgid "Automatic Spacing"
 msgstr "Automatische spatiëring"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "Afbeelding wijzigen"
+msgstr "Afbeelding kiezen..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "Een afbeelding selecteren"
+msgstr "URL van ven afbeelding instellen"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:77
 msgctxt "NodeSettingPopup|"
@@ -4263,33 +4251,21 @@ msgid "tags:"
 msgstr "tags:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "Avatar:"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
 msgstr "Avatar:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Load QML"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "QML laden"
+msgstr "Laden"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Set Layer"
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "Laag instellen"
+msgstr "Zet URL"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
 msgstr "Verwijderen"
@@ -4363,12 +4339,9 @@ msgid "Tags"
 msgstr "Tags"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Add Package"
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "Pakket toevoegen"
+msgstr "Node aan pakket toevoegen"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format

@@ -4175,12 +4175,9 @@ msgid "Choose Image..."
 msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Set image background…"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "设置图像背景..."
+msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
@@ -4203,20 +4200,14 @@ msgid "tags:"
 msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "PersonDialog|"
-#| msgid "Avatar…"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
-msgstr "头像..."
+msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Load View"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "加载视图"
+msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
 msgctxt "NodeSettingPopup|"
@@ -4224,12 +4215,9 @@ msgid "Set URL"
 msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "HistoryViewerDialog|"
-#| msgid "remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
-msgstr "移除"
+msgstr ""
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:122
 msgctxt "NodeSettingPopup|"
