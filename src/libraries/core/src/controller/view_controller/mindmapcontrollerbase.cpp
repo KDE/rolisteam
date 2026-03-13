@@ -385,6 +385,15 @@ bool MindMapControllerBase::pasteData(const QMimeData& mimeData)
 
 void MindMapControllerBase::reparenting(MindItem* parent, const QString& id)
 {
+    if(!parent)
+        return;
+
+    auto oldparent= m_itemModel->parentNode(id);
+    if(!oldparent)
+    {
+        addLink(parent->id(), id);
+        return;
+    }
     auto cmd= new ReparentingNodeCommand(m_itemModel.get(), dynamic_cast<PositionedItem*>(parent), id);
     m_stack.push(cmd);
 }

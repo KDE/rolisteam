@@ -48,6 +48,7 @@ public:
         Selected,
         Type,
         Uuid,
+        OrderIndex,
         Object,
         HasPicture,
         LinkStartPosition,

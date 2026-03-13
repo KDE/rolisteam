@@ -66,7 +66,7 @@ Pane {
         }
 
         onPressed: (mouse)=>{
-                       console.log("content: On pressed ",root.ctrl.isPackage)
+                       //console.log("content: On pressed ",root.ctrl.isPackage)
                        ctrl.selectionCtrl.clearSelection()
                        if (root.ctrl.isPackage)
                            root.ctrl.addPackage(Qt.point(mouse.x, mouse.y));
@@ -74,7 +74,7 @@ Pane {
                            mouse.accepted = false;
                    }
         onPositionChanged: (mouse)=> {
-                               console.log("On position changed")
+                         //      console.log("On position changed")
                                //_flick.positionChanged(mouse)
                                if (root.ctrl.isPackage)
                                    root.ctrl.updatePackage(Qt.point(mouse.x, mouse.y));
@@ -82,7 +82,7 @@ Pane {
                                    mouse.accepted = false;
                            }
         onReleased: (mouse)=>{
-                        console.log("On released")
+                        //console.log("On released")
                         //_flick.released(mouse)
                         if (root.ctrl.isPackage)
                             root.ctrl.tool = MindMapController.Handler;
@@ -105,7 +105,7 @@ Pane {
         ctrl: root.ctrl
 
         onSaveMap: {
-            console.log("Content save map");
+            //console.log("Content save map");
             root.saveMap();
         }
     }

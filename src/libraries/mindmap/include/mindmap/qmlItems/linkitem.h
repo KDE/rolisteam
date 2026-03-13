@@ -58,6 +58,8 @@ public:
     bool writable() const;
     void setWritable(bool newWritable);
 
+    Q_INVOKABLE bool contains(const QPointF& point) const override;
+
 public slots:
     void setPoints(const PointList& list);
     void setColor(QColor color);
@@ -72,6 +74,8 @@ signals:
     void editingChanged();
     void writableChanged();
 
+    void polyChanged();
+
 protected:
     QSGNode* updatePaintNode(QSGNode*, UpdatePaintNodeData*) override;
     virtual void mousePressEvent(QMouseEvent* event) override;
@@ -85,7 +89,9 @@ private:
     QPointer<LinkController> m_controller;
     QColor m_color= Qt::black;
     PointList m_points;
-    bool m_colorChanged= false;
+    bool m_colorChanged{false};
+    bool m_selectionChanged{false};
+    bool m_polyChanged{false};
     qreal m_horizontalOffset;
     qreal m_verticalOffset;
     bool m_editing{false};

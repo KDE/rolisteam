@@ -65,12 +65,12 @@ Flickable {
             y: objectItem.topLeftCorner.y
             width: objectItem.normalizedWidth
             height: objectItem.normalizedHeight
-            objectName: "link_%1".arg(index)
+            objectName: "link_%1".arg(order)
             color: _flick.styleSheet.linkColor
             opacity: objectItem.constraint ? 1.0 : 0.4
             controller: objectItem
             visible: objectItem.visible
-            text: objectItem.text ?  objectItem.text : qsTr("is linked")
+            text: objectItem.text ?  objectItem.text : qsTr("is linked %1").arg(order)
             property bool hasValidText: _flick.ctrl.hideEmptyLabel ? objectItem.text.length > 0 : true
             writable: root.ctrl.readWrite
             visibleLabel: hasValidText ? _flick.ctrl.linkLabelVisibility : false
@@ -82,15 +82,6 @@ Flickable {
                 _flick.ctrl.selectionCtrl.clearSelection()
                 _flick.ctrl.selectionCtrl.addToSelection(objectItem)
             }
-
-            Rectangle {
-                border.width: 1
-                border.color: "red"
-                color: "transparent"
-                visible: objectItem.selected
-                anchors.fill: parent
-            }
-
         }
     }
 
@@ -99,7 +90,7 @@ Flickable {
         PackageItem {
             id: item
             packageItem: objectItem
-            objectName: "package_%1".arg(index)
+            objectName: "package_%1".arg(order)
             visible: objectItem.visible
             selected: objectItem.selected
             title: objectItem.text
@@ -150,7 +141,7 @@ Flickable {
             nodeStyle: _flick.ctrl.style(objectItem.styleIndex)
             readWrite: _flick.ctrl.readWrite
             focus: true
-            objectName: "node_%1".arg(index)
+            objectName: "node_%1".arg(order)
             description: objectItem.description
             text : objectItem.text
             source: hasPicture ? "image://nodeImages/%1".arg(objectItem.id) : ""
@@ -274,7 +265,7 @@ Flickable {
                 required property bool isVisible
                 required property bool hasPicture
                 required property int type
-                required property int index
+                required property int order
                 sourceComponent: type == MindItem.PackageType ? packComp : type == MindItem.LinkType ? linkComp : nodeComp
             }
         }

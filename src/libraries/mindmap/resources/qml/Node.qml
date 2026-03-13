@@ -153,7 +153,7 @@ Pane {
             padding: 0
             objectName: "child_%1".arg(root.objectName)
             contentItem: Text {
-                text: "child_%1".arg(root.objectName) //control.checked ?  "▲" : "▼"
+                text: control.checked ?  "▲" : "▼"
                 color: control.foreground
             }
 

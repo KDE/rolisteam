@@ -102,7 +102,6 @@ public:
 
     mindmap::LinkController* linkFromId(const QString& id) const;
     mindmap::MindNode* nodeFromId(const QString& id) const;
-    void createLink(const QString& id, const QString& id2);
     void addLinks(const QList<mindmap::LinkController*>& link, bool network= false);
     void addNode(const QList<MindNode*>& nodes, bool network= false);
     void addItem(mindmap::MindItem* node, bool network= false);

@@ -19,23 +19,33 @@
  ***************************************************************************/
 #include "mindmap/geometry/linknode.h"
 
-#define PenWidth 1
-
 #include <QDebug>
 #include <QLineF>
 namespace mindmap
 {
-LinkNode::LinkNode() : m_geometry(QSGGeometry::defaultAttributes_Point2D(), 0)
+constexpr int PenWidth= 1;
+LinkNode::LinkNode()
+    : m_line{QSGGeometryNode(), QSGFlatColorMaterial(), QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), 0)}
+    , m_selection{QSGGeometryNode(), QSGFlatColorMaterial(), QSGGeometry(QSGGeometry::defaultAttributes_Point2D(), 0)}
 {
-    setGeometry(&m_geometry);
-    m_geometry.setDrawingMode(QSGGeometry::DrawLineStrip);
-    m_geometry.allocate(6);
-    setMaterial(&m_material);
+    m_line.geometry.setDrawingMode(QSGGeometry::DrawLineStrip);
+    m_line.geometry.allocate(6);
+    m_line.node.setMaterial(&m_line.material);
+    m_line.node.setGeometry(&m_line.geometry);
+
+    m_selection.geometry.setDrawingMode(QSGGeometry::DrawLineStrip);
+    m_selection.geometry.allocate(5);
+    m_selection.material.setColor(Qt::transparent);
+    m_selection.node.setMaterial(&m_selection.material);
+    m_selection.node.setGeometry(&m_selection.geometry);
+
+    appendChildNode(&m_line.node);
+    appendChildNode(&m_selection.node);
 }
 void LinkNode::setColor(const QColor& color)
 {
-    m_material.setColor(color);
-    markDirty(QSGNode::DirtyMaterial);
+    m_line.material.setColor(color);
+    m_line.node.markDirty(QSGNode::DirtyMaterial);
 }
 QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox,
                         const QRectF& endBox)
@@ -44,7 +54,7 @@ QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, 
     qreal arrowWidth= 8.0;
     qreal radius= 0.;
     qreal diameter= 0.;
-    m_geometry.setLineWidth(PenWidth);
+    m_line.geometry.setLineWidth(PenWidth);
 
     QPointF p1, p2;
     QRectF rect1= startBox;
@@ -129,7 +139,7 @@ QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, 
 
     auto pointArrow= arrowBase.pointAt(arrowWidth / arrowBase.length());
     auto pointArrow2= arrowBase.pointAt(-arrowWidth / arrowBase.length());
-    auto vertices= m_geometry.vertexDataAsPoint2D();
+    auto vertices= m_line.geometry.vertexDataAsPoint2D();
     {
         vertices[0].set(static_cast<float>(intersection1.x() + diameter),
                         static_cast<float>(intersection1.y() + diameter));
@@ -139,8 +149,28 @@ QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, 
         vertices[4].set(static_cast<float>(pointArrow2.x() + diameter), static_cast<float>(pointArrow2.y() + diameter));
         vertices[5].set(static_cast<float>(startArrow.x() + diameter), static_cast<float>(startArrow.y() + diameter));
     }
-    markDirty(QSGNode::DirtyGeometry);
+    m_line.node.markDirty(QSGNode::DirtyGeometry);
 
     return line;
+}
+
+void LinkNode::updateBox(const QPolygonF& polygon)
+{
+    m_selection.geometry.setLineWidth(PenWidth);
+    auto vertices= m_selection.geometry.vertexDataAsPoint2D();
+    auto idx= 0;
+    for(auto i : polygon)
+    {
+        vertices[idx].set(i.x(), i.y());
+        ++idx;
+    }
+    vertices[idx].set(polygon[0].x(), polygon[0].y());
+    m_selection.node.markDirty(QSGNode::DirtyGeometry);
+}
+
+void LinkNode::updateSelected(bool select)
+{
+    m_selection.material.setColor(select ? Qt::red : Qt::transparent);
+    m_selection.node.markDirty(QSGNode::DirtyMaterial);
 }
 } // namespace mindmap

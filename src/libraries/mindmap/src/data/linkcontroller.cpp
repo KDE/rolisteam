@@ -20,13 +20,14 @@
 #include "linkcontroller.h"
 
 #include <QDebug>
+#include <QLineF>
 #include <QRectF>
 #include <cmath>
 
 #include "mindnode.h"
 namespace mindmap
 {
-
+constexpr qreal tolerance= 40;
 LinkController::LinkController(QObject* parent) : MindItem(MindItem::LinkType, parent)
 {
     connect(this, &LinkController::visibleChanged, this,
@@ -71,6 +72,36 @@ bool LinkController::relatedTo(const QString& id) const
     return res;
 }
 
+QPolygonF diagonalTolerancePolygon(qreal w, qreal h, bool otherDiag= false)
+{
+    QPointF a(0, 0);
+    QPointF b(w, h);
+
+    if(otherDiag)
+    {
+        a= QPointF(0, h);
+        b= QPointF(w, 0);
+    }
+
+    // vecteur de la diagonale
+    QPointF d= b - a;
+
+    // vecteur normal
+    QPointF n(-d.y(), d.x());
+
+    // normalisation
+    qreal len= std::sqrt(n.x() * n.x() + n.y() * n.y());
+    n/= len;
+
+    // vecteur offset
+    QPointF offset= n * tolerance;
+
+    QPolygonF poly;
+    poly << a + offset << b + offset << b - offset << a - offset;
+
+    return poly;
+}
+
 void LinkController::computeNormalizedRect()
 {
     if(!m_start)
@@ -91,6 +122,13 @@ void LinkController::computeNormalizedRect()
     if(o != m_orient)
         emit orientationChanged();
     setNormalizedRect(rect.normalized());
+
+    if(!m_normalizedRect.isEmpty())
+    {
+        m_poly= diagonalTolerancePolygon(m_normalizedRect.width(), m_normalizedRect.height(),
+                                         (m_orient == RightTop || m_orient == LeftBottom));
+        emit polyChanged();
+    }
 }
 
 void LinkController::setStart(PositionedItem* start)
@@ -315,4 +353,19 @@ QString LinkController::toString(bool) const
 {
     return id();
 }
+
+QPolygonF LinkController::poly() const
+{
+    return m_poly;
+}
+
+QPointF LinkController::polyPoint(int index, const QPolygonF& pol) const
+{
+    Q_UNUSED(pol)
+    if(index >= 0 && index < m_poly.size())
+        return m_poly[index];
+
+    return QPointF();
+}
+
 } // namespace mindmap

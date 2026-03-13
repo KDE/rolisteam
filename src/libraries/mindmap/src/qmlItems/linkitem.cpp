@@ -29,6 +29,7 @@ LinkItem::LinkItem()
     // setFlag(QQuickItem::Ite)
     setAntialiasing(true);
     setAcceptedMouseButtons(Qt::LeftButton);
+
     setWidth(280);
     setHeight(280);
 }
@@ -63,10 +64,21 @@ void LinkItem::setColor(QColor color)
 
 void LinkItem::mousePressEvent(QMouseEvent* event)
 {
-    if(event->button() & Qt::LeftButton)
+    if(!m_controller)
+    {
+        event->ignore();
+        return;
+    }
+    QPointF p= event->position(); // click in item coordinates
+
+    if(m_controller->poly().containsPoint(p, Qt::OddEvenFill) && event->button() & Qt::LeftButton)
     {
         emit selected(true);
         event->accept();
+    }
+    else
+    {
+        event->ignore();
     }
 }
 
@@ -75,11 +87,20 @@ void LinkItem::mouseDoubleClickEvent(QMouseEvent* event)
     if(!writable())
         return;
 
-    if(event->button() & Qt::LeftButton)
+    if((event->button() & Qt::LeftButton))
     {
         setEditing(true);
         event->accept();
     }
+    else
+    {
+        event->ignore();
+    }
+}
+
+bool LinkItem::contains(const QPointF& point) const
+{
+    return m_controller->poly().containsPoint(point, Qt::OddEvenFill);
 }
 
 QSGNode* LinkItem::updatePaintNode(QSGNode* node, QQuickItem::UpdatePaintNodeData*)
@@ -95,6 +116,18 @@ QSGNode* LinkItem::updatePaintNode(QSGNode* node, QQuickItem::UpdatePaintNodeDat
     {
         link->setColor(m_color);
         m_colorChanged= false;
+    }
+
+    if(m_polyChanged)
+    {
+        link->updateBox(m_controller->poly());
+        m_polyChanged= false;
+    }
+
+    if(m_selectionChanged)
+    {
+        link->updateSelected(m_controller->selected());
+        m_selectionChanged= false;
     }
 
     if(m_controller)
@@ -143,93 +176,18 @@ void LinkItem::setController(LinkController* newController)
     m_controller= newController;
     emit controllerChanged();
 
-    /*auto updateOffset= [this]()
-    {
-        auto endBox= m_controller->endBox();
-        auto startBox= m_controller->startBox();
-
-        QRectF rect{0, 0, width(), height()};
-        QPointF p1, p2;
-        QRectF rect1= startBox;
-        rect1.moveTo(-startBox.width() / 2, -startBox.height() / 2);
-        QRectF rect2= endBox;
-        rect2.moveTo(-endBox.width() / 2, -endBox.height() / 2);
-
-        switch(m_controller->orientation())
-        {
-        case LinkController::RightBottom:
-        {
-            p1= rect.topLeft();
-            p2= rect.bottomRight();
-            rect2= rect2.translated(p2.x(), p2.y());
-        }
-        break;
-        case LinkController::LeftBottom:
-        {
-            p1= rect.topRight();
-            p2= rect.bottomLeft();
-            rect2= rect2.translated(p2.x(), p2.y());
-            rect1= rect1.translated(p1.x(), p1.y());
-        }
-        break;
-        case LinkController::RightTop:
-        {
-            p1= rect.bottomLeft();
-            p2= rect.topRight();
-            rect2= rect2.translated(p2.x(), p2.y());
-            rect1= rect1.translated(p1.x(), p1.y());
-        }
-        break;
-        case LinkController::LeftTop:
-        {
-            p1= rect.bottomRight();
-            p2= rect.topLeft();
-            rect1= rect1.translated(p1.x(), p1.y());
-        }
-        break;
-        }
-
-        QLineF line(p1, p2);
-
-        QLineF rect1Bottom(rect1.bottomLeft(), rect1.bottomRight());
-        QLineF rect1Top(rect1.topLeft(), rect1.topRight());
-        QLineF rect1Left(rect1.topLeft(), rect1.bottomLeft());
-        QLineF rect1Right(rect1.topRight(), rect1.bottomRight());
-
-        QVector<QLineF> lines({rect1Bottom, rect1Top, rect1Left, rect1Right});
-
-        QPointF intersection1;
-        for(auto const& rectSide : std::as_const(lines))
-        {
-            QPointF point;
-            if(line.intersects(rectSide, &point) == QLineF::BoundedIntersection)
-                intersection1= point;
-        }
-
-        QLineF rect2Bottom(rect2.bottomLeft(), rect2.bottomRight());
-        QLineF rect2Top(rect2.topLeft(), rect2.topRight());
-        QLineF rect2Left(rect2.topLeft(), rect2.bottomLeft());
-        QLineF rect2Right(rect2.topRight(), rect2.bottomRight());
-
-        QVector<QLineF> lines2({rect2Bottom, rect2Top, rect2Left, rect2Right});
-
-        QPointF intersection2;
-        for(auto const& rectSide : std::as_const(lines2))
-        {
-            QPointF point;
-            if(line.intersects(rectSide, &point) == QLineF::BoundedIntersection)
-                intersection2= point;
-        }
-
-        line= QLineF(intersection1, intersection2);
-
-        setHorizontalOffset(line.center().x());
-        setVerticalOffset(line.center().y());
-    };
-     connect(m_controller, &LinkController::startBoxChanged, this, updateOffset);
-     connect(m_controller, &LinkController::endBoxChanged, this, updateOffset);
-     connect(m_controller, &LinkController::startChanged, this, updateOffset);
-     connect(m_controller, &LinkController::endChanged, this, updateOffset);*/
+    connect(m_controller, &LinkController::selectedChanged, this,
+            [this]()
+            {
+                m_selectionChanged= true;
+                update();
+            });
+    connect(m_controller, &LinkController::polyChanged, this,
+            [this]()
+            {
+                m_polyChanged= true;
+                update();
+            });
 }
 
 bool LinkItem::editing() const

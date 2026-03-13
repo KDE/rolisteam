@@ -24,8 +24,8 @@
 #include <QObject>
 #include <QPointF>
 #include <QPointer>
+#include <QPolygonF>
 #include <QRectF>
-#include <Qt>
 
 #include "mindmap/data/minditem.h"
 #include "mindmap/data/positioneditem.h"
@@ -58,6 +58,7 @@ class MINDMAP_EXPORT LinkController : public MindItem
     Q_PROPERTY(Qt::PenStyle lineStyle READ lineStyle WRITE setLineStyle NOTIFY lineStyleChanged)
     Q_PROPERTY(bool constraint READ constraint WRITE setConstraint NOTIFY constraintChanged)
     Q_PROPERTY(Orientation orientation READ orientation NOTIFY orientationChanged)
+    Q_PROPERTY(QPolygonF poly READ poly NOTIFY polyChanged FINAL)
 public:
     enum Direction
     {
@@ -110,9 +111,12 @@ public:
 
     bool relatedTo(const QString& id) const;
 
+    QPolygonF poly() const;
+    Q_INVOKABLE QPointF polyPoint(int i, const QPolygonF& pol) const;
+
 public slots:
     void setStiffness(float stiffness);
-    void setDirection(const LinkController::Direction& direction);
+    void setDirection(const mindmap::LinkController::Direction& direction);
     void setEnd(mindmap::PositionedItem* end);
     void setStart(mindmap::PositionedItem* start);
     void computePosition();
@@ -132,6 +136,7 @@ signals:
     void constraintChanged();
     void normalizedRectChanged();
     void orientationChanged();
+    void polyChanged();
 
 private slots:
     void setNormalizedRect(QRectF rect);
@@ -149,6 +154,7 @@ private:
     bool m_constraint= true;
     QRectF m_normalizedRect;
     Orientation m_orient;
+    QPolygonF m_poly;
 };
 } // namespace mindmap
 #endif // LINKCONTROLLER_H

@@ -46,7 +46,7 @@ std::tuple<std::vector<std::unique_ptr<MindItem>>&, int> getVector(std::vector<s
 
 MindItem* itemFromIndex(int r, const std::vector<std::unique_ptr<MindItem>>& links,
                         const std::vector<std::unique_ptr<MindItem>>& packages,
-                        const std::vector<std::unique_ptr<MindItem>>& nodes)
+                        const std::vector<std::unique_ptr<MindItem>>& nodes, int& realIndex)
 {
     auto linkCount= static_cast<int>(links.size());
     auto packageCount= static_cast<int>(packages.size());
@@ -70,6 +70,7 @@ MindItem* itemFromIndex(int r, const std::vector<std::unique_ptr<MindItem>>& lin
                 mindNode= nodes[r].get();
         }
     }
+    realIndex= r;
     return mindNode;
 }
 
@@ -97,7 +98,8 @@ QVariant MindItemModel::data(const QModelIndex& index, int role) const
     QVariant result;
 
     auto r= index.row();
-    auto mindNode= itemFromIndex(r, m_links, m_packages, m_nodes);
+    int realIndex;
+    auto mindNode= itemFromIndex(r, m_links, m_packages, m_nodes, realIndex);
 
     if(!mindNode)
         return {};
@@ -105,7 +107,7 @@ QVariant MindItemModel::data(const QModelIndex& index, int role) const
     if(role == Qt::DisplayRole)
         role= Label;
 
-    QSet<int> allowedRole{Visible, Label, Selected, Type, Uuid, Object, HasPicture};
+    QSet<int> allowedRole{Visible, Label, Selected, Type, OrderIndex, Uuid, Object, HasPicture};
 
     if(!allowedRole.contains(role))
         return {};
@@ -123,6 +125,9 @@ QVariant MindItemModel::data(const QModelIndex& index, int role) const
         break;
     case Type:
         result= mindNode->type();
+        break;
+    case OrderIndex:
+        result= realIndex;
         break;
     case Uuid:
         result= mindNode->id();
@@ -204,13 +209,11 @@ Qt::ItemFlags MindItemModel::flags(const QModelIndex& index) const
 
 QHash<int, QByteArray> MindItemModel::roleNames() const
 {
-    static QHash<int, QByteArray> roles= {{MindItemModel::Label, "label"},
-                                          {MindItemModel::Visible, "isVisible"},
-                                          {MindItemModel::Selected, "isSelected"},
-                                          {MindItemModel::Type, "type"},
-                                          {MindItemModel::Uuid, "id"},
-                                          {MindItemModel::Object, "objectItem"},
-                                          {MindItemModel::HasPicture, "hasPicture"}};
+    static QHash<int, QByteArray> roles
+        = {{MindItemModel::Label, "label"},         {MindItemModel::Visible, "isVisible"},
+           {MindItemModel::Selected, "isSelected"}, {MindItemModel::Type, "type"},
+           {MindItemModel::OrderIndex, "order"},    {MindItemModel::Uuid, "id"},
+           {MindItemModel::Object, "objectItem"},   {MindItemModel::HasPicture, "hasPicture"}};
     return roles;
 }
 
@@ -594,7 +597,9 @@ std::vector<LinkController*> MindItemModel::sublink(const QString& id) const
 
 QString MindItemModel::idFromIndex(int index) const
 {
-    auto mindNode= itemFromIndex(index, m_links, m_packages, m_nodes);
+    int r;
+    auto mindNode= itemFromIndex(index, m_links, m_packages, m_nodes, r);
+    Q_UNUSED(r)
 
     if(!mindNode)
         return {};

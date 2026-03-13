@@ -28,17 +28,25 @@
 
 namespace mindmap
 {
+struct NodeInfo
+{
+    QSGGeometryNode node;
+    QSGFlatColorMaterial material;
+    QSGGeometry geometry;
+};
 
-class MINDMAP_EXPORT LinkNode : public QSGGeometryNode
+class MINDMAP_EXPORT LinkNode : public QSGNode
 {
 public:
     LinkNode();
     void setColor(const QColor& color);
     QLineF update(const QRectF& rect, LinkController::Orientation orient, const QRectF& startBox, const QRectF& endBox);
+    void updateBox(const QPolygonF& polygon);
+    void updateSelected(bool select);
 
 private:
-    QSGFlatColorMaterial m_material;
-    QSGGeometry m_geometry;
+    NodeInfo m_line;
+    NodeInfo m_selection;
 };
 } // namespace mindmap
 #endif // LINKNODE_H
