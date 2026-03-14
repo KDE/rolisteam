@@ -4183,11 +4183,12 @@ msgid ""
 msgstr ""
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
+#, qt-format
 msgctxt "MindMap|"
-msgid "is linked"
+msgid "is linked %1"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:217
 #, fuzzy
 #| msgctxt "SettingsPage|"
 #| msgid "Settings"
@@ -4195,7 +4196,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Nastavení"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:235
+#: src/libraries/mindmap/resources/qml/MindMap.qml:226
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
