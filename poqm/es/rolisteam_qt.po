@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-03-12 12:12+0100\n"
+"PO-Revision-Date: 2026-03-14 12:06+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -4186,12 +4186,10 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
-#| msgid "is linked"
+#, qt-format
 msgctxt "MindMap|"
 msgid "is linked %1"
-msgstr "está enlazado"
+msgstr "está enlazado %1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"

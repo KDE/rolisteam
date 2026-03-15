@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-01-19 22:05+0400\n"
+"PO-Revision-Date: 2026-03-14 11:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -4182,20 +4182,14 @@ msgid "is linked %1"
 msgstr "هو مرتبط"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Reset Settings"
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "صفّر اﻹعدادات"
+msgstr "إعدادات الحزمة"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:226
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add subchannel"
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "أضف قناة فرعية"
+msgstr "أضف عقدة فرعية"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4233,25 +4227,19 @@ msgid "Automatic Spacing"
 msgstr "تباعد آلي"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "غيّر الصورة"
+msgstr "اختر صورة..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "اختر صورة"
+msgstr "عيّن رابط الصورة"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
 msgid "Url"
-msgstr ""
+msgstr "الرابط"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:77
 msgctxt "NodeSettingPopup|"
@@ -4269,33 +4257,21 @@ msgid "tags:"
 msgstr "الوسوم:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "Avatar:"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
 msgstr "صورة رمزية:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Load View"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "حمّل العرض"
+msgstr "حمّل"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Set Layer"
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "اضبط الطبقة"
+msgstr "ضعّ رابط…"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
 msgstr "أزل"
@@ -4369,12 +4345,9 @@ msgid "Tags"
 msgstr "الوسوم"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Add Package"
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "أضف حزمة"
+msgstr "أضف عقدة للحزمة"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format

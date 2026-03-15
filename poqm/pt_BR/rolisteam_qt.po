@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-12 08:21-0300\n"
+"PO-Revision-Date: 2026-03-14 09:49-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4176,12 +4176,10 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
-#| msgid "is linked"
+#, qt-format
 msgctxt "MindMap|"
 msgid "is linked %1"
-msgstr "está linkado"
+msgstr "está linkado %1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"

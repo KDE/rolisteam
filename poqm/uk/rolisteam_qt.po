@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-12 16:41+0200\n"
+"PO-Revision-Date: 2026-03-14 13:34+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -4187,12 +4187,10 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
-#| msgid "is linked"
+#, qt-format
 msgctxt "MindMap|"
 msgid "is linked %1"
-msgstr "є пов'язаним"
+msgstr "пов'язано %1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"

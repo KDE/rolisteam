@@ -4178,12 +4178,10 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
-#| msgid "is linked"
+#, qt-format
 msgctxt "MindMap|"
 msgid "is linked %1"
-msgstr "მიბმულია"
+msgstr "დაკავშირებულია %1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"

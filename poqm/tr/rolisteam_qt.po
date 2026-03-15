@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-12 12:50+0300\n"
+"PO-Revision-Date: 2026-03-14 12:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -4178,12 +4178,10 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
-#| msgid "is linked"
+#, qt-format
 msgctxt "MindMap|"
 msgid "is linked %1"
-msgstr "bağlantılı"
+msgstr "%1 bağlantılı"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"
