@@ -586,7 +586,8 @@ QHash<QString, QVariant> MessageHelper::readMindMap(NetworkMessageReader* msg)
     hash["readwrite"]= msg->uint8();
     hash["indexStyle"]= msg->uint64();
 
-    QHash<QString, QVariant> nodes;
+    // QHash<QString, QVariant> nodes;
+    QVariantList nodes;
 
     auto size= msg->uint64();
 
@@ -603,12 +604,13 @@ QHash<QString, QVariant> MessageHelper::readMindMap(NetworkMessageReader* msg)
         node["tagstext"]= msg->string32();
         node["description"]= msg->string32();
 
-        nodes.insert(QString("node_%1").arg(i), node);
+        // nodes.insert(QString("%1_node").arg(i), node);
+        nodes.append(node);
     }
 
     hash["nodes"]= nodes;
 
-    QHash<QString, QVariant> links;
+    QVariantList links;
     size= msg->uint64();
 
     for(quint64 i= 0; i < size; ++i)
@@ -619,11 +621,11 @@ QHash<QString, QVariant> MessageHelper::readMindMap(NetworkMessageReader* msg)
         link["startId"]= msg->string8();
         link["endId"]= msg->string8();
         link["text"]= msg->string16();
-        links.insert(QString("link_%1").arg(i), link);
+        links.append(link);
     }
     hash["links"]= links;
 
-    QHash<QString, QVariant> packages;
+    QVariantList packages;
     size= msg->uint64();
 
     for(quint64 i= 0; i < size; ++i)
@@ -642,7 +644,7 @@ QHash<QString, QVariant> MessageHelper::readMindMap(NetworkMessageReader* msg)
             childrenId.append(msg->string8());
         }
         pack["children"]= childrenId;
-        packages.insert(QString("pack_%1").arg(i), pack);
+        packages.append(pack);
     }
     hash["packages"]= packages;
 

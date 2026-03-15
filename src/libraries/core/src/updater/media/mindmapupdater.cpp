@@ -36,9 +36,22 @@
 constexpr int timeout{1000 * 5};
 
 MindMapUpdater::MindMapUpdater(FilteredContentModel* model, campaign::CampaignManager* manager, QObject* parent)
-    : MediaUpdaterInterface(manager, parent), m_mindmaps(model)
+    : MediaUpdaterInterface(manager, parent), m_mindmaps(model), m_timer(new QTimer)
 {
     ReceiveEvent::registerNetworkReceiver(NetMsg::MindMapCategory, this);
+
+    connect(m_timer.get(), &QTimer::timeout, this,
+            [this]()
+            {
+                m_timer->stop();
+                for(auto const& ctrl : std::as_const(m_knowCtrl))
+                {
+                    if(!ctrl->localIsOwner() || ctrl->remote())
+                        continue;
+                    if(ctrl->modified())
+                        saveMediaController(ctrl);
+                }
+            });
 }
 
 void MindMapUpdater::addMediaController(MediaControllerBase* base)
@@ -50,18 +63,6 @@ void MindMapUpdater::addMediaController(MediaControllerBase* base)
 
     if(ctrl == nullptr)
         return;
-
-    auto timer= new QTimer(ctrl);
-
-    connect(timer, &QTimer::timeout, this,
-            [this, ctrl, timer]()
-            {
-                timer->stop();
-                if(ctrl->modified())
-                {
-                    saveMediaController(ctrl);
-                }
-            });
 
     connect(ctrl, &MindMapController::sharingToAllChanged, this,
             [this](Core::SharingPermission perm, Core::SharingPermission old)
@@ -104,7 +105,7 @@ void MindMapUpdater::addMediaController(MediaControllerBase* base)
             });
 
     connect(ctrl, &MindMapController::modifiedChanged, this,
-            [this, timer]()
+            [this]()
             {
                 auto ctrl= qobject_cast<MindMapController*>(sender());
                 if(!ctrl)
@@ -113,7 +114,7 @@ void MindMapUpdater::addMediaController(MediaControllerBase* base)
                     return;
                 if(ctrl->modified())
                 {
-                    timer->start(timeout);
+                    m_timer->start(timeout);
                 }
             });
 
@@ -216,8 +217,7 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
         auto n= dynamic_cast<mindmap::MindNode*>(i.get());
         if(!n)
             continue;
-        info.connections << connect(n, &mindmap::MindNode::textChanged, this,
-                                    [this, idCtrl, n]()
+        info.connections << connect(n, &mindmap::MindNode::textChanged, this, [this, idCtrl, n]()
                                     { sendOffChange<QString>(idCtrl, QStringLiteral("text"), n, NetMsg::UpdateNode); });
         /*info.connections << connect(n, &mindmap::MindNode::imageUriChanged, this,
                                     [this, idCtrl, n]()
@@ -229,8 +229,7 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
             n, &mindmap::MindNode::tagsChanged, this,
             [this, idCtrl, n]() { sendOffChange<QStringList>(idCtrl, QStringLiteral("tags"), n, NetMsg::UpdateNode); });
         info.connections << connect(
-            n, &mindmap::MindNode::descriptionChanged, this,
-            [this, idCtrl, n]()
+            n, &mindmap::MindNode::descriptionChanged, this, [this, idCtrl, n]()
             { sendOffChange<QString>(idCtrl, QStringLiteral("description"), n, NetMsg::UpdateNode); });
     }
 
@@ -242,12 +241,10 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
             continue;
 
         info.connections << connect(
-            link, &mindmap::LinkController::textChanged, this,
-            [this, idCtrl, link]()
+            link, &mindmap::LinkController::textChanged, this, [this, idCtrl, link]()
             { sendOffChange<QString>(idCtrl, QStringLiteral("text"), link, NetMsg::UpdateLink); });
         info.connections << connect(
-            link, &mindmap::LinkController::directionChanged, this,
-            [this, idCtrl, link]()
+            link, &mindmap::LinkController::directionChanged, this, [this, idCtrl, link]()
             { sendOffChange<mindmap::ArrowDirection>(idCtrl, QStringLiteral("direction"), link, NetMsg::UpdateLink); });
     }
 
@@ -259,12 +256,10 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
             continue;
 
         info.connections << connect(
-            pack, &mindmap::PackageNode::textChanged, this,
-            [this, idCtrl, pack]()
+            pack, &mindmap::PackageNode::textChanged, this, [this, idCtrl, pack]()
             { sendOffChange<QString>(idCtrl, QStringLiteral("text"), pack, NetMsg::UpdatePackage); });
         info.connections << connect(
-            pack, &mindmap::PackageNode::minimumMarginChanged, this,
-            [this, idCtrl, pack]()
+            pack, &mindmap::PackageNode::minimumMarginChanged, this, [this, idCtrl, pack]()
             { sendOffChange<int>(idCtrl, QStringLiteral("minimumMargin"), pack, NetMsg::UpdatePackage); });
 
         info.connections << connect(pack, &mindmap::PackageNode::childAdded, this,
@@ -289,96 +284,87 @@ void MindMapUpdater::setConnection(MindMapController* ctrl)
     }
     // end of existing data
 
-    connect(nodeModel, &mindmap::MindItemModel::itemAdded, this,
-            [this, ctrl](const QList<mindmap::MindItem*>& items)
+    connect(
+        nodeModel, &mindmap::MindItemModel::itemAdded, this,
+        [this, ctrl](const QList<mindmap::MindItem*>& items)
+        {
+            auto idCtrl= ctrl->uuid();
+            auto info= findConnectionInfo(idCtrl);
+            for(auto item : items)
             {
-                auto idCtrl= ctrl->uuid();
-                auto info= findConnectionInfo(idCtrl);
-                for(auto item : items)
+                if(item->type() == mindmap::MindItem::NodeType)
                 {
-                    if(item->type() == mindmap::MindItem::NodeType)
-                    {
-                        auto node= dynamic_cast<mindmap::MindNode*>(item);
+                    auto node= dynamic_cast<mindmap::MindNode*>(item);
 
-                        if(!node)
-                            continue;
+                    if(!node)
+                        continue;
 
-                        info->connections << connect(
-                            node, &mindmap::MindNode::textChanged, this,
-                            [this, idCtrl, node]()
-                            { sendOffChange<QString>(idCtrl, QStringLiteral("text"), node, NetMsg::UpdateNode); });
-                        info->connections << connect(
-                            node, &mindmap::MindNode::tagsChanged, this,
-                            [this, idCtrl, node]()
-                            { sendOffChange<QStringList>(idCtrl, QStringLiteral("tags"), node, NetMsg::UpdateNode); });
-                        info->connections << connect(node, &mindmap::MindNode::descriptionChanged, this,
-                                                     [this, idCtrl, node]() {
-                                                         sendOffChange<QString>(idCtrl, QStringLiteral("description"),
-                                                                                node, NetMsg::UpdateNode);
-                                                     });
-                        /* info->connections
-                             << connect(node, &mindmap::MindNode::imageUriChanged, this,
-                                        [this, idCtrl, node]()
-                                        { sendOffChange<QString>(idCtrl, QStringLiteral("imageUri"), node, true); });*/
-                        info->connections << connect(
-                            node, &mindmap::MindNode::styleIndexChanged, this,
-                            [this, idCtrl, node]()
-                            { sendOffChange<int>(idCtrl, QStringLiteral("styleIndex"), node, NetMsg::UpdateNode); });
-                    }
-                    else if(item->type() == mindmap::MindItem::LinkType)
-                    {
-                        auto link= dynamic_cast<mindmap::LinkController*>(item);
-
-                        if(!link)
-                            continue;
-
-                        info->connections << connect(link, &mindmap::LinkController::textChanged, this,
-                                                     [this, idCtrl, link]()
-                                                     {
-                                                         qDebug() << "update text of link:" << link->text();
-                                                         sendOffChange<QString>(idCtrl, QStringLiteral("text"), link,
-                                                                                NetMsg::UpdateLink);
-                                                     });
-                        info->connections
-                            << connect(link, &mindmap::LinkController::directionChanged, this,
-                                       [this, idCtrl, link]() {
-                                           sendOffChange<mindmap::ArrowDirection>(idCtrl, QStringLiteral("direction"),
-                                                                                  link, NetMsg::UpdateLink);
-                                       });
-                    }
-                    else if(item->type() == mindmap::MindItem::PackageType)
-                    {
-                        auto pack= dynamic_cast<mindmap::PackageNode*>(item);
-                        if(!pack)
-                            continue;
-
-                        info->connections << connect(
-                            pack, &mindmap::PackageNode::textChanged, this,
-                            [this, idCtrl, pack]()
-                            { sendOffChange<QString>(idCtrl, QStringLiteral("text"), pack, NetMsg::UpdatePackage); });
-                        info->connections << connect(pack, &mindmap::PackageNode::minimumMarginChanged, this,
-                                                     [this, idCtrl, pack]() {
-                                                         sendOffChange<int>(idCtrl, QStringLiteral("minimumMargin"),
-                                                                            pack, NetMsg::UpdatePackage);
-                                                     });
-                        info->connections << connect(pack, &mindmap::PackageNode::parentNodeChanged, this,
-                                                     [this, idCtrl, pack]() {
-                                                         sendOffChange<QString>(idCtrl, QStringLiteral("parentId"),
-                                                                                pack, NetMsg::UpdatePackage);
-                                                     });
-                    }
+                    info->connections << connect(
+                        node, &mindmap::MindNode::textChanged, this, [this, idCtrl, node]()
+                        { sendOffChange<QString>(idCtrl, QStringLiteral("text"), node, NetMsg::UpdateNode); });
+                    info->connections << connect(
+                        node, &mindmap::MindNode::tagsChanged, this, [this, idCtrl, node]()
+                        { sendOffChange<QStringList>(idCtrl, QStringLiteral("tags"), node, NetMsg::UpdateNode); });
+                    info->connections << connect(
+                        node, &mindmap::MindNode::descriptionChanged, this, [this, idCtrl, node]()
+                        { sendOffChange<QString>(idCtrl, QStringLiteral("description"), node, NetMsg::UpdateNode); });
+                    /* info->connections
+                         << connect(node, &mindmap::MindNode::imageUriChanged, this,
+                                    [this, idCtrl, node]()
+                                    { sendOffChange<QString>(idCtrl, QStringLiteral("imageUri"), node, true); });*/
+                    info->connections << connect(
+                        node, &mindmap::MindNode::styleIndexChanged, this, [this, idCtrl, node]()
+                        { sendOffChange<int>(idCtrl, QStringLiteral("styleIndex"), node, NetMsg::UpdateNode); });
                 }
+                else if(item->type() == mindmap::MindItem::LinkType)
+                {
+                    auto link= dynamic_cast<mindmap::LinkController*>(item);
 
-                NetworkMessageWriter msg(NetMsg::MindMapCategory, NetMsg::AddNodes);
-                msg.string8(ctrl->uuid());
-                MessageHelper::buildAddItemMessage(msg, items);
-                msg.sendToServer();
-            });
+                    if(!link)
+                        continue;
+
+                    info->connections << connect(link, &mindmap::LinkController::textChanged, this,
+                                                 [this, idCtrl, link]()
+                                                 {
+                                                     qDebug() << "update text of link:" << link->text();
+                                                     sendOffChange<QString>(idCtrl, QStringLiteral("text"), link,
+                                                                            NetMsg::UpdateLink);
+                                                 });
+                    info->connections << connect(link, &mindmap::LinkController::directionChanged, this,
+                                                 [this, idCtrl, link]()
+                                                 {
+                                                     sendOffChange<mindmap::ArrowDirection>(
+                                                         idCtrl, QStringLiteral("direction"), link, NetMsg::UpdateLink);
+                                                 });
+                }
+                else if(item->type() == mindmap::MindItem::PackageType)
+                {
+                    auto pack= dynamic_cast<mindmap::PackageNode*>(item);
+                    if(!pack)
+                        continue;
+
+                    info->connections << connect(
+                        pack, &mindmap::PackageNode::textChanged, this, [this, idCtrl, pack]()
+                        { sendOffChange<QString>(idCtrl, QStringLiteral("text"), pack, NetMsg::UpdatePackage); });
+                    info->connections << connect(
+                        pack, &mindmap::PackageNode::minimumMarginChanged, this, [this, idCtrl, pack]()
+                        { sendOffChange<int>(idCtrl, QStringLiteral("minimumMargin"), pack, NetMsg::UpdatePackage); });
+                    info->connections << connect(
+                        pack, &mindmap::PackageNode::parentNodeChanged, this, [this, idCtrl, pack]()
+                        { sendOffChange<QString>(idCtrl, QStringLiteral("parentId"), pack, NetMsg::UpdatePackage); });
+                }
+            }
+
+            NetworkMessageWriter msg(NetMsg::MindMapCategory, NetMsg::AddNodes);
+            msg.string8(ctrl->uuid());
+            MessageHelper::buildAddItemMessage(msg, items);
+            msg.sendToServer();
+        });
 
     info.connections << connect(nodeModel, &mindmap::MindItemModel::itemRemoved, this,
                                 [ctrl](QStringList ids)
                                 {
-                                    if(!ctrl->localIsOwner())
+                                    if(!ctrl->readWrite())
                                         return;
 
                                     NetworkMessageWriter msg(NetMsg::MindMapCategory, NetMsg::RemoveNode);

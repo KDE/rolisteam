@@ -69,8 +69,9 @@ Flickable {
             color: _flick.styleSheet.linkColor
             opacity: objectItem.constraint ? 1.0 : 0.4
             controller: objectItem
-            visible: objectItem.visible
-            text: objectItem.text ?  objectItem.text : qsTr("is linked %1").arg(order)
+            visible: objectItem && objectItem.visible
+            //text: "%1 - link_%2".arg(objectItem.text ?  objectItem.text : qsTr("is linked %1").arg(order)).arg(order)
+            text: objectItem.text ?  objectItem.text : qsTr("is linked")
             property bool hasValidText: _flick.ctrl.hideEmptyLabel ? objectItem.text.length > 0 : true
             writable: root.ctrl.readWrite
             visibleLabel: hasValidText ? _flick.ctrl.linkLabelVisibility : false
@@ -154,7 +155,6 @@ Flickable {
             //color: _flick.styleSheet.linkColor
             buttonColor: _flick.styleSheet.textColor
             onAddChild: {
-                console.log("@@@ Add child qml")
                 _flick.ctrl.addNode(objectItem.id)
                 updateZoom()
             }
@@ -175,7 +175,6 @@ Flickable {
             }
 
             onAddCharacter: (text, imgUrl, color) => {
-                console.log("imgUrl",text," ",imgUrl)
                 objectItem.imageUri = imgUrl.toString()
                 objectItem.text = text
             }

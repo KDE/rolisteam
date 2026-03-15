@@ -128,19 +128,16 @@ CharacterSheetController* sheetCtrl(const QString& uuid, const QHash<QString, QV
         [sheetCtrl, sheetData](const QByteArray& array)
         {
             hu::setParamIfAny<QString>(
-                ck::KEY_CHARACTERID, sheetData,
-                [sheetCtrl, array](const QString& characterId)
+                ck::KEY_CHARACTERID, sheetData, [sheetCtrl, array](const QString& characterId)
                 { sheetCtrl->addCharacterSheet(IOHelper::textByteArrayToJsonObj(array), characterId); });
         });
-    hu::setParamIfAny<QByteArray>(ck::KEY_SERIALIZED, sheetData,
-                                  [sheetCtrl](const QByteArray& array)
+    hu::setParamIfAny<QByteArray>(ck::KEY_SERIALIZED, sheetData, [sheetCtrl](const QByteArray& array)
                                   { IOHelper::readCharacterSheetController(sheetCtrl, array); });
 
     if(!params.contains(ck::KEY_SERIALIZED))
     {
         hu::setParamIfAny<QString>(
-            ck::KEY_PATH, sheetData,
-            [sheetCtrl](const QString& path)
+            ck::KEY_PATH, sheetData, [sheetCtrl](const QString& path)
             { IOHelper::readCharacterSheetController(sheetCtrl, utils::IOHelper::loadFile(path)); });
     }
     return sheetCtrl;
@@ -264,7 +261,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
     QHash<QString, QString> parentData;
     if(map.contains("nodes"))
     {
-        QHash<QString, QVariant> nodes= map.value("nodes").toHash();
+        const QVariantList& nodes= map.value("nodes").toList();
 
         auto model= dynamic_cast<mindmap::MindItemModel*>(mindmapCtrl->itemModel());
 
@@ -290,7 +287,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
 
     if(map.contains("packages"))
     {
-        QHash<QString, QVariant> packs= map.value("packages").toHash();
+        const QVariantList& packs= map.value("packages").toList();
 
         auto model= dynamic_cast<mindmap::MindItemModel*>(mindmapCtrl->itemModel());
 
@@ -332,7 +329,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
 
     if(map.contains("links"))
     {
-        QHash<QString, QVariant> links= map.value("links").toHash();
+        const QVariantList& links= map.value("links").toList();
 
         auto model= dynamic_cast<mindmap::MindItemModel*>(mindmapCtrl->itemModel());
 
@@ -361,7 +358,7 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
     {
         QHash<QString, QVariant> imgInfos= map.value("imageInfoData").toHash();
         auto model= mindmapCtrl->imgModel();
-        for(const auto& var : imgInfos)
+        for(const auto& var : std::as_const(imgInfos))
         {
             auto img= var.toHash();
             auto pix= img["pixmap"].value<QPixmap>();

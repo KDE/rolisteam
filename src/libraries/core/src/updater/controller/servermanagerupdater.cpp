@@ -24,7 +24,6 @@
 #include <QSettings>
 
 #include "network/channelmodel.h"
-#include "network/serverconnection.h"
 #include "worker/networkhelper.h"
 #include <network/serverconnectionmanager.h>
 
@@ -78,7 +77,6 @@ QByteArray ServerManagerUpdater::channelsData()
 
 void ServerManagerUpdater::setChannelData(const QByteArray& array)
 {
-    qDebug() << "channel model:" << array;
     if(array == m_channelData)
         return;
     m_channelData= array;

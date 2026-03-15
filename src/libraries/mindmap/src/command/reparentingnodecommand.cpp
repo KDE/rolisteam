@@ -62,7 +62,7 @@ PositionedItem* ReparentingNodeCommand::reparenting(PositionedItem* newParent, c
     {
         auto links= oldParent->subLinks();
         auto idxLink= std::find_if(links.begin(), links.end(),
-                                   [mindNode](LinkController* link) { return link->end() == mindNode; });
+                                   [mindNode](LinkController* link) { return link ? link->end() == mindNode : false; });
         if(idxLink != links.end())
             oldLink= (*idxLink);
     }

@@ -23,6 +23,7 @@
 #include <QDebug>
 #include <QMetaObject>
 #include <QPointer>
+#include <QTimer>
 #include <QVector>
 
 #include "mediaupdaterinterface.h"
@@ -70,6 +71,7 @@ private:
     QPointer<FilteredContentModel> m_mindmaps;
     QList<QPointer<MindMapController>> m_knowCtrl;
     QVector<ConnectionInfo> m_connections;
+    std::unique_ptr<QTimer> m_timer;
 };
 
 template <typename T>
