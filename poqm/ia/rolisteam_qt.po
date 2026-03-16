@@ -4108,20 +4108,20 @@ msgstr ""
 "Errores:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "es ligate"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Preferentias de pacchetto"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr "Adde subnodo"
@@ -9190,6 +9190,13 @@ msgstr "Dormir"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Fascinate"
+
+#, fuzzy
+#~| msgctxt "MindMap|"
+#~| msgid "is linked"
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "es ligate"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

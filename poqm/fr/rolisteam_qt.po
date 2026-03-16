@@ -4189,15 +4189,15 @@ msgstr ""
 "Erreurs :\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "est lié"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 #, fuzzy
 #| msgctxt "Main|"
 #| msgid "Reset Settings"
@@ -4205,7 +4205,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Réinitialiser la configuration"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
@@ -9396,6 +9396,13 @@ msgstr "En sommeil"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Ensorcelé"
+
+#, fuzzy
+#~| msgctxt "MindMap|"
+#~| msgid "is linked"
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "est lié"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

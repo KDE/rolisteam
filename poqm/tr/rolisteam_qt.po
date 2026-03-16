@@ -4177,18 +4177,20 @@ msgstr ""
 "Hatalar:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, qt-format
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
+#| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
-msgstr "%1 bağlantılı"
+msgid "is linked"
+msgstr "bağlantılı"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Paket Ayarları"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr "Alt Düğüm Ekle"
@@ -9337,6 +9339,10 @@ msgstr "Uyuyor"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Efsunlanmış"
+
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "%1 bağlantılı"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

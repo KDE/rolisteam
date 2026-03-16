@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-14 11:44+0400\n"
+"PO-Revision-Date: 2026-03-15 09:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -4173,20 +4173,20 @@ msgstr ""
 "أخطاء:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "هو مرتبط"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "إعدادات الحزمة"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr "أضف عقدة فرعية"
@@ -9344,6 +9344,10 @@ msgstr "نائم"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "بيويتشد"
+
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "هو مرتبط %1"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

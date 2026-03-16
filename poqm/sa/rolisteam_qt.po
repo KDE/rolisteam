@@ -4446,15 +4446,15 @@ msgstr ""
 "दोषाः : १.\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "सम्बद्धः अस्ति"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 #, fuzzy
 #| msgctxt "InstantMessagingMain|"
 #| msgid "Settings"
@@ -4462,7 +4462,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "सेटिंग्स्"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
@@ -9761,6 +9761,13 @@ msgstr "शयन"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "मोहितः"
+
+#, fuzzy
+#~| msgctxt "MindMap|"
+#~| msgid "is linked"
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "सम्बद्धः अस्ति"
 
 #, fuzzy
 #~| msgctxt "ChatView|"

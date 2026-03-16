@@ -4428,13 +4428,12 @@ msgid ""
 "%1"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, qt-format
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 #, fuzzy
 #| msgctxt "InstantMessagingMain|"
 #| msgid "Settings"
@@ -4442,7 +4441,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "設定"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 #, fuzzy
 #| msgctxt "Table|"
 #| msgid "Add line"

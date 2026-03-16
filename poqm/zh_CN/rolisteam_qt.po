@@ -4119,18 +4119,17 @@ msgid ""
 "%1"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, qt-format
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr ""

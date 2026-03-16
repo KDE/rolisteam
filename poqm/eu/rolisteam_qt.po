@@ -4250,15 +4250,15 @@ msgstr ""
 "Erroreak:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "estekatuta dago"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 #, fuzzy
 #| msgctxt "Main|"
 #| msgid "Settings"
@@ -4266,7 +4266,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Ezarpenak"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
@@ -9449,6 +9449,13 @@ msgstr "Lotan"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Sorginduta"
+
+#, fuzzy
+#~| msgctxt "MindMap|"
+#~| msgid "is linked"
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "estekatuta dago"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

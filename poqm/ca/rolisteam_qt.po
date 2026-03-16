@@ -4191,18 +4191,20 @@ msgstr ""
 "Errors:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, qt-format
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
+#| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
-msgstr "està enllaçat %1"
+msgid "is linked"
+msgstr "està enllaçat"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Configuració del paquet"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr "Afegeix un subnode"
@@ -9360,6 +9362,10 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
+
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "està enllaçat %1"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"

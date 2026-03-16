@@ -4451,15 +4451,15 @@ msgstr ""
 "Eraroj:\n"
 "%1"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:73
-#, fuzzy, qt-format
-#| msgctxt "MindMap|"
+#: src/libraries/mindmap/resources/qml/MindMap.qml:74
+#, fuzzy
+#| msgctxt "Link|"
 #| msgid "is linked"
 msgctxt "MindMap|"
-msgid "is linked %1"
+msgid "is linked"
 msgstr "estas ligita"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:217
+#: src/libraries/mindmap/resources/qml/MindMap.qml:216
 #, fuzzy
 #| msgctxt "InstantMessagingMain|"
 #| msgid "Settings"
@@ -4467,7 +4467,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "Agordoj"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:226
+#: src/libraries/mindmap/resources/qml/MindMap.qml:225
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
@@ -9697,6 +9697,13 @@ msgstr "Dormanta"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Prisorĉita"
+
+#, fuzzy
+#~| msgctxt "MindMap|"
+#~| msgid "is linked"
+#~ msgctxt "MindMap|"
+#~ msgid "is linked %1"
+#~ msgstr "estas ligita"
 
 #~ msgctxt "MindMap|"
 #~ msgid "Detach"
