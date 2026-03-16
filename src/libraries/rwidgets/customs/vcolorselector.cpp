@@ -67,10 +67,10 @@ void VColorLabel::paintEvent(QPaintEvent* event)
 }
 // end of VColorLabel
 
-BackgroundButton::BackgroundButton(QPixmap* p, QWidget* parent) : QPushButton(parent), m_background(p)
+/*BackgroundButton::BackgroundButton(QPixmap* p, QWidget* parent) : QPushButton(parent), m_background(p)
 {
-    /* setIcon(QIcon(*m_background));
-    setIconSize(QSize(rect().width()-2,rect().height()-2));*/
+    / * setIcon(QIcon(*m_background));
+    setIconSize(QSize(rect().width()-2,rect().height()-2));* /
     setCheckable(true);
 }
 
@@ -89,7 +89,7 @@ void BackgroundButton::paintEvent(QPaintEvent* event)
         painter.drawRect(rect().adjusted(0, 0, -1, -1));
     // QPushButton::paintEvent(event);
 }
-
+*/
 VColorSelector::VColorSelector(QWidget* parent) : QWidget(parent)
 {
     // Creation du layout principale

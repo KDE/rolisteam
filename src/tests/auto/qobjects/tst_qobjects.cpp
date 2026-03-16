@@ -430,7 +430,6 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("AutoSaveController") << static_cast<QObject*>(new AutoSaveController(nullptr)) << true;
     QTest::addRow("AvatarDelegate") << static_cast<QObject*>(new AvatarDelegate()) << true;
     QTest::addRow("AvatarProvider") << static_cast<QObject*>(new AvatarProvider(nullptr)) << true;
-    QTest::addRow("BackgroundButton") << static_cast<QObject*>(new BackgroundButton(nullptr)) << true;
     QTest::addRow("BorderListEditor")  << static_cast<QObject*>(new BorderListEditor())<< true ;
     QTest::addRow("BusyIndicatorDialog") << static_cast<QObject*>(new BusyIndicatorDialog(Helper::randomString(), Helper::randomString(), Helper::randomString())) << true;
     QTest::addRow("ButtonCanvas")  << static_cast<QObject*>(new ButtonCanvas())<< true ;

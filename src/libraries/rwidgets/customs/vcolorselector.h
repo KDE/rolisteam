@@ -71,33 +71,6 @@ protected:
      */
     virtual void mouseDoubleClickEvent(QMouseEvent* event);
 };
-/**
- * @brief custom pushbutton to display a pixmap as background
- * @todo Should be moved into stand alone files (h and cpp) and put them in the widget directory
- *
- */
-class RWIDGET_EXPORT BackgroundButton : public QPushButton
-{
-    Q_OBJECT
-public:
-    /**
-     * @brief constructor with arguments
-     * @param pixmap
-     */
-    BackgroundButton(QPixmap* p, QWidget* parent= nullptr);
-
-protected:
-    /**
-     * @brief draw the button
-     */
-    virtual void paintEvent(QPaintEvent* event);
-
-private:
-    /**
-     * @brief stores the background picture
-     */
-    QPixmap* m_background;
-};
 
 /**
  * @brief custom widget to display many color squares, click select the color.

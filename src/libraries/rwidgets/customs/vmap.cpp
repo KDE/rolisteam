@@ -67,19 +67,6 @@ void addCharacterItem(VectorialMapController* ctrl, const QPointF& pos, Characte
     ctrl->insertItemAt(params);
 }
 
-void addImageIntoController(VectorialMapController* ctrl, const QPointF& pos, CleverURI* uri)
-{
-    std::map<QString, QVariant> params;
-    params.insert({Core::vmapkeys::KEY_POS, pos});
-    params.insert({Core::vmapkeys::KEY_TOOL, Core::SelectableTool::IMAGE});
-    if(uri->exists())
-        params.insert({Core::vmapkeys::KEY_PATH, uri->path()});
-
-    if(uri->hasData())
-        params.insert({Core::vmapkeys::KEY_DATA, uri->data()});
-    ctrl->insertItemAt(params);
-}
-
 VMap::VMap(VectorialMapController* ctrl, QObject* parent) : QGraphicsScene(parent), m_ctrl(ctrl)
 {
     if(!m_ctrl)
@@ -733,7 +720,7 @@ void VMap::dropEvent(QGraphicsSceneDragDropEvent* event)
             return;
 
         QList<ResourcesNode*> resourcesList= resourcesData->getList();
-        for(ResourcesNode* resource : resourcesList)
+        for(ResourcesNode* resource : std::as_const(resourcesList))
         {
             if(resource->type() == ResourcesNode::Cleveruri)
             {
