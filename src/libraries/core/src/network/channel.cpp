@@ -22,11 +22,11 @@
 #include "network/channel.h"
 #include "network/serverconnection.h"
 
-Channel::Channel() {}
-
 Channel::Channel(QString str)
 {
     m_name= str;
+
+    connect(this, &Channel::currentGMChanged, this, &Channel::gameMasterHasChanged);
 }
 
 Channel::~Channel() {}
@@ -512,6 +512,19 @@ void Channel::renamePlayer(const QString& id, const QString& name)
         return;
     player->setName(name);
 }
+
+void Channel::gameMasterHasChanged()
+{
+    auto id= m_currentGm->uuid();
+    auto now= QDateTime::currentDateTime();
+    auto d= m_gmInfo.second.addDays(1);
+    if(m_gmInfo.first != id || d < now)
+        clearData();
+
+    m_gmInfo.first= id;
+    m_gmInfo.second= now;
+}
+
 bool Channel::locked() const
 {
     return m_locked;

@@ -47,8 +47,7 @@ class NETWORK_EXPORT Channel : public TreeItem
     Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY descriptionChanged FINAL)
 
 public:
-    Channel();
-    explicit Channel(QString name);
+    explicit Channel(QString name= QString());
     virtual ~Channel();
 
     QByteArray password() const;
@@ -107,6 +106,7 @@ public:
 public slots:
     void clearData();
     void renamePlayer(const QString& id, const QString& name);
+    void gameMasterHasChanged();
 
 signals:
     void memorySizeChanged(quint64 memorySize, Channel* id);
@@ -129,6 +129,7 @@ private:
     quint64 m_memorySize= 0;
     QPointer<ServerConnection> m_currentGm;
     bool m_locked= false;
+    QPair<QString, QDateTime> m_gmInfo;
 };
 
 #endif // CHANNEL_H
