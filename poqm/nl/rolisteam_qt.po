@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-14 11:56+0100\n"
+"PO-Revision-Date: 2026-03-16 14:36+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -4171,9 +4171,6 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:74
-#, fuzzy
-#| msgctxt "Link|"
-#| msgid "is linked"
 msgctxt "MindMap|"
 msgid "is linked"
 msgstr "is gekoppeld"
