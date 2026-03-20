@@ -21,7 +21,9 @@
 #define PLAYERMESSAGEHELPER_H
 
 #include <QByteArray>
+#include <QJsonObject>
 #include <network_global.h>
+
 class Player;
 class NetworkMessageWriter;
 class NetworkMessageReader;
@@ -29,6 +31,7 @@ class Character;
 class PlayerModel;
 class ClientManager;
 class CharacterVision;
+class Channel;
 class NETWORK_EXPORT PlayerMessageHelper
 {
 public:
@@ -40,6 +43,9 @@ public:
 
     static bool readPlayer(NetworkMessageReader& msg, Player* player);
     static Character* readCharacter(NetworkMessageReader& msg, QString& parentId);
+
+    static QJsonObject readChannelInMsg(NetworkMessageReader& msg);
+    static void writeChannelInMsg(NetworkMessageWriter& msg, Channel* chan);
 };
 
 #endif // PLAYERMESSAGEHELPER_H

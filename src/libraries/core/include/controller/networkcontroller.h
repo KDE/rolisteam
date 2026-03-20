@@ -142,11 +142,10 @@ public slots:
     void lockChannel(const QString& uuid, NetMsg::Action action);
     void banUser(const QString& uuid, const QString& playerId);
     void kickUser(const QString& uuid, const QString& playerId);
-    void addChannel(const QString& parentId);
+    void addChannel(const QString& parentId= QString());
     void resetChannel(const QString& channelId);
     void deleteChannel(const QString& channelId);
     void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
-
 private slots:
     void sendOffConnectionInfo();
     void runUpnpNat();
@@ -158,6 +157,7 @@ private:
     void startClient();
     void stopClient();
     void readIpAddress();
+    void sendOffChannelInfo(Channel* chan);
 
 private:
     std::unique_ptr<ClientManager> m_clientManager;

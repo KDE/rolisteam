@@ -39,7 +39,8 @@ public:
 
     bool setData(const QModelIndex& index, const QVariant& value, int role);
 
-    QString addChannel(QString name, QByteArray password);
+    QString addChannel(const QString& id, const QString& name, const QString& description, const QByteArray& password,
+                       const QString& parentId);
     bool addConnectionToChannel(QString chanId, ServerConnection* client);
 
     void readSettings();
@@ -57,8 +58,6 @@ public:
     bool isAdmin(const QString& id) const;
     bool isGM(const QString& id, const QString& chanId) const;
 
-    QModelIndex addChannelToIndex(Channel* channel, const QModelIndex& parent);
-    bool addChannelToChannel(Channel* child, Channel* parent);
     QModelIndex channelToIndex(Channel* channel);
 
     void setLocalPlayerId(const QString& id);
@@ -85,8 +84,14 @@ signals:
 public slots:
     void setChannelMemorySize(Channel* chan, quint64);
 
+protected slots:
+    QModelIndex addChannelToIndex(Channel* channel, const QModelIndex& parent);
+    bool addChannelToChannel(Channel* child, Channel* parent);
+    void sendOffChannelInfo(Channel* chan);
+
 protected:
-    bool moveMediaItem(QList<ServerConnection*> items, const QModelIndex& parentToBe, int row, QList<QModelIndex>& formerPosition);
+    bool moveMediaItem(QList<ServerConnection*> items, const QModelIndex& parentToBe, int row,
+                       QList<QModelIndex>& formerPosition);
 
     void appendChannel(Channel* channel);
     bool localIsGM() const;

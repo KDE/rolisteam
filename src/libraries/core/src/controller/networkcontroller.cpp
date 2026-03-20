@@ -101,7 +101,11 @@ NetworkController::NetworkController(QObject* parent)
     connect(this, &NetworkController::selectedProfileIndexChanged, this, [this]() { runUpnpNat(); });
 
     connect(m_clientManager.get(), &ClientManager::authentificationSuccessed, this,
-            [this]() { setGroups(m_currentGroups | Group::ADMIN); });
+            [this]()
+            {
+                if(hosting())
+                    sendOffLoginAdmin(adminPassword());
+            });
 
     connect(m_upnpNat.get(), &UpnpNat::statusChanged, this,
             [this]()
@@ -335,7 +339,7 @@ NetWorkReceiver::SendType NetworkController::processMessage(NetworkMessageReader
         readDataAndSetModel(msg, m_channelModel.get());
         break;
     case NetMsg::AdminAuthSucessed:
-        qDebug() << "Authentification fail";
+        qDebug() << "Authentification success";
         setGroups(m_currentGroups | ADMIN);
         break;
     case NetMsg::AuthentificationFail:
@@ -468,7 +472,8 @@ void NetworkController::saveData()
 
 void NetworkController::sendOffLoginAdmin(const QString& password)
 {
-    auto pwA= QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha3_512);
+    auto pwA
+        = password.isEmpty() ? QByteArray() : QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha3_512);
 
     NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AdminPassword);
     msg.byteArray32(pwA);
@@ -500,8 +505,7 @@ void NetworkController::kickUser(const QString& uuid, const QString& playerId)
 
 void NetworkController::addChannel(const QString& parentId)
 {
-    Q_UNUSED(parentId)
-    // TODO implement me
+    m_channelModel->addChannel(QString(), tr("New channel"), QString(), QByteArray(), parentId);
 }
 
 void NetworkController::resetChannel(const QString& channelId)

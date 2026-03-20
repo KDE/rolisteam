@@ -44,11 +44,9 @@ public slots:
 protected:
     void moveUserToCurrent();
 protected slots:
-    void addChannelAsSibbling();
     void lockChannel();
     void kickUser();
     void banUser();
-    void addChannel();
     void setPasswordOnChannel();
     void deleteChannel();
     void joinChannel();

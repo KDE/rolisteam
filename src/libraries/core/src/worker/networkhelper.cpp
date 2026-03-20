@@ -145,7 +145,7 @@ void fetchChannelModel(ChannelModel* model, const QJsonObject& obj)
     auto array= obj[Core::jsonNetwork::JSON_CHANNELS].toArray();
 
     QList<TreeItem*> children;
-    for(auto itemRef : array)
+    for(auto itemRef : std::as_const(array))
     {
         auto item= itemRef.toObject();
         QPointer<TreeItem> treeItem;
@@ -161,6 +161,15 @@ void fetchChannelModel(ChannelModel* model, const QJsonObject& obj)
     }
 
     model->resetData(children);
+}
+
+QJsonObject channelToJsonObject(Channel* chan)
+{
+    QJsonObject obj;
+    obj["id"]= chan->uuid();
+    obj["name"]= chan->name();
+    obj["desc"]= chan->description();
+    return obj;
 }
 
 } // namespace network

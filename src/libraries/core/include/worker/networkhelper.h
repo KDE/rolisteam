@@ -37,6 +37,8 @@ NETWORK_EXPORT QJsonObject channelModelToJSonObject(ChannelModel* model);
 NETWORK_EXPORT QByteArray jsonObjectToByteArray(const QJsonObject& obj);
 NETWORK_EXPORT void fetchChannelModel(ChannelModel* model, const QJsonObject& obj);
 
+NETWORK_EXPORT QJsonObject channelToJsonObject(Channel* chan);
+
 } // namespace network
 }; // namespace helper
 

@@ -27,6 +27,7 @@
 #include "data/charactervision.h"
 #include "data/player.h"
 
+#include "network/channel.h"
 #include "network/networkmessagereader.h"
 #include "network/networkmessagewriter.h"
 
@@ -73,8 +74,7 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
     // Characters
     msg.int32(static_cast<int>(characters.size()));
 
-    std::for_each(characters.begin(), characters.end(),
-                  [&msg](const std::unique_ptr<Character>& character)
+    std::for_each(characters.begin(), characters.end(), [&msg](const std::unique_ptr<Character>& character)
                   { writeCharacterIntoMessage(msg, character.get()); });
 
     /*QByteArray array;
@@ -225,4 +225,20 @@ Character* PlayerMessageHelper::readCharacter(NetworkMessageReader& msg, QString
     }
 
     return character;
+}
+
+QJsonObject PlayerMessageHelper::readChannelInMsg(NetworkMessageReader& msg)
+{
+    QJsonObject res;
+    res["id"]= msg.string8();
+    res["name"]= msg.string32();
+    res["desc"]= msg.string32();
+    return res;
+}
+
+void PlayerMessageHelper::writeChannelInMsg(NetworkMessageWriter& msg, Channel* chan)
+{
+    msg.string8(chan->uuid());
+    msg.string32(chan->name());
+    msg.string32(chan->description());
 }

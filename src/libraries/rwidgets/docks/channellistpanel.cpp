@@ -49,8 +49,16 @@ ChannelListPanel::ChannelListPanel(PreferencesManager* preferences, NetworkContr
     connect(m_kick, &QAction::triggered, this, &ChannelListPanel::kickUser);
     connect(m_ban, &QAction::triggered, this, &ChannelListPanel::banUser);
     connect(m_edit, &QAction::triggered, this, &ChannelListPanel::editChannel);
-    connect(m_addChannel, &QAction::triggered, this, &ChannelListPanel::addChannelAsSibbling);
-    connect(m_addSubchannel, &QAction::triggered, this, &ChannelListPanel::addChannel);
+    connect(m_addChannel, &QAction::triggered, m_ctrl, [this]() { m_ctrl->addChannel(); });
+    connect(m_addSubchannel, &QAction::triggered, m_ctrl,
+            [this]()
+            {
+                Channel* parent= getChannel(m_index);
+                if(!parent)
+                    return;
+
+                m_ctrl->addChannel(parent->uuid());
+            });
     connect(m_deleteChannel, &QAction::triggered, this, &ChannelListPanel::deleteChannel);
     connect(m_lock, &QAction::triggered, this, &ChannelListPanel::lockChannel);
     connect(m_join, &QAction::triggered, this, &ChannelListPanel::joinChannel);
@@ -246,57 +254,6 @@ void ChannelListPanel::logAsAdmin()
         pwadmin= QInputDialog::getText(this, tr("Admin Password"), tr("Password"), QLineEdit::Password);
 
     m_ctrl->sendOffLoginAdmin(pwadmin);
-}
-
-void ChannelListPanel::addChannel()
-{
-    /*  if(isAdmin())
-      {
-          Channel* newChannel= new Channel(tr("New Channel"));
-
-          Channel* parent= getChannel(m_index);
-
-          QModelIndex justAdded= m_model->addChannelToIndex(newChannel, m_index);
-          ui->m_channelView->edit(justAdded);
-
-          if(nullptr != parent)
-          {
-              QString parentId= parent->getId();
-              if(!parentId.isEmpty())
-              {
-                  NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AddChannel);
-                  msg.string8(parentId);
-                  newChannel->fill(msg);
-                  msg.sendToServer();
-              }
-          }
-      }*/
-}
-void ChannelListPanel::addChannelAsSibbling()
-{
-    /*  if(isAdmin())
-      {
-          Channel* newChannel= new Channel(tr("New Channel"));
-
-          auto parentIndex= m_index.parent();
-
-          Channel* parent= nullptr;
-          QString parentId("");
-
-          if(parentIndex.isValid())
-          {
-              parent= getChannel(parentIndex);
-              parentId= parent->getId();
-          }
-
-          QModelIndex justAdded= m_model->addChannelToIndex(newChannel, parentIndex);
-          ui->m_channelView->edit(justAdded);
-
-          NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AddChannel);
-          msg.string8(parentId);
-          newChannel->fill(msg);
-          msg.sendToServer();
-      }*/
 }
 
 void ChannelListPanel::editChannel()

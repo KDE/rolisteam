@@ -67,9 +67,9 @@ void TestChannelModel::addTest()
     QFETCH(QByteArray, password);
     QFETCH(int, expected);
 
-    for(const auto &channel : channels)
+    for(const auto& channel : channels)
     {
-        m_model->addChannel(channel, password);
+        m_model->addChannel(QString(), channel, QString(), password, QString());
     }
     QCOMPARE(m_model->rowCount(QModelIndex()), expected);
 }
@@ -89,15 +89,15 @@ void TestChannelModel::addTest_data()
 
 void TestChannelModel::removeTest()
 {
-    m_model->addChannel("channel1", "password");
-    m_model->addChannel("channel2", "password");
+    m_model->addChannel("channel1", "channel1", "channel1", "password", QString());
+    m_model->addChannel("channel2", "channel2", "channel2", "password", QString());
     QCOMPARE(m_model->rowCount(QModelIndex()), 2);
 
     m_model->cleanUp();
     QCOMPARE(m_model->rowCount(QModelIndex()), 0);
 
-    m_model->addChannel("channel1", "password");
-    auto id1= m_model->addChannel("channel2", "password");
+    m_model->addChannel("channel1", "channel1", "channel1", "password", QString());
+    auto id1= m_model->addChannel("channel2", "channel2", "channel2", "password", QString());
     QCOMPARE(m_model->rowCount(QModelIndex()), 2);
 
     m_model->removeChild(id1);
@@ -108,8 +108,8 @@ void TestChannelModel::removeTest()
 
 void TestChannelModel::moveTest()
 {
-    auto idC= m_model->addChannel("channel1", {});
-    auto idC2= m_model->addChannel("channel2", {});
+    auto idC= m_model->addChannel("channel1", "channel1", "channel1", {}, "channel1");
+    auto idC2= m_model->addChannel("channel2", "channel2", "channel2", {}, "channel2");
     QCOMPARE(m_model->rowCount(QModelIndex()), 2);
 
     ServerConnection client(nullptr, nullptr);
@@ -138,7 +138,7 @@ void TestChannelModel::writeAndRead()
 
     for(const auto& channel : channels)
     {
-        m_model->addChannel(channel, password);
+        m_model->addChannel(QString(), channel, QString(), password, QString());
     }
     QCOMPARE(m_model->rowCount(QModelIndex()), expected);
 

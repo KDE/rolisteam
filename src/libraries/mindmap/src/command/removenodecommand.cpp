@@ -47,19 +47,8 @@ RemoveNodeCommand::RemoveNodeCommand(const std::vector<QPointer<MindItem>>& sele
 
 void RemoveNodeCommand::undo()
 {
-    // std::for_each(m_selection.begin(), m_selection.end(), [this](MindItem* node) { m_nodeModel->appendItem({node});
-    // }); std::for_each(m_links.begin(), m_links.end(), [this](LinkController* link) { m_nodeModel->appendItem({link});
-    // });
-
     m_nodeModel->appendItem(SerializerHelper::readMindmapNode(m_nodeData, m_nodeModel));
     m_nodeModel->appendItem(SerializerHelper::readMindmapNode(m_linkData, m_nodeModel));
-
-    /* std::for_each(m_linkData.begin(), m_linkData.end(),
-                   [this](const QJsonValueRef& val)
-                   {
-                       auto obj= val.toObject();
-                       m_nodeModel->appendItem({m_nodeModel->item(obj[mindmap::JSON_MINDITEM_ID].toString())});
-                   });*/
 }
 
 void RemoveNodeCommand::redo()

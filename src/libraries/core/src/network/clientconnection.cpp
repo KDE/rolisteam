@@ -121,6 +121,7 @@ void ClientConnection::sendData(char* data, qint64 size)
 
 void ClientConnection::sendMessage(const NetworkMessage* msg)
 {
+    qDebug() << "[Admin] sendmessage:" << msg->category() << msg->action() << this->thread();
     if(!m_connected)
         return;
 

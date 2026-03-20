@@ -48,7 +48,7 @@ class NETWORK_EXPORT ServerConnection : public TreeItem
     Q_OBJECT
     Q_PROPERTY(QString playerName READ playerName NOTIFY playerNameChanged)
     Q_PROPERTY(QString playerId READ playerId() NOTIFY playerIdChanged)
-
+    Q_PROPERTY(bool admin READ isAdmin WRITE setIsAdmin NOTIFY adminChanged FINAL)
 public:
     enum ConnectionEvent
     {
@@ -161,6 +161,8 @@ signals:
     void playerNameChanged();
     void playerIdChanged();
     void playerInfoDefined();
+
+    void adminChanged();
 public slots:
     void receivingData();
     void forwardMessage();

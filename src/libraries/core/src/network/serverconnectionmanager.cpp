@@ -8,6 +8,7 @@
 #include "network/networkmessagewriter.h"
 #include "network/passwordaccepter.h"
 #include "network/serverconnection.h"
+#include "worker/playermessagehelper.h"
 
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -28,7 +29,7 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
     int count= m_model->rowCount(QModelIndex());
     for(int i= count; i < chCount; ++i)
     {
-        m_model->addChannel(QStringLiteral("Channel %1").arg(i), {});
+        m_model->addChannel(QString(), QStringLiteral("Channel %1").arg(i), QString(), {}, QString());
     }
 
     qRegisterMetaType<NetworkMessage*>("NetworkMessage*");
@@ -138,10 +139,12 @@ void ServerConnectionManager::checkAuthAsAdmin(ServerConnection* client)
     data["userpassword"]= client->getAdminPassword();
     if(m_adminAccepter->runAccepter(data))
     {
+        qDebug() << "[Admin] password correct";
         sendEventToClient(client, ServerConnection::AdminAuthSuccessEvent);
     }
     else
     {
+        qDebug() << "[Admin] password incorrect";
         sendEventToClient(client, ServerConnection::AdminAuthFailEvent);
     }
 }
@@ -314,12 +317,9 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
         if(isAdmin)
         {
             QString idparent= msg->string8();
-            TreeItem* parentItem= m_model->getItemById(idparent);
-            Channel* dest= static_cast<Channel*>(parentItem);
-
-            auto channel= new Channel();
-            // channel->read(*msg);
-            m_model->addChannelToChannel(channel, dest);
+            auto json= PlayerMessageHelper::readChannelInMsg(*msg);
+            m_model->addChannel(json["id"].toString(), json["name"].toString(), json["desc"].toString(), QByteArray(),
+                                idparent);
         }
     }
     break;
@@ -362,7 +362,10 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
     }
     break;
     case NetMsg::MoveChannel:
+        break;
     case NetMsg::AdminPassword:
+        qDebug() << "[Admin] AdminPassword";
+        checkAuthAsAdmin(tcp);
         break;
     case NetMsg::ResetChannel:
     {

@@ -43,7 +43,7 @@ ServerConnection::~ServerConnection()
     if(m_socket)
     {
         m_socket->deleteLater();
-        m_socket = nullptr;
+        m_socket= nullptr;
     }
 }
 
@@ -205,7 +205,10 @@ bool ServerConnection::isAdmin() const
 
 void ServerConnection::setIsAdmin(bool isAdmin)
 {
+    if(isAdmin == m_isAdmin)
+        return;
     m_isAdmin= isAdmin;
+    emit adminChanged();
 }
 
 bool ServerConnection::isGM() const
@@ -437,8 +440,8 @@ void ServerConnection::sendEvent(ServerConnection::ConnectionEvent event)
         emit serverAuthSuccess();
         break;
     case AdminAuthSuccessEvent:
-        emit adminAuthSucceed();
         m_isAdmin= true;
+        emit adminAuthSucceed();
         break;
     case AdminAuthFailEvent:
         emit adminAuthFailed();

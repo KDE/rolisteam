@@ -116,7 +116,7 @@ void RuleItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, 
     QFontMetricsF metrics(f);
     auto rect= metrics.boundingRect(text);
     painter->save();
-    painter->fillRect(rect.translated(m_endPoint), QBrush("#88FFFFFF"));
+    painter->fillRect(rect.translated(m_endPoint), QBrush(QColor(0xFF, 0xFF, 0xFF, 0x88)));
     painter->restore();
     painter->drawText(m_endPoint, text);
 }

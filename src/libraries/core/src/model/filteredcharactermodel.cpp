@@ -50,6 +50,7 @@ FilteredCharacterModel::FilteredCharacterModel()
 {
     setDynamicSortFilter(true);
 
+    // TODO change it
     connect(this, &FilteredCharacterModel::searchChanged, this, &FilteredCharacterModel::invalidateFilter);
     connect(this, &FilteredCharacterModel::initiativeCmdDefChanged, this, &FilteredCharacterModel::invalidateFilter);
     connect(this, &FilteredCharacterModel::propertiesDefChanged, this, &FilteredCharacterModel::invalidateFilter);

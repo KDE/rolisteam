@@ -2,6 +2,7 @@
 
 #include "network/serverconnection.h"
 #include "network/treeitem.h"
+#include "worker/playermessagehelper.h"
 
 #include <QIcon>
 #include <QJsonArray>
@@ -255,12 +256,30 @@ int ChannelModel::columnCount(const QModelIndex&) const
     return 1;
 }
 
-QString ChannelModel::addChannel(QString name, QByteArray password)
+QString ChannelModel::addChannel(const QString& id, const QString& name, const QString& description,
+                                 const QByteArray& password, const QString& parentId)
 {
     Channel* chan= new Channel(name);
+    if(!id.isEmpty())
+        chan->setUuid(id);
+
     chan->setPassword(password);
-    QModelIndex index;
-    addChannelToIndex(chan, index);
+    chan->setDescription(description);
+
+    if(parentId.isEmpty())
+    {
+        QModelIndex index;
+        addChannelToIndex(chan, index);
+    }
+    else
+    {
+        auto item= dynamic_cast<Channel*>(getItemById(parentId));
+        if(item)
+            addChannelToChannel(chan, item);
+    }
+
+    sendOffChannelInfo(chan);
+
     return chan->uuid();
 }
 QModelIndex ChannelModel::addChannelToIndex(Channel* channel, const QModelIndex& parent)
@@ -296,7 +315,21 @@ bool ChannelModel::addChannelToChannel(Channel* child, Channel* parent)
     parent->addChild(child);
     endInsertRows();
     result= true;
+
     return result;
+}
+
+void ChannelModel::sendOffChannelInfo(Channel* chan)
+{
+    qDebug() << "[Admin] sendoffchannelInfo" << this->thread();
+    if(!chan)
+        return;
+    auto parent= chan->getParentItem();
+
+    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AddChannel);
+    msg.string8(parent ? parent->uuid() : QString());
+    PlayerMessageHelper::writeChannelInMsg(msg, chan);
+    msg.sendToServer();
 }
 
 void ChannelModel::renameChannel(const QString& senderId, const QString& id, const QString& value)
