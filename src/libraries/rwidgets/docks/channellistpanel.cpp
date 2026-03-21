@@ -9,6 +9,7 @@
 #include <QJsonObject>
 #include <QMenu>
 
+#include "common/logcategory.h"
 #include "network/channel.h"
 #include "network/serverconnection.h"
 #include "preferences/preferencesmanager.h"
@@ -33,9 +34,9 @@ ChannelListPanel::ChannelListPanel(PreferencesManager* preferences, NetworkContr
             &ChannelListPanel::CurrentChannelGmIdChanged);
 
     m_edit= new QAction(tr("Edit Channel"), this);
-    m_lock= new QAction(tr("Lock/Unlock Channel"), this);
+    m_lock= new QAction(tr("Lock Channel"), this);
     m_join= new QAction(tr("Switch to channel"), this);
-    m_channelPassword= new QAction(tr("Set/Unset Channel Password"), this);
+    m_channelPassword= new QAction(tr("Set Channel Password"), this);
     m_addChannel= new QAction(tr("Add channel"), this);
     m_addSubchannel= new QAction(tr("Add subchannel"), this);
     m_deleteChannel= new QAction(tr("Delete Channel"), this);
@@ -47,6 +48,14 @@ ChannelListPanel::ChannelListPanel(PreferencesManager* preferences, NetworkContr
     m_moveUserToCurrentChannel= new QAction(tr("Move User"), this);
 
     connect(m_kick, &QAction::triggered, this, &ChannelListPanel::kickUser);
+    connect(m_setDefault, &QAction::triggered, m_ctrl,
+            [this]()
+            {
+                Channel* parent= getChannel(m_index);
+                if(!parent)
+                    return;
+                m_ctrl->defineChannelAsDefault(parent->uuid());
+            });
     connect(m_ban, &QAction::triggered, this, &ChannelListPanel::banUser);
     connect(m_edit, &QAction::triggered, this, &ChannelListPanel::editChannel);
     connect(m_addChannel, &QAction::triggered, m_ctrl, [this]() { emit m_ctrl->addChannel(QString()); });
@@ -73,97 +82,65 @@ ChannelListPanel::~ChannelListPanel()
     delete ui;
 }
 
-void ChannelListPanel::showCustomMenu(QPoint pos)
+void ChannelListPanel::showCustomMenu(const QPoint& pos)
 {
-    QMenu menu(this);
-    enum ClickState
-    {
-        Out,
-        OnChannel,
-        OnCurrentChannel,
-        OnUser
-    };
+    if(!m_ctrl)
+        return;
 
-    ClickState state= Out;
-    bool isGmChannel= false;
-    bool isCurrentChannel= false;
-    bool isOwnUser= false;
+    QMenu menu(this);
+
     auto localId= m_ctrl->localId();
 
     m_index= ui->m_channelView->indexAt(pos);
 
-    if(!m_index.isValid())
-    {
-        state= Out;
-    }
-    else
-    {
-        TreeItem* dataItem= indexToPointer<TreeItem*>(m_index);
-        if(dataItem->isLeaf())
-        {
-            state= OnUser;
-            isOwnUser= (localId == dataItem->uuid());
-        }
-        else
-        {
-            state= OnChannel;
+    TreeItem* dataItem= indexToPointer<TreeItem*>(m_index);
+    auto channel= dynamic_cast<Channel*>(dataItem);
 
-            auto channel= dynamic_cast<Channel*>(dataItem);
-            if(channel)
-            {
-                /*if(!channel->password().isEmpty())
-                    hasPassword= true;*/
-                auto child= channel->getChildById(localId);
-                if(child != nullptr)
-                {
-                    isCurrentChannel= true;
-                    if(m_ctrl->isGM())
-                        isGmChannel= true;
-                }
-            }
-        }
-    }
+    auto isOnChannel= channel;
+    auto isCurrentChannel= channel ? static_cast<bool>((channel->getClientById(localId))) : false;
+    auto isOnUser= dataItem && !channel ? static_cast<bool>(dataItem) : false;
+    auto isUserOnCurrentChannel= channel && dataItem ? (!channel->getClientById(dataItem->uuid())) : false;
+    auto isAdmin= m_ctrl->isAdmin();
+    auto channelIsLock= channel ? channel->locked() : false;
+    auto channelIsDefault= channel ? m_ctrl->defaultChannelId() == channel->uuid() : false;
+    auto isLocal= dataItem ? (localId == dataItem->uuid()) : false;
+    auto channelIsEmpty= channel ? channel->childCount() == 0 : true;
 
-    if(state == OnChannel && !isCurrentChannel)
-    {
-        menu.addAction(m_join);
-        menu.addSeparator();
-    }
+    menu.addAction(m_join);
+    menu.addSeparator();
+    menu.addAction(m_lock);
+    menu.addAction(m_edit);
+    menu.addAction(m_resetChannel);
+    menu.addAction(m_setDefault);
+    menu.addAction(m_channelPassword);
+    menu.addSeparator();
+    menu.addAction(m_addChannel);
+    menu.addAction(m_deleteChannel);
+    menu.addSeparator();
+    menu.addAction(m_kick);
+    menu.addAction(m_ban);
+    menu.addAction(m_moveUserToCurrentChannel);
 
-    if(m_ctrl->isGM() && isGmChannel)
-    {
-        menu.addAction(m_lock);
-        menu.addAction(m_addSubchannel);
-        menu.addSeparator();
-    }
-
-    if(((m_ctrl->isGM() && isGmChannel) || m_ctrl->isAdmin()) && (state == OnChannel))
-    {
-        menu.addAction(m_edit);
-        menu.addAction(m_resetChannel);
-        menu.addAction(m_deleteChannel);
-        menu.addSeparator();
-    }
-
-    if(m_ctrl->isAdmin())
-    {
-        if(state == OnChannel)
-        {
-            menu.addAction(m_setDefault);
-            menu.addAction(m_channelPassword);
-        }
-        else if(state == OnUser && !isOwnUser)
-        {
-            menu.addAction(m_kick);
-            // menu.addAction(m_ban);
-        }
-        menu.addAction(m_addChannel);
-    }
-    else
+    if(!isAdmin)
     {
         menu.addSeparator();
         menu.addAction(m_admin);
     }
+
+    m_lock->setText(channelIsLock ? tr("Unlock channel") : tr("Lock Channel"));
+
+    m_join->setEnabled(!isCurrentChannel && isOnChannel);
+    m_lock->setEnabled(isAdmin && isOnChannel);
+    m_edit->setEnabled(isAdmin && isOnChannel);
+    m_resetChannel->setEnabled(isAdmin && isOnChannel);
+    m_deleteChannel->setEnabled(isAdmin && isOnChannel && channelIsEmpty);
+    m_setDefault->setEnabled(isAdmin && isOnChannel && !channelIsDefault);
+    m_channelPassword->setEnabled(isAdmin && isOnChannel);
+    m_kick->setEnabled(isAdmin && isOnUser);
+    m_ban->setEnabled(isAdmin && isOnUser);
+    m_moveUserToCurrentChannel->setEnabled(isAdmin && isOnUser && !isUserOnCurrentChannel && !isLocal);
+    m_addChannel->setEnabled(isAdmin && !isOnChannel && !isOnUser);
+
     menu.exec(ui->m_channelView->mapToGlobal(pos));
 }
 
@@ -329,6 +306,11 @@ void ChannelListPanel::deleteChannel()
     Channel* item= getChannel(m_index);
     if(nullptr == item)
         return;
+    if(item->childCount() > 0)
+    {
+        qCWarning(NetworkCat) << tr("Only empty channel can be removed");
+        return;
+    }
     QString id= item->uuid();
 
     m_ctrl->deleteChannel(id);
@@ -370,6 +352,7 @@ void ChannelListPanel::joinChannel()
     QString id= item->uuid();
     auto pwA= QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
 
+    qDebug() << m_ctrl->localId() << item->uuid();
     m_ctrl->joinChannel(m_ctrl->localId(), item->uuid(), pwA);
 }
 

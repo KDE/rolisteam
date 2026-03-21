@@ -39,7 +39,7 @@ signals:
     void CurrentChannelGmIdChanged(QString gm);
 
 public slots:
-    void showCustomMenu(QPoint pos);
+    void showCustomMenu(const QPoint &pos);
 
 protected:
     void moveUserToCurrent();
