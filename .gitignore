@@ -15,3 +15,5 @@ poqm/*/*.mo
 axivion/*
 axivion_*
 build_axivion
+design/doxygen/*
+design/doxygen

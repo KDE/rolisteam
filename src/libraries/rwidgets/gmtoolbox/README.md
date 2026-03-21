@@ -1,2 +1,0 @@
-# RPlugins
-Plugin for rolisteam
