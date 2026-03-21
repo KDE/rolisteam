@@ -406,6 +406,11 @@ QString NetworkController::lastError() const
     return m_lastError;
 }
 
+QString NetworkController::defaultChannelId() const
+{
+    return m_channelModel->defaultChannelId();
+}
+
 bool NetworkController::isGM() const
 {
     return currentProfile() ? currentProfile()->isGM() : false;

@@ -38,12 +38,13 @@ ServerManagerUpdater::ServerManagerUpdater(ServerConnectionManager* ctrl, bool i
     auto computeModel= [this]()
     {
         auto model= m_ctrl->channelModel();
-        setChannelData(helper::network::jsonObjectToByteArray(helper::network::channelModelToJSonObject(model)));
+        auto data= helper::network::channelModelToJSonObject(model);
+        setChannelData(helper::network::jsonObjectToByteArray(data));
 
         if(!m_internal)
         {
             QSettings settings("Rolisteam", "roliserver");
-            QJsonDocument doc(helper::network::channelModelToJSonObject(model));
+            QJsonDocument doc(data);
             settings.setValue(helper::key::channel_data, doc);
         }
     };
@@ -52,6 +53,7 @@ ServerManagerUpdater::ServerManagerUpdater(ServerConnectionManager* ctrl, bool i
     connect(model, &ChannelModel::rowsInserted, this, computeModel);
     connect(model, &ChannelModel::rowsMoved, this, computeModel);
     connect(model, &ChannelModel::rowsRemoved, this, computeModel);
+    connect(model, &ChannelModel::defaultChannelIdChanged, this, computeModel);
 
     connect(this, &ServerManagerUpdater::channelsDataChanged, this,
             [this]()

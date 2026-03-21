@@ -116,7 +116,7 @@ void TestChannelModel::moveTest()
     client.setIsAdmin(true);
     auto id= client.uuid();
     m_model->setLocalPlayerId(id);
-    m_model->addConnectionToDefaultChannel(&client);
+    m_model->addConnectionToChannel(m_model->defaultChannelId(), &client);
     auto channel= m_model->getItemById(idC);
     QCOMPARE(client.getParentChannel(), channel);
 

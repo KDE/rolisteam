@@ -24,6 +24,7 @@ public slots:
     void resetChannel(const QString& channelId);
     void deleteChannel(const QString& channelId);
     void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
+    void defineChannelAsDefault(const QString& channelId);
     void joinChannel(const QString& userId, const QString& channelId, const QByteArray& password);
 
     // void userLeftChannel(const QString& channelId, const QString& userId);

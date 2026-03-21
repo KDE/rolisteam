@@ -495,6 +495,7 @@ constexpr auto JSON_USERLISTED{"usersListed"};
 constexpr auto JSON_MEMORYSIZE{"memorySize"};
 constexpr auto JSON_LOCKED{"locked"};
 constexpr auto JSON_CHANNELS{"channels"};
+constexpr auto JSON_DEFAULT_CHANNEL{"defaultChannel"};
 constexpr auto JSON_CHILDREN{"children"};
 } // namespace jsonNetwork
 

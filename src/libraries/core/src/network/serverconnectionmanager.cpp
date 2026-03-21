@@ -51,7 +51,6 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
         m_model.get(), &ChannelModel::userLeftChannel, this,
         [this](const QString& channelId, const QString& userId)
         {
-            qCDebug(ServerLogCat) << "userLeftChannel" << userId;
             auto channel= dynamic_cast<Channel*>(m_model->getItemById(channelId));
             if(!channel)
                 return;
@@ -68,13 +67,11 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
         m_model.get(), &ChannelModel::userHasJoinedChannel, this,
         [this](const QString& channelId, const QString& userId)
         {
-            qCDebug(ServerLogCat) << "userHasJoinedChannel" << userId;
             auto channel= dynamic_cast<Channel*>(m_model->getItemById(channelId));
             auto conn= dynamic_cast<ServerConnection*>(m_model->getItemById(userId));
             if(!channel || !conn)
                 return;
 
-            qDebug() << "[join]: fully: " << conn->isFullyDefined();
             if(conn->isFullyDefined())
                 channel->updateNewClient(conn);
         },
@@ -106,7 +103,6 @@ void ServerConnectionManager::initClient()
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
     if(nullptr != client)
     {
-        qCDebug(ServerLogCat) << "client insert" << client << client->name();
         m_connections.insert(client->getSocket(), client);
         sendEventToClient(client, ServerConnection::CheckSuccessEvent);
     }
@@ -154,7 +150,7 @@ void ServerConnectionManager::checkAuthToServer(ServerConnection* client)
 
     if(m_corEndProcess->runAccepter(data))
     {
-        m_model->addConnectionToDefaultChannel(client);
+        m_model->addConnectionToChannel(m_model->defaultChannelId(), client);
         sendEventToClient(client, ServerConnection::ServerAuthSuccessEvent);
         // sendOffModel(client);
         qCDebug(ServerLogCat) << "server auth successed";
@@ -212,7 +208,7 @@ void ServerConnectionManager::checkAuthToChannel(ServerConnection* client, QStri
     {
         if(!m_model->addConnectionToChannel(channelId, client))
         {
-            m_model->addConnectionToDefaultChannel(client);
+            m_model->addConnectionToChannel(m_model->defaultChannelId(), client);
         }
     }
     else
@@ -367,6 +363,16 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
         {
             QMetaObject::invokeMethod(m_model.get(), &ChannelModel::moveClient, Qt::QueuedConnection, chan, userId,
                                       dest);
+        }
+    }
+    break;
+    case NetMsg::SetDefaultChannel:
+    {
+        if(isAdmin)
+        {
+            QString channelId= msg->string8();
+            QMetaObject::invokeMethod(m_model.get(), &ChannelModel::setDefaultChannelId, Qt::QueuedConnection,
+                                      channelId);
         }
     }
     break;

@@ -95,6 +95,7 @@ QJsonObject channelModelToJSonObject(ChannelModel* model)
         array.append(jsonObj);
     }
     obj[Core::jsonNetwork::JSON_CHANNELS]= array;
+    obj[Core::jsonNetwork::JSON_DEFAULT_CHANNEL]= model->defaultChannelId();
     return obj;
 }
 
@@ -160,7 +161,7 @@ void fetchChannelModel(ChannelModel* model, const QJsonObject& obj)
         children.append(treeItem);
     }
 
-    model->resetData(children);
+    model->resetData(children, obj[Core::jsonNetwork::JSON_DEFAULT_CHANNEL].toString());
 }
 
 QJsonObject channelToJsonObject(Channel* chan)

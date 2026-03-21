@@ -87,6 +87,7 @@ public:
     int port() const;
     QString ipv4() const;
     QString lastError() const;
+    QString defaultChannelId() const;
 
     ProfileModel* profileModel() const;
     ChannelModel* channelModel() const;
@@ -133,6 +134,7 @@ signals:
     void kickUser(const QString& uuid, const QString& playerId);
     void resetChannel(const QString& channelId);
     void deleteChannel(const QString& channelId);
+    void defineChannelAsDefault(const QString& channelId);
     void sendOffConnectionInfo(const QString& id, const QString& name, const QByteArray& password);
     void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
     void saveData();
@@ -147,6 +149,7 @@ public slots:
     void setConnected(bool b);
     void setConnecting(bool b);
     void removeProfile(int pos);
+
     void closeServer();
 
 private slots:

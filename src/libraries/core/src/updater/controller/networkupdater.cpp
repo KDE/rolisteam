@@ -21,6 +21,7 @@ NetworkUpdater::NetworkUpdater(NetworkController* ctrl, QObject* parent) : QObje
     connect(m_ctrl, &NetworkController::joinChannel, this, &NetworkUpdater::joinChannel);
     connect(m_ctrl, &NetworkController::saveData, this,
             [this]() { SettingsHelper::writeConnectionProfileModel(m_ctrl->profileModel()); });
+    connect(m_ctrl, &NetworkController::defineChannelAsDefault, this, &NetworkUpdater::defineChannelAsDefault);
 
     auto channels= ctrl->channelModel();
     connect(channels, &ChannelModel::channelNameChanged, this,
@@ -116,6 +117,13 @@ void NetworkUpdater::joinChannel(const QString& userId, const QString& channelId
     msg.string8(channelId);
     msg.string8(userId);
     msg.byteArray32(password);
+    msg.sendToServer();
+}
+
+void NetworkUpdater::defineChannelAsDefault(const QString& channelId)
+{
+    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::SetDefaultChannel);
+    msg.string8(channelId);
     msg.sendToServer();
 }
 

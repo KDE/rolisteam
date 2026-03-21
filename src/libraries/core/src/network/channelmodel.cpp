@@ -335,6 +335,8 @@ void ChannelModel::renameChannel(const QString& id, const QString& value)
 void ChannelModel::appendChannel(Channel* channel)
 {
     m_root.append(channel);
+    if(m_defaultChannel.isEmpty())
+        setDefaultChannelId(channel->uuid());
     connect(channel, &Channel::memorySizeChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::lockedChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::itemChanged, this, &ChannelModel::modelChanged);
@@ -496,30 +498,14 @@ bool ChannelModel::dropMimeData(const QMimeData* data, Qt::DropAction action, in
 
     return added;
 }
-bool ChannelModel::addConnectionToDefaultChannel(ServerConnection* client)
-{
-    if(m_defaultChannel.isEmpty())
-    {
-        qCWarning(NetworkCat) << "call addConnectionToDefaultChannel while channel is empty";
-        if(!m_root.isEmpty())
-        {
-            auto item= m_root.at(0);
-            if(nullptr != item)
-            {
-                m_defaultChannel= item->uuid();
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    return addConnectionToChannel(m_defaultChannel, client);
-}
 
 bool ChannelModel::addConnectionToChannel(QString chanId, ServerConnection* client)
 {
+    if(m_defaultChannel.isEmpty())
+    {
+        qCWarning(NetworkCat) << "Function addConnectionToChannel called with empty channel parameter.";
+        return false;
+    }
     for(auto& item : m_root)
     {
         if(!item)
@@ -571,14 +557,14 @@ const QList<QPointer<TreeItem>>& ChannelModel::modelData()
     return m_root;
 }
 
-void ChannelModel::resetData(QList<TreeItem*> data)
+void ChannelModel::resetData(QList<TreeItem*> data, const QString& defaultId)
 {
     qDeleteAll(m_root);
     m_root.clear();
     beginResetModel();
     std::transform(std::begin(data), std::end(data), std::back_inserter(m_root),
                    [](TreeItem* item) { return QPointer<TreeItem>(item); });
-    // m_root= data;
+    setDefaultChannelId(defaultId);
     endResetModel();
 }
 
@@ -724,4 +710,17 @@ void ChannelModel::setAdmin(bool newAdmin)
         return;
     m_admin= newAdmin;
     emit adminChanged();
+}
+
+QString ChannelModel::defaultChannelId() const
+{
+    return m_defaultChannel;
+}
+
+void ChannelModel::setDefaultChannelId(const QString& newDefaultChannelId)
+{
+    if(m_defaultChannel == newDefaultChannelId)
+        return;
+    m_defaultChannel= newDefaultChannelId;
+    emit defaultChannelIdChanged();
 }

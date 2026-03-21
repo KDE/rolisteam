@@ -29,6 +29,8 @@ class NETWORK_EXPORT ChannelModel : public QAbstractItemModel
     Q_OBJECT
     Q_PROPERTY(bool isServer READ isServer CONSTANT)
     Q_PROPERTY(bool admin READ admin WRITE setAdmin NOTIFY adminChanged FINAL)
+    Q_PROPERTY(
+        QString defaultChannelId READ defaultChannelId WRITE setDefaultChannelId NOTIFY defaultChannelIdChanged FINAL)
 public:
     ChannelModel(bool isServer= false);
     ~ChannelModel();
@@ -50,7 +52,6 @@ public:
 
     bool isServer() const;
 
-    bool addConnectionToDefaultChannel(ServerConnection* client);
     Qt::ItemFlags flags(const QModelIndex& index) const;
     bool hasChildren(const QModelIndex& parent) const;
 
@@ -77,9 +78,12 @@ public:
     bool moveClient(Channel* origin, const QString& id, Channel* dest);
 
     const QList<QPointer<TreeItem>>& modelData();
-    void resetData(QList<TreeItem*> data);
+    void resetData(QList<TreeItem*> data, const QString &defaultId);
     bool admin() const;
     void setAdmin(bool newAdmin);
+
+    QString defaultChannelId() const;
+    void setDefaultChannelId(const QString& newDefaultChannelId);
 
 signals:
     void totalSizeChanged(quint64);
@@ -89,6 +93,8 @@ signals:
     void adminChanged();
     void userLeftChannel(const QString& channel, const QString& userId);
     void userHasJoinedChannel(const QString& id, const QString& userId);
+
+    void defaultChannelIdChanged();
 
 public slots:
     void setChannelMemorySize(Channel* chan, quint64);
