@@ -38,11 +38,8 @@
 #include "utils/countdownobject.h"
 #include "worker/iohelper.h"
 #include "worker/messagehelper.h"
-#include "worker/modelhelper.h"
 #include "worker/networkhelper.h"
 #include "worker/playermessagehelper.h"
-
-QLoggingCategory rNetwork("rolisteam.network");
 
 void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
 {
@@ -60,7 +57,6 @@ NetworkController::NetworkController(QObject* parent)
     , m_upnpNat(new UpnpNat)
 {
     qRegisterMetaType<RServer::ServerState>();
-    SettingsHelper::readConnectionProfileModel(m_profileModel.get());
 
     ReceiveEvent::registerNetworkReceiver(NetMsg::AdministrationCategory, this);
 
@@ -79,9 +75,26 @@ NetworkController::NetworkController(QObject* parent)
                 setConnecting(state == ClientManager::CONNECTING);
             });
 
+    connect(this, &NetworkController::groupsChanged, this,
+            [this]() { m_channelModel->setAdmin(m_currentGroups & NetworkController::ADMIN); });
+
     connect(m_clientManager.get(), &ClientManager::dataReceived, this, &NetworkController::downloadingData);
     connect(m_clientManager.get(), &ClientManager::messageReceived, this, &NetworkController::dispatchMessage);
-    connect(m_clientManager.get(), &ClientManager::connectedToServer, this, &NetworkController::sendOffConnectionInfo);
+    connect(m_clientManager.get(), &ClientManager::connectedToServer, this,
+            [this]()
+            {
+                if(m_gameCtrl.isNull())
+                    return;
+
+                auto playerCtrl= m_gameCtrl->playerController();
+                if(nullptr == playerCtrl)
+                    return;
+                auto local= playerCtrl->localPlayer();
+                if(!local)
+                    return;
+
+                emit sendOffConnectionInfo(local->uuid(), local->name(), serverPassword());
+            });
     connect(m_clientManager.get(), &ClientManager::gameMasterStatusChanged, this, &NetworkController::isGMChanged);
     connect(m_clientManager.get(), &ClientManager::moveToAnotherChannel, this, &NetworkController::tableChanged);
     connect(m_countDown.get(), &CountDownObject::triggered, this, &NetworkController::startServer);
@@ -300,7 +313,7 @@ void NetworkController::startServer()
             [this](const QString& ip)
             {
                 m_ipv4Address= ip;
-                emit ipv4Changed();
+                qCInfo(NetworkCat) << tr("IP Address changed (v4): %1").arg(ip);
             });
     m_ipChecker->startCheck();
 
@@ -437,17 +450,6 @@ void NetworkController::setGameController(GameController* game)
     m_prefs= pref;
 }
 
-void NetworkController::sendOffConnectionInfo()
-{
-    if(m_gameCtrl.isNull())
-        return;
-
-    auto playerCtrl= m_gameCtrl->playerController();
-    if(nullptr == playerCtrl)
-        return;
-    PlayerMessageHelper::sendOffConnectionInfo(playerCtrl->localPlayer(), serverPassword());
-}
-
 void NetworkController::setLastError(const QString& error)
 {
     if(error == m_lastError)
@@ -463,80 +465,6 @@ void NetworkController::closeServer()
         return;
 
     QMetaObject::invokeMethod(m_server.get(), &RServer::close, Qt::QueuedConnection);
-}
-
-void NetworkController::saveData()
-{
-    SettingsHelper::writeConnectionProfileModel(m_profileModel.get());
-}
-
-void NetworkController::sendOffLoginAdmin(const QString& password)
-{
-    auto pwA
-        = password.isEmpty() ? QByteArray() : QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Sha3_512);
-
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AdminPassword);
-    msg.byteArray32(pwA);
-    msg.sendToServer();
-}
-
-void NetworkController::lockChannel(const QString& uuid, NetMsg::Action action)
-{
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, action);
-    msg.string8(uuid);
-    msg.sendToServer();
-}
-
-void NetworkController::banUser(const QString& uuid, const QString& playerId)
-{
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::BanUser);
-    msg.string8(uuid);
-    msg.string8(playerId);
-    msg.sendToServer();
-}
-
-void NetworkController::kickUser(const QString& uuid, const QString& playerId)
-{
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::Kicked);
-    msg.string8(uuid);
-    msg.string8(playerId);
-    msg.sendToServer();
-}
-
-void NetworkController::addChannel(const QString& parentId)
-{
-    m_channelModel->addChannel(QString(), tr("New channel"), QString(), QByteArray(), parentId);
-}
-
-void NetworkController::resetChannel(const QString& channelId)
-{
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::ResetChannel);
-    msg.string8(channelId);
-    msg.sendToServer();
-}
-
-void NetworkController::deleteChannel(const QString& channelId)
-{
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::DeleteChannel);
-    msg.string8(channelId);
-    msg.sendToServer();
-}
-
-void NetworkController::definePasswordOnChannel(const QString& channelId, const QByteArray& password)
-{
-    if(password.isEmpty())
-    {
-        NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::ResetChannelPassword);
-        msg.string8(channelId);
-        msg.sendToServer();
-        return;
-    }
-
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::ChannelPassword);
-    msg.string8(channelId);
-
-    msg.byteArray32(password);
-    msg.sendToServer();
 }
 
 int NetworkController::selectedProfileIndex() const
@@ -572,4 +500,9 @@ void NetworkController::setGroups(NetworkController::Groups group)
         return;
     m_currentGroups= group;
     emit groupsChanged();
+}
+
+QString NetworkController::localId() const
+{
+    return m_gameCtrl ? m_gameCtrl->localPlayerId() : QString();
 }

@@ -49,7 +49,7 @@ ChannelListPanel::ChannelListPanel(PreferencesManager* preferences, NetworkContr
     connect(m_kick, &QAction::triggered, this, &ChannelListPanel::kickUser);
     connect(m_ban, &QAction::triggered, this, &ChannelListPanel::banUser);
     connect(m_edit, &QAction::triggered, this, &ChannelListPanel::editChannel);
-    connect(m_addChannel, &QAction::triggered, m_ctrl, [this]() { m_ctrl->addChannel(); });
+    connect(m_addChannel, &QAction::triggered, m_ctrl, [this]() { emit m_ctrl->addChannel(QString()); });
     connect(m_addSubchannel, &QAction::triggered, m_ctrl,
             [this]()
             {
@@ -57,7 +57,7 @@ ChannelListPanel::ChannelListPanel(PreferencesManager* preferences, NetworkContr
                 if(!parent)
                     return;
 
-                m_ctrl->addChannel(parent->uuid());
+                emit m_ctrl->addChannel(parent->uuid());
             });
     connect(m_deleteChannel, &QAction::triggered, this, &ChannelListPanel::deleteChannel);
     connect(m_lock, &QAction::triggered, this, &ChannelListPanel::lockChannel);
@@ -88,6 +88,7 @@ void ChannelListPanel::showCustomMenu(QPoint pos)
     bool isGmChannel= false;
     bool isCurrentChannel= false;
     bool isOwnUser= false;
+    auto localId= m_ctrl->localId();
 
     m_index= ui->m_channelView->indexAt(pos);
 
@@ -101,7 +102,7 @@ void ChannelListPanel::showCustomMenu(QPoint pos)
         if(dataItem->isLeaf())
         {
             state= OnUser;
-            isOwnUser= (m_localPlayerId == dataItem->uuid());
+            isOwnUser= (localId == dataItem->uuid());
         }
         else
         {
@@ -112,7 +113,7 @@ void ChannelListPanel::showCustomMenu(QPoint pos)
             {
                 /*if(!channel->password().isEmpty())
                     hasPassword= true;*/
-                auto child= channel->getChildById(m_localPlayerId);
+                auto child= channel->getChildById(localId);
                 if(child != nullptr)
                 {
                     isCurrentChannel= true;
@@ -261,15 +262,8 @@ void ChannelListPanel::editChannel()
     auto chan= getChannel(m_index);
     if(!chan)
         return;
-    bool rightToEdit= m_ctrl->isGM();
 
-    if(!rightToEdit && m_ctrl->isGM())
-    {
-        if(nullptr != chan->getChildById(m_localPlayerId))
-            rightToEdit= true;
-    }
-
-    if(rightToEdit)
+    if(m_ctrl->isAdmin())
     {
         ui->m_channelView->edit(m_index);
     }
@@ -283,11 +277,6 @@ QString ChannelListPanel::serverName() const
 void ChannelListPanel::setServerName(const QString& serverName)
 {
     m_serverName= serverName;
-}
-
-void ChannelListPanel::setLocalPlayerId(const QString& id)
-{
-    m_localPlayerId= id;
 }
 
 void ChannelListPanel::resetChannel()
@@ -379,15 +368,9 @@ void ChannelListPanel::joinChannel()
                 .toUtf8();
 
     QString id= item->uuid();
-    if(!id.isEmpty())
-    {
-        NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::JoinChannel);
-        msg.string8(id);
-        msg.string8(m_localPlayerId);
-        auto pwA= QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
-        msg.byteArray32(pwA);
-        msg.sendToServer();
-    }
+    auto pwA= QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
+
+    m_ctrl->joinChannel(m_ctrl->localId(), item->uuid(), pwA);
 }
 
 void ChannelListPanel::cleanUp()

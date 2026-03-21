@@ -21,18 +21,16 @@
  *************************************************************************/
 
 #include <QDebug>
-#include <QLoggingCategory>
 #include <QPalette>
 
 #include "model/playermodel.h"
 
+#include "common/logcategory.h"
 #include "data/character.h"
 #include "data/person.h"
 #include "data/player.h"
 #include "network/networkmessagewriter.h"
 #include "utils/iohelper.h"
-
-QLoggingCategory rUser("rolisteam.user");
 
 template <typename T>
 void convertVariantToType(const T& val, NetworkMessageWriter& msg)
@@ -481,7 +479,7 @@ void PlayerModel::addPlayer(Player* player)
 
     if(it != m_players.end())
     {
-        qWarning() << tr("Duplicated player or uuid") << player->name();
+        qCWarning(NetworkCat) << tr("Duplicated player or uuid") << player->name();
         return;
     }
 
@@ -496,7 +494,7 @@ void PlayerModel::addPlayer(Player* player)
     m_players.push_back(std::unique_ptr<Player>(player));
     endInsertRows();
 
-    qCInfo(rUser) << QString("Player %1 just arrived").arg(player->name());
+    qCInfo(NetworkCat) << QString("Player %1 just arrived").arg(player->name());
     emit playerJoin(player);
 }
 
@@ -562,7 +560,7 @@ void PlayerModel::removePlayer(Player* player)
         }*/
 
     auto index= static_cast<int>(std::distance(m_players.begin(), itPlayer));
-    qCInfo(rUser) << QString("Player %1 left").arg(player->name());
+    qCInfo(NetworkCat) << QString("Player %1 left").arg(player->name());
 
     emit playerLeft(player);
 

@@ -27,8 +27,10 @@ private:
 class NETWORK_EXPORT ChannelModel : public QAbstractItemModel
 {
     Q_OBJECT
+    Q_PROPERTY(bool isServer READ isServer CONSTANT)
+    Q_PROPERTY(bool admin READ admin WRITE setAdmin NOTIFY adminChanged FINAL)
 public:
-    ChannelModel();
+    ChannelModel(bool isServer= false);
     ~ChannelModel();
 
     virtual int rowCount(const QModelIndex& parent) const;
@@ -46,6 +48,8 @@ public:
     void readSettings();
     void writeSettings();
 
+    bool isServer() const;
+
     bool addConnectionToDefaultChannel(ServerConnection* client);
     Qt::ItemFlags flags(const QModelIndex& index) const;
     bool hasChildren(const QModelIndex& parent) const;
@@ -55,7 +59,6 @@ public:
     TreeItem* getItemById(QString id) const;
     ServerConnection* getServerConnectionById(QString id) const;
 
-    bool isAdmin(const QString& id) const;
     bool isGM(const QString& id, const QString& chanId) const;
 
     QModelIndex channelToIndex(Channel* channel);
@@ -70,16 +73,22 @@ public:
 
     void cleanUp();
     void emptyChannelMemory();
-    void renameChannel(const QString& senderId, const QString& id, const QString& value);
+    void renameChannel(const QString& id, const QString& value);
     bool moveClient(Channel* origin, const QString& id, Channel* dest);
 
     const QList<QPointer<TreeItem>>& modelData();
     void resetData(QList<TreeItem*> data);
+    bool admin() const;
+    void setAdmin(bool newAdmin);
+
 signals:
     void totalSizeChanged(quint64);
     void localPlayerGMChanged(QString id);
     void modelChanged();
     void channelNameChanged(QString id, QString name);
+    void adminChanged();
+    void userLeftChannel(const QString& channel, const QString& userId);
+    void userHasJoinedChannel(const QString& id, const QString& userId);
 
 public slots:
     void setChannelMemorySize(Channel* chan, quint64);
@@ -87,7 +96,6 @@ public slots:
 protected slots:
     QModelIndex addChannelToIndex(Channel* channel, const QModelIndex& parent);
     bool addChannelToChannel(Channel* child, Channel* parent);
-    void sendOffChannelInfo(Channel* chan);
 
 protected:
     bool moveMediaItem(QList<ServerConnection*> items, const QModelIndex& parentToBe, int row,
@@ -106,6 +114,7 @@ private:
     QString m_localPlayerId;
     bool m_admin= false;
     bool m_shield= false;
+    bool m_server= false;
 };
 
 #endif // CHANNELMODEL_H

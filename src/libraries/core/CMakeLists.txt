@@ -281,6 +281,7 @@ set(HEADERS
   ${inc}/updater/vmapitem/textcontrollerupdater.h
   ${inc}/updater/vmapitem/vmapitemcontrollerupdater.h
   ${inc}/updater/controller/dicephysicupdater.h
+  ${inc}/updater/controller/networkupdater.h
   ${inc}/updater/vmapitem/sightupdater.h
   ${inc}/utils/insertionsortedmap.h
   ${inc}/utils/countdownobject.h
@@ -296,7 +297,8 @@ set(HEADERS
   ${inc}/worker/characterfinder.h
   ${inc}/controller/applicationcontroller.h
   ${inc}/worker/mediahelper.h
-  ${inc}/worker/campaignfinder.h)
+  ${inc}/worker/campaignfinder.h
+  )
 
 
 set(SOURCES
@@ -407,6 +409,7 @@ set(SOURCES
   src/updater/controller/audioplayerupdater.cpp
   src/updater/controller/dicephysicupdater.cpp
   src/updater/controller/playerupdater.cpp
+  src/updater/controller/networkupdater.cpp
   src/updater/media/campaignupdater.cpp
   src/updater/media/charactersheetupdater.cpp
   src/updater/media/genericupdater.cpp

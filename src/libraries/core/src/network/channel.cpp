@@ -20,7 +20,9 @@
  *************************************************************************/
 
 #include "network/channel.h"
+#include "common/logcategory.h"
 #include "network/serverconnection.h"
+#include "worker/playermessagehelper.h"
 
 Channel::Channel(QString str)
 {
@@ -169,7 +171,7 @@ int Channel::addChild(TreeItem* item)
 
     auto result= m_child.size();
 
-    if(item->isLeaf())
+    if(item->isLeaf()) // is User
     {
         QPointer<ServerConnection> tcp= dynamic_cast<ServerConnection*>(item);
         QPointer<TreeItem> itemp= item;
@@ -185,7 +187,7 @@ int Channel::addChild(TreeItem* item)
                     m_child.removeAll(itemp);
                     if(m_child.isEmpty())
                         return;
-                    qInfo() << QStringLiteral("Client left from channel");
+                    qCInfo(NetworkCat) << QStringLiteral("Client left from channel");
                     removeClient(tcp);
                 });
 
@@ -197,8 +199,9 @@ int Channel::addChild(TreeItem* item)
                 setCurrentGM(tcp);
             sendOffGmStatus(tcp);
         }
+        emit userHasJoinedChannel(uuid(), item->uuid());
     }
-    else
+    else // channel
     {
         auto chan= dynamic_cast<Channel*>(item);
         if(nullptr == chan)
@@ -249,12 +252,12 @@ void Channel::updateNewClient(ServerConnection* newComer)
             continue;
 
         NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
-        tcpConnection->fill(msg);
+        PlayerMessageHelper::writePlayerIntoMessage(*msg, tcpConnection->player());
         QMetaObject::invokeMethod(newComer, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
                                   Q_ARG(bool, true));
 
         NetworkMessageWriter* msg2= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
-        newComer->fill(msg2);
+        PlayerMessageHelper::writePlayerIntoMessage(*msg2, newComer->player());
         QMetaObject::invokeMethod(tcpConnection, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg2),
                                   Q_ARG(bool, true));
     }
@@ -379,12 +382,15 @@ bool Channel::removeClient(ServerConnection* client)
     if(!client)
         return false;
 
+    auto id= client->uuid();
     disconnect(client);
 
-    // notify all remaining chan member to remove former player
-    NetworkMessageWriter* message= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
-    message->string8(client->playerId());
-    sendMessage(message, nullptr, false);
+    emit userLeftChannel(uuid(), id);
+
+    auto removed= m_child.removeIf([id](const QPointer<TreeItem>& item) { return id == item->uuid(); });
+
+    if(removed == 0)
+        return false;
 
     if(hasNoClient())
     {
@@ -407,6 +413,8 @@ void Channel::clearData()
 
 bool Channel::removeChild(TreeItem* itm)
 {
+    if(!itm)
+        return false;
     if(itm->isLeaf())
     {
         return removeClient(static_cast<ServerConnection*>(itm));

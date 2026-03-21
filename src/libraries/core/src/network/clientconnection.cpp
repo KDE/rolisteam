@@ -79,7 +79,7 @@ bool ClientConnection::connected() const
 {
     return m_connected;
 }
-
+#include <QThread>
 void ClientConnection::sendData(char* data, qint64 size)
 {
     if(!m_connected)
@@ -110,7 +110,6 @@ void ClientConnection::sendData(char* data, qint64 size)
              << "this thread" << thread();
 #endif
 
-    // qDebug() << "received data:"<<size;
     auto t= m_socketTcp->write(data, size);
 
     if(t < 0)
@@ -121,7 +120,6 @@ void ClientConnection::sendData(char* data, qint64 size)
 
 void ClientConnection::sendMessage(const NetworkMessage* msg)
 {
-    qDebug() << "[Admin] sendmessage:" << msg->category() << msg->action() << this->thread();
     if(!m_connected)
         return;
 

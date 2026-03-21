@@ -35,7 +35,7 @@ class Channel;
 class NETWORK_EXPORT PlayerMessageHelper
 {
 public:
-    static void sendOffConnectionInfo(Player* player, const QByteArray& password);
+    static void sendOffConnectionInfo(const QString& playerId, const QString& playerName, const QByteArray& password);
     static void writePlayerIntoMessage(NetworkMessageWriter& msg, Player* player);
     static void writeCharacterIntoMessage(NetworkMessageWriter& msg, Character* character);
     static void writeVisionIntoMessage(NetworkMessageWriter& msg, CharacterVision* vision);
@@ -45,7 +45,11 @@ public:
     static Character* readCharacter(NetworkMessageReader& msg, QString& parentId);
 
     static QJsonObject readChannelInMsg(NetworkMessageReader& msg);
-    static void writeChannelInMsg(NetworkMessageWriter& msg, Channel* chan);
+    static void writeChannelInMsg(NetworkMessageWriter& msg, const QString& id, const QString& name,
+                                  const QString& desc);
+
+    static void fetchUserLeftChannelMsg(NetworkMessageWriter& msg, const QString& channelId, const QString& userId,
+                                        const QByteArray& password);
 };
 
 #endif // PLAYERMESSAGEHELPER_H

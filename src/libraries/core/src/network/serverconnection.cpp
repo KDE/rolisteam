@@ -240,6 +240,11 @@ QString ServerConnection::playerName() const
     return {};
 }
 
+Player* ServerConnection::player() const
+{
+    return m_player.get();
+}
+
 void ServerConnection::setInfoPlayer(NetworkMessageReader* msg)
 {
     if(nullptr == msg && nullptr == m_player)
@@ -251,15 +256,6 @@ void ServerConnection::setInfoPlayer(NetworkMessageReader* msg)
         setUuid(m_player->uuid());
         m_knownUser= true;
         emit playerInfoDefined();
-    }
-}
-
-void ServerConnection::fill(NetworkMessageWriter* msg)
-{
-    if(nullptr != m_player)
-    {
-        // m_player->fill(*msg);
-        PlayerMessageHelper::writePlayerIntoMessage(*msg, m_player.get());
     }
 }
 

@@ -113,6 +113,8 @@ signals:
     void lockedChanged();
     void currentGMChanged();
     void descriptionChanged();
+    void userLeftChannel(const QString& id, const QString& userId);
+    void userHasJoinedChannel(const QString& id, const QString& userId);
 
 protected:
     bool hasNoClient();

@@ -587,11 +587,11 @@ void TestNetwork::playerMessageHelper()
     player.setUuid(Helper::randomString());
 
     auto pw= Helper::randomData();
-    PlayerMessageHelper::sendOffConnectionInfo(&player, pw);
+    PlayerMessageHelper::sendOffConnectionInfo(player.uuid(), player.name(), pw);
 
     auto msgData= sender.messageData().first();
 
-    PlayerMessageHelper::sendOffConnectionInfo(nullptr, pw);
+    PlayerMessageHelper::sendOffConnectionInfo(QString(), QString(), pw);
 
     {
         NetworkMessageReader reader;

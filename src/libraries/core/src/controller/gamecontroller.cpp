@@ -32,6 +32,7 @@
 #include "services/tipchecker.h"
 #include "services/updatechecker.h"
 #include "updater/controller/dicephysicupdater.h"
+#include "updater/controller/networkupdater.h"
 #include "utils/iohelper.h"
 #include "worker/autosavecontroller.h"
 #include "worker/campaignfinder.h"
@@ -63,6 +64,7 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
     , m_autoSaveCtrl(new AutoSaveController(m_preferences.get()))
 {
     new DicePhysicUpdater(m_dicePhysicController.get(), this);
+    new NetworkUpdater(m_networkCtrl.get(), this);
     CampaignFinder::setManager(m_campaignManager.get());
     m_preferences->readSettings();
     postSettingInit();

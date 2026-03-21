@@ -1,5 +1,6 @@
 #include "network/channelmodel.h"
 
+#include "common/logcategory.h"
 #include "network/serverconnection.h"
 #include "network/treeitem.h"
 #include "worker/playermessagehelper.h"
@@ -60,7 +61,7 @@ bool ClientMimeData::hasFormat(const QString& mimeType) const
 /// ChannelModel
 /////////////////////////////////////
 
-ChannelModel::ChannelModel() {}
+ChannelModel::ChannelModel(bool isServer) : m_server(isServer) {}
 
 ChannelModel::~ChannelModel()
 {
@@ -128,7 +129,7 @@ QVariant ChannelModel::data(const QModelIndex& index, int role) const
                 auto channel= dynamic_cast<Channel*>(tmp);
                 if(nullptr == channel)
                     return {};
-                if(isAdmin(m_localPlayerId) || isGM(m_localPlayerId, channel->uuid()))
+                if(admin() || isGM(m_localPlayerId, channel->uuid()))
                 {
                     auto size= channel->memorySize();
                     auto pair= convert(size);
@@ -180,7 +181,7 @@ QVariant ChannelModel::data(const QModelIndex& index, int role) const
 
 bool ChannelModel::setData(const QModelIndex& index, const QVariant& value, int)
 {
-    bool rightToSetName= isAdmin(m_localPlayerId);
+    bool rightToSetName= admin();
     if((!rightToSetName && !localIsGM()) || !index.isValid())
         return false;
 
@@ -204,7 +205,7 @@ bool ChannelModel::setData(const QModelIndex& index, const QVariant& value, int)
     if(rightToSetName)
     {
         tmp->setName(value.toString());
-        emit channelNameChanged(chan->name(), chan->uuid());
+        emit channelNameChanged(chan->uuid(), chan->name());
         return true;
     }
     return false;
@@ -259,6 +260,11 @@ int ChannelModel::columnCount(const QModelIndex&) const
 QString ChannelModel::addChannel(const QString& id, const QString& name, const QString& description,
                                  const QByteArray& password, const QString& parentId)
 {
+    auto item= getItemById(id);
+
+    if(item)
+        return {}; // already in the model
+
     Channel* chan= new Channel(name);
     if(!id.isEmpty())
         chan->setUuid(id);
@@ -277,8 +283,6 @@ QString ChannelModel::addChannel(const QString& id, const QString& name, const Q
         if(item)
             addChannelToChannel(chan, item);
     }
-
-    sendOffChannelInfo(chan);
 
     return chan->uuid();
 }
@@ -319,29 +323,8 @@ bool ChannelModel::addChannelToChannel(Channel* child, Channel* parent)
     return result;
 }
 
-void ChannelModel::sendOffChannelInfo(Channel* chan)
+void ChannelModel::renameChannel(const QString& id, const QString& value)
 {
-    qDebug() << "[Admin] sendoffchannelInfo" << this->thread();
-    if(!chan)
-        return;
-    auto parent= chan->getParentItem();
-
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::AddChannel);
-    msg.string8(parent ? parent->uuid() : QString());
-    PlayerMessageHelper::writeChannelInMsg(msg, chan);
-    msg.sendToServer();
-}
-
-void ChannelModel::renameChannel(const QString& senderId, const QString& id, const QString& value)
-{
-    bool right= isAdmin(senderId);
-    if(!right)
-    {
-        right= isGM(senderId, id);
-    }
-    if(!right)
-        return;
-
     auto item= getItemById(id);
     if(nullptr == item)
         return;
@@ -357,6 +340,8 @@ void ChannelModel::appendChannel(Channel* channel)
     connect(channel, &Channel::itemChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::nameChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::uuidChanged, this, &ChannelModel::modelChanged);
+    connect(channel, &Channel::userLeftChannel, this, &ChannelModel::userLeftChannel);
+    connect(channel, &Channel::userHasJoinedChannel, this, &ChannelModel::userHasJoinedChannel);
 }
 
 QModelIndex ChannelModel::channelToIndex(Channel* channel)
@@ -395,19 +380,14 @@ Qt::ItemFlags ChannelModel::flags(const QModelIndex& index) const
 
     TreeItem* item= static_cast<TreeItem*>(index.internalPointer());
 
-    auto admin= isAdmin(m_localPlayerId);
-    if(admin && item->isLeaf())
-    {
-        return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsDragEnabled;
-    }
-    else if(admin && !item->isLeaf())
-    {
-        return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsDropEnabled;
-    }
-    else
-    {
-        return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
-    }
+    auto res= Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    if(admin() && item->isLeaf())
+        res|= Qt::ItemIsDragEnabled;
+
+    if(admin() && !item->isLeaf())
+        res|= Qt::ItemIsEditable;
+
+    return res;
 }
 bool ChannelModel::hasChildren(const QModelIndex& parent) const
 {
@@ -454,7 +434,7 @@ bool ChannelModel::moveMediaItem(QList<ServerConnection*> items, const QModelInd
 {
     Q_UNUSED(row)
     Q_UNUSED(formerPosition)
-    if(!isAdmin(m_localPlayerId))
+    if(!admin())
         return {};
 
     if(!parentToBe.isValid())
@@ -465,7 +445,6 @@ bool ChannelModel::moveMediaItem(QList<ServerConnection*> items, const QModelInd
 
     QByteArray pw;
 #ifdef QT_WIDGETS_LIB
-    qDebug() << "password:" << item->password().size() << item->password();
     if(!item->password().isEmpty())
     {
         pw= QInputDialog::getText(nullptr, tr("Channel Password"),
@@ -521,7 +500,7 @@ bool ChannelModel::addConnectionToDefaultChannel(ServerConnection* client)
 {
     if(m_defaultChannel.isEmpty())
     {
-        qDebug() << "call addConnectionToDefaultChannel while channel is empty";
+        qCWarning(NetworkCat) << "call addConnectionToDefaultChannel while channel is empty";
         if(!m_root.isEmpty())
         {
             auto item= m_root.at(0);
@@ -559,6 +538,11 @@ bool ChannelModel::addConnectionToChannel(QString chanId, ServerConnection* clie
         return true;
     }
     return false;
+}
+
+bool ChannelModel::isServer() const
+{
+    return m_server;
 }
 
 bool ChannelModel::moveClient(Channel* origin, const QString& id, Channel* dest)
@@ -609,14 +593,6 @@ void ChannelModel::kick(const QString& id, bool isAdmin, const QString& senderId
     }
 }
 
-bool ChannelModel::isAdmin(const QString& id) const
-{
-    auto player= getServerConnectionById(id);
-    if(nullptr == player)
-        return false;
-    return player->isAdmin();
-}
-
 bool ChannelModel::isGM(const QString& id, const QString& chanId) const
 {
     auto player= getServerConnectionById(id);
@@ -635,19 +611,18 @@ TreeItem* ChannelModel::getItemById(QString id) const
 {
     for(auto& item : m_root)
     {
-        if(nullptr != item)
+        if(!item)
+            continue;
+        if(item->uuid() == id)
         {
-            if(item->uuid() == id)
+            return item;
+        }
+        else
+        {
+            TreeItem* child= item->getChildById(id);
+            if(nullptr != child)
             {
-                return item;
-            }
-            else
-            {
-                TreeItem* child= item->getChildById(id);
-                if(nullptr != child)
-                {
-                    return child;
-                }
+                return child;
             }
         }
     }
@@ -736,4 +711,17 @@ bool ChannelModel::localIsGM() const
         return false;
 
     return local->isGM();
+}
+
+bool ChannelModel::admin() const
+{
+    return m_admin;
+}
+
+void ChannelModel::setAdmin(bool newAdmin)
+{
+    if(m_admin == newAdmin)
+        return;
+    m_admin= newAdmin;
+    emit adminChanged();
 }

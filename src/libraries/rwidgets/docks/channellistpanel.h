@@ -75,7 +75,6 @@ private:
 
     QModelIndex m_index;
     QString m_serverName;
-    QString m_localPlayerId;
 };
 
 #endif // CHANNELLISTPANEL_H

@@ -101,10 +101,9 @@ public:
     QString playerId() const;
     void setPlayerId(const QString& id);
     QString playerName() const;
+    Player* player() const;
 
     void setInfoPlayer(NetworkMessageReader* msg);
-    void fill(NetworkMessageWriter* msg);
-
     // void addPlayerFeature(QString uuid, QString name, quint8 version);
 
     bool isFullyDefined();

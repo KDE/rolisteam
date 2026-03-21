@@ -31,15 +31,13 @@
 #include "network/networkmessagereader.h"
 #include "network/networkmessagewriter.h"
 
-void PlayerMessageHelper::sendOffConnectionInfo(Player* player, const QByteArray& password)
+void PlayerMessageHelper::sendOffConnectionInfo(const QString& playerId, const QString& playerName,
+                                                const QByteArray& password)
 {
-    if(player == nullptr)
-        return;
-
     NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::ConnectionInfo);
     msg.byteArray32(password);
-    msg.string32(player->name());
-    msg.string32(player->uuid());
+    msg.string32(playerName);
+    msg.string32(playerId);
     msg.sendToServer();
 }
 
@@ -54,6 +52,7 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
 {
     if(nullptr == player)
         return;
+    qDebug() << "write player" << player->uuid();
 
     msg.string16(player->name());
     msg.string8(player->uuid());
@@ -74,7 +73,8 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
     // Characters
     msg.int32(static_cast<int>(characters.size()));
 
-    std::for_each(characters.begin(), characters.end(), [&msg](const std::unique_ptr<Character>& character)
+    std::for_each(characters.begin(), characters.end(),
+                  [&msg](const std::unique_ptr<Character>& character)
                   { writeCharacterIntoMessage(msg, character.get()); });
 
     /*QByteArray array;
@@ -236,9 +236,18 @@ QJsonObject PlayerMessageHelper::readChannelInMsg(NetworkMessageReader& msg)
     return res;
 }
 
-void PlayerMessageHelper::writeChannelInMsg(NetworkMessageWriter& msg, Channel* chan)
+void PlayerMessageHelper::writeChannelInMsg(NetworkMessageWriter& msg, const QString& id, const QString& name,
+                                            const QString& desc)
 {
-    msg.string8(chan->uuid());
-    msg.string32(chan->name());
-    msg.string32(chan->description());
+    msg.string8(id);
+    msg.string32(name);
+    msg.string32(desc);
+}
+
+void PlayerMessageHelper::fetchUserLeftChannelMsg(NetworkMessageWriter& msg, const QString& channelId,
+                                                  const QString& userId, const QByteArray& password)
+{
+    msg.string8(channelId);
+    msg.string32(userId);
+    msg.byteArray32(password);
 }

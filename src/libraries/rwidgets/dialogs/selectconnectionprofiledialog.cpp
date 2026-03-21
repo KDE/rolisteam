@@ -151,6 +151,7 @@ SelectConnectionProfileDialog::SelectConnectionProfileDialog(GameController* ctr
                 ui->m_playerAvatarAct->setIcon(QIcon(IOHelper::dataToPixmap(data)));
             });
 
+    connect(m_ctrl.get(), &SelectConnProfileController::startConnect, networkCtrl, &NetworkController::saveData);
     connect(m_ctrl.get(), &SelectConnProfileController::startConnect, networkCtrl, &NetworkController::startConnection);
     connect(m_ctrl.get(), &SelectConnProfileController::stopConnecting, networkCtrl,
             &NetworkController::stopConnecting);

@@ -23,7 +23,7 @@ void sendEventToClient(ServerConnection* client, ServerConnection::ConnectionEve
 }
 
 ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& parameters, QObject* parent)
-    : QObject(parent), m_model(new ChannelModel), m_parameters(parameters)
+    : QObject(parent), m_model(new ChannelModel(true)), m_parameters(parameters)
 {
     int chCount= parameters.value(network::configkeys::channelCount, 1).toInt();
     int count= m_model->rowCount(QModelIndex());
@@ -46,6 +46,39 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
     m_tcpConnectionAccepter.reset(new IpBanAccepter());
     m_tcpConnectionAccepter->setNext(new IpRangeAccepter());
     m_adminAccepter.reset(new PasswordAccepter(PasswordAccepter::Admin));
+
+    connect(
+        m_model.get(), &ChannelModel::userLeftChannel, this,
+        [this](const QString& channelId, const QString& userId)
+        {
+            qCDebug(ServerLogCat) << "userLeftChannel" << userId;
+            auto channel= dynamic_cast<Channel*>(m_model->getItemById(channelId));
+            if(!channel)
+                return;
+
+            auto msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
+            msg->string8(userId);
+            channel->sendToAll(msg, nullptr, false);
+
+            QTimer::singleShot(10000, [msg]() { delete msg; });
+        },
+        Qt::QueuedConnection);
+
+    connect(
+        m_model.get(), &ChannelModel::userHasJoinedChannel, this,
+        [this](const QString& channelId, const QString& userId)
+        {
+            qCDebug(ServerLogCat) << "userHasJoinedChannel" << userId;
+            auto channel= dynamic_cast<Channel*>(m_model->getItemById(channelId));
+            auto conn= dynamic_cast<ServerConnection*>(m_model->getItemById(userId));
+            if(!channel || !conn)
+                return;
+
+            qDebug() << "[join]: fully: " << conn->isFullyDefined();
+            if(conn->isFullyDefined())
+                channel->updateNewClient(conn);
+        },
+        Qt::QueuedConnection);
 }
 
 ServerConnectionManager::~ServerConnectionManager()
@@ -308,7 +341,7 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
         {
             QString idChan= msg->string8();
             QString newName= msg->string32();
-            m_model->renameChannel(sourceId, idChan, newName);
+            m_model->renameChannel(idChan, newName);
         }
     }
     break;
@@ -318,21 +351,22 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
         {
             QString idparent= msg->string8();
             auto json= PlayerMessageHelper::readChannelInMsg(*msg);
-            m_model->addChannel(json["id"].toString(), json["name"].toString(), json["desc"].toString(), QByteArray(),
-                                idparent);
+            QMetaObject::invokeMethod(m_model.get(), &ChannelModel::addChannel, Qt::QueuedConnection,
+                                      json["id"].toString(), json["name"].toString(), json["desc"].toString(),
+                                      QByteArray(), idparent);
         }
     }
     break;
     case NetMsg::JoinChannel:
     {
-        QString id= msg->string8();
-        QString idClient= msg->string8();
-        TreeItem* item= m_model->getItemById(id);
-        Channel* dest= static_cast<Channel*>(item);
+        QString channelId= msg->string8();
+        QString userId= msg->string8();
+        TreeItem* item= m_model->getItemById(channelId);
+        Channel* dest= dynamic_cast<Channel*>(item);
         if(nullptr != dest && !dest->locked())
         {
-            m_model->moveClient(chan, idClient, dest);
-            sendEventToClient(tcp, ServerConnection::ChannelChanged);
+            QMetaObject::invokeMethod(m_model.get(), &ChannelModel::moveClient, Qt::QueuedConnection, chan, userId,
+                                      dest);
         }
     }
     break;
@@ -446,12 +480,7 @@ void ServerConnectionManager::accept(qintptr handle, ServerConnection* connectio
             Qt::QueuedConnection);
 
     connect(
-        connection, &ServerConnection::itemChanged, this,
-        []()
-        {
-            qCDebug(ServerLogCat) << "connection ItemChanged";
-            // sendOffModelToAll();
-        },
+        connection, &ServerConnection::itemChanged, this, []() { qCDebug(ServerLogCat) << "connection ItemChanged"; },
         Qt::QueuedConnection);
 
     connect(connection, &ServerConnection::checkServerAcceptClient, this, &ServerConnectionManager::serverAcceptClient,

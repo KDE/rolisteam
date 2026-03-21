@@ -227,8 +227,6 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
             });
     connect(m_gameController, &GameController::updateAvailableChanged, this, &MainWindow::showUpdateNotification);
     connect(m_gameController, &GameController::tipOfDayChanged, this, &MainWindow::showTipChecker);
-    connect(m_gameController, &GameController::localPlayerIdChanged, this,
-            [this]() { m_roomPanel->setLocalPlayerId(m_gameController->localPlayerId()); });
 
     m_ui->setupUi(this);
 

@@ -74,6 +74,7 @@ enum Action
     JoinChannel,
     DeleteChannel,
     AddChannel,
+    channelAdded,
     ChannelPassword,
     ResetChannelPassword,
     BanUser,

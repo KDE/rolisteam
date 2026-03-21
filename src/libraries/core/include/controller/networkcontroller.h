@@ -108,6 +108,8 @@ public:
     NetworkController::Groups groups() const;
     void setGroups(NetworkController::Groups group);
 
+    QString localId() const;
+
 signals:
     void isGMChanged(bool);
     void connectedChanged(bool);
@@ -118,13 +120,23 @@ signals:
     void portChanged();
     void serverPasswordChanged();
     void adminPasswordChanged();
-    void ipv4Changed();
     void downloadingData(quint64 readData, quint64 size);
     void tableChanged();
-    void authentificationFail();
     void selectedProfileIndexChanged();
     void groupsChanged();
     void lastErrorChanged();
+    void ipv4Changed();
+    void addChannel(const QString& parentId);
+    void sendOffLoginAdmin(const QString& password);
+    void lockChannel(const QString& uuid, NetMsg::Action action);
+    void banUser(const QString& uuid, const QString& playerId);
+    void kickUser(const QString& uuid, const QString& playerId);
+    void resetChannel(const QString& channelId);
+    void deleteChannel(const QString& channelId);
+    void sendOffConnectionInfo(const QString& id, const QString& name, const QByteArray& password);
+    void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
+    void saveData();
+    void joinChannel(const QString& userId, const QString& channelId, const QByteArray& password);
 
 public slots:
     // network
@@ -136,18 +148,9 @@ public slots:
     void setConnecting(bool b);
     void removeProfile(int pos);
     void closeServer();
-    void saveData();
 
-    void sendOffLoginAdmin(const QString& password);
-    void lockChannel(const QString& uuid, NetMsg::Action action);
-    void banUser(const QString& uuid, const QString& playerId);
-    void kickUser(const QString& uuid, const QString& playerId);
-    void addChannel(const QString& parentId= QString());
-    void resetChannel(const QString& channelId);
-    void deleteChannel(const QString& channelId);
-    void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
 private slots:
-    void sendOffConnectionInfo();
+
     void runUpnpNat();
     void setLastError(const QString& error);
     void dispatchMessage(QByteArray array);
@@ -157,7 +160,6 @@ private:
     void startClient();
     void stopClient();
     void readIpAddress();
-    void sendOffChannelInfo(Channel* chan);
 
 private:
     std::unique_ptr<ClientManager> m_clientManager;
