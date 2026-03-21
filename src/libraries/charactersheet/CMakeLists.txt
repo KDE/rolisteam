@@ -123,7 +123,7 @@ set(qml_sources ${CMAKE_CURRENT_SOURCE_DIR}/qml/Rolisteam/CheckBoxField.qml
   ${CMAKE_CURRENT_SOURCE_DIR}/qml/Rolisteam/SliderField.qml
 )
 
-set(documentation Readme.md)
+set(documentation)
 set(charactersheet_QRC ${CMAKE_CURRENT_SOURCE_DIR}/qml/charactersheet.qrc)
 
 

@@ -194,6 +194,10 @@ QVariant PlayerModel::data(const QModelIndex& index, int role) const
                      .arg(character->getDistancePerTurn())
                      .arg(character->isNpc() ? tr("NPC") : tr("PC"));
         }
+        else
+        {
+            var= player->uuid();
+        }
         break;
     }
     case PlayerModel::ColorRole:

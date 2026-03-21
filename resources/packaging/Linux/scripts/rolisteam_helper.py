@@ -24,9 +24,10 @@ QT_TRANSLATION="{}/translations".format(QT_ROOT)
 QT_QMAKE="{}/bin/qmake".format(QT_ROOT)
 
 
-def make_tarfile(source, destination):
+def make_tarfile(source, destination, name):
+    print("Tarfile creation: destination: {} - source: {}".format(destination, source))
     tar = tarfile.open(destination, "w:gz")
-    tar.add(source)
+    tar.add(source, arcname=name)
     tar.close()
 
 
@@ -55,16 +56,16 @@ def run_process(args, path):
     text=""
     for i in args:
         text = "{} {}".format(text, i)
-    
+
     print("")
     print(text)
     print("")
-    #result = 
+    #result =
     #print(result.stdout)
     #print(result.stderr)
     return  subprocess.run(args, capture_output=True, universal_newlines=True)#,cwd=path, shell=True, capture_output=True, universal_newlines=True
-    
-    
+
+
 
 def clone_repo(path,url_repo,name):
     print("Clone project")
@@ -124,7 +125,7 @@ def build_app(path, install_directory):
                  "-DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++",
                  "-DCMAKE_INSTALL_PREFIX:PATH={}".format(install_directory),
                  "-DCMAKE_PREFIX_PATH:PATH={}".format(QT_ROOT),"-S",path,"-B",build_directory],path)
-    
+
     print(result.stdout)
     print(result.stderr)
     print("before build: ",build_directory)
@@ -164,31 +165,31 @@ def clean_dir(path):
         "qml/QtQuick/Pdf/pdfquickplugin.debug",
         "libexec/qwebengine_convert_dict.debug",
         "libexec/QtWebEngineProcess.debug",
-        "lib/libQt6QmlAssetDownloader.a", 
-        "lib/libQt6ExampleIcons.a", 
-        "lib/libQt6FbSupport.a", 
-        "lib/libQt6KmsSupport.a", 
-        "lib/libQt6BundledEmbree.a", 
-        "lib/libQt6ExamplesAssetDownloader.a", 
-        "lib/libQt6JsonRpc.a", 
-        "lib/libQt6BundledPhysX.a", 
-        "lib/libQt6QmlTypeRegistrar.a", 
-        "lib/libQt6LanguageServer.a", 
-        "lib/libQt6QmlDebug.a", 
-        "lib/libQt6DeviceDiscoverySupport.a", 
-        "lib/libQt6QuickTestUtils.a", 
-        "lib/libQt6BundledLibpng.a", 
-        "lib/libQt6BundledResonanceAudio.a", 
-        "lib/libQt6QmlToolingSettings.a", 
-        "lib/libQt6InputSupport.a", 
-        "lib/libQt6FFmpegMediaPluginImpl.a", 
-        "lib/libQt6PacketProtocol.a", 
-        "lib/libQt6QuickControlsTestUtils.a", 
-        "lib/libQt6MultimediaTestLib.a", 
-        "lib/libQt6QmlLS.a", 
-        "lib/libQt6BundledLibjpeg.a", 
-        "lib/libQt6BundledOpenXR.a", 
-        "lib/libQt6QmlDom.a", 
+        "lib/libQt6QmlAssetDownloader.a",
+        "lib/libQt6ExampleIcons.a",
+        "lib/libQt6FbSupport.a",
+        "lib/libQt6KmsSupport.a",
+        "lib/libQt6BundledEmbree.a",
+        "lib/libQt6ExamplesAssetDownloader.a",
+        "lib/libQt6JsonRpc.a",
+        "lib/libQt6BundledPhysX.a",
+        "lib/libQt6QmlTypeRegistrar.a",
+        "lib/libQt6LanguageServer.a",
+        "lib/libQt6QmlDebug.a",
+        "lib/libQt6DeviceDiscoverySupport.a",
+        "lib/libQt6QuickTestUtils.a",
+        "lib/libQt6BundledLibpng.a",
+        "lib/libQt6BundledResonanceAudio.a",
+        "lib/libQt6QmlToolingSettings.a",
+        "lib/libQt6InputSupport.a",
+        "lib/libQt6FFmpegMediaPluginImpl.a",
+        "lib/libQt6PacketProtocol.a",
+        "lib/libQt6QuickControlsTestUtils.a",
+        "lib/libQt6MultimediaTestLib.a",
+        "lib/libQt6QmlLS.a",
+        "lib/libQt6BundledLibjpeg.a",
+        "lib/libQt6BundledOpenXR.a",
+        "lib/libQt6QmlDom.a",
         "qml/Assets/Downloader/libqmlassetdownloaderplugin.a",
 "libexec/cmake_automoc_parser",
 "libexec/ensure_pro_file.cmake",
@@ -310,7 +311,7 @@ def clean_dir(path):
     for file in list:
         full_path = os.path.join(path, file)
         if os.path.exists(full_path):
-            os.remove(full_path) 
+            os.remove(full_path)
 
     list_folder=["lib/cmake", "include", "lib/pkgconfig", "qml/QtQuick3D/Particles3D",
                  "plugins/assetimporters",
@@ -347,7 +348,7 @@ def clean_dir(path):
     for folder in list_folder:
         full_path = os.path.join(path, folder)
         print("remove dir: {}".format(full_path))
-        shutil.rmtree(full_path)
+        shutil.rmtree(full_path, ignore_errors=True)
 
 
 def build_linux_binary(path, version, app_name):
@@ -360,32 +361,32 @@ def build_linux_binary(path, version, app_name):
     copyAll(QT_LIB, install_directory)
     copyAll(QT_PLUGINS, install_directory)
     copyAll(QT_QML, install_directory)
-    copyAll(QT_LIBEXEC, install_directory) 
+    copyAll(QT_LIBEXEC, install_directory)
     copyAll(QT_RESOURCES, install_directory)
     copyAll(QT_BIN, install_directory)
     copyAll(QT_TRANSLATION, install_directory)
 
     print("# Remove useless files")
     clean_dir(install_directory)
-          
+
     launcher = os.path.join(install_directory,"launcher.sh")
     f = open(launcher, "w")
     f.write("""#!/bin/sh
 
-current_dir=`pwd`            
+current_dir=`pwd`
 export LD_LIBRARY_PATH="$current_dir/lib:$LD_LIBRARY_PATH"
 
 ./bin/rolisteam""")
     f.close()
     os.chmod(launcher, 0o744)
     r = datetime.datetime.now()
-    
+
     print("# Creation archive")
     archive_path = os.path.join(path,"{}_{}_{}.tar.gz".format(app_name, version, r.strftime("%Y%m%d_%H%M")),)
-    make_tarfile(install_directory, archive_path)
-    
+    make_tarfile(install_directory, archive_path, "{}_{}".format(app_name, version))
 
-    
+
+
 def build_tarball(path, version, app_name):
     pass
 
@@ -393,15 +394,15 @@ def build_tarball(path, version, app_name):
 def build_deb(path, version, app_name):
     dir_path = os.path.dirname(os.path.realpath(__file__))
     print("Build_deb:",dir_path, " path:",path)
-    
+
     #currentDir="{}-{}/".format(path, app_name)
     if app_name == "rolisteam":
         shutil.copy("{}/../rolisteam.desktop".format(dir_path), path)
     shutil.copytree("{}/ubuntu/debian".format(dir_path), "{}/debian".format(path))
     shutil.copy("{}/changelog".format(dir_path), path)
-    
+
     # moving to the temp dir
-    
+
     os.chdir(path)
 
     os.chdir("..")
@@ -483,6 +484,7 @@ def main():
             build_tarball(path, args.Version, name)
 
         if args.linux:
+            print("Archive Linux")
             build_linux_binary(path, args.Version, name)
 
         if args.deb:

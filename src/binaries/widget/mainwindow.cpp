@@ -1302,7 +1302,6 @@ void MainWindow::dropEvent(QDropEvent* event)
     if(data->hasImage())
     {
         auto img= qvariant_cast<QImage>(data->imageData());
-        qDebug() << img.isNull() << img;
 
         auto name= tr("Unknown");
         if(data->hasText())
@@ -1310,7 +1309,7 @@ void MainWindow::dropEvent(QDropEvent* event)
             name= data->text();
         }
 
-        if(!img.isNull())
+        if(!img.isNull() && m_gameController->playerController()->localPlayer())
         {
             m_gameController->openMedia(
                 {{Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
