@@ -109,7 +109,7 @@ public:
     LogController* logController() const;
     TipOfDay tipOfDay() const;
 
-    void clear();
+    void clear(bool withLocal= true);
 
     Dice3DController* dicePhysicController() const;
     void setDicePhysicController(Dice3DController* newDicePhysicController);

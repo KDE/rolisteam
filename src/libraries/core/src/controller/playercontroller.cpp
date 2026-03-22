@@ -46,9 +46,9 @@ PlayerController::PlayerController(NetworkController* network, QObject* parent)
 
 PlayerController::~PlayerController()= default;
 
-void PlayerController::clear()
+void PlayerController::clear(bool withLocal)
 {
-    m_model->clear();
+    m_model->clear(withLocal);
     resetLocalPlayer();
 }
 
@@ -57,7 +57,7 @@ void PlayerController::resetLocalPlayer()
     if(m_localPlayer)
         return;
 
-    m_localPlayer= new Player();// TODO FIX that should not be created like that.
+    m_localPlayer= new Player(); // TODO FIX that should not be created like that.
     connect(m_localPlayer, &Player::uuidChanged, this, &PlayerController::localPlayerIdChanged);
     connect(m_localPlayer, &Player::uuidChanged, m_model.get(), &PlayerModel::setLocalPlayerId);
 

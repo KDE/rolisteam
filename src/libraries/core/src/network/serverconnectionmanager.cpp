@@ -48,22 +48,6 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
     m_adminAccepter.reset(new PasswordAccepter(PasswordAccepter::Admin));
 
     connect(
-        m_model.get(), &ChannelModel::userLeftChannel, this,
-        [this](const QString& channelId, const QString& userId)
-        {
-            auto channel= dynamic_cast<Channel*>(m_model->getItemById(channelId));
-            if(!channel)
-                return;
-
-            auto msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
-            msg->string8(userId);
-            channel->sendToAll(msg, nullptr, false);
-
-            QTimer::singleShot(10000, [msg]() { delete msg; });
-        },
-        Qt::QueuedConnection);
-
-    connect(
         m_model.get(), &ChannelModel::userHasJoinedChannel, this,
         [this](const QString& channelId, const QString& userId)
         {

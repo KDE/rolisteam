@@ -68,7 +68,7 @@ public:
     QColor localColor() const;
 
     void setGameController(GameController*) override;
-    void clear();
+    void clear(bool withLocal= true);
 
 signals:
     void localPlayerChanged();

@@ -363,6 +363,9 @@ NetWorkReceiver::SendType NetworkController::processMessage(NetworkMessageReader
         qDebug() << "Authentification sucessed";
         m_clientManager->setAuthentificationStatus(true);
         break;
+    case NetMsg::ClearTable:
+        m_gameCtrl->clear(false);
+        break;
     case NetMsg::HeartbeatAsk:
     {
         NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::HeartbeatAnswer);

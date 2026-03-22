@@ -81,7 +81,7 @@ public:
     QHash<int, QByteArray> roleNames() const override;
 
 public slots:
-    void clear();
+    void clear(bool withLocal= true);
     void addPlayer(Player* player);
     void removePlayer(Player* player);
     void addCharacter(const QModelIndex& parent, Character* character, int pos= -1);

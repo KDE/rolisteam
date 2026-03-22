@@ -352,7 +352,6 @@ void ChannelListPanel::joinChannel()
     QString id= item->uuid();
     auto pwA= QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
 
-    qDebug() << m_ctrl->localId() << item->uuid();
     m_ctrl->joinChannel(m_ctrl->localId(), item->uuid(), pwA);
 }
 

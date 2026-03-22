@@ -192,10 +192,11 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
 }
 GameController::~GameController()= default;
 
-void GameController::clear()
+void GameController::clear(bool withLocal)
 {
-    m_playerController->clear();
+    m_playerController->clear(withLocal);
     m_undoStack->clear();
+    m_contentCtrl->clear();
 }
 
 void GameController::postSettingInit()

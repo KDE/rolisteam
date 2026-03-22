@@ -385,7 +385,9 @@ bool Channel::removeClient(ServerConnection* client)
     auto id= client->uuid();
     disconnect(client);
 
-    emit userLeftChannel(uuid(), id);
+    auto msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
+    msg->string8(id);
+    sendToAll(msg, client, false);
 
     auto removed= m_child.removeIf([id](const QPointer<TreeItem>& item) { return id == item->uuid(); });
 
@@ -523,6 +525,8 @@ void Channel::renamePlayer(const QString& id, const QString& name)
 
 void Channel::gameMasterHasChanged()
 {
+    if(!m_currentGm)
+        return;
     auto id= m_currentGm->uuid();
     auto now= QDateTime::currentDateTime();
     auto d= m_gmInfo.second.addDays(1);

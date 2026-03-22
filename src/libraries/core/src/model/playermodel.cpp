@@ -586,10 +586,23 @@ void PlayerModel::setGameMasterId(const QString& id)
     emit gameMasterIdChanged(m_gameMasterId);
 }
 
-void PlayerModel::clear()
+void PlayerModel::clear(bool withLocal)
 {
+    auto b= (m_localPlayerId == m_gameMasterId);
     beginResetModel();
-    m_players.clear();
+    if(withLocal)
+    {
+        m_players.clear();
+    }
+    else
+    {
+        m_players.erase(std::remove_if(std::begin(m_players), std::end(m_players),
+                                       [this](const std::unique_ptr<Player>& player)
+                                       { return player->uuid() != m_localPlayerId; }),
+                        std::end(m_players));
+    }
     endResetModel();
-    setGameMasterId("");
+
+    if(!b)
+        setGameMasterId("");
 }
