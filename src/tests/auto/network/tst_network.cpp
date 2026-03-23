@@ -474,6 +474,8 @@ void TestNetwork::messageHeaderTest_data()
                                "JoinChannel",
                                "DeleteChannel",
                                "AddChannel",
+                               "SetDefaultChannel",
+                               "channelAdded",
                                "ChannelPassword",
                                "ResetChannelPassword",
                                "BanUser",

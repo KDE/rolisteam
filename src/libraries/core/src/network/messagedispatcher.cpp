@@ -194,6 +194,12 @@ QString MessageDispatcher::act2String(NetworkMessageHeader* head)
         case NetMsg::UnlockChannel:
             str= QStringLiteral("UnlockChannel");
             break;
+        case NetMsg::channelAdded:
+            str= QStringLiteral("channelAdded");
+            break;
+        case NetMsg::SetDefaultChannel:
+            str= QStringLiteral("SetDefaultChannel");
+            break;
         case NetMsg::BanUser:
             str= QStringLiteral("BanUser");
             break;

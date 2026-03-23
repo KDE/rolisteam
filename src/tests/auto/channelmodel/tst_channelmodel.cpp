@@ -108,12 +108,13 @@ void TestChannelModel::removeTest()
 
 void TestChannelModel::moveTest()
 {
-    auto idC= m_model->addChannel("channel1", "channel1", "channel1", {}, "channel1");
-    auto idC2= m_model->addChannel("channel2", "channel2", "channel2", {}, "channel2");
+    auto idC= m_model->addChannel("channel1", "channel1", "channel1", {}, QString());
+    auto idC2= m_model->addChannel("channel2", "channel2", "channel2", {}, QString());
     QCOMPARE(m_model->rowCount(QModelIndex()), 2);
 
     ServerConnection client(nullptr, nullptr);
     client.setIsAdmin(true);
+    m_model->setAdmin(true);
     auto id= client.uuid();
     m_model->setLocalPlayerId(id);
     m_model->addConnectionToChannel(m_model->defaultChannelId(), &client);
