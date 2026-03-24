@@ -96,15 +96,29 @@ void ChannelListPanel::showCustomMenu(const QPoint& pos)
     TreeItem* dataItem= indexToPointer<TreeItem*>(m_index);
     auto channel= dynamic_cast<Channel*>(dataItem);
 
-    auto isOnChannel= channel;
-    auto isCurrentChannel= channel ? static_cast<bool>((channel->getClientById(localId))) : false;
-    auto isOnUser= dataItem && !channel ? static_cast<bool>(dataItem) : false;
-    auto isUserOnCurrentChannel= channel && dataItem ? (!channel->getClientById(dataItem->uuid())) : false;
+    auto isOnChannel= static_cast<bool>(channel);
+    auto isCurrentChannel= isOnChannel ? static_cast<bool>((channel->getClientById(localId))) : false;
+    auto isOnUser= dataItem && !isOnChannel ? static_cast<bool>(dataItem) : false;
+
+    auto isUserOnCurrentChannel= false;
+    {
+        auto model= m_ctrl->channelModel();
+        auto local= model->getItemById(localId);
+        if(local && dataItem)
+        {
+            auto localPlayerChannel= dynamic_cast<Channel*>(local->getParentItem());
+            auto selectedPlayerChannel= dynamic_cast<Channel*>(dataItem->getParentItem());
+
+            if(localPlayerChannel && selectedPlayerChannel)
+                isUserOnCurrentChannel= (localPlayerChannel->uuid() == selectedPlayerChannel->uuid());
+        }
+    }
+
     auto isAdmin= m_ctrl->isAdmin();
-    auto channelIsLock= channel ? channel->locked() : false;
-    auto channelIsDefault= channel ? m_ctrl->defaultChannelId() == channel->uuid() : false;
+    auto channelIsLock= isOnChannel ? channel->locked() : false;
+    auto channelIsDefault= isOnChannel ? m_ctrl->defaultChannelId() == channel->uuid() : false;
     auto isLocal= dataItem ? (localId == dataItem->uuid()) : false;
-    auto channelIsEmpty= channel ? channel->childCount() == 0 : true;
+    auto channelIsEmpty= isOnChannel ? channel->childCount() == 0 : true;
 
     menu.addAction(m_join);
     menu.addSeparator();
@@ -138,6 +152,8 @@ void ChannelListPanel::showCustomMenu(const QPoint& pos)
     m_channelPassword->setEnabled(isAdmin && isOnChannel);
     m_kick->setEnabled(isAdmin && isOnUser);
     m_ban->setEnabled(isAdmin && isOnUser);
+    qDebug() << "admin" << isAdmin << "onuser" << isOnUser << "isuser on current channel" << isUserOnCurrentChannel
+             << "isLocal" << isLocal;
     m_moveUserToCurrentChannel->setEnabled(isAdmin && isOnUser && !isUserOnCurrentChannel && !isLocal);
     m_addChannel->setEnabled(isAdmin && !isOnChannel && !isOnUser);
 
@@ -278,24 +294,30 @@ void ChannelListPanel::moveUserToCurrent()
     if(!m_index.isValid())
         return;
 
-    auto subject= static_cast<TreeItem*>(m_index.internalPointer());
-
-    if(!subject->isLeaf())
+    TreeItem* dataItem= indexToPointer<TreeItem*>(m_index);
+    if(!dataItem)
+        return;
+    if(!dataItem->isLeaf())
         return;
 
-    // if(isAdmin() || isGM())
-    {
-        /*    auto local= m_model->getServerConnectionById(m_localPlayerId);
-            if(nullptr == local)
-                return;
+    auto playerToMove= dataItem->uuid();
+    auto model= m_ctrl->channelModel();
+    if(!model)
+        return;
 
-            auto channel= local->getParentChannel();
+    auto local= model->getItemById(m_ctrl->localId());
 
-            NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::MoveChannel);
-            msg.string8(subject->getId());
-            msg.string8(channel->getId());
-            msg.sendToServer();*/
-    }
+    if(!local)
+        return;
+
+    auto destChannel= dynamic_cast<Channel*>(local->getParentItem());
+
+    if(!destChannel)
+        return;
+
+    auto destId= destChannel->uuid();
+
+    prepareJoin(playerToMove, destId, !destChannel->password().isEmpty());
 }
 
 void ChannelListPanel::deleteChannel()
@@ -343,20 +365,17 @@ void ChannelListPanel::joinChannel()
     if(nullptr == item)
         return;
 
+    prepareJoin(m_ctrl->localId(), item->uuid(), !item->password().isEmpty());
+}
+
+void ChannelListPanel::prepareJoin(const QString& user, const QString& destChannel, bool needPassword)
+{
     QByteArray pw;
-    if(!item->password().isEmpty())
-        pw= QInputDialog::getText(this, tr("Channel Password"), tr("Channel %1 required password:").arg(item->name()),
+    if(needPassword)
+        pw= QInputDialog::getText(this, tr("Channel Password"), tr("Destination Channel required password"),
                                   QLineEdit::Password)
                 .toUtf8();
 
-    QString id= item->uuid();
-    auto pwA= QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
-
-    m_ctrl->joinChannel(m_ctrl->localId(), item->uuid(), pwA);
-}
-
-void ChannelListPanel::cleanUp()
-{
-    /*   if(nullptr != m_model)
-           m_model->cleanUp();*/
+    auto pwA= pw.isEmpty() ? QByteArray() : QCryptographicHash::hash(pw, QCryptographicHash::Sha3_512);
+    m_ctrl->joinChannel(user, destChannel, pwA);
 }

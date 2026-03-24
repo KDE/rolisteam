@@ -457,35 +457,16 @@ void TestNetwork::messageHeaderTest_data()
 
     QList<QStringList> actionPerCategorie;
 
-    actionPerCategorie.append({"EndConnectionAction",
-                               "HeartbeatAsk",
-                               "HeartbeatAnswer",
-                               "ConnectionInfo",
-                               "Goodbye",
-                               "Kicked",
-                               "MoveChannel",
-                               "SetChannelList",
-                               "RenameChannel",
-                               "NeedPassword",
-                               "AuthentificationSucessed",
-                               "AuthentificationFail",
-                               "LockChannel",
-                               "UnlockChannel",
-                               "JoinChannel",
-                               "DeleteChannel",
-                               "AddChannel",
-                               "SetDefaultChannel",
-                               "channelAdded",
-                               "ChannelPassword",
-                               "ResetChannelPassword",
-                               "BanUser",
-                               "ClearTable",
-                               "AdminPassword",
-                               "AdminAuthSucessed",
-                               "AdminAuthFail",
-                               "MovedIntoChannel",
-                               "GMStatus",
-                               "ResetChannel"});
+    actionPerCategorie.append({"EndConnectionAction",  "HeartbeatAsk",      "HeartbeatAnswer",
+                               "ConnectionInfo",       "Goodbye",           "KickUser",
+                               "UserKicked",           "MoveChannel",       "SetChannelList",
+                               "RenameChannel",        "NeedPassword",      "AuthentificationSucessed",
+                               "AuthentificationFail", "LockChannel",       "UnlockChannel",
+                               "JoinChannel",          "DeleteChannel",     "AddChannel",
+                               "SetDefaultChannel",    "channelAdded",      "ChannelPassword",
+                               "ResetChannelPassword", "BanUser",           "ClearTable",
+                               "AdminPassword",        "AdminAuthSucessed", "AdminAuthFail",
+                               "MovedIntoChannel",     "GMStatus",          "ResetChannel"});
 
     actionPerCategorie.append(QStringList{"PlayerConnectionAction", "DelPlayerAction"});
 

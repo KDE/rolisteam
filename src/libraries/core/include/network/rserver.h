@@ -58,6 +58,7 @@ signals:
     void accepting(qintptr handle, ServerConnection* connection);
     void portChanged();
     void eventOccured(QString message, LogController::LogLevel type);
+    void banIp(const QString& ip);
 
 private:
     int m_threadCount{1};

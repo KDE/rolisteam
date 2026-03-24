@@ -291,6 +291,9 @@ void Channel::kick(const QString& str, bool isAdmin, const QString& sourceId)
         {
             toKick= item;
         }
+
+        if(!item->isLeaf())
+            item->kick(str, isAdmin, sourceId);
     }
 
     if(!hasRightToKick || toKick.isNull())
@@ -305,14 +308,7 @@ void Channel::kick(const QString& str, bool isAdmin, const QString& sourceId)
     if(nullptr == client)
         return;
 
-    removeClient(client);
-    QMetaObject::invokeMethod(client, "closeConnection", Qt::QueuedConnection);
-
-    // NOTE - could be useless
-    for(auto& item : m_child)
-    {
-        item->kick(str, isAdmin, sourceId);
-    }
+    QMetaObject::invokeMethod(client, "kickUser", Qt::QueuedConnection);
 }
 
 void Channel::clear()

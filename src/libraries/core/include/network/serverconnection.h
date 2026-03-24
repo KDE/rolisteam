@@ -170,6 +170,7 @@ public slots:
     void sendEvent(ServerConnection::ConnectionEvent);
     void startReading();
     void closeConnection();
+    void kickUser();
 
 protected:
     bool isCurrentState(QState* state);

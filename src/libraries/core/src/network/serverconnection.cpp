@@ -410,8 +410,6 @@ void ServerConnection::connectionError(QAbstractSocket::SocketError error)
 
 void ServerConnection::sendEvent(ServerConnection::ConnectionEvent event)
 {
-    if(nullptr != m_player)
-        qDebug() << "server connection to " << m_player->name() << "recieve event:" << event;
     switch(event)
     {
     case CheckSuccessEvent:
@@ -582,4 +580,12 @@ bool ServerConnection::isConnected() const
         return (m_socket->isValid() && (m_socket->state() == QAbstractSocket::ConnectedState));
     else
         return false;
+}
+void ServerConnection::kickUser()
+{
+    auto msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::UserKicked);
+    msg->setRecipientList({uuid()}, NetworkMessage::OneOrMany);
+    sendMessage(msg, true);
+
+    closeConnection();
 }

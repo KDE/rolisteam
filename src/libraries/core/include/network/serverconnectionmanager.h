@@ -22,6 +22,7 @@ class RServer;
 class ConnectionAccepter;
 class MessageDispatcher;
 class ServerConnection;
+class IpBanAccepter;
 class NetworkMessageReader;
 class NETWORK_EXPORT ServerConnectionManager : public QObject
 {
@@ -48,6 +49,7 @@ signals:
     void clientAccepted();
     void quitting();
     void finished();
+    void banIp(const QString& ip);
 
 public slots:
     // controller

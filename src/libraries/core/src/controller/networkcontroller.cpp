@@ -30,6 +30,7 @@
 #include "media/networktype.h"
 #include "network/clientmanager.h"
 #include "network/connectionprofile.h"
+#include "network/messagedispatcher.h"
 #include "network/networkmessage.h"
 #include "network/receiveevent.h"
 #include "network/rserver.h"
@@ -162,6 +163,10 @@ void NetworkController::dispatchMessage(QByteArray array)
 {
     NetworkMessageReader data;
     data.setData(array);
+#ifdef QT_DEBUG
+    qCDebug(NetworkCat) << "Recieved Message - cat: " << MessageDispatcher::cat2String(data.header())
+                        << " action:" << MessageDispatcher::cat2String(data.header()) << NetMsg::UserKicked;
+#endif
     if(ReceiveEvent::hasNetworkReceiverFor(data.category()))
     {
         QList<NetWorkReceiver*> tmpList= ReceiveEvent::getNetWorkReceiverFor(data.category());
@@ -280,6 +285,13 @@ void NetworkController::startServer()
     {
         m_server.reset(new RServer(m_serverParameters, true));
         connect(m_server.get(), &RServer::eventOccured, this, &NetworkController::eventOccurs);
+        connect(m_server.get(), &RServer::banIp, this,
+                [this](const QString& ip)
+                {
+                    auto list= m_serverParameters["IpBan"].toStringList();
+                    list.append(ip);
+                    m_serverParameters["IpBan"]= list;
+                });
         m_serverThread.reset(new QThread);
     }
 
@@ -343,6 +355,9 @@ void NetworkController::stopConnection()
 
 NetWorkReceiver::SendType NetworkController::processMessage(NetworkMessageReader* msg)
 {
+    if(!msg)
+        return {};
+
     NetWorkReceiver::SendType type= NetWorkReceiver::NONE;
     switch(msg->action())
     {
@@ -352,19 +367,19 @@ NetWorkReceiver::SendType NetworkController::processMessage(NetworkMessageReader
         readDataAndSetModel(msg, m_channelModel.get());
         break;
     case NetMsg::AdminAuthSucessed:
-        qDebug() << "Authentification success";
         setGroups(m_currentGroups | ADMIN);
         break;
     case NetMsg::AuthentificationFail:
-        qDebug() << "Authentification fail";
         m_clientManager->setAuthentificationStatus(false);
         break;
     case NetMsg::AuthentificationSucessed:
-        qDebug() << "Authentification sucessed";
         m_clientManager->setAuthentificationStatus(true);
         break;
     case NetMsg::ClearTable:
         m_gameCtrl->clear(false);
+        break;
+    case NetMsg::UserKicked:
+        setLastError(tr("You have been kicked out of the game."));
         break;
     case NetMsg::HeartbeatAsk:
     {

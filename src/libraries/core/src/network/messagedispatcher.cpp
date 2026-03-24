@@ -152,8 +152,8 @@ QString MessageDispatcher::act2String(NetworkMessageHeader* head)
         case NetMsg::Goodbye:
             str= QStringLiteral("Goodbye");
             break;
-        case NetMsg::Kicked:
-            str= QStringLiteral("Kicked");
+        case NetMsg::KickUser:
+            str= QStringLiteral("KickUser");
             break;
         case NetMsg::RenameChannel:
             str= QStringLiteral("RenameChannel");
@@ -172,6 +172,9 @@ QString MessageDispatcher::act2String(NetworkMessageHeader* head)
             break;
         case NetMsg::JoinChannel:
             str= QStringLiteral("JoinChannel");
+            break;
+        case NetMsg::UserKicked:
+            str= QStringLiteral("UserKicked");
             break;
         case NetMsg::ClearTable:
             str= QStringLiteral("ClearTable");

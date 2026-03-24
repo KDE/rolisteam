@@ -66,7 +66,7 @@ void NetworkUpdater::banUser(const QString& uuid, const QString& playerId)
 
 void NetworkUpdater::kickUser(const QString& uuid, const QString& playerId)
 {
-    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::Kicked);
+    NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::KickUser);
     msg.string8(uuid);
     msg.string8(playerId);
     msg.sendToServer();

@@ -31,15 +31,13 @@ public:
 
     void setLocalPlayerId(const QString& id);
 
-    void cleanUp();
-
     ServerConnection* getClient(QModelIndex index);
     Channel* getChannel(QModelIndex index);
 signals:
     void CurrentChannelGmIdChanged(QString gm);
 
 public slots:
-    void showCustomMenu(const QPoint &pos);
+    void showCustomMenu(const QPoint& pos);
 
 protected:
     void moveUserToCurrent();
@@ -53,6 +51,7 @@ protected slots:
     void editChannel();
     void logAsAdmin();
     void resetChannel();
+    void prepareJoin(const QString& user, const QString& destChannel, bool needPassword);
 
 private:
     Ui::ChannelListPanel* ui;

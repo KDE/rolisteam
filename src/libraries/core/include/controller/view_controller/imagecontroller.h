@@ -73,7 +73,7 @@ signals:
     void ratioHChanged();
     void isMovieChanged();
     void dataChanged();
-    void statusChanged(Status s);
+    void statusChanged(ImageController::Status s);
 
 public slots:
     void setZoomLevel(qreal lvl);

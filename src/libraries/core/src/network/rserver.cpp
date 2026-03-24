@@ -36,6 +36,9 @@ void RServer::initServerConnections()
 
     connect(this, &RServer::accepting, m_connectionsManager.get(), &ServerConnectionManager::accept,
             Qt::QueuedConnection);
+    connect(m_connectionsManager.get(), &ServerConnectionManager::eventOccured, this, &RServer::eventOccured,
+            Qt::QueuedConnection);
+    connect(m_connectionsManager.get(), &ServerConnectionManager::banIp, this, &RServer::banIp, Qt::QueuedConnection);
     connect(m_connectionsManager.get(), &ServerConnectionManager::finished, this, &RServer::complete,
             Qt::QueuedConnection);
 

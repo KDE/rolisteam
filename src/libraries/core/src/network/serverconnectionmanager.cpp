@@ -136,7 +136,6 @@ void ServerConnectionManager::checkAuthToServer(ServerConnection* client)
     {
         m_model->addConnectionToChannel(m_model->defaultChannelId(), client);
         sendEventToClient(client, ServerConnection::ServerAuthSuccessEvent);
-        // sendOffModel(client);
         qCDebug(ServerLogCat) << "server auth successed";
     }
     else
@@ -262,35 +261,36 @@ void ServerConnectionManager::sendOffAuthFail()
 
 void ServerConnectionManager::kickClient(QString id, bool isAdmin, QString senderId)
 {
-    m_model->kick(id, isAdmin, senderId);
-    // sendOffModelToAll();
-
-    ServerConnection* client= nullptr;
     auto keys= m_connections.keys();
     for(auto& key : keys)
     {
         auto value= m_connections[key];
         if(value && value->uuid() == id)
         {
-            client= value;
-        }
-        if(client)
-            emit eventOccured(tr("User has been kick out: %2 - %1.").arg(client->name(), client->getIpAddress()),
+            emit eventOccured(tr("User has been kick out: %2 - %1.").arg(value->name(), value->getIpAddress()),
                               LogController::Info);
+        }
     }
 
-    if(nullptr != client)
-    {
-        // removeClient(client);
-    }
+    m_model->kick(id, isAdmin, senderId);
 }
 
 void ServerConnectionManager::banClient(QString id, bool isAdmin, QString senderId)
 {
-    // TODO implement this function
-    Q_UNUSED(id)
-    Q_UNUSED(isAdmin)
-    Q_UNUSED(senderId)
+    auto keys= m_connections.keys();
+    for(auto& key : keys)
+    {
+        auto value= m_connections[key];
+        if(value && value->uuid() == id)
+        {
+            emit eventOccured(tr("User has been ban: %2 - %1.").arg(value->name(), value->getIpAddress()),
+                              LogController::Info);
+            emit banIp(value->getIpAddress());
+            break;
+        }
+    }
+
+    m_model->kick(id, isAdmin, senderId);
 }
 
 void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Channel* chan, ServerConnection* tcp)
@@ -303,7 +303,7 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
     auto sourceId= tcp->playerId();
     switch(msg->action())
     {
-    case NetMsg::Kicked:
+    case NetMsg::KickUser:
     {
         QString id= msg->string8();
         kickClient(id, isAdmin, sourceId);
@@ -341,12 +341,17 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
     {
         QString channelId= msg->string8();
         QString userId= msg->string8();
-        TreeItem* item= m_model->getItemById(channelId);
-        Channel* dest= dynamic_cast<Channel*>(item);
-        if(nullptr != dest && !dest->locked())
+        auto user= m_model->getItemById(userId);
+        if(user)
         {
-            QMetaObject::invokeMethod(m_model.get(), &ChannelModel::moveClient, Qt::QueuedConnection, chan, userId,
-                                      dest);
+            auto origin= dynamic_cast<Channel*>(user->getParentItem());
+            TreeItem* item= m_model->getItemById(channelId);
+            Channel* dest= dynamic_cast<Channel*>(item);
+            if(nullptr != dest && !dest->locked() && origin != dest)
+            {
+                QMetaObject::invokeMethod(m_model.get(), &ChannelModel::moveClient, Qt::QueuedConnection, origin,
+                                          userId, dest);
+            }
         }
     }
     break;
