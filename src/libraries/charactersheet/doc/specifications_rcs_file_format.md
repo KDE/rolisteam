@@ -1,4 +1,6 @@
-# Specification about rcs file.
+# Rolisteam Character Sheet format
+
+## Specification about rcs file.
 
 The rcs file is a json file. It is gathering all information about the charactersheet. 
 Data to generate the qml code, the qml code, and data about characters.

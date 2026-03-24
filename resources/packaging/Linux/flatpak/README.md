@@ -1,3 +1,5 @@
+# Rolisteam in flatpak
+
 ## Steps to Build flatpak of the rolisteam client/server 
 
 This requires that [flatpak-builder](https://github.com/flatpak/flatpak-builder) is installed. 

@@ -45,31 +45,22 @@
  * @author Renaud Guezennec
  *
  *  @section intro_sec Introduction
- * Rolisteam help you to manage role playing games with your friend all over the world.<br/>
- * Rolisteam is a free software under GNU/GPL. Its purpose is to provide all features required to<br/>
- * perform Role playing games with remote friends.<br/>
- * It is based on Client/server architecture and it is written in C++ with Qt.<br/>
+ * Headless server can be run on any linux server.
  *
  * @section features_sec Features:
- * - Chat with one, many and all players
- * - Sharing images and many other media type
- * - Drawing maps on the fly
- * - Sharing environment sound
- * - Multi-platform: Windows, Linux and Mac OS X
- * - Powerful die rolling syntax
- * - Theme and skin: make your own skin, save it, share it.
- * - Useful preferences systems
- *
- *
+ * - Managed from configuration file or remotely via rolisteam
+ * - Can manage several games at once.
+ * - Different channels
+ * - And more…
  *
  * @section install_sec Installation
- * To get documentation on how to install rolisteam: http://doc.rolisteam.org/
+ * To get documentation on how to install rolisteam: https://doc.rolisteam.org/
  *
  * @section How to stay in touch ?
  * Please, visit: https://rolisteam.org/
  *
  * @section tools_subsec Dependencies:
- * Qt6, zlib, QML,
+ * Qt6, QML,
  * @subpage DiceParser
  *
  * @section copyright Copyright and License

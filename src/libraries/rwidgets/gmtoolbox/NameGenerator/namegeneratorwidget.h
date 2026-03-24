@@ -33,19 +33,6 @@ class NameGeneratorWidget;
 }
 
 struct DataBase;
-/**
- * @page NameGenerator Name Generator
- * @tableofcontents
- * @section Intro Introduction
- * NameGenerator provides a way to get ramdom name from different culture.<br/>
- * This tool is dedicated to GM.<br/>
- *
- *
- * @section algo Let's have a look to the algo:
- *
- * @section todo Todo:
- * @todo Add new country
- */
 
 /**
  * @brief The NameGeneratorWidget class

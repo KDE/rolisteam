@@ -27,7 +27,7 @@
 
 #include <charactersheet_formula/formula_global.h>
 /**
- * @page FormulaManager Formula Manager
+ * @page CharacterSheet formula
  *
  * @section Intro Introduction
  * FormulaManager is the software component dedicated to compute charactersheet formula in rolisteam.<br/>

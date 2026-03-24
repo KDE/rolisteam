@@ -58,7 +58,6 @@ ServerManagerUpdater::ServerManagerUpdater(ServerConnectionManager* ctrl, bool i
     connect(this, &ServerManagerUpdater::channelsDataChanged, this,
             [this]()
             {
-                qDebug() << "send data channel list";
                 auto conns= m_ctrl->connections();
                 for(auto conn : conns)
                 {

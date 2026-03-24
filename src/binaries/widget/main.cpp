@@ -53,7 +53,7 @@ Q_LOGGING_CATEGORY(rDice, "rolisteam.dice");
  * @author Renaud Guezennec
  *
  *  @section intro_sec Introduction
- * Rolisteam help you to manage role playing games with your friend all over the world.<br/>
+ * Rolisteam helps you to manage role playing games with your friend all over the world.<br/>
  * Rolisteam is a free software under GNU/GPL. Its purpose is to provide all features required to<br/>
  * perform Role playing games with remote friends.<br/>
  * It is based on Client/server architecture and it is written in C++ with Qt.<br/>
@@ -77,7 +77,7 @@ Q_LOGGING_CATEGORY(rDice, "rolisteam.dice");
  * Please, visit: https://rolisteam.org/
  *
  * @section tools_subsec Dependencies:
- * Qt5, zlib, QML,
+ * Qt6, QML,
  * @subpage DiceParser
  *
  * @section copyright Copyright and License

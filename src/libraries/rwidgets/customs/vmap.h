@@ -34,22 +34,6 @@
 #include "rwidgets/toolbars/vtoolbar.h"
 #include "rwidgets_global.h"
 
-/**
- * @page VMap
- * @tableofcontents
- * @section Intro Introduction
- * VMap is vectorial map system to draw map on the fly.<br/>
- * It has been introduced in rolisteam v1.8.
- *
- *
- * @section item Type of Items:
- * @section action Actions on Items:
- * @section Selection Selection:
- * @section Vision Vision:
- * @section fow Fog of war:
- *
- *
- */
 class CharacterItem;
 class AnchorItem;
 class RuleItem;

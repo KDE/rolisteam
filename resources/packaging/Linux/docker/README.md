@@ -1,3 +1,5 @@
+# Rolisteam in docker
+
 ## Dockerfile for building a roliserver container which can be used to host multiple games. 
 
 Copy the docker file to a build directory and run the following.
