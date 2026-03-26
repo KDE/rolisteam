@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-14 19:07+0100\n"
+"PO-Revision-Date: 2026-03-18 23:03+0100\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -4185,9 +4185,6 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:74
-#, fuzzy
-#| msgctxt "Link|"
-#| msgid "is linked"
 msgctxt "MindMap|"
 msgid "is linked"
 msgstr "è collegato"
