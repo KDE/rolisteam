@@ -7,6 +7,7 @@
 #include "network/characterdatamodel.h"
 #include "network/connectionprofile.h"
 #include "worker/iohelper.h"
+#include "worker/modelhelper.h"
 #include <QAbstractItemModelTester>
 #include <helper.h>
 #include <limits>
@@ -36,6 +37,7 @@ private slots:
     void canConnect_data();
 
     void connectTest();
+    void serializationTest();
 
 private:
     std::unique_ptr<ProfileModel> m_profileModel;
@@ -407,6 +409,43 @@ void ProfileControllerTest::connectTest()
     auto pw= Helper::randomString();
     m_ctrl->setPassword(pw.toUtf8());
     QVERIFY(m_ctrl->password() != pw);
+}
+
+void ProfileControllerTest::serializationTest()
+{
+    ProfileModel backup;
+    SettingsHelper::readConnectionProfileModel(&backup);
+
+    ProfileModel p;
+    auto profile= new ConnectionProfile();
+    auto name= Helper::randomString();
+    auto host= Helper::randomString();
+    auto port= Helper::generate(1, 10000);
+    profile->setPort(port);
+    profile->setAddress(host);
+    profile->setProfileTitle(name);
+
+    p.appendProfile(profile);
+    SettingsHelper::writeConnectionProfileModel(&p);
+
+    ProfileModel p2;
+    SettingsHelper::readConnectionProfileModel(&p2);
+
+    QCOMPARE(p.rowCount(), 1);
+    QCOMPARE(p2.rowCount(), 1);
+    auto profile0= p.getProfile(0);
+    auto profile2= p2.getProfile(0);
+
+    QCOMPARE(profile0->port(), port);
+    QCOMPARE(profile2->port(), port);
+
+    QCOMPARE(profile0->address(), host);
+    QCOMPARE(profile2->address(), host);
+
+    QCOMPARE(profile0->profileTitle(), name);
+    QCOMPARE(profile2->profileTitle(), name);
+
+    SettingsHelper::writeConnectionProfileModel(&backup);
 }
 
 void ProfileControllerTest::canConnect()

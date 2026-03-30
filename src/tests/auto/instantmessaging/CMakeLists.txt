@@ -33,5 +33,5 @@ target_link_libraries(tst_im
     charactersheet_widgets
     qml_components
   )
-target_include_directories(tst_im  PUBLIC ../helper )
+target_include_directories(tst_im  PUBLIC ../helper ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 add_test(NAME tst_im COMMAND tst_im)

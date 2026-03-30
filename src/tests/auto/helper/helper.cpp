@@ -645,6 +645,18 @@ QUrl imagePathUrl(bool isSquare)
     return array[generate<int>(0, array.size() - 1)];
 }
 
+QUrl imageLocalFile(bool isSquare)
+{
+    QStringList array{QString("img/girafe.jpg"),   QString("img/lion.jpg"),  QString("img/control_life_bar.gif"),
+                      QString("img/girafe3.jpg"),  QString("img/lion3.jpg"), QString("img/white.png"),
+                      QString("img/arbre_500.jpg")};
+
+    if(isSquare)
+        array= QStringList{"img/arbre_square_500.jpg"};
+
+    return QUrl(QString("file://%1/resources/%2").arg(tests::root_path, array[generate<int>(0, array.size() - 1)]));
+}
+
 QByteArray imageData(bool isSquare)
 {
     return utils::IOHelper::loadFile(imagePath(isSquare));
@@ -742,6 +754,11 @@ const std::map<QString, QVariant> buildController(Core::ContentType type)
     case Core::ContentType::UNKNOWN:
         break;
     }*/
+}
+
+QString htmlCode()
+{
+    return utils::IOHelper::readTextFile(":/html/01_personnages.html");
 }
 
 } // namespace Helper

@@ -26,8 +26,10 @@
 #include <QTest>
 #include <memory>
 
+#include "controller/applicationcontroller.h"
+#include "controller/gamecontroller.h"
 #include "controller/instantmessagingcontroller.h"
-// #include "rwidgets/mediacontainers/instantmessagingview.h"
+
 #include "data/chatroom.h"
 #include "data/player.h"
 #include "diceparser_qobject/diceroller.h"
@@ -36,6 +38,8 @@
 #include "model/messagemodel.h"
 #include "model/playermodel.h"
 #include "test_root_path.h"
+#include "worker/modelhelper.h"
+
 #include <common_qml/theme.h>
 
 void registerTypeTest()
@@ -82,8 +86,12 @@ private slots:
     void sendMessage();
     void sendMessage_data();
 
-    void splitScreen();
-    void detachScreen();
+    void applicationController();
+
+    void serializationTest();
+    void chatroomModelTest();
+
+    void imControllerTest();
 
 private:
     std::unique_ptr<PlayerModel> m_model;
@@ -174,8 +182,114 @@ void InstantMessagingTest::sendMessage_data()
     QTest::addRow("error2") << "!4d10e[>0]" << QUrl{} << 1 << m_name2 << InstantMessaging::MessageInterface::Error;
 }
 
-void InstantMessagingTest::splitScreen() {}
-void InstantMessagingTest::detachScreen() {}
+void InstantMessagingTest::applicationController()
+{
+    GameController gameCtrl("rolisteam", QGuiApplication::clipboard());
+    ApplicationController ctrl(&gameCtrl);
+
+    auto msg1= Helper::randomString();
+    auto id1= Helper::randomString();
+
+    ctrl.msgToAll(msg1, id1);
+
+    auto msg2= Helper::randomString();
+    auto id2= Helper::randomString();
+    ctrl.msgToGM(msg2, id2);
+
+    auto msg3= Helper::randomString();
+    auto id3= Helper::randomString();
+    ctrl.rollDice(msg3, id3);
+}
+
+void InstantMessagingTest::serializationTest()
+{
+    m_ctrl->sendMessageToGM(Helper::randomString(), m_player1->uuid());
+    m_ctrl->sendMessageToGlobal(Helper::randomString(), m_player1->uuid());
+    m_ctrl->sendMessageToGlobal(Helper::randomString(), m_player1->uuid());
+    m_ctrl->sendMessageToGlobal(Helper::randomString(), m_player1->uuid());
+
+    auto res= ModelHelper::saveInstantMessageModel(m_ctrl->model());
+
+    m_model->clear(true);
+    ModelHelper::fetchInstantMessageModel(res, m_ctrl->model());
+
+    QCOMPARE(m_ctrl->model()->rowCount(), 3);
+}
+
+void InstantMessagingTest::chatroomModelTest()
+{
+    auto rooms= m_ctrl->model();
+    auto model= m_ctrl->mainModel();
+
+    QCOMPARE(model->rowCount(model->index(0, 0)), 0);
+    QCOMPARE(model->rowCount(), 1);
+
+    model->addFilterModel(rooms, {m_player1->uuid()}, false);
+
+    QCOMPARE(model->rowCount(), 2);
+
+    model->mergeGlobal(m_player1->uuid(), 1);
+    QCOMPARE(model->rowCount(), 1);
+
+    auto name= Helper::randomString();
+    m_ctrl->addExtraChatroom(name, true, {});
+    QCOMPARE(rooms->rowCount(), 4);
+
+    auto const& rs= rooms->rooms();
+    QString id;
+    for(auto const& r : rs)
+    {
+        if(r->title() == name)
+            id= r->uuid();
+    }
+
+    model->addFilterModel(rooms, {m_player1->uuid()}, false);
+    QCOMPARE(model->rowCount(), 2);
+
+    model->cleanAll();
+    QCOMPARE(model->rowCount(), 0);
+    {
+        name= Helper::randomString();
+        m_ctrl->addExtraChatroom(name, true, {});
+        QCOMPARE(rooms->rowCount(), 5);
+
+        auto const& rs= rooms->rooms();
+        for(auto const& r : rs)
+        {
+            if(r->title() == name)
+                id= r->uuid();
+        }
+    }
+    m_ctrl->splitScreen(id, 1);
+
+    model->moveLeft(id, 1);
+    model->moveRight(id, 0);
+    model->removeChatroom(id);
+}
+
+void InstantMessagingTest::imControllerTest()
+{
+    m_ctrl->gmChatroom();
+    m_ctrl->unread();
+    m_ctrl->openLink(Helper::randomUrl().toString());
+    m_ctrl->setDiceParser(nullptr);
+    m_ctrl->setGameController(nullptr);
+    m_ctrl->closeChatroom(Helper::randomString(), false);
+    m_ctrl->closeChatroom(Helper::randomString(), true);
+    m_ctrl->moveRight(Helper::randomString(), 0);
+    m_ctrl->moveLeft(Helper::randomString(), 0);
+    m_ctrl->mergeScreen(Helper::randomString(), 0);
+    m_ctrl->mergeScreen(Helper::randomString(), 1);
+    m_ctrl->resetScreen();
+    m_ctrl->translateDiceResult({}, Helper::randomString());
+
+    QHash<int, QList<int>> rollResult{{10, {1, 2, 3, 4, 5, 6, 7, 8, 9}}, {6, {1, 2, 3, 4, 5, 6}}};
+
+    m_ctrl->translateDiceResult(rollResult, Helper::randomString());
+
+    m_ctrl->setCurrentTab(1);
+    QCOMPARE(m_ctrl->currentTab(), 1);
+}
 
 QTEST_MAIN(InstantMessagingTest);
 

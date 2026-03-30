@@ -25,8 +25,10 @@
 #include <QtCore/QString>
 #include <memory>
 
+#include "helper.h"
 #include "model/musicmodel.h"
 #include "preferences/preferencesmanager.h"
+#include "worker/iohelper.h"
 
 class TestMusicModel : public QObject
 {
@@ -42,6 +44,11 @@ private slots:
 
     void insertTest();
     void removeTest();
+
+    void readPlaylistTest();
+    void boldTest();
+
+    void headerDataTest();
 
 private:
     std::unique_ptr<MusicModel> m_model;
@@ -117,6 +124,45 @@ void TestMusicModel::removeTest()
     indexList << index << index1;
     m_model->removeSong(indexList);
     QCOMPARE(m_model->rowCount(), 0);
+}
+
+void TestMusicModel::readPlaylistTest()
+{
+    auto urls= IOHelper::readM3uPlayList(":/list/list.m3u");
+    QCOMPARE(urls.size(), 8);
+
+    urls= IOHelper::readM3uPlayList(Helper::randomString());
+    QCOMPARE(urls.size(), 0);
+}
+
+void TestMusicModel::boldTest()
+{
+    QList<QUrl> list;
+    list << QUrl("/home/file/song1.mp3") << QUrl("/home/file/song2.ogg");
+    m_model->addSong(list);
+    auto index= m_model->index(0, 0);
+    m_model->setCurrentSong(index);
+
+    auto font= m_model->data(index, Qt::FontRole).value<QFont>();
+    QVERIFY(font.bold());
+
+    for(int i= 0; i < list.size(); ++i)
+    {
+        auto media= m_model->getMediaByModelIndex(m_model->index(i, 0));
+        QCOMPARE(media, list[i]);
+    }
+}
+
+void TestMusicModel::headerDataTest()
+{
+    auto var= m_model->headerData(0, Qt::Vertical, Qt::DisplayRole);
+    QVERIFY(var.isNull());
+
+    var= m_model->headerData(100, Qt::Vertical, Qt::DisplayRole);
+    QVERIFY(var.isNull());
+
+    auto text= m_model->headerData(0, Qt::Horizontal, Qt::DisplayRole).toString();
+    QVERIFY(!text.isEmpty());
 }
 
 void TestMusicModel::insertTest()

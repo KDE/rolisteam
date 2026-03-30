@@ -32,6 +32,7 @@
 #include "model/musicmodel.h"
 #include "rwidgets/customs/playerwidget.h"
 #include "test_root_path.h"
+#include "worker/iohelper.h"
 
 constexpr int TIME_SONG{36};
 
@@ -59,6 +60,8 @@ private slots:
     void playSongInLoop_data();
 
     void playerWidget();
+
+    void serialization();
 
 private:
     std::unique_ptr<AudioPlayerController> m_audioController;
@@ -91,18 +94,35 @@ void TestAudioPlayer::playerWidget()
     playerWidget.addActionsIntoMenu(&menu);
 
     auto listAct= menu.actions();
+}
 
-    /*for(auto act: listAct)
-    {
-        //act->trigger();
-    }*/
+void TestAudioPlayer::serialization()
+{
+    m_audioController->addSong(
+        {QUrl("qrc:/music/07.mp3"), QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "warning.mp3")),
+         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "error.mp3"))});
+    auto data= IOHelper::saveAudioPlayerController(m_audioController.get());
+
+    AudioPlayerController ctrl2(0, "", nullptr);
+    IOHelper::fetchAudioPlayerController(&ctrl2, data);
+
+    QCOMPARE(m_audioController->id(), ctrl2.id());
+
+    auto model= m_audioController->model();
+    auto model2= ctrl2.model();
+
+    QCOMPARE(model->rowCount(), model2->rowCount());
+    QCOMPARE(model->urls(), model2->urls());
 }
 
 void TestAudioPlayer::mode()
 {
     m_audioController->addSong(
-        {QUrl("qrc:/music/07.mp3"),
-         QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
+        {QUrl("qrc:/music/07.mp3"), QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
          QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
          QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
          QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
@@ -151,7 +171,7 @@ void TestAudioPlayer::mode()
     spy.wait(TIME_SONG);
     spy.wait(TIME_SONG);
 
-    qDebug() << "spy count:"<<spy.count();
+    qDebug() << "spy count:" << spy.count();
     arg= spy.takeLast();
 
     QCOMPARE(arg[0].toInt(), AudioPlayerController::PlayingState);

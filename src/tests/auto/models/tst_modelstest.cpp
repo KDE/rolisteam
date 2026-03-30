@@ -30,6 +30,7 @@
 #include "model/filteredplayermodel.h"
 #include "model/historymodel.h"
 #include "model/languagemodel.h"
+#include "model/musicmodel.h"
 #include "model/nonplayablecharactermodel.h"
 #include "model/participantsmodel.h"
 #include "model/playermodel.h"
@@ -37,6 +38,7 @@
 #include "model/singlecontenttypemodel.h"
 #include "model/thememodel.h"
 #include "rwidgets/customs/shortcutvisitor.h"
+#include "worker/modelhelper.h"
 #include <QAbstractItemModelTester>
 #include <QClipboard>
 #include <QGuiApplication>
@@ -71,6 +73,8 @@ private slots:
     void stateModel();
 
     void patternModel();
+
+    void fetchMusicModelTest();
 
 private:
     std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
@@ -228,6 +232,27 @@ void ModelTest::historyModel()
 
     model.refreshAccess(infos[0].id);
     model.refreshAccess(infos[1].id);
+
+    SettingsHelper::writeHistoryModel(&model);
+
+    history::HistoryModel model2;
+
+    SettingsHelper::readHistoryModel(&model2);
+    QCOMPARE(model.rowCount(), model2.rowCount());
+    auto data1= model.data();
+    auto data2= model2.data();
+
+    for(int i= 0; i < data1.size(); ++i)
+    {
+        auto t= data1[i];
+        auto t2= data2[i];
+        QCOMPARE(t.id, t2.id);
+        QCOMPARE(t.displayName, t2.displayName);
+        QCOMPARE(t.url, t2.url);
+        QCOMPARE(t.type, t2.type);
+        QCOMPARE(t.lastAccess, t2.lastAccess);
+        QCOMPARE(t.bookmarked, t2.bookmarked);
+    }
 }
 
 void ModelTest::filteredPlayerModel()
@@ -594,12 +619,11 @@ void ModelTest::stateModel()
                             campaign::NonPlayableCharacterModel::RoleShapeCount,
                             campaign::NonPlayableCharacterModel::RolePropertiesCount});
 
-    for(auto i : acceptedRole)
+    for(auto i : std::as_const(acceptedRole))
     {
         src->data(src->index(0, 0), i);
         src->setData(src->index(0, 0), QVariant(), i);
     }
-
 
     delete src;
 }
@@ -612,6 +636,14 @@ void ModelTest::patternModel()
 
     model.getPatternAt(0);
     model.getPatternAt(100);
+}
+
+void ModelTest::fetchMusicModelTest()
+{
+    MusicModel model(nullptr);
+    ModelHelper::fetchMusicModelWithTableTop(&model);
+
+    QVERIFY(model.rowCount() > 0);
 }
 
 QTEST_MAIN(ModelTest);

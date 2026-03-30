@@ -1,8 +1,11 @@
-
 #include "data/character.h"
 #include "data/player.h"
+#include "helper.h"
+#include "model/charactermodel.h"
+#include "model/nonplayablecharactermodel.h"
 #include "model/participantmodel.h"
 #include "model/playermodel.h"
+#include "worker/characterfinder.h"
 #include <QAbstractItemModelTester>
 #include <QTest>
 #include <memory>
@@ -20,6 +23,10 @@ private slots:
 
     void ownerTest();
     void ownerTest_data();
+
+    void finderTest();
+    void modelTest();
+    void writeModelTest();
 
 private:
     std::unique_ptr<PlayerModel> m_playerModel;
@@ -224,6 +231,95 @@ void PlayerModelTest::ownerTest_data()
         players.push_back(p);
         QTest::addRow("cmd 4") << 1 << owner->uuid() << 2 << players;
     }
+}
+
+void PlayerModelTest::finderTest()
+{
+    auto owner= new Player(Helper::randomString(), QColor(Qt::red), true);
+    auto cha= new Character(Helper::randomString(), Helper::randomColor(), false);
+    owner->addCharacter(cha);
+    m_playerModel->addPlayer(owner);
+    auto id= cha->uuid();
+    CharacterFinder finder;
+
+    QVERIFY(!finder.find(id));
+
+    CharacterFinder::setPlayerModel(m_playerModel.get());
+    finder.setUpConnect();
+    QVERIFY(!finder.find(id));
+    CharacterFinder::setNpcModel(new campaign::NonPlayableCharacterModel(nullptr));
+    QVERIFY(!finder.find(id));
+    auto pm= new CharacterModel();
+    pm->setSourceModel(m_playerModel.get());
+    CharacterFinder::setPcModel(pm);
+
+    {
+        auto owner= new Player(Helper::randomString(), QColor(Qt::red), true);
+        m_playerModel->addPlayer(owner);
+    }
+    QVERIFY(finder.find(id));
+}
+
+void PlayerModelTest::modelTest()
+{
+    m_playerModel->clear(true);
+    auto p= new Player(Helper::randomString(), QColor(Qt::red), true);
+    m_playerModel->addPlayer(nullptr);
+    m_playerModel->addPlayer(p);
+    m_playerModel->addPlayer(p);
+    auto c= new Character(Helper::randomString(), Helper::randomColor(), false);
+    m_playerModel->addCharacter(m_playerModel->index(0, 0), c);
+
+    QCOMPARE(p->characterCount(), 1);
+
+    m_playerModel->removeCharacter(c);
+
+    QCOMPARE(p->characterCount(), 0);
+
+    auto roles= m_playerModel->roleNames();
+    QCOMPARE(roles.size(), 9);
+}
+
+void PlayerModelTest::writeModelTest()
+{
+    m_playerModel->clear(true);
+    auto p= new Player(Helper::randomString(), QColor(Qt::red), true);
+    m_playerModel->addPlayer(p);
+
+    auto id= m_playerModel->personToIndex(p);
+
+    auto idx= m_playerModel->index(0, 0);
+    QCOMPARE(idx, id);
+
+    auto v= Helper::randomString();
+    m_playerModel->setData(idx, v, Qt::DisplayRole);
+    QCOMPARE(m_playerModel->data(idx, Qt::DisplayRole).toString(), v);
+
+    v= Helper::randomString();
+    QVERIFY(m_playerModel->setData(idx, v, Qt::EditRole));
+    QCOMPARE(m_playerModel->data(idx, Qt::EditRole).toString(), v);
+
+    v= Helper::randomString();
+    QVERIFY(m_playerModel->setData(idx, v, PlayerModel::NameRole));
+    QCOMPARE(m_playerModel->data(idx, PlayerModel::NameRole).toString(), v);
+
+    QVERIFY(!m_playerModel->setData(idx, false, PlayerModel::GmRole));
+    QCOMPARE(m_playerModel->data(idx, PlayerModel::GmRole).toBool(), true);
+
+    v= Helper::randomString();
+    QVERIFY(!m_playerModel->setData(idx, v, PlayerModel::IdentifierRole));
+    QVERIFY(m_playerModel->data(idx, PlayerModel::IdentifierRole).toString() != v);
+
+    auto c= Helper::randomColor();
+    m_playerModel->setData(idx, c, PlayerModel::ColorRole);
+    QCOMPARE(m_playerModel->data(idx, PlayerModel::ColorRole).value<QColor>(), c);
+
+    QVERIFY(!m_playerModel->setData(idx, true, PlayerModel::LocalRole));
+    QVERIFY(!m_playerModel->setData(idx, true, PlayerModel::CharacterRole));
+
+    QVERIFY(!m_playerModel->setData(idx, Helper::randomString(), PlayerModel::CharacterStateIdRole));
+    QVERIFY(!m_playerModel->setData(idx, true, PlayerModel::NpcRole));
+    QVERIFY(!m_playerModel->setData(idx, Helper::imageData(true), PlayerModel::AvatarRole));
 }
 
 QTEST_MAIN(PlayerModelTest);

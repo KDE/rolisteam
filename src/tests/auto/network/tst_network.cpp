@@ -22,14 +22,18 @@
 #include <QtCore/QCoreApplication>
 #include <QtCore/QString>
 
+#include "controller/networkcontroller.h"
 #include "data/character.h"
 #include "network/channel.h"
+#include "network/channelmodel.h"
 #include "network/ipbanaccepter.h"
 #include "network/iprangeaccepter.h"
 #include "network/messagedispatcher.h"
 #include "network/networkmessagewriter.h"
 #include "network/passwordaccepter.h"
+#include "network/rserver.h"
 #include "network/serverconnection.h"
+#include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
 #include "worker/messagehelper.h"
 #include "worker/playermessagehelper.h"
@@ -77,6 +81,9 @@ private slots:
 
     void channelTest();
 
+    void serverManagerTest();
+    void networkControllerTest();
+
 private:
     std::unique_ptr<NetworkMessageWriter> m_writer;
     std::unique_ptr<IpBanAccepter> m_ipBanAccepter;
@@ -85,6 +92,10 @@ private:
     std::unique_ptr<TimeAccepter> m_timeAccepter;
     std::unique_ptr<ServerConnection> m_serverConnection;
     std::unique_ptr<Channel> m_channel;
+    std::unique_ptr<RServer> m_server;
+    std::unique_ptr<ServerConnectionManager> m_serverManager;
+    std::unique_ptr<NetworkController> m_ctrl;
+    QMap<QString, QVariant> m_parameters;
 };
 
 Q_DECLARE_METATYPE(PasswordAccepter::Level)
@@ -153,6 +164,77 @@ void TestNetwork::channelTest()
     m_serverConnection.release();
 }
 
+void TestNetwork::serverManagerTest()
+{
+    QCOMPARE(m_serverManager->countConnection(), 0);
+
+    m_serverManager->messageReceived(Helper::randomData());
+    m_serverManager->initClient();
+    m_serverManager->serverAcceptClient(nullptr);
+    m_serverManager->checkAuthToServer(nullptr);
+    m_serverManager->checkAuthAsAdmin(nullptr);
+    m_serverManager->checkAuthToChannel(nullptr, Helper::randomString(), Helper::randomData());
+    m_serverManager->sendOffAdminAuthFail();
+    m_serverManager->sendOffAdminAuthSuccessed();
+    auto s= m_serverManager->connections();
+    QCOMPARE(s.size(), 0);
+    m_serverManager->setChannelPassword(Helper::randomString(), Helper::randomData());
+}
+
+void TestNetwork::networkControllerTest()
+{
+    m_ctrl->setGroups(NetworkController::VIEWER);
+    QVERIFY(!m_ctrl->isAdmin());
+    m_ctrl->setGroups(NetworkController::ADMIN);
+    QVERIFY(m_ctrl->isAdmin());
+
+    QVERIFY(m_ctrl->localId().isEmpty());
+
+    m_ctrl->closeServer();
+
+    m_ctrl->setGameController(nullptr);
+    QVERIFY(!m_ctrl->connected());
+    QVERIFY(!m_ctrl->connecting());
+
+    QVERIFY(m_ctrl->serverPassword().isEmpty());
+
+    QVERIFY(m_ctrl->defaultChannelId().isEmpty());
+    QVERIFY(m_ctrl->ipv4().isEmpty());
+    QVERIFY(m_ctrl->host().isEmpty());
+    QVERIFY(m_ctrl->lastError().isEmpty());
+    QVERIFY(!m_ctrl->askForGM());
+    m_ctrl->processMessage(nullptr);
+
+    QList<NetMsg::Action> actions{
+        NetMsg::EndConnectionAction,  NetMsg::HeartbeatAsk,      NetMsg::HeartbeatAnswer,
+        NetMsg::ConnectionInfo,       NetMsg::Goodbye,           NetMsg::KickUser,
+        NetMsg::UserKicked,           NetMsg::MoveChannel,       NetMsg::SetChannelList,
+        NetMsg::RenameChannel,        NetMsg::NeedPassword,      NetMsg::AuthentificationSucessed,
+        NetMsg::AuthentificationFail, NetMsg::LockChannel,       NetMsg::UnlockChannel,
+        NetMsg::JoinChannel,          NetMsg::DeleteChannel,     NetMsg::AddChannel,
+        NetMsg::SetDefaultChannel,    NetMsg::channelAdded,      NetMsg::ChannelPassword,
+        NetMsg::ResetChannelPassword, NetMsg::BanUser,           NetMsg::ClearTable,
+        NetMsg::AdminPassword,        NetMsg::AdminAuthSucessed, NetMsg::AdminAuthFail,
+        NetMsg::MovedIntoChannel,     NetMsg::GMStatus,          NetMsg::ResetChannel};
+    for(auto act : actions)
+    {
+        NetworkMessageWriter wMsg(NetMsg::AdministrationCategory, act);
+        NetworkMessageReader msg;
+        msg.setData(wMsg.data());
+        m_ctrl->processMessage(&msg);
+    }
+
+    m_ctrl->startConnection();
+
+    m_ctrl->setConnected(true);
+    m_ctrl->setConnecting(true);
+    m_ctrl->stopConnection();
+    m_ctrl->setConnected(false);
+    m_ctrl->setConnecting(false);
+
+    m_ctrl->removeProfile(0);
+}
+
 void TestNetwork::serverConnectionTest()
 {
     QTcpSocket socket;
@@ -174,11 +256,15 @@ void TestNetwork::serverConnectionTest()
 
 void TestNetwork::init()
 {
+    m_ctrl.reset(new NetworkController);
     m_writer.reset(new NetworkMessageWriter(NetMsg::MediaCategory, NetMsg::AddMedia));
     m_ipBanAccepter.reset(new IpBanAccepter());
     m_passwordAccepter.reset(new PasswordAccepter());
     m_ipRangeAccepter.reset(new IpRangeAccepter());
     m_timeAccepter.reset(new TimeAccepter());
+    m_server.reset(new RServer(m_parameters, true));
+
+    m_serverManager.reset(new ServerConnectionManager(m_parameters));
 
     m_channel.reset(new Channel());
 
@@ -356,7 +442,7 @@ void TestNetwork::timeAccepterTest()
         expected= true;
 
     QMap<QString, QVariant> data= {{"TimeStart", start}, {"TimeEnd", end}};
-
+    qDebug() << data;
     QCOMPARE(m_timeAccepter->isValid(data), expected);
 }
 void TestNetwork::timeAccepterTest_data()

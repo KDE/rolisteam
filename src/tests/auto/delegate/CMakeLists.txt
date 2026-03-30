@@ -15,7 +15,7 @@ target_include_directories(tst_actiondelegate PUBLIC ../helper)
 add_test(NAME tst_actiondelegate COMMAND tst_actiondelegate)
 
 add_executable(tst_avatardelegate tst_avatardelegate.cpp ../assets/resources.qrc)
-target_link_libraries(tst_avatardelegate PUBLIC Qt6::Core Qt6::Test Qt6::Widgets Qt6::Gui PRIVATE core qml_components qml_views charactersheet_widgets charactersheet dice3d diceparser_shared rmindmap rwidgets instantmessaging common_core common_widget common_qml utils helper)
+target_link_libraries(tst_avatardelegate PUBLIC Qt6::Core Qt6::Test Qt6::Widgets Qt6::Gui PRIVATE core network qml_components qml_views charactersheet_widgets charactersheet dice3d diceparser_shared rmindmap rwidgets instantmessaging common_core common_widget common_qml utils helper)
 target_include_directories(tst_avatardelegate PUBLIC ../helper)
 add_test(NAME tst_avatardelegate COMMAND tst_avatardelegate)
 

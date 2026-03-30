@@ -20,8 +20,14 @@
 #include <QTest>
 
 #include <QSignalSpy>
+#include <QTreeView>
 #include <QUrl>
 
+#include "data/character.h"
+#include "data/player.h"
+#include "helper.h"
+#include "model/playermodel.h"
+#include "qml_components/include/qml_components/avatarprovider.h"
 #include "rwidgets/delegates/avatardelegate.h"
 #include <memory>
 
@@ -36,6 +42,9 @@ private slots:
     void init();
     void cleanupTestCase();
 
+    void avatarProviderTest();
+    void paintTest();
+
 private:
     std::unique_ptr<AvatarDelegate> m_delegate;
 };
@@ -47,7 +56,54 @@ void AvatarDelegateTest::init()
     m_delegate.reset(new AvatarDelegate());
 }
 
+void AvatarDelegateTest::paintTest()
+{
+#ifdef FULL_TEST
+    PlayerModel playerModel;
+    QTreeView view;
+    auto p1= new Player(Helper::randomString(), QColor(Qt::red), true);
+    p1->setAvatar(Helper::imageData(true));
+
+    auto p2= new Player(Helper::randomString(), QColor(Qt::red), true);
+    p2->setAvatar(Helper::imageData(true));
+
+    playerModel.addPlayer(p1);
+    playerModel.addPlayer(p2);
+    view.setItemDelegateForColumn(0, m_delegate.get());
+
+    view.show();
+#endif
+}
+
 void AvatarDelegateTest::cleanupTestCase() {}
+
+void AvatarDelegateTest::avatarProviderTest()
+{
+    PlayerModel playerModel;
+
+    auto p1= new Player(Helper::randomString(), QColor(Qt::red), true);
+    p1->setAvatar(Helper::imageData(true));
+
+    auto p2= new Player(Helper::randomString(), QColor(Qt::red), true);
+    p2->setAvatar(Helper::imageData(true));
+    auto id1= p1->uuid();
+    auto id2= p2->uuid();
+
+    playerModel.addPlayer(p1);
+    playerModel.addPlayer(p2);
+
+    AvatarProvider provider(&playerModel);
+
+    QSize size;
+    QSize requested{64, 64};
+    auto img1= provider.requestImage(id1, &size, requested);
+    QVERIFY(!img1.isNull());
+    auto img2= provider.requestImage(id2, &size, requested);
+    QVERIFY(!img2.isNull());
+
+    QSize requested2{-1, -1};
+    provider.requestImage(id2, &size, requested2);
+}
 
 QTEST_MAIN(AvatarDelegateTest);
 

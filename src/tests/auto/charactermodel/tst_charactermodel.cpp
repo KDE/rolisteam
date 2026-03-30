@@ -2,8 +2,11 @@
 #include "data/character.h"
 #include "data/localpersonmodel.h"
 #include "data/player.h"
+#include "helper.h"
 #include "model/charactermodel.h"
 #include "model/playermodel.h"
+#include "worker/iohelper.h"
+
 #include <QAbstractItemModelTester>
 #include <QTest>
 #include <memory>
@@ -24,6 +27,8 @@ private slots:
 
     void localPersonTest();
     void localPersonTest_data();
+
+    void dupplicateCharacterTest();
 
 private:
     std::unique_ptr<PlayerModel> m_playerModel;
@@ -270,6 +275,51 @@ void CharacterModelTest::localPersonTest_data()
         players.push_back(player);
         QTest::addRow("cmd 3") << 2 << players;
     }
+}
+
+void CharacterModelTest::dupplicateCharacterTest()
+{
+    auto cha1= new Character("character1", QColor(Qt::green), false);
+    cha1->setLifeColor(Helper::randomColor());
+    cha1->setHealthPointsCurrent(Helper::generate(0, 100));
+    cha1->setHealthPointsMin(Helper::generate(0, 50));
+    cha1->setHealthPointsMax(Helper::generate(50, 100));
+    cha1->setInitCommand(Helper::randomString());
+    cha1->setInitiativeScore(Helper::generate(0, 50));
+    cha1->setStateId(Helper::randomString());
+    cha1->setDistancePerTurn(Helper::generate(0, 50));
+
+    auto act= new CharacterAction();
+    act->setCommand(Helper::randomString());
+    act->setName(Helper::randomString());
+    cha1->defineActionList({act});
+
+    auto pro= new CharacterProperty();
+    pro->setName(Helper::randomString());
+    pro->setValue(Helper::randomString());
+    cha1->definePropertiesList({pro});
+
+    auto shape= new CharacterShape();
+    shape->setName(Helper::randomString());
+    shape->setImage(QImage::fromData(Helper::imageData()));
+    cha1->defineShapeList({shape});
+
+    auto cha2= IOHelper::dupplicateCharacter(cha1);
+
+    QCOMPARE(cha1->name(), cha2->name());
+    QCOMPARE(cha1->isNpc(), cha2->isNpc());
+    QCOMPARE(cha1->getHealthPointsCurrent(), cha2->getHealthPointsCurrent());
+    QCOMPARE(cha1->getHealthPointsMax(), cha2->getHealthPointsMax());
+    QCOMPARE(cha1->getHealthPointsMin(), cha2->getHealthPointsMin());
+    QCOMPARE(cha1->getInitiativeScore(), cha2->getInitiativeScore());
+    QCOMPARE(cha1->getDistancePerTurn(), cha2->getDistancePerTurn());
+    QCOMPARE(cha1->stateId(), cha2->stateId());
+    QCOMPARE(cha1->getLifeColor(), cha2->getLifeColor());
+    QCOMPARE(cha1->initCommand(), cha2->initCommand());
+    QCOMPARE(cha1->hasInitScore(), cha2->hasInitScore());
+    QCOMPARE(cha1->actionList().size(), cha2->actionList().size());
+    QCOMPARE(cha1->shapeList().size(), cha2->shapeList().size());
+    QCOMPARE(cha1->propertiesList().size(), cha2->propertiesList().size());
 }
 
 QTEST_MAIN(CharacterModelTest)

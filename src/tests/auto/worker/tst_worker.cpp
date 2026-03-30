@@ -21,6 +21,7 @@
 #include <QTest>
 
 #include <QImage>
+#include <QMimeData>
 #include <QPainter>
 #include <QRect>
 #include <QString>
@@ -32,7 +33,10 @@
 #include "utils/mappinghelper.h"
 #include "worker/convertionhelper.h"
 #include "worker/iohelper.h"
+#include "worker/mediahelper.h"
+#include "worker/modelhelper.h"
 #include "worker/utilshelper.h"
+
 #include <helper.h>
 
 class WorkerTest : public QObject
@@ -82,6 +86,11 @@ private slots:
 
     void convertionHelperTest();
     void convertionHelperTest_data();
+
+    void prepareMediaDataTest();
+
+    void jsonFunctionTest();
+    void readImageTest();
 };
 
 WorkerTest::WorkerTest() {}
@@ -288,19 +297,22 @@ void WorkerTest::convertionHelperTest_data()
     QTest::addColumn<ulong>("size");
     QTest::addColumn<Type>("type");
 
-
     QTest::addRow("cmd1") << QVariant::fromValue(true) << static_cast<ulong>(sizeof(bool)) << Type::Bool;
-    QTest::addRow("cmd2") << QVariant::fromValue(static_cast<qint64>(23)) << static_cast<ulong>(sizeof(qint64)) << Type::Integer;
+    QTest::addRow("cmd2") << QVariant::fromValue(static_cast<qint64>(23)) << static_cast<ulong>(sizeof(qint64))
+                          << Type::Integer;
     QTest::addRow("cmd3") << QVariant::fromValue(23.0) << static_cast<ulong>(sizeof(qreal)) << Type::Real;
-    QTest::addRow("cmd4") << QVariant::fromValue(Core::ScaleUnit::FEET) << static_cast<ulong>(sizeof(quint8)) << Type::ScaleUnit;
+    QTest::addRow("cmd4") << QVariant::fromValue(Core::ScaleUnit::FEET) << static_cast<ulong>(sizeof(quint8))
+                          << Type::ScaleUnit;
     QTest::addRow("cmd5") << QVariant::fromValue(Core::PermissionMode::GM_ONLY) << static_cast<ulong>(sizeof(quint8))
                           << Type::PermissionMode;
-    QTest::addRow("cmd6") << QVariant::fromValue(Core::GridPattern::HEXAGON) << static_cast<ulong>(sizeof(Core::GridPattern))
-                          << Type::GridPattern;
-    QTest::addRow("cmd7") << QVariant::fromValue(Core::Layer::GRIDLAYER) << static_cast<ulong>(sizeof(Core::Layer)) << Type::Layer;
+    QTest::addRow("cmd6") << QVariant::fromValue(Core::GridPattern::HEXAGON)
+                          << static_cast<ulong>(sizeof(Core::GridPattern)) << Type::GridPattern;
+    QTest::addRow("cmd7") << QVariant::fromValue(Core::Layer::GRIDLAYER) << static_cast<ulong>(sizeof(Core::Layer))
+                          << Type::Layer;
     QTest::addRow("cmd8") << QVariant::fromValue(Core::VisibilityMode::FOGOFWAR) << static_cast<ulong>(sizeof(quint8))
                           << Type::VisibilityMode;
-    QTest::addRow("cmd9") << QVariant::fromValue(QColor(Qt::blue)) << static_cast<ulong>(sizeof(unsigned int)) << Type::Color;
+    QTest::addRow("cmd9") << QVariant::fromValue(QColor(Qt::blue)) << static_cast<ulong>(sizeof(unsigned int))
+                          << Type::Color;
     QImage img= QImage::fromData(Helper::imageData());
 
     QByteArray data2;
@@ -310,11 +322,13 @@ void WorkerTest::convertionHelperTest_data()
 
     QTest::addRow("cmd10") << QVariant::fromValue(img) << static_cast<ulong>(sizeof(quint32) + data2.size())
                            << Type::Image;
-    QTest::addRow("cmd11") << QVariant::fromValue(QPointF{10.0, 100.0}) << static_cast<ulong>(sizeof(qreal) + sizeof(qreal))
-                           << Type::PointF;
-    QTest::addRow("cmd12") << QVariant::fromValue(QRectF{10.0, 100.0, 100., 100.}) << static_cast<ulong>(4 * sizeof(qreal)) << Type::RectF;
+    QTest::addRow("cmd11") << QVariant::fromValue(QPointF{10.0, 100.0})
+                           << static_cast<ulong>(sizeof(qreal) + sizeof(qreal)) << Type::PointF;
+    QTest::addRow("cmd12") << QVariant::fromValue(QRectF{10.0, 100.0, 100., 100.})
+                           << static_cast<ulong>(4 * sizeof(qreal)) << Type::RectF;
 
-    QTest::addRow("cmd13") << QVariant::fromValue(static_cast<quint16>(250)) << static_cast<ulong>(sizeof(quint16)) << Type::uint16;
+    QTest::addRow("cmd13") << QVariant::fromValue(static_cast<quint16>(250)) << static_cast<ulong>(sizeof(quint16))
+                           << Type::uint16;
     auto data= Helper::randomData();
     QTest::addRow("cmd14") << QVariant::fromValue(data) << static_cast<ulong>(sizeof(quint32) + data.size())
                            << Type::ByteArray;
@@ -329,12 +343,87 @@ void WorkerTest::convertionHelperTest_data()
     QTest::addRow("cmd16") << QVariant::fromValue(vec) << static_cast<ulong>(sizeof(quint64) + sizeof(qreal) * 4)
                            << Type::VecPoint;
 
-    QTest::addRow("cmd17") << QVariant::fromValue(CharacterVision::SHAPE::ANGLE) << static_cast<ulong>(sizeof(quint8)) << Type::ShapeVision;
+    QTest::addRow("cmd17") << QVariant::fromValue(CharacterVision::SHAPE::ANGLE) << static_cast<ulong>(sizeof(quint8))
+                           << Type::ShapeVision;
     QTest::addRow("cmd18") << QVariant::fromValue(QSize(100, 100)) << static_cast<ulong>(sizeof(QSize)) << Type::Size;
-    QTest::addRow("cmd19") << QVariant::fromValue(ParticipantModel::Permission::hidden) << static_cast<ulong>(sizeof(quint8))
-                           << Type::PermissionParticipiant;
+    QTest::addRow("cmd19") << QVariant::fromValue(ParticipantModel::Permission::hidden)
+                           << static_cast<ulong>(sizeof(quint8)) << Type::PermissionParticipiant;
     QTest::addRow("cmd20") << QVariant::fromValue(mindmap::ArrowDirection::EndToStart)
                            << static_cast<ulong>(sizeof(mindmap::ArrowDirection)) << Type::ArrowDirection;
+}
+
+void WorkerTest::prepareMediaDataTest()
+{
+    auto func= [](const QString& string, bool b)
+    {
+        auto data= MediaHelper::prepareWebView(string, b);
+        QCOMPARE(data[Core::keys::KEY_TYPE].value<Core::ContentType>(), Core::ContentType::WEBVIEW);
+        QCOMPARE(data[Core::keys::KEY_STATE].toInt(), b ? 0 : 1);
+        QCOMPARE(data.size(), 4);
+    };
+    func(Helper::randomUrl().toString(), true);
+
+    func(Helper::randomUrl().toString(), false);
+
+    func(Helper::randomString(), true);
+    func(Helper::randomString(), false);
+
+    func(Helper::randomString(), false);
+
+    auto func2= [](const QPointF& pos, const QString& path, const QByteArray& dataImg)
+    {
+        auto data= MediaHelper::addImageIntoController(pos, path, dataImg);
+        QCOMPARE(data[Core::vmapkeys::KEY_POS].toPoint(), pos.toPoint());
+        QCOMPARE(data[Core::vmapkeys::KEY_TOOL].value<Core::SelectableTool>(), Core::SelectableTool::IMAGE);
+        QCOMPARE(data[Core::vmapkeys::KEY_PATH].toString(), path);
+        QCOMPARE(data[Core::vmapkeys::KEY_DATA].toByteArray(), dataImg);
+    };
+
+    func2(Helper::randomPoint(), Helper::imagePath(), Helper::imageData());
+}
+#include <QClipboard>
+void WorkerTest::jsonFunctionTest()
+{
+    auto data= utils::IOHelper::loadFile(":/charactersheet/bitume_fixed.rcs");
+    QVERIFY(!data.isEmpty());
+
+    auto json= IOHelper::textByteArrayToJsonObj(data);
+    QCOMPARE(json["characterCount"].toInt(), 4);
+
+    auto dataTest= IOHelper::jsonObjectToByteArray(json);
+    QCOMPARE(data, dataTest);
+
+    IOHelper::saveMediaBaseIntoJSon(nullptr, json);
+    QCOMPARE(data, dataTest);
+
+    auto clip= QGuiApplication::clipboard();
+    clip->setText(Helper::randomUrl().toString());
+    clip->setText(Helper::htmlCode());
+
+    auto const mimeData= IOHelper::clipboardMineData();
+    QVERIFY(mimeData);
+
+    QMimeData mime;
+    mime.setHtml(Helper::htmlCode());
+    auto text= IOHelper::htmlToTitle(mime, QString());
+    QVERIFY(!text.isEmpty());
+    {
+        QMimeData mime;
+        mime.setHtml(Helper::randomString());
+        auto text= IOHelper::htmlToTitle(mime, QString());
+        QVERIFY(text.isEmpty());
+    }
+    {
+        QMimeData mime;
+        auto text= IOHelper::htmlToTitle(mime, QString());
+        QVERIFY(text.isEmpty());
+    }
+}
+
+void WorkerTest::readImageTest()
+{
+    auto pix= IOHelper::readImageFromURL(Helper::imageLocalFile());
+    QVERIFY(!pix.isNull());
 }
 
 QTEST_MAIN(WorkerTest);

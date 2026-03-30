@@ -56,3 +56,8 @@ add_executable(tst_remotelog tst_remotelog.cpp ../assets/resources.qrc)
 target_link_libraries(tst_remotelog PUBLIC Qt6::Core Qt6::Test Qt6::StateMachine PRIVATE core instantmessaging rmindmap common_core common_widget common_qml helper network diceparser_qobject diceparser_shared utils helper)
 target_include_directories(tst_remotelog  PUBLIC ../helper )
 add_test(NAME tst_remotelog COMMAND tst_remotelog)
+
+add_executable(tst_gamecontroller tst_gamecontroller.cpp ../assets/resources.qrc)
+target_link_libraries(tst_gamecontroller PUBLIC Qt6::Core Qt6::Test Qt6::StateMachine PRIVATE core dice3d instantmessaging rmindmap common_core common_widget common_qml helper network diceparser_qobject diceparser_shared utils helper)
+target_include_directories(tst_gamecontroller  PUBLIC ../helper ${CMAKE_BINARY_DIR} )
+add_test(NAME tst_gamecontroller COMMAND tst_gamecontroller)

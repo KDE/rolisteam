@@ -139,8 +139,10 @@ QString randomString(int length= 10)
 }
 
 HELPER_EXPORT QString imagePath(bool isSquare= false);
+HELPER_EXPORT QString htmlCode();
 HELPER_EXPORT QUrl imagePathUrl(bool isSquare= false);
 HELPER_EXPORT QByteArray imageData(bool isSquare= false);
+HELPER_EXPORT QUrl imageLocalFile(bool isSquare= false);
 HELPER_EXPORT QByteArray randomData(int length= 1000);
 HELPER_EXPORT QColor randomColor();
 HELPER_EXPORT QPointF randomPoint();

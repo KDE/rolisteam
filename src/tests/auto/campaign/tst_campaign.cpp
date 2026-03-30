@@ -27,6 +27,7 @@
 #include <QTreeView>
 #include <memory>
 
+#include "controller/audioplayercontroller.h"
 #include "data/campaign.h"
 #include "data/campaigneditor.h"
 #include "data/campaignmanager.h"
@@ -37,8 +38,11 @@
 #include "model/dicealiasmodel.h"
 #include "model/mediamodel.h"
 #include "model/nonplayablecharactermodel.h"
+#include "test_root_path.h"
 #include "utils/iohelper.h"
+#include "worker/campaignfinder.h"
 #include "worker/fileserializer.h"
+#include "worker/iohelper.h"
 #include <helper.h>
 
 #include <QCryptographicHash>
@@ -98,6 +102,14 @@ private slots:
     void editorCampaign();
     void campaignTest();
     void campaignManagerTest();
+
+    void finderTest();
+
+    void copyImageTest();
+    void copyPlaylistTest();
+    void copyArrayModelTest();
+
+    void fileSerializationTest();
 
 private:
     std::unique_ptr<campaign::CampaignManager> m_manager;
@@ -692,6 +704,144 @@ void CampaignTest::campaignManagerTest()
          Core::CampaignDataCategory::PDFDoc, Core::CampaignDataCategory::DiceAlias,
          Core::CampaignDataCategory::CharacterStates, Core::CampaignDataCategory::Themes,
          Core::CampaignDataCategory::CharacterSheets, Core::CampaignDataCategory::AntagonistList});
+}
+
+void CampaignTest::finderTest()
+{
+    QTemporaryDir dir;
+    if(dir.isValid())
+    {
+        auto path= dir.path();
+        path+= "/campaignfinder";
+        m_manager->createCampaign(QUrl::fromLocalFile(path));
+
+        CampaignFinder::setManager(m_manager.get());
+        auto b= CampaignFinder::pathIsInCampaign(path);
+
+        QVERIFY(b);
+
+        auto root= CampaignFinder::campaignRoot();
+        auto staticFolder= CampaignFinder::staticContentRoot();
+
+        QVERIFY(staticFolder.contains(root));
+        CampaignFinder finder;
+    }
+}
+
+void CampaignTest::copyImageTest()
+{
+    QTemporaryDir root1;
+    if(root1.isValid())
+    {
+        auto path= root1.path();
+        create(path);
+        auto pathImg= IOHelper::copyImageFileIntoCampaign(Helper::imagePath(), m_manager->campaignDir());
+        IOHelper::copyImageFileIntoCampaign(pathImg, m_manager->campaignDir());
+    }
+}
+
+void CampaignTest::copyPlaylistTest()
+{
+    QTemporaryDir root1;
+    if(root1.isValid())
+    {
+        auto path= root1.path();
+        create(path);
+        AudioPlayerController ctrl(0, Helper::randomString(), nullptr);
+
+        ctrl.addSong({QUrl("qrc:/music/07.mp3"),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "warning.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "error.mp3"))});
+
+        auto obj= IOHelper::saveAudioPlayerController(&ctrl);
+        auto editor= m_manager->editor();
+        auto jsonFile= QString("%1/%2").arg(editor->campaignDir(), "audioplayer1.json");
+        IOHelper::writeJsonObjectIntoFile(jsonFile, obj);
+
+        editor->mergeAudioFile(":/list/audioplayer1.json", jsonFile);
+
+        {
+            AudioPlayerController ctrl2(0, Helper::randomString(), nullptr);
+            IOHelper::fetchAudioPlayerController(&ctrl2,
+                                                 IOHelper::textByteArrayToJsonObj(utils::IOHelper::loadFile(jsonFile)));
+
+            QCOMPARE(ctrl2.model()->rowCount(), 7 + 16);
+        }
+    }
+}
+
+void CampaignTest::copyArrayModelTest()
+{
+    QTemporaryDir root1;
+    if(root1.isValid())
+    {
+        auto path= root1.path();
+        create(path);
+        DiceAliasModel model;
+
+        DiceAlias alias(Helper::randomString(), Helper::randomString());
+        model.appendAlias(std::move(alias));
+        DiceAlias alias1(Helper::randomString(), Helper::randomString());
+        model.appendAlias(std::move(alias1));
+
+        auto aliasFile
+            = QString("%1/%2").arg(m_manager->editor()->campaign()->rootDirectory(), campaign::DICE_ALIAS_MODEL);
+        IOHelper::writeJsonArrayIntoFile(aliasFile, campaign::FileSerializer::dicesToArray(model.aliases()));
+
+        IOHelper::copyArrayModelAndFile("", "", "", "");
+        QString srcDir= QString("%1/%2").arg(tests::root_path, "auto/assets/aliases");
+        QString src= QString("%1/%2").arg(tests::root_path, "auto/assets/aliases/dice_command.json");
+        QVERIFY(
+            IOHelper::copyArrayModelAndFile(src, srcDir, aliasFile, m_manager->editor()->campaign()->rootDirectory()));
+    }
+}
+
+void CampaignTest::fileSerializationTest()
+{
+    QTemporaryDir root1;
+    if(root1.isValid())
+    {
+        auto path= root1.path();
+        create(path);
+        QVERIFY(campaign::FileSerializer::isValidCampaignDirectory(path, true));
+        QVERIFY(!campaign::FileSerializer::isValidCampaignDirectory(QString(), false));
+
+        AudioPlayerController ctrl(0, Helper::randomString(), nullptr);
+
+        ctrl.addSong({QUrl("qrc:/music/07.mp3"),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "break.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "quickFixes.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskFailed.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "taskCompleted.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "warning.mp3")),
+                      QUrl::fromLocalFile(QString("%1/resources/%2").arg(tests::root_path, "error.mp3"))});
+
+        auto obj= IOHelper::saveAudioPlayerController(&ctrl);
+        auto b= utils::IOHelper::writeFile(QString("%1/audioplayer1.json").arg(path),
+                                           IOHelper::jsonObjectToByteArray(obj));
+
+        QVERIFY(b);
+
+        QVERIFY(campaign::FileSerializer::hasContent(path, Core::CampaignDataCategory::AudioPlayer1));
+    }
+
+    QList<Core::ContentType> list{Core::ContentType::VECTORIALMAP, Core::ContentType::PICTURE,
+                                  Core::ContentType::NOTES,        Core::ContentType::CHARACTERSHEET,
+                                  Core::ContentType::SHAREDNOTE,   Core::ContentType::PDF,
+                                  Core::ContentType::WEBVIEW,      Core::ContentType::INSTANTMESSAGING,
+                                  Core::ContentType::MINDMAP,      Core::ContentType::UNKNOWN};
+    for(auto i : list)
+    {
+        auto ext= campaign::FileSerializer::contentTypeToDefaultExtension(i);
+        if(i == Core::ContentType::UNKNOWN)
+            QVERIFY(ext.isEmpty());
+        else
+            QVERIFY(!ext.isEmpty());
+    }
 }
 
 QTEST_MAIN(CampaignTest)
