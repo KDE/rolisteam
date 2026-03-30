@@ -33,7 +33,7 @@ namespace campaign
 {
 class CampaignManager;
 }
-class CORE_EXPORT MediaUpdaterInterface : public QObject, public NetWorkReceiver
+class CORE_EXPORT MediaUpdaterInterface : public NetWorkReceiver
 {
     Q_OBJECT
     Q_PROPERTY(bool localIsGM READ localIsGM WRITE setLocalIsGM NOTIFY localIsGMChanged)

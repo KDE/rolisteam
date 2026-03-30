@@ -14,7 +14,7 @@ void addPlayerToModel(PlayerModel* model, NetworkMessageReader* msg)
 }
 
 PlayerUpdater::PlayerUpdater(NetworkController* network, PlayerController* ctrl, QObject* parent)
-    : QObject{parent}, m_ctrl(ctrl), m_networkCtrl(network)
+    : NetWorkReceiver{parent}, m_ctrl(ctrl), m_networkCtrl(network)
 {
     ReceiveEvent::registerNetworkReceiver(NetMsg::UserCategory, this);
     ReceiveEvent::registerNetworkReceiver(NetMsg::PlayerCharacterCategory, this);

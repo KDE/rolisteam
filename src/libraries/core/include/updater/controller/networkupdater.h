@@ -5,13 +5,15 @@
 
 #include "controller/networkcontroller.h"
 #include "network/networkmessage.h"
+#include "network/networkreceiver.h"
 
-class NetworkUpdater : public QObject
+class NetworkUpdater : public NetWorkReceiver
 {
     Q_OBJECT
 public:
     explicit NetworkUpdater(NetworkController* ctrl, QObject* parent= nullptr);
 
+    NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg);
 signals:
 
 public slots:

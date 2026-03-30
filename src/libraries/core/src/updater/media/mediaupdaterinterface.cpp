@@ -29,7 +29,7 @@
 #include <QDebug>
 
 MediaUpdaterInterface::MediaUpdaterInterface(campaign::CampaignManager* campaign, QObject* object)
-    : QObject(object), m_manager(campaign)
+    : NetWorkReceiver(object), m_manager(campaign)
 {
 }
 

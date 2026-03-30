@@ -25,8 +25,13 @@ bool TimeAccepter::isValid(const QMap<QString, QVariant>& data) const
     dateEnd.setDate(time.date());
     dateEnd.setTime(end);
 
-    if(dateEnd < dateStart)
+    auto isDayLightChange
+        = (dateEnd.time().toString(format) != endStr) || (dateStart.time().toString(format) != startStr);
+
+    if(dateEnd < dateStart && !isDayLightChange)
         dateEnd= dateEnd.addDays(1);
+    else if(dateEnd < dateStart)
+        dateEnd= dateEnd.addSecs(3600);
 
     bool result= true;
 

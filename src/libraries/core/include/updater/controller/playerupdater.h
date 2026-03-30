@@ -16,7 +16,7 @@ class Player;
 class Person;
 class Character;
 class NetworkController;
-class CORE_EXPORT PlayerUpdater : public QObject, public NetWorkReceiver
+class CORE_EXPORT PlayerUpdater : public NetWorkReceiver
 {
     Q_OBJECT
 public:

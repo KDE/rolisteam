@@ -49,6 +49,7 @@ set(Network_HEADER
     ${inc}/network/rserver.h
     ${inc}/network/messagedispatcher.h
     ${inc}/network/receiveevent.h
+    ${inc}/network/networkreceiver.h
     ${inc}/worker/networkhelper.h
     ${inc}/data/person.h
     ${inc}/data/player.h
@@ -282,6 +283,7 @@ set(HEADERS
   ${inc}/updater/vmapitem/vmapitemcontrollerupdater.h
   ${inc}/updater/controller/dicephysicupdater.h
   ${inc}/updater/controller/networkupdater.h
+  ${inc}/updater/controller/contentupdater.h
   ${inc}/updater/vmapitem/sightupdater.h
   ${inc}/utils/insertionsortedmap.h
   ${inc}/utils/countdownobject.h
@@ -440,7 +442,8 @@ set(SOURCES
   include/controller/applicationcontroller.cpp
   src/worker/characterfinder.cpp
   src/worker/mediahelper.cpp
-  src/worker/campaignfinder.cpp)
+  src/worker/campaignfinder.cpp
+  src/updater/controller/contentupdater.cpp)
 
 add_library(core SHARED ${SOURCES} ${HEADERS} ${pdfSource} ${QRC_SOURCES})
 

@@ -39,7 +39,7 @@
 namespace InstantMessaging
 {
 InstantMessagingUpdater::InstantMessagingUpdater(InstantMessagingController* ctrl, QObject* parent)
-    : QObject(parent), m_imCtrl(ctrl)
+    : NetWorkReceiver(parent), m_imCtrl(ctrl)
 {
     ReceiveEvent::registerNetworkReceiver(NetMsg::InstantMessageCategory, this);
 

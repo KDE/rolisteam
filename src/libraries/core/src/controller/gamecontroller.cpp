@@ -31,6 +31,7 @@
 #include "preferences/preferencesmanager.h"
 #include "services/tipchecker.h"
 #include "services/updatechecker.h"
+#include "updater/controller/contentupdater.h"
 #include "updater/controller/dicephysicupdater.h"
 #include "updater/controller/networkupdater.h"
 #include "utils/iohelper.h"
@@ -65,6 +66,7 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
 {
     new DicePhysicUpdater(m_dicePhysicController.get(), this);
     new NetworkUpdater(m_networkCtrl.get(), this);
+    new ContentUpdater(m_contentCtrl.get(), this);
     CampaignFinder::setManager(m_campaignManager.get());
     m_preferences->readSettings();
     postSettingInit();

@@ -9,7 +9,7 @@
 #include "dicephysics/controllers/dice3dcontroller.h"
 #include "network/networkreceiver.h"
 
-class CORE_EXPORT DicePhysicUpdater : public QObject, public NetWorkReceiver
+class CORE_EXPORT DicePhysicUpdater : public NetWorkReceiver
 {
     Q_OBJECT
 public:

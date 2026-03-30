@@ -29,35 +29,24 @@
  * ReceiveEvent *
  ****************/
 
-const int ReceiveEvent::Type= QEvent::registerEventType();
-QMap<quint16, QObject*> ReceiveEvent::s_receiverMap;
-QMultiMap<NetMsg::Category, NetWorkReceiver*> ReceiveEvent::ms_netWorkReceiverMap;
+// QMap<quint16, QPointer<QObject>> ReceiveEvent::s_receiverMap;
+QMultiMap<NetMsg::Category, QPointer<NetWorkReceiver>> ReceiveEvent::ms_netWorkReceiverMap;
 
-quint16 makeKey(quint8 categorie, quint8 action)
+/*quint16 makeKey(quint8 categorie, quint8 action)
 {
     return static_cast<quint16>(categorie + action * 256);
-}
+}*/
 
-ReceiveEvent::ReceiveEvent(const NetworkMessageHeader& header, const char* buffer, NetworkLink* link)
-    : QEvent(static_cast<QEvent::Type>(ReceiveEvent::Type)), m_data(header, buffer), m_link(link), m_repost(0)
-{
-}
-
-ReceiveEvent::ReceiveEvent(const ReceiveEvent& other)
-    : QEvent(static_cast<QEvent::Type>(ReceiveEvent::Type))
-    , m_data(other.m_data)
-    , m_link(other.m_link)
-    , m_repost(static_cast<quint8>(other.m_repost + 1))
-{
-}
+ReceiveEvent::ReceiveEvent() {}
+/*QEvent(static_cast<QEvent::Type>(ReceiveEvent::Type)), m_data(header, buffer), m_link(link), m_repost(0)*/
 
 ReceiveEvent::~ReceiveEvent() {}
 
-void ReceiveEvent::postToReceiver()
+/*void ReceiveEvent::postToReceiver()
 {
     quint16 key= makeKey(m_data.category(), m_data.action());
     if(s_receiverMap.contains(key))
-        QCoreApplication::postEvent(s_receiverMap.value(key), this, Qt::LowEventPriority);
+        QCoreApplication::postEvent(s_receiverMap.value(key).get(), this, Qt::LowEventPriority);
 }
 
 NetworkLink* ReceiveEvent::link() const
@@ -68,14 +57,14 @@ NetworkLink* ReceiveEvent::link() const
 NetworkMessageReader& ReceiveEvent::data()
 {
     return m_data;
-}
+}*/
 
-bool ReceiveEvent::hasReceiverFor(quint8 categorie, quint8 action)
+/*bool ReceiveEvent::hasReceiverFor(quint8 categorie, quint8 action)
 {
     return s_receiverMap.contains(makeKey(categorie, action));
-}
+}*/
 
-void ReceiveEvent::registerReceiver(NetMsg::Category categorie, NetMsg::Action action, QObject* receiver)
+/*void ReceiveEvent::registerReceiver(NetMsg::Category categorie, NetMsg::Action action, QObject* receiver)
 {
     quint16 key= makeKey(categorie, action);
     if(s_receiverMap.contains(key))
@@ -83,8 +72,8 @@ void ReceiveEvent::registerReceiver(NetMsg::Category categorie, NetMsg::Action a
         qFatal("A receiver is already registered for (%d,%d)", categorie, action);
     }
 
-    s_receiverMap.insert(key, receiver);
-}
+    s_receiverMap.insert(key, QPointer<QObject>(receiver));
+}*/
 
 void ReceiveEvent::registerNetworkReceiver(NetMsg::Category categorie, NetWorkReceiver* receiver)
 {
@@ -111,7 +100,7 @@ bool ReceiveEvent::hasNetworkReceiverFor(NetMsg::Category categorie)
     return ms_netWorkReceiverMap.contains(categorie);
 }
 
-QList<NetWorkReceiver*> ReceiveEvent::getNetWorkReceiverFor(NetMsg::Category categorie)
+QList<QPointer<NetWorkReceiver>> ReceiveEvent::getNetWorkReceiverFor(NetMsg::Category categorie)
 {
     return ms_netWorkReceiverMap.values(categorie);
 }

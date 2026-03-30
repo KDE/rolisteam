@@ -32,7 +32,7 @@ namespace InstantMessaging
 {
 class ChatRoom;
 class InstantMessagingModel;
-class CORE_EXPORT InstantMessagingUpdater : public QObject, public NetWorkReceiver
+class CORE_EXPORT InstantMessagingUpdater : public NetWorkReceiver
 {
     Q_OBJECT
     Q_PROPERTY(bool saveChatrooms READ saveChatrooms WRITE setSaveChatrooms NOTIFY saveChatroomsChanged FINAL)

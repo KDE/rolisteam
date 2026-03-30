@@ -52,7 +52,7 @@ NetMsg::Action state2Action(AudioPlayerController::State state)
 
 AudioPlayerUpdater::AudioPlayerUpdater(campaign::CampaignManager* campaign, AudioController* controller,
                                        QObject* parent)
-    : QObject(parent), m_ctrl(controller), m_campaign(campaign)
+    : NetWorkReceiver(parent), m_ctrl(controller), m_campaign(campaign)
 {
 }
 

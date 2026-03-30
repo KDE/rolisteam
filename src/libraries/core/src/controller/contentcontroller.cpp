@@ -90,8 +90,6 @@ ContentController::ContentController(campaign::CampaignManager* campaign, Player
     connect(m_campaign, &campaign::CampaignManager::campaignChanged, this, &ContentController::contentChanged);
     connect(m_contentModel.get(), &ContentModel::mediaModified, this, &ContentController::contentChanged);
 
-    ReceiveEvent::registerNetworkReceiver(NetMsg::MediaCategory, this);
-
     auto fModel= new FilteredContentModel(Core::ContentType::VECTORIALMAP);
     fModel->setParent(this);
     fModel->setSourceModel(m_contentModel.get());
@@ -375,18 +373,18 @@ void ContentController::closeCurrentMedia()
 
 int ContentController::maxLengthTabName() const
 {
-    return m_preferences->value(QStringLiteral("MaxLengthTabName"), 20).toInt();
+    return m_preferences ? m_preferences->value(QStringLiteral("MaxLengthTabName"), 20).toInt() : 20;
 }
 
 bool ContentController::shortTitleTab() const
 {
-    return m_preferences->value(QStringLiteral("shortNameInTabMode"), false).toBool();
+    return m_preferences ? m_preferences->value(QStringLiteral("shortNameInTabMode"), false).toBool() : false;
 }
 QString ContentController::workspaceFilename() const
 {
     return m_currentTheme ? m_currentTheme->getBackgroundImage() :
-                            m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/")
-                                .toString(); //":/resources/rolistheme/workspacebackground.jpg";
+           m_preferences  ? m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/").toString() :
+                            QString{}; //":/resources/rolistheme/workspacebackground.jpg";
     // return m_preferences->value(QStringLiteral("PathOfBackgroundImage"), ":/image/").toString();
 }
 QColor ContentController::workspaceColor() const
@@ -398,46 +396,6 @@ int ContentController::workspacePositioning() const
 {
     return m_currentTheme ? m_currentTheme->getBackgroundPosition() :
                             m_preferences->value(QStringLiteral("BackGroundPositioning"), 0).toInt();
-}
-
-NetWorkReceiver::SendType ContentController::processMessage(NetworkMessageReader* msg)
-{
-    NetWorkReceiver::SendType result= NetWorkReceiver::NONE;
-    std::set<NetMsg::Action> actions({NetMsg::AddMedia, NetMsg::UpdateMediaProperty, NetMsg::CloseMedia,
-                                      NetMsg::AddSubImage, NetMsg::RemoveSubImage});
-
-    if(actions.find(msg->action()) == actions.end())
-        return result;
-
-    QSet<NetMsg::Action> subActions{NetMsg::UpdateMediaProperty, NetMsg::AddSubImage, NetMsg::RemoveSubImage};
-
-    if(msg->action() == NetMsg::CloseMedia)
-    {
-        Q_UNUSED(static_cast<Core::ContentType>(msg->uint8()));
-        auto id= MessageHelper::readMediaId(msg);
-        m_contentModel->removeMedia(id);
-    }
-    else if(msg->action() == NetMsg::AddMedia)
-    {
-        auto type= static_cast<Core::ContentType>(msg->uint8());
-        auto media= Media::MediaFactory::createRemoteMedia(type, msg, localColor(), localIsGM());
-        m_contentModel->appendMedia(media);
-    }
-    else if(subActions.contains(msg->action()))
-    {
-        auto type= static_cast<Core::ContentType>(msg->uint8());
-        auto it= m_mediaUpdaters.find(type);
-        if(it != m_mediaUpdaters.end())
-        {
-            auto updater= it->second.get();
-            updater->processMessage(msg);
-        }
-        else
-        {
-            QString mediaId= msg->string8();
-        }
-    }
-    return result;
 }
 
 void ContentController::copyData() {}
@@ -551,6 +509,8 @@ void ContentController::setLocalColor(const QColor& newLocalColor)
 
 QStringList ContentController::readData() const
 {
+    if(!m_campaign)
+        return {};
     return campaign::FileSerializer::readContentModel(
         m_campaign->placeDirectory(campaign::Campaign::Place::CONTENT_ROOT));
 }
@@ -566,4 +526,12 @@ void ContentController::setCurrentTheme(RolisteamTheme* newCurrentTheme)
         return;
     m_currentTheme= newCurrentTheme;
     emit currentThemeChanged();
+}
+
+MediaUpdaterInterface* ContentController::mediaUpdaters(Core::ContentType type) const
+{
+    auto it= m_mediaUpdaters.find(type);
+    if(it == std::end(m_mediaUpdaters))
+        return nullptr;
+    return (*it).second.get();
 }

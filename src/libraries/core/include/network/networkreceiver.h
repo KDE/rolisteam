@@ -27,9 +27,12 @@
  * @brief The NetWorkReceiver class is an abstract class. It is part of the listener pattern. Any class which need to be
  * process some network message should subclass this class.
  */
-class NetWorkReceiver
+class NetWorkReceiver : public QObject
 {
+    Q_OBJECT
 public:
+    explicit NetWorkReceiver(QObject* parent = nullptr) : QObject(parent){ }
+
     virtual ~NetWorkReceiver()= default;
     /**
      * @brief The SendType enum describes how the server should opperate the message. The decision is taken by the GM.
@@ -53,5 +56,7 @@ public:
         return (msg->category() == cat && msg->action() == act);
     };
 };
+
+
 
 #endif // NETWORKRECEIVER_H

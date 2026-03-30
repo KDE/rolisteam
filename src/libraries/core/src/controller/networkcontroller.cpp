@@ -37,17 +37,10 @@
 #include "network/upnp/upnpnat.h"
 #include "services/ipchecker.h"
 #include "utils/countdownobject.h"
-#include "worker/iohelper.h"
+
 #include "worker/messagehelper.h"
 #include "worker/networkhelper.h"
 #include "worker/playermessagehelper.h"
-
-void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
-{
-    auto data= msg->byteArray32();
-    auto jon= IOHelper::textByteArrayToJsonObj(data);
-    helper::network::fetchChannelModel(model, jon);
-}
 
 NetworkController::NetworkController(QObject* parent)
     : AbstractControllerInterface(parent)
@@ -58,8 +51,6 @@ NetworkController::NetworkController(QObject* parent)
     , m_upnpNat(new UpnpNat)
 {
     qRegisterMetaType<RServer::ServerState>();
-
-    ReceiveEvent::registerNetworkReceiver(NetMsg::AdministrationCategory, this);
 
     for(auto const& address : QNetworkInterface::allAddresses())
     {
@@ -159,19 +150,33 @@ NetworkController::~NetworkController()
         m_ipChecker->deleteLater();
 }
 
+void NetworkController::setAuthentificationStatus(bool b)
+{
+    m_clientManager->setAuthentificationStatus(b);
+}
+
+void NetworkController::clearTable(bool b)
+{
+    if(m_gameCtrl)
+        m_gameCtrl->clear(b);
+}
+
 void NetworkController::dispatchMessage(QByteArray array)
 {
     NetworkMessageReader data;
     data.setData(array);
 #ifdef QT_DEBUG
     qCDebug(NetworkCat) << "Recieved Message - cat: " << MessageDispatcher::cat2String(data.header())
-                        << " action:" << MessageDispatcher::cat2String(data.header()) << NetMsg::UserKicked;
+                        << " action:" << MessageDispatcher::act2String(data.header());
 #endif
     if(ReceiveEvent::hasNetworkReceiverFor(data.category()))
     {
-        QList<NetWorkReceiver*> tmpList= ReceiveEvent::getNetWorkReceiverFor(data.category());
-        for(NetWorkReceiver* tmp : std::as_const(tmpList))
+        auto tmpList= ReceiveEvent::getNetWorkReceiverFor(data.category());
+        for(auto tmp : std::as_const(tmpList))
         {
+            if(!tmp)
+                continue;
+            qCDebug(NetworkCat) << "send message to" << tmp << tmp->objectName();
             tmp->processMessage(&data);
         }
     }
@@ -353,47 +358,6 @@ void NetworkController::stopConnection()
     }
 }
 
-NetWorkReceiver::SendType NetworkController::processMessage(NetworkMessageReader* msg)
-{
-    if(!msg)
-        return {};
-
-    NetWorkReceiver::SendType type= NetWorkReceiver::NONE;
-    switch(msg->action())
-    {
-    case NetMsg::EndConnectionAction:
-        break;
-    case NetMsg::SetChannelList:
-        readDataAndSetModel(msg, m_channelModel.get());
-        break;
-    case NetMsg::AdminAuthSucessed:
-        setGroups(m_currentGroups | ADMIN);
-        break;
-    case NetMsg::AuthentificationFail:
-        m_clientManager->setAuthentificationStatus(false);
-        break;
-    case NetMsg::AuthentificationSucessed:
-        m_clientManager->setAuthentificationStatus(true);
-        break;
-    case NetMsg::ClearTable:
-        m_gameCtrl->clear(false);
-        break;
-    case NetMsg::UserKicked:
-        setLastError(tr("You have been kicked out of the game."));
-        break;
-    case NetMsg::HeartbeatAsk:
-    {
-        NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::HeartbeatAnswer);
-        msg.sendToServer();
-    }
-    break;
-    default:
-        break;
-    }
-
-    return type;
-}
-
 bool NetworkController::hosting() const
 {
     return currentProfile() ? currentProfile()->isServer() : false;
@@ -464,6 +428,11 @@ QByteArray NetworkController::adminPassword() const
 
 void NetworkController::setGameController(GameController* game)
 {
+    if(!game)
+    {
+        qCWarning(NetworkCat()) << "Set Null game controller";
+        return;
+    }
     m_gameCtrl= game;
     auto pref= m_gameCtrl->preferencesManager();
 

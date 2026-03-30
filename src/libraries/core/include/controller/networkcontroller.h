@@ -47,7 +47,7 @@ class UpnpNat;
 /**
  * @brief The NetworkController class is the controller on client side to use network API
  */
-class CORE_EXPORT NetworkController : public AbstractControllerInterface, public NetWorkReceiver
+class CORE_EXPORT NetworkController : public AbstractControllerInterface
 {
     Q_OBJECT
     Q_PROPERTY(bool isGM READ isGM NOTIFY isGMChanged)
@@ -99,7 +99,7 @@ public:
     void setGameController(GameController* game) override;
 
     void insertNetWortReceiver(NetWorkReceiver*, NetMsg::Category cat);
-    NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
+    // NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
 
     int selectedProfileIndex() const;
     void setSelectedProfileIndex(int newSelectedProfileIndex);
@@ -110,6 +110,9 @@ public:
     void setGroups(NetworkController::Groups group);
 
     QString localId() const;
+
+    void setAuthentificationStatus(bool b);
+    void clearTable(bool b);
 
 signals:
     void isGMChanged(bool);
@@ -151,11 +154,10 @@ public slots:
     void removeProfile(int pos);
 
     void closeServer();
+    void setLastError(const QString& error);
 
 private slots:
-
     void runUpnpNat();
-    void setLastError(const QString& error);
     void dispatchMessage(QByteArray array);
 
 private:

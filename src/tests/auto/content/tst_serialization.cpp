@@ -36,6 +36,7 @@
 
 #include "data/campaignmanager.h"
 #include "media/mediafactory.h"
+#include "updater/controller/contentupdater.h"
 #include "worker/iohelper.h"
 #include "worker/vectorialmapmessagehelper.h"
 #include <controller/contentcontroller.h>
@@ -71,6 +72,7 @@ private slots:
 
 private:
     std::unique_ptr<ContentController> m_ctrl;
+    std::unique_ptr<ContentUpdater> m_updater;
     std::unique_ptr<PlayerController> m_playerCtrl;
     std::unique_ptr<ContentModel> m_model;
     std::unique_ptr<FilteredContentModel> m_filteredModel;
@@ -86,6 +88,7 @@ void ContentControllerTest::init()
 {
     m_playerCtrl.reset(new PlayerController(nullptr));
     m_ctrl.reset(new ContentController(nullptr, m_playerCtrl->model(), m_playerCtrl->characterModel(), nullptr));
+    m_updater.reset(new ContentUpdater(m_ctrl.get()));
     connect(m_ctrl.get(), &ContentController::performCommand, this, [this](QUndoCommand* cmd) { m_stack.push(cmd); });
 
     m_ctrl->setLocalId("localid");
@@ -311,8 +314,8 @@ void ContentControllerTest::controllerTest()
     m_ctrl->shortTitleTab();
     m_ctrl->workspaceFilename();
     m_ctrl->workspaceColor();
-    m_ctrl->processMessage(nullptr);
-    m_ctrl->processMessage(nullptr);
+    m_updater->processMessage(nullptr);
+    m_updater->processMessage(nullptr);
 }
 
 void ContentControllerTest::serializeTest()

@@ -26,38 +26,38 @@
 #include <QEvent>
 #include <QMap>
 #include <QObject>
+#include <QPointer>
 
 #include "network_global.h"
 #include "networkmessagereader.h"
 #include "networkreceiver.h"
 
-class NetworkLink;
+// class NetworkLink;
 /**
- * @brief The ReceiveEvent class is an QEvent posted to the appplication to notify network message arrival.
+ * @brief The ReceiveEvent class brings all receivers
  */
-class NETWORK_EXPORT ReceiveEvent : public QEvent
+class NETWORK_EXPORT ReceiveEvent /*: public QEvent*/
 {
 public:
-    ReceiveEvent(const NetworkMessageHeader& header, const char* buffer, NetworkLink* link);
-    ReceiveEvent(const ReceiveEvent& other);
+    ReceiveEvent();
     ~ReceiveEvent();
 
-    static const int Type;
+    // static const int Type;
     /**
      * @brief postToReceiver
      */
-    void postToReceiver();
+    // void postToReceiver();
 
     /**
      * @brief link
      * @return
      */
-    NetworkLink* link() const;
+    // NetworkLink* link() const;
     /**
      * @brief data
      * @return
      */
-    NetworkMessageReader& data();
+    // NetworkMessageReader& data();
 
     /**
      * @brief hasReceiverFor
@@ -65,14 +65,14 @@ public:
      * @param action
      * @return
      */
-    static bool hasReceiverFor(quint8 categorie, quint8 action);
+    // static bool hasReceiverFor(quint8 categorie, quint8 action);
     /**
      * @brief registerReceiver
      * @param categorie
      * @param action
      * @param receiver
      */
-    static void registerReceiver(NetMsg::Category categorie, NetMsg::Action action, QObject* receiver);
+    // static void registerReceiver(NetMsg::Category categorie, NetMsg::Action action, QObject* receiver);
 
     /**
      * @brief hasNetworkReceiverFor
@@ -85,7 +85,7 @@ public:
      * @param categorie
      * @return
      */
-    static QList<NetWorkReceiver*> getNetWorkReceiverFor(NetMsg::Category categorie);
+    static QList<QPointer<NetWorkReceiver> > getNetWorkReceiverFor(NetMsg::Category categorie);
     /**
      * @brief registerNetworkReceiver
      * @param categorie
@@ -96,11 +96,11 @@ public:
     static void removeNetworkReceiver(NetMsg::Category categorie, NetWorkReceiver* receiver);
 
 private:
-    NetworkMessageReader m_data;
-    NetworkLink* m_link;
-    quint8 m_repost;
+    // NetworkMessageReader m_data;
+    //  NetworkLink* m_link;
+    //  quint8 m_repost;
 
-    static QMap<quint16, QObject*> s_receiverMap;
-    static QMultiMap<NetMsg::Category, NetWorkReceiver*> ms_netWorkReceiverMap;
+    // static QMap<quint16, QPointer<QObject>> s_receiverMap;
+    static QMultiMap<NetMsg::Category, QPointer<NetWorkReceiver>> ms_netWorkReceiverMap;
 };
 #endif

@@ -59,9 +59,7 @@ class MediaControllerBase;
 class MediaUpdaterInterface;
 class DiceRoller;
 
-class CORE_EXPORT ContentController : public AbstractControllerInterface,
-                                      public PreferencesListener,
-                                      public NetWorkReceiver
+class CORE_EXPORT ContentController : public AbstractControllerInterface, public PreferencesListener
 {
     Q_OBJECT
     Q_PROPERTY(QFileSystemModel* sessionModel READ sessionModel CONSTANT)
@@ -112,7 +110,7 @@ public:
     void clear();
     void clearHistory();
     void closeCurrentMedia();
-    NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
+    // NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg) override;
 
     const QColor& localColor() const;
     void setLocalColor(const QColor& newLocalColor);
@@ -121,6 +119,8 @@ public:
 
     RolisteamTheme* currentTheme() const;
     void setCurrentTheme(RolisteamTheme* newCurrentTheme);
+
+    MediaUpdaterInterface* mediaUpdaters(Core::ContentType type) const;
 
 signals:
     void shortTitleTabChanged();

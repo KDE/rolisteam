@@ -35,6 +35,7 @@
 #include "network/serverconnection.h"
 #include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
+#include "updater/controller/networkupdater.h"
 #include "worker/messagehelper.h"
 #include "worker/playermessagehelper.h"
 
@@ -86,6 +87,7 @@ private slots:
 
 private:
     std::unique_ptr<NetworkMessageWriter> m_writer;
+    std::unique_ptr<NetworkUpdater> m_updater;
     std::unique_ptr<IpBanAccepter> m_ipBanAccepter;
     std::unique_ptr<PasswordAccepter> m_passwordAccepter;
     std::unique_ptr<IpRangeAccepter> m_ipRangeAccepter;
@@ -203,7 +205,7 @@ void TestNetwork::networkControllerTest()
     QVERIFY(m_ctrl->host().isEmpty());
     QVERIFY(m_ctrl->lastError().isEmpty());
     QVERIFY(!m_ctrl->askForGM());
-    m_ctrl->processMessage(nullptr);
+    m_updater->processMessage(nullptr);
 
     QList<NetMsg::Action> actions{
         NetMsg::EndConnectionAction,  NetMsg::HeartbeatAsk,      NetMsg::HeartbeatAnswer,
@@ -221,7 +223,7 @@ void TestNetwork::networkControllerTest()
         NetworkMessageWriter wMsg(NetMsg::AdministrationCategory, act);
         NetworkMessageReader msg;
         msg.setData(wMsg.data());
-        m_ctrl->processMessage(&msg);
+        m_updater->processMessage(&msg);
     }
 
     m_ctrl->startConnection();
@@ -257,6 +259,7 @@ void TestNetwork::serverConnectionTest()
 void TestNetwork::init()
 {
     m_ctrl.reset(new NetworkController);
+    m_updater.reset(new NetworkUpdater(m_ctrl.get()));
     m_writer.reset(new NetworkMessageWriter(NetMsg::MediaCategory, NetMsg::AddMedia));
     m_ipBanAccepter.reset(new IpBanAccepter());
     m_passwordAccepter.reset(new PasswordAccepter());

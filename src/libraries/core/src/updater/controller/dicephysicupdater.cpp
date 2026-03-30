@@ -3,7 +3,7 @@
 #include "network/networkmessagewriter.h"
 #include "network/receiveevent.h"
 
-DicePhysicUpdater::DicePhysicUpdater(Dice3DController* ctrl, QObject* parent) : QObject(parent), m_ctrl(ctrl)
+DicePhysicUpdater::DicePhysicUpdater(Dice3DController* ctrl, QObject* parent) : NetWorkReceiver(parent), m_ctrl(ctrl)
 {
     ReceiveEvent::registerNetworkReceiver(NetMsg::Dice3DCategory, this);
 

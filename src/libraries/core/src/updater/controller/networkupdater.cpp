@@ -3,11 +3,22 @@
 #include <QCryptographicHash>
 #include <QThread>
 
+#include "network/receiveevent.h"
+#include "worker/iohelper.h"
 #include "worker/modelhelper.h"
+#include "worker/networkhelper.h"
 #include "worker/playermessagehelper.h"
 
-NetworkUpdater::NetworkUpdater(NetworkController* ctrl, QObject* parent) : QObject{parent}, m_ctrl(ctrl)
+void readDataAndSetModel(NetworkMessageReader* msg, ChannelModel* model)
 {
+    auto data= msg->byteArray32();
+    auto jon= IOHelper::textByteArrayToJsonObj(data);
+    helper::network::fetchChannelModel(model, jon);
+}
+
+NetworkUpdater::NetworkUpdater(NetworkController* ctrl, QObject* parent) : NetWorkReceiver{parent}, m_ctrl(ctrl)
+{
+    ReceiveEvent::registerNetworkReceiver(NetMsg::AdministrationCategory, this);
     SettingsHelper::readConnectionProfileModel(m_ctrl->profileModel());
     connect(m_ctrl, &NetworkController::addChannel, this, &NetworkUpdater::addChannel);
     connect(m_ctrl, &NetworkController::lockChannel, this, &NetworkUpdater::lockChannel);
@@ -118,6 +129,47 @@ void NetworkUpdater::joinChannel(const QString& userId, const QString& channelId
     msg.string8(userId);
     msg.byteArray32(password);
     msg.sendToServer();
+}
+
+NetWorkReceiver::SendType NetworkUpdater::processMessage(NetworkMessageReader* msg)
+{
+    if(!msg)
+        return {};
+
+    NetWorkReceiver::SendType type= NetWorkReceiver::NONE;
+    switch(msg->action())
+    {
+    case NetMsg::EndConnectionAction:
+        break;
+    case NetMsg::SetChannelList:
+        readDataAndSetModel(msg, m_ctrl->channelModel());
+        break;
+    case NetMsg::AdminAuthSucessed:
+        m_ctrl->setGroups(m_ctrl->groups() | NetworkController::ADMIN);
+        break;
+    case NetMsg::AuthentificationFail:
+        m_ctrl->setAuthentificationStatus(false);
+        break;
+    case NetMsg::AuthentificationSucessed:
+        m_ctrl->setAuthentificationStatus(true);
+        break;
+    case NetMsg::ClearTable:
+        m_ctrl->clearTable(false);
+        break;
+    case NetMsg::UserKicked:
+        m_ctrl->setLastError(tr("You have been kicked out of the game."));
+        break;
+    case NetMsg::HeartbeatAsk:
+    {
+        NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::HeartbeatAnswer);
+        msg.sendToServer();
+    }
+    break;
+    default:
+        break;
+    }
+
+    return type;
 }
 
 void NetworkUpdater::defineChannelAsDefault(const QString& channelId)

@@ -32,7 +32,7 @@ namespace campaign
 class CampaignManager;
 }
 
-class CORE_EXPORT AudioPlayerUpdater : public QObject, public NetWorkReceiver
+class CORE_EXPORT AudioPlayerUpdater : public NetWorkReceiver
 {
     Q_OBJECT
 public:

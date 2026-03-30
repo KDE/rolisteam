@@ -30,7 +30,7 @@ class DiceRoller;
 namespace campaign
 {
 class Campaign;
-class CORE_EXPORT CampaignUpdater : public QObject, public NetWorkReceiver
+class CORE_EXPORT CampaignUpdater : public NetWorkReceiver
 {
     Q_OBJECT
     Q_PROPERTY(bool localIsGM READ localIsGM WRITE setLocalIsGM NOTIFY localIsGMChanged)
