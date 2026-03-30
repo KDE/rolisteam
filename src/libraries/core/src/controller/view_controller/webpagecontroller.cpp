@@ -146,11 +146,3 @@ QUrl WebpageController::pageUrl() const
 {
     return m_pageUrl;
 }
-
-QUrl WebpageController::url() const
-{
-    if(localGM())
-        return MediaControllerBase::url();
-
-    return m_pageUrl;
-}

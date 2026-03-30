@@ -63,14 +63,12 @@ public:
     WebpageController::SharingMode sharingMode() const;
     QUrl pageUrl() const;
 
-    QUrl url() const override;
-
 signals:
     void hideUrlChanged(bool hideUrl);
     void keepSharingChanged(bool keepSharing);
     void htmlChanged(QString html);
-    void stateChanged(State state);
-    void sharingModeChanged(SharingMode mode);
+    void stateChanged(WebpageController::State state);
+    void sharingModeChanged(WebpageController::SharingMode mode);
     void htmlSharingChanged(bool htmlSharing);
     void urlSharingChanged(bool urlSharing);
     void pageUrlChanged();
@@ -79,10 +77,10 @@ public slots:
     void setHideUrl(bool hideUrl);
     void setKeepSharing(bool keepSharing);
     void setHtml(QString html);
-    void setState(State state);
+    void setState(WebpageController::State state);
     void setHtmlSharing(bool b);
     void setUrlSharing(bool b);
-    void setSharingMode(SharingMode mode);
+    void setSharingMode(WebpageController::SharingMode mode);
     void setPageUrl(QUrl url);
 
 private:
