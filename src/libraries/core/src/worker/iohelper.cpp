@@ -148,29 +148,23 @@ QList<QUrl> IOHelper::readM3uPlayList(const QString& filepath)
 {
     QList<QUrl> res;
     QFile file(filepath);
-    /// @todo make this job in thread.
-    if(file.open(QIODevice::ReadOnly))
+    if(!file.open(QIODevice::ReadOnly))
+        return res;
+
+    QTextStream read(&file);
+    QString line;
+    while(!read.atEnd())
     {
-        QTextStream read(&file);
-        QString line;
-        while(!read.atEnd())
-        {
-            line= read.readLine();
-            if(line.startsWith("#EXTINF", Qt::CaseSensitive) || line.isEmpty())
-                continue;
+        line= read.readLine();
+        if(line.startsWith("#EXTINF", Qt::CaseSensitive) || line.isEmpty())
+            continue;
 
-            auto url= QUrl::fromUserInput(line);
-            if(url.isValid())
-                res.append(url);
-        }
+        auto url= QUrl::fromUserInput(line);
+        if(url.isValid())
+            res.append(url);
     }
-    return res;
-}
 
-QJsonObject IOHelper::byteArrayToJsonObj(const QByteArray& data)
-{
-    auto doc= QCborValue(data);
-    return doc.toJsonValue().toObject();
+    return res;
 }
 
 QJsonObject IOHelper::textByteArrayToJsonObj(const QByteArray& data)
@@ -269,7 +263,7 @@ QJsonArray IOHelper::fetchLanguageModel()
     return array;
 }
 
-void IOHelper::saveBase(MediaControllerBase* base, QDataStream& output)
+/*void IOHelper::saveBase(MediaControllerBase* base, QDataStream& output)
 {
     if(!base)
         return;
@@ -279,7 +273,7 @@ void IOHelper::saveBase(MediaControllerBase* base, QDataStream& output)
     output << base->url();
     output << base->name();
     output << base->ownerId();
-}
+}*/
 
 void IOHelper::saveMediaBaseIntoJSon(MediaControllerBase* base, QJsonObject& obj)
 {
@@ -337,17 +331,16 @@ const QMimeData* IOHelper::clipboardMineData()
 QString IOHelper::htmlToTitle(const QMimeData& data, const QString& defaultName)
 {
     QString name= defaultName;
-    if(data.hasHtml())
-    {
-        QRegularExpression reg("src=\\\"([^\\s]+)\\\"");
-        auto match= reg.match(data.html());
-        if(match.hasMatch())
-        {
-            auto urlString= QUrl::fromUserInput(match.captured(1));
-            name= urlString.fileName();
-        }
-    }
-    return name;
+    if(!data.hasHtml())
+        return name;
+
+    QRegularExpression reg("src=\\\"([^\\s]+)\\\"");
+    auto match= reg.match(data.html());
+    if(!match.hasMatch())
+        return name;
+
+    auto urlString= QUrl::fromUserInput(match.captured(1));
+    return urlString.fileName();
 }
 
 QImage IOHelper::readImageFromURL(const QUrl& url)
@@ -653,7 +646,7 @@ void IOHelper::fetchAudioPlayerController(AudioPlayerController* controller, con
     controller->addSong(urls);
 }
 
-void IOHelper::readBase(MediaControllerBase* base, QDataStream& input)
+/*void IOHelper::readBase(MediaControllerBase* base, QDataStream& input)
 {
     if(!base)
         return;
@@ -675,7 +668,7 @@ void IOHelper::readBase(MediaControllerBase* base, QDataStream& input)
     base->setName(name);
     base->setUrl(path);
     base->setOwnerId(ownerId);
-}
+}*/
 
 void IOHelper::readCharacterSheetController(CharacterSheetController* ctrl, const QByteArray& array)
 {
@@ -863,7 +856,9 @@ bool IOHelper::mergePlayList(const QString& source, const QString& dest)
     auto arraySrc= sourceJson[Core::jsonctrl::Audio::JSON_AUDIO_URLS].toArray();
     auto arrayDst= destJson[Core::jsonctrl::Audio::JSON_AUDIO_URLS].toArray();
 
-    arrayDst.append(arraySrc);
+    for(auto const& p : std::as_const(arraySrc))
+        arrayDst.append(p);
+
     destJson[Core::jsonctrl::Audio::JSON_AUDIO_URLS]= arrayDst;
 
     writeJsonObjectIntoFile(dest, destJson);
@@ -1091,6 +1086,7 @@ QJsonObject IOHelper::diceAliasToJSonObject(DiceAlias* alias)
 RolisteamTheme* IOHelper::jsonToTheme(const QJsonObject& json)
 {
     auto theme= new RolisteamTheme();
+    theme->setUuid(json["id"].toString());
     theme->setName(json["name"].toString());
     theme->setRemovable(json["removable"].toBool());
     theme->setCss(json["css"].toString());
@@ -1121,6 +1117,7 @@ RolisteamTheme* IOHelper::jsonToTheme(const QJsonObject& json)
 QJsonObject IOHelper::themeToObject(const RolisteamTheme* theme)
 {
     QJsonObject json;
+    json["id"]= theme->uuid();
     json["name"]= theme->getName();
     json["removable"]= theme->isRemovable();
     json["css"]= theme->getCss();
@@ -1136,9 +1133,6 @@ QJsonObject IOHelper::themeToObject(const RolisteamTheme* theme)
     {
         QJsonObject paletteObject;
         tmp->writeTo(paletteObject);
-        /*json["role"]= static_cast<int>(tmp->getRole());
-        json["group"]= static_cast<int>(tmp->getGroup());
-        json["name"]= tmp->getName();*/
         json["color"]= tmp->getColor().name();
         colors.append(paletteObject);
     }

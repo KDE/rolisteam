@@ -69,7 +69,6 @@ public:
     static QStringList mediaList(const QString& source, Core::MediaType type);
 
     // json to file
-    static QJsonObject byteArrayToJsonObj(const QByteArray& data);
     static QJsonObject textByteArrayToJsonObj(const QByteArray& data);
     static QJsonArray byteArrayToJsonArray(const QByteArray& data);
     static QByteArray jsonObjectToByteArray(const QJsonObject& obj);
@@ -96,8 +95,7 @@ public:
     // Controller Generic method
     static QByteArray saveController(MediaControllerBase* media);
     // static MediaControllerBase* loadController(const QByteArray& data);
-    static void saveBase(MediaControllerBase* base, QDataStream& output);
-    static void readBase(MediaControllerBase* base, QDataStream& input);
+    // static void saveBase(MediaControllerBase* base, QDataStream& output);
     static void readBaseFromJson(MediaControllerBase* base, const QJsonObject& data);
 
     static void readPdfController(PdfController* ctrl, const QByteArray& array);

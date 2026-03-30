@@ -378,53 +378,6 @@ bool fetchDice3d(Dice3DController* ctrl, const QByteArray& data)
     return true;
 }
 
-/*bool loadCharacterSheet(const QString& path, CharacterSheetModel* model, charactersheet::ImageModel* imgModel,
-                        QJsonObject& root, QString& qmlCode)
-{
-    if(path.isEmpty())
-        return false;
-
-    QFile file(path);
-    if(!file.open(QIODevice::ReadOnly))
-    {
-        return false;
-    }
-
-    QJsonDocument json= QJsonDocument::fromJson(file.readAll());
-    QJsonObject jsonObj= json.object();
-
-    root= jsonObj["data"].toObject();
-
-    qmlCode= jsonObj["qml"].toString();
-
-    QJsonArray images= jsonObj["background"].toArray();
-
-    for(auto jsonpix : images)
-    {
-        QJsonObject obj= jsonpix.toObject();
-        QString str= obj["bin"].toString();
-        QString key= obj["key"].toString();
-        QString filename= obj["filename"].toString();
-        bool isBg= obj["isBg"].toBool();
-        QByteArray array= QByteArray::fromBase64(str.toUtf8());
-        QPixmap pix;
-        pix.loadFromData(array);
-        imgModel->insertImage(pix, key, filename, isBg);
-    }
-
-    const auto fonts= jsonObj["fonts"].toArray();
-    for(const auto& obj : fonts)
-    {
-        const auto font= obj.toObject();
-        const auto fontData= QByteArray::fromBase64(font["data"].toString("").toLatin1());
-        QFontDatabase::addApplicationFontFromData(fontData);
-    }
-
-    // m_errorList.clear();
-    model->readModel(jsonObj, true);
-    // displayError(m_errorList);
-    return true;
-}*/
 void fetchCharacterStateModel(const QJsonArray& obj, CharacterStateModel* model, const QString& rootDir)
 {
     for(const auto& stateRef : obj)
@@ -630,7 +583,7 @@ void fetchInstantMessageModel(const QJsonObject& obj, InstantMessaging::InstantM
     auto localId= obj[sim::localId].toString();
     model->setLocalId(localId);
     auto array= obj[sim::rooms].toArray();
-    for(auto room : array)
+    for(auto room : std::as_const(array))
     {
         auto roomJson= room.toObject();
         auto type= static_cast<InstantMessaging::ChatRoom::ChatRoomType>(roomJson[sim::type].toInt());
@@ -666,7 +619,7 @@ void fetchInstantMessageModel(const QJsonObject& obj, InstantMessaging::InstantM
         auto roles= msgModel->roleNames();
         auto messages= roomJson[sim::messages].toArray();
         QJsonArray msgArray;
-        for(auto msgRef : messages)
+        for(auto msgRef : std::as_const(messages))
         {
             auto msg= msgRef.toObject();
 

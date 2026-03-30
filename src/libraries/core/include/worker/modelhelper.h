@@ -65,7 +65,6 @@ CORE_EXPORT QByteArray buildDice3dData(Dice3DController* ctrl);
 CORE_EXPORT bool saveDice3d(Dice3DController* ctrl, const QString& destination);
 CORE_EXPORT bool fetchDice3d(Dice3DController* ctrl, const QByteArray& data);
 
-// CORE_EXPORT bool saveCharacterSheet(const QString& path, const CharacterSheetModel* model);
 CORE_EXPORT bool loadCharacterSheet(const QString& path, CharacterSheetModel* model,
                                     charactersheet::ImageModel* imgModel, QJsonObject& root, QString& qmlCode);
 
