@@ -223,11 +223,6 @@ void GameController::setCampaignRoot(const QString& path)
     campaign->setRootDirectory(path);
 }
 
-void GameController::setLocalPlayerId(const QString& id)
-{
-    m_remoteLogCtrl->setLocalUuid(id);
-}
-
 void GameController::newMedia(const std::map<QString, QVariant>& map)
 {
     m_contentCtrl->newMedia(m_campaignManager->editor(), map);
@@ -479,6 +474,11 @@ bool GameController::localIsGM() const
 bool GameController::updateAvailable() const
 {
     return m_updateAvailable;
+}
+
+bool GameController::tipAvailable() const
+{
+    return !m_tipOfTheDay.content.isEmpty();
 }
 
 bool GameController::connected() const
