@@ -109,6 +109,8 @@ public:
     QColor getDiceHighlightColor() const;
     void setDiceHighlightColor(QColor c);
 
+    void setUuid(const QString& id);
+
     QString getStyleName() const;
     PaletteModel* paletteModel() const;
 

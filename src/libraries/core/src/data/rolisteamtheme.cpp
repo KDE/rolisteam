@@ -134,6 +134,11 @@ void RolisteamTheme::setDiceHighlightColor(QColor c)
 {
     m_diceHighlightColor= c;
 }
+
+void RolisteamTheme::setUuid(const QString& id)
+{
+    m_uuid= id;
+}
 QColor RolisteamTheme::getDiceHighlightColor() const
 {
     return m_diceHighlightColor;
