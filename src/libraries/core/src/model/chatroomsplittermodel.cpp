@@ -104,8 +104,8 @@ void ChatroomSplitterModel::removeModel(int modelIndex)
 
 void ChatroomSplitterModel::mergeGlobal(const QString& uuid, int modelIndex)
 {
-    if(static_cast<int>(m_filterModels.size()) <= modelIndex)
-        return;
+    if(static_cast<int>(m_filterModels.size()) <= modelIndex || modelIndex == 0)
+        return; // index 0 => global
 
     auto model= m_filterModels[modelIndex].get();
 

@@ -74,6 +74,8 @@ void NewMediaController::redo()
 
     qInfo() << QStringLiteral("Redo command newmediacontroller: %1 ").arg(text());
     auto media= Media::MediaFactory::createLocalMedia(m_uuidUri, m_contentType, m_args, m_color, m_localGM);
+    if(!media)
+        return;
     media->setUrl(m_fullPath);
     if(m_editor)
     {

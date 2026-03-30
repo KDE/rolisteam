@@ -22,5 +22,7 @@
         <file>translations/rolisteam_en_US.qm</file>
         <file>translations/rolisteam_de.qm</file>
         <file>translations/rolisteam_fr.qm</file>
+        <file>html/01_personnages.html</file>
+        <file>list/audioplayer1.json</file>
     </qresource>
 </RCC>

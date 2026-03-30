@@ -147,6 +147,8 @@ void ServerConnectionManager::checkAuthToServer(ServerConnection* client)
 
 void ServerConnectionManager::checkAuthAsAdmin(ServerConnection* client)
 {
+    if(!client)
+        return;
     QMap<QString, QVariant> data(m_parameters);
     data["userpassword"]= client->getAdminPassword();
     if(m_adminAccepter->runAccepter(data))

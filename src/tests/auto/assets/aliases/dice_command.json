@@ -1,0 +1,37 @@
+[
+    {
+        "command": "d10r1e[>=9]k",
+        "comment": "Comment",
+        "enable": true,
+        "pattern": "GNS",
+        "replace": true
+    },
+    {
+        "command": "d10e[>=9]k",
+        "comment": "Comment",
+        "enable": true,
+        "pattern": "GN",
+        "replace": true
+    },
+    {
+        "command": "d10r1e10k",
+        "comment": "Comment",
+        "enable": true,
+        "pattern": "GS",
+        "replace": true
+    },
+    {
+        "command": "d10e10k",
+        "comment": "Comment",
+        "enable": true,
+        "pattern": "G",
+        "replace": true
+    },
+    {
+        "command": "d10k",
+        "comment": "Comment",
+        "enable": true,
+        "pattern": "g",
+        "replace": true
+    }
+]

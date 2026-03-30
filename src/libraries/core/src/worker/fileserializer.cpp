@@ -51,6 +51,14 @@ bool FileSerializer::createCampaignDirectory(const QString& campaign)
     res&= dir.mkdir(campaign::TRASH_FOLDER);
     res&= dir.mkdir(campaign::CHARACTER_ROOT);
     res&= dir.mkdir(campaign::STATIC_ROOT);
+    auto path= dir.absoluteFilePath(campaign::MODEL_FILE);
+    QFile file(path);
+    if(!file.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "failed";
+        return false;
+    }
+    file.flush();
 
     return res;
 }
@@ -256,7 +264,7 @@ QFuture<bool> FileSerializer::saveMediaController(MediaControllerBase* ctrl, con
     return campaign::FileSerializer::writeFileIntoCampaign(destination, IOHelper::saveController(ctrl));
 }
 
-bool FileSerializer::writeJsonIntoMedias(const QString& directory, const QJsonObject& objet, const QString& ctrlId)
+/*bool FileSerializer::writeJsonIntoMedias(const QString& directory, const QJsonObject& objet, const QString& ctrlId)
 {
     bool ok;
 
@@ -293,7 +301,7 @@ bool FileSerializer::writeJsonIntoMedias(const QString& directory, const QJsonOb
     res= utils::IOHelper::writeFile(destination, data);
 
     return res;
-}
+}*/
 
 QString FileSerializer::contentTypeToDefaultExtension(Core::ContentType type)
 {
@@ -355,7 +363,7 @@ bool FileSerializer::isValidCampaignDirectory(const QString& path, bool acceptEm
     if(!direct.isAbsolute())
         return false;
 
-    auto entrylist= direct.entryList(QDir::NoDotAndDotDot);
+    auto entrylist= direct.entryList(QDir::NoDotAndDotDot | QDir::Files | QDir::Dirs);
 
     if(acceptEmpty && entrylist.isEmpty()) // empty directory is valid.
         return true;
@@ -373,7 +381,7 @@ bool FileSerializer::hasContent(const QString& path, Core::CampaignDataCategory 
         return false;
 
     QDir direct(path);
-    auto entrylist= direct.entryList(QDir::NoDotAndDotDot);
+    auto entrylist= direct.entryList(QDir::NoDotAndDotDot | QDir::Files | QDir::Dirs);
 
     if(entrylist.isEmpty()) // empty dir has no content
         return false;

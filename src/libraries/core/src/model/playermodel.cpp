@@ -509,7 +509,7 @@ void PlayerModel::addCharacter(const QModelIndex& parent, Character* character, 
 
     int size= pos;
     if(size < 0)
-        size= rowCount(parent.parent());
+        size= rowCount(parent);
 
     auto person= static_cast<Person*>(parent.internalPointer());
     auto player= dynamic_cast<Player*>(person);
