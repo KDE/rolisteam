@@ -152,6 +152,10 @@ void ChatroomSplitterModel::removeChatroom(const QString& id)
     {
         removeModel(i);
     }
+
+    if(m_filterModels.size()<=0)
+        return;
+
     auto model= m_filterModels[0].get();
 
     std::for_each(std::begin(listIds), std::end(listIds), [model](const QString& id) { model->removeFilterId(id); });

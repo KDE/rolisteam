@@ -25,8 +25,11 @@
 #include <QMovie>
 #include <QNetworkAccessManager>
 #include <QObject>
+#include <QFutureWatcher>
 #include <QPixmap>
+
 #include <core_global.h>
+
 class CORE_EXPORT ImageSelectorController : public QObject
 {
     Q_OBJECT
@@ -71,6 +74,7 @@ public:
     Q_FLAG(Sources)
     explicit ImageSelectorController(bool askPath= false, Sources sources= All, Shape shape= AnyShape,
                                      const QString& directory= QDir::homePath(), QObject* parent= nullptr);
+    ~ImageSelectorController();
 
     void setImageData(const QByteArray& array);
 
@@ -143,6 +147,7 @@ private:
     qreal m_factor;
 
     std::unique_ptr<QNetworkAccessManager> m_manager;
+    QPointer<QFutureWatcher<std::pair<QPixmap, QPixmap>>> m_watcher;
 };
 Q_DECLARE_OPERATORS_FOR_FLAGS(ImageSelectorController::Sources)
 

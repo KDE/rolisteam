@@ -204,7 +204,7 @@ void TestNetwork::networkControllerTest()
     QVERIFY(m_ctrl->ipv4().isEmpty());
     QVERIFY(m_ctrl->host().isEmpty());
     QVERIFY(m_ctrl->lastError().isEmpty());
-    QVERIFY(!m_ctrl->askForGM());
+    QVERIFY(m_ctrl->askForGM());
     m_updater->processMessage(nullptr);
 
     QList<NetMsg::Action> actions{

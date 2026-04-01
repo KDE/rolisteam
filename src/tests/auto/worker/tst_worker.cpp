@@ -384,7 +384,7 @@ void WorkerTest::prepareMediaDataTest()
 #include <QClipboard>
 void WorkerTest::jsonFunctionTest()
 {
-    auto data= utils::IOHelper::loadFile(":/charactersheet/bitume_fixed.rcs");
+    auto data= utils::IOHelper::loadFile(":/charactersheet/bitume_fixed.rcs").replace("\r\n", "\n");
     QVERIFY(!data.isEmpty());
 
     auto json= IOHelper::textByteArrayToJsonObj(data);

@@ -24,6 +24,7 @@
 #include <QFutureWatcher>
 #include <QPixmap>
 #include <QRect>
+#include <QPointer>
 #include <QString>
 #include <functional>
 
@@ -55,8 +56,18 @@ CORE_EXPORT Core::ContentType extensionToContentType(const QString& filename);
 CORE_EXPORT QRectF computeRectangularCorner(const QPointF& move, int corner, Core::TransformType tt, const QRectF& rect,
                                             int min);
 CORE_EXPORT void updateChildPosition(QVector<ChildPointItem*>& children, vmap::VisualItemController* ctrl);
+
+class QObjectLaterDeleter
+{
+public:
+    void operator()(QObject* object) { object->deleteLater(); }
+};
+
 template <typename T>
-void setContinuation(QFuture<T> future, QObject* obj, std::function<void(T)> callback)
+using unique_ptr_later= std::unique_ptr<T, QObjectLaterDeleter>;
+
+template <typename T>
+QFutureWatcher<T>* setContinuation(QFuture<T> future, QPointer<QObject> obj, std::function<void(T)> callback)
 {
     auto watcher= new QFutureWatcher<T>();
     QObject::connect(watcher, &QFutureWatcher<T>::finished, obj,
@@ -66,8 +77,19 @@ void setContinuation(QFuture<T> future, QObject* obj, std::function<void(T)> cal
                          callback(result);
                          delete watcher;
                      });
+    /*QObject::connect(obj, &QObject::destroyed, watcher,
+                     [watcher]()
+                     {
+                         watcher->cancel();
+                         watcher->waitForFinished();
+                     });*/
+
+
     watcher->setFuture(future);
+    return watcher;
 }
+
+
 
 template <typename T>
 void setParamIfAny(const QString& key, const std::map<QString, QVariant>& params, std::function<void(T)> setter)

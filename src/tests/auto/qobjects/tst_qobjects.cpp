@@ -440,7 +440,7 @@ void QObjectsTest::propertiesTest_data()
     QTest::addRow("CampaignIntegrityController") << static_cast<QObject*>(new campaign::CampaignIntegrityController({}, {}, {})) << true;
     QTest::addRow("CampaignIntegrityDialog") << static_cast<QObject*>(new campaign::CampaignIntegrityDialog(new campaign::CampaignIntegrityController({}, {}, {}))) << true;
     QTest::addRow("CampaignManager") << static_cast<QObject*>(new campaign::CampaignManager(nullptr)) << true;
-    QTest::addRow("CampaignProperties") << static_cast<QObject*>(new CampaignProperties(new campaign::Campaign(), nullptr))                                        << true;
+    QTest::addRow("CampaignProperties") << static_cast<QObject*>(new CampaignProperties(new campaign::Campaign(this), nullptr))                                        << true;
     QTest::addRow("CampaignUpdater") << static_cast<QObject*>(new campaign::CampaignUpdater(nullptr, new campaign::Campaign()))                                     << true; // 100
     QTest::addRow("CampaignView") << static_cast<QObject*>(new campaign::CampaignView()) << true;
     QTest::addRow("Canvas")  << static_cast<QObject*>(new Canvas(new EditorController(new rcse::ImageController())))<< true ;

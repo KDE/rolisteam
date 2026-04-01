@@ -47,10 +47,10 @@ CampaignProperties::CampaignProperties(campaign::Campaign* capm, ThemeModel* the
     ui->m_rootDir->setEnabled(false);
 
     QHeaderView* horizontalHeader= ui->m_tableViewAlias->horizontalHeader();
-    horizontalHeader->setSectionResizeMode(DiceAliasModel::PATTERN, QHeaderView::ResizeToContents);
-    horizontalHeader->setSectionResizeMode(DiceAliasModel::COMMAND, QHeaderView::Stretch);
-    horizontalHeader->setSectionResizeMode(DiceAliasModel::METHOD, QHeaderView::ResizeToContents);
-    horizontalHeader->setSectionResizeMode(DiceAliasModel::COMMENT, QHeaderView::ResizeToContents);
+    horizontalHeader->setSectionResizeMode(DiceAliasModel::PATTERN - DiceAliasModel::PATTERN, QHeaderView::ResizeToContents);
+    horizontalHeader->setSectionResizeMode(DiceAliasModel::COMMAND- DiceAliasModel::PATTERN, QHeaderView::Stretch);
+    horizontalHeader->setSectionResizeMode(DiceAliasModel::METHOD- DiceAliasModel::PATTERN, QHeaderView::ResizeToContents);
+    horizontalHeader->setSectionResizeMode(DiceAliasModel::COMMENT- DiceAliasModel::PATTERN, QHeaderView::ResizeToContents);
 
     ui->m_tableViewAlias->setItemDelegateForColumn(DiceAliasModel::METHOD, new rwidgets::CheckBoxDelegate());
     ui->m_tableViewAlias->setItemDelegateForColumn(DiceAliasModel::DISABLE, new rwidgets::CheckBoxDelegate());

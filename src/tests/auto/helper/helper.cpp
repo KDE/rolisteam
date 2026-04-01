@@ -654,7 +654,12 @@ QUrl imageLocalFile(bool isSquare)
     if(isSquare)
         array= QStringList{"img/arbre_square_500.jpg"};
 
-    return QUrl(QString("file://%1/resources/%2").arg(tests::root_path, array[generate<int>(0, array.size() - 1)]));
+    QString sep;
+#ifdef Q_OS_WIN
+    sep="/";
+#endif
+    return QUrl(QString("file://%3%1/resources/%2").arg(tests::root_path, array[generate<int>(0, array.size() - 1)], sep));
+
 }
 
 QByteArray imageData(bool isSquare)

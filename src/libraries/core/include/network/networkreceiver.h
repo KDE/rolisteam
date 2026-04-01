@@ -20,7 +20,7 @@
 #ifndef NETWORKRECEIVER_H
 #define NETWORKRECEIVER_H
 
-// class NetworkMessageReader;
+#include <QObject>
 #include <network/networkmessage.h>
 #include <network/networkmessagereader.h>
 /**
@@ -29,7 +29,7 @@
  */
 class NetWorkReceiver : public QObject
 {
-    Q_OBJECT
+
 public:
     explicit NetWorkReceiver(QObject* parent = nullptr) : QObject(parent){ }
 

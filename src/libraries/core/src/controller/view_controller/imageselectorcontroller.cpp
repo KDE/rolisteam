@@ -41,17 +41,20 @@ ImageSelectorController::ImageSelectorController(bool askPath, Sources sources, 
 
     auto updateImage= [this]()
     {
-        helper::utils::setContinuation<std::pair<QPixmap, QPixmap>>(
+        QPointer p(this);
+        m_watcher = helper::utils::setContinuation<std::pair<QPixmap, QPixmap>>(
             QtConcurrent::run(
                 [this]()
                 {
                     if(m_data.isEmpty())
                         return std::pair<QPixmap, QPixmap>();
+
                     auto main= QImage::fromData(m_data);
+
                     return std::make_pair(QPixmap::fromImage(main),
                                           QPixmap::fromImage(main).scaled(m_visualSize, Qt::KeepAspectRatio));
                 }),
-            this,
+            p,
             [this](const std::pair<QPixmap, QPixmap>& imgs)
             {
                 if(m_pixmap.isNull() && imgs.first.isNull())
@@ -74,6 +77,12 @@ ImageSelectorController::ImageSelectorController(bool askPath, Sources sources, 
 
     auto clipboard= QGuiApplication::clipboard();
     connect(clipboard, &QClipboard::dataChanged, this, &ImageSelectorController::contentToPasteChanged);
+}
+
+ImageSelectorController::~ImageSelectorController()
+{
+    if(m_watcher)
+        m_watcher->waitForFinished();
 }
 
 bool ImageSelectorController::canDrop() const
