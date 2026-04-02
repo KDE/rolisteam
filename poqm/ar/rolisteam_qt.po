@@ -1655,7 +1655,7 @@ msgstr "تحرير"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:752
+#: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "مساعدة"
@@ -1814,13 +1814,13 @@ msgid "Check Validity"
 msgstr "تحقق من الصلاحية"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:702
+#: src/binaries/widget/mainwindow.cpp:700
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&تراجع"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:701
+#: src/binaries/widget/mainwindow.cpp:699
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "ت&كرار"
@@ -2209,121 +2209,121 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "اجلب اللون"
 
-#: src/binaries/server/main.cpp:105
+#: src/binaries/server/main.cpp:96
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "قيد المسار إلى ملف الإعداد [إلزامي]"
 
-#: src/binaries/server/main.cpp:108
+#: src/binaries/server/main.cpp:99
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "اطبع ملف إعداد مبدئي إلى الإخراج القياسي"
 
-#: src/binaries/server/main.cpp:111
+#: src/binaries/server/main.cpp:102
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "اطلب كلمة المرور وأعد مفتاح الهاش الخاص بها."
 
-#: src/binaries/widget/mainwindow.cpp:486
+#: src/binaries/widget/mainwindow.cpp:484
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "ألسنة جانبية"
 
-#: src/binaries/widget/mainwindow.cpp:491
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "ألسنة جانبية"
 
-#: src/binaries/widget/mainwindow.cpp:501
+#: src/binaries/widget/mainwindow.cpp:499
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "قائمة اللاعبين"
 
-#: src/binaries/widget/mainwindow.cpp:502
+#: src/binaries/widget/mainwindow.cpp:500
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "جميع وثائق الحملة"
 
-#: src/binaries/widget/mainwindow.cpp:503
+#: src/binaries/widget/mainwindow.cpp:501
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "قائمة الخصوم"
 
-#: src/binaries/widget/mainwindow.cpp:504
+#: src/binaries/widget/mainwindow.cpp:502
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "مشغل الموسيقى"
 
-#: src/binaries/widget/mainwindow.cpp:505
+#: src/binaries/widget/mainwindow.cpp:503
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "لوحة الملقم"
 
-#: src/binaries/widget/mainwindow.cpp:506
+#: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "منطقة الإشعارات"
 
-#: src/binaries/widget/mainwindow.cpp:521
+#: src/binaries/widget/mainwindow.cpp:519
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "أدوات مدير اللعبة (GM)"
 
-#: src/binaries/widget/mainwindow.cpp:562
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "قيد اسم الوثيقة"
 
-#: src/binaries/widget/mainwindow.cpp:562
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "الاسم:"
 
-#: src/binaries/widget/mainwindow.cpp:582
+#: src/binaries/widget/mainwindow.cpp:580
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "افتح صفحة ويب"
 
-#: src/binaries/widget/mainwindow.cpp:582
+#: src/binaries/widget/mainwindow.cpp:580
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "مسار صفحة الويب:"
 
-#: src/binaries/widget/mainwindow.cpp:590
+#: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "افتح خريطة"
 
-#: src/binaries/widget/mainwindow.cpp:590
+#: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "خريطة:"
 
-#: src/binaries/widget/mainwindow.cpp:604
-#: src/binaries/widget/mainwindow.cpp:643
-#: src/binaries/widget/mainwindow.cpp:873 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:602
+#: src/binaries/widget/mainwindow.cpp:641
+#: src/binaries/widget/mainwindow.cpp:871 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "افتح حملة"
 
-#: src/binaries/widget/mainwindow.cpp:753
+#: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr "دليل %1 موجود على الإنترنت في:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:788
+#: src/binaries/widget/mainwindow.cpp:786
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "الدعم"
 
-#: src/binaries/widget/mainwindow.cpp:789
+#: src/binaries/widget/mainwindow.cpp:787
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "صفحة تبرع %1 موجودة على الإنترنت على:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:853
+#: src/binaries/widget/mainwindow.cpp:851
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2333,23 +2333,23 @@ msgstr ""
 "هل تريد حفظ الحملة؟\n"
 "آخر حفظ: %1 دقيقة(دقائق) ماضية"
 
-#: src/binaries/widget/mainwindow.cpp:855
+#: src/binaries/widget/mainwindow.cpp:853
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "هل تريد حقاً الخروج من Rolisteam؟"
 
-#: src/binaries/widget/mainwindow.cpp:861
+#: src/binaries/widget/mainwindow.cpp:859
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "أنهِ %1 "
 
-#: src/binaries/widget/mainwindow.cpp:940
+#: src/binaries/widget/mainwindow.cpp:938
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "إشعار التحديث"
 
-#: src/binaries/widget/mainwindow.cpp:941
+#: src/binaries/widget/mainwindow.cpp:939
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2359,106 +2359,106 @@ msgstr ""
 "أُصدر الإصدار %1. رجاءً، ألقِ نظرة على <a href=\"https://www.rolisteam.org/"
 "download\">صفحة التنزيل</a> لمزيد من المعلومات"
 
-#: src/binaries/widget/mainwindow.cpp:951
+#: src/binaries/widget/mainwindow.cpp:949
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "انضم %1 للتو إلى اللعبة."
 
-#: src/binaries/widget/mainwindow.cpp:955
+#: src/binaries/widget/mainwindow.cpp:953
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "الإصدار الذي يملكه %1 ليس صحيحًا: %2."
 
-#: src/binaries/widget/mainwindow.cpp:961
+#: src/binaries/widget/mainwindow.cpp:959
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "غادر %1 اللعبة للتو."
 
-#: src/binaries/widget/mainwindow.cpp:1044
+#: src/binaries/widget/mainwindow.cpp:1042
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "قيد Rolisteam لاستخدام <المنفذ> للاتصال"
 
-#: src/binaries/widget/mainwindow.cpp:1047
+#: src/binaries/widget/mainwindow.cpp:1045
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "قيد Rolisteam للاتصال بـ <الخادم>."
 
-#: src/binaries/widget/mainwindow.cpp:1050
+#: src/binaries/widget/mainwindow.cpp:1048
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "قيد <الدور>: مدير لعبة (gm) أو حاسوب شخصي (pc)"
 
-#: src/binaries/widget/mainwindow.cpp:1052
+#: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "امسح الإعدادات واستخدم المعلمات المبدئية"
 
-#: src/binaries/widget/mainwindow.cpp:1055
+#: src/binaries/widget/mainwindow.cpp:1053
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "قيد <اسم المستخدم>"
 
-#: src/binaries/widget/mainwindow.cpp:1058
+#: src/binaries/widget/mainwindow.cpp:1056
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr "قيد <منفذ websocket> المفيد للاختبار الآلي لواجهة المستخدم"
 
-#: src/binaries/widget/mainwindow.cpp:1059
+#: src/binaries/widget/mainwindow.cpp:1057
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "أزل الحد من حجم ملف PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1062
+#: src/binaries/widget/mainwindow.cpp:1060
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "مسار ملف الترجمة: <ملف_الترجمة>"
 
-#: src/binaries/widget/mainwindow.cpp:1065
+#: src/binaries/widget/mainwindow.cpp:1063
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "قيد المسار للاتصال بالخادم: <مسار>"
 
-#: src/binaries/widget/mainwindow.cpp:1170
+#: src/binaries/widget/mainwindow.cpp:1168
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "افتح %1"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1265
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "متّصل"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1265
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "غير متصل"
 
-#: src/binaries/widget/mainwindow.cpp:1268
+#: src/binaries/widget/mainwindow.cpp:1266
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "الخادم"
 
-#: src/binaries/widget/mainwindow.cpp:1268
+#: src/binaries/widget/mainwindow.cpp:1266
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "العميل"
 
-#: src/binaries/widget/mainwindow.cpp:1275
+#: src/binaries/widget/mainwindow.cpp:1273
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "مدير اللعبة (GM)"
 
-#: src/binaries/widget/mainwindow.cpp:1281
+#: src/binaries/widget/mainwindow.cpp:1279
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "المشغل"
 
-#: src/binaries/widget/mainwindow.cpp:1309
+#: src/binaries/widget/mainwindow.cpp:1306
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "مجهول"
@@ -3144,7 +3144,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "قدِّم هذا الملف لمطوري Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:470
+#: src/libraries/core/src/controller/contentcontroller.cpp:428
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "الصورة المنسوخة"
@@ -3159,30 +3159,36 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "النص"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:123
+#: src/libraries/core/src/controller/networkcontroller.cpp:132
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[Upnp] نجاح تعيين المنفذ: "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:174
+#: src/libraries/core/src/controller/networkcontroller.cpp:201
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] لم يُعثر على عنوان الآي بي."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:273
+#: src/libraries/core/src/controller/networkcontroller.cpp:307
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "خيط الخادم مُغلق"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:284
+#: src/libraries/core/src/controller/networkcontroller.cpp:318
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "الخادم مغلق"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:288
+#: src/libraries/core/src/controller/networkcontroller.cpp:322
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "الخادم يعمل"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:333
+#, qt-format
+msgctxt "NetworkController|"
+msgid "IP Address changed (v4): %1"
+msgstr ""
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3316,12 +3322,12 @@ msgctxt "CharacterStateModel|"
 msgid "Image"
 msgstr "الصورة"
 
-#: src/libraries/core/src/model/chatroomsplittermodel.cpp:179
+#: src/libraries/core/src/model/chatroomsplittermodel.cpp:183
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
 msgstr "[تحريك لليمين] غرفة الدردشة المصدر أو الوجهة غير موجودة."
 
-#: src/libraries/core/src/model/chatroomsplittermodel.cpp:202
+#: src/libraries/core/src/model/chatroomsplittermodel.cpp:206
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
 msgstr "[تحريك لليسار] غرفة الدردشة المصدر أو الوجهة غير موجودة."
@@ -3532,12 +3538,12 @@ msgctxt "PatternModel|"
 msgid "Hexagon"
 msgstr "سداسيّ"
 
-#: src/libraries/core/src/model/playermodel.cpp:182
+#: src/libraries/core/src/model/playermodel.cpp:180
 msgctxt "PlayerModel|"
 msgid "Not defined"
 msgstr "ليس معرّفًا"
 
-#: src/libraries/core/src/model/playermodel.cpp:185
+#: src/libraries/core/src/model/playermodel.cpp:183
 #, qt-format
 msgctxt "PlayerModel|"
 msgid ""
@@ -3555,22 +3561,22 @@ msgstr ""
 "المسافة لكل دور: %6\n"
 "النوع: %7\n"
 
-#: src/libraries/core/src/model/playermodel.cpp:197
+#: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
 msgid "NPC"
 msgstr "شخصية غير قابلة للعب"
 
-#: src/libraries/core/src/model/playermodel.cpp:197
+#: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
 msgid "PC"
 msgstr "حاسوب شخصي"
 
-#: src/libraries/core/src/model/playermodel.cpp:263
+#: src/libraries/core/src/model/playermodel.cpp:265
 msgctxt "PlayerModel|"
 msgid "Players List"
 msgstr "قائمة اللاعبين"
 
-#: src/libraries/core/src/model/playermodel.cpp:484
+#: src/libraries/core/src/model/playermodel.cpp:486
 msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "لاعب أو مُعرِّف فريد مكرر"
@@ -3596,27 +3602,27 @@ msgctxt "StateModel|"
 msgid "Any State"
 msgstr "أي حالة"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "Bytes"
 msgstr "بايت"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "KiB"
 msgstr "ك.بايت"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "م.بايت"
 
-#: src/libraries/core/src/network/channelmodel.cpp:438
+#: src/libraries/core/src/network/channelmodel.cpp:452
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "كلمة سر القناة"
 
-#: src/libraries/core/src/network/channelmodel.cpp:439
+#: src/libraries/core/src/network/channelmodel.cpp:453
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -3642,7 +3648,7 @@ msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "المقبس غير قابل للكتابة"
 
-#: src/libraries/core/src/network/clientconnection.cpp:118
+#: src/libraries/core/src/network/clientconnection.cpp:117
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "خطأ في الإرسال:"
@@ -3657,36 +3663,44 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "اللاعب"
 
-#: src/libraries/core/src/network/rserver.cpp:63
+#: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[الخادم] بدء الاستماع"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:231
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "فشل الاستيثاق كمسؤول: %2 - %1، كلمة مرور خاطئة."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:258
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
 "Authentification fails: %1 try to connect to the server with wrong password."
 msgstr "فشل الاستيثاق: حاول %1 الاتصال بالخادم بكلمة مرور خاطئة."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:272
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "طرد المستخدم: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:288
+#, fuzzy, qt-format
+#| msgctxt "ServerConnectionManager|"
+#| msgid "User has been kick out: %2 - %1."
+msgctxt "ServerConnectionManager|"
+msgid "User has been ban: %2 - %1."
+msgstr "طرد المستخدم: %2 - %1."
+
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "اتصال وارد جديد!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:512
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
@@ -3869,19 +3883,35 @@ msgctxt "QObject|"
 msgid "Close %1"
 msgstr "أغلق %1"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:219
+#: src/libraries/core/src/updater/controller/networkupdater.cpp:90
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Add channel"
+msgctxt "NetworkUpdater|"
+msgid "New channel"
+msgstr "أضف قناة"
+
+#: src/libraries/core/src/updater/controller/networkupdater.cpp:160
+#, fuzzy
+#| msgctxt "ServerConnectionManager|"
+#| msgid "User has been kick out: %2 - %1."
+msgctxt "NetworkUpdater|"
+msgid "You have been kicked out of the game."
+msgstr "طرد المستخدم: %2 - %1."
+
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "'%1' is not empty"
 msgstr "'%1' ليس فارغًا"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:228
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:229
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "Could not create '%1'"
 msgstr "لا يمكن إنشاء '%1'"
 
-#: src/libraries/core/src/worker/fileserializer.cpp:124
+#: src/libraries/core/src/worker/fileserializer.cpp:132
 #, qt-format
 msgctxt "QObject|"
 msgid "Error: %1 does not exist or it is not readable."
@@ -6720,97 +6750,119 @@ msgctxt "CampaignDock|"
 msgid "Type:"
 msgstr "النوع:"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:35
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:36
 msgctxt "ChannelListPanel|"
 msgid "Edit Channel"
 msgstr "حرّر القناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:36
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:37
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:144
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
-msgid "Lock/Unlock Channel"
+msgid "Lock Channel"
 msgstr "اقفل/افتح القفل عن القناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:37
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
 msgid "Switch to channel"
 msgstr "تبديل الى القناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:38
-msgctxt "ChannelListPanel|"
-msgid "Set/Unset Channel Password"
-msgstr "عَيّن/أزل كلمة مرور القناة"
-
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Channel Password"
+msgctxt "ChannelListPanel|"
+msgid "Set Channel Password"
+msgstr "كلمة سر القناة"
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
 msgid "Add channel"
 msgstr "أضف قناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:40
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:41
 msgctxt "ChannelListPanel|"
 msgid "Add subchannel"
 msgstr "أضف قناة فرعية"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:41
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:42
 msgctxt "ChannelListPanel|"
 msgid "Delete Channel"
 msgstr "حذف القناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:42
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:43
 msgctxt "ChannelListPanel|"
 msgid "Set Default"
 msgstr "اضبط المبدئي"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:43
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:44
 msgctxt "ChannelListPanel|"
 msgid "Log as admin"
 msgstr "سجل دخولك كمشرف"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:44
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:45
 msgctxt "ChannelListPanel|"
 msgid "Kick User"
 msgstr "اطرد المستخدم"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:45
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:46
 msgctxt "ChannelListPanel|"
 msgid "Ban User"
 msgstr "احظر مستخدم"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:46
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:47
 msgctxt "ChannelListPanel|"
 msgid "Reset Data Channel"
 msgstr "أعد ضبط قناة البيانات"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:47
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:48
 msgctxt "ChannelListPanel|"
 msgid "Move User"
 msgstr "انقل المستخدم"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:246
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:144
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Lock/Unlock Channel"
+msgctxt "ChannelListPanel|"
+msgid "Unlock channel"
+msgstr "اقفل/افتح القفل عن القناة"
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
 msgid "Admin Password"
 msgstr "كلمة مرور المشرف"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:246
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
 msgid "Password"
 msgstr "كلمة السر"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:401
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:420
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:333
+msgctxt "ChannelListPanel|"
+msgid "Only empty channel can be removed"
+msgstr ""
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:351
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:375
 msgctxt "ChannelListPanel|"
 msgid "Channel Password"
 msgstr "كلمة سر القناة"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:402
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:352
 #, qt-format
 msgctxt "ChannelListPanel|"
 msgid "Password for channel: %1 - leave empty for no password"
 msgstr "كلمة مرور القناة: %1 - اتركها فارغة لعدم وجود كلمة مرور"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:420
-#, qt-format
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:375
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
-msgid "Channel %1 required password:"
+msgid "Destination Channel required password"
 msgstr "القناة %1 تتطلب كلمة مرور:"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
@@ -9341,6 +9393,10 @@ msgstr "نائم"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "بيويتشد"
+
+#~ msgctxt "ChannelListPanel|"
+#~ msgid "Set/Unset Channel Password"
+#~ msgstr "عَيّن/أزل كلمة مرور القناة"
 
 #~ msgctxt "MindMap|"
 #~ msgid "is linked %1"

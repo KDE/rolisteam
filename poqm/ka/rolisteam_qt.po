@@ -1658,7 +1658,7 @@ msgstr "გამოცემა"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:752
+#: src/binaries/widget/mainwindow.cpp:750
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "დახმარება"
@@ -1817,13 +1817,13 @@ msgid "Check Validity"
 msgstr "სისწორის შემოწმება"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:702
+#: src/binaries/widget/mainwindow.cpp:700
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&დაბრუნება"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:701
+#: src/binaries/widget/mainwindow.cpp:699
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&გამეორება"
@@ -2204,104 +2204,104 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "ფერის მიღება"
 
-#: src/binaries/server/main.cpp:105
+#: src/binaries/server/main.cpp:96
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "დააყენეთ ბილიკი კონფიგურაციის ფაილამდე [აუცილებელია]"
 
-#: src/binaries/server/main.cpp:108
+#: src/binaries/server/main.cpp:99
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "ნაგულისხმევი კონფიგურაციის ფაილის სტანდარტულ გამოტანაში ჩვენება"
 
-#: src/binaries/server/main.cpp:111
+#: src/binaries/server/main.cpp:102
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "პაროლის კითხვა და მისი ჰეშის გასაღების დაბრუნება."
 
-#: src/binaries/widget/mainwindow.cpp:486
+#: src/binaries/widget/mainwindow.cpp:484
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "გვერდითი პანელები"
 
-#: src/binaries/widget/mainwindow.cpp:491
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "გვერდითი პანელები"
 
-#: src/binaries/widget/mainwindow.cpp:501
+#: src/binaries/widget/mainwindow.cpp:499
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "მოთამაშეების სია"
 
-#: src/binaries/widget/mainwindow.cpp:502
+#: src/binaries/widget/mainwindow.cpp:500
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "ყველა კამპანიის დოკუმენტი"
 
-#: src/binaries/widget/mainwindow.cpp:503
+#: src/binaries/widget/mainwindow.cpp:501
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "ანტაგონისტების სია"
 
-#: src/binaries/widget/mainwindow.cpp:504
+#: src/binaries/widget/mainwindow.cpp:502
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "მუსიკის დამკვრელი"
 
-#: src/binaries/widget/mainwindow.cpp:505
+#: src/binaries/widget/mainwindow.cpp:503
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "სერვერის პანელი"
 
-#: src/binaries/widget/mainwindow.cpp:506
+#: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "გაფრთხილებების ზონა"
 
-#: src/binaries/widget/mainwindow.cpp:521
+#: src/binaries/widget/mainwindow.cpp:519
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "GM ხელსაწყოები"
 
-#: src/binaries/widget/mainwindow.cpp:562
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "აღწერეთ დოკუმენტის სახელი"
 
-#: src/binaries/widget/mainwindow.cpp:562
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "სახელი:"
 
-#: src/binaries/widget/mainwindow.cpp:582
+#: src/binaries/widget/mainwindow.cpp:580
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "ვებგვერდი გახსნა"
 
-#: src/binaries/widget/mainwindow.cpp:582
+#: src/binaries/widget/mainwindow.cpp:580
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "ვებგვერდის ბმული:"
 
-#: src/binaries/widget/mainwindow.cpp:590
+#: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "რუკის გახსნა"
 
-#: src/binaries/widget/mainwindow.cpp:590
+#: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "რუკა:"
 
-#: src/binaries/widget/mainwindow.cpp:604
-#: src/binaries/widget/mainwindow.cpp:643
-#: src/binaries/widget/mainwindow.cpp:873 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:602
+#: src/binaries/widget/mainwindow.cpp:641
+#: src/binaries/widget/mainwindow.cpp:871 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "კამპანიის გახსნა"
 
-#: src/binaries/widget/mainwindow.cpp:753
+#: src/binaries/widget/mainwindow.cpp:751
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
@@ -2309,12 +2309,12 @@ msgstr ""
 "%1-ის დოკუმენტაცია შეგიძლიათ იპოვოთ ინტერნეტში, მისამართზე: <br> <a href="
 "\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:788
+#: src/binaries/widget/mainwindow.cpp:786
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "მხარდაჭერა"
 
-#: src/binaries/widget/mainwindow.cpp:789
+#: src/binaries/widget/mainwindow.cpp:787
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -2322,7 +2322,7 @@ msgstr ""
 "%1-სთვის შეწირვის გვერდი შეგიძლიათ იპოვოთ ონლაინ, მისამართზე :<br> <a href="
 "\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:853
+#: src/binaries/widget/mainwindow.cpp:851
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2332,23 +2332,23 @@ msgstr ""
 "მართლა გნებავთ კამპანიის შენახვა?\n"
 "ბოლო შენახვა: %1 წუთის წინ"
 
-#: src/binaries/widget/mainwindow.cpp:855
+#: src/binaries/widget/mainwindow.cpp:853
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "მართლა გნებავთ Rolistream-დან გასვლა?"
 
-#: src/binaries/widget/mainwindow.cpp:861
+#: src/binaries/widget/mainwindow.cpp:859
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "%1-დან გასვლა "
 
-#: src/binaries/widget/mainwindow.cpp:940
+#: src/binaries/widget/mainwindow.cpp:938
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "შეტყობინების განახლება"
 
-#: src/binaries/widget/mainwindow.cpp:941
+#: src/binaries/widget/mainwindow.cpp:939
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2358,108 +2358,108 @@ msgstr ""
 "გამოსულია ვერსია %1. მეტი ინფორმაციისთვის იხილეთ <a href=\"http://www."
 "rolisteam.org/download\">გადმოწერის გვერდი</a>"
 
-#: src/binaries/widget/mainwindow.cpp:951
+#: src/binaries/widget/mainwindow.cpp:949
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 შემოუერთდა თამაშს."
 
-#: src/binaries/widget/mainwindow.cpp:955
+#: src/binaries/widget/mainwindow.cpp:953
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1-ის ვერსია სწორი არაა: %2."
 
-#: src/binaries/widget/mainwindow.cpp:961
+#: src/binaries/widget/mainwindow.cpp:959
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 თამაშიდან გავიდა."
 
-#: src/binaries/widget/mainwindow.cpp:1044
+#: src/binaries/widget/mainwindow.cpp:1042
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Rolisteam-ის მიერთებისთვის <port>-ის დაყენება"
 
-#: src/binaries/widget/mainwindow.cpp:1047
+#: src/binaries/widget/mainwindow.cpp:1045
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Rolisteam-ის მიერთებისთვის <server>-ის დაყენება."
 
-#: src/binaries/widget/mainwindow.cpp:1050
+#: src/binaries/widget/mainwindow.cpp:1048
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "განსაზღვრეთ <role>: gm ან pc</role>"
 
-#: src/binaries/widget/mainwindow.cpp:1052
+#: src/binaries/widget/mainwindow.cpp:1050
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "პარამეტრების წაშლა და ნაგულისხმევი მნიშვნელობების გამოყენება"
 
-#: src/binaries/widget/mainwindow.cpp:1055
+#: src/binaries/widget/mainwindow.cpp:1053
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "<მომხმარებლის სახელის> აღწერა"
 
-#: src/binaries/widget/mainwindow.cpp:1058
+#: src/binaries/widget/mainwindow.cpp:1056
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 "განსაზღვრეთ <websocketport>, რომელიც სასარგებლოა ინტერფეისის ავტომატური "
 "ტესტირებისთვის"
 
-#: src/binaries/widget/mainwindow.cpp:1059
+#: src/binaries/widget/mainwindow.cpp:1057
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "PDF ფაილის ზომის შეზღუდვის მოხნა"
 
-#: src/binaries/widget/mainwindow.cpp:1062
+#: src/binaries/widget/mainwindow.cpp:1060
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "ბილიკი თარგმანის ფაილამდე: <თარგმანისფაილი>"
 
-#: src/binaries/widget/mainwindow.cpp:1065
+#: src/binaries/widget/mainwindow.cpp:1063
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "აღწერეთ სერვერთან მისაერთებელი ბმული: <ბმული>"
 
-#: src/binaries/widget/mainwindow.cpp:1170
+#: src/binaries/widget/mainwindow.cpp:1168
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "%1-ის გახსნა"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1265
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "დაკავშირებულია"
 
-#: src/binaries/widget/mainwindow.cpp:1267
+#: src/binaries/widget/mainwindow.cpp:1265
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "დაკავშირებული არაა"
 
-#: src/binaries/widget/mainwindow.cpp:1268
+#: src/binaries/widget/mainwindow.cpp:1266
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "სერვერი"
 
-#: src/binaries/widget/mainwindow.cpp:1268
+#: src/binaries/widget/mainwindow.cpp:1266
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "კლიენტი"
 
-#: src/binaries/widget/mainwindow.cpp:1275
+#: src/binaries/widget/mainwindow.cpp:1273
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "გმ"
 
-#: src/binaries/widget/mainwindow.cpp:1281
+#: src/binaries/widget/mainwindow.cpp:1279
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "დამკვრელი"
 
-#: src/binaries/widget/mainwindow.cpp:1309
+#: src/binaries/widget/mainwindow.cpp:1306
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "უცნობი"
@@ -3145,7 +3145,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "გაუგზავნეთ ეს ფაილი Rolistream-ის პროგრამისტებს"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:470
+#: src/libraries/core/src/controller/contentcontroller.cpp:428
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "კოპირებული გამოსახულება"
@@ -3160,30 +3160,36 @@ msgctxt "TextController|"
 msgid "Text"
 msgstr "ტექსტი"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:123
+#: src/libraries/core/src/controller/networkcontroller.cpp:132
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[Upnp] პორტის წარმატებული გადამისამართება: "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:174
+#: src/libraries/core/src/controller/networkcontroller.cpp:201
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] IP მისამართი ვერ ვიპოვე."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:273
+#: src/libraries/core/src/controller/networkcontroller.cpp:307
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "სერვერამდე კავშირი დაიხურა"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:284
+#: src/libraries/core/src/controller/networkcontroller.cpp:318
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "სერვერი გამორთულია"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:288
+#: src/libraries/core/src/controller/networkcontroller.cpp:322
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "სერვერი არის"
+
+#: src/libraries/core/src/controller/networkcontroller.cpp:333
+#, qt-format
+msgctxt "NetworkController|"
+msgid "IP Address changed (v4): %1"
+msgstr ""
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3317,12 +3323,12 @@ msgctxt "CharacterStateModel|"
 msgid "Image"
 msgstr "გამოსახულება"
 
-#: src/libraries/core/src/model/chatroomsplittermodel.cpp:179
+#: src/libraries/core/src/model/chatroomsplittermodel.cpp:183
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
 msgstr "[გადატანა მარჯვნივ] წყარო ან სამიზნე ჩატის ოთახი არ არსებობს."
 
-#: src/libraries/core/src/model/chatroomsplittermodel.cpp:202
+#: src/libraries/core/src/model/chatroomsplittermodel.cpp:206
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
 msgstr "[გადატანა მარცხნივ] წყარო ან სამიზნე ჩატის ოთახი არ არსებობს."
@@ -3533,12 +3539,12 @@ msgctxt "PatternModel|"
 msgid "Hexagon"
 msgstr "ექვსკუთხედი"
 
-#: src/libraries/core/src/model/playermodel.cpp:182
+#: src/libraries/core/src/model/playermodel.cpp:180
 msgctxt "PlayerModel|"
 msgid "Not defined"
 msgstr "აღუწერელია"
 
-#: src/libraries/core/src/model/playermodel.cpp:185
+#: src/libraries/core/src/model/playermodel.cpp:183
 #, qt-format
 msgctxt "PlayerModel|"
 msgid ""
@@ -3556,22 +3562,22 @@ msgstr ""
 "მანძილი სვლაზე: %6\n"
 "ტიპი: %7\n"
 
-#: src/libraries/core/src/model/playermodel.cpp:197
+#: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
 msgid "NPC"
 msgstr "NPC"
 
-#: src/libraries/core/src/model/playermodel.cpp:197
+#: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
 msgid "PC"
 msgstr "PC"
 
-#: src/libraries/core/src/model/playermodel.cpp:263
+#: src/libraries/core/src/model/playermodel.cpp:265
 msgctxt "PlayerModel|"
 msgid "Players List"
 msgstr "მოთამაშეების სია"
 
-#: src/libraries/core/src/model/playermodel.cpp:484
+#: src/libraries/core/src/model/playermodel.cpp:486
 msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "მოთამაშე ან UUID დუბლირდება"
@@ -3597,27 +3603,27 @@ msgctxt "StateModel|"
 msgid "Any State"
 msgstr "State"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "Bytes"
 msgstr "ბაიტი"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "KiB"
 msgstr "კიბ"
 
-#: src/libraries/core/src/network/channelmodel.cpp:106
+#: src/libraries/core/src/network/channelmodel.cpp:108
 msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "მიბ"
 
-#: src/libraries/core/src/network/channelmodel.cpp:438
+#: src/libraries/core/src/network/channelmodel.cpp:452
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "არხის პაროლი"
 
-#: src/libraries/core/src/network/channelmodel.cpp:439
+#: src/libraries/core/src/network/channelmodel.cpp:453
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -3643,7 +3649,7 @@ msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "სოკეტი ჩაწერადი არაა"
 
-#: src/libraries/core/src/network/clientconnection.cpp:118
+#: src/libraries/core/src/network/clientconnection.cpp:117
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "გადაცემის შეცდომა:"
@@ -3658,18 +3664,18 @@ msgctxt "QObject|"
 msgid "Player"
 msgstr "დამკვრელი"
 
-#: src/libraries/core/src/network/rserver.cpp:63
+#: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[სერვერი] მოსმენის დაწყება"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:214
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:231
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "ადმინის მომხმარებლით ავთენტიკაციის შეცდომა: %2 - %1, პაროლი არასწორია."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:241
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:258
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3677,18 +3683,26 @@ msgid ""
 msgstr ""
 "ავთენტიკაციის სეცდომა: %1-ი სერვერთან მიერთებას არასწორი პაროლით ცდილობს."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:262
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:272
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "მომხმარებელი გაგდებულია: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:428
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:288
+#, fuzzy, qt-format
+#| msgctxt "ServerConnectionManager|"
+#| msgid "User has been kick out: %2 - %1."
+msgctxt "ServerConnectionManager|"
+msgid "User has been ban: %2 - %1."
+msgstr "მომხმარებელი გაგდებულია: %2 - %1."
+
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "ახალი შემომავალი შეერთება!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:483
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:512
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
@@ -3872,19 +3886,35 @@ msgctxt "QObject|"
 msgid "Close %1"
 msgstr "%1-ის დახურვა"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:219
+#: src/libraries/core/src/updater/controller/networkupdater.cpp:90
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Add channel"
+msgctxt "NetworkUpdater|"
+msgid "New channel"
+msgstr "არხის დამატება"
+
+#: src/libraries/core/src/updater/controller/networkupdater.cpp:160
+#, fuzzy
+#| msgctxt "ServerConnectionManager|"
+#| msgid "User has been kick out: %2 - %1."
+msgctxt "NetworkUpdater|"
+msgid "You have been kicked out of the game."
+msgstr "მომხმარებელი გაგდებულია: %2 - %1."
+
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "'%1' is not empty"
 msgstr "'%1' ცარიელი არაა"
 
-#: src/libraries/core/src/updater/media/campaignupdater.cpp:228
+#: src/libraries/core/src/updater/media/campaignupdater.cpp:229
 #, qt-format
 msgctxt "CampaignUpdater|"
 msgid "Could not create '%1'"
 msgstr "'%1'-ის შექმნის შეცდომა"
 
-#: src/libraries/core/src/worker/fileserializer.cpp:124
+#: src/libraries/core/src/worker/fileserializer.cpp:132
 #, qt-format
 msgctxt "QObject|"
 msgid "Error: %1 does not exist or it is not readable."
@@ -6718,97 +6748,119 @@ msgctxt "CampaignDock|"
 msgid "Type:"
 msgstr "ტიპი:"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:35
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:36
 msgctxt "ChannelListPanel|"
 msgid "Edit Channel"
 msgstr "არხის ჩასწორება"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:36
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:37
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:144
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
-msgid "Lock/Unlock Channel"
+msgid "Lock Channel"
 msgstr "არხის დაბლოკვა/განბლოკვა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:37
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
 msgid "Switch to channel"
 msgstr "არხზე გადართვა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:38
-msgctxt "ChannelListPanel|"
-msgid "Set/Unset Channel Password"
-msgstr "არხის პაროლის დაყენება/მოხსნა"
-
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Channel Password"
+msgctxt "ChannelListPanel|"
+msgid "Set Channel Password"
+msgstr "არხის პაროლი"
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
 msgid "Add channel"
 msgstr "არხის დამატება"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:40
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:41
 msgctxt "ChannelListPanel|"
 msgid "Add subchannel"
 msgstr "ქვეარხის დამატება"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:41
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:42
 msgctxt "ChannelListPanel|"
 msgid "Delete Channel"
 msgstr "არხის წაშლა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:42
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:43
 msgctxt "ChannelListPanel|"
 msgid "Set Default"
 msgstr "ნაგულისხმევი მიშვნელობა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:43
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:44
 msgctxt "ChannelListPanel|"
 msgid "Log as admin"
 msgstr "ადმინისტრატორით შესვლა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:44
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:45
 msgctxt "ChannelListPanel|"
 msgid "Kick User"
 msgstr "მომხმარებლის გაგდება"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:45
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:46
 msgctxt "ChannelListPanel|"
 msgid "Ban User"
 msgstr "მომხმარებლის ბანი"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:46
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:47
 msgctxt "ChannelListPanel|"
 msgid "Reset Data Channel"
 msgstr "მონაცემებს არხის დაბრუნება"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:47
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:48
 msgctxt "ChannelListPanel|"
 msgid "Move User"
 msgstr "მომხმარებლის გადატანა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:246
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:144
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Lock/Unlock Channel"
+msgctxt "ChannelListPanel|"
+msgid "Unlock channel"
+msgstr "არხის დაბლოკვა/განბლოკვა"
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
 msgid "Admin Password"
 msgstr "ადმინისტრატორის პაროლი"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:246
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
 msgid "Password"
 msgstr "პაროლი"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:401
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:420
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:333
+msgctxt "ChannelListPanel|"
+msgid "Only empty channel can be removed"
+msgstr ""
+
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:351
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:375
 msgctxt "ChannelListPanel|"
 msgid "Channel Password"
 msgstr "არხის პაროლი"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:402
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:352
 #, qt-format
 msgctxt "ChannelListPanel|"
 msgid "Password for channel: %1 - leave empty for no password"
 msgstr "არხის პაროლი: %1 - დატოვეთ ცარიელი, თუ პაროლი საჭირო არაა"
 
-#: src/libraries/rwidgets/docks/channellistpanel.cpp:420
-#, qt-format
+#: src/libraries/rwidgets/docks/channellistpanel.cpp:375
+#, fuzzy
+#| msgctxt "ChannelListPanel|"
+#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
-msgid "Channel %1 required password:"
+msgid "Destination Channel required password"
 msgstr "არხს %1 პაროლი ესაჭიროება:"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
@@ -9339,6 +9391,10 @@ msgstr "მძინარე"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "აკეპილი"
+
+#~ msgctxt "ChannelListPanel|"
+#~ msgid "Set/Unset Channel Password"
+#~ msgstr "არხის პაროლის დაყენება/მოხსნა"
 
 #~ msgctxt "MindMap|"
 #~ msgid "is linked %1"
