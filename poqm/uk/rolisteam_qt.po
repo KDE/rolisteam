@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-16 14:02+0200\n"
+"PO-Revision-Date: 2026-04-02 09:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3194,7 +3194,7 @@ msgstr "сервер увімкнено"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr ""
+msgstr "Змінена адреса IP (v4): %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3700,12 +3700,10 @@ msgid "User has been kick out: %2 - %1."
 msgstr "Користувача викинуто: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:288
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "Користувача викинуто: %2 - %1."
+msgstr "Користувача заблоковано: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3896,20 +3894,14 @@ msgid "Close %1"
 msgstr "Закрити %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Додати канал"
+msgstr "Створити канал"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "Користувача викинуто: %2 - %1."
+msgstr "Ви викинули гру."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -6770,12 +6762,9 @@ msgstr "Змінити канал"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Заблокувати/Розблокувати канал"
+msgstr "Заблокувати канал"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6783,12 +6772,9 @@ msgid "Switch to channel"
 msgstr "Перемкнутися на канал"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Пароль каналу"
+msgstr "Встановити пароль каналу"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6836,12 +6822,9 @@ msgid "Move User"
 msgstr "Пересунути користувача"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Заблокувати/Розблокувати канал"
+msgstr "Розблокувати канал"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6856,7 +6839,7 @@ msgstr "Пароль"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr ""
+msgstr "Можна вилучати лише порожні канали"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6871,12 +6854,9 @@ msgid "Password for channel: %1 - leave empty for no password"
 msgstr "Пароль до каналу: %1 — не заповнюйте, якщо пароль не потрібен"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "Для доступу до каналу %1 потрібен пароль:"
+msgstr "Для доступу до каналу призначення потрібен пароль"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"

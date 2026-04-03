@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2026-03-16 06:29+0100\n"
+"PO-Revision-Date: 2026-04-02 06:44+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%100<=4 ? 2 : 3);\n"
 "Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3197,7 +3197,7 @@ msgstr "strežnik je vklopljen"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr ""
+msgstr "IP-naslov spremenjen (v4): %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3699,12 +3699,10 @@ msgid "User has been kick out: %2 - %1."
 msgstr "Uporabnik je bil vržen ven: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:288
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "Uporabnik je bil vržen ven: %2 - %1."
+msgstr "Uporabnik je bil prepovedan: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3895,20 +3893,14 @@ msgid "Close %1"
 msgstr "Zapri %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Dodaj kanal"
+msgstr "Novi kanal"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "Uporabnik je bil vržen ven: %2 - %1."
+msgstr "Iz igre so vas izločili."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -6768,12 +6760,9 @@ msgstr "Uredi kanal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Zakleni/odkleni kanal"
+msgstr "Zakleni kanal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6781,12 +6770,9 @@ msgid "Switch to channel"
 msgstr "Preklopi na kanal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Geslo kanala"
+msgstr "Nastavi geslo kanala"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6834,12 +6820,9 @@ msgid "Move User"
 msgstr "Premakni uporabnika"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Zakleni/odkleni kanal"
+msgstr "Odkleni kanal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6854,7 +6837,7 @@ msgstr "Geslo"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr ""
+msgstr "Odstraniti je mogoče samo prazen kanal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6869,12 +6852,9 @@ msgid "Password for channel: %1 - leave empty for no password"
 msgstr "Geslo za kanal: %1 - pustite prazno brez gesla"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "Zahtevano geslo kanala %1:"
+msgstr "Ciljni kanal je zahteval geslo"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"

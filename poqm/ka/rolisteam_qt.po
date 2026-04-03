@@ -3189,7 +3189,7 @@ msgstr "სერვერი არის"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr ""
+msgstr "IP მისამართი შეიცვალა (v4): %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3690,12 +3690,10 @@ msgid "User has been kick out: %2 - %1."
 msgstr "მომხმარებელი გაგდებულია: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:288
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "მომხმარებელი გაგდებულია: %2 - %1."
+msgstr "მომხმარებელს ბანი ადევს: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3887,20 +3885,14 @@ msgid "Close %1"
 msgstr "%1-ის დახურვა"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "არხის დამატება"
+msgstr "ახალი არხი"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "მომხმარებელი გაგდებულია: %2 - %1."
+msgstr "თქვენ გააძევეს თამაშიდან."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -6755,12 +6747,9 @@ msgstr "არხის ჩასწორება"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "არხის დაბლოკვა/განბლოკვა"
+msgstr "არხის ჩაკეტვა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6768,12 +6757,9 @@ msgid "Switch to channel"
 msgstr "არხზე გადართვა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "არხის პაროლი"
+msgstr "არხის პაროლის დაყენება"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6821,12 +6807,9 @@ msgid "Move User"
 msgstr "მომხმარებლის გადატანა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "არხის დაბლოკვა/განბლოკვა"
+msgstr "არხის გახსნა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6841,7 +6824,7 @@ msgstr "პაროლი"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr ""
+msgstr "შესაძლებელია, მხოლოდ, ცარიელი არხის წაშლა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6856,12 +6839,9 @@ msgid "Password for channel: %1 - leave empty for no password"
 msgstr "არხის პაროლი: %1 - დატოვეთ ცარიელი, თუ პაროლი საჭირო არაა"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "არხს %1 პაროლი ესაჭიროება:"
+msgstr "სამიზნე არხი პაროლს ითხოვს"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"
