@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-03-16 09:59+0100\n"
+"PO-Revision-Date: 2026-04-02 10:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1506,7 +1506,7 @@ msgstr "Aplica a tots els personatges"
 #: src/binaries/rcse/mainwindow_rcse.ui:14
 msgctxt "MainWindow|"
 msgid "Unknown[*] - Rolisteam Character Sheet Editor"
-msgstr "Desconegut[*] - Editor de full de personatge de Rolisteam"
+msgstr "Desconegut[*] – Editor de full de personatge de Rolisteam"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:29
 msgctxt "MainWindow|"
@@ -3193,7 +3193,7 @@ msgstr "El servidor està actiu"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr ""
+msgstr "L'adreça IP ha canviat (v4): %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3683,7 +3683,7 @@ msgstr "[Servidor] Inicia l'escolta"
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr ""
-"No s'ha pogut fer l'autenticació com a administrador: %2 - %1. Contrasenya "
+"No s'ha pogut fer l'autenticació com a administrador: %2 – %1. Contrasenya "
 "incorrecta."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:258
@@ -3699,15 +3699,13 @@ msgstr ""
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
-msgstr "S'ha expulsat l'usuari: %2 - %1."
+msgstr "S'ha expulsat l'usuari: %2 – %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:288
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "S'ha expulsat l'usuari: %2 - %1."
+msgstr "S'ha bandejat l'usuari: %2 – %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3900,20 +3898,14 @@ msgid "Close %1"
 msgstr "Tanca %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Afig un canal"
+msgstr "Canal nou"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "S'ha expulsat l'usuari: %2 - %1."
+msgstr "Vos han expulsat del joc."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -4025,7 +4017,7 @@ msgstr "WebView"
 #, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
-msgstr "# 3D Roll: Distància %1 - Temps %2 - Gir %3"
+msgstr "# 3D Roll: Distància %1 – Temps %2 – Gir %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -6185,7 +6177,7 @@ msgstr "Trieu un directori"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:14
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Welcome To Rolisteam - Connection Dialog"
-msgstr "Us donem la benvinguda a Rolisteam - Diàleg de connexió"
+msgstr "Us donem la benvinguda a Rolisteam – Diàleg de connexió"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:31
 msgctxt "SelectConnectionProfileDialog|"
@@ -6226,7 +6218,7 @@ msgstr "Visor de dreceres"
 #, qt-format
 msgctxt "TipOfDayViewer|"
 msgid "%1 - Tip Of The Day"
-msgstr "%1 - Consell del dia"
+msgstr "%1 – Consell del dia"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.cpp:45
 msgctxt "TipOfDayViewer|"
@@ -6768,12 +6760,9 @@ msgstr "Edita el canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Bloqueja/desbloqueja el canal"
+msgstr "Bloqueja el canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6781,12 +6770,9 @@ msgid "Switch to channel"
 msgstr "Canvia al canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Contrasenya del canal"
+msgstr "Establix la contrasenya del canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6834,12 +6820,9 @@ msgid "Move User"
 msgstr "Mou l'usuari"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Bloqueja/desbloqueja el canal"
+msgstr "Desbloqueja el canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6854,7 +6837,7 @@ msgstr "Contrasenya"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr ""
+msgstr "Només es pot eliminar un canal buit"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6866,15 +6849,12 @@ msgstr "Contrasenya del canal"
 #, qt-format
 msgctxt "ChannelListPanel|"
 msgid "Password for channel: %1 - leave empty for no password"
-msgstr "Contrasenya del canal: %1 - Deixeu-ho buit per sense contrasenya"
+msgstr "Contrasenya del canal: %1 – Deixeu-ho buit per sense contrasenya"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "El canal %1 requerix una contrasenya:"
+msgstr "El canal de destinació requerix una contrasenya"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"
@@ -7296,7 +7276,7 @@ msgstr "Comprova la sintaxi de l'XML"
 #, qt-format
 msgctxt "NoteContainer|"
 msgid "%1 - Note"
-msgstr "%1 - Nota"
+msgstr "%1 – Nota"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:171
 msgctxt "TextEdit|"
@@ -7914,7 +7894,7 @@ msgstr "Utilitza sempre el nom predeterminat "
 #, qt-format
 msgctxt "SharedNote|"
 msgid "%1[*] - Shared Note Editor (%2)"
-msgstr "%1[*] - Editor de notes compartides (%2)"
+msgstr "%1[*] – Editor de notes compartides (%2)"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
 msgctxt "SharedNote|"
@@ -8539,7 +8519,7 @@ msgstr "Regla"
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (CharacterSheet Viewer)"
-msgstr "%1 - (Visor de full de personatge)"
+msgstr "%1 – (Visor de full de personatge)"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 msgctxt "CharacterSheetWindow|"
@@ -8550,7 +8530,7 @@ msgstr "Desconegut"
 #, qt-format
 msgctxt "CharacterSheetWindow|"
 msgid "%1 - (Character Sheet Viewer)"
-msgstr "%1 - (Visor de full de personatge)"
+msgstr "%1 – (Visor de full de personatge)"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:235
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:306
@@ -8618,13 +8598,13 @@ msgstr "Menú"
 #, qt-format
 msgctxt "Image|"
 msgid "%1 - Image"
-msgstr "%1 - Imatge"
+msgstr "%1 – Imatge"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
 #, qt-format
 msgctxt "Image|"
 msgid "%1 - (Picture : %2)"
-msgstr "%1 - (Imatge: %2)"
+msgstr "%1 – (Imatge: %2)"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
 msgctxt "Image|"
@@ -8809,13 +8789,13 @@ msgstr "S'ha produït un error mentre es carregava"
 #, qt-format
 msgctxt "MindMapView|"
 msgid "%1 - Mindmap"
-msgstr "%1 - Mapa mental"
+msgstr "%1 – Mapa mental"
 
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:155
 #, qt-format
 msgctxt "MindMapView|"
 msgid "%1 [%2] - Mindmap"
-msgstr "%1 [%2] - Mapa mental"
+msgstr "%1 [%2] – Mapa mental"
 
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:157
 msgctxt "MindMapView|"
@@ -8831,7 +8811,7 @@ msgstr "NomésLectura"
 #, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 - Visor de PDF"
+msgstr "%1 – Visor de PDF"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:315
 msgctxt "PdfViewer|"
@@ -9028,13 +9008,13 @@ msgstr "Sense capes"
 #, qt-format
 msgctxt "VMapFrame|"
 msgid "%1 - visibility: %2 - permission: %3 - layer: %4"
-msgstr "%1 - visibilitat: %2 - permisos: %3 - capa: %4"
+msgstr "%1 – visibilitat: %2 – permisos: %3 – capa: %4"
 
 #: src/libraries/rwidgets/mediacontainers/webview.cpp:144
 #, qt-format
 msgctxt "WebView|"
 msgid "%1 - WebPage"
-msgstr "%1 - Pàgina web"
+msgstr "%1 – Pàgina web"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:14
 msgctxt "WebView|"
@@ -9410,7 +9390,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "ChannelListPanel|"
-#~ msgid "Set/Unset Channel Password"
-#~ msgstr "Establix/elimina la contrasenya del canal"
