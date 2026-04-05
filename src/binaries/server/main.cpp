@@ -85,7 +85,8 @@ int main(int argc, char* argv[])
 
     app.setOrganizationName("Rolisteam");
     app.setApplicationName(appName);
-    app.setApplicationVersion(version::version);
+    app.setApplicationVersion(
+        QString("%1 (%2 - %3)").arg(version::version, version::VERSION_DATE, version::VERSION_SHA1));
 
     QCommandLineParser parser;
     parser.addHelpOption();

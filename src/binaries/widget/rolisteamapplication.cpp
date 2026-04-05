@@ -149,7 +149,7 @@ RolisteamApplication::RolisteamApplication(const QString& appName, int& argn, ch
     setOrganizationName(appName);
     setWindowIcon(QIcon(":/resources/rolisteam/logo/500-symbole.png")); // QIcon::fromTheme("500-symbole"));
 
-    setApplicationVersion(version::FULL_VERSION);
+    setApplicationVersion(QString("%1 (%2 - %3)").arg(version::version, version::VERSION_DATE, version::VERSION_SHA1));
     readSettings();
 #ifdef QT_DEBUG
     // create remote object node
