@@ -68,6 +68,8 @@ endif()
 
 include(KDEInstallDirs6 OPTIONAL RESULT_VARIABLE installDir) # OPTIONAL RESULT_VARIABLE installDir
 
+install(FILES resources/packaging/Linux/rolisteam.desktop resources/packaging/Linux/rcse.desktop DESTINATION ${CMAKE_INSTALL_PREFIX}/share/applications)
+
 if(NOT "${installDir}" STREQUAL "NOTFOUND")
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES resources/packaging/Linux/flatpak/org.rolisteam.rolisteam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

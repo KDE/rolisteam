@@ -25,13 +25,7 @@
 
 CORE_EXPORT inline size_t qHash(const QColor& color, size_t seed)
 {
-    QtPrivate::QHashCombine hash;
-
-    seed= hash(static_cast<uint>(color.red()), seed);
-    seed= hash(static_cast<uint>(color.green()), seed);
-    seed= hash(static_cast<uint>(color.blue()), seed);
-    seed= hash(static_cast<uint>(color.alpha()), seed);
-    return seed;
+    return qHash(color.rgba(), seed);
 }
 
 #endif // HASHHELPER_H
