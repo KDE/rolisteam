@@ -2,6 +2,8 @@
 
 #include "media/mediafactory.h"
 #include "worker/messagehelper.h"
+#include <QSet>
+#include <set>
 
 ContentUpdater::ContentUpdater(ContentController* ctrl, QObject* parent) : NetWorkReceiver{parent}, m_ctrl{ctrl}
 {

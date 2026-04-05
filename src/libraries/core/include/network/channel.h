@@ -69,8 +69,6 @@ public:
     void sendToAll(NetworkMessage*, ServerConnection* sender, bool deleteMsg= false);
     void sendToMany(NetworkMessage* msg, ServerConnection* sender, bool deleteMsg= false);
 
-    // void readFromJson(QJsonObject& json) override;
-    // void writeIntoJson(QJsonObject& json) override;
     TreeItem* getChildAt(int row) override;
     const QList<QPointer<TreeItem>> childrenItem() const;
 
