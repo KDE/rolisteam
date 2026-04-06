@@ -2204,17 +2204,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "ფერის მიღება"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "დააყენეთ ბილიკი კონფიგურაციის ფაილამდე [აუცილებელია]"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "ნაგულისხმევი კონფიგურაციის ფაილის სტანდარტულ გამოტანაში ჩვენება"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "პაროლის კითხვა და მისი ჰეშის გასაღების დაბრუნება."

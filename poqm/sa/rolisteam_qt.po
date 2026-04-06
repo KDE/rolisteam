@@ -2398,17 +2398,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "वर्णं प्राप्नुत"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "विन्याससञ्चिकायां मार्गं सेट् कुर्वन्तु [अनिवार्यम्] ।"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "पूर्वनिर्धारितविन्याससञ्चिकां Standard आउटपुट् मध्ये मुद्रयन्तु"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "गुप्तशब्दं पृच्छन्तु तस्य हैश कीलं च प्रत्यागच्छन्तु ।"

@@ -2693,18 +2693,18 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Obter a Cor"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Define a localização do ficheiro de configuração [obrigatório]"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr ""
 "Imprime um ficheiro de configuração predefinido para o 'standard output'"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Pedir a senha e devolver a sua chave codificada."

@@ -2209,17 +2209,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "اجلب اللون"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "قيد المسار إلى ملف الإعداد [إلزامي]"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "اطبع ملف إعداد مبدئي إلى الإخراج القياسي"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "اطلب كلمة المرور وأعد مفتاح الهاش الخاص بها."
@@ -7618,7 +7618,7 @@ msgstr "✖"
 #: src/libraries/rwidgets/editors/sharededitor/firstrundialog.ui:17
 msgctxt "FirstRunDialog|"
 msgid "Welcome to Cahoots"
-msgstr "مرحباً بك في Cahoots"
+msgstr "مرحبًا بك في Cahoots"
 
 #: src/libraries/rwidgets/editors/sharededitor/firstrundialog.ui:46
 msgctxt "FirstRunDialog|"
@@ -7696,7 +7696,7 @@ msgstr ""
 "font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:28pt; font-weight:600;\">مرحباً بك في Cahoots! </span></p>\n"
+"size:28pt; font-weight:600;\">مرحبًا بك في Cahoots! </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:16pt; font-weight:600;\"></p>\n"
@@ -7780,7 +7780,7 @@ msgstr ""
 "font-weight:600; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:20pt;\">مرحباً بك في Cahoots! </span></p>\n"
+"size:20pt;\">مرحبًا بك في Cahoots! </span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:10pt;\"></p>\n"

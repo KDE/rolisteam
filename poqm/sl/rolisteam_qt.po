@@ -2214,17 +2214,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Dobi barvo"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Nastavi pot do prilagoditvene datoteke [obvezno]"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "Natisni privzeto prilagoditveno datoteko na standardni izhod"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Prosi za geslo in vrni svoj ključ za kontrolno vsoto."

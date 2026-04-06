@@ -2249,17 +2249,17 @@ msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Eskuratu kolorea"
 
-#: src/binaries/server/main.cpp:96
+#: src/binaries/server/main.cpp:97
 msgctxt "QObject|"
 msgid "Set the path to configuration file [mandatory]"
 msgstr "Ezarri konfiguratzeko fitxategirako bide-izena [derrigorrezkoa]"
 
-#: src/binaries/server/main.cpp:99
+#: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
 msgstr "Inprimatu konfiguratzeko fitxategi lehenetsi bat irteera estandarrean"
 
-#: src/binaries/server/main.cpp:102
+#: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Galdetu pasahitza eta itzuli bere hash gakoa."
