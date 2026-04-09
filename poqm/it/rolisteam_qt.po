@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-03-18 23:03+0100\n"
+"PO-Revision-Date: 2026-04-03 19:54+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
@@ -3195,7 +3195,7 @@ msgstr "Il server è acceso"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr ""
+msgstr "L'indirizzo IP è cambiato (v4): %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -3698,12 +3698,10 @@ msgid "User has been kick out: %2 - %1."
 msgstr "L'utente è stato espulso: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:288
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "L'utente è stato espulso: %2 - %1."
+msgstr "L'utente è stato bannato: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3894,20 +3892,14 @@ msgid "Close %1"
 msgstr "Chiudi %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Aggiungi canale"
+msgstr "Nuovo canale"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "L'utente è stato espulso: %2 - %1."
+msgstr "Sei stato/a espulso/a dalla partita."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -6762,12 +6754,9 @@ msgstr "Modifica canale"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Blocca/Sblocca canale"
+msgstr "Blocca canale"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6775,12 +6764,9 @@ msgid "Switch to channel"
 msgstr "Passa al canale"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Password del canale"
+msgstr "Imposta la password del canale"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6828,12 +6814,9 @@ msgid "Move User"
 msgstr "Sposta utente"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Blocca/Sblocca canale"
+msgstr "Sblocca canale"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6848,7 +6831,7 @@ msgstr "Password"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr ""
+msgstr "Possono essere rimossi solo i canali vuoti"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6863,12 +6846,9 @@ msgid "Password for channel: %1 - leave empty for no password"
 msgstr "Password per il canale: %1 - lascia vuoto per nessuna password"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "Password richiesta per il canale %1:"
+msgstr "Il canale di destinazione ha richiesto la password"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"
