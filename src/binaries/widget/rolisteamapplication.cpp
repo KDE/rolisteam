@@ -233,6 +233,37 @@ void RolisteamApplication::setTranslator(const QList<QPair<QString, bool>>& list
     qDeleteAll(m_translators);
     m_translators.clear();
 
+    auto addSub=[this](const QString& str){
+       QString fileName(":/translations/%1_%2.qm");
+       QTranslator* trans= new QTranslator(this);
+
+       auto name =str.sliced(QStringLiteral(":/translations/").size());
+       auto appName = name.chopped(name.indexOf("_"));
+
+       if(name.size() <= appName.size()+1){
+           delete trans;
+           return;
+       }
+
+       auto lang = name.sliced(appName.size()+1);
+
+       if(!lang.contains("_")) {
+           delete trans;
+           return;
+       }
+
+       auto subLang = lang.left(lang.indexOf("_"));
+
+       auto ok = trans->load(fileName.arg(appName, subLang));
+       if(ok)
+       {
+            installTranslator(trans);
+           m_translators.append(trans);
+       }
+       else
+           delete trans;
+    };
+
     for(const auto& pair : list)
     {
         QTranslator* trans= new QTranslator(this);
@@ -248,6 +279,7 @@ void RolisteamApplication::setTranslator(const QList<QPair<QString, bool>>& list
             delete trans;
             continue;
         }
+        addSub(trans->filePath());
         installTranslator(trans);
         m_translators.append(trans);
     }
