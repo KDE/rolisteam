@@ -17,3 +17,4 @@ axivion_*
 build_axivion
 design/doxygen/*
 design/doxygen
+deploy-qt-*.cmake
