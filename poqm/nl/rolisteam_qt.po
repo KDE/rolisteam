@@ -1,9 +1,10 @@
 # SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2026 Luc Castermans <luc.castermans@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-04-02 14:13+0200\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-04-12 10:11+0200\n"
+"Last-Translator: Luc Castermans <luc.castermans@gmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -11,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -5805,7 +5806,7 @@ msgstr "Standaard kaartrechten:"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:70
 msgctxt "PreferencesDialogBox|"
 msgid "Item Highlight Color"
-msgstr "Accentuatiekleur van item"
+msgstr "Accentkleur van item"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:101
 msgctxt "PreferencesDialogBox|"
@@ -6117,7 +6118,7 @@ msgstr "Herhaald"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
-msgstr "Accentuatiekleur van dobbelsteen"
+msgstr "Accentkleur van dobbelsteen"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
