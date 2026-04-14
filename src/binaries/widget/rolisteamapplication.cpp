@@ -23,6 +23,7 @@
 #include <QIcon>
 #include <QKeyEvent>
 #include <QSettings>
+#include <QStyleHints>
 #include <QTranslator>
 #include <iostream>
 
@@ -136,13 +137,15 @@ RolisteamApplication::RolisteamApplication(const QString& appName, int& argn, ch
                 qDebug() << "app connection status changed" << connected;
                 emit connectStatusChanged(connected);
             });
-#ifdef Q_OS_WIN
-    QIcon::setThemeSearchPaths(QIcon::themeSearchPaths() << ":/resources");
-    QIcon::setThemeName("rolistheme");
-#endif
+    //#ifdef Q_OS_WIN
+    //    QIcon::setThemeSearchPaths(QIcon::themeSearchPaths() << ":/resources");
+    //    QIcon::setThemeName("rolistheme");
+    //#endif
 
-    qDebug() << QIcon::themeSearchPaths() << QIcon::themeName();
-
+    auto isDark= styleHints()->colorScheme() == Qt::ColorScheme::Dark;
+    qDebug() << "ICON:: Is dark" << isDark;
+    if(isDark)
+        QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme-dark");
     QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/resources/rolistheme");
 
     setApplicationName(appName);

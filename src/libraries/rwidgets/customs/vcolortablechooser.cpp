@@ -20,12 +20,19 @@
 #include <QDebug>
 #include <QPainter>
 #include <QResizeEvent>
+#include <QStyleHints>
 #include <QVBoxLayout>
 #include <QWheelEvent>
 
 #include "vcolortablechooser.h"
 #define MAX_COLOR 359
 #define MAX_SATURATION 255
+
+bool isDarkMode()
+{
+    return qApp->styleHints()->colorScheme() == Qt::ColorScheme::Dark;
+}
+
 ////////////////////////////////////////
 // Implementation of ValueChooser
 ////////////////////////////////////////
@@ -96,7 +103,7 @@ void SaturationChooser::paintEvent(QPaintEvent* event)
     m_gradianRect= event->rect();
     m_gradianRect.setHeight(m_gradianRect.height() / 2);
     painter.fillRect(m_gradianRect, brush);
-    painter.setPen(Qt::black);
+    painter.setPen(isDarkMode() ? Qt::white : Qt::black);
 
     int pos= m_currentValue * width() / MAX_SATURATION;
 
