@@ -2,7 +2,7 @@
 
 import argparse
 import tempfile
-import git
+from git import Repo
 import sys
 import stat
 import subprocess
@@ -67,9 +67,11 @@ def run_process(args, path):
 
 
 
-def clone_repo(path,url_repo,name):
-    print("Clone project")
-    git.Git(path).clone(url_repo,"--recurse-submodules",name)
+def clone_repo(path,url_repo,name, branch):
+    print("Clone project {}/{} - {} - {}".format(path, name, branch, url_repo))
+
+    Repo.clone_from(url_repo, "{}/{}".format(path, name), branch=branch, recursive=True)
+    #git.Git(path).clone(url_repo,"--recurse-submodules",name)
 
 def move_content(source_file, to):
     content = os.listdir(source_file)
@@ -117,6 +119,7 @@ def build_app(path, install_directory):
     result = run_process(["{}/bin/qt-cmake".format(QT_ROOT),
                  "-DCMAKE_BUILD_TYPE:STRING=Release",
                  "-DCMAKE_GENERATOR:STRING=Ninja",
+                 "-DBUILD_TESTING:BOOL=OFF",
                  "-DCMAKE_PREFIX_PATH:PATH={}".format(QT_ROOT),
                  "-DQT_QMAKE_EXECUTABLE:FILEPATH={}".format(QT_QMAKE),
                  "-DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc",
@@ -151,8 +154,24 @@ def build_app(path, install_directory):
 
 
 def clean_dir(path):
+
+    for filepath in glob.glob("{}/lib/*.debug".format(path)):
+        print(filepath)
+        os.remove(filepath)
+
+    for filepath in glob.glob("{}/bin/*.debug".format(path)):
+        print(filepath)
+        os.remove(filepath)
+
+    for filepath in glob.glob("{}/libexec/*.debug".format(path)):
+        print(filepath)
+        os.remove(filepath)
+
     list=["lib/Qt6WebEngineQuick.debug",
+          "bin/lightmapviewer",
+          "bin/lottietoqml",
         "lib/Qt6Pdf.debug",
+        "lib/objects-RelWithDebInfo"
         "lib/Qt6PdfWidgets.debug",
         "lib/Qt6PdfQuick.debug",
         "lib/Qt6WebEngineWidgets.debug",
@@ -279,33 +298,33 @@ def clean_dir(path):
 "bin/shadergen",
 "bin/shapegen",
 "bin/svgtoqml",
-"lib/libQt6Graphs.so.6.8.3",
-"lib/libQt6QmlCompiler.so.6.8.3",
-"lib/libQt6Charts.so.6.8.3",
-"lib/libQt6Location.so.6.8.3",
-"lib/libQt6DataVisualization.so.6.8.3",
-"lib/libQt6Bluetooth.so.6.8.3",
-"lib/libQt6RemoteObjects.so.6.8.3",
-"lib/libQt6ProtobufWellKnownTypes.so.6.8.3",
-"lib/libQt6QuickParticles.so.6.8.3",
-"lib/libQt63DAnimation.so.6.8.3",
-"lib/libQt6Help.so.6.8.3",
-"lib/libQt6Quick3DParticles.so.6.8.3",
-"lib/libQt6VirtualKeyboard.so.6.8.3",
-"lib/libQt6Protobuf.so.6.8.3",
-"lib/libQt6DataVisualizationQml.so.6.8.3",
-"lib/libQt6SerialBus.so.6.8.3",
-"lib/libQt6Core5Compat.so.6.8.3",
-"lib/libQt6ProtobufQtCoreTypes.so.6.8.3",
-"lib/libQt6SensorsQuick.so.6.8.3",
-"lib/libQt6Sql.so.6.8.3",
-"lib/libQt6Sensors.so.6.8.3",
-"lib/libQt6ProtobufQtGuiTypes.so.6.8.3",
-"lib/libQt6Grpc.so.6.8.3",
-"lib/libQt6HttpServer.so.6.8.3",
-"lib/libQt6Nfc.so.6.8.3",
-"lib/libQt6TextToSpeech.so.6.8.3",
-"lib/libQt6QuickTimeline.so.6.8.3"]
+"lib/libQt6Graphs.so.6.10.0",
+"lib/libQt6QmlCompiler.so.6.10.0",
+"lib/libQt6Charts.so.6.10.0",
+"lib/libQt6Location.so.6.10.0",
+"lib/libQt6DataVisualization.so.6.10.0",
+"lib/libQt6Bluetooth.so.6.10.0",
+"lib/libQt6RemoteObjects.so.6.10.0",
+"lib/libQt6ProtobufWellKnownTypes.so.6.10.0",
+"lib/libQt6QuickParticles.so.6.10.0",
+"lib/libQt63DAnimation.so.6.10.0",
+"lib/libQt6Help.so.6.10.0",
+"lib/libQt6Quick3DParticles.so.6.10.0",
+"lib/libQt6VirtualKeyboard.so.6.10.0",
+"lib/libQt6Protobuf.so.6.10.0",
+"lib/libQt6DataVisualizationQml.so.6.10.0",
+"lib/libQt6SerialBus.so.6.10.0",
+"lib/libQt6Core5Compat.so.6.10.0",
+"lib/libQt6ProtobufQtCoreTypes.so.6.10.0",
+"lib/libQt6SensorsQuick.so.6.10.0",
+"lib/libQt6Sql.so.6.10.0",
+"lib/libQt6Sensors.so.6.10.0",
+"lib/libQt6ProtobufQtGuiTypes.so.6.10.0",
+"lib/libQt6Grpc.so.6.10.0",
+"lib/libQt6HttpServer.so.6.10.0",
+"lib/libQt6Nfc.so.6.10.0",
+"lib/libQt6TextToSpeech.so.6.10.0",
+"lib/libQt6QuickTimeline.so.6.10.0"]
 
 
     for file in list:
@@ -421,6 +440,9 @@ def build_deb(path, version, app_name):
     #rm -rf .git
 
 def publish_deb(path, version, app_name):
+    #dput ppa:rolisteam/ppa rolisteam_${VERSION}ubuntu${PKGVERS}_source.changes
+	#dput -f ppa:rolisteam/rolisteamdev rolisteam_${VERSION}ubuntu1~ppa$PKGVERS~beta${beta}_source.changes
+	#dput -f ppa:rolisteam/rolisteamdev rolisteam_${VERSION}ubuntu${PKGVERS}_source.changes
     pass
 
 def build_appimage(path, version, app_name):
@@ -456,9 +478,11 @@ def main():
                     help='an integer for the accumulator')
     args = parser.parse_args()
 
-    #repos=["https://invent.kde.org/rolisteam/rolisteam.git","https://invent.kde.org/rolisteam/rcse.git","https://invent.kde.org/rolisteam/rolisteam-diceparser.git","https://github.com/obiwankennedy/rcm"]
-    repos=["https://invent.kde.org/rolisteam/rolisteam.git","https://invent.kde.org/rolisteam/rcse.git","https://invent.kde.org/rolisteam/rolisteam-diceparser.git"]
+    repos=["https://invent.kde.org/rolisteam/rolisteam.git","https://invent.kde.org/rolisteam/rolisteam-diceparser.git"]
     names=["rolisteam","rolisteam-diceparser"]
+    
+    branch=args.branch
+    print("Selected branch {}".format(branch))
 
 
 
@@ -474,7 +498,7 @@ def main():
             repo="https://invent.kde.org/rolisteam/rolisteam-diceparser.git"
 
 
-        clone_repo("{}".format(tmpdirname),repo, name)
+        clone_repo("{}".format(tmpdirname),repo, name, branch)
         path = os.path.join(tmpdirname,name)
 
         if args.appimage:
