@@ -58,7 +58,7 @@ void HeartBeatSender::setInterval(int newInterval)
 
 void HeartBeatSender::start()
 {
-    qCDebug(NetworkCat) << "Start Timer";
+    qCDebug(NetworkCat) << "Start HeartBeatSender" << m_interval;
     m_timer.start(m_interval * 1000);
 }
 

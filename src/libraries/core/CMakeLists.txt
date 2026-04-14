@@ -150,7 +150,7 @@ target_include_directories(network
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/upnp>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-rinstallLib(network libraries)
+rinstallLib(network libraries roliserverComp)
 #===============================================================
 
 
