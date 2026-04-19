@@ -1191,7 +1191,7 @@ msgstr "ფონტის ადაპტაცია"
 #: src/binaries/rcse/fieldmodel.cpp:73
 msgctxt "FieldModel|"
 msgid "Font"
-msgstr "შრიფტი"
+msgstr "ფონტი"
 
 #: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
