@@ -148,7 +148,7 @@ bool PlayerMessageHelper::readPlayer(NetworkMessageReader& msg, Player* player)
     auto softVersion= msg.string16();
 
     // auto player= new Player(uuid, name, color, gameMaster);
-    qDebug() << player->name() << "new player name" << name;
+    qDebug() << "new player name" << name << "isGM:" << gameMaster << uuid;
     player->setUuid(uuid);
     player->setName(name);
     player->setColor(color);

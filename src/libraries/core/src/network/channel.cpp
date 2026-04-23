@@ -24,6 +24,8 @@
 #include "network/serverconnection.h"
 #include "worker/playermessagehelper.h"
 
+#include "common/logcategory.h"
+
 Channel::Channel(QString str)
 {
     m_name= str;
@@ -178,27 +180,34 @@ int Channel::addChild(TreeItem* item)
         if(tcp.isNull())
             return result;
 
-        connect(tcp, &ServerConnection::clientSaysGoodBye, this,
-                [this, itemp, tcp](const QString& playerId)
-                {
-                    Q_UNUSED(playerId);
-                    if(m_child.isEmpty() || itemp.isNull())
-                        return;
-                    m_child.removeAll(itemp);
-                    if(m_child.isEmpty())
-                        return;
-                    qCInfo(NetworkCat) << QStringLiteral("Client left from channel");
-                    removeClient(tcp);
-                });
+        auto disconnect= [this, itemp, tcp]()
+        {
+            if(m_child.isEmpty() || itemp.isNull())
+                return;
+            m_child.removeAll(itemp);
+            if(m_child.isEmpty())
+                return;
+            qCInfo(NetworkCat) << QStringLiteral("Client left from channel");
+            removeClient(tcp);
+        };
+
+        // connect(tcp, &ServerConnection::clientSaysGoodBye, this, disconnect);
+        connect(tcp, &ServerConnection::socketDisconnection, this, disconnect);
 
         // TODO make this connection as oneshot
-        connect(tcp, &ServerConnection::playerInfoDefined, this, [this, tcp]() { updateNewClient(tcp); });
-        if(tcp->isGM())
-        {
-            if(m_currentGm == nullptr)
-                setCurrentGM(tcp);
-            sendOffGmStatus(tcp);
-        }
+        connect(tcp, &ServerConnection::playerInfoDefined, this,
+                [this, tcp]()
+                {
+                    qCInfo(NetworkCat) << "New client - is GM:" << tcp->isGM() << m_currentGm;
+                    if(tcp->isGM())
+                    {
+                        if(!m_currentGm || !m_currentGm->isConnected())
+                            setCurrentGM(tcp);
+                        sendOffGmStatus(tcp);
+                    }
+                    updateNewClient(tcp);
+                });
+
         emit userHasJoinedChannel(uuid(), item->uuid());
     }
     else // channel
@@ -394,10 +403,12 @@ bool Channel::removeClient(ServerConnection* client)
     {
         clearData();
     }
-    if((m_currentGm != nullptr) && (m_currentGm == client))
+    if((!m_currentGm) && (m_currentGm == client))
     {
         findNewGM();
     }
+
+    client->deleteLater();
 
     emit itemChanged();
     return true;
@@ -405,6 +416,7 @@ bool Channel::removeClient(ServerConnection* client)
 
 void Channel::clearData()
 {
+    qCInfo(ServerLogCat) << "Clear server data";
     m_dataToSend.clear();
     setMemorySize(0);
 }

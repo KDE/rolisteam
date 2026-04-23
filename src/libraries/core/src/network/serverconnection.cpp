@@ -32,6 +32,8 @@ ServerConnection::ServerConnection(QTcpSocket* socket, QObject* parent)
     m_remainingData= 0;
     m_headerRead= 0;
     qRegisterMetaType<ServerConnection::ConnectionEvent>();
+
+    connect(m_player.get(), &Player::gmChanged, this, &ServerConnection::isGMChanged);
 }
 ServerConnection::~ServerConnection()
 {
