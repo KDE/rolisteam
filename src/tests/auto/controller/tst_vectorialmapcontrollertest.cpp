@@ -88,6 +88,9 @@ private slots:
     void serialization_network();
     void serialization_network_data();
 
+    void updaterTest();
+    void updaterTest_data();
+
 private:
     std::unique_ptr<VectorialMapController> m_ctrl;
     std::unique_ptr<QUndoStack> m_stack;
@@ -1295,6 +1298,17 @@ void VectorialMapControllerTest::networkMessage()
     QCOMPARE(ctrl->zIndex(), m_ctrl->zIndex());
     QCOMPARE(ctrl->model()->rowCount(), m_ctrl->model()->rowCount());
 
+    auto model= ctrl->model();
+
+    auto ctrlList= model->items();
+
+    for(auto itemCtrl : ctrlList)
+    {
+        auto const& updater= m_updaters.at(itemCtrl->tool());
+        updater->addItemController(itemCtrl);
+        auto res= Helper::testAllProperties(itemCtrl, {});
+        Q_UNUSED(res);
+    }
     delete mediabase;
 }
 
@@ -1363,6 +1377,181 @@ void VectorialMapControllerTest::networkMessage_data()
             }
             QTest::addRow("save %d", ++index) << list;
         } while(Helper::next_combination(data.begin(), data.begin() + comb_size, data.end()));
+    }
+}
+
+void VectorialMapControllerTest::updaterTest()
+{
+    using CustomMap= std::map<QString, QVariant>;
+    using ValueList= QList<QVariantList>;
+    QFETCH(CustomMap, params);
+    QFETCH(Core::SelectableTool, tool);
+    QFETCH(QStringList, properties);
+    QFETCH(ValueList, values);
+
+    Q_ASSERT(values.count() == properties.count());
+    auto mapIdGlobal= Helper::randomString();
+    m_ctrl->setUuid(mapIdGlobal);
+
+    auto itemCtrl2= vmap::VmapItemFactory::createVMapItem(m_ctrl.get(), tool, params);
+
+    std::function<QPointF(QPointF)> f= [](const QPointF& pos) -> QPointF { return pos; };
+    itemCtrl2->setMapToScene(f);
+
+    auto const& updater= m_updaters.at(tool);
+    updater->addItemController(nullptr);
+    updater->addItemController(itemCtrl2);
+
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+
+    updater->updateItemProperty(nullptr, itemCtrl2);
+
+    for(int i= 0; i < properties.size(); ++i)
+    {
+        auto const& p= properties.at(i);
+        auto const& vals= values.at(i);
+        sender.clear();
+        for(const auto& va : vals)
+        {
+            itemCtrl2->setProperty(p.toLocal8Bit().data(), va);
+            itemCtrl2->endGeometryChange();
+        }
+        auto data= sender.messageData();
+        if(data.isEmpty())
+            continue;
+
+        for(auto const& msg : data)
+        {
+            NetworkMessageReader read;
+            read.setData(msg);
+            // read.reset();
+            if(read.action() != NetMsg::UpdateItem)
+                continue;
+
+            auto mapId= read.string8();
+            auto type= read.uint8();
+            auto uuid= read.string8();
+            // QCOMPARE(mapId, mapIdGlobal);
+            QCOMPARE(itemCtrl2->uuid(), uuid);
+            QCOMPARE(itemCtrl2->itemType(), type);
+            QCOMPARE(itemCtrl2->mapUuid(), mapId);
+
+            updater->updateItemProperty(&read, itemCtrl2);
+        }
+    }
+}
+void VectorialMapControllerTest::updaterTest_data()
+{
+    using CustomMap= std::map<QString, QVariant>;
+    QTest::addColumn<CustomMap>("params");
+    QTest::addColumn<Core::SelectableTool>("tool");
+    QTest::addColumn<QStringList>("properties");
+    using ValueList= QList<QVariantList>;
+    QTest::addColumn<ValueList>("values");
+
+    std::vector<Core::SelectableTool> data(
+        {Core::SelectableTool::FILLRECT, Core::SelectableTool::LINE, Core::SelectableTool::EMPTYELLIPSE,
+         Core::SelectableTool::EMPTYRECT, Core::SelectableTool::FILLEDELLIPSE, Core::SelectableTool::IMAGE,
+         Core::SelectableTool::TEXT, Core::SelectableTool::TEXTBORDER, Core::SelectableTool::PATH});
+
+    CustomMap params;
+    QStringList properties;
+    ValueList values;
+    for(unsigned int i= 0; i < data.size(); ++i)
+    {
+        switch(data.at(i))
+        {
+        case Core::SelectableTool::FILLRECT:
+            params= Helper::buildRectController(true, {0, 0, 200, 200});
+            properties= {"filled", "rect", "penWidth"};
+            values= {{true, false},
+                     {Helper::randomRect(), Helper::randomRect()},
+                     {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::LINE:
+            params= Helper::buildLineController({100, 100}, {500, 100}, {});
+            properties= {"endPoint", "startPoint", "penWidth"};
+            values= {{Helper::randomPoint(), Helper::randomPoint()},
+                     {Helper::randomPoint(), Helper::randomPoint()},
+                     {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::EMPTYELLIPSE:
+            params= Helper::buildEllipseController(false, 200., 100., {500., 100.});
+            properties= {"filled", "rx", "ry", "penWidth"};
+            values= {{true, false},
+                     {Helper::generate<int>(0, 200), Helper::generate<int>(0, 200)},
+                     {Helper::generate<int>(0, 200), Helper::generate<int>(0, 200)},
+                     {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::EMPTYRECT:
+            params= Helper::buildRectController(false, {0, 0, 200, 200}, {300, 200});
+            properties= {"filled", "rect", "penWidth"};
+            values= {{true, false},
+                     {Helper::randomRect(), Helper::randomRect()},
+                     {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::FILLEDELLIPSE:
+            params= Helper::buildEllipseController(true, 200., 100., {500., 100.});
+            properties= {"filled", "rx", "ry", "penWidth"};
+            values= {{true, false},
+                     {Helper::generate<int>(0, 200), Helper::generate<int>(0, 200)},
+                     {Helper::generate<int>(0, 200), Helper::generate<int>(0, 200)},
+                     {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::IMAGE:
+            params= Helper::buildImageController(":/img/girafe.jpg", {0, 0, 200, 200});
+            properties= {"data", "rect"};
+            values= {{Helper::imageData(true), Helper::imageData(true)},
+                     {Helper::randomRect(), Helper::randomRect(), Helper::randomRect()}};
+
+            break;
+        case Core::SelectableTool::TEXT:
+            params= Helper::buildTextController(false, "Text without border", {0, 0, 200, 200});
+            properties= {"text", "borderRect", "font", "textPos"};
+            values= {
+                {Helper::randomString(), Helper::randomString()}, {Helper::randomRect()}, {}, {Helper::randomPoint()}};
+            break;
+        case Core::SelectableTool::TEXTBORDER:
+            params= Helper::buildTextController(true, "Text with border", {0, 0, 200, 200});
+            properties= {"text", "borderRect", "font", "textPos"};
+            values= {
+                {Helper::randomString(), Helper::randomString()}, {Helper::randomRect()}, {}, {Helper::randomPoint()}};
+            break;
+        case Core::SelectableTool::PATH:
+            params= Helper::buildPathController(true, {{0, 0}, {10, 10}, {20, 0}, {30, 10}}, {0, 0});
+            properties= {"closed", "filled", "penWidth", "points"};
+            values
+                = {{true, false},
+                   {true, false},
+                   {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)},
+                   {QVariant::fromValue(Helper::randomListOf<QPointF>(Helper::generate(4, 10), &Helper::randomPoint))}};
+            break;
+        default:
+            break;
+        }
+
+        properties << "visible"
+                   << "color"
+                   << "layer"
+                   << "pos"
+                   << "locked"
+                   << "scenePos"
+                   << "opacity"
+                   << "rotation";
+
+        values.append({true, false});
+        values.append({Helper::randomColor(), Helper::randomColor()});
+        values.append({QVariant::fromValue(Core::Layer::GROUND), QVariant::fromValue(Core::Layer::OBJECT),
+                       QVariant::fromValue(Core::Layer::NONE), QVariant::fromValue(Core::Layer::GAMEMASTER_LAYER),
+                       QVariant::fromValue(Core::Layer::CHARACTER_LAYER), QVariant::fromValue(Core::Layer::FOG),
+                       QVariant::fromValue(Core::Layer::GRIDLAYER)});
+        values.append({Helper::randomPoint(), Helper::randomPoint()});
+        values.append({true, false});
+        values.append({Helper::randomPoint(), Helper::randomPoint()});
+        values.append({Helper::generate<qreal>(0., 1.), Helper::generate<qreal>(0., 1.)});
+        values.append({Helper::generate<qreal>(0., 360.), Helper::generate<qreal>(0., 360.)});
+        QTest::addRow("updater test %d", i) << params << data.at(i) << properties << values;
     }
 }
 

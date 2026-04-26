@@ -22,7 +22,7 @@ public:
 
 private:
     Ui::ShortCutEditorDialog* ui;
-    QAbstractItemModel* m_model;
+    QAbstractItemModel* m_model{nullptr};
 };
 
 #endif // SHORTCUTEDITORDIALOG_H

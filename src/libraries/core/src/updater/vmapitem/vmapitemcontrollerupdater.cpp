@@ -98,12 +98,10 @@ bool VMapItemControllerUpdater::updateItemProperty(NetworkMessageReader* msg, vm
     {
         auto x= msg->real();
         auto y= msg->real();
-        qDebug() << "recived reseau" << QPointF(x, y) << property;
         var= QVariant::fromValue(QPointF(x, y));
     }
     else if(realProperties.contains(property))
     {
-        qDebug() << "recived reseau" << property;
         var= QVariant::fromValue(msg->real());
     }
     else if(uint8Properties.contains(property))

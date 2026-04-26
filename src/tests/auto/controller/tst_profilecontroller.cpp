@@ -39,6 +39,8 @@ private slots:
     void connectTest();
     void serializationTest();
 
+    void characterDataModel();
+
 private:
     std::unique_ptr<ProfileModel> m_profileModel;
     std::unique_ptr<SelectConnProfileController> m_ctrl;
@@ -810,6 +812,57 @@ void ProfileControllerTest::canConnect_data()
                                << QString("localhost") << 6660 << QString()
                                << QList<CharacterInfo>{{QString("uuid"), QString("player"), QColor(Qt::blue), goodImg}}
                                << true;
+}
+
+void ProfileControllerTest::characterDataModel()
+{
+    CharacterDataModel model;
+
+    QAbstractItemModelTester tester(&model);
+    auto p= new ConnectionProfile;
+    model.setProfile(nullptr);
+    model.roleNames();
+    model.removeCharacter(0);
+    model.removeCharacter(-1);
+    model.removeCharacter(Helper::generate(0, 100));
+    model.insertCharacter();
+
+    model.setAvatar(0, Helper::imageData(true));
+    model.setAvatar(1, Helper::imageData(true));
+    model.setAvatar(1, QByteArray());
+
+    model.setName(0, Helper::randomString());
+    model.setName(1, Helper::randomString());
+    model.setName(1, QString());
+
+    model.setColor(0, Helper::randomColor());
+    model.setColor(1, Helper::randomColor());
+    model.setColor(1, QColor());
+
+    model.character(0);
+    model.character(1);
+
+    model.setProfile(p);
+
+    model.removeCharacter(0);
+    model.removeCharacter(-1);
+    model.removeCharacter(Helper::generate(0, 100));
+    model.insertCharacter();
+
+    model.setAvatar(0, Helper::imageData(true));
+    model.setAvatar(1, Helper::imageData(true));
+    model.setAvatar(1, QByteArray());
+
+    model.setName(0, Helper::randomString());
+    model.setName(1, Helper::randomString());
+    model.setName(1, QString());
+
+    model.setColor(0, Helper::randomColor());
+    model.setColor(1, Helper::randomColor());
+    model.setColor(1, QColor());
+
+    model.character(0);
+    model.character(1);
 }
 QTEST_MAIN(ProfileControllerTest);
 #include "tst_profilecontroller.moc"

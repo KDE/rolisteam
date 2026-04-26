@@ -21,20 +21,15 @@
 #include "connectionretrydialog.h"
 #include "ui_connectionretrydialog.h"
 
-#define DEFAULT_TIMEOUT 11
-#define DEFAULT_INTERVAL 1000
-
 ConnectionRetryDialog::ConnectionRetryDialog(QWidget* parent) : QDialog(parent), ui(new Ui::ConnectionRetryDialog)
 {
     ui->setupUi(this);
     m_timer= new QTimer(this);
-    m_counter= DEFAULT_TIMEOUT;
-    m_timeoutValue= DEFAULT_INTERVAL;
-    m_timer->setInterval(m_timeoutValue);
     m_msg= tr("Connection has failed! Connection Retry in %1s.");
     ui->m_label->setText(m_msg.arg(m_counter));
-    connect(m_timer, SIGNAL(timeout()), this, SLOT(decreaseCounter()));
-    connect(this, SIGNAL(rejected()), m_timer, SLOT(stop()));
+
+    connect(m_timer, &QTimer::timeout, this, &ConnectionRetryDialog::decreaseCounter);
+    connect(this, &ConnectionRetryDialog::rejected, m_timer, &QTimer::stop);
 }
 
 ConnectionRetryDialog::~ConnectionRetryDialog()
@@ -42,28 +37,44 @@ ConnectionRetryDialog::~ConnectionRetryDialog()
     delete ui;
     delete m_timer;
 }
-void ConnectionRetryDialog::resetCounter()
+
+quint16 ConnectionRetryDialog::timeOut() const
 {
-    m_counter= DEFAULT_TIMEOUT;
+    return m_timer->interval();
+}
+quint16 ConnectionRetryDialog::counter() const
+{
+    return m_counter;
+}
+
+void ConnectionRetryDialog::setCounter(quint16 counter)
+{
+    if(m_counter == counter)
+        return;
+    m_counter= counter;
+    emit counterChanged();
 }
 
 void ConnectionRetryDialog::startTimer()
 {
+    m_currentValue= m_counter;
     m_timer->start();
 }
-void ConnectionRetryDialog::setTimeOut(int timeout)
+void ConnectionRetryDialog::setTimeOut(quint16 timeout)
 {
-    m_timeoutValue= timeout;
-    m_timer->setInterval(m_timeoutValue);
+    if(timeout == m_timer->interval())
+        return;
+    m_timer->setInterval(timeout);
+    emit timeOutChanged();
 }
 void ConnectionRetryDialog::decreaseCounter()
 {
-    --m_counter;
+    --m_currentValue;
     ui->m_label->setText(m_msg.arg(m_counter));
-    if(0 >= m_counter)
+    if(0 >= m_currentValue)
     {
-        // emit tryConnection();
+        emit tryConnection();
         accept();
-        resetCounter();
+        m_currentValue= m_counter;
     }
 }

@@ -110,6 +110,9 @@ void CampaignIntegrityController::setUnmanagedFile(const QStringList& newUnmanag
 
 void CampaignIntegrityController::performAction(const QString& path, FileAction action)
 {
+    if(!m_manager)
+        return;
+        
     bool res= m_manager->performAction(path, static_cast<Core::CampaignAction>(action));
 
     if(!res)

@@ -208,7 +208,8 @@ QVariant VisualItem::itemChange(GraphicsItemChange change, const QVariant& value
 {
     if(change == QGraphicsItem::ItemPositionChange)
     {
-        QPointF newPos= computeClosePoint(value.toPointF());
+        QPointF newPos= (Qt::AltModifier & QGuiApplication::keyboardModifiers()) ? computeClosePoint(value.toPointF()) :
+                                                                                   value.toPointF();
         if(newPos != value.toPointF())
         {
             return newPos;
@@ -240,12 +241,9 @@ QString VisualItem::uuid() const
 
 QPointF VisualItem::computeClosePoint(QPointF pos)
 {
-    if(Qt::AltModifier & QGuiApplication::keyboardModifiers())
-    {
-        int size= m_ctrl->gridSize();
-        pos.setX(std::round(pos.x() / size) * size);
-        pos.setY(std::round(pos.y() / size) * size);
-    }
+    int size= m_ctrl->gridSize();
+    pos.setX(std::round(pos.x() / size) * size);
+    pos.setY(std::round(pos.y() / size) * size);
     return pos;
 }
 void VisualItem::keyPressEvent(QKeyEvent* event)
@@ -297,16 +295,7 @@ void VisualItem::addPromoteItemMenu(QMenu* menu)
     {
         QAction* action= menu->addAction(s_type2NameList[type]);
         action->setData(type);
-        connect(action, SIGNAL(triggered()), this, SLOT(promoteItem()));
-    }
-}
-void VisualItem::promoteItem()
-{
-    QAction* act= qobject_cast<QAction*>(sender());
-    if(nullptr != act)
-    {
-        auto type= static_cast<vmap::VisualItemController::ItemType>(act->data().toInt());
-        emit promoteItemTo(this, type);
+        connect(action, &QAction::triggered, this, [this, type]() { emit promoteItemTo(this, type); });
     }
 }
 
@@ -323,7 +312,11 @@ qreal VisualItem::opacityValue()
 
 void VisualItem::addActionContextMenu(QMenu& menu)
 {
-    Q_UNUSED(menu)
+    if(m_promoteTypeList.empty())
+        return;
+
+    auto promote= menu.addMenu(tr("Promote To"));
+    addPromoteItemMenu(promote);
 }
 
 bool VisualItem::hasFocusOrChild()

@@ -63,6 +63,7 @@ public:
     VisualItem* getNormalItem(QGraphicsItem* item);
 
     GridItem* gridItem() const;
+    SightItem* sightItem() const;
     void hideGrid();
     void restoreGrid();
 

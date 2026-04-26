@@ -148,6 +148,12 @@ TextItem::TextItem(vmap::TextController* ctrl)
 
     connect(m_edit.get(), &QAction::triggered, this, &TextItem::editText);
     connect(m_adapt.get(), &QAction::triggered, this, &TextItem::sizeToTheContent);
+    connect(m_dialog, &QDialog::accepted, this,
+            [this]()
+            {
+                m_textItem->setHtml(m_dialog->getText());
+                emit itemGeometryChanged(this);
+            });
 
     connect(m_increaseFontSize.get(), &QAction::triggered, m_textCtrl, &vmap::TextController::increaseFontSize);
     connect(m_decreaseFontSize.get(), &QAction::triggered, m_textCtrl, &vmap::TextController::decreaseFontSize);
@@ -302,11 +308,7 @@ void TextItem::editText()
 {
     m_dialog->setText(m_textItem->toHtml());
     m_dialog->move(m_menuPos);
-    if(QDialog::Accepted == m_dialog->exec())
-    {
-        m_textItem->setHtml(m_dialog->getText());
-        emit itemGeometryChanged(this);
-    }
+    m_dialog->open();
 }
 
 /*void TextItem::endOfGeometryChange(ChildPointItem::Change change)

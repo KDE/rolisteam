@@ -34,26 +34,32 @@ class ConnectionRetryDialog;
 class RWIDGET_EXPORT ConnectionRetryDialog : public QDialog
 {
     Q_OBJECT
-
+    Q_PROPERTY(quint16 counter READ counter WRITE setCounter NOTIFY counterChanged)
+    Q_PROPERTY(quint16 timeout READ timeOut WRITE setTimeOut NOTIFY timeOutChanged)
 public:
     explicit ConnectionRetryDialog(QWidget* parent= 0);
     ~ConnectionRetryDialog();
 
+    quint16 timeOut() const;
+    quint16 counter() const;
+
 public slots:
-    void resetCounter();
+    void setCounter(quint16 counter= 0);
     void startTimer();
-    void setTimeOut(int);
+    void setTimeOut(quint16 timeout);
 
 private slots:
     void decreaseCounter();
 
 signals:
     void tryConnection();
+    void timeOutChanged();
+    void counterChanged();
 
 private:
     Ui::ConnectionRetryDialog* ui;
-    int m_timeoutValue;
-    int m_counter;
+    quint16 m_counter{11};
+    quint16 m_currentValue{0};
     QTimer* m_timer;
     QString m_msg;
 };

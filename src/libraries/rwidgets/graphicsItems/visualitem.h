@@ -106,7 +106,6 @@ protected:
 protected:
     QPointF computeClosePoint(QPointF pos);
     void addPromoteItemMenu(QMenu*);
-    void promoteItem();
     qreal opacityValue();
 
 protected:

@@ -45,7 +45,7 @@ public:
     QString getAvatarUri() const;
 
 public slots:
-    int edit(QString title, QString name, QColor color, QString icon);
+    void edit(QString title, QString name, QColor color, QString icon);
 
     void openImage();
     void reset();

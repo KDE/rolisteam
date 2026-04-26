@@ -5,6 +5,7 @@
 #include "network/networkmessage.h"
 #include <QByteArray>
 #include <QColor>
+#include <QFont>
 #include <QMovie>
 #include <QPointF>
 #include <QRectF>
@@ -147,13 +148,25 @@ HELPER_EXPORT QByteArray randomData(int length= 1000);
 HELPER_EXPORT QColor randomColor();
 HELPER_EXPORT QPointF randomPoint();
 HELPER_EXPORT QRectF randomRect();
+HELPER_EXPORT QPolygonF randomPolygon();
 HELPER_EXPORT QObject* initWebServer(int port= 9090);
 HELPER_EXPORT QUrl randomUrl();
 HELPER_EXPORT QMovie randomMovie();
+HELPER_EXPORT QFont randomFont();
 
 template <typename T>
 T randomFromList(const std::vector<T>& list)
 {
     return list[generate<int>(0, list.size() - 1)];
+}
+
+template <typename T>
+QList<T> randomListOf(int count, const std::function<T()>& generator)
+{
+    QList<T> res;
+    res.reserve(count);
+    for(int i= 0; i < count; ++i)
+        res.append(generator());
+    return res;
 }
 } // namespace Helper

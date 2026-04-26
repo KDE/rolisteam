@@ -384,6 +384,13 @@ QColor CharacterItemController::color() const
     return m_character->getColor();
 }
 
+void CharacterItemController::setColor(const QColor& color)
+{
+    if(!m_character)
+        return;
+    m_character->setColor(color);
+}
+
 QFont CharacterItemController::font() const
 {
     return m_font;

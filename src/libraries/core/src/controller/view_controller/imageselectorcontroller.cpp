@@ -42,7 +42,7 @@ ImageSelectorController::ImageSelectorController(bool askPath, Sources sources, 
     auto updateImage= [this]()
     {
         QPointer p(this);
-        m_watcher = helper::utils::setContinuation<std::pair<QPixmap, QPixmap>>(
+        m_watcher= helper::utils::setContinuation<std::pair<QPixmap, QPixmap>>(
             QtConcurrent::run(
                 [this]()
                 {
@@ -185,6 +185,8 @@ QSize ImageSelectorController::visualSize() const
 
 bool ImageSelectorController::rectInShape() const
 {
+    if(!m_rect.isValid() || m_rect.isNull())
+        return false;
     QRect rect(m_rect.x() * m_factor, m_rect.y() * m_factor, m_rect.width() * m_factor, m_rect.height() * m_factor);
     bool res= computeDataGeometry().contains(rect);
 
@@ -329,7 +331,10 @@ void ImageSelectorController::setImageData(const QByteArray& array)
         return;
     m_data= array;
 
-    m_buffer.setData(m_data);
-    m_movie.setDevice(&m_buffer);
+    if(m_data.isEmpty())
+    {
+        m_buffer.setData(m_data);
+        m_movie.setDevice(&m_buffer);
+    }
     emit imageDataChanged();
 }

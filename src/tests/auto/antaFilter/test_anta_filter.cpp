@@ -23,7 +23,10 @@
 #include <QTest>
 
 #include "controller/antagonistboardcontroller.h"
+#include "data/campaign.h"
+#include "data/campaigneditor.h"
 #include "model/nonplayablecharactermodel.h"
+#include "rwidgets/docks/antagonistboard.h"
 #include <memory>
 
 struct PropertyInfo
@@ -206,6 +209,8 @@ private slots:
     void advancedFilterModel();
     void advancedFilterModel_data();
 
+    void antagonistboardTest();
+
 private:
     std::unique_ptr<campaign::NonPlayableCharacterModel> m_sourceModel;
     std::unique_ptr<campaign::FilteredCharacterModel> m_filterModel;
@@ -303,6 +308,18 @@ void TestAntaFilter::advancedFilterModel_data()
         }
         ++i;
     }
+}
+
+void TestAntaFilter::antagonistboardTest()
+{
+    // AntagonistBoardController ctrl;
+    campaign::CampaignEditor editor;
+    campaign::AntagonistBoard board(&editor);
+
+    auto const& cols= board.columnsActions();
+
+    auto event= new QContextMenuEvent(QContextMenuEvent::Mouse, QPoint{10, 10}, QPoint{10, 10});
+    QCoreApplication::postEvent(&board, event);
 }
 
 QTEST_MAIN(TestAntaFilter);

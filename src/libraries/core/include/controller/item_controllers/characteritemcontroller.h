@@ -105,6 +105,7 @@ public:
     void setCorner(const QPointF& move, int corner,
                    Core::TransformType transformType= Core::TransformType::NoTransform) override;
     QColor color() const override;
+    void setColor(const QColor& color) override;
     QRectF rect() const override;
 
     const QList<CharacterAction*> actionList() const;

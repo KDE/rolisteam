@@ -591,6 +591,11 @@ GridItem* VMap::gridItem() const
     return m_gridItem.get();
 }
 
+SightItem* VMap::sightItem() const
+{
+    return m_sightItem.data();
+}
+
 void VMap::manageAnchor()
 {
     if(m_parentItemAnchor.isNull())
@@ -599,7 +604,7 @@ void VMap::manageAnchor()
     vmap::VisualItemController* child= nullptr;
     vmap::VisualItemController* parent= nullptr;
     QList<QGraphicsItem*> item1= items(m_parentItemAnchor->getStart());
-    for(QGraphicsItem* item : item1)
+    for(QGraphicsItem* item : std::as_const(item1))
     {
         if(item == nullptr)
             continue;

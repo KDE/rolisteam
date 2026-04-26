@@ -82,12 +82,22 @@ void SheetTest::updateTest()
     std::unique_ptr<CharacterSheetController> ctrl{new CharacterSheetController("mytestid")};
     std::unique_ptr<CharacterSheetUpdater> updater{new CharacterSheetUpdater(nullptr, nullptr)};
 
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+    sender.clear();
     {
         auto model= ctrl->model();
         model->addCharacterSheet(sheet.get());
 
         updater->addMediaController(ctrl.get());
     }
+
+    ctrl->share(ctrl.get(), sheet.get(), CharacterSheetUpdater::SharingMode::ONE, nullptr, QStringList{});
+    ctrl->setModified(true);
+    ctrl->setModified(false);
+    ctrl->setModified(true);
+
+    ctrl->removedSheet(sheet->uuid(), ctrl->uuid(), QString{});
 
     sheet.release(); // data destroyed by model.
 }

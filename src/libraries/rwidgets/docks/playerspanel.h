@@ -34,7 +34,6 @@
 #include <memory>
 
 class UserListView;
-class PersonDialog;
 class Person;
 class PlayerOnMapModel;
 class PlayerController;

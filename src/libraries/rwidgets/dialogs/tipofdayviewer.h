@@ -43,7 +43,7 @@ public:
 
 private:
     Ui::TipOfDayViewer* m_ui;
-    bool m_dontshowAgain;
+    bool m_dontshowAgain{false};
 };
 
 #endif // TIPOFDAYVIEWER_H

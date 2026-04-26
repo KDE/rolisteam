@@ -97,10 +97,13 @@ QVariant CharacterDataModel::data(const QModelIndex& index, int role) const
 
 connection::CharacterData CharacterDataModel::character(int i) const
 {
-    if(m_profile)
-        return m_profile->character(i);
-    else
+    if(!m_profile)
         return {};
+
+    if(m_profile->characterCount() <= i)
+        return {};
+
+    return m_profile->character(i);
 }
 
 /*bool CharacterDataModel::setData(const QModelIndex& index, const QVariant& value, int role)
@@ -143,12 +146,9 @@ bool CharacterDataModel::insertCharacter()
 {
     if(m_profile.isNull())
         return false;
-    beginInsertRows(QModelIndex(), m_profile->characterCount(), m_profile->characterCount());
     connection::CharacterData data(
         {QUuid::createUuid().toString(), tr("New Character"), Qt::lightGray, "", QHash<QString, QVariant>()});
-    m_profile->addCharacter(data);
-    endInsertRows();
-    return true;
+    return addCharacter(data);
 }
 
 bool CharacterDataModel::addCharacter(const connection::CharacterData& data)

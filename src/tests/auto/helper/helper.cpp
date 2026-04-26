@@ -656,10 +656,10 @@ QUrl imageLocalFile(bool isSquare)
 
     QString sep;
 #ifdef Q_OS_WIN
-    sep="/";
+    sep= "/";
 #endif
-    return QUrl(QString("file://%3%1/resources/%2").arg(tests::root_path, array[generate<int>(0, array.size() - 1)], sep));
-
+    return QUrl(
+        QString("file://%3%1/resources/%2").arg(tests::root_path, array[generate<int>(0, array.size() - 1)], sep));
 }
 
 QByteArray imageData(bool isSquare)
@@ -764,6 +764,30 @@ const std::map<QString, QVariant> buildController(Core::ContentType type)
 QString htmlCode()
 {
     return utils::IOHelper::readTextFile(":/html/01_personnages.html");
+}
+
+QPolygonF randomPolygon()
+{
+    QPolygonF res;
+    auto pCount= generate(1, 50);
+    for(int i= 0; i < pCount; ++i)
+    {
+        res.append(randomPoint());
+    }
+    return res;
+}
+
+QFont randomFont()
+{
+    auto families= QFontDatabase::families();
+
+    auto id= generate<quint64>(0, families.size());
+    auto f= families.at(id);
+    auto styles= QFontDatabase::styles(f);
+    QString style;
+    if(!styles.isEmpty())
+        style= styles.first();
+    return QFontDatabase::font(f, style, generate<int>(7, 50));
 }
 
 } // namespace Helper

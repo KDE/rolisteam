@@ -12,6 +12,9 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core Wid
 add_executable(tst_vmap tst_vmap.cpp ../assets/resources.qrc)
 target_link_libraries(tst_vmap PUBLIC Qt6::Core Qt6::Test Qt6::Widgets PRIVATE core rwidgets charactersheet dice3d qml_views rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d common_qml instantmessaging common_core instantmessaging rmindmap common_core common_widget common_qml helper utils diceparser_shared diceparser_qobject network)
 target_include_directories(tst_vmap PUBLIC ../helper)
+if(FULL_TEST)
+    target_compile_options(tst_vmap PUBLIC -DFULL_TEST=1)
+endif()
 add_test(NAME tst_vmap COMMAND tst_vmap)
 
 

@@ -167,7 +167,7 @@ public slots:
     void setPos(const QPointF& pos);
     void setUuid(QString uuid);
     void setRotation(qreal rota);
-    void setColor(const QColor& color);
+    virtual void setColor(const QColor& color);
     void setLocked(bool locked);
     void setInitialized(bool);
     void setRemote(bool b);

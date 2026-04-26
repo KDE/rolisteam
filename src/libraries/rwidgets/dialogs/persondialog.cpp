@@ -65,15 +65,13 @@ void PersonDialog::openImage()
         ui->m_selectCharaterAvatar->setIcon(QIcon(pix));
     }
 }
-int PersonDialog::edit(QString title, QString name, QColor color, QString icon)
+void PersonDialog::edit(QString title, QString name, QColor color, QString icon)
 {
     setWindowTitle(title);
     ui->m_characterName->setText(name);
     ui->m_characterColor->setColor(color);
     m_avatar= icon;
     ui->m_selectCharaterAvatar->setIcon(QIcon(icon));
-
-    return exec();
 }
 void PersonDialog::setVisible(bool visible)
 {

@@ -202,7 +202,7 @@ void TestNetwork::networkControllerTest()
 
     QVERIFY(m_ctrl->defaultChannelId().isEmpty());
     QVERIFY(m_ctrl->ipv4().isEmpty());
-    QVERIFY(m_ctrl->host().isEmpty());
+    QVERIFY2(!m_ctrl->host().isEmpty(), m_ctrl->host().toStdString().c_str());
     QVERIFY(m_ctrl->lastError().isEmpty());
     QVERIFY(m_ctrl->askForGM());
     m_updater->processMessage(nullptr);

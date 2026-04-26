@@ -165,13 +165,14 @@ void CharacterItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* opt
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
+    if(!m_itemCtrl)
+        return;
+
     bool hasFocusOrChildren= hasFocusOrChild();
     setChildrenVisible(hasFocusOrChildren);
     emit selectStateChange(hasFocusOrChildren);
-    auto rect= m_itemCtrl->rect();
 
-    if(!m_itemCtrl)
-        return;
+    auto rect= m_itemCtrl->rect();
 
     QString textToShow= m_itemCtrl->text();
 
