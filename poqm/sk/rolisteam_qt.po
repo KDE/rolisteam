@@ -20,12 +20,12 @@ msgstr ""
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Alias"
+msgstr "Aliasy"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Zoznam hráčov"
+msgstr "Zoznam aliasov"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
@@ -57,12 +57,12 @@ msgstr "Off"
 #: src/binaries/3DDicer/AliasesPage.qml:39
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Otvoriť"
+msgstr "Zapnuté"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "Upraviť kanál"
+msgstr "Upraviť alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
 msgctxt "AliasesPage|"
@@ -72,7 +72,7 @@ msgstr "Názov:"
 #: src/binaries/3DDicer/AliasesPage.qml:95
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Názov polí"
+msgstr "Nastaviť názov aliasu"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
 msgctxt "AliasesPage|"
@@ -92,7 +92,7 @@ msgstr "Príkaz"
 #: src/binaries/3DDicer/AliasesPage.qml:129
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "Príkaz"
+msgstr "Skutočný príkaz"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
 msgctxt "AliasesPage|"
@@ -113,7 +113,7 @@ msgstr "Uložiť a späť"
 #: src/binaries/3DDicer/AliasesPage.qml:165
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Uložiť zoznam skladieb"
+msgstr "Uložiť alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
@@ -124,7 +124,7 @@ msgstr "Vymazať"
 #: src/binaries/3DDicer/AliasesPage.qml:214
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Alias"
+msgstr "Pridať alias"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:327
 #: src/binaries/3DDicer/dicemaincontroller.cpp:349
@@ -135,7 +135,7 @@ msgstr "predvolené"
 #: src/binaries/3DDicer/DiceRollPage.qml:9
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Alias"
+msgstr "Hody kockou"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:18
 msgctxt "DiceRollPage|"
@@ -205,7 +205,7 @@ msgstr "Makrá"
 #: src/binaries/3DDicer/MacrosPage.qml:18
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Postavy"
+msgstr "Zoznam makier"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
 msgctxt "MacrosPage|"
@@ -230,7 +230,7 @@ msgstr "Príkaz"
 #: src/binaries/3DDicer/MacrosPage.qml:51
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Všetky stránky"
+msgstr "Nastaviť hodnotu makra."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
@@ -361,7 +361,9 @@ msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Aplikácia"
+msgstr ""
+"Nastavenia aplikácie:\n"
+"Jazyk, Verzia…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -401,7 +403,7 @@ msgstr "3D kocky"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:79
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
-msgstr "Veľkosť"
+msgstr "Veľkosť kocky:"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
@@ -416,7 +418,7 @@ msgstr "Pridať alebo odstrániť ľubovoľný typ kocky."
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Vybrať obrázok"
+msgstr "Vybrať všetky kocky."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
@@ -426,12 +428,12 @@ msgstr "Výber obdĺžnikom."
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Zobraziť/Skryť meno PC"
+msgstr "Zobraziť/Skryť menu."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Nový profil"
+msgstr "Posledný profil"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -447,22 +449,22 @@ msgstr "Nastavenia"
 #: src/binaries/3DDicer/SettingsPage.qml:47
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Klonovať profil"
+msgstr "Vybrať profil"
 
 #: src/binaries/3DDicer/SettingsPage.qml:56
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Nastavenia"
+msgstr "Nastavenia aplikácie"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
 msgctxt "SettingsPage|"
 msgid "Application Settings"
-msgstr "Nastavenia"
+msgstr "Nastavenia aplikácie"
 
 #: src/binaries/3DDicer/SettingsPage.qml:74
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Dátum zmeny"
+msgstr "Tmavý režim:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
 msgctxt "SettingsPage|"
@@ -477,7 +479,7 @@ msgstr "Jazyk:"
 #: src/binaries/3DDicer/SettingsPage.qml:109
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "Zmeniť obrázok"
+msgstr "Zmeniť jazyk."
 
 #: src/binaries/3DDicer/SettingsPage.qml:114
 msgctxt "SettingsPage|"
@@ -492,7 +494,7 @@ msgstr "Spustiť"
 #: src/binaries/3DDicer/SettingsPage.qml:128
 msgctxt "SettingsPage|"
 msgid "About"
-msgstr "O aplikácii"
+msgstr "O"
 
 #: src/binaries/3DDicer/SettingsPage.qml:131
 msgctxt "SettingsPage|"
@@ -502,12 +504,12 @@ msgstr "Verzia informácia."
 #: src/binaries/3DDicer/SettingsPage.qml:144
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Oprávnenie"
+msgstr "Verzia:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:152
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Stav"
+msgstr "Dátum:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:160
 msgctxt "SettingsPage|"
@@ -517,12 +519,12 @@ msgstr "Sha1:"
 #: src/binaries/3DDicer/SettingsPage.qml:187
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Pridať súbor písma"
+msgstr "Pridať profil."
 
 #: src/binaries/3DDicer/SettingsPage.qml:206
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "Zdroj dokumentu"
+msgstr "Dokumentácia."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 msgctxt "SheetPage|"
@@ -532,7 +534,7 @@ msgstr "Karta postavy"
 #: src/binaries/3DDicer/SheetPage.qml:24
 msgctxt "SheetPage|"
 msgid "Sheet Item"
-msgstr "Odstrániť položku"
+msgstr "Položka listu"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
 msgctxt "SheetPage|"
@@ -542,7 +544,7 @@ msgstr "Kľúč"
 #: src/binaries/3DDicer/SheetPage.qml:41 src/binaries/3DDicer/SheetPage.qml:56
 msgctxt "SheetPage|"
 msgid "Edit sheet Item name"
-msgstr "Upraviť meno"
+msgstr "Upraviť názov položky listu"
 
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
@@ -557,7 +559,7 @@ msgstr "Hodnota"
 #: src/binaries/3DDicer/SheetPage.qml:72 src/binaries/3DDicer/SheetPage.qml:98
 msgctxt "SheetPage|"
 msgid "Save Sheet item"
-msgstr "Uložiť zobrazenie karty postavy"
+msgstr "Uložiť položku listu"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
 msgctxt "SheetPage|"
@@ -599,7 +601,7 @@ msgstr "Obrázky (*.png)"
 #, qt-format
 msgctxt "AutoFillerDialog|"
 msgid "Count: %1"
-msgstr "Príkaz: %1"
+msgstr "Počet: %1"
 
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
@@ -609,7 +611,7 @@ msgstr "Filler Assistant Dialog"
 #: src/binaries/rcse/autofillerdialog.ui:35
 msgctxt "AutoFillerDialog|"
 msgid "Counter Start:"
-msgstr "Zmeniť stav"
+msgstr "Začiatok počítadla:"
 
 #: src/binaries/rcse/autofillerdialog.ui:49
 msgctxt "AutoFillerDialog|"
@@ -619,12 +621,12 @@ msgstr "Counter Step:"
 #: src/binaries/rcse/autofillerdialog.ui:82
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Všetky stránky"
+msgstr "Nastaviť všetky hodnoty"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr "Nahradiť obrázok"
+msgstr "Pravidlá nahradenia"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
@@ -865,7 +867,7 @@ msgstr "Tabuľka"
 #: src/binaries/rcse/dialog/aboutrcse.ui:14
 msgctxt "AboutRcse|"
 msgid "Rolisteam Character Sheet Editor"
-msgstr "Karta postavy Rolisteam (*.rcs)"
+msgstr "Editor kariet postáv Rolisteam"
 
 #: src/binaries/rcse/dialog/aboutrcse.ui:20
 msgctxt "AboutRcse|"
@@ -956,7 +958,7 @@ msgstr ""
 #: src/binaries/rcse/dialog/codeeditordialog.ui:14
 msgctxt "CodeEditorDialog|"
 msgid "Edit item code"
-msgstr "Upraviť meno"
+msgstr "Upraviť kód položky"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.cpp:121
 msgctxt "ColumnDefinitionDialog|"
@@ -986,7 +988,7 @@ msgstr "Control Position"
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:52
 msgctxt "ColumnDefinitionDialog|"
 msgid "LeftTop"
-msgstr "Vľavo"
+msgstr "Ľavý horný"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:57
 msgctxt "ColumnDefinitionDialog|"
@@ -1016,12 +1018,12 @@ msgstr "Dole vpravo"
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:82
 msgctxt "ColumnDefinitionDialog|"
 msgid "RightTop"
-msgstr "Vpravo"
+msgstr "Pravý horný"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:87
 msgctxt "ColumnDefinitionDialog|"
 msgid "RightBottom"
-msgstr "Vpravo"
+msgstr "Pravý dolný"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:112
 msgctxt "ColumnDefinitionDialog|"
@@ -1077,7 +1079,7 @@ msgstr "Grayscale"
 #: src/binaries/rcse/dialog/pdfmanager.ui:130
 msgctxt "PdfManager|"
 msgid "Pages"
-msgstr "Stránka"
+msgstr "Stránky"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:143
 msgctxt "PdfManager|"
@@ -1087,7 +1089,7 @@ msgstr "Všetky stránky"
 #: src/binaries/rcse/dialog/pdfmanager.ui:156
 msgctxt "PdfManager|"
 msgid "Current page"
-msgstr "Aktuálne HP"
+msgstr "Aktuálna stránka"
 
 #: src/binaries/rcse/dialog/sheetproperties.cpp:19
 msgctxt "SheetProperties|"
@@ -1097,7 +1099,7 @@ msgstr "Pridať súbor písma"
 #: src/binaries/rcse/dialog/sheetproperties.ui:14
 msgctxt "SheetProperties|"
 msgid "Sheet Properties"
-msgstr "Nastaviť vlastnosť"
+msgstr "Vlastnosti listu"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
@@ -1107,7 +1109,7 @@ msgstr "Vyplniť šírku predvolene"
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
 msgid "Default scale:"
-msgstr "Predvolený štýl"
+msgstr "Predvolené mierka:"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:85
 msgctxt "SheetProperties|"
@@ -1501,7 +1503,7 @@ msgstr "Použiť na všetky postavy"
 #: src/binaries/rcse/mainwindow_rcse.ui:14
 msgctxt "MainWindow|"
 msgid "Unknown[*] - Rolisteam Character Sheet Editor"
-msgstr "Karta postavy Rolisteam (*.rcs)"
+msgstr "Neznámy[*] - Editor kariet postáv Rolisteam"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:29
 msgctxt "MainWindow|"
@@ -1564,7 +1566,7 @@ msgstr "Posuvník"
 #: src/binaries/rcse/mainwindow_rcse.ui:1238
 msgctxt "MainWindow|"
 msgid "Hidden Field"
-msgstr "Skryté"
+msgstr "Skryté pole"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:335
 #: src/binaries/rcse/mainwindow_rcse.ui:998
@@ -1618,12 +1620,12 @@ msgstr "Vymazať"
 #: src/binaries/rcse/mainwindow_rcse.ui:556
 msgctxt "MainWindow|"
 msgid "Add Page"
-msgstr "Pridať balík"
+msgstr "Pridať stránku"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:563
 msgctxt "MainWindow|"
 msgid "Remove Page"
-msgstr "Odstrániť obrázok"
+msgstr "Odstrániť stránku"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:570
 msgctxt "MainWindow|"
@@ -1633,7 +1635,7 @@ msgstr "Mierka:"
 #: src/binaries/rcse/mainwindow_rcse.ui:617
 msgctxt "MainWindow|"
 msgid "View"
-msgstr "Webové zobrazenie"
+msgstr "Zobrazenie"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:696
 msgctxt "MainWindow|"
@@ -1643,7 +1645,7 @@ msgstr "Postavy"
 #: src/binaries/rcse/mainwindow_rcse.ui:716
 msgctxt "MainWindow|"
 msgid "Stored Images"
-msgstr "Skopírovaný obrázok"
+msgstr "Uložené obrázky"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:774
 msgctxt "MainWindow|"
@@ -1653,7 +1655,7 @@ msgstr "&Súbor"
 #: src/binaries/rcse/mainwindow_rcse.ui:794
 msgctxt "MainWindow|"
 msgid "Edition"
-msgstr "Upraviť akcie"
+msgstr "Vydanie"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
@@ -1725,17 +1727,17 @@ msgstr "Odstrániť položku"
 #: src/binaries/rcse/mainwindow_rcse.ui:899
 msgctxt "MainWindow|"
 msgid "Export To Rolisteam"
-msgstr "Exportovať tému Rolisteam"
+msgstr "Exportovať do Rolisteam"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:904
 msgctxt "MainWindow|"
 msgid "Save View"
-msgstr "Webové zobrazenie"
+msgstr "Uložiť zobrazenie"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:909
 msgctxt "MainWindow|"
 msgid "Load View"
-msgstr "Načítať obrázok"
+msgstr "Načítať zobrazenie"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:918
 msgctxt "MainWindow|"
@@ -1756,7 +1758,7 @@ msgstr "Code To Sheet"
 #: src/binaries/widget/mainwindow.ui:460
 msgctxt "MainWindow|"
 msgid "Ctrl+D"
-msgstr "Ctrl++"
+msgstr "Ctrl+D"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:986
 msgctxt "MainWindow|"
@@ -1766,12 +1768,12 @@ msgstr "Nastaviť obrázok pozadie…"
 #: src/binaries/rcse/mainwindow_rcse.ui:1007
 msgctxt "MainWindow|"
 msgid "About RCSE"
-msgstr "O aplikácii"
+msgstr "O RCSE"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1017
 msgctxt "MainWindow|"
 msgid "Reset Ids"
-msgstr "Vynulovať priblíženie"
+msgstr "Vynulovať ID"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1022
 msgctxt "MainWindow|"
@@ -1788,7 +1790,7 @@ msgstr "Ctrl++"
 #: src/binaries/rcse/mainwindow_rcse.ui:1033
 msgctxt "MainWindow|"
 msgid "Sheet Properties…"
-msgstr "Nastaviť vlastnosť"
+msgstr "Vlastnosti listu…"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1048
 msgctxt "MainWindow|"
@@ -1808,7 +1810,7 @@ msgstr "Pridať obrázok"
 #: src/binaries/rcse/mainwindow_rcse.ui:1077
 msgctxt "MainWindow|"
 msgid "Delete Image"
-msgstr "Odstrániť položku"
+msgstr "Odstrániť obrázok"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1082
 msgctxt "MainWindow|"
@@ -1831,12 +1833,12 @@ msgstr "&Znova"
 #: src/binaries/widget/mainwindow.ui:429 src/binaries/widget/mainwindow.ui:495
 msgctxt "MainWindow|"
 msgid "Support Rolisteam"
-msgstr "Exportovať tému Rolisteam"
+msgstr "Podpora Rolisteam"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1118
 msgctxt "MainWindow|"
 msgid "Export as PDF"
-msgstr "Exportovať ako PNG"
+msgstr "Exportovať ako PDF"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1159
 msgctxt "MainWindow|"
@@ -1851,7 +1853,7 @@ msgstr "Pole označenia"
 #: src/binaries/rcse/mainwindow_rcse.ui:1209
 msgctxt "MainWindow|"
 msgid "Read-only Text"
-msgstr "Iba na čítanie"
+msgstr "Text iba na čítanie"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1214
 msgctxt "MainWindow|"
@@ -1881,7 +1883,7 @@ msgstr "Dialóg"
 #: src/binaries/rcse/preferences/preferencesdialog.ui:20
 msgctxt "PreferencesDialog|"
 msgid "QML Generation"
-msgstr "Generovanie obrázka"
+msgstr "Generovanie QML"
 
 #: src/binaries/rcse/preferences/preferencesdialog.ui:26
 msgctxt "PreferencesDialog|"
@@ -1891,7 +1893,7 @@ msgstr "Vlastné cesta"
 #: src/binaries/rcse/preferences/preferencesdialog.ui:35
 msgctxt "PreferencesDialog|"
 msgid "Generation Path"
-msgstr "Generovanie obrázka"
+msgstr "Cesta generovania"
 
 #: src/binaries/rcse/preferences/preferencesdialog.ui:52
 msgctxt "PreferencesDialog|"
@@ -1961,7 +1963,7 @@ msgstr "Vybrať typ stĺpca"
 #: src/binaries/rcse/tablecanvasfield.cpp:322
 msgctxt "TableCanvasField|"
 msgid "Type of Field:"
-msgstr "Textové pole"
+msgstr "Typ poľa:"
 
 #: src/binaries/rcse/undo/addcharactercommand.cpp:27
 #, qt-format
@@ -2223,7 +2225,7 @@ msgstr "Požiadať o heslo a vrátiť jeho hash kľúč."
 #: src/binaries/widget/mainwindow.cpp:484
 msgctxt "MainWindow|"
 msgid "SidePanels"
-msgstr "Server"
+msgstr "Bočné panely"
 
 #: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
@@ -2233,12 +2235,12 @@ msgstr "Side Panels"
 #: src/binaries/widget/mainwindow.cpp:499
 msgctxt "MainWindow|"
 msgid "List of Players"
-msgstr "Hráč"
+msgstr "Zoznam hráčov"
 
 #: src/binaries/widget/mainwindow.cpp:500
 msgctxt "MainWindow|"
 msgid "All campaign documents"
-msgstr "Obsah kampane"
+msgstr "Všetky dokumenty kampane"
 
 #: src/binaries/widget/mainwindow.cpp:501
 msgctxt "MainWindow|"
@@ -2248,27 +2250,27 @@ msgstr "Zoznam protivníkov"
 #: src/binaries/widget/mainwindow.cpp:502
 msgctxt "MainWindow|"
 msgid "Music Player"
-msgstr "Hráč"
+msgstr "Hudobný prehrávač"
 
 #: src/binaries/widget/mainwindow.cpp:503
 msgctxt "MainWindow|"
 msgid "Server Panel"
-msgstr "Server"
+msgstr "Panel servera"
 
 #: src/binaries/widget/mainwindow.cpp:504
 msgctxt "MainWindow|"
 msgid "Notification Zone"
-msgstr "Zvukové upozornenie"
+msgstr "Zóna upozornení"
 
 #: src/binaries/widget/mainwindow.cpp:519
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "Nástroje"
+msgstr "Nástroje gamemastera"
 
 #: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Definovať <používateľské meno>"
+msgstr "Definovať názov dokumentu"
 
 #: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
@@ -2288,7 +2290,7 @@ msgstr "Url webovej stránky:"
 #: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
 msgid "Open Map"
-msgstr "Otvoriť kampaň"
+msgstr "Otvoriť mapu"
 
 #: src/binaries/widget/mainwindow.cpp:588
 msgctxt "MainWindow|"
@@ -2508,7 +2510,7 @@ msgstr "&Upraviť"
 #: src/binaries/widget/mainwindow.ui:115
 msgctxt "MainWindow|"
 msgid "&Campaign"
-msgstr "Otvoriť kampaň"
+msgstr "&Kampaň"
 
 #: src/binaries/widget/mainwindow.ui:130
 msgctxt "MainWindow|"
@@ -2528,7 +2530,7 @@ msgstr "Zatvoriť súbor"
 #: src/binaries/widget/mainwindow.ui:170
 msgctxt "MainWindow|"
 msgid "Ctrl+Esc"
-msgstr "Ctrl++"
+msgstr "Ctrl+Esc"
 
 #: src/binaries/widget/mainwindow.ui:178
 msgctxt "MainWindow|"
@@ -2538,7 +2540,7 @@ msgstr "Predvoľby"
 #: src/binaries/widget/mainwindow.ui:200
 msgctxt "MainWindow|"
 msgid "Tab"
-msgstr "Tabuľka"
+msgstr "Záložka"
 
 #: src/binaries/widget/mainwindow.ui:203
 msgctxt "MainWindow|"
@@ -2568,7 +2570,7 @@ msgstr "Alt+T"
 #: src/binaries/widget/mainwindow.ui:224
 msgctxt "MainWindow|"
 msgid "Disconnection…"
-msgstr "Pripojenie"
+msgstr "Odpojenie…"
 
 #: src/binaries/widget/mainwindow.ui:229
 msgctxt "MainWindow|"
@@ -2588,12 +2590,12 @@ msgstr "F1"
 #: src/binaries/widget/mainwindow.ui:243
 msgctxt "MainWindow|"
 msgid "About Rolisteam"
-msgstr "Exportovať tému Rolisteam"
+msgstr "O Rolisteam"
 
 #: src/binaries/widget/mainwindow.ui:251 src/binaries/widget/mainwindow.ui:273
 msgctxt "MainWindow|"
 msgid "Note"
-msgstr "Poznámky"
+msgstr "Poznámka"
 
 #: src/binaries/widget/mainwindow.ui:262
 msgctxt "MainWindow|"
@@ -2613,12 +2615,12 @@ msgstr "Ctrl++"
 #: src/binaries/widget/mainwindow.ui:287
 msgctxt "MainWindow|"
 msgid "Ctrl+E"
-msgstr "Ctrl++"
+msgstr "Ctrl+E"
 
 #: src/binaries/widget/mainwindow.ui:295
 msgctxt "MainWindow|"
 msgid "Online Picture"
-msgstr "Obrázok"
+msgstr "Online obrázok"
 
 #: src/binaries/widget/mainwindow.ui:298
 msgctxt "MainWindow|"
@@ -2628,12 +2630,12 @@ msgstr "Ctrl++"
 #: src/binaries/widget/mainwindow.ui:309
 msgctxt "MainWindow|"
 msgid "Character List"
-msgstr "Postavy"
+msgstr "Zoznam postáv"
 
 #: src/binaries/widget/mainwindow.ui:320
 msgctxt "MainWindow|"
 msgid "ToolBar"
-msgstr "Nástroje"
+msgstr "Panel nástrojov"
 
 #: src/binaries/widget/mainwindow.ui:323
 msgctxt "MainWindow|"
@@ -2658,7 +2660,7 @@ msgstr "Ctrl++"
 #: src/binaries/widget/mainwindow.ui:355
 msgctxt "MainWindow|"
 msgid "Show Health State"
-msgstr "Zobraziť/Skryť stav"
+msgstr "Zobraziť stav zdravia"
 
 #: src/binaries/widget/mainwindow.ui:358
 msgctxt "MainWindow|"
@@ -2668,7 +2670,7 @@ msgstr "F6"
 #: src/binaries/widget/mainwindow.ui:363
 msgctxt "MainWindow|"
 msgid "Change Profile…"
-msgstr "Zmeniť farbu…"
+msgstr "Zmeniť profil…"
 
 #: src/binaries/widget/mainwindow.ui:372
 msgctxt "MainWindow|"
@@ -2683,7 +2685,7 @@ msgstr "Ctrl++"
 #: src/binaries/widget/mainwindow.ui:383
 msgctxt "MainWindow|"
 msgid "Save Campaign"
-msgstr "Otvoriť kampaň"
+msgstr "Uložiť kampaň"
 
 #: src/binaries/widget/mainwindow.ui:394
 msgctxt "MainWindow|"
@@ -2698,7 +2700,7 @@ msgstr "F10"
 #: src/binaries/widget/mainwindow.ui:406 src/binaries/widget/mainwindow.ui:418
 msgctxt "MainWindow|"
 msgid "Shared Note"
-msgstr "Zdieľané poznámky"
+msgstr "Zdieľaná poznámka"
 
 #: src/binaries/widget/mainwindow.ui:409
 msgctxt "MainWindow|"
@@ -2718,7 +2720,7 @@ msgstr "Prehliadač skratiek…"
 #: src/binaries/widget/mainwindow.ui:437
 msgctxt "MainWindow|"
 msgid "Ctrl+F1"
-msgstr "Ctrl++"
+msgstr "Ctrl+F1"
 
 #: src/binaries/widget/mainwindow.ui:445
 msgctxt "MainWindow|"
@@ -2733,12 +2735,12 @@ msgstr "F11"
 #: src/binaries/widget/mainwindow.ui:457
 msgctxt "MainWindow|"
 msgid "PDF File"
-msgstr "&Súbor"
+msgstr "Súbor PDF"
 
 #: src/binaries/widget/mainwindow.ui:465
 msgctxt "MainWindow|"
 msgid "Copy Connection Link…"
-msgstr "Pripojenie"
+msgstr "Kopírovať odkaz na pripojenie…"
 
 #: src/binaries/widget/mainwindow.ui:473
 msgctxt "MainWindow|"
@@ -2753,7 +2755,7 @@ msgstr "Ctrl++"
 #: src/binaries/widget/mainwindow.ui:481
 msgctxt "MainWindow|"
 msgid "Password Generator"
-msgstr "Heslo"
+msgstr "Generátor hesiel"
 
 #: src/binaries/widget/mainwindow.ui:486
 msgctxt "MainWindow|"
@@ -2783,7 +2785,7 @@ msgstr "Priama komunikácia"
 #: src/binaries/widget/mainwindow.ui:542
 msgctxt "MainWindow|"
 msgid "Instant Messaging Window"
-msgstr "Priama komunikácia"
+msgstr "Okno priamej komunikácie"
 
 #: src/binaries/widget/mainwindow.ui:545
 msgctxt "MainWindow|"
@@ -2798,7 +2800,7 @@ msgstr "&Kopírovať"
 #: src/binaries/widget/mainwindow.ui:556
 msgctxt "MainWindow|"
 msgid "Ctrl+C"
-msgstr "Ctrl++"
+msgstr "Ctrl+C"
 
 #: src/binaries/widget/mainwindow.ui:567
 msgctxt "MainWindow|"
@@ -2818,12 +2820,12 @@ msgstr "Vlastnosti"
 #: src/binaries/widget/mainwindow.ui:583
 msgctxt "MainWindow|"
 msgid "Dice Alias"
-msgstr "Alias"
+msgstr "Alias kocky"
 
 #: src/binaries/widget/mainwindow.ui:588
 msgctxt "MainWindow|"
 msgid "Character States"
-msgstr "Karta postavy"
+msgstr "Stavy postavy"
 
 #: src/binaries/widget/mainwindow.ui:593
 msgctxt "MainWindow|"
@@ -2838,17 +2840,17 @@ msgstr "Téma"
 #: src/binaries/widget/mainwindow.ui:603
 msgctxt "MainWindow|"
 msgid "New Campaign"
-msgstr "Otvoriť kampaň"
+msgstr "Nová kampaň"
 
 #: src/binaries/widget/mainwindow.ui:608
 msgctxt "MainWindow|"
 msgid "Save Campaign As…"
-msgstr "Otvoriť kampaň"
+msgstr "Uložiť kampaň ako…"
 
 #: src/binaries/widget/mainwindow.ui:613
 msgctxt "MainWindow|"
 msgid "Non Playable Characters"
-msgstr "Všetky postavy"
+msgstr "Neovládateľné postavy"
 
 #: src/binaries/widget/mainwindow.ui:618
 msgctxt "MainWindow|"
@@ -3129,7 +3131,7 @@ msgstr "Ladenie"
 #: src/libraries/common/widgets/logpanel.ui:104
 msgctxt "LogPanel|"
 msgid "Erase All"
-msgstr "Mazať"
+msgstr "Vymazať všetko"
 
 #: src/libraries/common/widgets/logpanel.ui:113
 msgctxt "LogPanel|"
@@ -3164,17 +3166,17 @@ msgstr "[Upnp] Úspešné mapovanie portu: "
 #: src/libraries/core/src/controller/networkcontroller.cpp:201
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
-msgstr "[Upnp] Mapovanie portov bolo vykonané"
+msgstr "[Upnp] Nebola nájdená žiadna IP adresa."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:307
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
-msgstr "Pripojenie k serveru bolo ukončené."
+msgstr "Vlákno servera bolo ukončené."
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:318
 msgctxt "NetworkController|"
 msgid "Server is off"
-msgstr "Server"
+msgstr "Server je vypnutý"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:322
 msgctxt "NetworkController|"
@@ -3689,7 +3691,7 @@ msgstr "Používateľ bol vyradený: %2 - %1."
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
-msgstr "Používateľ bol vyradený: %2 - %1."
+msgstr "Používateľ bol zakázaný: %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:462
 msgctxt "ServerConnectionManager|"
@@ -3705,17 +3707,17 @@ msgstr "Používateľ %1 bol odpojený!"
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:97
 msgctxt "UpnpNat|"
 msgid "Unable to read the beginning of server answer"
-msgstr "Nie je možné prečítať URL v odpovedi servera"
+msgstr "Nie je možné prečítať začiatok odpovede servera"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:105
 msgctxt "UpnpNat|"
 msgid "Unable to read the end of server answer"
-msgstr "Nie je možné prečítať URL v odpovedi servera"
+msgstr "Nie je možné prečítať koniec odpovede servera"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "Popis: "
+msgstr "Súbor popisu je prázdny"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -3883,7 +3885,7 @@ msgstr "Zavrieť %1"
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Pridať kanál"
+msgstr "Nový kanál"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
 msgctxt "NetworkUpdater|"
@@ -4005,7 +4007,7 @@ msgstr "# 3D hod: Vzdialenosť %1 - Čas %2 - Rotácia %3"
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Vybrať obrázok"
+msgstr "Vybrať všetky kocky"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
@@ -4015,17 +4017,17 @@ msgstr "Odstrániť výber"
 #: src/libraries/dicephysics/qml/Main.qml:59
 msgctxt "Main|"
 msgid "Selection by zone"
-msgstr "Výber"
+msgstr "Výber podľa zóny"
 
 #: src/libraries/dicephysics/qml/Main.qml:66
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Vybrať obrázok"
+msgstr "Odstrániť všetky kocky"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "Nastavenia"
+msgstr "Obnoviť nastavenia"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
@@ -4045,7 +4047,7 @@ msgstr "Zvuk zrážky:"
 #: src/libraries/dicephysics/qml/SideMenu.qml:215
 msgctxt "SideMenu|"
 msgid "Dice Command:"
-msgstr "Príkaz iniciatívy"
+msgstr "Príkaz kocky:"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:229
 msgctxt "SideMenu|"
@@ -4066,7 +4068,7 @@ msgstr "Panel 3D kociek zmizne po určitom čase."
 #: src/libraries/dicephysics/qml/SideMenu.qml:257
 msgctxt "SideMenu|"
 msgid "Share rolls"
-msgstr "Zdieľať do"
+msgstr "Zdieľať hody"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:258
 msgctxt "SideMenu|"
@@ -4127,7 +4129,7 @@ msgstr "Pridať šípku"
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:93
 msgctxt "ButtonGrid|"
 msgid "Remove selected Items"
-msgstr "Odstrániť vybrané súbory"
+msgstr "Odstrániť vybrané položky"
 
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:100
 msgctxt "ButtonGrid|"
@@ -4203,12 +4205,12 @@ msgstr "je prepojené"
 #: src/libraries/mindmap/resources/qml/MindMap.qml:216
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "Nastavenia"
+msgstr "Nastavenia balíka"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:225
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "Pridať podkanál"
+msgstr "Pridať poduzol"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4248,12 +4250,12 @@ msgstr "Automatické rozmiestnenie"
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "Zmeniť obrázok"
+msgstr "Vybrať obrázok..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "Vybrať obrázok"
+msgstr "Nastaviť URL obrázka"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
@@ -4283,12 +4285,12 @@ msgstr "Avatar"
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "Načítať obrázok"
+msgstr "Načítať"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "Nastaviť vrstvu"
+msgstr "Nastaviť URL"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
 msgctxt "NodeSettingPopup|"
@@ -4325,7 +4327,7 @@ msgstr "Viditeľné označenie odkazu:"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:54
 msgctxt "SideMenu|"
 msgid "Hide empty label"
-msgstr "Server"
+msgstr "Skryť prázdne označenie"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
@@ -4366,7 +4368,7 @@ msgstr "Značky"
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "Pridať balík"
+msgstr "Pridať uzol do balíka"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format
@@ -4459,7 +4461,7 @@ msgstr "Všetko"
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:50
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Načítať obrázok"
+msgstr "Žiadny obrázok"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:60
 msgctxt "PersonEdit|"
@@ -4532,7 +4534,7 @@ msgstr "Pridať diskusnú stránku"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Nastaviť predvolené"
+msgstr "Obnoviť predvolené zobrazenie"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
 msgctxt "InstantMessagingMain|"
@@ -4547,7 +4549,7 @@ msgstr "Odpojiť"
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:35
 msgctxt "RecipiantsView|"
 msgid "Players:"
-msgstr "Hráč"
+msgstr "Hráči:"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:38
 msgctxt "RecipiantsView|"
@@ -4557,7 +4559,7 @@ msgstr "Všetko"
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:79
 msgctxt "RecipiantsView|"
 msgid "Add User"
-msgstr "Zakázať používateľa"
+msgstr "Pridať používateľa"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:46
 msgctxt "SideMenu|"
@@ -4567,7 +4569,7 @@ msgstr "Zvukové upozornenie"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:63
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Výber"
+msgstr "Vybrať písmo…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:71
 msgctxt "SideMenu|"
@@ -4577,7 +4579,7 @@ msgstr "Rodina písma:"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Veľkosť písma"
+msgstr "Faktor veľkosti písma:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:78
 msgctxt "ConnectionForm|"
@@ -4642,7 +4644,7 @@ msgstr "Postavy"
 #: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
-msgstr "Nový profil"
+msgstr "Uložiť profily"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
@@ -4725,7 +4727,7 @@ msgstr "Otvoriť súbor"
 #: src/libraries/rwidgets/customs/filedirchooser.cpp:132
 msgctxt "FileDirChooser|"
 msgid "Save File"
-msgstr "Webové zobrazenie"
+msgstr "Uložiť súbor"
 
 #: src/libraries/rwidgets/customs/imagepatheditor.cpp:98
 msgctxt "rwidgets::ImagePathEditor|"
@@ -4891,7 +4893,7 @@ msgstr "Zastaviť"
 #: src/libraries/rwidgets/customs/playerwidget.ui:161
 msgctxt "PlayerWidgetUI|"
 msgid "unique Mode"
-msgstr "Režim náhodného prehrávania"
+msgstr "Jedinečný režim"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:177
 msgctxt "PlayerWidgetUI|"
@@ -4901,7 +4903,7 @@ msgstr "opakovať"
 #: src/libraries/rwidgets/customs/playerwidget.ui:230
 msgctxt "PlayerWidgetUI|"
 msgid "Lookup directories:"
-msgstr "Adresár"
+msgstr "Vyhľadávacie adresáre:"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:257
 #: src/libraries/rwidgets/customs/playerwidget.ui:264
@@ -4919,17 +4921,17 @@ msgstr "Pridať adresár…"
 #: src/libraries/rwidgets/customs/playerwidget.ui:308
 msgctxt "PlayerWidgetUI|"
 msgid "Add music directory."
-msgstr "Pridať nový adresár"
+msgstr "Pridať hudobný adresár."
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:319
 msgctxt "PlayerWidgetUI|"
 msgid "remove Path"
-msgstr "Odstrániť obrázok"
+msgstr "odstrániť cestu"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:322
 msgctxt "PlayerWidgetUI|"
 msgid "Remove selected directory"
-msgstr "Odstrániť vybrané súbory"
+msgstr "Odstrániť vybraný adresár"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:333
 msgctxt "PlayerWidgetUI|"
@@ -4939,17 +4941,17 @@ msgstr "Cesta hore"
 #: src/libraries/rwidgets/customs/playerwidget.ui:336
 msgctxt "PlayerWidgetUI|"
 msgid "Move up the selected directory"
-msgstr "Vybrať adresár"
+msgstr "Presunúť vybraný adresár nahor"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:347
 msgctxt "PlayerWidgetUI|"
 msgid "move down"
-msgstr "Odstrániť skladbu"
+msgstr "presunúť nadol"
 
 #: src/libraries/rwidgets/customs/playerwidget.ui:350
 msgctxt "PlayerWidgetUI|"
 msgid "Move down selected directory "
-msgstr "Vybrať adresár"
+msgstr "Presunúť vybraný adresár nadol "
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:220
 #, qt-format
@@ -5078,7 +5080,7 @@ msgstr "Odstrániť"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:533
 msgctxt "RGraphicsView|"
 msgid "Delete all selected items"
-msgstr "Odstrániť vybrané súbory"
+msgstr "Odstrániť všetky vybrané položky"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:543
 msgctxt "RGraphicsView|"
@@ -5330,7 +5332,7 @@ msgstr "Alias"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:34
 msgctxt "CampaignProperties|"
 msgid "Dice Command"
-msgstr "Príkaz iniciatívy"
+msgstr "Príkaz kocky"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:64
 msgctxt "CampaignProperties|"
@@ -5388,7 +5390,7 @@ msgstr "Dolu"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:386
 msgctxt "CampaignProperties|"
 msgid "Bottom"
-msgstr "Dole vľavo"
+msgstr "Dolu"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:298
 msgctxt "CampaignProperties|"
@@ -5408,7 +5410,7 @@ msgstr "Názov:"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:432
 msgctxt "CampaignProperties|"
 msgid "Root Directory:"
-msgstr "Adresár"
+msgstr "Koreňový adresár:"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:442
 msgctxt "CampaignProperties|"
@@ -5418,7 +5420,7 @@ msgstr "Téma*:"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:452
 msgctxt "CampaignProperties|"
 msgid "File count:"
-msgstr "Akcie súborov"
+msgstr "Počet súborov:"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:466
 msgctxt "CampaignProperties|"
@@ -5444,7 +5446,7 @@ msgstr "Pripojenie zlyhalo! Opakovaný pokus o pripojenie za %1s."
 #: src/libraries/rwidgets/dialogs/connectionretrydialog.ui:14
 msgctxt "ConnectionRetryDialog|"
 msgid "Connection Retry"
-msgstr "Spojenie stratené"
+msgstr "Opätovné pripojenie"
 
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:14
 msgctxt "HistoryViewerDialog|"
@@ -5506,7 +5508,7 @@ msgstr "Titul"
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:169
 msgctxt "ImageSelectorDialog|"
 msgid "Download"
-msgstr "Dolu"
+msgstr "Stiahnuť"
 
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:181
 msgctxt "ImageSelectorDialog|"
@@ -5541,7 +5543,7 @@ msgstr "Dialóg"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:22
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Source Campaign"
-msgstr "Otvoriť kampaň"
+msgstr "Zdrojová kampaň"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:32
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5556,7 +5558,7 @@ msgstr "Údaje na import"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:61
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Mindmaps"
-msgstr "Myšlienková mapa"
+msgstr "Myšlienkové mapy"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:68
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5566,7 +5568,7 @@ msgstr "Mapy"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:75
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Images"
-msgstr "Obrázok"
+msgstr "Obrázky"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:82
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5606,7 +5608,7 @@ msgstr "Tabuľka súperov"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:131
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Character sheets"
-msgstr "Karta postavy"
+msgstr "Karty postáv"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:138
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5616,12 +5618,12 @@ msgstr "Karta postavy"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:145
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Pdf documents"
-msgstr "Upraviť zdroj dokumentu"
+msgstr "Dokumenty PDF"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:152
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Web links"
-msgstr "Webové stránky:"
+msgstr "Webové odkazy"
 
 #: src/libraries/rwidgets/dialogs/keygeneratordialog.ui:14
 msgctxt "KeyGeneratorDialog|"
@@ -5636,7 +5638,7 @@ msgstr "Heslo"
 #: src/libraries/rwidgets/dialogs/keygeneratordialog.ui:36
 msgctxt "KeyGeneratorDialog|"
 msgid "Generate"
-msgstr "Teplota"
+msgstr "Generovať"
 
 #: src/libraries/rwidgets/dialogs/keygeneratordialog.ui:51
 msgctxt "KeyGeneratorDialog|"
@@ -5701,7 +5703,7 @@ msgstr "Farba:"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
-msgstr "Iba na čítanie"
+msgstr "Iba pre gamemastera"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 msgctxt "PreferencesDialog|"
@@ -5805,12 +5807,12 @@ msgstr "Mapa"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:41
 msgctxt "PreferencesDialogBox|"
 msgid "Default Map Permission:"
-msgstr "Všetky oprávnenia"
+msgstr "Predvolené oprávnenie mapy:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:70
 msgctxt "PreferencesDialogBox|"
 msgid "Item Highlight Color"
-msgstr "Zvýrazňovač"
+msgstr "Farba zvýraznenia položky"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:101
 msgctxt "PreferencesDialogBox|"
@@ -5857,7 +5859,7 @@ msgstr ""
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:160
 msgctxt "PreferencesDialogBox|"
 msgid "Keep connection alive"
-msgstr "Spojenie stratené"
+msgstr "Udržať spojenie aktívne"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:182
 msgctxt "PreferencesDialogBox|"
@@ -5892,7 +5894,7 @@ msgstr "Obrázky prispôsobené veľkosti okna (pri otvorení)"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:273
 msgctxt "PreferencesDialogBox|"
 msgid "Send Upnp Port mapping request"
-msgstr "[Upnp] Mapovanie portov bolo vykonané"
+msgstr "Odoslať požiadavku na mapovanie portov Upnp"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:283
 msgctxt "PreferencesDialogBox|"
@@ -5902,7 +5904,7 @@ msgstr "Sieť Upnp:"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:301
 msgctxt "PreferencesDialogBox|"
 msgid "Application Language*"
-msgstr "Aplikácia"
+msgstr "Jazyk aplikácie*"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:307
 msgctxt "PreferencesDialogBox|"
@@ -5942,7 +5944,7 @@ msgstr "ms"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
-msgstr "Priama komunikácia"
+msgstr "Správy"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
@@ -5972,7 +5974,7 @@ msgstr "Cesta"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:478
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters:"
-msgstr "Postavy"
+msgstr "Parametre:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:485
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:518
@@ -5996,17 +5998,17 @@ msgstr "Cesta"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:544
 msgctxt "PreferencesDialogBox|"
 msgid "Parameters"
-msgstr "Postavy"
+msgstr "Parametre"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:528
 msgctxt "PreferencesDialogBox|"
 msgid "Text Editor"
-msgstr "Editor Css"
+msgstr "Textový editor"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
-msgstr "Označenie"
+msgstr "Textové označenie"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
@@ -6027,17 +6029,17 @@ msgstr "Téma"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:598
 msgctxt "PreferencesDialogBox|"
 msgid "Current Theme*"
-msgstr "Aktuálne HP"
+msgstr "Aktuálna téma*"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:605
 msgctxt "PreferencesDialogBox|"
 msgid "Theme name"
-msgstr "Názov:"
+msgstr "Názov témy"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
-msgstr "Štýly uzlov"
+msgstr "Štýly:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 msgctxt "PreferencesDialogBox|"
@@ -6057,12 +6059,12 @@ msgstr "Css:"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:659
 msgctxt "PreferencesDialogBox|"
 msgid "Edit..."
-msgstr "&Upraviť"
+msgstr "Upraviť..."
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:685
 msgctxt "PreferencesDialogBox|"
 msgid "Background"
-msgstr "Je pozadie"
+msgstr "Pozadie"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:693
 msgctxt "PreferencesDialogBox|"
@@ -6077,17 +6079,17 @@ msgstr "Obrázok"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:738
 msgctxt "PreferencesDialogBox|"
 msgid "Positioning:"
-msgstr "Stĺpce pozícií"
+msgstr "Umiestňovanie:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:746
 msgctxt "PreferencesDialogBox|"
 msgid "TopLeftCorner"
-msgstr "Hore vľavo"
+msgstr "Horný ľavý roh"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:751
 msgctxt "PreferencesDialogBox|"
 msgid "BottomLeftCorner"
-msgstr "Dole vľavo"
+msgstr "Dolný ľavý roh"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:756
 msgctxt "PreferencesDialogBox|"
@@ -6097,12 +6099,12 @@ msgstr "Vycentrovať"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:761
 msgctxt "PreferencesDialogBox|"
 msgid "TopRightCorner"
-msgstr "Hore vpravo"
+msgstr "Horný pravý roh"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:766
 msgctxt "PreferencesDialogBox|"
 msgid "BottomRightCorner"
-msgstr "Dole vpravo"
+msgstr "Dolný pravý roh"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:771
 msgctxt "PreferencesDialogBox|"
@@ -6122,7 +6124,7 @@ msgstr "Repeated"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
-msgstr "Zvýrazňovač"
+msgstr "Farba zvýraznenia kocky"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
@@ -6187,7 +6189,7 @@ msgstr "stop"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:55
 msgctxt "SelectConnectionProfileDialog|"
 msgid "playerAvatar"
-msgstr "Avatar"
+msgstr "avatarHráča"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:64
 msgctxt "SelectConnectionProfileDialog|"
@@ -6269,27 +6271,27 @@ msgstr "Titul"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:51
 msgctxt "MapWizzardDialog|"
 msgid "Background Color :"
-msgstr "Hudba na pozadí"
+msgstr "Farba pozadia :"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:97
 msgctxt "MapWizzardDialog|"
 msgid "Visibility Mode:"
-msgstr "Viditeľnosť: Hmla"
+msgstr "Režim viditeľnosti:"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:111
 msgctxt "MapWizzardDialog|"
 msgid "Permission Mode:"
-msgstr "Oprávnenie: Presun PC"
+msgstr "Režim oprávnení:"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:123
 msgctxt "MapWizzardDialog|"
 msgid "Grid"
-msgstr "Žiadna mriežka"
+msgstr "Mriežka"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:149
 msgctxt "MapWizzardDialog|"
 msgid "Grid Pattern:"
-msgstr "Vzor"
+msgstr "Vzor mriežky:"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:156
 msgctxt "MapWizzardDialog|"
@@ -6468,7 +6470,7 @@ msgstr "vylúčiť značky:"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
 msgid "Health:"
-msgstr "Zdravie"
+msgstr "Zdravie:"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:228
 msgctxt "AntagonistBoard|"
@@ -6488,7 +6490,7 @@ msgstr "Mŕtvy"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:270
 msgctxt "AntagonistBoard|"
 msgid "Initiative Score:"
-msgstr "Iniciatíva"
+msgstr "Skóre iniciatívy:"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:308
 msgctxt "AntagonistBoard|"
@@ -6524,7 +6526,7 @@ msgstr "Veľkosť"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:529
 msgctxt "AntagonistBoard|"
 msgid "Initiative Value:"
-msgstr "Iniciatíva"
+msgstr "Hodnota iniciatívy:"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:542
 msgctxt "AntagonistBoard|"
@@ -6549,7 +6551,7 @@ msgstr "Avatar"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:635
 msgctxt "AntagonistBoard|"
 msgid "Change"
-msgstr "Zmeniť obrázok"
+msgstr "Zmeniť"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:666
 msgctxt "AntagonistBoard|"
@@ -6564,12 +6566,12 @@ msgstr "Min:"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:707
 msgctxt "AntagonistBoard|"
 msgid "Current"
-msgstr "Aktuálne HP"
+msgstr "Aktuálne"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:739
 msgctxt "AntagonistBoard|"
 msgid "Max"
-msgstr "Mapa"
+msgstr "Max"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:787
 msgctxt "AntagonistBoard|"
@@ -6594,7 +6596,7 @@ msgstr "Tvary"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:967
 msgctxt "AntagonistBoard|"
 msgid "Property"
-msgstr "Nastaviť vlastnosť"
+msgstr "Vlastnosť"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:988
 msgctxt "AntagonistBoard|"
@@ -6604,42 +6606,42 @@ msgstr "Vlastnosti"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1108
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
-msgstr "Akcia"
+msgstr "Pridať akciu"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1111
 msgctxt "AntagonistBoard|"
 msgid "add action"
-msgstr "Upraviť akcie"
+msgstr "pridať akciu"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1120
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1123
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
-msgstr "Odstrániť výber"
+msgstr "Odstrániť akciu"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1132
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1135
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
-msgstr "Tvar"
+msgstr "Pridať tvar"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1144
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1147
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
-msgstr "Odstrániť obrázok"
+msgstr "Odstrániť tvar"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1156
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1159
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
-msgstr "Nastaviť vlastnosť"
+msgstr "Pridať vlastnosť"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1168
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1171
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
-msgstr "Nastaviť vlastnosť"
+msgstr "Odstrániť vlastnosť"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
@@ -6747,7 +6749,7 @@ msgstr "Upraviť kanál"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Zablokovať/Odblokovať kanál"
+msgstr "Zablokovať kanál"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6757,7 +6759,7 @@ msgstr "Prepnúť na kanál"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Hesla kanála"
+msgstr "Nastaviť heslo kanála"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6807,7 +6809,7 @@ msgstr "Presunúť používateľa"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Zablokovať/Odblokovať kanál"
+msgstr "Odblokovať kanál"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6844,7 +6846,7 @@ msgstr "Cieľový kanál vyžaduje heslo"
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"
 msgid "Channel List"
-msgstr "Hesla kanála"
+msgstr "Zoznam kanálov"
 
 #: src/libraries/rwidgets/docks/notificationzone.ui:14
 msgctxt "NotificationZone|"
@@ -7061,7 +7063,7 @@ msgstr "JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; Všetko (*)"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:56
 msgctxt "MRichTextEdit|"
 msgid "Paragraph formatting"
-msgstr "Odstrániť formátovanie postáv"
+msgstr "Formátovanie odseku"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:79
 msgctxt "MRichTextEdit|"
@@ -7112,12 +7114,12 @@ msgstr "V&ložiť"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:204
 msgctxt "MRichTextEdit|"
 msgid "Link (CTRL+L)"
-msgstr "URL odkazu:"
+msgstr "Odkaz (CTRL+L)"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:207
 msgctxt "MRichTextEdit|"
 msgid "Link"
-msgstr "Prepojené"
+msgstr "Odkaz"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:240
 msgctxt "MRichTextEdit|"
@@ -7137,7 +7139,7 @@ msgstr "&Kurzíva"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:289
 msgctxt "MRichTextEdit|"
 msgid "Underline (CTRL+U)"
-msgstr "Podčiark&nuté"
+msgstr "Podčiarknuté (CTRL+U)"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:292
 msgctxt "MRichTextEdit|"
@@ -7177,7 +7179,7 @@ msgstr "Zmenšiť odsadenie (CTRL+,)"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:379
 msgctxt "MRichTextEdit|"
 msgid "Decrease indentation"
-msgstr "Zmenšiť veľkosť textu"
+msgstr "Zmenšiť odsadenie"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:399
 msgctxt "MRichTextEdit|"
@@ -7187,7 +7189,7 @@ msgstr "Zväčšiť odsadenie (CTRL+.)"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:402
 msgctxt "MRichTextEdit|"
 msgid "Increase indentation"
-msgstr "Zvýšiť život"
+msgstr "Zvýšiť odsadenie"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:441
 msgctxt "MRichTextEdit|"
@@ -7285,7 +7287,7 @@ msgstr "Názov"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 msgctxt "TextEdit|"
 msgid "Change note file name"
-msgstr "Zmeniť farbu…"
+msgstr "Zmeniť názov súboru poznámky"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 msgctxt "TextEdit|"
@@ -7434,7 +7436,7 @@ msgstr "OpenOffice 2.4 súborový formát OASIS "
 #: src/libraries/rwidgets/editors/sharededitor/announcedocumentdialog.ui:14
 msgctxt "AnnounceDocumentDialog|"
 msgid "Announce Document"
-msgstr "Tlačiť dokument"
+msgstr "Oznámiť dokument"
 
 #: src/libraries/rwidgets/editors/sharededitor/announcedocumentdialog.ui:35
 msgctxt "AnnounceDocumentDialog|"
@@ -7459,7 +7461,7 @@ msgstr "Toto môžete zmeniť v dialógu predvolieb."
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:14
 msgctxt "ConnectToDocument|"
 msgid "Connect to Document"
-msgstr "Tlačiť dokument"
+msgstr "Pripojiť k dokumentu"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:52
 msgctxt "ConnectToDocument|"
@@ -7469,12 +7471,12 @@ msgstr "Nový...."
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:62
 msgctxt "ConnectToDocument|"
 msgid "Username:"
-msgstr "Názov:"
+msgstr "Používateľské meno:"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:88
 msgctxt "ConnectToDocument|"
 msgid "DefaultName"
-msgstr "Predvolený štýl"
+msgstr "PredvolenýNázov"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:98
 msgctxt "ConnectToDocument|"
@@ -7529,7 +7531,7 @@ msgstr "Nájsť:"
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:83
 msgctxt "FindDialog|"
 msgid "Replace With:"
-msgstr "Nahradiť obrázok"
+msgstr "Nahradiť čím:"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:110
 msgctxt "FindDialog|"
@@ -7559,12 +7561,12 @@ msgstr "Entire Word"
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:166
 msgctxt "FindDialog|"
 msgid "Replace All"
-msgstr "Nahradiť obrázok"
+msgstr "Nahradiť všetko"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:176
 msgctxt "FindDialog|"
 msgid "Replace"
-msgstr "Nahradiť obrázok"
+msgstr "Nahradiť"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:186
 msgctxt "FindDialog|"
@@ -7574,12 +7576,12 @@ msgstr "Nájsť && nahradiť"
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:196
 msgctxt "FindDialog|"
 msgid "Previous"
-msgstr "Predchádzajúca stránka"
+msgstr "Predchádzajúce"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:206
 msgctxt "FindDialog|"
 msgid "Next"
-msgstr "Nasledujúca stránka"
+msgstr "Ďalšie"
 
 #: src/libraries/rwidgets/editors/sharededitor/findtoolbar.ui:14
 msgctxt "FindToolBar|"
@@ -7814,12 +7816,12 @@ msgstr "Demote"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:27
 msgctxt "PreferencesDialog|"
 msgid "Fonts"
-msgstr "Písmo"
+msgstr "Písma"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:39
 msgctxt "PreferencesDialog|"
 msgid "Code Editor:"
-msgstr "Editor Css"
+msgstr "Editor kódu:"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:54
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:130
@@ -7833,7 +7835,7 @@ msgstr "Courier 12"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:234
 msgctxt "PreferencesDialog|"
 msgid "Set Font"
-msgstr "Písmo"
+msgstr "Nastaviť písmo"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:97
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:173
@@ -7855,7 +7857,7 @@ msgstr "Panel účastníkov:"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:275
 msgctxt "PreferencesDialog|"
 msgid "Sharing"
-msgstr "Zdieľanie súboru Pdf"
+msgstr "Zdieľanie"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:289
 msgctxt "PreferencesDialog|"
@@ -7865,7 +7867,7 @@ msgstr "Oznamovanie:"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:311
 msgctxt "PreferencesDialog|"
 msgid "Default Name:"
-msgstr "Predvolený štýl"
+msgstr "Predvolený názov:"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:338
 msgctxt "PreferencesDialog|"
@@ -7976,7 +7978,7 @@ msgstr "Ctrl++"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:233
 msgctxt "SharedNote|"
 msgid "Line Wrap"
-msgstr "Riadok"
+msgstr "Zalamovanie riadkov"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:241
 msgctxt "SharedNote|"
@@ -7996,7 +7998,7 @@ msgstr "Ctrl++"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:254
 msgctxt "SharedNote|"
 msgid "Shift Right"
-msgstr "Žiadne právo"
+msgstr "Posunúť vpravo"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:257
 msgctxt "SharedNote|"
@@ -8006,22 +8008,22 @@ msgstr "Ctrl++"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:262
 msgctxt "SharedNote|"
 msgid "Un/Comment Line"
-msgstr "Komentár"
+msgstr "Odkomentovať/Zakomentovať riadok"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:265
 msgctxt "SharedNote|"
 msgid "Ctrl+/"
-msgstr "Ctrl++"
+msgstr "Ctrl+/"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:270
 msgctxt "SharedNote|"
 msgid "Save A Copy As..."
-msgstr "Uložiť ako..."
+msgstr "Uložiť kópiu ako..."
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:278
 msgctxt "SharedNote|"
 msgid "Save All"
-msgstr "Uložiť zoznam skladieb"
+msgstr "Uložiť všetko"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:283
 msgctxt "SharedNote|"
@@ -8036,17 +8038,17 @@ msgstr "Ctrl++"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:294
 msgctxt "SharedNote|"
 msgid "Show/Hide Participants"
-msgstr "Zobraziť/Skryť stav"
+msgstr "Zobraziť/Skryť účastníkov"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:299
 msgctxt "SharedNote|"
 msgid "Show/Hide Chat"
-msgstr "Zobraziť/Skryť stav"
+msgstr "Zobraziť/Skryť chat"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:304
 msgctxt "SharedNote|"
 msgid "Connect to Document..."
-msgstr "Tlačiť dokument"
+msgstr "Pripojiť k dokumentu..."
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:307
 msgctxt "SharedNote|"
@@ -8061,12 +8063,12 @@ msgstr "Rozdelené zobrazenie"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:320
 msgctxt "SharedNote|"
 msgid "Resynchronize Document"
-msgstr "Tlačiť dokument"
+msgstr "Resynchronizovať dokument"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:328
 msgctxt "SharedNote|"
 msgid "Next Document"
-msgstr "Tlačiť dokument"
+msgstr "Nasledujúci dokument"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:331
 msgctxt "SharedNote|"
@@ -8076,7 +8078,7 @@ msgstr "Ctrl++"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:339
 msgctxt "SharedNote|"
 msgid "Previous Document"
-msgstr "Tlačiť dokument"
+msgstr "Predchádzajúci dokument"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:342
 msgctxt "SharedNote|"
@@ -8091,7 +8093,7 @@ msgstr "Žiadne"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:358
 msgctxt "SharedNote|"
 msgid "Remove Split"
-msgstr "Odstrániť výber"
+msgstr "Odstrániť rozdelenie"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:363
 msgctxt "SharedNote|"
@@ -8111,17 +8113,17 @@ msgstr "Find All"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:376
 msgctxt "SharedNote|"
 msgid "Ctrl+F"
-msgstr "Ctrl++"
+msgstr "Ctrl+F"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:381
 msgctxt "SharedNote|"
 msgid "About Cahoots"
-msgstr "Spolupráca"
+msgstr "O Cahoots"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:386
 msgctxt "SharedNote|"
 msgid "About Qt"
-msgstr "O aplikácii"
+msgstr "O Qt"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:395
 msgctxt "SharedNote|"
@@ -8131,7 +8133,7 @@ msgstr "Ako spolupracovať"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:407
 msgctxt "SharedNote|"
 msgid "Print"
-msgstr "&Tlačiť..."
+msgstr "Tlačiť"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:410
 msgctxt "SharedNote|"
@@ -8146,7 +8148,7 @@ msgstr "Obnoviť"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:434
 msgctxt "SharedNote|"
 msgid "Markdown Preview"
-msgstr "Náhľad tlače..."
+msgstr "Náhľad Markdown"
 
 #: src/libraries/rwidgets/gmtoolbox/DiceBookMark/dicebookmarkmodel.cpp:16
 msgctxt "DiceBookMarkModel|"
@@ -8206,7 +8208,7 @@ msgstr "Ruské meno"
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:14
 msgctxt "NameGeneratorWidget|"
 msgid "Name Generator"
-msgstr "Generovanie obrázka"
+msgstr "Generátor mien"
 
 #: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.ui:46
 msgctxt "NameGeneratorWidget|"
@@ -8265,7 +8267,7 @@ msgstr "Mena"
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:224
 msgctxt "Convertor|"
 msgid "Volume"
-msgstr "Stlmiť hlasitosť"
+msgstr "Hlasitosť"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:69
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:229
@@ -8320,17 +8322,17 @@ msgstr "Pridať"
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:311
 msgctxt "Convertor|"
 msgid "Add Unit"
-msgstr "Jednotka"
+msgstr "Pridať jednotku"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:320
 msgctxt "Convertor|"
 msgid "Remove Unit"
-msgstr "Odstrániť skladbu"
+msgstr "Odstrániť jednotku"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:323
 msgctxt "Convertor|"
 msgid "remove unit"
-msgstr "Odstrániť skladbu"
+msgstr "odstrániť jednotku"
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
@@ -8533,12 +8535,12 @@ msgstr "Form"
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:39
 msgctxt "CharacterSheetWindow|"
 msgid "Data"
-msgstr "Simulované údaje"
+msgstr "Údaje"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:80
 msgctxt "CharacterSheetWindow|"
 msgid "Add Section"
-msgstr "Akcia"
+msgstr "Pridať sekciu"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:85
 msgctxt "CharacterSheetWindow|"
@@ -8548,12 +8550,12 @@ msgstr "Pridať riadok"
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:90
 msgctxt "CharacterSheetWindow|"
 msgid "Add CharacterSheet"
-msgstr "Karta postavy"
+msgstr "Pridať kartu postavy"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:95
 msgctxt "CharacterSheetWindow|"
 msgid "Copy Tab"
-msgstr "Kopírovať cestu"
+msgstr "Kopírovať záložku"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:100
 msgctxt "CharacterSheetWindow|"
@@ -8563,12 +8565,12 @@ msgstr "Iba na čítanie"
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:105
 msgctxt "CharacterSheetWindow|"
 msgid "Stop Sharing"
-msgstr "Zdieľanie súboru Pdf"
+msgstr "Zastaviť zdieľanie"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:110
 msgctxt "CharacterSheetWindow|"
 msgid "Print Sheet"
-msgstr "Tlačiť dokument"
+msgstr "Tlačiť list"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:118
 msgctxt "CharacterSheetWindow|"
@@ -8591,12 +8593,12 @@ msgstr "%1 - (Obrázok: %2)"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
 msgctxt "Image|"
 msgid "Shared"
-msgstr "Zdieľať do"
+msgstr "Zdieľané"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
 msgctxt "Image|"
 msgid "Unshared"
-msgstr "Zdieľať do"
+msgstr "Nezdieľané"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:214
 msgctxt "Image|"
@@ -8706,17 +8708,17 @@ msgstr "Ctrl+b"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:298
 msgctxt "Image|"
 msgid "Rename"
-msgstr "Názov súboru"
+msgstr "Premenovať"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:303
 msgctxt "Image|"
 msgid "Define the new name"
-msgstr "Definovať <používateľské meno>"
+msgstr "Definovať nový názov"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:303
 msgctxt "Image|"
 msgid "New name:"
-msgstr "Názov:"
+msgstr "Nový názov:"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:310
 #: src/libraries/rwidgets/mediacontainers/image.cpp:324
@@ -8739,7 +8741,7 @@ msgstr "Pozastaviť"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:348
 msgctxt "Image|"
 msgid "Share"
-msgstr "Zdieľať do"
+msgstr "Zdieľať"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:346
 msgctxt "Image|"
@@ -8831,7 +8833,7 @@ msgstr "..."
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:139
 msgctxt "PdfViewer|"
 msgid "Fit width"
-msgstr "Prispôsobiť sa oknu"
+msgstr "Prispôsobiť šírku"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:144
 msgctxt "PdfViewer|"
@@ -8876,7 +8878,7 @@ msgstr "/"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:241
 msgctxt "PdfViewer|"
 msgid "Bookmarks"
-msgstr "pridané do záložiek"
+msgstr "Záložky"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:276
 msgctxt "PdfViewer|"
@@ -8942,7 +8944,7 @@ msgstr "Text"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:376
 msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
-msgstr "Server"
+msgstr "Skryť bočný panel"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
 msgctxt "QObject|"
@@ -9040,7 +9042,7 @@ msgstr "Znovu načítať"
 #: src/libraries/rwidgets/mediacontainers/webview.ui:150
 msgctxt "WebView|"
 msgid "Hide Address"
-msgstr "Adresa:"
+msgstr "Skryť adresu"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:162
 msgctxt "WebView|"
@@ -9050,7 +9052,7 @@ msgstr "Zdieľať do"
 #: src/libraries/rwidgets/mediacontainers/webview.ui:170
 msgctxt "WebView|"
 msgid "Share Html"
-msgstr "Zdieľať do"
+msgstr "Zdieľať HTML"
 
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:25
 msgctxt "campaign::CampaignView|"
@@ -9105,7 +9107,7 @@ msgstr "Dátum zmeny"
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:36
 msgctxt "campaign::CampaignView|"
 msgid "Open Externally"
-msgstr "Otvoriť prúd"
+msgstr "Otvoriť externe"
 
 #: src/libraries/rwidgets/modelviews/campaignview.cpp:117
 msgctxt "campaign::CampaignView|"
@@ -9180,7 +9182,7 @@ msgstr "Má iniciatívu"
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:67
 msgctxt "UserListView|"
 msgid "Life bar color"
-msgstr "Farba života"
+msgstr "Farba lišty života"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:140
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:144
@@ -9345,7 +9347,7 @@ msgstr "Nepriehľadnosť:"
 #: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:84
 msgctxt "TestCharacterStateModel|"
 msgid "Healthy"
-msgstr "Zdravie"
+msgstr "Zdravý"
 
 #: src/tests/auto/characterstatemodel/tst_characterstatemodel.cpp:88
 msgctxt "TestCharacterStateModel|"
