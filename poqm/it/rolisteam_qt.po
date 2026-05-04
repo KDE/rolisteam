@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-04-03 19:54+0200\n"
+"PO-Revision-Date: 2026-05-03 11:08+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -5609,7 +5609,7 @@ msgstr "Scaletta audio giocatore 1"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:124
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Antagonist list"
-msgstr "Lista antagonisti"
+msgstr "Lista avversari"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:131
 msgctxt "ImportDataFromCampaignDialog|"
@@ -6653,12 +6653,12 @@ msgstr "Rimuovi proprietà"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1179
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
-msgstr "Aggiungi carattere"
+msgstr "Aggiungi personaggio"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:1187
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
-msgstr "Rimuovi carattere"
+msgstr "Rimuovi personaggio"
 
 #: src/libraries/rwidgets/docks/audioPlayer.cpp:79
 msgctxt "AudioPlayer|"
