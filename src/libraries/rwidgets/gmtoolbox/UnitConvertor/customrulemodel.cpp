@@ -49,12 +49,13 @@ QVariant CustomRuleModel::headerData(int section, Qt::Orientation orientation, i
 
 bool CustomRuleModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)
 {
+    bool res= false;
     if(value != headerData(section, orientation, role))
     {
         emit headerDataChanged(orientation, section, section);
-        return true;
+        res= true;
     }
-    return false;
+    return res;
 }
 
 void CustomRuleModel::setCurrentCategoryId(const QString& cat, int currentCateId)
@@ -187,6 +188,9 @@ bool CustomRuleModel::setData(const QModelIndex& idx, const QVariant& value, int
 
             ConvertorOperator* convertor= nullptr;
 
+            if(!m_convertionRules)
+                return false;
+
             if(m_convertionRules->contains(pair))
             {
                 convertor= m_convertionRules->value(pair);
@@ -278,15 +282,14 @@ bool CustomRuleModel::insertUnit()
 
 bool CustomRuleModel::removeUnit(const QModelIndex& index)
 {
-    /*beginRemoveRows(QModelIndex(), index.row(), index.row());
-    beginRemoveColumns(QModelIndex(), index.row() + PERMANENT_COL_COUNT, index.row() + PERMANENT_COL_COUNT);*/
-
-    beginResetModel();
 
     // auto sourceIndex= mapToSource(index);
 
     auto unitModel= dynamic_cast<UnitModel*>(sourceModel());
     auto unit= unitModel->getUnitFromIndex(index, m_currentCatId);
+    if(!unit)
+        return false;
+    beginResetModel();
     const auto& keys= m_convertionRules->keys();
     for(auto key : keys)
     {
@@ -296,12 +299,11 @@ bool CustomRuleModel::removeUnit(const QModelIndex& index)
                 m_convertionRules->remove(key);
         }
     }
+
     unitModel->removeUnit(unit);
     invalidateFilter();
     setFilterFixedString(m_currentCategory);
     endResetModel();
-    //  endRemoveColumns();
-    //  endRemoveRows();
     return true;
 }
 

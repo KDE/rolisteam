@@ -23,6 +23,7 @@
 #include <QTest>
 #include <map>
 
+#include "controller/gamecontroller.h"
 #include "controller/item_controllers/imageitemcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 
@@ -36,9 +37,14 @@
 
 #include "data/campaignmanager.h"
 #include "media/mediafactory.h"
+#include "network/networkmessagereader.h"
 #include "updater/controller/contentupdater.h"
+#include "updater/controller/playerupdater.h"
 #include "worker/iohelper.h"
+#include "worker/messagehelper.h"
+#include "worker/playermessagehelper.h"
 #include "worker/vectorialmapmessagehelper.h"
+
 #include <controller/contentcontroller.h>
 #include <controller/playercontroller.h>
 #include <data/character.h>
@@ -46,6 +52,14 @@
 #include <model/contentmodel.h>
 
 #include "media/mediatype.h"
+
+class GameControllerTest : public GameController
+{
+public:
+    GameControllerTest() : GameController(Helper::randomString(), QGuiApplication::clipboard()) {};
+
+    void callConnectedChanged(bool b) { emit connectedChanged(b); };
+};
 
 class ContentControllerTest : public QObject
 {
@@ -70,10 +84,14 @@ private slots:
 
     void playerControllerTest();
 
+    void updaterTest();
+    void playerUpdaterTest();
+
 private:
     std::unique_ptr<ContentController> m_ctrl;
     std::unique_ptr<ContentUpdater> m_updater;
     std::unique_ptr<PlayerController> m_playerCtrl;
+    std::unique_ptr<PlayerUpdater> m_playerUpdater;
     std::unique_ptr<ContentModel> m_model;
     std::unique_ptr<FilteredContentModel> m_filteredModel;
     std::vector<std::unique_ptr<QAbstractItemModelTester>> m_tester;
@@ -100,6 +118,8 @@ void ContentControllerTest::init()
 
     m_filteredModel->setSourceModel(m_model.get());
     m_tester.push_back(std::make_unique<QAbstractItemModelTester>(m_filteredModel.get()));
+
+    m_playerUpdater.reset(new PlayerUpdater(m_playerCtrl.get()));
 }
 
 void ContentControllerTest::saveLoadImage()
@@ -480,6 +500,155 @@ void ContentControllerTest::playerControllerTest()
     QVERIFY(!color.isValid());
     m_playerCtrl->addLocalCharacter();
     m_playerCtrl->removeLocalCharacter(QModelIndex());
+}
+
+void ContentControllerTest::updaterTest()
+{
+    auto model= m_ctrl->contentModel();
+    auto webPage= new WebpageController;
+    auto uuid= webPage->uuid();
+    model->appendMedia(webPage);
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+
+    { // AddMedia media
+        MessageHelper::shareWebpage(webPage);
+
+        NetworkMessageReader msgR;
+        msgR.setData(sender.messageData().first());
+        m_updater->processMessage(&msgR);
+    }
+
+    { // UpdateMediaProperty media
+        NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::UpdateMediaProperty);
+        msg.uint8(static_cast<int>(webPage->contentType()));
+        msg.string8(uuid);
+
+        NetworkMessageReader msgR;
+        msgR.setData(msg.data());
+        m_updater->processMessage(&msgR);
+    }
+
+    { // UpdateMediaProperty media
+        NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::UpdateMediaProperty);
+        msg.uint8(static_cast<int>(Core::ContentType::PICTURE));
+        msg.string8(uuid);
+
+        NetworkMessageReader msgR;
+        msgR.setData(msg.data());
+        m_updater->processMessage(&msgR);
+    }
+
+    { // close media
+        NetworkMessageWriter msg(NetMsg::MediaCategory, NetMsg::CloseMedia);
+        msg.string8(uuid);
+
+        NetworkMessageReader msgR;
+        msgR.setData(msg.data());
+        m_updater->processMessage(&msgR);
+    }
+}
+
+void ContentControllerTest::playerUpdaterTest()
+{
+    GameControllerTest gameCtrl;
+
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+
+    // auto player= new Player(Helper::randomString(), Helper::randomColor(), false);
+    auto player= m_playerCtrl->localPlayer();
+    player->setAvatar(Helper::imageData(true));
+
+    auto ch= new Character(Helper::randomString(), Helper::randomColor(), false);
+    ch->setAvatar(Helper::imageData(true));
+
+    auto ch2= new Character(Helper::randomString(), Helper::randomColor(), false);
+    ch2->setAvatar(Helper::imageData(true));
+
+    player->addCharacter(ch);
+    player->addCharacter(ch2);
+
+    m_playerUpdater->setGameController(&gameCtrl);
+    // auto id= Helper::randomString();
+    m_ctrl->setLocalId(player->uuid());
+    m_ctrl->setGameMasterId(player->uuid());
+    m_playerUpdater->updateNewPlayer(player);
+
+    PlayerUpdater updater(nullptr);
+    m_playerUpdater->updateNewPlayer(nullptr);
+
+    gameCtrl.callConnectedChanged(false);
+    gameCtrl.callConnectedChanged(true);
+
+    Helper::testAllProperties(player, {}, true);
+
+    auto ch3= new Character(Helper::randomString(), Helper::randomColor(), false);
+    ch3->setAvatar(Helper::imageData(true));
+    player->addCharacter(ch3);
+
+    PlayerMessageHelper::sendOffPlayerInformations(player);
+
+    {
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    sender.clear();
+    {
+        NetworkMessageWriter msgW(NetMsg::UserCategory, NetMsg::DelPlayerAction);
+        msgW.string8(Helper::randomString());
+        msgW.sendToServer();
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    sender.clear();
+    {
+        NetworkMessageWriter msgW(NetMsg::UserCategory, NetMsg::ResetChannel);
+        msgW.sendToServer();
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    sender.clear();
+    {
+        NetworkMessageWriter msgW(NetMsg::PlayerCharacterCategory, NetMsg::ChangeCharacterPropertyAct);
+        msgW.string8(Helper::randomString());
+        msgW.string16(Helper::randomString());
+        Helper::variantToType<QString>(Helper::randomString(), msgW);
+        msgW.sendToServer();
+
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    sender.clear();
+    {
+        NetworkMessageWriter msgW(NetMsg::PlayerCharacterCategory, NetMsg::ChangePlayerPropertyAct);
+        msgW.string8(Helper::randomString());
+        msgW.string16(Helper::randomString());
+        Helper::variantToType<QString>(Helper::randomString(), msgW);
+        msgW.sendToServer();
+
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    sender.clear();
+    {
+        NetworkMessageWriter msgW(NetMsg::PlayerCharacterCategory, NetMsg::ResetChannel);
+        msgW.sendToServer();
+        NetworkMessageReader msg;
+        msg.setData(sender.messageData().first());
+        m_playerUpdater->processMessage(&msg);
+    }
+    /*NetMsg::PlayerCharacterCategory)
+
+             NetMsg::ChangePlayerPropertyAct:
+             NetMsg::ChangeCharacterPropertyAct:*/
+
+    m_playerUpdater->playerLeft(player);
 }
 
 QTEST_MAIN(ContentControllerTest)

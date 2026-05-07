@@ -33,6 +33,11 @@ class QNetworkAccessManager;
 class COMMON_EXPORT LogUploader : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(int appId READ appId WRITE setAppId NOTIFY appIdChanged FINAL)
+    Q_PROPERTY(QString version READ version WRITE setVersion NOTIFY versionChanged FINAL)
+    Q_PROPERTY(QString uuid READ uuid WRITE setUuid NOTIFY uuidChanged FINAL)
+    Q_PROPERTY(QString conf READ conf WRITE setConf NOTIFY confChanged FINAL)
+    Q_PROPERTY(std::vector<common::Log> logs READ logs WRITE setLogs NOTIFY logsChanged FINAL)
 public:
     LogUploader();
 
@@ -55,6 +60,11 @@ public slots:
     void uploadLog();
 signals:
     void finished();
+    void appIdChanged();
+    void versionChanged();
+    void uuidChanged();
+    void confChanged();
+    void logsChanged();
 
 private:
     std::vector<common::Log> m_logs;

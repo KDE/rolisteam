@@ -15,10 +15,9 @@
 #include <common_qml/theme.h>
 
 #include "controller/view_controller/sidemenucontroller.h"
-#include "model/playermodel.h"
-// #include "utils/iohelper.h"
 #include "mindmap/data/nodestyle.h"
 #include "mindmap/qmlItems/linkitem.h"
+#include "model/playermodel.h"
 #include "test_root_path.h"
 #include "updater/media/mindmapupdater.h"
 #include "worker/iohelper.h"
@@ -26,32 +25,6 @@
 void registerMindmapType()
 {
     customization::Theme::setPath(QString("%1/../../resources/stylesheet/qml/theme.ini").arg(tests::root_path));
-    /*qRegisterMetaType<PlayerModel*>("PlayerModel*");
-    qRegisterMetaType<customization::Theme*>("customization::Theme*");
-    qRegisterMetaType<customization::StyleSheet*>("customization::StyleSheet*");
-
-    qmlRegisterAnonymousType<PlayerModel>("PlayerModel", 1);
-
-    qmlRegisterSingletonType<customization::Theme>("Customization", 1, 0, "Theme",
-                                                   [](QQmlEngine* engine, QJSEngine*) -> QObject* {
-                                                       auto instead= customization::Theme::instance();
-                                                       engine->setObjectOwnership(instead, QQmlEngine::CppOwnership);
-                                                       return instead;
-                                                   });
-
-    qmlRegisterType<utils::MappingHelper>("utils", 1, 0, "MappingHelper");
-    qmlRegisterUncreatableType<MindMapController>("mindmap", 1, 0, "MindMapController",
-                                                  "MindMapController can't be created in qml");
-    qmlRegisterUncreatableType<mindmap::MindItem>("mindmap", 1, 0, "MindItem", "Enum only");
-    qmlRegisterType<mindmap::SelectionController>("mindmap", 1, 0, "SelectionController");
-    qmlRegisterUncreatableType<RemotePlayerModel>("mindmap", 1, 0, "RemotePlayerModel", "property values");
-    qmlRegisterType<mindmap::LinkItem>("mindmap", 1, 0, "MindLink");
-    qmlRegisterType<mindmap::NodeStyle>("mindmap", 1, 0, "NodeStyle");
-    qmlRegisterUncreatableType<mindmap::PositionedItem>("mindmap", 1, 0, "PositionedItem", "Enum only");
-    qmlRegisterType<mindmap::SideMenuController>("mindmap", 1, 0, "SideMenuController");
-    qmlRegisterUncreatableType<mindmap::MindItemModel>("mindmap", 1, 0, "MindItemModel",
-                                                       "MindItemModel can't be created in qml");*/
-
     customization::Theme::setPath(":/resources/stylesheet/qml/theme.ini");
     qRegisterMetaType<PlayerModel*>("PlayerModel*");
     qmlRegisterAnonymousType<PlayerModel>("PlayerModel", 1);

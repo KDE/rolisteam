@@ -37,6 +37,7 @@
 #include <QRegularExpression>
 #include <QSignalSpy>
 #include <QTcpServer>
+#include <QTemporaryFile>
 #include <QTest>
 #include <QUuid>
 #include <QVariant>
@@ -699,7 +700,8 @@ QObject* initWebServer(int port)
     auto server= new QHttpServer();
 
     server->route("/image/<arg>",
-                  [](const QUrl& url) {
+                  [](const QUrl& url)
+                  {
                       return QHttpServerResponse::fromFile(
                           QStringLiteral("%1/resources/img/%2").arg(tests::root_path, url.path()));
                   });
@@ -788,6 +790,16 @@ QFont randomFont()
     if(!styles.isEmpty())
         style= styles.first();
     return QFontDatabase::font(f, style, generate<int>(7, 50));
+}
+
+QString randomFilePath()
+{
+    QTemporaryFile file;
+    file.setAutoRemove(false);
+    if(file.open())
+        return file.fileName();
+    else
+        return Helper::randomString();
 }
 
 } // namespace Helper

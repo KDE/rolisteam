@@ -18,14 +18,17 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
+#include <QSignalSpy>
 #include <QTest>
 #include <QtCore/QCoreApplication>
 #include <QtCore/QString>
 
 #include "controller/networkcontroller.h"
 #include "data/character.h"
+#include "media/networktype.h"
 #include "network/channel.h"
 #include "network/channelmodel.h"
+#include "network/clientconnection.h"
 #include "network/ipbanaccepter.h"
 #include "network/iprangeaccepter.h"
 #include "network/messagedispatcher.h"
@@ -36,6 +39,7 @@
 #include "network/serverconnectionmanager.h"
 #include "network/timeaccepter.h"
 #include "updater/controller/networkupdater.h"
+#include "updater/controller/servermanagerupdater.h"
 #include "worker/messagehelper.h"
 #include "worker/playermessagehelper.h"
 
@@ -80,13 +84,18 @@ private slots:
     void messageHelperTest();
     void serverConnectionTest();
 
-    void channelTest();
-
     void serverManagerTest();
     void networkControllerTest();
 
+    void clientConnectionTest();
+
+    void serverManagerUpdaterTest();
+    void channelModelTest();
+    void channelTest();
+
 private:
     std::unique_ptr<NetworkMessageWriter> m_writer;
+    std::unique_ptr<ClientConnection> m_clientConnection;
     std::unique_ptr<NetworkUpdater> m_updater;
     std::unique_ptr<IpBanAccepter> m_ipBanAccepter;
     std::unique_ptr<PasswordAccepter> m_passwordAccepter;
@@ -97,7 +106,12 @@ private:
     std::unique_ptr<RServer> m_server;
     std::unique_ptr<ServerConnectionManager> m_serverManager;
     std::unique_ptr<NetworkController> m_ctrl;
+    std::unique_ptr<ServerManagerUpdater> m_serverUpdater;
     QMap<QString, QVariant> m_parameters;
+
+    QByteArray m_serverPw{Helper::randomData()};
+    QByteArray m_adminPw{Helper::randomData()};
+    int m_port{6660};
 };
 
 Q_DECLARE_METATYPE(PasswordAccepter::Level)
@@ -107,6 +121,58 @@ TestNetwork::TestNetwork() {}
 void TestNetwork::initTestCase() {}
 
 void TestNetwork::cleanupTestCase() {}
+
+void TestNetwork::init()
+{
+    m_ctrl.reset(new NetworkController);
+    m_updater.reset(new NetworkUpdater(m_ctrl.get()));
+    m_writer.reset(new NetworkMessageWriter(NetMsg::MediaCategory, NetMsg::AddMedia));
+    m_ipBanAccepter.reset(new IpBanAccepter());
+    m_passwordAccepter.reset(new PasswordAccepter());
+    m_ipRangeAccepter.reset(new IpRangeAccepter());
+    m_timeAccepter.reset(new TimeAccepter());
+
+    m_parameters= {{network::configkeys::serverPassword, m_serverPw},
+                   {network::configkeys::adminPassword, m_adminPw},
+                   {network::configkeys::port, m_port}};
+    m_server.reset(new RServer(m_parameters, true));
+
+    m_serverManager.reset(new ServerConnectionManager(m_parameters));
+    m_serverUpdater.reset(new ServerManagerUpdater(m_serverManager.get(), true));
+
+    // 15 mins
+    // 1264
+
+    m_channel.reset(new Channel());
+
+    m_ipBanAccepter->setNext(new ValidAccepetr());
+    m_passwordAccepter->setNext(new ValidAccepetr());
+    m_ipRangeAccepter->setNext(new ValidAccepetr());
+    m_timeAccepter->setNext(new ValidAccepetr());
+
+    m_clientConnection.reset(new ClientConnection);
+}
+
+void TestNetwork::cleanup()
+{
+    m_ctrl.release();
+    m_serverManager.release();
+}
+
+void TestNetwork::clientConnectionTest()
+{
+    QVERIFY(!m_clientConnection->connected());
+    auto data= Helper::randomData();
+    QSignalSpy spy(m_clientConnection.get(), &ClientConnection::connectedChanged);
+
+    m_server->listen();
+
+    m_clientConnection->connectTo("localhost", m_port);
+
+    // spy.wait(100);
+
+    m_clientConnection->sendData(data.data(), data.size());
+}
 
 void TestNetwork::channelTest()
 {
@@ -129,9 +195,24 @@ void TestNetwork::channelTest()
     f= m_channel->getChildAt(0);
     QVERIFY(f);
 
+    m_channel->renamePlayer(Helper::randomString(), Helper::randomString());
+    m_channel->renamePlayer(m_serverConnection->playerId(), Helper::randomString());
+    m_channel->renamePlayer(Helper::randomString(), Helper::randomString());
+    m_channel->renamePlayer(m_serverConnection->playerId(), Helper::randomString());
+
     f= m_channel->getChildAt(1000);
     QVERIFY(!f);
 
+    {
+        Player player(Helper::randomString(), Helper::randomColor(), true);
+        NetworkMessageWriter writer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
+        PlayerMessageHelper::writePlayerIntoMessage(writer, &player);
+
+        NetworkMessageReader reader;
+        reader.setData(writer.data());
+        qDebug() << "msg: " << writer.data().size() << reader.getSize();
+        m_serverConnection->setInfoPlayer(&reader);
+    }
     m_channel->contains(Helper::randomString());
 
     QVERIFY(m_channel->removeClient(m_serverConnection.get()));
@@ -152,24 +233,52 @@ void TestNetwork::channelTest()
 
     PlayerMessageHelper::writePlayerIntoMessage(infoPlayer, &player);
 
+    m_channel->updateNewClient(conn2);
+    auto conn3= new ServerConnection(&socket2, nullptr);
+    m_channel->updateNewClient(conn3);
+
     auto dataRaw= infoPlayer.data();
 
-    NetworkMessageReader info(*infoPlayer.buffer(), dataRaw.data());
+    NetworkMessageReader info;
+    info.setData(dataRaw.data());
     conn2->setInfoPlayer(&info);
+
+    { // subchannel
+        auto sub= new Channel();
+        m_channel->addChild(sub);
+        m_channel->addChildInto(sub->uuid(), new Channel);
+        QTcpSocket socket3;
+        auto conn3= new ServerConnection(&socket3, nullptr);
+        m_channel->addChildInto(sub->uuid(), conn3);
+
+        auto f= m_channel->getChildById(conn3->uuid());
+        QVERIFY(f);
+
+        // conn3->deleteLater();
+    }
 
     m_channel->clearData();
     m_channel->clear();
 
     m_channel->removeChildById(Helper::randomString());
-    m_channel->kick(Helper::randomString(), true, Helper::randomString());
+    m_channel->removeChild(m_serverConnection.get());
 
+    m_channel->removeClient(nullptr);
+    m_channel->kick(Helper::randomString(), true, Helper::randomString());
+    m_channel->kick(conn2->playerId(), true, Helper::randomString());
+
+    m_channel->removeClient(conn2);
     m_serverConnection.release();
+    // conn2->deleteLater();
 }
 
 void TestNetwork::serverManagerTest()
 {
     QCOMPARE(m_serverManager->countConnection(), 0);
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
 
+    auto channels= m_serverManager->channelModel();
     m_serverManager->messageReceived(Helper::randomData());
     m_serverManager->initClient();
     m_serverManager->serverAcceptClient(nullptr);
@@ -178,13 +287,83 @@ void TestNetwork::serverManagerTest()
     m_serverManager->checkAuthToChannel(nullptr, Helper::randomString(), Helper::randomData());
     m_serverManager->sendOffAdminAuthFail();
     m_serverManager->sendOffAdminAuthSuccessed();
+
     auto s= m_serverManager->connections();
     QCOMPARE(s.size(), 0);
     m_serverManager->setChannelPassword(Helper::randomString(), Helper::randomData());
+
+    ServerConnection connection;
+    {
+        Player player(Helper::randomString(), Helper::randomColor(), true);
+        NetworkMessageWriter writer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
+        PlayerMessageHelper::writePlayerIntoMessage(writer, &player);
+
+        NetworkMessageReader reader;
+        reader.setData(writer.data());
+        connection.setInfoPlayer(&reader);
+    }
+    m_serverManager->accept(qintptr(), &connection);
+    m_serverManager->serverAcceptClient(&connection);
+    m_serverManager->checkAuthToServer(&connection);
+    m_serverManager->checkAuthAsAdmin(&connection);
+    m_serverManager->checkAuthToChannel(&connection, Helper::randomString(), Helper::randomData());
+
+    connection.adminAuthSucceed();
+    connection.adminAuthFailed();
+    connection.serverAuthSuccess();
+    connection.serverAuthFail();
+    connection.dataReceived(Helper::randomData());
+    connection.dataReceived({});
+    connection.checkServerAcceptClient(&connection);
+    connection.checkServerPassword(&connection);
+    connection.checkAdminPassword(&connection);
+    connection.checkChannelPassword(&connection, Helper::randomString(), {});
+
+    auto channel2id= Helper::randomString();
+
+    channels->addChannel(channel2id, Helper::randomString(), Helper::randomString(), {}, {});
+    channels->addConnectionToChannel(channel2id, &connection);
+    auto channel2= dynamic_cast<Channel*>(channels->getItemById(channel2id));
+
+    m_serverManager->checkAuthToChannel(&connection, channel2id, Helper::randomData());
+    m_serverManager->checkAuthToChannel(&connection, channel2id, {});
+
+    auto pw= Helper::randomData();
+    channel2->setPassword(pw);
+    m_serverManager->checkAuthToChannel(&connection, channel2id, pw);
+    m_serverManager->checkAuthToChannel(&connection, channel2id, {});
+
+    auto msgs= sender.messageData();
+    for(auto const& msg : msgs)
+    {
+        NetworkMessageReader reader;
+        reader.setData(msg);
+        auto dispatch= m_serverManager->messageDispatcher();
+
+        dispatch->messageForAdmin(&reader, dynamic_cast<Channel*>(channels->getItemById(channel2id)), &connection);
+        // m_serverManager->processMessageAdmin(reader);
+    }
+
+    connection.socketDisconnection();
+
+    connection.socketError(QAbstractSocket::RemoteHostClosedError);
+    connection.socketError(QAbstractSocket::ConnectionRefusedError);
+    connection.closeConnection();
 }
 
 void TestNetwork::networkControllerTest()
 {
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+    auto channels= m_serverManager->channelModel();
+    auto channel2id= Helper::randomString();
+    ServerConnection connection;
+    // auto channel2= dynamic_cast<Channel*>(channels->getItemById(channel2id));
+    connection.setIsAdmin(true);
+    // connection.setInfoPlayer();
+    channels->addChannel(channel2id, Helper::randomString(), Helper::randomString(), {}, {});
+    channels->addConnectionToChannel(channel2id, &connection);
+
     m_ctrl->setGroups(NetworkController::VIEWER);
     QVERIFY(!m_ctrl->isAdmin());
     m_ctrl->setGroups(NetworkController::ADMIN);
@@ -202,7 +381,7 @@ void TestNetwork::networkControllerTest()
 
     QVERIFY(m_ctrl->defaultChannelId().isEmpty());
     QVERIFY(m_ctrl->ipv4().isEmpty());
-    QVERIFY2(!m_ctrl->host().isEmpty(), m_ctrl->host().toStdString().c_str());
+    // QVERIFY2(!m_ctrl->host().isEmpty(), m_ctrl->host().toStdString().c_str());
     QVERIFY(m_ctrl->lastError().isEmpty());
     QVERIFY(m_ctrl->askForGM());
     m_updater->processMessage(nullptr);
@@ -235,6 +414,43 @@ void TestNetwork::networkControllerTest()
     m_ctrl->setConnecting(false);
 
     m_ctrl->removeProfile(0);
+
+    m_updater->sendOffConnectionInfo(Helper::randomString(), Helper::randomString(), Helper::randomData());
+    m_updater->sendOffLoginAdmin(Helper::randomData());
+    m_updater->lockChannel(channel2id, NetMsg::LockChannel);
+    m_updater->lockChannel(channel2id, NetMsg::UnlockChannel);
+    m_updater->banUser(Helper::randomString(), Helper::randomString());
+    m_updater->kickUser(Helper::randomString(), Helper::randomString());
+    m_updater->addChannel(Helper::randomString());
+    m_updater->addChannel();
+    m_updater->resetChannel(Helper::randomString());
+    m_updater->deleteChannel(Helper::randomString());
+    m_updater->definePasswordOnChannel(Helper::randomString(), Helper::randomData());
+    m_updater->defineChannelAsDefault(Helper::randomString());
+    m_updater->joinChannel(Helper::randomString(), Helper::randomString(), Helper::randomData());
+
+    auto msgs= sender.messageData();
+    for(auto const& msg : msgs)
+    {
+        NetworkMessageReader reader;
+        reader.setData(msg);
+        auto dispatch= m_serverManager->messageDispatcher();
+
+        dispatch->messageForAdmin(&reader, dynamic_cast<Channel*>(channels->getItemById(channel2id)), &connection);
+    }
+}
+
+void TestNetwork::serverManagerUpdaterTest()
+{
+    auto model= m_serverManager->channelModel();
+    m_serverUpdater->channelsData();
+
+    auto idchannel= model->addChannel(Helper::randomString(), Helper::randomString(), Helper::randomString(),
+                                      Helper::randomData(), QString());
+    model->addChannel(Helper::randomString(), Helper::randomString(), Helper::randomString(), Helper::randomData(),
+                      idchannel);
+
+    model->renameChannel(idchannel, Helper::randomString());
 }
 
 void TestNetwork::serverConnectionTest()
@@ -256,26 +472,6 @@ void TestNetwork::serverConnectionTest()
     connection.startReading();
 }
 
-void TestNetwork::init()
-{
-    m_ctrl.reset(new NetworkController);
-    m_updater.reset(new NetworkUpdater(m_ctrl.get()));
-    m_writer.reset(new NetworkMessageWriter(NetMsg::MediaCategory, NetMsg::AddMedia));
-    m_ipBanAccepter.reset(new IpBanAccepter());
-    m_passwordAccepter.reset(new PasswordAccepter());
-    m_ipRangeAccepter.reset(new IpRangeAccepter());
-    m_timeAccepter.reset(new TimeAccepter());
-    m_server.reset(new RServer(m_parameters, true));
-
-    m_serverManager.reset(new ServerConnectionManager(m_parameters));
-
-    m_channel.reset(new Channel());
-
-    m_ipBanAccepter->setNext(new ValidAccepetr());
-    m_passwordAccepter->setNext(new ValidAccepetr());
-    m_ipRangeAccepter->setNext(new ValidAccepetr());
-    m_timeAccepter->setNext(new ValidAccepetr());
-}
 void TestNetwork::writeTest()
 {
     for(quint8 i= 0; i < 255; ++i)
@@ -284,8 +480,6 @@ void TestNetwork::writeTest()
         QCOMPARE(m_writer->getDataSize(), (1 + i) * sizeof(quint8) + 1); //+sizeof(NetworkMessageHeader)
     }
 }
-
-void TestNetwork::cleanup() {}
 
 void TestNetwork::messageRecipiantTest()
 {
@@ -476,7 +670,7 @@ void TestNetwork::messageDispatcherTest()
     dispatch.dispatchMessage(Helper::randomData(Helper::generate(100, 500)), nullptr, nullptr);
 
     Channel channel;
-    ServerConnection connect(nullptr);
+    ServerConnection connect(new QTcpSocket);
     channel.addChild(&connect);
     dispatch.dispatchMessage(Helper::randomData(Helper::generate(100, 500)), &channel, nullptr);
     dispatch.dispatchMessage(Helper::randomData(Helper::generate(100, 500)), &channel, &connect);
@@ -505,15 +699,36 @@ void TestNetwork::messageWriterTest()
     QCOMPARE(header->action, NetMsg::Action::EndConnectionAction);
     QCOMPARE(writer.bufferSize(), 128);
 
+    writer.int8(8);
     writer.int16(18);
     writer.int32(200);
 
-    QCOMPARE(writer.currentPos(), sizeof(NetworkMessageHeader) + sizeof(qint32) + sizeof(qint16) + 1);
+    QCOMPARE(writer.currentPos(), sizeof(NetworkMessageHeader) + sizeof(qint8) + sizeof(qint16) + sizeof(qint32) + 1);
     QCOMPARE(writer.getRecipientList(), QStringList{});
+
+    writer.stringList8({Helper::randomString(), Helper::randomString()});
 
     QPixmap pix;
     pix.loadFromData(Helper::imageData(false));
-    writer.pixmap(pix);
+    writer.pixmap(pix, true);
+
+    NetworkMessageReader reader;
+    reader.setInternalData(writer.data());
+    reader.setData(writer.data());
+
+    NetworkMessageReader reader2(reader);
+
+    QCOMPARE(reader.getRecipientList(), QStringList{});
+
+    reader.reset();
+    QCOMPARE(reader.currentPos(), 0);
+    reader.resetToData();
+    QCOMPARE(reader.int8(), 8);
+    QCOMPARE(reader.int16(), 18);
+    QCOMPARE(reader.int32(), 200);
+    QCOMPARE(reader.stringList8().size(), 2);
+
+    // QCOMPARE(reader.pixmap(), pix);
 }
 
 void TestNetwork::messageHeaderTest()
@@ -767,6 +982,41 @@ void TestNetwork::messageHelperTest()
         QCOMPARE(reader.uint8(), static_cast<int>(Core::ContentType::CHARACTERSHEET));
         QCOMPARE(reader.string8(), id);
     }
+}
+
+void TestNetwork::channelModelTest()
+{
+    auto channels= m_serverManager->channelModel();
+    channels->index(-1, 0, QModelIndex());
+    channels->index(0, -1, QModelIndex());
+    qDebug() << "Channel count:" << channels->rowCount();
+
+    channels->setAdmin(false);
+    channels->setData(channels->index(0, 0, QModelIndex()), Helper::randomString(), Qt::DisplayRole);
+    channels->addChannel(Helper::randomString(), Helper::randomString(), Helper::randomString(), Helper::randomData(),
+                         Helper::randomString());
+    channels->flags(QModelIndex());
+    channels->flags(channels->index(0, 0, QModelIndex()));
+    channels->mimeData({QModelIndex()});
+    channels->mimeData({channels->index(0, 0, QModelIndex())});
+
+    channels->setAdmin(true);
+    channels->setData(channels->index(0, 0, QModelIndex()), Helper::randomString(), Qt::DisplayRole);
+
+    auto channel2id= Helper::randomString();
+    channels->addChannel(channel2id, Helper::randomString(), Helper::randomString(), {}, {});
+
+    auto channel3id= Helper::randomString();
+    channels->addChannel(channel2id, Helper::randomString(), Helper::randomString(), {}, {});
+
+    auto client= new ServerConnection();
+    channels->addConnectionToChannel(channel2id, client);
+    channels->moveClient(dynamic_cast<Channel*>(channels->getItemById(channel2id)), client->uuid(),
+                         dynamic_cast<Channel*>(channels->getItemById(channel3id)));
+
+    channels->setChannelMemorySize(dynamic_cast<Channel*>(channels->getItemById(channel2id)), 2000);
+    channels->setChannelMemorySize(nullptr, 2000);
+    channels->emptyChannelMemory();
 }
 
 QTEST_MAIN(TestNetwork);

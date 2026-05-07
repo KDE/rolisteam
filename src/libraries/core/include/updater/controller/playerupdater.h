@@ -20,7 +20,7 @@ class CORE_EXPORT PlayerUpdater : public NetWorkReceiver
 {
     Q_OBJECT
 public:
-    explicit PlayerUpdater(NetworkController* network, PlayerController* ctrl, QObject* parent= nullptr);
+    explicit PlayerUpdater(PlayerController* ctrl, QObject* parent= nullptr);
 
     NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg);
     void setGameController(GameController*);

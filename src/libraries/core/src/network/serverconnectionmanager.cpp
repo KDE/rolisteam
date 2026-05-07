@@ -36,11 +36,12 @@ ServerConnectionManager::ServerConnectionManager(const QMap<QString, QVariant>& 
 
     connect(m_model.get(), &ChannelModel::totalSizeChanged, this, &ServerConnectionManager::memoryChannelChanged);
 
-    m_msgDispatcher= new MessageDispatcher(this);
-    connect(this, &ServerConnectionManager::messageMustBeDispatched, m_msgDispatcher,
+    m_msgDispatcher.reset(new MessageDispatcher);
+    connect(this, &ServerConnectionManager::messageMustBeDispatched, m_msgDispatcher.get(),
             &MessageDispatcher::dispatchMessage, Qt::QueuedConnection);
 
-    connect(m_msgDispatcher, &MessageDispatcher::messageForAdmin, this, &ServerConnectionManager::processMessageAdmin);
+    connect(m_msgDispatcher.get(), &MessageDispatcher::messageForAdmin, this,
+            &ServerConnectionManager::processMessageAdmin);
 
     m_corEndProcess.reset(new PasswordAccepter());
     m_tcpConnectionAccepter.reset(new IpBanAccepter());
@@ -80,6 +81,10 @@ void ServerConnectionManager::messageReceived(QByteArray array)
         return;
 
     emit messageMustBeDispatched(array, client->getParentChannel(), client);
+}
+MessageDispatcher* ServerConnectionManager::messageDispatcher() const
+{
+    return m_msgDispatcher.get();
 }
 
 void ServerConnectionManager::initClient()
@@ -222,43 +227,41 @@ void ServerConnectionManager::sendOffAdminAuthSuccessed()
 void ServerConnectionManager::sendOffAdminAuthFail()
 {
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
-    if(nullptr != client)
-    {
-        NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AdminAuthFail);
-        QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
-                                  Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-        emit eventOccured(
-            tr("Authentification as Admin fails: %2 - %1, Wrong password.").arg(client->name(), client->getIpAddress()),
-            LogController::Info);
-    }
+    if(!client)
+        return;
+
+    NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AdminAuthFail);
+    QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
+                              Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
+    emit eventOccured(
+        tr("Authentification as Admin fails: %2 - %1, Wrong password.").arg(client->name(), client->getIpAddress()),
+        LogController::Info);
 }
 
 void ServerConnectionManager::sendOffAuthSuccessed()
 {
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
-    if(nullptr != client)
-    {
-        NetworkMessageWriter* msg
-            = new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AuthentificationSucessed);
-        QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
-                                  Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-        // sendOffModel(client);
-    }
+    if(!client)
+        return;
+
+    NetworkMessageWriter* msg
+        = new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AuthentificationSucessed);
+    QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
+                              Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
 }
 
 void ServerConnectionManager::sendOffAuthFail()
 {
     ServerConnection* client= qobject_cast<ServerConnection*>(sender());
-    if(nullptr != client)
-    {
-        NetworkMessageWriter* msg
-            = new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AuthentificationFail);
-        QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
-                                  Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
-        emit eventOccured(tr("Authentification fails: %1 try to connect to the server with wrong password.")
-                              .arg(client->getIpAddress()),
-                          LogController::Info);
-    }
+    if(!client)
+        return;
+
+    NetworkMessageWriter* msg= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::AuthentificationFail);
+    QMetaObject::invokeMethod(client, "sendMessage", Qt::QueuedConnection,
+                              Q_ARG(NetworkMessage*, static_cast<NetworkMessage*>(msg)), Q_ARG(bool, true));
+    emit eventOccured(
+        tr("Authentification fails: %1 try to connect to the server with wrong password.").arg(client->getIpAddress()),
+        LogController::Info);
 }
 
 void ServerConnectionManager::kickClient(QString id, bool isAdmin, QString senderId)
@@ -409,7 +412,7 @@ void ServerConnectionManager::processMessageAdmin(NetworkMessageReader* msg, Cha
         {
             QString id= msg->string8();
             auto item= m_model->getItemById(id);
-            if(!item->isLeaf())
+            if(item && !item->isLeaf())
             {
                 auto channel= dynamic_cast<Channel*>(item);
                 if(channel)

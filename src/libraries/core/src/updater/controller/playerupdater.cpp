@@ -1,4 +1,5 @@
 #include "updater/controller/playerupdater.h"
+#include "common/logcategory.h"
 #include "controller/gamecontroller.h"
 #include "data/player.h"
 #include "model/charactermodel.h"
@@ -13,11 +14,16 @@ void addPlayerToModel(PlayerModel* model, NetworkMessageReader* msg)
     model->addPlayer(player);
 }
 
-PlayerUpdater::PlayerUpdater(NetworkController* network, PlayerController* ctrl, QObject* parent)
-    : NetWorkReceiver{parent}, m_ctrl(ctrl), m_networkCtrl(network)
+PlayerUpdater::PlayerUpdater(PlayerController* ctrl, QObject* parent) : NetWorkReceiver{parent}, m_ctrl(ctrl)
 {
     ReceiveEvent::registerNetworkReceiver(NetMsg::UserCategory, this);
     ReceiveEvent::registerNetworkReceiver(NetMsg::PlayerCharacterCategory, this);
+
+    if(!m_ctrl)
+    {
+        qCWarning(MessagingCat) << tr("Error: Player controller is null. PlayerUpdate can't work.");
+        return;
+    }
     auto model= m_ctrl->model();
 
     connect(model, &PlayerModel::playerJoin, this, &PlayerUpdater::updateNewPlayer);
@@ -63,6 +69,7 @@ NetWorkReceiver::SendType PlayerUpdater::processMessage(NetworkMessageReader* ms
 
 void PlayerUpdater::setGameController(GameController* gameCtrl)
 {
+    m_networkCtrl= gameCtrl->networkController();
     connect(gameCtrl, &GameController::connectedChanged, this,
             [this](bool b)
             {
@@ -139,7 +146,7 @@ void PlayerUpdater::setGameController(GameController* gameCtrl)
 
 void PlayerUpdater::updateNewPlayer(Player* player)
 {
-    if(!m_ctrl->localIsGm() && player != m_ctrl->localPlayer())
+    if(!m_ctrl || !player || (!m_ctrl->localIsGm() && player != m_ctrl->localPlayer()))
         return;
 
     connect(player, &Player::avatarChanged, this,

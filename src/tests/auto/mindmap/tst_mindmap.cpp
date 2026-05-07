@@ -21,6 +21,7 @@
 #include <QTest>
 
 #include "controller/view_controller/mindmapcontroller.h"
+#include "controller/view_controller/pdfcontroller.h"
 #include "mindmap/controller/selectioncontroller.h"
 #include "mindmap/data/linkcontroller.h"
 #include "mindmap/data/mindnode.h"
@@ -48,6 +49,7 @@ public:
 
 private slots:
     void init();
+    void cleanup();
 
     void addRemoveImageTest();
     void addItemAndUndoTest();
@@ -82,13 +84,18 @@ void MindMapTest::init()
     m_ctrl.reset(new MindMapController("test_id"));
     m_ctrl->setSpacing(false);
 
-    m_contentModel.reset(new ContentModel());
     m_mindmapModel.reset(new FilteredContentModel(Core::ContentType::MINDMAP));
-    m_mindmapModel->setSourceModel(m_contentModel.get());
 
     m_updater.reset(new MindMapUpdater(m_mindmapModel.get(), nullptr));
 
     // MindMapController::setMindMapUpdater(m_updater.get());
+    m_contentModel.reset(new ContentModel());
+    m_mindmapModel->setSourceModel(m_contentModel.get());
+}
+
+void MindMapTest::cleanup()
+{
+    m_contentModel.release();
 }
 
 MindMapTest::MindMapTest() {}
@@ -99,37 +106,102 @@ void MindMapTest::updaterTest()
     NetworkMessage::setMessageSender(&sender);
     sender.clear();
     m_contentModel->appendMedia(m_ctrl.get());
+    m_updater->addMediaController(nullptr);
+    m_updater->addMediaController(new PdfController());
+    m_ctrl->setRemote(false);
+    auto ownerid= Helper::randomString();
+    m_ctrl->setLocalId(ownerid);
+    m_ctrl->setOwnerId(ownerid);
+    m_ctrl->setLocalGM(true);
+
+    { // set data
+        auto node= new mindmap::MindNode();
+        auto id= Helper::randomString();
+        node->setId(id);
+
+        auto node2= new mindmap::MindNode();
+        auto id2= Helper::randomString();
+        node2->setId(id2);
+        m_ctrl->addNode({node, node2}, false);
+
+        m_ctrl->addLink(id, id2);
+
+        m_ctrl->addNode(id2);
+        m_ctrl->addImageFor(node->id(), Helper::imagePathUrl().toLocalFile(), Helper::imageData());
+        m_ctrl->removeImageFor(node->id());
+        m_ctrl->setName(Helper::randomString());
+        node2->setText(Helper::randomString());
+        m_ctrl->addPackage({0, 0});
+    }
+
     m_updater->addMediaController(m_ctrl.get());
 
-    auto node= new mindmap::MindNode();
-    auto id= Helper::randomString();
-    node->setId(id);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::None, Core::SharingPermission::ReadOnly);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::ReadOnly, Core::SharingPermission::ReadWrite);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::ReadWrite, Core::SharingPermission::ReadOnly);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::ReadOnly, Core::SharingPermission::None);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::None, Core::SharingPermission::ReadWrite);
+    m_ctrl->sharingToAllChanged(Core::SharingPermission::ReadWrite, Core::SharingPermission::None);
 
-    auto node2= new mindmap::MindNode();
-    auto id2= Helper::randomString();
-    node2->setId(id2);
-    m_ctrl->addNode({node, node2}, false);
+    auto idUser= Helper::randomString();
+    m_ctrl->setPermissionForUser(idUser, static_cast<int>(Core::SharingPermission::None));
+    m_ctrl->setPermissionForUser(idUser, static_cast<int>(Core::SharingPermission::ReadOnly));
+    m_ctrl->setPermissionForUser(idUser, static_cast<int>(Core::SharingPermission::ReadWrite));
+    m_ctrl->setPermissionForUser(idUser, static_cast<int>(Core::SharingPermission::None));
 
-    m_ctrl->addLink(id, id2);
+    Helper::testAllProperties(m_ctrl.get(), {}, true);
+    m_ctrl->setRemote(true);
+    Helper::testAllProperties(m_ctrl.get(), {}, true);
+    m_ctrl->setRemote(false);
 
     Helper::testAllProperties(m_ctrl.get(), {}, true);
 
     m_ctrl->setSharingToAll(static_cast<int>(Core::SharingPermission::ReadWrite));
-    m_ctrl->addNode(id2);
-    m_ctrl->addImageFor(node->id(), Helper::imagePathUrl().toLocalFile(), Helper::imageData());
-    m_ctrl->removeImageFor(node->id());
-    m_ctrl->setName(Helper::randomString());
-    node2->setText(Helper::randomString());
-    m_ctrl->addPackage({0, 0});
 
-    Helper::testAllProperties(node2, {}, true);
+    { // set data
+        auto node= new mindmap::MindNode();
+        auto id= Helper::randomString();
+        node->setId(id);
+
+        auto node2= new mindmap::MindNode();
+        auto id2= Helper::randomString();
+        node2->setId(id2);
+        m_ctrl->addNode({node, node2}, false);
+
+        m_ctrl->addLink(id, id2);
+
+        m_ctrl->addNode(id2);
+
+        m_ctrl->addImageFor(node->id(), Helper::imagePathUrl().toLocalFile(), Helper::imageData());
+        m_ctrl->removeImageFor(node->id());
+        m_ctrl->setName(Helper::randomString());
+        node2->setText(Helper::randomString());
+        m_ctrl->addPackage({0, 0});
+
+        auto model= m_ctrl->itemModel();
+        auto const& packages= model->items(mindmap::MindItem::PackageType);
+
+        QCOMPARE(packages.size(), 2);
+        Helper::testAllProperties(node2, {}, true);
+
+        m_ctrl->removeNode({node->id(), node2->id()}, false);
+        m_ctrl->removeNode({node->id(), node2->id()}, true);
+
+        auto pack= dynamic_cast<mindmap::PackageNode*>(packages[0].get());
+        QVERIFY(pack);
+        auto packId= pack->id();
+
+        m_ctrl->addNode(packId);
+        pack->childAdded(Helper::randomString());
+        pack->childRemoved(Helper::randomString());
+    }
 
     auto model= m_ctrl->itemModel();
 
     if(model)
     {
         auto const& items= model->items(mindmap::MindItem::LinkType);
-        QCOMPARE(items.size(), 2);
+        QCOMPARE(items.size(), 3);
         for(auto const& link : items)
             Helper::testAllProperties(link.get(), {}, true);
     }
@@ -628,6 +700,11 @@ void MindMapTest::linkGeometryTest()
     linkNode.update(Helper::randomRect(), mindmap::LinkController::RightTop, Helper::randomRect(),
                     Helper::randomRect());
     linkNode.update(Helper::randomRect(), mindmap::LinkController::LeftTop, Helper::randomRect(), Helper::randomRect());
+    linkNode.updateBox(Helper::randomPolygon());
+    linkNode.updateBox(Helper::randomPolygon());
+    linkNode.updateBox(Helper::randomPolygon());
+    linkNode.updateSelected(true);
+    linkNode.updateSelected(false);
 }
 
 void MindMapTest::getAndSetTest()

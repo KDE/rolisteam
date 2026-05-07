@@ -28,7 +28,6 @@
 NoteController::NoteController(const QString& id, QObject* parent)
     : MediaControllerBase(id, Core::ContentType::NOTES, parent)
 {
-    // connect(this, &NoteController::urlChanged, this, &NoteController::loadText);
     connect(this, &NoteController::textChanged, this, [this]() { emit modifiedChanged(true); });
 }
 
@@ -49,32 +48,6 @@ bool NoteController::isHtml() const
 {
     return m_html;
 }
-
-/*void NoteController::loadText()
-{
-    QFileInfo fi(url().toLocalFile());
-    const QString ext= fi.completeSuffix().toLower();
-    if(!fi.exists())
-    {
-        return;
-    }
-
-    if(ext == "odt" || ext == "ott")
-    {
-        emit loadOdt(url().toLocalFile());
-    }
-    else
-    {
-        QByteArray data= utils::IOHelper::loadFile(url().toLocalFile());
-        auto encoding= QStringConverter::encodingForHtml(data);
-        auto toHtml= QStringDecoder(encoding.value());
-        QString str= toHtml.decode(data);
-
-        setHtml(Qt::mightBeRichText(str));
-        setText(isHtml() ? str : QString::fromLocal8Bit(QByteArrayView{data}));
-    }
-}
-*/
 
 void NoteController::setHtml(bool b)
 {

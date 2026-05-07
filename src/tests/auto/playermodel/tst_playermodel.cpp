@@ -125,52 +125,52 @@ void PlayerModelTest::addTest_data()
     /*{
         QVector<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
-        player->addCharacter("character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
+        // player->addCharacter("character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
         players.push_back(player);
-        QTest::addRow("cmd 3") << 1 << players;
+        QTest::addRow("cmd 6") << 1 << player->uuid() << 1 << player->name() << players;
     }
 
     {
-        QVector<Player*> players;
-        auto player= new Player("name", QColor(Qt::red), true);
-        player->addCharacter(new Character("character", QColor(Qt::blue), true));
-        players.push_back(player);
-        QTest::addRow("cmd 4") << 1 << players;
-    }
+         QVector<Player*> players;
+         auto player= new Player("name", QColor(Qt::red), true);
+         player->addCharacter(new Character("character", QColor(Qt::blue), true));
+         players.push_back(player);
+         QTest::addRow("cmd 4") << 1 << players;
+     }
 
-    {
-        QVector<Player*> players;
-        auto player= new Player("name", QColor(Qt::red), true);
-        player->addCharacter(new Character("character", QColor(Qt::blue), false));
-        player->addCharacter(new Character("character2", QColor(Qt::green), false));
-        players.push_back(player);
-        QTest::addRow("cmd 5") << 2 << players;
-    }
+     {
+         QVector<Player*> players;
+         auto player= new Player("name", QColor(Qt::red), true);
+         player->addCharacter(new Character("character", QColor(Qt::blue), false));
+         player->addCharacter(new Character("character2", QColor(Qt::green), false));
+         players.push_back(player);
+         QTest::addRow("cmd 5") << 2 << players;
+     }
 
-    {
-        QVector<Player*> players;
-        auto player= new Player("name", QColor(Qt::red), true);
-        player->addCharacter(new Character("character", QColor(Qt::blue), false));
-        players.push_back(player);
+     {
+         QVector<Player*> players;
+         auto player= new Player("name", QColor(Qt::red), true);
+         player->addCharacter(new Character("character", QColor(Qt::blue), false));
+         players.push_back(player);
 
-        auto player2= new Player("name2", QColor(Qt::magenta), true);
-        player2->addCharacter(new Character("character2", QColor(Qt::green), false));
-        players.push_back(player2);
+         auto player2= new Player("name2", QColor(Qt::magenta), true);
+         player2->addCharacter(new Character("character2", QColor(Qt::green), false));
+         players.push_back(player2);
 
-        QTest::addRow("cmd 6") << 2 << players;
-    }
+         QTest::addRow("cmd 6") << 2 << players;
+     }
 
-    {
-        QVector<Player*> players;
-        auto player= new Player("name", QColor(Qt::red), true);
-        players.push_back(player);
+     {
+         QVector<Player*> players;
+         auto player= new Player("name", QColor(Qt::red), true);
+         players.push_back(player);
 
-        auto player2= new Player("name2", QColor(Qt::magenta), true);
-        player2->addCharacter(new Character("character", QColor(Qt::blue), false));
-        player2->addCharacter(new Character("character2", QColor(Qt::green), false));
-        players.push_back(player2);
-        QTest::addRow("cmd 7") << 2 << players;
-    }*/
+         auto player2= new Player("name2", QColor(Qt::magenta), true);
+         player2->addCharacter(new Character("character", QColor(Qt::blue), false));
+         player2->addCharacter(new Character("character2", QColor(Qt::green), false));
+         players.push_back(player2);
+         QTest::addRow("cmd 7") << 2 << players;
+     }*/
 }
 
 void PlayerModelTest::ownerTest()

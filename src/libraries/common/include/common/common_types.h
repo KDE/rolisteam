@@ -13,6 +13,12 @@ struct COMMON_EXPORT Log
     QString m_message;
     QString m_timestamp;
     QString m_level;
+
+    bool operator==(const Log& a) const
+    {
+        return (m_category == a.m_category && m_message == a.m_message && m_timestamp == a.m_timestamp
+                && m_level == a.m_level);
+    }
 };
 } // namespace common
 

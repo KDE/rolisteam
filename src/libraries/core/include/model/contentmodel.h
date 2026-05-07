@@ -43,7 +43,7 @@ private:
     Core::ContentType m_type;
 };
 
-class ContentModel : public QAbstractListModel
+class CORE_EXPORT ContentModel : public QAbstractListModel
 {
     Q_OBJECT
 

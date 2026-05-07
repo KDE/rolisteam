@@ -38,7 +38,7 @@ public:
 private:
     QString m_name;
     QString m_symbol;
-    Unit::Category m_currentCat;
+    Unit::Category m_currentCat{Unit::CUSTOM};
     bool m_readOnly= true;
 };
 } // namespace GMTOOL

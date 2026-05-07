@@ -34,6 +34,7 @@
 #include "controller/instantmessagingcontroller.h"
 #include "data/chatroom.h"
 #include "data/chatroomfactory.h"
+#include "diceparser_qobject/diceroller.h"
 #include "instantmessaging/dicemessage.h"
 #include "instantmessaging/errormessage.h"
 #include "instantmessaging/messagefactory.h"
@@ -47,6 +48,7 @@
 #include "model/messagemodel.h"
 #include "qml_components/avatarprovider.h"
 #include "rwidgets/mediacontainers/instantmessagingview.h"
+#include "updater/media/instantmessagingupdater.h"
 #include <QAbstractItemModelTester>
 
 class Player;
@@ -75,10 +77,13 @@ private slots:
 
     void errorMessageTest();
 
+    void updaterTest();
+
 private:
     std::unique_ptr<PlayerModel> m_playerModel;
     std::unique_ptr<InstantMessagingController> m_imCtrl;
     std::unique_ptr<QAbstractItemModelTester> m_tester;
+    std::unique_ptr<InstantMessaging::InstantMessagingUpdater> m_updater;
     QPointer<QObject> m_server;
 };
 ChatWindowTest::ChatWindowTest() {}
@@ -88,7 +93,8 @@ void ChatWindowTest::init()
     m_playerModel.reset(new PlayerModel);
     m_server= Helper::initWebServer();
     m_tester.reset(new QAbstractItemModelTester(m_playerModel.get()));
-    m_imCtrl.reset(new InstantMessagingController(nullptr, m_playerModel.get()));
+    m_imCtrl.reset(new InstantMessagingController(new DiceRoller, m_playerModel.get()));
+    m_updater.reset(new InstantMessaging::InstantMessagingUpdater(m_imCtrl.get()));
 }
 void ChatWindowTest::errorMessageTest()
 {
@@ -115,6 +121,25 @@ void ChatWindowTest::errorMessageTest()
     QCOMPARE(msg.owner(), owner);
     QCOMPARE(msg.writer(), writer);
     QCOMPARE(msg.dateTime(), time);
+}
+
+void ChatWindowTest::updaterTest()
+{
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+
+    m_imCtrl->playerArrived(Helper::randomString());
+    auto path= Helper::randomFilePath();
+    m_updater->save(path);
+    m_updater->load(path);
+
+    auto const& data= sender.messageData();
+    for(auto const& msgData : data)
+    {
+        NetworkMessageReader msg;
+        msg.setData(msgData);
+        m_updater->processMessage(&msg);
+    }
 }
 void ChatWindowTest::propertiesSetGetTest()
 {

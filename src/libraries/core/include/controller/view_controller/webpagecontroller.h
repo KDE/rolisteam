@@ -25,6 +25,7 @@
 
 #include "mediacontrollerbase.h"
 #include <core_global.h>
+
 class CORE_EXPORT WebpageController : public MediaControllerBase
 {
     Q_OBJECT

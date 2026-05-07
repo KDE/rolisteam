@@ -12,5 +12,5 @@ find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test Core)
 
 add_executable(tst_contentcontroller tst_serialization.cpp ../assets/resources.qrc)
 target_link_libraries(tst_contentcontroller PUBLIC Qt6::Core Qt6::Test PRIVATE core rwidgets helper utils instantmessaging common_core common_widget common_qml utils network rmindmap qml_views diceparser_qobject diceparser_shared utils qml_components charactersheet_widgets charactersheet dice3d common_qml instantmessaging common_core)
-target_include_directories(tst_contentcontroller  PUBLIC ../helper )
+target_include_directories(tst_contentcontroller  PUBLIC ../helper  ${CMAKE_BINARY_DIR} ${CMAKE_CURRENT_BINARY_DIR})
 add_test(NAME tst_contentcontroller COMMAND tst_contentcontroller)

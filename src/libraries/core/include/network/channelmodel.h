@@ -35,7 +35,7 @@ public:
     ChannelModel(bool isServer= false);
     ~ChannelModel();
 
-    virtual int rowCount(const QModelIndex& parent) const;
+    virtual int rowCount(const QModelIndex& parent= QModelIndex()) const;
     QModelIndex index(int row, int column, const QModelIndex& parent) const;
     virtual QModelIndex parent(const QModelIndex& child) const;
     virtual int columnCount(const QModelIndex& parent) const;
@@ -78,7 +78,7 @@ public:
     bool moveClient(Channel* origin, const QString& id, Channel* dest);
 
     const QList<QPointer<TreeItem>>& modelData();
-    void resetData(QList<TreeItem*> data, const QString &defaultId);
+    void resetData(QList<TreeItem*> data, const QString& defaultId);
     bool admin() const;
     void setAdmin(bool newAdmin);
 

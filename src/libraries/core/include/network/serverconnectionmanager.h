@@ -28,6 +28,7 @@ class NETWORK_EXPORT ServerConnectionManager : public QObject
 {
     Q_OBJECT
     Q_PROPERTY(ChannelModel* channelModel READ channelModel CONSTANT)
+    Q_PROPERTY(MessageDispatcher* messageDispatcher READ messageDispatcher CONSTANT)
 public:
     enum Channels
     {
@@ -41,6 +42,7 @@ public:
     int countConnection() const;
     ChannelModel* channelModel() const;
     const QHash<QTcpSocket*, ServerConnection*> connections() const;
+    MessageDispatcher* messageDispatcher() const;
 
 signals:
     void eventOccured(QString, LogController::LogLevel);
@@ -93,8 +95,8 @@ private:
     std::unique_ptr<ConnectionAccepter> m_tcpConnectionAccepter;
     std::unique_ptr<ConnectionAccepter> m_adminAccepter;
     std::unique_ptr<ConnectionAccepter> m_enterInRoomAccepter;
+    std::unique_ptr<MessageDispatcher> m_msgDispatcher;
 
-    MessageDispatcher* m_msgDispatcher= nullptr;
     QHash<QTcpSocket*, ServerConnection*> m_connections;
     const QMap<QString, QVariant>& m_parameters;
 

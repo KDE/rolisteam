@@ -751,7 +751,7 @@ void Character::read(QDataStream& in)
 
 void Character::setCurrentShape(int index)
 {
-    if(index < 0)
+    if(index < 0 || m_shapeList.empty())
     {
         setCurrentShape(nullptr);
         return;

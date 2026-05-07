@@ -14,7 +14,6 @@ public:
     explicit NetworkUpdater(NetworkController* ctrl, QObject* parent= nullptr);
 
     NetWorkReceiver::SendType processMessage(NetworkMessageReader* msg);
-signals:
 
 public slots:
     void sendOffConnectionInfo(const QString& id, const QString& name, const QByteArray& password);

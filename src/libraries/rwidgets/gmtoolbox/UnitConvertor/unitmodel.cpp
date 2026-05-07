@@ -8,7 +8,7 @@ QHash<Unit::Category, QString> UnitModel::m_cat2Text({{Unit::CURRENCY, QObject::
                                                       {Unit::DISTANCE, QObject::tr("Distance")},
                                                       {Unit::TEMPERATURE, QObject::tr("Temperature")},
                                                       {Unit::MASS, QObject::tr("MASS")},
-                                                      {Unit::MASS, QObject::tr("OTHER")}});
+                                                      {Unit::CUSTOM, QObject::tr("OTHER")}});
 
 //{Unit::VOLUME,tr("Volume")},
 
@@ -24,9 +24,9 @@ void CategoryModel::addUnit(Unit* unit)
     auto unitModel= dynamic_cast<UnitModel*>(sourceModel());
     if(nullptr == unitModel)
         return;
-    beginInsertRows(QModelIndex(), rowCount(), rowCount());
+    // beginInsertRows(QModelIndex(), rowCount(), rowCount());
     unitModel->insertData(unit);
-    endInsertRows();
+    // endInsertRows();
 }
 
 QString CategoryModel::currentCategory() const
@@ -43,7 +43,6 @@ void CategoryModel::setCurrentCategory(const QString& currentCategory)
 bool CategoryModel::filterAcceptsRow(int sourceRow, const QModelIndex& sourceParent) const
 {
     QModelIndex index0= sourceModel()->index(sourceRow, 0, sourceParent);
-
     return (index0.data(Qt::UserRole).toString() == m_currentCategory);
 }
 
@@ -198,9 +197,13 @@ bool UnitModel::removeUnit(Unit* unit)
     for(auto& key : keys)
     {
         const auto& list= m_data[key];
-        if(key <= cat)
+        if(key < cat)
         {
             sum+= list.size();
+        }
+        else if(key == cat)
+        {
+            sum+= list.indexOf(unit);
         }
     }
     auto& list= m_data[cat];

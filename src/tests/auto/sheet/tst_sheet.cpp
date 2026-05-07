@@ -7,6 +7,11 @@
 
 #include "charactersheet/include/charactersheet/controllers/tablefield.h"
 #include "controller/view_controller/charactersheetcontroller.h"
+#include "data/campaignmanager.h"
+#include "data/player.h"
+#include "diceparser_qobject/diceroller.h"
+#include "model/contentmodel.h"
+#include "model/playermodel.h"
 #include "rcse/fieldmodel.h"
 #include "updater/media/charactersheetupdater.h"
 
@@ -27,6 +32,13 @@ private slots:
 private:
     std::unique_ptr<FieldModel> m_model;
     std::unique_ptr<QAbstractItemModelTester> m_tester;
+    std::unique_ptr<campaign::CampaignManager> m_campaign;
+    std::unique_ptr<CharacterSheet> m_sheet;
+    std::unique_ptr<CharacterSheetController> m_ctrl;
+    std::unique_ptr<CharacterSheetUpdater> m_updater;
+    std::unique_ptr<PlayerModel> m_players;
+    std::unique_ptr<FilteredContentModel> m_sheetModel;
+    std::unique_ptr<ContentModel> m_contentModel;
 };
 
 SheetTest::SheetTest() {}
@@ -35,6 +47,10 @@ void SheetTest::init()
 {
     m_model.reset(new FieldModel);
     m_tester.reset(new QAbstractItemModelTester(m_model.get()));
+    m_players.reset(new PlayerModel);
+    m_contentModel.reset(new ContentModel);
+    m_sheetModel.reset(new FilteredContentModel(Core::ContentType::CHARACTERSHEET));
+    m_sheetModel->setSourceModel(m_contentModel.get());
 }
 
 void SheetTest::tableTest()
@@ -78,28 +94,65 @@ void SheetTest::tableTest_data()
 
 void SheetTest::updateTest()
 {
-    std::unique_ptr<CharacterSheet> sheet{new CharacterSheet()};
-    std::unique_ptr<CharacterSheetController> ctrl{new CharacterSheetController("mytestid")};
-    std::unique_ptr<CharacterSheetUpdater> updater{new CharacterSheetUpdater(nullptr, nullptr)};
+    m_sheet.reset(new CharacterSheet());
+    m_ctrl.reset(new CharacterSheetController("mytestid"));
+    CharacterFinder::setPlayerModel(m_players.get());
+    auto player= new Player();
+    player->setName(Helper::randomString());
+    player->setGM(true);
+    m_players->addPlayer(player);
+
+    m_campaign.reset(new campaign::CampaignManager{new DiceRoller});
+
+    m_updater.reset(new CharacterSheetUpdater(m_sheetModel.get(), m_campaign.get()));
+    m_updater->addMediaController(nullptr);
+
+    m_updater->setLocalIsGM(true);
+
+    auto field= new FieldController();
+    m_sheet->insertCharacterItem(field);
+
+    auto table= new TableFieldController();
+    table->addColumn();
+    table->addLine();
+    m_sheet->insertCharacterItem(table);
 
     Helper::TestMessageSender sender;
     NetworkMessage::setMessageSender(&sender);
     sender.clear();
     {
-        auto model= ctrl->model();
-        model->addCharacterSheet(sheet.get());
+        auto model= m_ctrl->model();
+        model->addCharacterSheet(m_sheet.get());
 
-        updater->addMediaController(ctrl.get());
+        m_updater->addMediaController(m_ctrl.get());
     }
 
-    ctrl->share(ctrl.get(), sheet.get(), CharacterSheetUpdater::SharingMode::ONE, nullptr, QStringList{});
-    ctrl->setModified(true);
-    ctrl->setModified(false);
-    ctrl->setModified(true);
+    m_ctrl->share(m_ctrl.get(), m_sheet.get(), CharacterSheetUpdater::SharingMode::ALL, nullptr, QStringList{});
+    m_ctrl->setModified(true);
+    m_ctrl->setModified(false);
+    m_ctrl->setModified(true);
 
-    ctrl->removedSheet(sheet->uuid(), ctrl->uuid(), QString{});
+    m_ctrl->removedSheet(m_sheet->uuid(), m_ctrl->uuid(), QString{});
 
-    sheet.release(); // data destroyed by model.
+    m_updater->setUpFieldUpdate(m_sheet.get());
+    m_sheet->updateField(m_sheet.get(), field, field->id());
+    m_sheet->updateTableFieldCellValue(m_sheet.get(), table->id(), 0, 0);
+    m_sheet->tableRowCountChanged(true, m_sheet.get(), table, table->id(), 0);
+
+    m_ctrl->setRemote(false);
+    m_updater->addRemoteCharacterSheet(m_ctrl.get());
+    m_ctrl->setRemote(true);
+    m_updater->addRemoteCharacterSheet(m_ctrl.get());
+
+    auto datas= sender.messageData();
+    for(auto const& msgData : datas)
+    {
+        NetworkMessageReader reader;
+        reader.setData(msgData);
+        m_updater->processMessage(&reader);
+    }
+
+    m_sheet.release(); // data destroyed by model.
 }
 
 QTEST_MAIN(SheetTest);

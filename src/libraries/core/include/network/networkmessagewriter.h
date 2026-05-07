@@ -63,7 +63,7 @@ public:
     size_t currentPos() const;
 
 #ifdef QT_GUI_LIB
-    bool pixmap(const QPixmap& pix);
+    bool pixmap(const QPixmap& pix, bool fullQuality= false);
 #endif
     void rgb(unsigned int color);
 

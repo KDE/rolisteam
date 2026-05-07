@@ -4,7 +4,10 @@ namespace GMTOOL
 {
 Unit::Unit() {}
 Unit::Unit(QString n, QString s, Category c) : m_name(n), m_symbol(s), m_currentCat(c) {}
-Unit::Unit(const Unit& copy) : m_name(copy.name()), m_symbol(copy.symbol()), m_currentCat(copy.currentCat()) {}
+Unit::Unit(const Unit& copy)
+    : m_name(copy.name()), m_symbol(copy.symbol()), m_currentCat(copy.currentCat()), m_readOnly(copy.readOnly())
+{
+}
 
 Unit::~Unit() {}
 /*Unit::Unit(const Unit&& copy)

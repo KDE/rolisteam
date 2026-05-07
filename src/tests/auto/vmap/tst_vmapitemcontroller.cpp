@@ -4,6 +4,9 @@
 
 #include "controller/item_controllers/characteritemcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
+#include "data/player.h"
+#include "model/charactermodel.h"
+#include "model/playermodel.h"
 #include "rwidgets/graphicsItems/characteritem.h"
 
 #include <helper.h>
@@ -20,18 +23,35 @@ private slots:
     void propertiesTest();
 
     void token();
+    void testFunction();
 
 private:
     std::unique_ptr<VectorialMapController> m_vmapCtrl;
     std::unique_ptr<vmap::CharacterItemController> m_ctrl;
+    std::unique_ptr<CharacterModel> m_characters;
+    std::unique_ptr<PlayerModel> m_players;
 };
 
 CharacterItemCtrlTest::CharacterItemCtrlTest() {}
 void CharacterItemCtrlTest::init()
 {
-    m_vmapCtrl.reset(new VectorialMapController("aaa"));
+    m_players.reset(new PlayerModel);
+    m_characters.reset(new CharacterModel());
+    m_characters->setSourceModel(m_players.get());
 
-    m_ctrl.reset(new vmap::CharacterItemController({{Core::vmapkeys::KEY_CHARAC_NPC, false}}, m_vmapCtrl.get()));
+    auto id= Helper::randomString();
+    auto player= new Player(id, Helper::randomString(), Helper::randomColor(), true);
+    auto character= new Character(Helper::randomString(), QColor(Qt::blue), false);
+    player->addCharacter(character);
+
+    m_players->addPlayer(player);
+
+    m_vmapCtrl.reset(new VectorialMapController("aaa"));
+    CharacterFinder::setPcModel(m_characters.get());
+    m_ctrl.reset(new vmap::CharacterItemController(
+        {{Core::vmapkeys::KEY_CHARAC_NPC, false}, {Core::vmapkeys::KEY_CHARAC_ID, character->uuid()}},
+        m_vmapCtrl.get()));
+    // m_ctrl->setCharacter();
 }
 void CharacterItemCtrlTest::propertiesTest()
 {
@@ -105,6 +125,16 @@ void CharacterItemCtrlTest::token()
     shape->setImage(QImage(Helper::imagePath(true)));
 
     character->addShape(shape);
+}
+
+void CharacterItemCtrlTest::testFunction()
+{
+    m_ctrl->runInit();
+    m_ctrl->cleanInit();
+    m_ctrl->setShape(0);
+    m_ctrl->cleanShape();
+    m_ctrl->setShape(1);
+    m_ctrl->runCommand(0);
 }
 
 QTEST_MAIN(CharacterItemCtrlTest)

@@ -29,10 +29,15 @@
 
 #include "controller/audiocontroller.h"
 #include "controller/audioplayercontroller.h"
+#include "data/campaignmanager.h"
+#include "diceparser_qobject/diceroller.h"
 #include "model/musicmodel.h"
 #include "rwidgets/customs/playerwidget.h"
 #include "test_root_path.h"
+#include "updater/controller/audioplayerupdater.h"
 #include "worker/iohelper.h"
+
+#include <helper.h>
 
 constexpr int TIME_SONG{36};
 
@@ -63,9 +68,13 @@ private slots:
 
     void serialization();
 
+    void testUpdater();
+
 private:
     std::unique_ptr<AudioPlayerController> m_audioController;
     std::unique_ptr<AudioController> m_audiosCtrl;
+    std::unique_ptr<AudioPlayerUpdater> m_audioUpdater;
+    std::unique_ptr<campaign::CampaignManager> m_campManager;
 };
 
 TestAudioPlayer::TestAudioPlayer() {}
@@ -82,8 +91,12 @@ void TestAudioPlayer::init()
 {
     m_audioController.reset(new AudioPlayerController(0, "", nullptr));
     m_audioController->setLocalIsGm(true);
-    m_audiosCtrl.reset(new AudioController(nullptr, nullptr));
+    m_campManager.reset(new campaign::CampaignManager(new DiceRoller));
+
+    m_audiosCtrl.reset(new AudioController(m_campManager.get(), nullptr));
     m_audiosCtrl->setLocalIsGM(true);
+
+    m_audioUpdater.reset(new AudioPlayerUpdater(m_campManager.get(), m_audiosCtrl.get()));
 }
 
 void TestAudioPlayer::playerWidget()
@@ -117,6 +130,58 @@ void TestAudioPlayer::serialization()
 
     QCOMPARE(model->rowCount(), model2->rowCount());
     QCOMPARE(model->urls(), model2->urls());
+}
+
+void TestAudioPlayer::testUpdater()
+{
+    Helper::TestMessageSender sender;
+    NetworkMessage::setMessageSender(&sender);
+
+    m_audioUpdater->setLocalIsGM(true);
+
+    campaign::CampaignInfo a;
+    m_campManager->campaignLoaded(a);
+
+    m_audioUpdater->setLocalIsGM(false);
+
+    campaign::CampaignInfo b;
+    m_campManager->campaignLoaded(b);
+
+    std::array<AudioPlayerController*, 3> array{m_audiosCtrl->firstController(), m_audiosCtrl->secondController(),
+                                                m_audiosCtrl->thirdController()};
+
+    for(auto ctrl : array)
+    {
+        ctrl->startPlayingSong(Helper::randomString(), 0);
+        ctrl->stopPlaying();
+        ctrl->stateChanged(AudioPlayerController::PlayingState);
+        ctrl->stateChanged(AudioPlayerController::ErrorState);
+        ctrl->stateChanged(AudioPlayerController::PausedState);
+        ctrl->stateChanged(AudioPlayerController::StoppedState);
+        ctrl->positionChanged(Helper::generate<qint64>(0, 100000));
+    }
+
+    auto messages= sender.messageData();
+
+    for(const auto& msg : messages)
+    {
+        NetworkMessageReader reader;
+        reader.setData(msg);
+        m_audioUpdater->processMessage(&reader);
+    }
+
+    for(auto ctrl : array)
+    {
+        ctrl->setVolume(Helper::generate<uint>(0, 100));
+        ctrl->setVisible(!ctrl->visible());
+    }
+    m_audiosCtrl->setLocalIsGM(false);
+    for(auto ctrl : array)
+    {
+        ctrl->setVolume(Helper::generate<uint>(0, 100));
+        ctrl->setVisible(!ctrl->visible());
+    }
+    m_audiosCtrl->setLocalIsGM(true);
 }
 
 void TestAudioPlayer::mode()

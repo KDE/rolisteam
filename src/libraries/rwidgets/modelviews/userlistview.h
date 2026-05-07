@@ -45,6 +45,7 @@ public:
         String,
         Color
     };
+    Q_ENUM(Type)
 
     explicit UserListView(QWidget* parent= nullptr);
     void setPlayerController(PlayerController* ctrl);
@@ -75,7 +76,5 @@ private:
     std::unique_ptr<QAction> m_changeColor;
     std::vector<QAction*> m_propertyActions;
 };
-
-Q_DECLARE_METATYPE(UserListView::Type)
 
 #endif // USERLISTVIEW_H

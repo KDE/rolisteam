@@ -41,9 +41,10 @@ NameGeneratorWidget::NameGeneratorWidget(QWidget* parent)
     setObjectName(QStringLiteral("NameGenerator"));
     ui->setupUi(this);
 
-    m_model << tr("Chinese Name") << tr("Elve Name") << tr("English Name") << tr("French Name") << tr("Japanese Name")
-            << tr("Star Wars Name") << tr("Russian Name");
-    ui->m_database->addItems(m_model);
+    QStringList model;
+    model << tr("Chinese Name") << tr("Elve Name") << tr("English Name") << tr("French Name") << tr("Japanese Name")
+          << tr("Star Wars Name") << tr("Russian Name");
+    ui->m_database->addItems(model);
     connect(ui->m_database, SIGNAL(currentIndexChanged(int)), this, SLOT(checkFeatureAvailability()));
 
     connect(ui->m_gen, SIGNAL(clicked()), this, SLOT(generateName()));
@@ -298,12 +299,12 @@ void NameGeneratorWidget::buildAllNames(int count, QHash<QString, DataBase> data
 void NameGeneratorWidget::generateName()
 {
     ui->m_result->clear();
-    int i= ui->m_database->currentIndex() * 2;
+    /*int i= ui->m_database->currentIndex() * 2;
     if(ui->m_femaleBtn->isChecked())
     {
         ++i;
-    }
-    TypeOfGeneration index= (TypeOfGeneration)ui->m_database->currentIndex();
+    }*/
+    TypeOfGeneration index= static_cast<TypeOfGeneration>(ui->m_database->currentIndex());
 
     QHash<QString, DataBase> data= m_complexName.value(index);
 

@@ -61,3 +61,14 @@ add_executable(tst_gamecontroller tst_gamecontroller.cpp ../assets/resources.qrc
 target_link_libraries(tst_gamecontroller PUBLIC Qt6::Core Qt6::Test Qt6::StateMachine PRIVATE core dice3d instantmessaging rmindmap common_core common_widget common_qml helper charactersheet_widgets charactersheet network diceparser_qobject diceparser_shared utils helper)
 target_include_directories(tst_gamecontroller  PUBLIC ../helper ${CMAKE_BINARY_DIR} )
 add_test(NAME tst_gamecontroller COMMAND tst_gamecontroller)
+
+
+add_executable(tst_dice3D tst_dice3dController.cpp ../assets/resources.qrc)
+target_link_libraries(tst_dice3D PUBLIC Qt6::Core Qt6::Test Qt6::StateMachine PRIVATE core dice3d instantmessaging rmindmap common_core common_widget common_qml helper charactersheet_widgets charactersheet network diceparser_qobject diceparser_shared utils helper)
+target_include_directories(tst_dice3D  PUBLIC ../helper ${CMAKE_BINARY_DIR} )
+add_test(NAME tst_dice3D COMMAND tst_dice3D)
+
+add_executable(tst_sharednote tst_sharednote.cpp ../assets/resources.qrc)
+target_link_libraries(tst_sharednote PUBLIC Qt6::Core Qt6::Test Qt6::StateMachine PRIVATE core dice3d instantmessaging rmindmap common_core common_widget common_qml helper charactersheet_widgets charactersheet network diceparser_qobject diceparser_shared utils helper)
+target_include_directories(tst_sharednote  PUBLIC ../helper ${CMAKE_BINARY_DIR} )
+add_test(NAME tst_sharednote COMMAND tst_sharednote)

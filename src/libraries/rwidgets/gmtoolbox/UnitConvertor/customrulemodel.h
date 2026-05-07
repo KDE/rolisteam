@@ -55,7 +55,7 @@ public:
     QModelIndex buddy(const QModelIndex& index) const override;
 
 private:
-    QHash<QPair<const Unit*, const Unit*>, ConvertorOperator*>* m_convertionRules;
+    QHash<QPair<const Unit*, const Unit*>, ConvertorOperator*>* m_convertionRules{nullptr};
     int m_currentCatId= 0;
 };
 

@@ -56,7 +56,10 @@ int LogUploader::appId() const
 
 void LogUploader::setAppId(int appId)
 {
+    if(appId == m_appId)
+        return;
     m_appId= appId;
+    emit appIdChanged();
 }
 
 QString LogUploader::version() const
@@ -66,7 +69,11 @@ QString LogUploader::version() const
 
 void LogUploader::setVersion(const QString& version)
 {
+    if(version == m_version)
+        return;
     m_version= version;
+
+    emit versionChanged();
 }
 
 QString LogUploader::uuid() const
@@ -76,7 +83,10 @@ QString LogUploader::uuid() const
 
 void LogUploader::setUuid(const QString& uuid)
 {
+    if(uuid == m_uuid)
+        return;
     m_uuid= uuid;
+    emit uuidChanged();
 }
 
 std::vector<common::Log> LogUploader::logs() const
@@ -86,7 +96,10 @@ std::vector<common::Log> LogUploader::logs() const
 
 void LogUploader::setLogs(const std::vector<common::Log>& logs)
 {
+    if(logs == m_logs)
+        return;
     m_logs= logs;
+    emit logsChanged();
 }
 
 void LogUploader::uploadLog()
@@ -133,5 +146,8 @@ QString LogUploader::conf() const
 
 void LogUploader::setConf(const QString& conf)
 {
+    if(conf == m_conf)
+        return;
     m_conf= conf;
+    emit confChanged();
 }

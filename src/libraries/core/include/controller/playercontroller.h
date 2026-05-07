@@ -53,7 +53,7 @@ class CORE_EXPORT PlayerController : public AbstractControllerInterface
     Q_PROPERTY(QString localPlayerId READ localPlayerId NOTIFY localPlayerIdChanged)
 
 public:
-    explicit PlayerController(NetworkController* network, QObject* parent= nullptr);
+    explicit PlayerController(QObject* parent= nullptr);
     ~PlayerController() override;
 
     Player* localPlayer() const;

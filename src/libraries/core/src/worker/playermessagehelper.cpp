@@ -52,7 +52,8 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
 {
     if(nullptr == player)
         return;
-    qDebug() << "write player" << player->uuid();
+    if(player->uuid().isEmpty())
+        qDebug() << "write player" << player->uuid() << player->name();
 
     msg.string16(player->name());
     msg.string8(player->uuid());
@@ -73,16 +74,10 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
     // Characters
     msg.int32(static_cast<int>(characters.size()));
 
-    std::for_each(characters.begin(), characters.end(),
-                  [&msg](const std::unique_ptr<Character>& character)
+    std::for_each(characters.begin(), characters.end(), [&msg](const std::unique_ptr<Character>& character)
                   { writeCharacterIntoMessage(msg, character.get()); });
 
-    /*QByteArray array;
-    QDataStream out(&array, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_5_7);
-    out << player->features();
-
-    msg.byteArray32(array);*/
+    qDebug() << "End of Add player";
 }
 
 void PlayerMessageHelper::writeVisionIntoMessage(NetworkMessageWriter& msg, CharacterVision* vision)
@@ -148,7 +143,8 @@ bool PlayerMessageHelper::readPlayer(NetworkMessageReader& msg, Player* player)
     auto softVersion= msg.string16();
 
     // auto player= new Player(uuid, name, color, gameMaster);
-    qDebug() << "new player name" << name << "isGM:" << gameMaster << uuid;
+    if(name.isEmpty())
+        qDebug() << "new player name" << name << "isGM:" << gameMaster << uuid;
     player->setUuid(uuid);
     player->setName(name);
     player->setColor(color);
@@ -182,16 +178,7 @@ bool PlayerMessageHelper::readPlayer(NetworkMessageReader& msg, Player* player)
         qWarning() << "Network message OUT OF MEMORY player after character";
         return false;
     }
-    /*QByteArray array= msg.byteArray32();
-    QDataStream in(&array, QIODevice::ReadOnly);
-    in.setVersion(QDataStream::Qt_5_7);
-    QMap<QString, quint8> features;
-    in >> features;
-    for(auto key : features.keys())
-    {
-        auto value= features.value(key);
-        player->setFeature(key, value);
-    }*/
+    qDebug() << "END OF new player name" << name << "isGM:" << gameMaster << uuid;
     return true;
 }
 

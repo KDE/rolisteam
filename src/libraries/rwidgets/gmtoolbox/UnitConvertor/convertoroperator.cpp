@@ -51,6 +51,8 @@ bool ConvertorOperator::fraction() const
 
 void ConvertorOperator::setFraction(bool fraction)
 {
+    if(m_readOnly)
+        return;
     m_fraction= fraction;
 }
 

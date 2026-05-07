@@ -153,6 +153,7 @@ HELPER_EXPORT QObject* initWebServer(int port= 9090);
 HELPER_EXPORT QUrl randomUrl();
 HELPER_EXPORT QMovie randomMovie();
 HELPER_EXPORT QFont randomFont();
+HELPER_EXPORT QString randomFilePath();
 
 template <typename T>
 T randomFromList(const std::vector<T>& list)

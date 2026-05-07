@@ -65,20 +65,17 @@ public:
 
 protected:
     void buildAllNames(int count, QHash<QString, DataBase> data);
+    QString buildName(const QJsonObject& json);
+    QString pickUpName(QStringList data);
+
 protected slots:
     void checkFeatureAvailability();
-private slots:
     void generateName();
     bool nextCharacterCanEnd(const QJsonObject& json, QString key);
     bool nextIsPossible(const QJsonObject& json, QString key, bool last);
 
-private:
-    QString buildName(const QJsonObject& json);
-    QString pickUpName(QStringList data);
-
-private:
+protected:
     Ui::NameGeneratorWidget* ui;
-    QStringList m_model;
     QHash<TypeOfGeneration, QHash<QString, DataBase>> m_complexName;
     QRandomGenerator m_generator;
 };

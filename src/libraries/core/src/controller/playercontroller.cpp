@@ -30,11 +30,11 @@
 #include "worker/characterfinder.h"
 #include <QtDebug>
 
-PlayerController::PlayerController(NetworkController* network, QObject* parent)
+PlayerController::PlayerController(QObject* parent)
     : AbstractControllerInterface(parent)
     , m_model(new PlayerModel)
     , m_characterModel(new CharacterModel)
-    , m_updater(new PlayerUpdater(network, this))
+    , m_updater(new PlayerUpdater(this))
 {
 
     m_characterModel->setSourceModel(m_model.get());
