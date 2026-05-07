@@ -181,6 +181,11 @@ void TestNetwork::channelTest()
 
     QTcpSocket socket2;
     auto conn2= new ServerConnection(&socket2, nullptr);
+    QPointer<ServerConnection> pConn2(conn2);
+
+    auto test = [pConn2](int i){
+        qDebug() << "conn2 is null : "<<i << pConn2.isNull();
+    };
 
     QCOMPARE(m_channel->getCurrentGmId(), QString());
     auto f= m_channel->getChildAt(0);
@@ -228,20 +233,22 @@ void TestNetwork::channelTest()
         m_channel->sendMessage(&msg, m_serverConnection.get(), true);
     }
 
-    NetworkMessageWriter infoPlayer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
-    Player player;
 
-    PlayerMessageHelper::writePlayerIntoMessage(infoPlayer, &player);
 
     m_channel->updateNewClient(conn2);
     auto conn3= new ServerConnection(&socket2, nullptr);
     m_channel->updateNewClient(conn3);
 
-    auto dataRaw= infoPlayer.data();
+    {
+        NetworkMessageWriter writer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
+        Player player(Helper::randomString(),Helper::randomColor(), true);
+        PlayerMessageHelper::writePlayerIntoMessage(writer, &player);
 
-    NetworkMessageReader info;
-    info.setData(dataRaw.data());
-    conn2->setInfoPlayer(&info);
+        NetworkMessageReader reader;
+        reader.setData(writer.data());
+        conn2->setInfoPlayer(&reader);
+        QVERIFY(conn2->isFullyDefined());
+    }
 
     { // subchannel
         auto sub= new Channel();
@@ -257,9 +264,6 @@ void TestNetwork::channelTest()
         // conn3->deleteLater();
     }
 
-    m_channel->clearData();
-    m_channel->clear();
-
     m_channel->removeChildById(Helper::randomString());
     m_channel->removeChild(m_serverConnection.get());
 
@@ -269,7 +273,9 @@ void TestNetwork::channelTest()
 
     m_channel->removeClient(conn2);
     m_serverConnection.release();
-    // conn2->deleteLater();
+
+    m_channel->clearData();
+    m_channel->clear();
 }
 
 void TestNetwork::serverManagerTest()

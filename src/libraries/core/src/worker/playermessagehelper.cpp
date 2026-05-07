@@ -52,8 +52,8 @@ void PlayerMessageHelper::writePlayerIntoMessage(NetworkMessageWriter& msg, Play
 {
     if(nullptr == player)
         return;
-    if(player->uuid().isEmpty())
-        qDebug() << "write player" << player->uuid() << player->name();
+
+    qDebug() << "write player" << player->uuid() << player->name();
 
     msg.string16(player->name());
     msg.string8(player->uuid());
@@ -143,8 +143,8 @@ bool PlayerMessageHelper::readPlayer(NetworkMessageReader& msg, Player* player)
     auto softVersion= msg.string16();
 
     // auto player= new Player(uuid, name, color, gameMaster);
-    if(name.isEmpty())
-        qDebug() << "new player name" << name << "isGM:" << gameMaster << uuid;
+    if(name.size() > 20)
+        qDebug() << "new player name" << name.size() << "isGM:" << gameMaster << "uuid" << uuid;
     player->setUuid(uuid);
     player->setName(name);
     player->setColor(color);

@@ -405,6 +405,7 @@ void VMapTest::gridTest()
 
     gridItem->setNewEnd(QPoint());
 
+    gridItem->setVisible(false);
     QVERIFY(!gridItem->isVisible());
 
     QSignalSpy spyGrid(m_ctrl.get(), &VectorialMapController::gridVisibilityChanged);

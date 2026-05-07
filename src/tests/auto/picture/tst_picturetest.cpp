@@ -186,6 +186,7 @@ void PictureTest::respectShape()
                                              static_cast<ImageSelectorController::Shape>(shape), dir));
     m_ctrl->setVisualSize(QSize{547, 333});
     m_ctrl->setRect(geometry);
+    qDebug() << geometry;
 
     QSignalSpy waitImageDataChanged(m_ctrl.get(), &ImageSelectorController::imageDataChanged);
     QSignalSpy waitPixmapChanged(m_ctrl.get(), &ImageSelectorController::pixmapChanged);
@@ -206,24 +207,24 @@ void PictureTest::respectShape_data()
     QTest::addColumn<bool>("expected");
     QTest::addColumn<int>("count");
 
-    QTest::addRow("any with any with img") << static_cast<int>(ImageSelectorController::AnyShape)
+    QTest::addRow("1. any with any with img") << static_cast<int>(ImageSelectorController::AnyShape)
                                            << QRect(20, 20, 300, 23) << ":/img/girafe.jpg" << true << 1;
-    QTest::addRow("any with any with no img")
+    QTest::addRow("2. any with any with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 23) << QString{} << false << 0;
 
-    QTest::addRow("any with square with img") << static_cast<int>(ImageSelectorController::AnyShape)
+    QTest::addRow("3. any with square with img") << static_cast<int>(ImageSelectorController::AnyShape)
                                               << QRect(20, 20, 300, 300) << ":/img/girafe.jpg" << true << 1;
-    QTest::addRow("any with square with no img")
+    QTest::addRow("4. any with square with no img")
         << static_cast<int>(ImageSelectorController::AnyShape) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
-    QTest::addRow("square with square with img") << static_cast<int>(ImageSelectorController::Square)
+    QTest::addRow("5. square with square with img") << static_cast<int>(ImageSelectorController::Square)
                                                  << QRect(20, 20, 300, 300) << ":/img/girafe.jpg" << true << 1;
-    QTest::addRow("square with square with no img")
+    QTest::addRow("6. square with square with no img")
         << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 300, 300) << QString{} << false << 0;
 
-    QTest::addRow("square with any with img") << static_cast<int>(ImageSelectorController::Square)
+    QTest::addRow("7. square with any with img") << static_cast<int>(ImageSelectorController::Square)
                                               << QRect(20, 20, 200, 300) << ":/img/girafe.jpg" << false << 1;
-    QTest::addRow("square with any with no img")
+    QTest::addRow("8. square with any with no img")
         << static_cast<int>(ImageSelectorController::Square) << QRect(20, 20, 200, 300) << QString{} << false << 0;
 }
 
@@ -266,7 +267,11 @@ void PictureTest::setImageFromClipboard()
     QCOMPARE(spy2.count(), 1);
     QVERIFY(!m_ctrl->imageData().isEmpty());
 
+    m_ctrl->setImageData(QByteArray());
     clip->clear();
+    spy2.wait(100);
+    spy2.clear();
+
 
     helper::utils::unique_ptr_later<ImageSelectorController> ctrl(new ImageSelectorController());
     QVERIFY(ctrl->imageData().isEmpty());
@@ -275,13 +280,12 @@ void PictureTest::setImageFromClipboard()
     mimedata->setUrls({QUrl::fromUserInput("http://127.0.0.1:9090/image/Seppun_tashime.jpg")});
 
     clip->setMimeData(mimedata);
+    QSignalSpy spy3(ctrl.get(), &ImageSelectorController::imageDataChanged);
     ctrl->imageFromClipboard();
 
-    spy2.wait(10);
-    QCOMPARE(spy2.count(), 1);
+    spy3.wait(100);
+    QCOMPARE(spy3.count(), 1);
     QVERIFY(!ctrl->imageData().isEmpty());
-    // clip->clear();
-    // clip->setMimeData(nullptr);
 
     delete server;
 }

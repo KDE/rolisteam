@@ -184,8 +184,9 @@ void MindMapTest::updaterTest()
         QCOMPARE(packages.size(), 2);
         Helper::testAllProperties(node2, {}, true);
 
-        m_ctrl->removeNode({node->id(), node2->id()}, false);
-        m_ctrl->removeNode({node->id(), node2->id()}, true);
+        QStringList list{node->id(), node2->id()};
+        m_ctrl->removeNode(list, false);
+        m_ctrl->removeNode(list, true);
 
         auto pack= dynamic_cast<mindmap::PackageNode*>(packages[0].get());
         QVERIFY(pack);

@@ -249,7 +249,7 @@ Player* ServerConnection::player() const
 
 void ServerConnection::setInfoPlayer(NetworkMessageReader* msg)
 {
-    if(nullptr == msg && nullptr == m_player)
+    if(nullptr == msg || nullptr == m_player.get())
         return;
 
     if(PlayerMessageHelper::readPlayer(*msg, m_player.get()))
@@ -263,7 +263,7 @@ void ServerConnection::setInfoPlayer(NetworkMessageReader* msg)
 
 bool ServerConnection::isFullyDefined()
 {
-    if(nullptr != m_player)
+    if(nullptr != m_player.get())
     {
         return m_player->isFullyDefined();
     }

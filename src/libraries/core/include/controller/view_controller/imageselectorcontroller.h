@@ -27,6 +27,7 @@
 #include <QObject>
 #include <QFutureWatcher>
 #include <QPixmap>
+#include <QMutex>
 
 #include <core_global.h>
 
@@ -123,6 +124,7 @@ signals:
     void contentToPasteChanged();
     void rectChanged();
     void visualSizeChanged();
+    void urlRequestFinished();
 
 private:
     void setAddressPrivate(const QUrl& url);
@@ -144,10 +146,11 @@ private:
     QRect m_imageRect;
     QPixmap m_pixmap;
     QPixmap m_thumbnail;
-    qreal m_factor;
+    qreal m_factor{1.0};
 
     std::unique_ptr<QNetworkAccessManager> m_manager;
     QPointer<QFutureWatcher<std::pair<QPixmap, QPixmap>>> m_watcher;
+    QMutex m_mutex;
 };
 Q_DECLARE_OPERATORS_FOR_FLAGS(ImageSelectorController::Sources)
 

@@ -24,6 +24,7 @@
 #include <QMimeData>
 #include <QNetworkReply>
 #include <QtConcurrent>
+#include <QMutexLocker>
 
 #include "utils/iohelper.h"
 #include "worker/iohelper.h"
@@ -36,16 +37,25 @@ ImageSelectorController::ImageSelectorController(bool askPath, Sources sources, 
 #ifdef HAVE_QT_NETWORK
     m_manager.reset(new QNetworkAccessManager());
     connect(m_manager.get(), &QNetworkAccessManager::finished, this,
-            [this](QNetworkReply* reply) { setImageData(reply->readAll()); });
+            [this](QNetworkReply* reply) {
+                emit urlRequestFinished();
+                setImageData(reply->readAll());
+            });
 #endif
 
     auto updateImage= [this]()
     {
         QPointer p(this);
+        if(m_watcher) {
+            m_watcher->cancel();
+            delete m_watcher.get();
+            m_watcher.clear();
+        }
         m_watcher= helper::utils::setContinuation<std::pair<QPixmap, QPixmap>>(
             QtConcurrent::run(
                 [this]()
                 {
+                    QMutexLocker locker(&m_mutex);
                     if(m_data.isEmpty())
                         return std::pair<QPixmap, QPixmap>();
 
@@ -187,6 +197,7 @@ bool ImageSelectorController::rectInShape() const
 {
     if(!m_rect.isValid() || m_rect.isNull())
         return false;
+    qDebug() << m_rect.x() * m_factor<< m_rect.y() * m_factor<< m_rect.width() * m_factor<< m_rect.height() * m_factor << m_factor;
     QRect rect(m_rect.x() * m_factor, m_rect.y() * m_factor, m_rect.width() * m_factor, m_rect.height() * m_factor);
     bool res= computeDataGeometry().contains(rect);
 
@@ -213,9 +224,16 @@ void ImageSelectorController::imageFromClipboard()
     if(mimeData->hasImage())
     {
         auto pix= qvariant_cast<QPixmap>(mimeData->imageData());
-        if(pix.isNull())
-            return;
-        setImageData(IOHelper::pixmapToData(pix));
+
+        if(!pix.isNull())
+            setImageData(IOHelper::pixmapToData(pix));
+        else
+        {
+            auto img= qvariant_cast<QImage>(mimeData->imageData());
+            if(!img.isNull())
+                setImageData(IOHelper::imageToData(img));
+        }
+
     }
     else if(mimeData->hasUrls())
     {
@@ -327,6 +345,7 @@ void ImageSelectorController::setVisualSize(const QSize& visualSize)
 
 void ImageSelectorController::setImageData(const QByteArray& array)
 {
+    QMutexLocker locker(&m_mutex);
     if(array == m_data)
         return;
     m_data= array;

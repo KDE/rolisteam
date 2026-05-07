@@ -239,9 +239,7 @@ void Player::copyPlayer(Player* player)
 
 bool Player::isFullyDefined()
 {
-    if(m_uuid.isEmpty())
-        return false;
-    if(m_name.isEmpty())
+    if(m_uuid.isEmpty() || m_name.isEmpty())
         return false;
 
     return true;
