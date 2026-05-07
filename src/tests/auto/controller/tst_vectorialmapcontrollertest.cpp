@@ -81,10 +81,10 @@ private slots:
 
     void normalSize();
     void normalSize_data();
-
+#ifdef FULL_TEST
     void networkMessage();
     void networkMessage_data();
-
+#endif
     void serialization_network();
     void serialization_network_data();
 
@@ -1257,7 +1257,13 @@ void VectorialMapControllerTest::serialization_network_data()
         QTest::addRow("save %d", ++i) << map << tool;
     }
 }
+void VectorialMapControllerTest::propertiesTest()
+{
+    auto res= Helper::testAllProperties(m_ctrl.get(), {});
+}
 
+
+#ifdef FULL_TEST
 void VectorialMapControllerTest::networkMessage()
 {
     using CustomMap= std::map<QString, QVariant>;
@@ -1312,10 +1318,6 @@ void VectorialMapControllerTest::networkMessage()
     delete mediabase;
 }
 
-void VectorialMapControllerTest::propertiesTest()
-{
-    auto res= Helper::testAllProperties(m_ctrl.get(), {});
-}
 
 void VectorialMapControllerTest::networkMessage_data()
 {
@@ -1379,6 +1381,7 @@ void VectorialMapControllerTest::networkMessage_data()
         } while(Helper::next_combination(data.begin(), data.begin() + comb_size, data.end()));
     }
 }
+#endif
 
 void VectorialMapControllerTest::updaterTest()
 {
