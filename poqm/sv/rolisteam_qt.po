@@ -3808,7 +3808,7 @@ msgctxt "CharacterDataModel|"
 msgid "No Avatar"
 msgstr "Ingen avatar"
 
-#: src/libraries/core/src/network/characterdatamodel.cpp:148
+#: src/libraries/core/src/network/characterdatamodel.cpp:150
 msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Ny karaktär"
@@ -3843,7 +3843,7 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr ""
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:231
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:237
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
@@ -3851,7 +3851,7 @@ msgstr ""
 "Behörighetskontroll som administratör misslyckades: %2 - %1, Felaktigt "
 "lösenord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:258
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:263
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3860,13 +3860,13 @@ msgstr ""
 "Behörighetskontroll misslyckades: %1 försök att ansluta till servern med fel "
 "lösenord."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:272
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Användaren har sparkats ut: %2 - %1"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:288
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:291
 #, fuzzy, qt-format
 #| msgctxt "ServerConnectionManager|"
 #| msgid "User has been kick out: %2 - %1."
@@ -3874,12 +3874,12 @@ msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
 msgstr "Användaren har sparkats ut: %2 - %1"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:465
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Ny inkommande anslutning."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:512
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:515
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
@@ -4087,6 +4087,11 @@ msgstr "Lägg till kanal"
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
 msgstr "Användaren har sparkats ut: %2 - %1"
+
+#: src/libraries/core/src/updater/controller/playerupdater.cpp:24
+msgctxt "PlayerUpdater|"
+msgid "Error: Player controller is null. PlayerUpdate can't work."
+msgstr ""
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -5679,7 +5684,7 @@ msgctxt "CampaignProperties|"
 msgid "Restore session at startup"
 msgstr "Återställ session vid start"
 
-#: src/libraries/rwidgets/dialogs/connectionretrydialog.cpp:34
+#: src/libraries/rwidgets/dialogs/connectionretrydialog.cpp:28
 #, qt-format
 msgctxt "ConnectionRetryDialog|"
 msgid "Connection has failed! Connection Retry in %1s."
@@ -8437,37 +8442,37 @@ msgctxt "DiceBookMarkWidget|"
 msgid "DiceShortCut"
 msgstr "Tärningsgenväg"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Chinese Name"
 msgstr "Kinesiskt namn"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Elve Name"
 msgstr "Elviskt namn"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "English Name"
 msgstr "Engelskt namn"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "French Name"
 msgstr "Franskt namn"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Japanese Name"
 msgstr "Japanskt namn"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:46
 msgctxt "NameGeneratorWidget|"
 msgid "Star Wars Name"
 msgstr "Namn från Stjärnornas krig"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:46
 msgctxt "NameGeneratorWidget|"
 msgid "Russian Name"
 msgstr "Ryskt namn"
@@ -8621,7 +8626,7 @@ msgctxt "GMTOOL::CustomRuleModel|"
 msgid "Symbol"
 msgstr "Symbol"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/customrulemodel.cpp:268
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/customrulemodel.cpp:272
 msgctxt "GMTOOL::CustomRuleModel|"
 msgid "New Unit"
 msgstr "Ny enhet"
@@ -8651,7 +8656,7 @@ msgctxt "QObject|"
 msgid "OTHER"
 msgstr "ANNAN"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:171
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:170
 msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Ny enhet"
@@ -8676,37 +8681,37 @@ msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Öka liv"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:357
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Ändra tillstånd"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:383
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "Synform"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Åtgärder"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "Initiativ"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:399
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "Rensa initiativ"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:416
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Former"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:423
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Rensa form"
@@ -8741,12 +8746,12 @@ msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "Anpassa till innehåll"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:200
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:206
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:331
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:333
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "Teckenstorlek"
@@ -8765,6 +8770,14 @@ msgstr "Rektangel"
 msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regel"
+
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#, fuzzy
+#| msgctxt "ParticipantsPane|"
+#| msgid "Promote"
+msgctxt "VisualItem|"
+msgid "Promote To"
+msgstr "Befordra"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format

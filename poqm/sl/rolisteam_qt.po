@@ -3642,7 +3642,7 @@ msgctxt "CharacterDataModel|"
 msgid "No Avatar"
 msgstr "Brez avatarja"
 
-#: src/libraries/core/src/network/characterdatamodel.cpp:148
+#: src/libraries/core/src/network/characterdatamodel.cpp:150
 msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Nov lik"
@@ -3677,13 +3677,13 @@ msgctxt "RServer|"
 msgid "[Server] Start Listening"
 msgstr "[Strežnik] Začni poslušati"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:231
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:237
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "Authentification as Admin fails: %2 - %1, Wrong password."
 msgstr "Overjanje skrbnika je spodletelo: %2 - %1, napačno geslo."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:258
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:263
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid ""
@@ -3692,24 +3692,24 @@ msgstr ""
 "Overjanje spodletelo: %1 poskuša vzpostaviti povezavo s strežnikom z "
 "napačnim geslom."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:272
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:275
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been kick out: %2 - %1."
 msgstr "Uporabnik je bil vržen ven: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:288
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:291
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
 msgstr "Uporabnik je bil prepovedan: %2 - %1."
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:462
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:465
 msgctxt "ServerConnectionManager|"
 msgid "New Incoming Connection!"
 msgstr "Nova dohodna povezava!"
 
-#: src/libraries/core/src/network/serverconnectionmanager.cpp:512
+#: src/libraries/core/src/network/serverconnectionmanager.cpp:515
 #, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User %1 has been disconnected!"
@@ -3901,6 +3901,11 @@ msgstr "Novi kanal"
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
 msgstr "Iz igre so vas izločili."
+
+#: src/libraries/core/src/updater/controller/playerupdater.cpp:24
+msgctxt "PlayerUpdater|"
+msgid "Error: Player controller is null. PlayerUpdate can't work."
+msgstr ""
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -5450,7 +5455,7 @@ msgctxt "CampaignProperties|"
 msgid "Restore session at startup"
 msgstr "Obnovi sejo ob zagonu"
 
-#: src/libraries/rwidgets/dialogs/connectionretrydialog.cpp:34
+#: src/libraries/rwidgets/dialogs/connectionretrydialog.cpp:28
 #, qt-format
 msgctxt "ConnectionRetryDialog|"
 msgid "Connection has failed! Connection Retry in %1s."
@@ -8182,37 +8187,37 @@ msgctxt "DiceBookMarkWidget|"
 msgid "DiceShortCut"
 msgstr "BližnjicaDoKocke"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Chinese Name"
 msgstr "Kitajsko ime"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Elve Name"
 msgstr "Vilinsko ime"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "English Name"
 msgstr "Angleško ime"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "French Name"
 msgstr "Francosko ime"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:44
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
 msgctxt "NameGeneratorWidget|"
 msgid "Japanese Name"
 msgstr "Japonsko ime"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:46
 msgctxt "NameGeneratorWidget|"
 msgid "Star Wars Name"
 msgstr "Ime iz Vojne zvezd"
 
-#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:45
+#: src/libraries/rwidgets/gmtoolbox/NameGenerator/namegeneratorwidget.cpp:46
 msgctxt "NameGeneratorWidget|"
 msgid "Russian Name"
 msgstr "Rusko ime"
@@ -8366,7 +8371,7 @@ msgctxt "GMTOOL::CustomRuleModel|"
 msgid "Symbol"
 msgstr "Simbol"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/customrulemodel.cpp:268
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/customrulemodel.cpp:272
 msgctxt "GMTOOL::CustomRuleModel|"
 msgid "New Unit"
 msgstr "Nova enota"
@@ -8396,7 +8401,7 @@ msgctxt "QObject|"
 msgid "OTHER"
 msgstr "DRUGO"
 
-#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:171
+#: src/libraries/rwidgets/gmtoolbox/UnitConvertor/unitmodel.cpp:170
 msgctxt "GMTOOL::UnitModel|"
 msgid "New Unit"
 msgstr "Nova enota"
@@ -8421,37 +8426,37 @@ msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "Podaljšaj življenjsko dobo"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:357
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "Spremeni stanje"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:383
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "Oblika vida"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "Dejanja"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "Pobuda"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:399
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "Čista pobuda"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:416
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "Liki"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:423
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "Čista oblika"
@@ -8486,12 +8491,12 @@ msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "Prilagodi vsebini"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:200
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:206
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "Besedilo"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:331
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:333
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "Velikost pisave"
@@ -8510,6 +8515,14 @@ msgstr "Pravokotnik"
 msgctxt "QObject|"
 msgid "Rule"
 msgstr "Pravilo"
+
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#, fuzzy
+#| msgctxt "ParticipantsPane|"
+#| msgid "Promote"
+msgctxt "VisualItem|"
+msgid "Promote To"
+msgstr "Oglašuj"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
