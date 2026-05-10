@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-04-02 10:34+0200\n"
+"PO-Revision-Date: 2026-05-09 12:14+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3911,6 +3911,8 @@ msgstr "Vos han expulsat del joc."
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
 msgstr ""
+"S'ha produït un error: el controlador del jugador és nul. PlayerUpdate no "
+"pot funcionar."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -8521,12 +8523,9 @@ msgid "Rule"
 msgstr "Regla"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Promociona"
+msgstr "Promociona a"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format

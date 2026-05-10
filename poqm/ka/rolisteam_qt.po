@@ -3897,7 +3897,7 @@ msgstr "თქვენ გააძევეს თამაშიდან."
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
-msgstr ""
+msgstr "შეცდომა: მოთამაშის კონტროლერი ნულია. PlayerUpdate არ იმუშავებს."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -8503,9 +8503,6 @@ msgid "Rule"
 msgstr "წესი"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "დაწინაურება"
