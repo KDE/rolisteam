@@ -472,6 +472,15 @@ Character* PlayerModel::characterById(const QString& id) const
         return nullptr;
 }
 
+QHash<QString, QString> PlayerModel::variableDictionnary(const QString& characterId) const
+{
+    auto character = characterById(characterId);
+    if(!character)
+        return {};
+
+    return character->getVariableDictionnary();
+}
+
 void PlayerModel::addPlayer(Player* player)
 {
     if(nullptr == player)

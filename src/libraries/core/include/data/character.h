@@ -225,7 +225,7 @@ public:
     Player* getParentPlayer() const;
     QString getParentId() const;
 
-    virtual QHash<QString, QString> getVariableDictionnary() override;
+    virtual QHash<QString, QString> getVariableDictionnary() const override;
 
     int indexOfState(CharacterState* state);
 

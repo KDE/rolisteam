@@ -206,7 +206,7 @@ bool Player::removeChild(Character* character)
         return false;
 }
 
-QHash<QString, QString> Player::getVariableDictionnary()
+QHash<QString, QString> Player::getVariableDictionnary() const
 {
     return QHash<QString, QString>();
 }

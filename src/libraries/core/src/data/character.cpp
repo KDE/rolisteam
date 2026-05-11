@@ -438,15 +438,15 @@ QString Character::getParentId() const
     return QString();
 }
 
-QHash<QString, QString> Character::getVariableDictionnary()
+QHash<QString, QString> Character::getVariableDictionnary() const
 {
     QHash<QString, QString> variables;
 #ifndef Q_OS_ANDROID
     if(nullptr != m_sheet)
     {
-#ifndef UNIT_TEST
+//#ifndef UNIT_TEST
         variables= m_sheet->getVariableDictionnary();
-#endif
+//#endif
     }
     else
 #endif

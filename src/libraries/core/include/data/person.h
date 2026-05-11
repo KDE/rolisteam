@@ -58,7 +58,7 @@ public:
     virtual bool hasAvatar() const;
     virtual bool isLeaf() const;
 
-    virtual QHash<QString, QString> getVariableDictionnary()= 0;
+    virtual QHash<QString, QString> getVariableDictionnary() const= 0;
     virtual QIcon icon() const;
 
 public slots:

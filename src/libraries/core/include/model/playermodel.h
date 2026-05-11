@@ -79,6 +79,7 @@ public:
     QString gameMasterId() const;
     QString localPlayerId() const;
     QHash<int, QByteArray> roleNames() const override;
+    QHash<QString, QString> variableDictionnary(const QString& characterId) const;
 
 public slots:
     void clear(bool withLocal= true);

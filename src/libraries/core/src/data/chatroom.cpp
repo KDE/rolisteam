@@ -161,8 +161,14 @@ bool ChatRoom::rollDice(const QString& command, const QString& personId)
                 if(!m_diceParser)
                     return {false, tr("No Diceparser Object")};
 
+                auto dict= m_players->variableDictionnary(id);
+
                 auto diceParser= m_diceParser->parser();
 
+                if(!diceParser)
+                    return {false, tr("No Diceparser Object")};
+
+                diceParser->setVariableDictionary(dict);
                 if(!diceParser->parseLine(command))
                 {
                     auto error= diceParser->humanReadableError();

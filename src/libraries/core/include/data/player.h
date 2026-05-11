@@ -62,7 +62,7 @@ public:
     void clearCharacterList();
 
     virtual bool isLeaf() const override;
-    virtual QHash<QString, QString> getVariableDictionnary() override;
+    virtual QHash<QString, QString> getVariableDictionnary() const override;
     bool isFullyDefined();
     void copyPlayer(Player* player);
 
