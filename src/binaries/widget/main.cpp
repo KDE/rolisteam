@@ -176,7 +176,6 @@ int main(int argc, char* argv[])
     states.connectToState(profilSelection, QScxmlStateMachine::onEntry(
                                                [&connectionDialog, &mainWindow]()
                                                {
-                                                   qDebug() << "on Select profile";
                                                    connectionDialog.setVisible(true);
                                                    mainWindow.makeVisible(false);
                                                }));
@@ -187,16 +186,19 @@ int main(int argc, char* argv[])
                                            mainWindow.makeVisible(true);
                                            connectionDialog.setVisible(false);
                                        }));
-    states.connectToState(exitState, QScxmlStateMachine::onEntry([/*&states,*/ &app]() { app.quit(); }));
+    states.connectToState(exitState, QScxmlStateMachine::onEntry(
+                                         [&states, &app]()
+                                         {
+                                             states.stop();
+                                             app.quit();
+                                         }));
 
     QObject::connect(&app, &RolisteamApplication::quitApp, &states,
-                     [&states, &connectionDialog, &mainWindow /*, &app*/]()
+                     [&states, &connectionDialog, &mainWindow]()
                      {
-                         states.stop();
-                         states.submitEvent(quit);
                          mainWindow.makeVisible(false);
                          connectionDialog.setVisible(false);
-                         // QMetaObject::invokeMethod(&app, &RolisteamApplication::quit, Qt::QueuedConnection);
+                         states.submitEvent(quit);
                      });
 
     QObject::connect(&app, &RolisteamApplication::connectStatusChanged, &states,
