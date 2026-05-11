@@ -64,22 +64,17 @@
 #include "controllers/imagecontroller.h"
 #include "controllers/qmlgeneratorcontroller.h"
 
+#include "common/logcategory.h"
 #include "data/characterlist.h"
-// #include "delegate/pagedelegate.h"
 
 #include "canvasfield.h"
 #include "itemeditor.h"
 
 // Undo
 #include "charactersheet/worker/ioworker.h"
-// #include "diceparser_qobject/diceroller.h"
-// #include "diceparser_qobject/qmltypesregister.h"
 #include "undo/addpagecommand.h"
-// #include "undo/deletefieldcommand.h"
 #include "undo/deletepagecommand.h"
 #include "undo/setbackgroundimage.h"
-// #include "undo/setfieldproperties.h"
-// #include "undo/setpropertyonallcharacters.h"
 #include "version.h"
 
 #include "charactersheet/charactersheetmodel.h"
@@ -775,7 +770,7 @@ void MainWindow::showQMLFromCode()
     else
     {
         QList<TreeSheetItem*> list= m_mainCtrl->generatorCtrl()->fieldModel()->children();
-        for(TreeSheetItem* item : list)
+        for(TreeSheetItem* item : std::as_const(list))
         {
             ui->m_quickview->engine()->rootContext()->setContextProperty(item->id(), item);
         }
@@ -978,11 +973,25 @@ void MainWindow::setUpActionForCharacterTab()
             {
                 auto index= ui->m_characterView->currentIndex();
                 auto name= index.data().toString();
+                auto updateName= [this](int i, const QString& name)
+                {
+                    CharacterSheet* sheet= m_mainCtrl->characterCtrl()->model()->getCharacterSheet(i);
+                    if(!sheet)
+                        return;
+                    sheet->setName(name);
+                };
                 if(name.isEmpty())
                     return;
-                CharacterSheet* sheet= m_mainCtrl->characterCtrl()->model()->getCharacterSheet(index.column() - 1);
-                sheet->setName(name);
-                // emit dataChanged();
+                if(index.column() == 0)
+                {
+                    auto count= m_mainCtrl->characterCtrl()->model()->columnCount();
+                    for(int i= 1; i < count; ++i)
+                    {
+                        updateName(i - 1, index.sibling(index.row(), i).data().toString());
+                    }
+                }
+                else
+                    updateName(index.column() - 1, name);
             });
     connect(m_mainCtrl->characterCtrl()->model(), &CharacterSheetModel::columnsInserted, this,
             [this]()
