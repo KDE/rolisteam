@@ -189,12 +189,14 @@ void ModelTest::historyModel()
 
     model.setMaxCapacity(max);
 
-    model.addLink(Helper::randomUrl(), Helper::randomString(),
+    auto list= Helper::randomListOf<QUrl>(2, &Helper::randomUrl);
+
+    model.addLink(list[0], Helper::randomString(),
                   Helper::randomFromList<Core::ContentType>(
                       {Core::ContentType::WEBVIEW, Core::ContentType::PICTURE, Core::ContentType::NOTES}));
 
     QCOMPARE(model.rowCount(), 1);
-    model.addLink(Helper::randomUrl(), Helper::randomString(),
+    model.addLink(list[1], Helper::randomString(),
                   Helper::randomFromList<Core::ContentType>(
                       {Core::ContentType::WEBVIEW, Core::ContentType::PICTURE, Core::ContentType::NOTES}));
 

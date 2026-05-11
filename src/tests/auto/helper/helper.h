@@ -164,10 +164,12 @@ T randomFromList(const std::vector<T>& list)
 template <typename T>
 QList<T> randomListOf(int count, const std::function<T()>& generator)
 {
-    QList<T> res;
+    QSet<T> res;
     res.reserve(count);
-    for(int i= 0; i < count; ++i)
+    while(res.count() < count)
+    {
         res.append(generator());
-    return res;
+    }
+    return res.values();
 }
 } // namespace Helper
