@@ -183,34 +183,6 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
                                                                      m_gameController->campaignManager());
                 campaign::CampaignIntegrityDialog dialog(ctrl, this);
                 dialog.exec();
-                /*if(val == QDialog::Accepted)
-                {
-                    auto const& missingActions= dialog.missingFileActions();
-                    auto const& unmanagedActions= dialog.unmanagedFileActions();
-                    auto ctrl= m_gameController->campaignManager();
-
-                    QList<QPair<QString, Core::CampaignAction>> list;
-                    std::transform(std::begin(missingActions), std::end(missingActions),
-                std::back_inserter(list),
-                                   [](const DataInfo& info)
-                                   {
-                                       return QPair<QString, Core::CampaignAction>(
-                                           {info.data, info.indexAction == 0 ?
-                Core::CampaignAction::ForgetAction : Core::CampaignAction::CreateAction});
-                                   });
-                    ctrl->performAction(list);
-
-                    QList<QPair<QString, Core::CampaignAction>> list2;
-                    std::transform(std::begin(unmanagedActions), std::end(unmanagedActions),
-                std::back_inserter(list2),
-                                   [](const DataInfo& info)
-                                   {
-                                       return QPair<QString, Core::CampaignAction>(
-                                           {info.data, info.indexAction == 0 ?
-                Core::CampaignAction::ManageAction : Core::CampaignAction::DeleteAction});
-                                   });
-                    ctrl->performAction(list2);
-                }*/
             });
 
     m_antagonistWidget.reset(new campaign::AntagonistBoard(m_gameController->campaignManager()->editor()));
@@ -225,7 +197,8 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
                 updateUi();
                 updateWindowTitle();
             });
-    connect(m_gameController, &GameController::updateAvailableChanged, this, &MainWindow::showUpdateNotification);
+    connect(m_gameController, &GameController::updateAvailableChanged, this, &MainWindow::showUpdateNotification,
+            Qt::QueuedConnection);
     connect(m_gameController, &GameController::tipOfDayChanged, this, &MainWindow::showTipChecker);
 
     m_ui->setupUi(this);
@@ -935,13 +908,12 @@ void MainWindow::updateUi()
 }
 void MainWindow::showUpdateNotification()
 {
-    QMessageBox::information(this, tr("Update Notification"),
-                             tr("The %1 version has been released. "
-                                "Please take a look at <a "
-                                "href=\"https://www.rolisteam.org/download\">Download page</a> for "
-                                "more "
-                                "information")
-                                 .arg(m_gameController->remoteVersion()));
+    QMessageBox::information(
+        this, tr("Update Notification"),
+        tr("The %1 version has been released. "
+           "Please, visit the <a "
+           "href=\"https://rolisteam.org/02_download/\">Download page</a> to get the latest version.")
+            .arg(m_gameController->remoteVersion()));
 }
 
 void MainWindow::notifyAboutAddedPlayer(Player* player) const

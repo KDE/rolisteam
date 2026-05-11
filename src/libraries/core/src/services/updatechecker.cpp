@@ -72,17 +72,18 @@ void UpdateChecker::readXML(QNetworkReply* p)
     QString string(a);
     auto func= [](const QString& string, const QRegularExpression& reg) -> QString
     {
+        QString res;
         auto match= reg.match(string);
         if(match.hasMatch())
-            return match.captured(0);
-        return {};
+            res= match.captured(1);
+        return res;
     };
 
-    int major= func(string, QRegularExpression("<version_major>(.*)</version_major>")).toInt();
-    int middle= func(string, QRegularExpression("<version_middle>(.*)</version_middle>")).toInt();
-    int minor= func(string, QRegularExpression("<version_minor>(.*)</version_minor>")).toInt();
-    m_dateRemoteVersion= func(string, QRegularExpression("<date>(.*)</date>"));
-    m_changeLog= func(string, QRegularExpression("<changelog>(.*)</changelog>"));
+    int major= func(string, QRegularExpression("<version_major>(.*)<\\/version_major>")).toInt();
+    int middle= func(string, QRegularExpression("<version_middle>(.*)<\\/version_middle>")).toInt();
+    int minor= func(string, QRegularExpression("<version_minor>(.*)<\\/version_minor>")).toInt();
+    m_dateRemoteVersion= func(string, QRegularExpression("<date>(.*)<\\/date>"));
+    m_changeLog= func(string, QRegularExpression("<changelog>(.*)<\\/changelog>"));
 
     m_remoteVersion= QString("%1.%2.%3").arg(major).arg(middle).arg(minor);
 

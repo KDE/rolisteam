@@ -60,7 +60,7 @@ public:
     void setUnmanagedFile(const QStringList& newUnmanagedFile);
 
 public slots:
-    void performAction(const QString& path, FileAction action);
+    void performAction(const QString& path, campaign::CampaignIntegrityController::FileAction action);
     void accept();
 
 signals:

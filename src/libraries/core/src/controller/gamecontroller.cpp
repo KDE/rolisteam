@@ -83,6 +83,7 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
                 if(b && m_playerController->localIsGm())
                 {
                     m_campaignManager->shareModels();
+                    startCheckForUpdates();
                 }
                 emit connectedChanged(b);
             });
@@ -387,14 +388,14 @@ void GameController::startCheckForUpdates()
         return;
 
     auto updateChecker= new UpdateChecker(version::FULL_VERSION, this);
-    updateChecker->startChecking();
     connect(updateChecker, &UpdateChecker::checkFinished, this,
             [this, updateChecker]()
             {
-                setUpdateAvailable(updateChecker->needUpdate());
                 m_remoteVersion= updateChecker->getLatestVersion();
+                setUpdateAvailable(updateChecker->needUpdate());
                 updateChecker->deleteLater();
             });
+    updateChecker->startChecking();
 }
 
 void GameController::startIpRetriever()
