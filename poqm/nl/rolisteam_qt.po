@@ -1,10 +1,10 @@
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2022-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # SPDX-FileCopyrightText: 2026 Luc Castermans <luc.castermans@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-04-12 10:11+0200\n"
-"Last-Translator: Luc Castermans <luc.castermans@gmail.com>\n"
+"PO-Revision-Date: 2026-05-10 18:22+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3891,7 +3891,7 @@ msgstr "U bent uit het spel geknikkerd."
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
-msgstr ""
+msgstr "Fout: De spelercontroller is null. Speler bijwerken kan niet werken."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -8499,12 +8499,9 @@ msgid "Rule"
 msgstr "Regel"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Promoten"
+msgstr "Promoveren naar"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format

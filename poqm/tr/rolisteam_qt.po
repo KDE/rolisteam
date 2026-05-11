@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 # Emir SARI <emir_sari@icloud.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-02 19:18+0300\n"
+"PO-Revision-Date: 2026-05-10 12:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3897,7 +3897,7 @@ msgstr "Oyundan kovuldunuz."
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
-msgstr ""
+msgstr "Hata: Oyuncu denetimi boş. Oyuncu güncellemesi çalışamaz."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -8500,12 +8500,9 @@ msgid "Rule"
 msgstr "Kural"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Tanıt"
+msgstr "Şuna Yükselt:"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
