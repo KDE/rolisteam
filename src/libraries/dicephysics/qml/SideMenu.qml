@@ -8,7 +8,6 @@ import DicePhysics
 Drawer {
     id: drawer
 
-    property alias mouseEnabled: mouseCtrl.checked
     property alias factor: _factor.value
     required property Action selectAll
     required property Action resetSelection
@@ -75,12 +74,6 @@ Drawer {
                     Dice3DCtrl.factor = _factor.value;
                     console.log("value:",_factor.value)
                 }
-            }
-
-            CheckBox {
-                id: mouseCtrl
-                text: qsTr("disable mouseArea")
-                checked: false
             }
 
             ListModel {
@@ -179,8 +172,8 @@ Drawer {
             GridLayout {
                 id: gridLyt
                 Layout.fillWidth: true
-                columns: Math.floor(gridLyt.width / (iconSize*1.2))
-                property int iconSize: 50
+                columns: allActions.length//Math.floor(gridLyt.width / (iconSize*1.2))
+                property int iconSize: 45
                 property list<Action> allActions: [drawer.selectAll, drawer.resetSelection, drawer.rectSelection, drawer.deleteAll, drawer.resetSettings]
                 Repeater {
                     model: gridLyt.allActions
@@ -229,6 +222,12 @@ Drawer {
                     text: qsTr("Show 3D dice in Dialog")
                     checked: Dice3DCtrl.normalDialogMode
                     onClicked: Dice3DCtrl.normalDialogMode = !Dice3DCtrl.normalDialogMode
+                }
+                Switch {
+                    text: qsTr("Keep 3D dice visible")
+                    enabled: Dice3DCtrl.normalDialogMode
+                    checked: Dice3DCtrl.keepVisible
+                    onClicked: Dice3DCtrl.keepVisible = !Dice3DCtrl.keepVisible
                 }
 
                 Label {

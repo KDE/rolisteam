@@ -111,8 +111,12 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
             [this, timer]()
             {
                 if(m_diceCtrl->displayed())
+                {
                     timer->start();
+                    updateDicePanelGeometry();
+                }
             });
+    connect(m_diceCtrl.get(), &Dice3DController::normalDialogModeChanged, this, &Workspace::updateDicePanelGeometry);
 
     connect(timer, &QTimer::timeout, this, &Workspace::updateDicePanelGeometry);
 

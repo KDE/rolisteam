@@ -79,13 +79,16 @@ Dice3DController::Dice3DController(QObject* parent) : QObject{parent}, m_model(n
                     m_timer.stop();
             });
 
-    connect(&m_timer, &QTimer::timeout, this, [this]() { setDisplayed(false); });
+    connect(&m_timer, &QTimer::timeout, this,
+            [this]()
+            {
+                if(m_keepVisible && m_normalDialogMode)
+                    return;
+                setDisplayed(false);
+            });
 }
 
-Dice3DController::~Dice3DController()
-{
-    qDebug() << "Destructor dice3D";
-}
+Dice3DController::~Dice3DController() {}
 
 DiceModel* Dice3DController::model() const
 {
@@ -267,6 +270,7 @@ QPoint Dice3DController::position() const
 
 void Dice3DController::setPosition(QPoint newPosition)
 {
+
     if(m_position == newPosition)
         return;
     m_position= newPosition;
@@ -447,4 +451,17 @@ void Dice3DController::reset()
     setExpectRoll(false);
     setMuted(false);
     emit colorChanged();
+}
+
+bool Dice3DController::keepVisible() const
+{
+    return m_keepVisible;
+}
+
+void Dice3DController::setKeepVisible(bool newKeepVisible)
+{
+    if(m_keepVisible == newKeepVisible)
+        return;
+    m_keepVisible= newKeepVisible;
+    emit keepVisibleChanged();
 }

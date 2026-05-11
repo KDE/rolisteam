@@ -31,7 +31,7 @@ ApplicationWindow {
 
     property real currDrawerWidth: menu.width * menu.position
 
-    title: qsTr("Rolisteam 3D dice roller %1".arg(Dice3DCtrl.normalDialogMode))
+    title: qsTr("Rolisteam 3D dice roller %1".arg(Dice3DCtrl.normalDialogMode ? qsTr("(Dialog)") : ""))
 
     DicePlan {
         id: dicePlan

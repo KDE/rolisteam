@@ -54,6 +54,7 @@ class DICE3D_EXPORTS Dice3DController : public QObject
     Q_PROPERTY(int animationTime READ animationTime WRITE setAnimationTime NOTIFY animationTimeChanged FINAL)
     Q_PROPERTY(int hideTime READ hideTime WRITE setHideTime NOTIFY hideTimeChanged FINAL)
     Q_PROPERTY(int count READ count NOTIFY countChanged FINAL)
+    Q_PROPERTY(bool keepVisible READ keepVisible WRITE setKeepVisible NOTIFY keepVisibleChanged FINAL)
     Q_PROPERTY(
         bool normalDialogMode READ normalDialogMode WRITE setNormalDialogMode NOTIFY normalDialogModeChanged FINAL)
 public:
@@ -137,6 +138,9 @@ public:
     bool normalDialogMode() const;
     void setNormalDialogMode(bool newNormalDialogMode);
 
+    bool keepVisible() const;
+    void setKeepVisible(bool newKeepVisible);
+
 public slots:
     void cleanUp();
     void reset();
@@ -166,6 +170,8 @@ signals:
     void hideTimeChanged(int time);
     void normalDialogModeChanged();
 
+    void keepVisibleChanged();
+
 private:
     std::unique_ptr<DiceModel> m_model;
     QHash<DiceController::DiceType, QColor> m_colors;
@@ -180,6 +186,7 @@ private:
     int m_hideTime{30};
     QTimer m_timer;
     bool m_normalDialogMode{false};
+    bool m_keepVisible{false};
 };
 
 #endif // DICE3DCONTROLLER_H
