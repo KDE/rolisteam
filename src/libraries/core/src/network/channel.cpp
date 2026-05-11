@@ -198,7 +198,7 @@ int Channel::addChild(TreeItem* item)
         connect(tcp, &ServerConnection::playerInfoDefined, this,
                 [this, tcp]()
                 {
-                    qCInfo(NetworkCat) << "New client - is GM:" << tcp->isGM() << m_currentGm;
+                    qCInfo(NetworkCat) << "New client - is GM:" << tcp->isGM();
                     if(tcp->isGM())
                     {
                         if(!m_currentGm || !m_currentGm->isConnected())

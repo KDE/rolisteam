@@ -1262,7 +1262,6 @@ void VectorialMapControllerTest::propertiesTest()
     auto res= Helper::testAllProperties(m_ctrl.get(), {});
 }
 
-
 #ifdef FULL_TEST
 void VectorialMapControllerTest::networkMessage()
 {
@@ -1317,7 +1316,6 @@ void VectorialMapControllerTest::networkMessage()
     }
     delete mediabase;
 }
-
 
 void VectorialMapControllerTest::networkMessage_data()
 {
@@ -1444,6 +1442,7 @@ void VectorialMapControllerTest::updaterTest()
         }
     }
 }
+
 void VectorialMapControllerTest::updaterTest_data()
 {
     using CustomMap= std::map<QString, QVariant>;
