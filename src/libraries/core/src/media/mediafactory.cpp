@@ -370,9 +370,10 @@ MindMapController* mindmap(const QString& uuid, const QHash<QString, QVariant>& 
 
     if(!name.isEmpty())
         mindmapCtrl->setName(name);
-
-    mindmapCtrl->setOwnerId(ownerid);
-    mindmapCtrl->setUrl(url);
+    if(!ownerid.isEmpty())
+        mindmapCtrl->setOwnerId(ownerid);
+    if(!url.isEmpty())
+        mindmapCtrl->setUrl(url);
 
     if(!serializedData.isEmpty())
         IOHelper::readMindmapController(mindmapCtrl, serializedData);
