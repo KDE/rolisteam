@@ -1256,27 +1256,27 @@ msgctxt "QObject|"
 msgid "define path to current <translation>"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:175
+#: src/binaries/rcse/mainwindow.cpp:170
 msgctxt "rcse::MainWindow|"
 msgid "Log panel"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:205
+#: src/binaries/rcse/mainwindow.cpp:200
 msgctxt "rcse::MainWindow|"
 msgid "&Undo"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:208
+#: src/binaries/rcse/mainwindow.cpp:203
 msgctxt "rcse::MainWindow|"
 msgid "&Redo"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:377
+#: src/binaries/rcse/mainwindow.cpp:372
 msgctxt "rcse::MainWindow|"
 msgid "Support"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:378
+#: src/binaries/rcse/mainwindow.cpp:373
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
@@ -1284,141 +1284,141 @@ msgid ""
 "com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</a>"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:453
+#: src/binaries/rcse/mainwindow.cpp:448
 msgctxt "rcse::MainWindow|"
 msgid "Untitled"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:490
+#: src/binaries/rcse/mainwindow.cpp:485
 msgctxt "rcse::MainWindow|"
 msgid "Help"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:491
+#: src/binaries/rcse/mainwindow.cpp:486
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:503
+#: src/binaries/rcse/mainwindow.cpp:498
 msgctxt "rcse::MainWindow|"
 msgid "The charactersheet has unsaved changes."
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:510
+#: src/binaries/rcse/mainwindow.cpp:505
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Quit %1 "
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:565
+#: src/binaries/rcse/mainwindow.cpp:560
 msgctxt "rcse::MainWindow|"
 msgid "Image Generation"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:565
+#: src/binaries/rcse/mainwindow.cpp:560
 msgctxt "rcse::MainWindow|"
 msgid "Image generation in progress"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:586 src/binaries/rcse/mainwindow.cpp:813
+#: src/binaries/rcse/mainwindow.cpp:581 src/binaries/rcse/mainwindow.cpp:808
 msgctxt "rcse::MainWindow|"
 msgid "Open Background Image"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:597
+#: src/binaries/rcse/mainwindow.cpp:592
 msgctxt "rcse::MainWindow|"
 msgid "Open Image"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:622 src/binaries/rcse/mainwindow.cpp:665
+#: src/binaries/rcse/mainwindow.cpp:617 src/binaries/rcse/mainwindow.cpp:660
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:623 src/binaries/rcse/mainwindow.cpp:666
+#: src/binaries/rcse/mainwindow.cpp:618 src/binaries/rcse/mainwindow.cpp:661
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:730
+#: src/binaries/rcse/mainwindow.cpp:725
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:731
+#: src/binaries/rcse/mainwindow.cpp:726
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
 "really want to generate QML code?"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:796
+#: src/binaries/rcse/mainwindow.cpp:791
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet View"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:797
+#: src/binaries/rcse/mainwindow.cpp:792
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet View (*.qml)"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:922
+#: src/binaries/rcse/mainwindow.cpp:917
 msgctxt "rcse::MainWindow|"
 msgid "Copy Path"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:925
+#: src/binaries/rcse/mainwindow.cpp:920
 msgctxt "rcse::MainWindow|"
 msgid "Copy Url"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:928
+#: src/binaries/rcse/mainwindow.cpp:923
 msgctxt "rcse::MainWindow|"
 msgid "Replace Image"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:929
+#: src/binaries/rcse/mainwindow.cpp:924
 msgctxt "rcse::MainWindow|"
 msgid "Remove Image"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:930
+#: src/binaries/rcse/mainwindow.cpp:925
 msgctxt "rcse::MainWindow|"
 msgid "Reload image from file"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:939
+#: src/binaries/rcse/mainwindow.cpp:934
 msgctxt "rcse::MainWindow|"
 msgid "Load Image"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:940
+#: src/binaries/rcse/mainwindow.cpp:935
 msgctxt "rcse::MainWindow|"
 msgid "Supported Image Format (*.jpg *.png *.svg *.gif)"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:953
+#: src/binaries/rcse/mainwindow.cpp:948
 msgctxt "rcse::MainWindow|"
 msgid "Add character"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:954
+#: src/binaries/rcse/mainwindow.cpp:949
 msgctxt "rcse::MainWindow|"
 msgid "Delete character"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:956
+#: src/binaries/rcse/mainwindow.cpp:951
 msgctxt "rcse::MainWindow|"
 msgid "Character's Name"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:958
+#: src/binaries/rcse/mainwindow.cpp:953
 msgctxt "rcse::MainWindow|"
 msgid "Apply on Selection"
 msgstr ""
 
-#: src/binaries/rcse/mainwindow.cpp:959
+#: src/binaries/rcse/mainwindow.cpp:954
 msgctxt "rcse::MainWindow|"
 msgid "Apply on all characters"
 msgstr ""
@@ -1582,7 +1582,7 @@ msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:750
+#: src/binaries/widget/mainwindow.cpp:723
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr ""
@@ -1741,13 +1741,13 @@ msgid "Check Validity"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:700
+#: src/binaries/widget/mainwindow.cpp:673
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:699
+#: src/binaries/widget/mainwindow.cpp:672
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr ""
@@ -2145,106 +2145,106 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:484
+#: src/binaries/widget/mainwindow.cpp:457
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:489
+#: src/binaries/widget/mainwindow.cpp:462
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:499
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:500
+#: src/binaries/widget/mainwindow.cpp:473
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:501
+#: src/binaries/widget/mainwindow.cpp:474
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:502
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:503
+#: src/binaries/widget/mainwindow.cpp:476
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:504
+#: src/binaries/widget/mainwindow.cpp:477
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:519
+#: src/binaries/widget/mainwindow.cpp:492
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:560
+#: src/binaries/widget/mainwindow.cpp:533
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:560
+#: src/binaries/widget/mainwindow.cpp:533
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:580
+#: src/binaries/widget/mainwindow.cpp:553
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:580
+#: src/binaries/widget/mainwindow.cpp:553
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:561
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:561
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:602
-#: src/binaries/widget/mainwindow.cpp:641
-#: src/binaries/widget/mainwindow.cpp:871 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:575
+#: src/binaries/widget/mainwindow.cpp:614
+#: src/binaries/widget/mainwindow.cpp:844 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:751
+#: src/binaries/widget/mainwindow.cpp:724
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:786
+#: src/binaries/widget/mainwindow.cpp:759
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:787
+#: src/binaries/widget/mainwindow.cpp:760
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:851
+#: src/binaries/widget/mainwindow.cpp:824
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2252,130 +2252,130 @@ msgid ""
 "Last save: %1 min(s) ago"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:853
+#: src/binaries/widget/mainwindow.cpp:826
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:859
+#: src/binaries/widget/mainwindow.cpp:832
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:938
+#: src/binaries/widget/mainwindow.cpp:912
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:939
+#: src/binaries/widget/mainwindow.cpp:913
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
-"The %1 version has been released. Please take a look at <a href=\"https://"
-"www.rolisteam.org/download\">Download page</a> for more information"
+"The %1 version has been released. Please, visit the <a href=\"https://"
+"rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:949
+#: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:953
+#: src/binaries/widget/mainwindow.cpp:925
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:959
+#: src/binaries/widget/mainwindow.cpp:931
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1042
+#: src/binaries/widget/mainwindow.cpp:1014
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1045
+#: src/binaries/widget/mainwindow.cpp:1017
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1048
+#: src/binaries/widget/mainwindow.cpp:1020
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1050
+#: src/binaries/widget/mainwindow.cpp:1022
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1053
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1056
+#: src/binaries/widget/mainwindow.cpp:1028
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1057
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1060
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1063
+#: src/binaries/widget/mainwindow.cpp:1035
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1168
+#: src/binaries/widget/mainwindow.cpp:1140
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1265
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1265
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1238
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1266
+#: src/binaries/widget/mainwindow.cpp:1238
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1273
+#: src/binaries/widget/mainwindow.cpp:1245
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1279
+#: src/binaries/widget/mainwindow.cpp:1251
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1306
+#: src/binaries/widget/mainwindow.cpp:1278
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr ""
@@ -3190,6 +3190,7 @@ msgid "Campaign Template creation failed on this location: %1"
 msgstr ""
 
 #: src/libraries/core/src/data/chatroom.cpp:162
+#: src/libraries/core/src/data/chatroom.cpp:169
 msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr ""
@@ -3487,7 +3488,7 @@ msgctxt "PlayerModel|"
 msgid "Players List"
 msgstr ""
 
-#: src/libraries/core/src/model/playermodel.cpp:486
+#: src/libraries/core/src/model/playermodel.cpp:495
 msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr ""
@@ -3919,6 +3920,11 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
+#: src/libraries/dicephysics/qml/Main.qml:34
+msgctxt "Main|"
+msgid "(Dialog)"
+msgstr ""
+
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
 msgid "Select All dice"
@@ -3944,59 +3950,59 @@ msgctxt "Main|"
 msgid "Reset Settings"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:64
+#: src/libraries/dicephysics/qml/SideMenu.qml:63
 msgctxt "SideMenu|"
 msgid "Dice Size:"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:82
-msgctxt "SideMenu|"
-msgid "disable mouseArea"
-msgstr ""
-
-#: src/libraries/dicephysics/qml/SideMenu.qml:203
+#: src/libraries/dicephysics/qml/SideMenu.qml:196
 msgctxt "SideMenu|"
 msgid "Collision sound:"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:215
+#: src/libraries/dicephysics/qml/SideMenu.qml:208
 msgctxt "SideMenu|"
 msgid "Dice Command:"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:229
+#: src/libraries/dicephysics/qml/SideMenu.qml:222
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:235
+#: src/libraries/dicephysics/qml/SideMenu.qml:227
+msgctxt "SideMenu|"
+msgid "Keep 3D dice visible"
+msgstr ""
+
+#: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:236
+#: src/libraries/dicephysics/qml/SideMenu.qml:235
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:257
+#: src/libraries/dicephysics/qml/SideMenu.qml:256
 msgctxt "SideMenu|"
 msgid "Share rolls"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:258
+#: src/libraries/dicephysics/qml/SideMenu.qml:257
 msgctxt "SideMenu|"
 msgid "(Experimental)"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:270
+#: src/libraries/dicephysics/qml/SideMenu.qml:269
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Duration: %1s"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/SideMenu.qml:271
+#: src/libraries/dicephysics/qml/SideMenu.qml:270
 msgctxt "SideMenu|"
 msgid ""
 "Rolls made by remote player will been shown on your screen for few seconds.\n"
