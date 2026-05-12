@@ -23,6 +23,13 @@ ApplicationWindow {
         if (root.height !== Dice3DCtrl.height && Dice3DCtrl.normalDialogMode)
             Dice3DCtrl.size = Qt.size(root.width, root.height)
     }
+    Connections {
+        target: Dice3DCtrl
+        function onNormalDialogModeChanged() {
+            root.x = Qt.binding(function() { return Dice3DCtrl.x })
+            root.y = Qt.binding(function() { return Dice3DCtrl.y })
+        }
+    }
 
     visible: Dice3DCtrl.displayed
 
