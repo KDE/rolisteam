@@ -964,7 +964,7 @@ msgstr "ცხრილის თვისებები"
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:14
 msgctxt "ColumnDefinitionDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:24
 msgctxt "ColumnDefinitionDialog|"
@@ -1877,7 +1877,7 @@ msgstr "ადგილი, სადაც დაგენერირებუ
 #: src/binaries/rcse/preferences/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/binaries/rcse/preferences/preferencesdialog.ui:20
 msgctxt "PreferencesDialog|"
@@ -2127,7 +2127,7 @@ msgstr "თვისების დაყენება ყველა სი
 #: src/binaries/rcse/widgets/codeedit.ui:14
 msgctxt "CodeEdit|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:26
 msgctxt "FieldView|"
@@ -2349,18 +2349,14 @@ msgid "Update Notification"
 msgstr "შეტყობინების განახლება"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
 "გამოსულია ვერსია %1. მეტი ინფორმაციისთვის იხილეთ <a href=\"http://www."
-"rolisteam.org/download\">გადმოწერის გვერდი</a>"
+"rolisteam.org/02_download\">გადმოწერის გვერდი</a>."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4017,12 +4013,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D გაგორება: მანძილი %1 - დრო %2 - ბრუნვა %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "ფანჯარა"
+msgstr "(დიალოგი)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4072,7 +4065,7 @@ msgstr "3D კამათლის ჩვენება დიალოგშ�
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "3D კამათლის ხილულად დატოვება"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
@@ -5340,7 +5333,7 @@ msgstr[1] "%n ფაილი"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:14
 msgctxt "CampaignProperties|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:24
 msgctxt "CampaignProperties|"
@@ -5469,7 +5462,7 @@ msgstr "დაკავშირების თავიდან ცდა"
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:14
 msgctxt "HistoryViewerDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:27
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:34
@@ -5556,7 +5549,7 @@ msgstr "ფაილის გახსნა თქვენი მყარი
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:14
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:22
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5681,7 +5674,7 @@ msgstr "MindMap"
 #: src/libraries/rwidgets/dialogs/newfiledialog.ui:14
 msgctxt "NewFileDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/newfiledialog.ui:22
 msgctxt "NewFileDialog|"
@@ -5701,7 +5694,7 @@ msgstr "ტიპი"
 #: src/libraries/rwidgets/dialogs/persondialog.ui:14
 msgctxt "PersonDialog|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/persondialog.ui:40
 msgctxt "PersonDialog|"
@@ -5810,7 +5803,7 @@ msgstr "Rolisteam-ის თემის შემოტანა"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:14
 msgctxt "PreferencesDialogBox|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:27
 msgctxt "PreferencesDialogBox|"
@@ -6239,7 +6232,7 @@ msgstr "ტიპი შეგიძლიათ აქ იპოვოთ: <a h
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:14
 msgctxt "TipOfDayViewer|"
 msgid "Dialog"
-msgstr "ფანჯარა"
+msgstr "დიალოგი"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
 msgctxt "TipOfDayViewer|"

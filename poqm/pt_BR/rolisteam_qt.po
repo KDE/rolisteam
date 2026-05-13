@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-09 06:18-0300\n"
+"PO-Revision-Date: 2026-05-12 06:44-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -2348,18 +2348,14 @@ msgid "Update Notification"
 msgstr "Atualizar notificação"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"A versão %1 foi lançada. Consulte a <a href=\"https://www.rolisteam.org/"
-"download\">Página de downloads</a> para mais informações."
+"A versão %1 foi lançada. Visite a <a href=\"https://rolisteam."
+"org/02_download/\">Página de downloads</a> para obter a última versão."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4016,12 +4012,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Rolagem 3D: Distância %1 - Tempo %2 - Rotação %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Janela"
+msgstr "(Janela)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4071,7 +4064,7 @@ msgstr "Mostrar dados 3D na caixa de diálogo"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Manter o dado 3D visível"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format

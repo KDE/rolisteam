@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-11 11:30+0200\n"
+"PO-Revision-Date: 2026-05-12 12:32+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2285,18 +2285,15 @@ msgid "Update Notification"
 msgstr "Actualisa Notification"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"Le version %1 ha essite liberate. Pro favor tu observa a <a href=\"https://"
-"www.rolisteam.org/download\">Pagina de discargar</a> per altere information"
+"Le version %1 ha essite publicate. Per favor, visita le pagina de discarga  "
+"<a href=\"https://rolisteam.org/02_download/\"></a> pro obtener le ultime "
+"version."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -3951,12 +3948,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Dialogo"
+msgstr "(Dialogo)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-05-09 12:14+0200\n"
+"PO-Revision-Date: 2026-05-12 08:34+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -2351,18 +2351,14 @@ msgid "Update Notification"
 msgstr "Notificació d'actualització"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"S'ha publicat la versió %1. Doneu una ullada a la <a href=\"https://www."
-"rolisteam.org/download\">pàgina de baixades</a> per a més informació"
+"S'ha publicat la versió %1. Visiteu la <a href=\"https://www.rolisteam.org/"
+"download\">pàgina de baixades</a> per a aconseguir l'última versió."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4032,12 +4028,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll: Distància %1 – Temps %2 – Gir %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Diàleg"
+msgstr "(Diàleg)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4087,7 +4080,7 @@ msgstr "Mostra el dau en 3D en el diàleg"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Mantín visible el dau en 3D"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
@@ -9415,7 +9408,3 @@ msgstr "Adormit"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Embruixat"
-
-#~ msgctxt "SideMenu|"
-#~ msgid "disable mouseArea"
-#~ msgstr "Desactiva l'àrea del ratolí"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-05-09 17:06+0100\n"
+"PO-Revision-Date: 2026-05-12 21:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2351,18 +2351,14 @@ msgid "Update Notification"
 msgstr "Notificación de actualización"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"Se ha publicado la versión %1. Consulte la <a href=\"https://www.rolisteam."
-"org/download\">página de descarga</a> para más información."
+"Se ha publicado la versión %1. Visite la <a href=\"https://rolisteam."
+"org/02_download/\">página de descarga</a> para obtener la última versión."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4027,12 +4023,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Lanzamiento 3D: Distancia %1 - Tiempo %2 - Rotación %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Diálogo"
+msgstr "(Diálogo)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4082,7 +4075,7 @@ msgstr "Mostrar dados en 3D en el diálogo"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Mantener visibles los dados 3D"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
@@ -9407,7 +9400,3 @@ msgstr "Durmiente"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Hechizado"
-
-#~ msgctxt "SideMenu|"
-#~ msgid "disable mouseArea"
-#~ msgstr "desactivar el área del ratón"

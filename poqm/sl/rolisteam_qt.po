@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2026-05-09 08:00+0200\n"
+"PO-Revision-Date: 2026-05-12 07:11+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -2357,18 +2357,14 @@ msgid "Update Notification"
 msgstr "Obvestilo o posodobitvi"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"Objavljen je izid različice %1. Oglejte si <a href=\"http://www.rolisteam."
-"org/download\">stran za prenos</a> za več informacij"
+"Objavljen je izid različice %1. Oglejte si <a href=\"https://rolisteam."
+"org/02_download/\">stran za prenos</a> za pridobitev zadnje različice."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4025,12 +4021,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll : Razdalja %1 - Čas %2 - Vrtenje %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Dialog"
+msgstr "(Dialog)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4080,7 +4073,7 @@ msgstr "Prikaži 3D kocko v pogovornem oknu"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Ohranjaj 3D kocko vidno"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format

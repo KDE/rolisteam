@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-09 13:31+0300\n"
+"PO-Revision-Date: 2026-05-12 08:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2355,18 +2355,14 @@ msgid "Update Notification"
 msgstr "Сповіщення щодо оновлення"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"Випущено версію %1. Будь ласка, зазирніть на <a href=\"https://www.rolisteam."
-"org/download\">сторінку пакунка</a>, щоб дізнатися більше"
+"Випущено версію %1. Будь ласка, зазирніть на <a href=\"https://rolisteam."
+"org/02_download/\">сторінку пакунка</a>, щоб отримати найсвіжішу версію."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4027,12 +4023,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Пр. кидання: Відстань %1 - Час %2 - Обертання %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Діалогове вікно"
+msgstr "(Діалогове вікно)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4082,7 +4075,7 @@ msgstr "Показувати у вікні тривимірну кістку"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Тримати просторову кістку видимою"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format

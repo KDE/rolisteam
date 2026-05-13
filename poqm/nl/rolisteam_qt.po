@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-10 18:22+0200\n"
+"PO-Revision-Date: 2026-05-12 13:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -2344,18 +2344,14 @@ msgid "Update Notification"
 msgstr "Melding bijwerken"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"De versie %1 is vrijgegeven. Neem een kijkje op <a href=\"https://www."
-"rolisteam.org/download\">Downloadpagina</a> voor meer informatie"
+"De versie %1 is vrijgegeven. bezoek de <a href=\"https://www.rolisteam.org/"
+"download\">Downloadpagina</a> om de laatste versie op te halen."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -4011,12 +4007,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D Roll : afstand %1 - tijd %2 - draaiing %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Dialoog"
+msgstr "(Dialoog)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4066,7 +4059,7 @@ msgstr "3D dobbelsteen in dialoog tonen"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Houd 3D-dobbelsteen zichtbaar"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
