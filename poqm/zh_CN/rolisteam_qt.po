@@ -2306,18 +2306,12 @@ msgid "Update Notification"
 msgstr ""
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"%1 版本已发布。如需了解更多信息，请查看 <a href=\"https://www.rolisteam.org/"
-"download\">下载页面</a> 。"
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -3964,12 +3958,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "对话框"
+msgstr ""
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
