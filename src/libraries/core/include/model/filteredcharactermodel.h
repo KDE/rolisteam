@@ -93,6 +93,7 @@ public:
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
     bool lessThan(const QModelIndex& source_left, const QModelIndex& source_right) const override;
+    bool isDefaultFilter() const;
 
 signals:
     void searchChanged();
@@ -114,7 +115,7 @@ signals:
 
 private:
     QString m_search;
-    int m_role= -1;
+    // int m_role= -1;
     Definition m_initiativeCmdDef{All};
     Definition m_propertiesDef{All};
     Definition m_shapeDef{All};
@@ -122,7 +123,7 @@ private:
     Definition m_initiativeScoreDef{All};
     Definition m_avatarDefinition{All};
     Definition m_gmdetailsDef{All};
-    bool m_advanced{};
+    bool m_advanced{false};
     QString m_exclude;
     QString m_tags;
     QString m_excludeTags;

@@ -211,51 +211,94 @@ void FilteredCharacterModel::setSearch(const QString& search)
     emit searchChanged();
 }
 
+bool FilteredCharacterModel::isDefaultFilter() const
+{
+    bool res= m_search.isEmpty();
+    if(advanced() && res)
+    {
+        res&= m_initiativeCmdDef == All;
+        res&= m_propertiesDef == All;
+        res&= m_shapeDef == All;
+        res&= m_actionDef == All;
+        res&= m_initiativeScoreDef == All;
+        res&= m_avatarDefinition == All;
+        res&= m_gmdetailsDef == All;
+        res&= m_exclude.isEmpty();
+        res&= m_tags.isEmpty();
+        res&= m_excludeTags.isEmpty();
+        res&= m_gmdetails.isEmpty();
+        res&= m_hlState == HS_All;
+        res&= m_characterStateId.isEmpty();
+    }
+    return res;
+}
+
 bool FilteredCharacterModel::filterAcceptsRow(int source_row, const QModelIndex& source_parent) const
 {
     using nm= NonPlayableCharacterModel;
     auto nameIndex= sourceModel()->index(source_row, 0, source_parent);
     auto name= sourceModel()->data(nameIndex, nm::RoleName).toString();
     auto tagList= sourceModel()->data(nameIndex, nm::RoleTags).toStringList();
+    auto description= sourceModel()->data(nameIndex, nm::RoleDescription).toString();
 
-    bool accepted= true;
+    if(isDefaultFilter())
+        return true;
+
     if(advanced())
     {
         auto gmdetails= sourceModel()->data(nameIndex, nm::RoleGmDetails).toString();
-        // clang-format off
-        auto avatar= isAccepted<QPixmap>(m_avatarDefinition, sourceModel()->data(nameIndex, nm::RoleAvatar).value<QPixmap>());
-        auto initScore= isAccepted<bool>(m_initiativeScoreDef, sourceModel()->data(nameIndex, nm::RoleHasInitiative).toBool());
-        auto initCmd= isAccepted<QString>(m_initiativeCmdDef, sourceModel()->data(nameIndex, nm::RoleInitCommand).toString());
-        auto actions= isAccepted<int>(m_actionDef, sourceModel()->data(nameIndex, nm::RoleActionCount).toInt());
-        auto properties= isAccepted<int>(m_propertiesDef, sourceModel()->data(nameIndex, nm::RolePropertiesCount).toInt());
-        auto shapes= isAccepted<int>(m_shapeDef, sourceModel()->data(nameIndex, nm::RoleShapeCount).toInt());
-        auto details= isAccepted<QString>(m_gmdetailsDef, gmdetails);
-        auto characterState= m_characterStateId.isEmpty() ? true : (m_characterStateId == sourceModel()->data(nameIndex, nm::RoleState).toString());
 
-        auto current = sourceModel()->data(nameIndex, nm::RoleCurrentHp).toInt();
-        auto min = sourceModel()->data(nameIndex, nm::RoleMinHp).toInt();
-        auto max = sourceModel()->data(nameIndex, nm::RoleMaxHp).toInt();
-        auto health = m_hlState == FilteredCharacterModel::HS_All ? true : m_hlState == FilteredCharacterModel::HS_Full ? current == max : m_hlState == FilteredCharacterModel::HS_Dead ? min == current :  (current > min && current < max);
-        // clang-format on
+        if(!(m_search.isEmpty() ?
+                 true :
+                 (name.contains(m_search, Qt::CaseInsensitive) || description.contains(m_search, Qt::CaseInsensitive))))
+            return false;
+        // if(!(m_search.isEmpty() ? true : )))
+        //            return false;
+        if(!(m_tags.isEmpty() ? true : tagList.join(QString()).contains(m_tags, Qt::CaseInsensitive)))
+            return false;
+        if((m_excludeTags.isEmpty() ? false : tagList.join(QString()).contains(m_excludeTags, Qt::CaseInsensitive)))
+            return false;
+        if(!isAccepted<bool>(m_initiativeScoreDef, sourceModel()->data(nameIndex, nm::RoleHasInitiative).toBool()))
+            return false;
+        if(!isAccepted<QString>(m_initiativeCmdDef, sourceModel()->data(nameIndex, nm::RoleInitCommand).toString()))
+            return false;
+        if(!isAccepted<int>(m_actionDef, sourceModel()->data(nameIndex, nm::RoleActionCount).toInt()))
+            return false;
+        if(!isAccepted<int>(m_propertiesDef, sourceModel()->data(nameIndex, nm::RolePropertiesCount).toInt()))
+            return false;
+        if(!isAccepted<int>(m_shapeDef, sourceModel()->data(nameIndex, nm::RoleShapeCount).toInt()))
+            return false;
+        if(!isAccepted<QString>(m_gmdetailsDef, gmdetails))
+            return false;
+        if(!(m_characterStateId.isEmpty() ?
+                 true :
+                 (m_characterStateId == sourceModel()->data(nameIndex, nm::RoleState).toString())))
+            return false;
 
-        auto nameval= m_search.isEmpty() ? true : name.contains(m_search, Qt::CaseInsensitive);
-        auto gmDetails= m_gmdetails.isEmpty() ? true : gmdetails.contains(m_gmdetails, Qt::CaseInsensitive);
-        auto exclude= !(m_exclude.isEmpty() ? false : name.contains(m_exclude, Qt::CaseInsensitive));
-        auto tags= m_tags.isEmpty() ? true : tagList.join(QString()).contains(m_tags, Qt::CaseInsensitive);
-        auto excludeTags
-            = !(m_excludeTags.isEmpty() ? false : tagList.join(QString()).contains(m_excludeTags, Qt::CaseInsensitive));
-
-        accepted= avatar & initScore & actions & properties & shapes & details & nameval & exclude & tags & excludeTags
-                  & initCmd & health & gmDetails & characterState;
+        auto current= sourceModel()->data(nameIndex, nm::RoleCurrentHp).toInt();
+        auto min= sourceModel()->data(nameIndex, nm::RoleMinHp).toInt();
+        auto max= sourceModel()->data(nameIndex, nm::RoleMaxHp).toInt();
+        auto health= m_hlState == FilteredCharacterModel::HS_All  ? true :
+                     m_hlState == FilteredCharacterModel::HS_Full ? current == max :
+                     m_hlState == FilteredCharacterModel::HS_Dead ? min == current :
+                                                                    (current > min && current < max);
+        if(!health)
+            return false;
+        if(!(m_gmdetails.isEmpty() ? true : gmdetails.contains(m_gmdetails, Qt::CaseInsensitive)))
+            return false;
+        if((m_exclude.isEmpty() ? false : name.contains(m_exclude, Qt::CaseInsensitive)))
+            return false;
+        if(!isAccepted<QPixmap>(m_avatarDefinition, sourceModel()->data(nameIndex, nm::RoleAvatar).value<QPixmap>()))
+            return false;
+        return true;
     }
     else
     {
         auto nameVal= m_search.isEmpty() ? true : name.contains(m_search, Qt::CaseInsensitive);
         auto tags= m_search.isEmpty() ? true : tagList.join(QString()).contains(m_search, Qt::CaseInsensitive);
-        accepted= (nameVal || tags);
+        auto descVal= m_search.isEmpty() ? true : description.contains(m_search, Qt::CaseInsensitive);
+        return (nameVal || tags || descVal);
     }
-
-    return accepted;
 }
 
 bool FilteredCharacterModel::lessThan(const QModelIndex& source_left, const QModelIndex& source_right) const
