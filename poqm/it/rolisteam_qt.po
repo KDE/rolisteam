@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-03 11:08+0200\n"
+"PO-Revision-Date: 2026-05-12 19:21+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2355,19 +2355,14 @@ msgid "Update Notification"
 msgstr "Notifica di aggiornamento"
 
 #: src/binaries/widget/mainwindow.cpp:913
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"È stata rilasciata la versione %1. Per ulteriori informazioni, dai "
-"un'occhiata alla <a href=\"https://www.rolisteam.org/download\">Pagina "
-"Download</a>"
+"È stata rilasciata la versione %1. Per ottenere l'ultima versione, visita la "
+"<a href=\"https://rolisteam.org/02_download\">Pagina degli scaricamenti</a>."
 
 #: src/binaries/widget/mainwindow.cpp:921
 #, qt-format
@@ -3910,6 +3905,8 @@ msgstr "Sei stato/a espulso/a dalla partita."
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
 msgstr ""
+"Errore: il controller del riproduttore è vuoto. Il comando PlayerUpdate non "
+"può funzionare."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -4024,12 +4021,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Lancio in 3D: distanza %1 - tempo %2 - rotazione %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:34
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Finestra"
+msgstr "(Finestra di dialogo)"
 
 #: src/libraries/dicephysics/qml/Main.qml:45
 msgctxt "Main|"
@@ -4079,7 +4073,7 @@ msgstr "Mostra dado in 3D nella finestra di dialogo"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "Mantieni visibile il dado in 3D"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
@@ -8526,12 +8520,9 @@ msgid "Rule"
 msgstr "Regola"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Promozione"
+msgstr "Promuovi in"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
