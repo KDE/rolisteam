@@ -210,6 +210,17 @@ int main(int argc, char* argv[])
                              states.submitEvent(disconnected);
                      });
 
+    QObject::connect(&connectionDialog, &SelectConnectionProfileDialog::finished,
+                     [&states, &connectionDialog, &mainWindow](int result)
+                     {
+                         if(result == QDialog::Rejected)
+                         {
+                             mainWindow.makeVisible(false);
+                             connectionDialog.setVisible(false);
+                             states.submitEvent(quit);
+                         }
+                     });
+
     // showResources();
 
     states.start();

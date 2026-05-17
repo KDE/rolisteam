@@ -51,7 +51,18 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
     setWidget(wid);
 
     m_ui->m_view->setDocument(m_document.get());
+    m_ui->m_pagesView->setDocument(m_document.get());
+    m_ui->m_pagesView->setZoomFactor(0.2);
+    m_ui->m_pagesView->setPageSpacing(0);
+    m_ui->m_pagesView->setPageMode(QPdfView::PageMode::MultiPage);
+    m_ui->m_pagesView->setZoomMode(QPdfView::ZoomMode::Custom);
+    auto margins= m_ui->m_pagesView->documentMargins();
+    margins.setTop(0);
+    margins.setBottom(0);
+    m_ui->m_pagesView->setDocumentMargins(margins);
 
+    m_ui->m_pagesView->installEventFilter(this);
+    // connect(m_ui->m_pagesView, &QPdfView::mouseDoubleClick, this, [this]() {});
     QPdfBookmarkModel* bookmarkModel= new QPdfBookmarkModel(this);
     m_ui->bookmarkView->setModel(bookmarkModel);
     bookmarkModel->setDocument(m_document.get());
@@ -84,12 +95,16 @@ PdfViewer::PdfViewer(PdfController* ctrl, QWidget* parent)
                 delete buf;
             });
 
-    auto updateTitle = [this]()
-    {
-        setWindowTitle(tr("%1 - PDFViewer").arg(m_pdfCtrl->name()));
-    };
+    auto updateTitle= [this]() { setWindowTitle(tr("%1 - PDFViewer").arg(m_pdfCtrl->name())); };
     connect(m_pdfCtrl, &PdfController::nameChanged, this, updateTitle);
     updateTitle();
+
+    auto verti= m_ui->m_pagesView->verticalScrollBar();
+    if(m_document->pageCount() > 0)
+    {
+        verti->setSingleStep(verti->maximum() / m_document->pageCount());
+        verti->setPageStep(verti->singleStep() * 10);
+    }
 }
 
 PdfViewer::~PdfViewer() {}
@@ -216,9 +231,7 @@ void PdfViewer::makeConnections()
     connect(m_ui->m_nextPageAct, &QAction::triggered, nav, &QPdfPageNavigator::forward);
     connect(m_ui->m_previousPageAct, &QAction::triggered, nav, &QPdfPageNavigator::back);
     connect(m_ui->m_curentPage, &QSpinBox::valueChanged, this,
-            [this, nav]() {
-                nav->update(m_ui->m_curentPage->value() - 1, QPointF{0, 0}, nav->currentZoom());
-            });
+            [this, nav]() { nav->update(m_ui->m_curentPage->value() - 1, QPointF{0, 0}, nav->currentZoom()); });
 
     m_ui->m_view->installEventFilter(this);
 
@@ -237,8 +250,6 @@ void PdfViewer::makeConnections()
 
     m_ui->m_splitter->setCollapsible(0, true);
     m_ui->m_splitter->setCollapsible(1, false);
-
-
 }
 
 bool PdfViewer::eventFilter(QObject* obj, QEvent* event)
@@ -249,10 +260,30 @@ bool PdfViewer::eventFilter(QObject* obj, QEvent* event)
         m_overlay->setGeometry({m_ui->m_view->mapFromParent(geo.topLeft()), geo.size()});
         return QObject::eventFilter(obj, event);
     }
+    else if(event->type() == QEvent::MouseButtonDblClick && obj == m_ui->m_pagesView)
+    {
+        manageDoubleClick(dynamic_cast<QMouseEvent*>(event));
+        return QObject::eventFilter(obj, event);
+    }
     else
     {
         return QObject::eventFilter(obj, event);
     }
+}
+
+void PdfViewer::manageDoubleClick(QMouseEvent* e)
+{
+    auto pos= m_ui->m_pagesView->viewport()->mapFromParent(e->pos());
+    auto verti= m_ui->m_pagesView->verticalScrollBar();
+    if(m_document->pageCount() == 0)
+        return;
+    qreal pixelPerPage
+        = static_cast<qreal>(verti->maximum() + m_ui->m_pagesView->viewport()->height()) / m_document->pageCount();
+    int page= std::floor(static_cast<qreal>(verti->value() + pos.y()) / pixelPerPage);
+    auto nav= m_ui->m_view->pageNavigator();
+    if(!nav)
+        return;
+    nav->update(page, QPointF{0, 0}, nav->currentZoom());
 }
 
 void PdfViewer::extractImage()
@@ -354,8 +385,6 @@ void PdfViewer::showOverLay()
     }
 }
 
-
-
 void PdfViewer::contextMenuEvent(QContextMenuEvent* event)
 {
     QMenu menu(this);
@@ -371,4 +400,3 @@ void PdfViewer::contextMenuEvent(QContextMenuEvent* event)
 
     menu.exec(event->globalPos());
 }
-

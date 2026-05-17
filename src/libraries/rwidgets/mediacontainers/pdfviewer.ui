@@ -275,6 +275,11 @@
        <attribute name="title">
         <string>Pages</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPdfView" name="m_pagesView" native="true"/>
+        </item>
+       </layout>
       </widget>
      </widget>
      <widget class="QPdfView" name="m_view" native="true"/>

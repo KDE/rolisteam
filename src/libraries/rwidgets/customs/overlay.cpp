@@ -105,10 +105,12 @@ void Overlay::paintEvent(QPaintEvent*)
     auto s= m_selectedRect.width() / 3;
 
     m_centerRect= m_selectedRect.adjusted(s, s, -s, -s);
+    auto side= std::min(m_centerRect.width(), m_centerRect.height());
+    auto center= m_centerRect.center();
+    m_centerRect= QRect{center.x() - side / 2, center.y() - side / 2, side, side};
     painter.fillRect(m_centerRect, QColor(255, 0, 0, 120));
 
     QImage arrows(m_centerRect.width(), m_centerRect.height(), QImage::Format_ARGB32);
-    ;
     {
         QSvgRenderer render(QString(":/resources/rolistheme/4arrows.svg"));
         arrows.fill(Qt::transparent);

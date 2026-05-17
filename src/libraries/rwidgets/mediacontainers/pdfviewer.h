@@ -87,6 +87,7 @@ protected slots:
     void showOverLay();
     void sharePdfTo();
     void bookmarkSelected(const QModelIndex& index);
+    void manageDoubleClick(QMouseEvent* e);
 
 private:
     Ui::PdfViewer* m_ui= nullptr;

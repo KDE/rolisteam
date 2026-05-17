@@ -238,6 +238,7 @@ void TestAntaFilter::advancedFilterModel()
     QFETCH(QString, propertyName);
     QFETCH(QVariant, propertyValue);
     QFETCH(int, result);
+    qDebug() << propertyName << propertyValue;
 
     m_filterModel->setAdvanced(true);
 
@@ -255,42 +256,43 @@ void TestAntaFilter::advancedFilterModel_data()
     QTest::addColumn<QVariant>("propertyValue");
     QTest::addColumn<int>("result");
 
-    static QList<PropertyInfo> infos{
-        {"search", {"", "lynn", "otomo", "ikoma", "john", "kahime", "luna", "ka", "zzz"}, {6, 1, 1, 1, 1, 1, 1, 3, 0}},
-        {"exclude",
-         {"", "lynn", "otomo", "ikoma", "john", "kahime", "luna", "ka", "zzz", "a"},
-         {6, 5, 5, 5, 5, 5, 5, 3, 6, 0}},
-        {"tags", {"", "l5r", "singer", "girl"}, {6, 3, 1, 2}},
-        {"excludeTags", {"", "l5r", "singer", "girl"}, {6, 3, 5, 4}},
-        {"avatarDefinition",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 0, 6}},
-        {"initiativeScoreDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 2, 4}},
-        {"actionDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 4, 2}},
-        {"shapeDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 3, 3}},
-        {"propertiesDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 3, 3}},
-        {"initiativeCmdDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 3, 3}},
-        {"gmdetailsDef",
-         {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
-          campaign::FilteredCharacterModel::Without},
-         {6, 3, 3}},
-        {"gmdetails", {"", "e", "hawk"}, {6, 2, 1}}};
+    static QList<PropertyInfo> infos{{"search",
+                                      {"", "lynn", "otomo", "ikoma kae", "john", "kahime", "luna", "ka", "zzz"},
+                                      {6, 1, 1, 1, 1, 1, 1, 3, 0}},
+                                     {"exclude",
+                                      {"", "lynn", "otomo", "ikoma", "john", "kahime", "luna", "ka", "zzz", "a"},
+                                      {6, 5, 5, 5, 5, 5, 5, 3, 6, 0}},
+                                     {"tags", {"", "l5r", "singer", "girl"}, {6, 3, 1, 2}},
+                                     {"excludeTags", {"", "l5r", "singer", "girl"}, {6, 3, 5, 4}},
+                                     {"avatarDefinition",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 0, 6}},
+                                     {"initiativeScoreDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 2, 4}},
+                                     {"actionDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 4, 2}},
+                                     {"shapeDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 3, 3}},
+                                     {"propertiesDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 3, 3}},
+                                     {"initiativeCmdDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 3, 3}},
+                                     {"gmdetailsDef",
+                                      {campaign::FilteredCharacterModel::All, campaign::FilteredCharacterModel::With,
+                                       campaign::FilteredCharacterModel::Without},
+                                      {6, 3, 3}},
+                                     {"gmdetails", {"", "e", "hawk"}, {6, 2, 1}}};
 
     int i= 0;
     for(auto& info : infos)
@@ -301,7 +303,7 @@ void TestAntaFilter::advancedFilterModel_data()
             continue;
         }
         int j= 0;
-        for(const auto& value : info.values)
+        for(const auto& value : std::as_const(info.values))
         {
             QTest::addRow("Filter [%d x %d]", i, j) << info.name << value << info.matchingCount[j];
             ++j;
