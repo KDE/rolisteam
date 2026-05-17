@@ -390,6 +390,10 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                 model->setData(index, finalPath);
             });
 
+    connect(m_cloneCharacterAct.get(), &QAction::triggered, this, [this](){
+                m_ctrl->cloneCharacter(m_currentItemId);
+            });
+
     connect(ui->m_sizeEdit, QOverload<int>::of(&QSpinBox::valueChanged), this,
             [=]
             {

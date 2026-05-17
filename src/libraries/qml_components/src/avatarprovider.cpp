@@ -20,8 +20,10 @@
 #include <qml_components/avatarprovider.h>
 
 #include <data/person.h>
-#include <model/playermodel.h>
+#include "data/character.h"
 
+#include <model/playermodel.h>
+#include "worker/characterfinder.h"
 #include "utils/iohelper.h"
 
 AvatarProvider::AvatarProvider(PlayerModel* model)
@@ -41,6 +43,12 @@ QImage AvatarProvider::requestImage(const QString& id, QSize* size, const QSize&
         return resize(m_default);
 
     auto person= m_playerModel->personById(id);
+
+    if(!person)
+    {
+        CharacterFinder finder;
+        person = finder.find(id);
+    }
 
     if(!person)
     {

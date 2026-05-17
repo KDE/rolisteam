@@ -70,6 +70,8 @@ void RollInitCommand::redo()
                       if(!character)
                           return;
                       auto cmd= character->initCommand();
+                      auto variables = character->variableList();
+                      diceparser->setVariableDictionary(variables);
                       if(diceparser->parseLine(cmd))
                       {
                           diceparser->start();
@@ -77,7 +79,6 @@ void RollInitCommand::redo()
                                                                  { return value; });
                           m_diceparser->readErrorAndWarning();
                           auto json= IOHelper::textByteArrayToJsonObj(jsonstr.toLocal8Bit());
-                          qDebug() << "jsonstr" << jsonstr << " value:" << json["scalar"].toString().toInt();
                           character->setInitiativeScore(static_cast<int>(json["scalar"].toString().toInt()));
                       }
                   });

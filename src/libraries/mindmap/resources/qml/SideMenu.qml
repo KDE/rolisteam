@@ -152,7 +152,7 @@ Drawer {
                     enabled: mediaCtrl.readWrite
                     Image {
                         Layout.column: 0
-                        source: hasPicture ? "image://nodeImages/%1".arg(item.id) : ""
+                        source: hasPicture ? "image://nodeImages/%1".arg(item.id) : objectItem.imageUri
                         sourceSize.width: 100
                         sourceSize.height: 100
                         Layout.preferredWidth: Math.min(_drawer.width/4, 100)

@@ -46,7 +46,8 @@ CharacterItemController::CharacterItemController(const std::map<QString, QVarian
         m_tool= params.at(Core::vmapkeys::KEY_PLAYABLECHARACTER).toBool() ? Core::SelectableTool::PlayableCharacter :
                                                                             Core::SelectableTool::NonPlayableCharacter;
 
-    if(params.end() != params.find(Core::vmapkeys::KEY_CHARAC_ID) && playableCharacter())
+
+    if(params.end() != params.find(Core::vmapkeys::KEY_CHARAC_ID))
     {
         m_characterId= params.at(Core::vmapkeys::KEY_CHARAC_ID).value<QString>();
         if(!m_characterId.isEmpty())
@@ -56,23 +57,21 @@ CharacterItemController::CharacterItemController(const std::map<QString, QVarian
             findCharacter();
         }
     }
-
-    Character* character;
-    if(params.end() != params.find(Core::vmapkeys::KEY_CHARACTER))
-    {
-        character= params.at(Core::vmapkeys::KEY_CHARACTER).value<Character*>();
-        if(character != m_character)
-            m_characterStored.reset(character);
-    }
-    else
-    {
-        character= new Character();
-        VectorialMapMessageHelper::fetchCharacter(params, character);
-        m_characterStored.reset(character);
-    }
-
     if(!m_character)
     {
+        Character* character;
+        if(params.end() != params.find(Core::vmapkeys::KEY_CHARACTER))
+        {
+            character= params.at(Core::vmapkeys::KEY_CHARACTER).value<Character*>();
+            if(character != m_character)
+                m_characterStored.reset(character);
+        }
+        else
+        {
+            character= new Character();
+            VectorialMapMessageHelper::fetchCharacter(params, character);
+            m_characterStored.reset(character);
+        }
         setCharacter(m_characterStored.get());
     }
 
@@ -354,7 +353,7 @@ QString CharacterItemController::text() const
 
     if(m_ctrl->npcNumberVisible() && !playableCharacter())
     {
-        auto number= playableCharacter() ? QStringLiteral("") : QString::number(m_number);
+        auto number= playableCharacter() ? QString() : QString::number(m_number);
         label << number;
     }
 
@@ -605,12 +604,14 @@ void CharacterItemController::runCommand(int index)
         return;
 
     auto cmd= list[index];
-    m_ctrl->runDiceCommand({this}, cmd->command());
+    m_ctrl->runDiceCommand({this}, tr("%1 # Action %2").arg(cmd->command(), cmd->name()));
 }
 
 QString CharacterItemController::characterId() const
 {
-    return playableCharacter() ? m_characterId : QString{};
+    if(m_character)
+        return m_character->uuid();
+    return {};
 }
 
 void CharacterItemController::setCharacterId(const QString& newCharacterId)

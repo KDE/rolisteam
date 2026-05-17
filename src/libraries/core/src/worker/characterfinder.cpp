@@ -48,7 +48,7 @@ bool CharacterFinder::setUpConnect()
             });
     return true;
 }
-bool CharacterFinder::isReady()
+bool CharacterFinder::isReady() const
 {
     return (m_pcModel && m_npcModel && m_playerModel);
 }
@@ -66,7 +66,7 @@ void CharacterFinder::setPlayerModel(PlayerModel* model)
     m_playerModel= model;
 }
 
-Character* CharacterFinder::find(const QString& id)
+Character* CharacterFinder::find(const QString& id) const
 {
     qDebug() << "character finder" << id;
     if(!isReady())
@@ -81,4 +81,13 @@ Character* CharacterFinder::find(const QString& id)
         qDebug() << "VMAP: find isNPc" << res->isNpc();
     qDebug() << "character found:" << res;
     return res;
+}
+
+QHash<QString, QString> CharacterFinder::variableDictionnary(const QString &characterId) const
+{
+    auto c = find(characterId);
+    if(!c)
+        return {};
+
+    return c->variableList();
 }

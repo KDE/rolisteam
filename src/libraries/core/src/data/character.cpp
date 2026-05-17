@@ -51,6 +51,15 @@ CharacterField::~CharacterField() {}
 
 CharacterShape::CharacterShape() {}
 
+CharacterShape::CharacterShape(const CharacterShape &other)
+{
+    m_name = other.name();
+    m_image = other.image();
+    m_movie.setFileName(other.movie().fileName());
+    m_uri = other.uri();
+    m_size = other.m_size;
+}
+
 QString CharacterShape::name() const
 {
     return m_name;
@@ -154,6 +163,11 @@ void CharacterShape::setSize(int size)
 ///////////////////////////////////
 
 CharacterAction::CharacterAction() {}
+CharacterAction::CharacterAction(const CharacterAction& other)
+{
+    m_name = other.name();
+    m_command = other.command();
+}
 
 QString CharacterAction::name() const
 {
@@ -211,6 +225,12 @@ bool CharacterAction::setData(int col, QVariant value, int role)
 }
 
 CharacterProperty::CharacterProperty() {}
+
+CharacterProperty::CharacterProperty(const CharacterProperty& other)
+{
+    m_name = other.name();
+    m_value = other.value();
+}
 
 QString CharacterProperty::name() const
 {
@@ -324,6 +344,21 @@ QList<CharacterAction*> Character::actionList() const
 QList<CharacterProperty*> Character::propertiesList() const
 {
     return m_propertyList;
+}
+QHash<QString, QString>  Character::variableList() const
+{
+    QHash<QString, QString> variables;
+    for(auto const pro : std::as_const(m_propertyList))
+    {
+        variables.insert(pro->name(), pro->value());
+    }
+    #ifndef Q_OS_ANDROID
+    if(m_sheet)
+    {
+        variables.insert(m_sheet->getVariableDictionnary());
+    }
+    #endif
+    return variables;
 }
 
 void Character::defineActionList(const QList<CharacterAction*>& actions)

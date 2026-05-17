@@ -47,6 +47,7 @@ void readMindNode(QJsonObject& obj, mindmap::MindNode* node)
         return;
     updatePositionItem(obj, node);
     obj[mindmap::JSON_NODE_STYLE]= node->styleIndex();
+    obj[mindmap::JSON_NODE_IMAGE]= node->imageUri();
     obj[mindmap::JSON_NODE_DESC]= node->description();
     obj[mindmap::JSON_NODE_TAGS]= QJsonArray::fromStringList(node->tags());
 }
@@ -131,6 +132,7 @@ mindmap::MindNode* fetchMindNode(const QJsonObject& obj)
     fetchPositionItem(obj, node);
 
     node->setStyleIndex(obj[mindmap::JSON_NODE_STYLE].toInt());
+    node->setImageUri(obj[mindmap::JSON_NODE_IMAGE].toString());
     node->setDescription(obj[mindmap::JSON_NODE_DESC].toString());
     auto tagArray= obj[mindmap::JSON_NODE_TAGS].toArray();
     QStringList tags;

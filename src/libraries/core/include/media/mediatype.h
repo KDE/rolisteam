@@ -715,51 +715,6 @@ constexpr auto JSON_CHAR_INIT_SCORE_DEFINED("InitScoreDefined");
 } // namespace character
 } // namespace vmap
 
-namespace Mindmap
-{
-/*constexpr auto JSON_CTRL_DEFAULT_INDEX_STYLE{"defaultIndexStyle"};
-constexpr auto JSON_CTRL_SPACING{"spacing"};
-constexpr auto JSON_CTRL_LINK_LABEL_VISIBILITY{"linklabelvisibility"};
-
-constexpr auto JSON_MINDITEM_ID{"id"};
-constexpr auto JSON_MINDITEM_TEXT{"text"};
-constexpr auto JSON_MINDITEM_VISIBLE{"visible"};
-constexpr auto JSON_MINDITEM_SELECTED{"selected"};
-constexpr auto JSON_MINDITEM_TYPE{"type"};
-
-constexpr auto JSON_POSITIONED_POSITIONX{"x"};
-constexpr auto JSON_POSITIONED_POSITIONY{"y"};
-constexpr auto JSON_POSITIONED_CENTERX{"center.x"};
-constexpr auto JSON_POSITIONED_CENTERY{"center.y"};
-constexpr auto JSON_POSITIONED_WIDTH{"width"};
-constexpr auto JSON_POSITIONED_HEIGHT{"height"};
-constexpr auto JSON_POSITIONED_DRAGGED{"isDragged"};
-constexpr auto JSON_POSITIONED_OPEN{"open"};
-constexpr auto JSON_POSITIONED_LOCKED{"locked"};
-constexpr auto JSON_POSITIONED_MASS{"mass"};
-
-constexpr auto JSON_NODE_IMAGE{"image"};
-constexpr auto JSON_NODE_STYLE{"styleindex"};
-constexpr auto JSON_NODE_DESC{"description"};
-constexpr auto JSON_NODE_TAGS{"tags"};
-constexpr auto JSON_NODES{"nodes"};
-
-constexpr auto JSON_LINKS{"links"};
-constexpr auto JSON_LINK_IDSTART{"idStart"};
-constexpr auto JSON_LINK_IDEND{"idEnd"};
-constexpr auto JSON_LINK_DIRECTION{"direction"};
-
-constexpr auto JSON_PACK_TITLE{"title"};
-constexpr auto JSON_PACK_MINMARGE{"minimumMargin"};
-constexpr auto JSON_PACK_INTERNAL_CHILDREN{"internalChildren"};
-constexpr auto JSON_PACK_PACKAGES{"packages"};
-
-constexpr auto JSON_IMGS{"images"};
-constexpr auto JSON_IMG_ID{"id"};
-constexpr auto JSON_IMG_DATA{"data"};
-constexpr auto JSON_IMG_URL{"url"};*/
-} // namespace Mindmap
-
 namespace Audio
 {
 constexpr auto JSON_AUDIO_VOLUME{"volume"};

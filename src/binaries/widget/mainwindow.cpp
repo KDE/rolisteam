@@ -419,7 +419,6 @@ void MainWindow::showTipChecker()
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
-    qDebug() << "closeEvent";
     auto i= mayBeSaved();
     if(QMessageBox::Save == i)
     { // GM

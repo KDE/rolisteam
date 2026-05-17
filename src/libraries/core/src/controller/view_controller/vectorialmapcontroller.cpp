@@ -707,7 +707,7 @@ void VectorialMapController::runDiceCommand(QList<QPointer<vmap::CharacterItemCo
     // addCommand(new RollComma(list));
     QStringList ids;
     std::transform(std::begin(list), std::end(list), std::back_inserter(ids),
-                   [](const QPointer<vmap::CharacterItemController>& p) { return p->uuid(); });
+                   [](const QPointer<vmap::CharacterItemController>& p) { return p->characterId(); });
     emit rollDiceCommand(ids, cmd);
 }
 

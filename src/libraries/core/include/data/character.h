@@ -54,6 +54,7 @@ class NETWORK_EXPORT CharacterShape : public CharacterField
 {
 public:
     CharacterShape();
+    CharacterShape(const CharacterShape& other);
 
     bool hasMovie();
 
@@ -90,6 +91,7 @@ class NETWORK_EXPORT CharacterAction : public CharacterField
 {
 public:
     CharacterAction();
+    CharacterAction(const CharacterAction& other);
 
     QString name() const;
     void setName(const QString& name);
@@ -113,6 +115,7 @@ class NETWORK_EXPORT CharacterProperty : public CharacterField
 {
 public:
     CharacterProperty();
+    CharacterProperty(const CharacterProperty& other);
 
     QString name() const;
     void setName(const QString& name);
@@ -265,6 +268,8 @@ public:
     QList<CharacterShape*> shapeList() const;
     QList<CharacterProperty*> propertiesList() const;
 
+    QHash<QString, QString> variableList() const;
+
     void defineActionList(const QList<CharacterAction*>& actions);
     void defineShapeList(const QList<CharacterShape*>& shape);
     void definePropertiesList(const QList<CharacterProperty*>& props);
@@ -292,7 +297,7 @@ signals:
     void initCommandChanged();
     void hasInitScoreChanged();
 
-private:
+protected:
     bool m_isNpc= true;
     int m_number= 0;
     static QList<CharacterState*>* m_stateList;

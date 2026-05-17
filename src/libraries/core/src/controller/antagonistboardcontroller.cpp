@@ -182,6 +182,11 @@ void AntagonistBoardController::setCharacter(NonPlayableCharacter* character)
     emit characterChanged();
 }
 
+void AntagonistBoardController::cloneCharacter(const QString &id)
+{
+    m_editor->campaign()->cloneCharacter(id);
+}
+
 void AntagonistBoardController::saveToken()
 {
     if(!m_character)

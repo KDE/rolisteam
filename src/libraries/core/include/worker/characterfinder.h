@@ -42,9 +42,10 @@ class CORE_EXPORT CharacterFinder : public QObject
 public:
     CharacterFinder()= default;
 
-    bool isReady();
+    bool isReady() const;
 
-    Character* find(const QString& id);
+    Character* find(const QString& id) const;
+    QHash<QString, QString> variableDictionnary(const QString& characterId) const;
 
     static void setNpcModel(campaign::NonPlayableCharacterModel* model);
     static void setPcModel(CharacterModel* model);

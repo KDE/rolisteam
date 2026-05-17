@@ -278,8 +278,8 @@ Pane {
                            }
                            else if(npc)
                            {
-                               console.log("add NPC character: ",text)
-                               root.addImage(drop.urls[0], drop.getDataAsArrayBuffer(text))
+                               //console.log("add NPC character: ",text, drop.urls[0])
+                               //root.addImage(drop.urls[0], drop.getDataAsArrayBuffer(text))
                                root.addCharacter(drop.text, drop.urls[0], drop.colorData)
                            }
 

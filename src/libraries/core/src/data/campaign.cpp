@@ -334,7 +334,10 @@ void Campaign::moveAlias(const QModelIndex& index, Move move)
         break;
     }
 }
-
+void Campaign::cloneCharacter(const QString& id)
+{
+    m_npcModel->cloneCharacter(id);
+}
 void Campaign::addCharacter()
 {
     // TODO command

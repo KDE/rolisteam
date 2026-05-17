@@ -37,6 +37,7 @@ class MINDMAP_EXPORT MindNode : public PositionedItem
     Q_PROPERTY(QString description READ description WRITE setDescription NOTIFY descriptionChanged)
     Q_PROPERTY(QStringList tags READ tags WRITE setTags NOTIFY tagsChanged)
     Q_PROPERTY(QString tagsText READ tagsText WRITE setTagsText NOTIFY tagsChanged)
+    Q_PROPERTY(QString imageUri READ imageUri WRITE setImageUri NOTIFY imageUriChanged FINAL)
 public:
     MindNode(QObject* parent= nullptr);
     virtual ~MindNode();
@@ -46,6 +47,9 @@ public:
     const QStringList& tags() const;
     const QString tagsText() const;
     QString toString(bool withLabel);
+
+    QString imageUri() const;
+    void setImageUri(const QString &newImageUri);
 
 public slots:
     void setTagsText(const QString& newTagsText);
@@ -69,6 +73,7 @@ private:
     int m_styleIndex= 0; // default
     QString m_description;
     QStringList m_tags;
+    QString m_imageUri;
 };
 } // namespace mindmap
 #endif // MINDNODE_H

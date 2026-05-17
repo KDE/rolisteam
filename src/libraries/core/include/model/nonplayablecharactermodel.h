@@ -39,6 +39,7 @@ class CORE_EXPORT NonPlayableCharacter : public Character
     Q_PROPERTY(QString gameMasterDesc READ gameMasterDesc WRITE setGameMasterDesc NOTIFY gameMasterDescChanged)
 public:
     NonPlayableCharacter(QObject* parent= nullptr);
+    NonPlayableCharacter(const NonPlayableCharacter& other);
 
     QStringList tags() const;
     QString avatarPath() const;
@@ -141,6 +142,7 @@ public:
     void addCharacter(NonPlayableCharacter* character);
     void setModelData(const std::vector<NonPlayableCharacter*>& data);
     void removeNpc(const QString& index);
+    void cloneCharacter(const QString& id);
     void refresh(const QString& index);
     void clear();
 

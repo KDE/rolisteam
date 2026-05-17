@@ -86,4 +86,18 @@ void MindNode::setTagsText(const QString& newTagsText)
                    [](const QString& text) { return text.trimmed(); });
     setTags(trimmed);
 }
+
+QString MindNode::imageUri() const
+{
+    return m_imageUri;
+}
+
+void MindNode::setImageUri(const QString &newImageUri)
+{
+    if (m_imageUri == newImageUri)
+        return;
+    m_imageUri = newImageUri;
+    emit imageUriChanged();
+}
+
 } // namespace mindmap

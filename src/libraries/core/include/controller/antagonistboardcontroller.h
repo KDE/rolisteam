@@ -86,6 +86,7 @@ public slots:
     void setSearchText(const QString& text);
     void editCharacter(const QString& id);
     void setCharacter(campaign::NonPlayableCharacter* character);
+    void cloneCharacter(const QString& id);
     void saveToken();
 
     void addCharacter();

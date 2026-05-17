@@ -23,6 +23,7 @@
 #include <set>
 
 #include "data/person.h"
+#include "data/character.h"
 #include "instantmessaging/messagefactory.h"
 #include "model/playermodel.h"
 
@@ -66,6 +67,8 @@ QVariant MessageModel::data(const QModelIndex& index, int role) const
         return var;
 
     auto writer= m_personModel->personById(message->writer());
+    if(!writer)
+        writer = static_cast<Person*>(m_finder.find(message->writer()));
     auto owner= m_personModel->personById(message->owner());
 
     switch(item)

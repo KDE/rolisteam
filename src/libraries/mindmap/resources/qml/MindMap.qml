@@ -145,7 +145,8 @@ Flickable {
             objectName: "node_%1".arg(order)
             description: objectItem.description
             text : objectItem.text
-            source: hasPicture ? "image://nodeImages/%1".arg(objectItem.id) : ""
+            source: hasPicture ? "image://nodeImages/%1".arg(objectItem.id) : objectItem.imageUri
+
             visible: objectItem.visible
             selected: objectItem.selected
             onTextEdited: {

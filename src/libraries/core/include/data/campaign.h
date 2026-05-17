@@ -151,6 +151,7 @@ public slots:
 
     // Characters
     void addCharacter();
+    void cloneCharacter(const QString& id);
     void removeCharacter(const QString& id);
 
 private slots:

@@ -20,11 +20,11 @@
 #include "data/chatroom.h"
 
 #include <QtConcurrent>
-#include <set>
 
 #include "model/playermodel.h"
 #include "worker/utilshelper.h"
 #include <diceparser_qobject/diceroller.h>
+#include "worker/characterfinder.h"
 
 namespace InstantMessaging
 {
@@ -161,7 +161,9 @@ bool ChatRoom::rollDice(const QString& command, const QString& personId)
                 if(!m_diceParser)
                     return {false, tr("No Diceparser Object")};
 
-                auto dict= m_players->variableDictionnary(id);
+                CharacterFinder finder;
+
+                auto dict = finder.variableDictionnary(id);
 
                 auto diceParser= m_diceParser->parser();
 
@@ -198,7 +200,7 @@ bool ChatRoom::rollDice(const QString& command, const QString& personId)
                             style+= QStringLiteral("font-weight:bold;");
                         }
                         if(!style.isEmpty())
-                            resultTmp= QString("<span style=\"%2\">%1</span>").arg(value).arg(style);
+                            resultTmp= QString("<span style=\"%2\">%1</span>").arg(value, style);
                         return resultTmp;
                     });
                 return {true, result};

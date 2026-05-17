@@ -27,6 +27,7 @@
 #include <memory>
 
 #include "instantmessaging/messageinterface.h"
+#include "worker/characterfinder.h"
 
 class PlayerModel;
 namespace InstantMessaging
@@ -80,6 +81,7 @@ private:
     std::vector<std::unique_ptr<MessageInterface>> m_messages;
     QPointer<PlayerModel> m_personModel;
     QString m_localId;
+    CharacterFinder m_finder;
 };
 } // namespace InstantMessaging
 

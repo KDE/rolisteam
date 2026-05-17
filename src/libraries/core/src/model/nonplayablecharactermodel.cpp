@@ -26,6 +26,50 @@ NonPlayableCharacter::NonPlayableCharacter(QObject* parent) : Character(parent)
     setNpc(true);
 }
 
+NonPlayableCharacter::NonPlayableCharacter(const NonPlayableCharacter &other)
+{
+    m_uuid = QUuid::createUuid().toString(QUuid::WithoutBraces);
+    m_tags=other.tags();
+    m_avatarPath = other.avatarPath();
+    m_size = other.size();
+    m_description = other.description();
+    m_gameMasterDesc = other.gameMasterDesc();
+    m_name = other.name();
+    m_avatar = other.avatar();
+
+
+    setNpc(other.isNpc());
+    m_initiativeScore= other.getInitiativeScore();
+    m_initiativeRoll.setCommand(other.initCommand());
+    m_number = other.m_number+1;
+    m_healthPointsCurrent = other.getHealthPointsCurrent();
+    m_healthPointsMax = other.getHealthPointsMax();
+    m_healthPointsMin = other.getHealthPointsMin();
+    m_distancePerTurn = other.getDistancePerTurn();
+    m_hasInitScore = other.hasInitScore();
+    m_stateId = other.stateId();
+    m_lifeColor = other.getLifeColor();
+
+    auto actions = other.actionList();
+    for(auto act : std::as_const(actions))
+    {
+        addAction(new CharacterAction(*act));
+    }
+
+    auto shapes = other.shapeList();
+    for(auto shape : std::as_const(shapes))
+    {
+        addShape(new CharacterShape(*shape));
+    }
+
+    auto properties = other.propertiesList();
+    for(auto pro : std::as_const(properties))
+    {
+        addProperty(new CharacterProperty(*pro));
+    }
+
+}
+
 QStringList NonPlayableCharacter::tags() const
 {
     return m_tags;
@@ -409,6 +453,16 @@ void NonPlayableCharacterModel::removeNpc(const QString& uuid)
     endRemoveRows();
 
     emit characterRemoved(uuid);
+}
+
+void NonPlayableCharacterModel::cloneCharacter(const QString &id)
+{
+    auto character = characterFromUuid(id);
+
+    if(!character)
+        return;
+
+    addCharacter(new NonPlayableCharacter(*character));
 }
 
 void NonPlayableCharacterModel::refresh(const QString& uuid)
