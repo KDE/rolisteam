@@ -1846,7 +1846,7 @@ msgstr "संस्करणम्"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:722
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "साहाय्यम्‌"
@@ -2005,13 +2005,13 @@ msgid "Check Validity"
 msgstr "वैधतां पश्यन्तु"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:673
+#: src/binaries/widget/mainwindow.cpp:672
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&Undo"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:672
+#: src/binaries/widget/mainwindow.cpp:671
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&पुनः करो"
@@ -2413,42 +2413,42 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "गुप्तशब्दं पृच्छन्तु तस्य हैश कीलं च प्रत्यागच्छन्तु ।"
 
-#: src/binaries/widget/mainwindow.cpp:457
+#: src/binaries/widget/mainwindow.cpp:456
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "साइडपैनल"
 
-#: src/binaries/widget/mainwindow.cpp:462
+#: src/binaries/widget/mainwindow.cpp:461
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "पार्श्वफलकाः"
 
-#: src/binaries/widget/mainwindow.cpp:472
+#: src/binaries/widget/mainwindow.cpp:471
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "खिलाडयः सूची"
 
-#: src/binaries/widget/mainwindow.cpp:473
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "सर्वे अभियानदस्तावेजाः"
 
-#: src/binaries/widget/mainwindow.cpp:474
+#: src/binaries/widget/mainwindow.cpp:473
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "प्रतिद्वन्द्वीनां सूची"
 
-#: src/binaries/widget/mainwindow.cpp:475
+#: src/binaries/widget/mainwindow.cpp:474
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "संगीतवादकः"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "सर्वर पटल"
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:476
 #, fuzzy
 #| msgctxt "NotificationZone|"
 #| msgid "Notification Zone"
@@ -2456,7 +2456,7 @@ msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "अधिसूचना क्षेत्र"
 
-#: src/binaries/widget/mainwindow.cpp:492
+#: src/binaries/widget/mainwindow.cpp:491
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "GM Tools"
@@ -2464,7 +2464,7 @@ msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "जीएम टूल्स"
 
-#: src/binaries/widget/mainwindow.cpp:533
+#: src/binaries/widget/mainwindow.cpp:532
 #, fuzzy
 #| msgctxt "Image|"
 #| msgid "Define the new name"
@@ -2472,7 +2472,7 @@ msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "नूतनं नाम परिभाषयतु"
 
-#: src/binaries/widget/mainwindow.cpp:533
+#: src/binaries/widget/mainwindow.cpp:532
 #, fuzzy
 #| msgctxt "PersonEdit|"
 #| msgid "Name:"
@@ -2480,34 +2480,34 @@ msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "नामः:"
 
-#: src/binaries/widget/mainwindow.cpp:553
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "जालपुटं उद्घाटयन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:553
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "जालपुटस्य url:"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "नक्शा उद्घाटयतु"
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "मानचित्रम् :"
 
-#: src/binaries/widget/mainwindow.cpp:575
-#: src/binaries/widget/mainwindow.cpp:614
-#: src/binaries/widget/mainwindow.cpp:844 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:574
+#: src/binaries/widget/mainwindow.cpp:613
+#: src/binaries/widget/mainwindow.cpp:843 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "खुला अभियान"
 
-#: src/binaries/widget/mainwindow.cpp:724
+#: src/binaries/widget/mainwindow.cpp:723
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2517,18 +2517,18 @@ msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "%1 इत्यस्य दस्तावेजीकरणं अत्र अन्तर्जालद्वारा प्राप्यते :<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:759
+#: src/binaries/widget/mainwindow.cpp:758
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "समर्थनम्‌"
 
-#: src/binaries/widget/mainwindow.cpp:760
+#: src/binaries/widget/mainwindow.cpp:759
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "%1 दानस्य पृष्ठं अत्र अन्तर्जालद्वारा प्राप्यते :<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:824
+#: src/binaries/widget/mainwindow.cpp:823
 #, fuzzy, qt-format
 #| msgctxt "rcse::MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
@@ -2538,23 +2538,23 @@ msgid ""
 "Last save: %1 min(s) ago"
 msgstr "किं भवान् वर्तमानं QML कोडं मेटयितुम् इच्छति ?"
 
-#: src/binaries/widget/mainwindow.cpp:826
+#: src/binaries/widget/mainwindow.cpp:825
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:832
+#: src/binaries/widget/mainwindow.cpp:831
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "%1 त्यजतु "
 
-#: src/binaries/widget/mainwindow.cpp:912
+#: src/binaries/widget/mainwindow.cpp:911
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "सूचना अद्यतन करें"
 
-#: src/binaries/widget/mainwindow.cpp:913
+#: src/binaries/widget/mainwindow.cpp:912
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2568,106 +2568,106 @@ msgstr ""
 "%1 संस्करणं मुक्तम् अस्ति । अधिकविवरणार्थं <a href=\"https://www.rolisteam.org/"
 "download\">Download पृष्ठं</a> पश्यन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:921
+#: src/binaries/widget/mainwindow.cpp:920
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 केवलं क्रीडने सम्मिलितः भवति ।"
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:924
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 इत्यस्य सम्यक् संस्करणं नास्ति: %2."
 
-#: src/binaries/widget/mainwindow.cpp:931
+#: src/binaries/widget/mainwindow.cpp:930
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 केवलं क्रीडां त्यजति ।"
 
-#: src/binaries/widget/mainwindow.cpp:1014
+#: src/binaries/widget/mainwindow.cpp:1013
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "संयोजनाय <port> इत्यस्य उपयोगाय rollisteam सेट् कुर्वन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1017
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "<server> इत्यनेन सह सम्बद्धं कर्तुं rolisteam सेट् कुर्वन्तु ।"
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1019
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "<role>: gm अथवा pc इति परिभाषयन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1021
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "सेटिङ्ग्स् मेटयित्वा पूर्वनिर्धारित-मापदण्डानां उपयोगं कुर्वन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1024
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "<उपयोक्तृनाम> परिभाषयन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1028
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "PDF सञ्चिकायाः आकारस्य सीमां निष्कासयन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1032
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "अनुवादसञ्चिकायाः मार्गः: <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:1035
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "सर्वरेण सह सम्बद्धं कर्तुं URL परिभाषयन्तु: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1140
+#: src/binaries/widget/mainwindow.cpp:1139
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "%1 उद्घाटयन्तु"
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1236
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "संबद्धः"
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1236
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "न संबद्धम्"
 
-#: src/binaries/widget/mainwindow.cpp:1238
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "सर्वर"
 
-#: src/binaries/widget/mainwindow.cpp:1238
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "ग्राहिका"
 
-#: src/binaries/widget/mainwindow.cpp:1245
+#: src/binaries/widget/mainwindow.cpp:1244
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "जी.एम"
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "खिलाडी"
 
-#: src/binaries/widget/mainwindow.cpp:1278
+#: src/binaries/widget/mainwindow.cpp:1277
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "अज्ञात"
@@ -3393,6 +3393,12 @@ msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr "वैश्विक"
 
+#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:607
+#, qt-format
+msgctxt "CharacterItemController|"
+msgid "%1 # Action %2"
+msgstr ""
+
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
 msgid "Text"
@@ -3521,7 +3527,7 @@ msgid "Campaign Template creation failed on this location: %1"
 msgstr "अस्मिन् स्थाने अभियानसाचानिर्माणं विफलम्: %1"
 
 #: src/libraries/core/src/data/chatroom.cpp:162
-#: src/libraries/core/src/data/chatroom.cpp:169
+#: src/libraries/core/src/data/chatroom.cpp:171
 msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr "न Diceparser Object"
@@ -3636,8 +3642,8 @@ msgctxt "MediaModel|"
 msgid "Date Modified"
 msgstr "तिथि परिवर्तित"
 
-#: src/libraries/core/src/model/messagemodel.cpp:98
-#: src/libraries/core/src/model/messagemodel.cpp:104
+#: src/libraries/core/src/model/messagemodel.cpp:101
+#: src/libraries/core/src/model/messagemodel.cpp:107
 msgctxt "MessageModel|"
 msgid "Invalid Person"
 msgstr "अमान्य व्यक्तिः"
@@ -3647,72 +3653,72 @@ msgctxt "MusicModel|"
 msgid "Title"
 msgstr "शीर्षक"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Avatar"
 msgstr "अवतार"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Name"
 msgstr "नामः"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Description"
 msgstr "वर्णनम्‌"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "GM Details"
 msgstr "जीएम विवरण"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Tags"
 msgstr "टैग्स"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Color"
 msgstr "वर्ण"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Min HP"
 msgstr "मिन एचपी"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Current HP"
 msgstr "वर्तमान एच.पी"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Max HP"
 msgstr "अधिकतम एचपी"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Initiative"
 msgstr "आरम्भः"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Distance Per turn"
 msgstr "दूरं प्रति वारं"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "State"
 msgstr "राज्यम्‌"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "Life Color"
 msgstr "जीवन वर्ण"
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "Init Command"
 msgstr "Init Command इति"
@@ -4279,7 +4285,7 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# 3D रोल : दूरी %1 - समय %2 - परिभ्रमण %3"
 
-#: src/libraries/dicephysics/qml/Main.qml:34
+#: src/libraries/dicephysics/qml/Main.qml:41
 #, fuzzy
 #| msgctxt "ColumnDefinitionDialog|"
 #| msgid "Dialog"
@@ -4287,7 +4293,7 @@ msgctxt "Main|"
 msgid "(Dialog)"
 msgstr "संवादः"
 
-#: src/libraries/dicephysics/qml/Main.qml:45
+#: src/libraries/dicephysics/qml/Main.qml:52
 #, fuzzy
 #| msgctxt "MRichTextEdit|"
 #| msgid "Select an image"
@@ -4295,7 +4301,7 @@ msgctxt "Main|"
 msgid "Select All dice"
 msgstr "एकं चित्रं चिनोतु"
 
-#: src/libraries/dicephysics/qml/Main.qml:52
+#: src/libraries/dicephysics/qml/Main.qml:59
 #, fuzzy
 #| msgctxt "MindMenu|"
 #| msgid "Remove Selection"
@@ -4303,7 +4309,7 @@ msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "चयनं निष्कासयन्तु"
 
-#: src/libraries/dicephysics/qml/Main.qml:59
+#: src/libraries/dicephysics/qml/Main.qml:66
 #, fuzzy
 #| msgctxt "RGraphicsView|"
 #| msgid "Selection"
@@ -4311,7 +4317,7 @@ msgctxt "Main|"
 msgid "Selection by zone"
 msgstr "चयनम्"
 
-#: src/libraries/dicephysics/qml/Main.qml:66
+#: src/libraries/dicephysics/qml/Main.qml:73
 #, fuzzy
 #| msgctxt "MRichTextEdit|"
 #| msgid "Select an image"
@@ -4319,7 +4325,7 @@ msgctxt "Main|"
 msgid "Remove all dice"
 msgstr "एकं चित्रं चिनोतु"
 
-#: src/libraries/dicephysics/qml/Main.qml:73
+#: src/libraries/dicephysics/qml/Main.qml:80
 #, fuzzy
 #| msgctxt "InstantMessagingMain|"
 #| msgid "Settings"
@@ -4502,7 +4508,7 @@ msgctxt "MindMap|"
 msgid "is linked"
 msgstr "सम्बद्धः अस्ति"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:216
+#: src/libraries/mindmap/resources/qml/MindMap.qml:217
 #, fuzzy
 #| msgctxt "InstantMessagingMain|"
 #| msgid "Settings"
@@ -4510,7 +4516,7 @@ msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr "सेटिंग्स्"
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:225
+#: src/libraries/mindmap/resources/qml/MindMap.qml:226
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Add subchannel"
@@ -6788,7 +6794,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "रक्ष्"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:579
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "स्तम्भान् दर्शयतु"
@@ -6806,19 +6812,19 @@ msgstr "अन्वेषण:"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:75
 #: src/libraries/rwidgets/docks/antagonistboard.ui:399
 #: src/libraries/rwidgets/docks/antagonistboard.ui:419
-#: src/libraries/rwidgets/docks/antagonistboard.ui:841
-#: src/libraries/rwidgets/docks/antagonistboard.ui:848
-#: src/libraries/rwidgets/docks/antagonistboard.ui:934
-#: src/libraries/rwidgets/docks/antagonistboard.ui:941
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
+#: src/libraries/rwidgets/docks/antagonistboard.ui:854
+#: src/libraries/rwidgets/docks/antagonistboard.ui:861
+#: src/libraries/rwidgets/docks/antagonistboard.ui:947
+#: src/libraries/rwidgets/docks/antagonistboard.ui:954
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1037
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1044
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1091
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr "..."
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:96
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1211
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr "उन्नतं"
@@ -6983,82 +6989,82 @@ msgctxt "AntagonistBoard|"
 msgid "Max"
 msgstr "मैक्स"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:787
+#: src/libraries/rwidgets/docks/antagonistboard.ui:800
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr "नामपत्र"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:808
+#: src/libraries/rwidgets/docks/antagonistboard.ui:821
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr "कर्माणि"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:874
+#: src/libraries/rwidgets/docks/antagonistboard.ui:887
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr "आकारः"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:895
+#: src/libraries/rwidgets/docks/antagonistboard.ui:908
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr "आकाराः"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:967
+#: src/libraries/rwidgets/docks/antagonistboard.ui:980
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr "सम्पत्तिः"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:988
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1001
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr "गुणाः"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1121
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr "Action योजयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1124
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr "कर्म योजयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1133
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1136
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr "कर्म निष्कासयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1145
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1148
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr "आकारं योजयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1157
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1160
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr "आकारं निष्कासयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1169
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1172
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr "सम्पत्तिं योजयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1181
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1184
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr "सम्पत्तिं निष्कासयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1192
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr "वर्णं योजयतु"
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1200
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr "वर्णं निष्कासयतु"
@@ -8834,37 +8840,37 @@ msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr "आयुः वर्धयतु"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:357
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr "राज्यं परिवर्तयतु"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:383
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr "दृष्टिः आकारः"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr "कर्माणि"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr "आरम्भः"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:399
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr "स्वच्छ पहल"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:416
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr "आकाराः"
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:423
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr "स्वच्छ आकार"
@@ -9248,7 +9254,7 @@ msgctxt "MindMapView|"
 msgid "ReadOnly"
 msgstr "केवलं पठनीयम्"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:89
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:98
 #, fuzzy, qt-format
 #| msgctxt "PdfViewer|"
 #| msgid "%1 - (PDF)"
@@ -9256,12 +9262,12 @@ msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
 msgstr "%1 - (PDF) 1 ."
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:315
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:346
 msgctxt "PdfViewer|"
 msgid "Sharing Pdf File"
 msgstr "Pdf File साझाकरणम्"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:316
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:347
 msgctxt "PdfViewer|"
 msgid ""
 "PDF transfer can be really heavy.\n"
@@ -9345,63 +9351,63 @@ msgctxt "PdfViewer|"
 msgid "Pages"
 msgstr "पृष्ठहरू"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:292
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:297
 msgctxt "PdfViewer|"
 msgid "Crop View"
 msgstr "क्रॉप व्यू"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:303
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:308
 msgctxt "PdfViewer|"
 msgid "Share"
 msgstr "संविभागः"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:308
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:311
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:313
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:316
 msgctxt "PdfViewer|"
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:314
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:319
 msgctxt "PdfViewer|"
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:319
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:324
 msgctxt "PdfViewer|"
 msgid "Image"
 msgstr "छवि"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:327
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:332
 msgctxt "PdfViewer|"
 msgid "Continuous"
 msgstr "निरन्तरम्"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:335
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:340
 msgctxt "PdfViewer|"
 msgid "Zoom In"
 msgstr "Zoom In इति"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:343
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:348
 msgctxt "PdfViewer|"
 msgid "Zoom Out"
 msgstr "Zoom Out इति"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:351
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:356
 msgctxt "PdfViewer|"
 msgid "Previous Page"
 msgstr "पूर्व पृष्ठ"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:359
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:364
 msgctxt "PdfViewer|"
 msgid "Next Page"
 msgstr "अग्रिमः पृष्ठः"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:364
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:369
 msgctxt "PdfViewer|"
 msgid "Text"
 msgstr "पाठ"
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:376
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:381
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Side Panels"

@@ -1578,7 +1578,7 @@ msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:722
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr ""
@@ -1737,13 +1737,13 @@ msgid "Check Validity"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:673
+#: src/binaries/widget/mainwindow.cpp:672
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:672
+#: src/binaries/widget/mainwindow.cpp:671
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr ""
@@ -2137,106 +2137,106 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:457
+#: src/binaries/widget/mainwindow.cpp:456
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:462
+#: src/binaries/widget/mainwindow.cpp:461
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:472
+#: src/binaries/widget/mainwindow.cpp:471
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:473
+#: src/binaries/widget/mainwindow.cpp:472
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:474
+#: src/binaries/widget/mainwindow.cpp:473
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:475
+#: src/binaries/widget/mainwindow.cpp:474
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:476
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:492
+#: src/binaries/widget/mainwindow.cpp:491
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:533
+#: src/binaries/widget/mainwindow.cpp:532
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:533
+#: src/binaries/widget/mainwindow.cpp:532
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:553
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:553
+#: src/binaries/widget/mainwindow.cpp:552
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:561
+#: src/binaries/widget/mainwindow.cpp:560
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:575
-#: src/binaries/widget/mainwindow.cpp:614
-#: src/binaries/widget/mainwindow.cpp:844 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:574
+#: src/binaries/widget/mainwindow.cpp:613
+#: src/binaries/widget/mainwindow.cpp:843 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:724
+#: src/binaries/widget/mainwindow.cpp:723
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:759
+#: src/binaries/widget/mainwindow.cpp:758
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:760
+#: src/binaries/widget/mainwindow.cpp:759
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:824
+#: src/binaries/widget/mainwindow.cpp:823
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2244,23 +2244,23 @@ msgid ""
 "Last save: %1 min(s) ago"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:826
+#: src/binaries/widget/mainwindow.cpp:825
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:832
+#: src/binaries/widget/mainwindow.cpp:831
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:912
+#: src/binaries/widget/mainwindow.cpp:911
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:913
+#: src/binaries/widget/mainwindow.cpp:912
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2268,106 +2268,106 @@ msgid ""
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:921
+#: src/binaries/widget/mainwindow.cpp:920
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:924
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:931
+#: src/binaries/widget/mainwindow.cpp:930
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1014
+#: src/binaries/widget/mainwindow.cpp:1013
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1017
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1019
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1021
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1024
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1028
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1032
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1035
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1140
+#: src/binaries/widget/mainwindow.cpp:1139
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1236
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1236
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1238
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1238
+#: src/binaries/widget/mainwindow.cpp:1237
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1245
+#: src/binaries/widget/mainwindow.cpp:1244
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1278
+#: src/binaries/widget/mainwindow.cpp:1277
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr ""
@@ -3063,6 +3063,12 @@ msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr ""
 
+#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:607
+#, qt-format
+msgctxt "CharacterItemController|"
+msgid "%1 # Action %2"
+msgstr ""
+
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
 msgid "Text"
@@ -3182,7 +3188,7 @@ msgid "Campaign Template creation failed on this location: %1"
 msgstr ""
 
 #: src/libraries/core/src/data/chatroom.cpp:162
-#: src/libraries/core/src/data/chatroom.cpp:169
+#: src/libraries/core/src/data/chatroom.cpp:171
 msgctxt "ChatRoom|"
 msgid "No Diceparser Object"
 msgstr ""
@@ -3297,8 +3303,8 @@ msgctxt "MediaModel|"
 msgid "Date Modified"
 msgstr ""
 
-#: src/libraries/core/src/model/messagemodel.cpp:98
-#: src/libraries/core/src/model/messagemodel.cpp:104
+#: src/libraries/core/src/model/messagemodel.cpp:101
+#: src/libraries/core/src/model/messagemodel.cpp:107
 msgctxt "MessageModel|"
 msgid "Invalid Person"
 msgstr ""
@@ -3308,72 +3314,72 @@ msgctxt "MusicModel|"
 msgid "Title"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Avatar"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Name"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Description"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "GM Details"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Tags"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:84
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:128
 msgctxt "NonPlayableCharacterModel|"
 msgid "Color"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Min HP"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Current HP"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Max HP"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Initiative"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:85
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:129
 msgctxt "NonPlayableCharacterModel|"
 msgid "Distance Per turn"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "State"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "Life Color"
 msgstr ""
 
-#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:86
+#: src/libraries/core/src/model/nonplayablecharactermodel.cpp:130
 msgctxt "NonPlayableCharacterModel|"
 msgid "Init Command"
 msgstr ""
@@ -3912,32 +3918,32 @@ msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:34
+#: src/libraries/dicephysics/qml/Main.qml:41
 msgctxt "Main|"
 msgid "(Dialog)"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:45
+#: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
 msgid "Select All dice"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:52
+#: src/libraries/dicephysics/qml/Main.qml:59
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:59
+#: src/libraries/dicephysics/qml/Main.qml:66
 msgctxt "Main|"
 msgid "Selection by zone"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:66
+#: src/libraries/dicephysics/qml/Main.qml:73
 msgctxt "Main|"
 msgid "Remove all dice"
 msgstr ""
 
-#: src/libraries/dicephysics/qml/Main.qml:73
+#: src/libraries/dicephysics/qml/Main.qml:80
 msgctxt "Main|"
 msgid "Reset Settings"
 msgstr ""
@@ -4110,12 +4116,12 @@ msgctxt "MindMap|"
 msgid "is linked"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:216
+#: src/libraries/mindmap/resources/qml/MindMap.qml:217
 msgctxt "MindMap|"
 msgid "Package Settings"
 msgstr ""
 
-#: src/libraries/mindmap/resources/qml/MindMap.qml:225
+#: src/libraries/mindmap/resources/qml/MindMap.qml:226
 msgctxt "MindMap|"
 msgid "Add Subnode"
 msgstr ""
@@ -6261,7 +6267,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:575
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:579
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr ""
@@ -6279,19 +6285,19 @@ msgstr ""
 #: src/libraries/rwidgets/docks/antagonistboard.ui:75
 #: src/libraries/rwidgets/docks/antagonistboard.ui:399
 #: src/libraries/rwidgets/docks/antagonistboard.ui:419
-#: src/libraries/rwidgets/docks/antagonistboard.ui:841
-#: src/libraries/rwidgets/docks/antagonistboard.ui:848
-#: src/libraries/rwidgets/docks/antagonistboard.ui:934
-#: src/libraries/rwidgets/docks/antagonistboard.ui:941
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1024
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1031
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1078
+#: src/libraries/rwidgets/docks/antagonistboard.ui:854
+#: src/libraries/rwidgets/docks/antagonistboard.ui:861
+#: src/libraries/rwidgets/docks/antagonistboard.ui:947
+#: src/libraries/rwidgets/docks/antagonistboard.ui:954
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1037
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1044
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1091
 msgctxt "AntagonistBoard|"
 msgid "..."
 msgstr ""
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:96
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1198
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1211
 msgctxt "AntagonistBoard|"
 msgid "Advanced"
 msgstr ""
@@ -6456,82 +6462,82 @@ msgctxt "AntagonistBoard|"
 msgid "Max"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:787
+#: src/libraries/rwidgets/docks/antagonistboard.ui:800
 msgctxt "AntagonistBoard|"
 msgid "Action"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:808
+#: src/libraries/rwidgets/docks/antagonistboard.ui:821
 msgctxt "AntagonistBoard|"
 msgid "Actions"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:874
+#: src/libraries/rwidgets/docks/antagonistboard.ui:887
 msgctxt "AntagonistBoard|"
 msgid "Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:895
+#: src/libraries/rwidgets/docks/antagonistboard.ui:908
 msgctxt "AntagonistBoard|"
 msgid "Shapes"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:967
+#: src/libraries/rwidgets/docks/antagonistboard.ui:980
 msgctxt "AntagonistBoard|"
 msgid "Property"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:988
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1001
 msgctxt "AntagonistBoard|"
 msgid "Properties"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1108
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1121
 msgctxt "AntagonistBoard|"
 msgid "Add Action"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1111
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1124
 msgctxt "AntagonistBoard|"
 msgid "add action"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1120
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1123
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1133
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1136
 msgctxt "AntagonistBoard|"
 msgid "Remove Action"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1132
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1135
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1145
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1148
 msgctxt "AntagonistBoard|"
 msgid "Add Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1144
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1147
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1157
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1160
 msgctxt "AntagonistBoard|"
 msgid "Remove Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1156
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1159
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1169
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1172
 msgctxt "AntagonistBoard|"
 msgid "Add Property"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1168
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1171
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1181
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1184
 msgctxt "AntagonistBoard|"
 msgid "Remove Property"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1179
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1192
 msgctxt "AntagonistBoard|"
 msgid "Add Character"
 msgstr ""
 
-#: src/libraries/rwidgets/docks/antagonistboard.ui:1187
+#: src/libraries/rwidgets/docks/antagonistboard.ui:1200
 msgctxt "AntagonistBoard|"
 msgid "Remove Character"
 msgstr ""
@@ -8198,37 +8204,37 @@ msgctxt "CharacterItem|"
 msgid "Increase Life"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:357
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:356
 msgctxt "CharacterItem|"
 msgid "Change State"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:383
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:382
 msgctxt "CharacterItem|"
 msgid "Vision Shape"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:395
 msgctxt "CharacterItem|"
 msgid "Actions"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:397
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:396
 msgctxt "CharacterItem|"
 msgid "Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:399
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:398
 msgctxt "CharacterItem|"
 msgid "Clean Initiative"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:416
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:415
 msgctxt "CharacterItem|"
 msgid "Shapes"
 msgstr ""
 
-#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:423
+#: src/libraries/rwidgets/graphicsItems/characteritem.cpp:422
 msgctxt "CharacterItem|"
 msgid "Clean Shape"
 msgstr ""
@@ -8584,18 +8590,18 @@ msgctxt "MindMapView|"
 msgid "ReadOnly"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:89
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:98
 #, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:315
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:346
 msgctxt "PdfViewer|"
 msgid "Sharing Pdf File"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:316
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:347
 msgctxt "PdfViewer|"
 msgid ""
 "PDF transfer can be really heavy.\n"
@@ -8677,63 +8683,63 @@ msgctxt "PdfViewer|"
 msgid "Pages"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:292
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:297
 msgctxt "PdfViewer|"
 msgid "Crop View"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:303
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:308
 msgctxt "PdfViewer|"
 msgid "Share"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:308
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:311
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:313
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:316
 msgctxt "PdfViewer|"
 msgid "Copy"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:314
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:319
 msgctxt "PdfViewer|"
 msgid "Ctrl+C"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:319
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:324
 msgctxt "PdfViewer|"
 msgid "Image"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:327
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:332
 msgctxt "PdfViewer|"
 msgid "Continuous"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:335
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:340
 msgctxt "PdfViewer|"
 msgid "Zoom In"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:343
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:348
 msgctxt "PdfViewer|"
 msgid "Zoom Out"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:351
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:356
 msgctxt "PdfViewer|"
 msgid "Previous Page"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:359
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:364
 msgctxt "PdfViewer|"
 msgid "Next Page"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:364
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:369
 msgctxt "PdfViewer|"
 msgid "Text"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:376
+#: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:381
 msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
 msgstr ""
