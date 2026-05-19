@@ -3159,7 +3159,7 @@ msgstr "გლობალური"
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
-msgstr ""
+msgstr "%1 # ქმედება %2"
 
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
