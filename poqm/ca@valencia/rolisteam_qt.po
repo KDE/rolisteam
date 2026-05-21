@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-05-12 08:34+0200\n"
+"PO-Revision-Date: 2026-05-18 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3163,7 +3163,7 @@ msgstr "Global"
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
-msgstr ""
+msgstr "%1 # Acció %2"
 
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
