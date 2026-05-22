@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-04-09 11:26+0400\n"
+"PO-Revision-Date: 2026-05-21 12:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2350,18 +2350,14 @@ msgid "Update Notification"
 msgstr "إشعار التحديث"
 
 #: src/binaries/widget/mainwindow.cpp:912
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"أُصدر الإصدار %1. رجاءً، ألقِ نظرة على <a href=\"https://www.rolisteam.org/"
-"download\">صفحة التنزيل</a> لمزيد من المعلومات"
+"إصدار النسخة %1. يُرجى زيارة <a href=\"https://rolisteam.org/02_download/"
+"\">صفحة التنزيل</a> للحصول على أحدث نسخة."
 
 #: src/binaries/widget/mainwindow.cpp:920
 #, qt-format
@@ -3162,7 +3158,7 @@ msgstr "عام"
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
-msgstr ""
+msgstr "%1 # الإجراء %2"
 
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
@@ -3905,7 +3901,7 @@ msgstr "قد طردت من اللعبة."
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
 msgid "Error: Player controller is null. PlayerUpdate can't work."
-msgstr ""
+msgstr "خطأ: وحدة التحكم الخاصة بالمشغل فارغة. لا يمكن لتحديث المشغل العمل."
 
 #: src/libraries/core/src/updater/media/campaignupdater.cpp:220
 #, qt-format
@@ -4020,12 +4016,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# رمية ثلاثية الأبعاد: المسافة %1 - الوقت %2 - الدوران %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:41
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "حوار"
+msgstr "(حوار)"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
@@ -4075,7 +4068,7 @@ msgstr "أظهِر النرد ثلاثي الأبعاد في الحوار"
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr ""
+msgstr "أبقِ النرد ثلاثي الأبعاد مرئيًا."
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
@@ -8524,12 +8517,9 @@ msgid "Rule"
 msgstr "القاعدة"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "رَقِّ"
+msgstr "رَقِّ إلى"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
