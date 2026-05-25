@@ -24,8 +24,8 @@ Pane {
 
     SideMenu {
         id: sideMenu
-        height: parent.height
-        width: Math.min(parent.width * 0.8, sideMenu.requiredWidth)
+        height: root.height
+        width: Math.min(root.width * 0.8, sideMenu.requiredWidth)
         edge: Qt.RightEdge
     }
 
@@ -44,7 +44,12 @@ Pane {
         x: -width+parent.width
         Action {
             text: qsTr("Settings")
-            onTriggered: sideMenu.open()
+            onTriggered: {
+                // ugly fix preventing QTBUG-146962
+                sideMenu.parent = root
+                // end of fix
+                sideMenu.open()
+            }
         }
         Action {
             text: qsTr("Add chatroom")

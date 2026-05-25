@@ -91,12 +91,13 @@ Workspace::Workspace(QToolBar* toolbar, ContentController* ctrl, InstantMessagin
                 if(m_instantCtrl->detached())
                 {
                     m_instantMessageView->setParent(nullptr);
-                    m_instantMessageView->setVisible(true);
+                    m_instantCtrl->setVisible(true);
                 }
                 else
                 {
                     addSubWindow(m_instantMessageView);
-                    m_instantMessageView->setVisible(true);
+                    m_instantCtrl->setVisible(true);
+                    // m_instantMessageView->setWindow();
                 }
             },
             Qt::QueuedConnection);

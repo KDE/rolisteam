@@ -30,7 +30,7 @@
 #include "qml_components/avatarprovider.h"
 
 InstantMessagingView::InstantMessagingView(InstantMessagingController* ctrl, QWidget* parent)
-    : QWidget(parent), m_ui(new Ui::InstantMessagingView), m_qmlViewer(new QQuickWidget()), m_ctrl(ctrl)
+    : QWidget(parent), m_ui(new Ui::InstantMessagingView), m_qmlViewer(new QQuickWidget(this)), m_ctrl(ctrl)
 {
     m_ui->setupUi(this);
 
@@ -83,7 +83,7 @@ InstantMessagingView::InstantMessagingView(InstantMessagingController* ctrl, QWi
     for(const auto& error : std::as_const(errors))
         qDebug() << error.toString();
 
-    auto layout= new QVBoxLayout();
+    auto layout= new QVBoxLayout(this);
     layout->setContentsMargins(QMargins());
     setLayout(layout);
 
