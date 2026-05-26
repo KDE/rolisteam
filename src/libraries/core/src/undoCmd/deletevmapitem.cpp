@@ -44,6 +44,8 @@ void DeleteVmapItemCommand::redo()
                           return;
                       return itemCtrl->setRemoved(true);
                   });
+
+    m_ctrl->notifyChanged();
 }
 
 void DeleteVmapItemCommand::undo()
@@ -57,4 +59,5 @@ void DeleteVmapItemCommand::undo()
                           return;
                       return itemCtrl->setRemoved(false);
                   });
+    m_ctrl->notifyChanged();
 }

@@ -119,7 +119,7 @@ void RGraphicsView::wheelEvent(QWheelEvent* event)
         QPointF deltaViewportPos= targetViewportPos - QPointF(viewport()->width() / 2.0, viewport()->height() / 2.0);
         QPointF viewportCenter= mapFromScene(targetScenePos) - deltaViewportPos;
         centerOn(mapToScene(viewportCenter.toPoint()));
-
+        updateSizeToController();
         return;
     }
     else
@@ -567,9 +567,9 @@ void RGraphicsView::createAction()
                                       hash.insert(vItem->uuid(), vItem);
                               });
 
-                for(auto info : first)
+                for(const auto &info : first)
                 {
-                    for(auto data : second)
+                    for(const auto &data : second)
                     {
                         auto firstItem= hash.value(info);
                         auto secondItem= hash.value(data);

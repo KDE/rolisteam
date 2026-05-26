@@ -29,7 +29,8 @@
 #include "vmapframe.h"
 
 #include "controller/view_controller/vectorialmapcontroller.h"
-constexpr int updateTime{200};
+
+// constexpr int updateTime{200};
 
 QString visibilityText(Core::VisibilityMode vis)
 {
@@ -81,7 +82,7 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     setWindowIcon(QIcon::fromTheme("maplogo"));
     m_graphicView->setScene(m_vmap.get());
 
-    m_timer.setInterval(updateTime);
+    // m_timer.setInterval(updateTime);
 
     auto func= [this]()
     {
@@ -104,19 +105,26 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
         int w= std::min(m_toolbox->width() - 10, 400);
         auto sceneRect= m_vmap->sceneRect();
         auto origin= sceneRect.topLeft() * -1;
-        qreal sw= sceneRect.width();
-        qreal sh= sceneRect.height();
-        // int h= static_cast<int>(w * sh / sw);
 
-        QPixmap map{QSizeF{sw, sh}.toSize()};
+        auto maxRect= [](const QRectF& r, const QRectF& k) -> QRectF
+        {
+            auto areaR= r.width() * r.height();
+            auto areaK= k.width() * k.height();
+            return areaR > areaK ? r : k;
+        };
+
         auto viewPort= m_graphicView->viewport()->rect().toRectF();
         auto poly= m_graphicView->mapToScene(viewPort.toRect());
         QRectF visible= poly.boundingRect();
 
+        // auto rect= m_graphicView->mapToScene(m_graphicView->viewport()->geometry()).boundingRect();
+        auto max= maxRect(visible, sceneRect);
+        QPixmap map{QSizeF{max.width(), max.height()}.toSize()};
+        map.fill(m_ctrl->backgroundColor());
         {
             QPainter painter(&map);
             m_vmap->hideGrid();
-            m_vmap->render(&painter); //, m_vmap->sceneRect(), map.rect()
+            m_vmap->render(&painter, {}, max); //, m_vmap->sceneRect(), map.rect()
             m_vmap->restoreGrid();
 
             painter.save();
@@ -126,7 +134,8 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
             painter.setPen(pen);
 
             visible= visible.translated(origin);
-            painter.drawRect(QRectF{visible.x(), visible.y(), visible.width(), visible.height()});
+            // painter.drawRect(QRectF{visible.x(), visible.y(), visible.width(), visible.height()});
+            painter.drawRect(visible);
 
             painter.restore();
         }
@@ -141,10 +150,6 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
                 m_graphicView->centerOn(QPointF{p.x() * r.width(), p.y() * r.height()});
             });
 
-    // connect(m_vmap.get(), &VMap::changed, this, updateSmallImage);
-    connect(&m_timer, &QTimer::timeout, this, updateSmallImage);
-    m_timer.start();
-
     auto updateFrame= [this]()
     {
         auto rect= m_vmap->sceneRect();
@@ -155,12 +160,39 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     };
 
     connect(m_vmap.get(), &VMap::sceneRectChanged, m_ctrl, updateFrame);
+    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateFrame);
 
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateFrame);
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateSmallImage);
-    connect(m_graphicView->horizontalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage);
-    connect(m_graphicView->verticalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage);
-    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateSmallImage);
+    connect(m_graphicView->horizontalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage,
+            Qt::QueuedConnection);
+    connect(m_graphicView->verticalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage,
+            Qt::QueuedConnection);
+    connect(m_vmap.get(), &VMap::internalChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::backgroundColorChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridColorChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridScaleChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridAboveChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridVisibilityChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::visibilityChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::characterVisionChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::healthBarVisibleChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::stateLabelVisibleChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::npcNameVisibleChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::npcNumberVisibleChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridSizeChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::gridPatternChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::opacityChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::visualRectChanged, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::visualItemControllerCreated, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::visualItemControllersRemoved, this, updateSmallImage,
+            Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::itemHasBeenStacked, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::updateView, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::performCommand, this, updateSmallImage, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::popCommand, this, updateSmallImage, Qt::QueuedConnection);
+    // connect(m_vmap.get(), &VMap::changed, this, updateSmallImage);
 }
 
 VMapFrame::~VMapFrame()= default;

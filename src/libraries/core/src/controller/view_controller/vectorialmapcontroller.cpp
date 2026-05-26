@@ -542,6 +542,11 @@ void VectorialMapController::askForColorChange(vmap::VisualItemController* itemC
     emit performCommand(new ChangeColorItemCmd(itemCtrl, toolColor()));
 }
 
+void VectorialMapController::notifyChanged()
+{
+    emit updateView();
+}
+
 void VectorialMapController::changeFogOfWar(const QPolygonF& poly, vmap::VisualItemController* itemCtrl, bool mask,
                                             bool temp)
 {
@@ -713,8 +718,8 @@ void VectorialMapController::runDiceCommand(QList<QPointer<vmap::CharacterItemCo
 
 void VectorialMapController::changeZValue(const QList<vmap::VisualItemController*>& list, StackOrder order)
 {
-    qDebug() << list.size() << "list size" << order;
-    // emit performCommand(new ChangeStackOrderVMapCommand(this, list, order));
+    // qDebug() << list.size() << "list size" << order;
+    //  emit performCommand(new ChangeStackOrderVMapCommand(this, list, order));
 }
 
 void VectorialMapController::setParent(vmap::VisualItemController* child, vmap::VisualItemController* newParent)

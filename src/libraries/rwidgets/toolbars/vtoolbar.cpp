@@ -390,12 +390,12 @@ void ToolBox::makeTools()
             });
     m_smallScene->setScaledContents(true);
 
-    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this,
+    /*connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this,
             [this]()
             {
                 auto zl= m_ctrl->zoomLevel();
-                qDebug() << zl;
-            });
+                 qDebug() << zl;
+            });*/
     toolsVerticalLayout->addWidget(m_smallScene.get());
     toolsVerticalLayout->addStretch(1);
     m_centralWidget->setLayout(toolsVerticalLayout);

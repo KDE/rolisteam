@@ -226,7 +226,7 @@ void VMap::addVisualItem(vmap::VisualItemController* ctrl)
 
                 setNewParent(child, parent.data());
             });
-    update();
+    updateAndNotify();
 }
 void VMap::addLineItem(vmap::LineController* lineCtrl, bool editing)
 {
@@ -318,7 +318,7 @@ void VMap::updateItem(const QPointF& end)
     case Core::PATH:
     {
         m_currentPath->addPoint(m_currentPath->mapFromScene(end));
-        update();
+        updateAndNotify();
     }
     break;
     default:
@@ -464,7 +464,7 @@ void VMap::resetCurrentPath()
     }
     m_currentPath= nullptr;
     m_currentItem= nullptr;
-    update();
+    updateAndNotify();
 }
 
 void VMap::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
@@ -480,20 +480,17 @@ void VMap::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
         m_currentItem->setModifiers(mouseEvent->modifiers());
         mouseEvent->accept();
         m_currentItem->setNewEnd(mouseEvent->scenePos() - mouseEvent->lastScenePos()); // mouseEvent->scenePos()
-        update();
     }
     else if(!m_ruleItem.isNull())
     {
         mouseEvent->accept();
         m_ruleItem->setNewEnd(mouseEvent->scenePos() - mouseEvent->lastScenePos(),
                               mouseEvent->modifiers() & Qt::ControlModifier);
-        update();
     }
     else if(!m_parentItemAnchor.isNull())
     {
         mouseEvent->accept();
         m_parentItemAnchor->setNewEnd(mouseEvent->scenePos() - mouseEvent->lastScenePos());
-        update();
     }
     if((m_ctrl->tool() == Core::HANDLER) || (m_ctrl->tool() == Core::TEXT) || (m_ctrl->tool() == Core::TEXTBORDER))
     {
@@ -503,7 +500,6 @@ void VMap::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
 void VMap::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
 {
     auto isPainting= Core::EditionMode::Painting == m_ctrl->editionMode();
-    qDebug() << "MOUSE RELEASE MAP:" << m_currentPath.isNull() << isPainting;
     if(m_parentItemAnchor)
     {
         manageAnchor();
@@ -529,14 +525,14 @@ void VMap::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
         auto ctrl= m_currentItem->controller();
         m_ctrl->changeFogOfWar(poly, ctrl, (Core::EditionMode::Mask == m_ctrl->editionMode()));
         removeItem(m_currentItem);
-        update();
+        updateAndNotify();
     }
     else if(!isPainting && m_currentPath)
     {
         auto poly= m_currentPath->shape().translated(m_currentPath->pos()).toFillPolygon();
         m_ctrl->changeFogOfWar(poly, m_currentPath->controller(), (Core::EditionMode::Mask == m_ctrl->editionMode()),
                                true);
-        update();
+        updateAndNotify();
     }
     m_ctrl->setIdle(true);
     m_currentItem= nullptr;
@@ -556,6 +552,7 @@ void VMap::mouseReleaseEvent(QGraphicsSceneMouseEvent* mouseEvent)
         }
         QGraphicsScene::mouseReleaseEvent(mouseEvent);
     }
+    updateAndNotify();
 }
 
 bool VMap::isNormalItem(const QGraphicsItem* item) const
@@ -609,7 +606,7 @@ void VMap::manageAnchor()
         if(item == nullptr)
             continue;
 
-        qDebug() << item->boundingRect();
+        // qDebug() << item->boundingRect();
 
         if(!isNormalItem(item))
             continue;
@@ -674,6 +671,12 @@ void VMap::promoteItemInType(VisualItem* item, vmap::VisualItemController::ItemT
         // addNewItem(new AddVmapItemCommand(bis, false, this), true);
         // bis->initChildPointItem();
     }
+}
+
+void VMap::updateAndNotify()
+{
+    update();
+    emit internalChanged();
 }
 
 void VMap::keyPressEvent(QKeyEvent* event)

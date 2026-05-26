@@ -158,6 +158,7 @@ public slots:
     void changeZValue(const QList<vmap::VisualItemController*>& list, VectorialMapController::StackOrder order);
     void setParent(vmap::VisualItemController* child, vmap::VisualItemController* newParent);
     void stackBefore(const QStringList& first, const QStringList& second, bool fromNetwork= false);
+    void notifyChanged();
 
 signals:
     void permissionChanged(Core::PermissionMode mode);
@@ -195,6 +196,7 @@ signals:
     void itemHasBeenStacked(const QStringList& first, const QStringList& second, bool network);
     void sendOffHighLightAt(const QPointF& p, const qreal& penSize, const QColor& color);
     void highLightAt(const QPointF& p, const qreal& penSize, const QColor& color);
+    void updateView();
 
 public slots:
     void setPermission(Core::PermissionMode mode);

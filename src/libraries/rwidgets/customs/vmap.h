@@ -73,6 +73,10 @@ public slots:
 private slots:
     void updateItem(const QPointF& end);
     void promoteItemInType(VisualItem*, vmap::VisualItemController::ItemType);
+    void updateAndNotify();
+
+signals:
+    void internalChanged();
 
 protected:
     virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent) override;
