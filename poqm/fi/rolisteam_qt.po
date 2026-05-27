@@ -2184,7 +2184,7 @@ msgstr "Liukusäädin"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
 #: src/libraries/core/src/data/cleveruri.cpp:222
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Hidden"
 msgstr "Piilossa"
@@ -3458,25 +3458,25 @@ msgstr "Tuntematon"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
 msgctxt "QObject|"
 msgid "Character"
 msgstr "Hahmo"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:55
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
 msgctxt "QObject|"
 msgid "Ground"
 msgstr "Maa"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
 msgctxt "QObject|"
 msgid "Object"
 msgstr ""
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
 msgctxt "QObject|"
 msgid "GameMaster"
 msgstr ""
@@ -4852,12 +4852,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Settings"
 msgstr "Asetukset"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:50
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Add chatroom"
 msgstr "Lisää keskusteluhuone"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Set Default"
@@ -4865,12 +4865,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
 msgstr "Aseta oletukseksi"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
 msgstr ""
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 #, fuzzy
 #| msgctxt "MindMap|"
 #| msgid "Detach"
@@ -9340,48 +9340,48 @@ msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
 msgstr "Sivupaneelit"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Fog Of War"
 msgstr "Sodan sumu"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "All visible"
 msgstr "Kaikki näkyvissä"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "No Right"
 msgstr "Ei oikeutta"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "His character"
 msgstr ""
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "All Permissions"
 msgstr "Kaikki käyttöoikeudet"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
 msgctxt "QObject|"
 msgid "Fog Layer"
 msgstr "Sumukerros"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
 msgctxt "QObject|"
 msgid "Grid Layer"
 msgstr "Ruudukkokerros"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:65
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:62
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:66
 msgctxt "QObject|"
 msgid "No Layer"
 msgstr "Ei kerrosta"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:88
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:89
 #, qt-format
 msgctxt "VMapFrame|"
 msgid "%1 - visibility: %2 - permission: %3 - layer: %4"

@@ -2209,7 +2209,7 @@ msgstr "स्लाइडर"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
 #: src/libraries/core/src/data/cleveruri.cpp:222
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Hidden"
 msgstr "अदृष्ट"
@@ -3471,25 +3471,25 @@ msgstr "अज्ञात"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
 msgctxt "QObject|"
 msgid "Character"
 msgstr "स्वभावः"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:55
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
 msgctxt "QObject|"
 msgid "Ground"
 msgstr "भूमि"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
 msgctxt "QObject|"
 msgid "Object"
 msgstr "वस्तु"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
 msgctxt "QObject|"
 msgid "GameMaster"
 msgstr "गेममास्टर"
@@ -4874,12 +4874,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Settings"
 msgstr "सेटिंग्स्"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:50
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Add chatroom"
 msgstr "गपशपगृहं योजयन्तु"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Set Default"
@@ -4887,12 +4887,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
 msgstr "पूर्वनिर्धारितं सेट् कुर्वन्तु"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
 msgstr ""
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 #, fuzzy
 #| msgctxt "ChatView|"
 #| msgid "Detach"
@@ -9415,48 +9415,48 @@ msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
 msgstr "पार्श्वफलकाः"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Fog Of War"
 msgstr "युद्धस्य कोहरा"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "All visible"
 msgstr "सर्वे दृश्यन्ते"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "No Right"
 msgstr "न अधिकारः"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "His character"
 msgstr "तस्य चरित्रम्"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "All Permissions"
 msgstr "सर्वाणि अनुमतिः"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
 msgctxt "QObject|"
 msgid "Fog Layer"
 msgstr "कोहरा स्तर"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
 msgctxt "QObject|"
 msgid "Grid Layer"
 msgstr "जालस्तर"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:65
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:62
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:66
 msgctxt "QObject|"
 msgid "No Layer"
 msgstr "No Layer इति"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:88
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:89
 #, qt-format
 msgctxt "VMapFrame|"
 msgid "%1 - visibility: %2 - permission: %3 - layer: %4"

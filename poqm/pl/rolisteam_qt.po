@@ -2214,7 +2214,7 @@ msgstr "Suwak"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
 #: src/libraries/core/src/data/cleveruri.cpp:222
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Hidden"
 msgstr "Ukryty"
@@ -3480,25 +3480,25 @@ msgstr "Nieznany"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
 msgctxt "QObject|"
 msgid "Character"
 msgstr "Znak"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:55
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
 msgctxt "QObject|"
 msgid "Ground"
 msgstr "Podstawa"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
 msgctxt "QObject|"
 msgid "Object"
 msgstr "Obiekt"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
 msgctxt "QObject|"
 msgid "GameMaster"
 msgstr "Mistrz Gry"
@@ -4884,12 +4884,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Settings"
 msgstr "Ustawienia"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:50
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Add chatroom"
 msgstr "Dodaj pokój rozmów"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
 #, fuzzy
 #| msgctxt "ChannelListPanel|"
 #| msgid "Set Default"
@@ -4897,12 +4897,12 @@ msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
 msgstr "Ustaw domyślne"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
 msgstr ""
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 #, fuzzy
 #| msgctxt "MindMap|"
 #| msgid "Detach"
@@ -9407,48 +9407,48 @@ msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
 msgstr "Paski boczne"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Fog Of War"
 msgstr "Mgła wojny"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "All visible"
 msgstr "Wszystkie widoczne"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "No Right"
 msgstr "Nie w prawo"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "His character"
 msgstr "Jego postać"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "All Permissions"
 msgstr "Wszystkie uprawnienia"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
 msgctxt "QObject|"
 msgid "Fog Layer"
 msgstr "Warstwa mgły"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
 msgctxt "QObject|"
 msgid "Grid Layer"
 msgstr "Warstwa siatki"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:65
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:62
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:66
 msgctxt "QObject|"
 msgid "No Layer"
 msgstr "Bez warstwy"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:88
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:89
 #, qt-format
 msgctxt "VMapFrame|"
 msgid "%1 - visibility: %2 - permission: %3 - layer: %4"

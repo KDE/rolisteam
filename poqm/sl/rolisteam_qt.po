@@ -2021,7 +2021,7 @@ msgstr "Drsnik"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:89
 #: src/libraries/core/src/data/cleveruri.cpp:222
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Hidden"
 msgstr "Skrito"
@@ -3232,25 +3232,25 @@ msgstr "Neznano"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
 msgctxt "QObject|"
 msgid "Character"
 msgstr "Lik"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:55
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
 msgctxt "QObject|"
 msgid "Ground"
 msgstr "Tla"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:56
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:57
 msgctxt "QObject|"
 msgid "Object"
 msgstr "Predmet"
 
 #: src/libraries/core/src/controller/view_controller/vectorialmapcontroller.cpp:279
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:58
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
 msgctxt "QObject|"
 msgid "GameMaster"
 msgstr "Jaz sem gospodar igre"
@@ -4553,22 +4553,22 @@ msgctxt "InstantMessagingMain|"
 msgid "Settings"
 msgstr "Nastavitve"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:50
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:55
 msgctxt "InstantMessagingMain|"
 msgid "Add chatroom"
 msgstr "Dodaj klepetalnico"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:54
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
 msgstr "Ponastavi na privzeti pogled"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
 msgid "Attach on Main"
 msgstr "Pripni na glavno"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:58
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Odpni"
@@ -8980,48 +8980,48 @@ msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
 msgstr "Skrij stransko ploščo"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "Fog Of War"
 msgstr "Megla vojne"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:37
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "All visible"
 msgstr "Vse vidno"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "No Right"
 msgstr "Brez pravice"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "His character"
 msgstr "Njegov lik"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:49
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "All Permissions"
 msgstr "Vsa dovoljenja"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:59
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
 msgctxt "QObject|"
 msgid "Fog Layer"
 msgstr "Plast megle"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:60
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
 msgctxt "QObject|"
 msgid "Grid Layer"
 msgstr "Plast mreže"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:61
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:65
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:62
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:66
 msgctxt "QObject|"
 msgid "No Layer"
 msgstr "Brez plasti"
 
-#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:88
+#: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:89
 #, qt-format
 msgctxt "VMapFrame|"
 msgid "%1 - visibility: %2 - permission: %3 - layer: %4"
