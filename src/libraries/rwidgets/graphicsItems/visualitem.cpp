@@ -59,22 +59,25 @@ VisualItem::VisualItem(vmap::VisualItemController* ctrl) : QGraphicsObject(), m_
     connect(m_ctrl, &vmap::VisualItemController::rotationChanged, this, [this]() { updateScenePos(); });
     connect(m_ctrl, &vmap::VisualItemController::scenePosChanged, this, [this]() { updateScenePos(); });
 
-    connect(m_ctrl, &vmap::VisualItemController::removeItem, this,
-            [this]()
-            {
-                auto sceneP= scene();
-                if(sceneP)
-                    sceneP->removeItem(this);
-                deleteLater();
-            });
-    connect(m_ctrl, &vmap::VisualItemController::destroyed, this,
-            [this]()
-            {
-                auto sceneP= scene();
-                if(sceneP)
-                    sceneP->removeItem(this);
-                deleteLater();
-            });
+    if(m_ctrl->itemType() != vmap::VisualItemController::GRID)
+    {
+        connect(m_ctrl, &vmap::VisualItemController::removeItem, this,
+                [this]()
+                {
+                    auto sceneP= scene();
+                    if(sceneP)
+                        sceneP->removeItem(this);
+                    deleteLater();
+                });
+        connect(m_ctrl, &vmap::VisualItemController::destroyed, this,
+                [this]()
+                {
+                    auto sceneP= scene();
+                    if(sceneP)
+                        sceneP->removeItem(this);
+                    deleteLater();
+                });
+    }
     auto func= [this]()
     {
         if(m_ctrl->editable() && !m_ctrl->networkUpdate())
