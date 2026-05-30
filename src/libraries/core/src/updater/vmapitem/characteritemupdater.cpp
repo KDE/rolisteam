@@ -19,6 +19,7 @@
  ***************************************************************************/
 #include "updater/vmapitem/characteritemupdater.h"
 
+#include "common/logcategory.h"
 #include "controller/item_controllers/characteritemcontroller.h"
 #include "network/networkmessagereader.h"
 #include "worker/convertionhelper.h"
@@ -90,6 +91,38 @@ void CharacterItemUpdater::addItemController(vmap::VisualItemController* ctrl, b
                 [this, itemCtrl]() { sendOffVisionChanges<bool>(itemCtrl, properties::vision_removed); });
     }
 
+    { // character
+        auto p= itemCtrl->character();
+
+        connect(p, &Character::avatarChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QByteArray>(itemCtrl, Core::person::avatar); });
+        connect(p, &Character::nameChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QString>(itemCtrl, Core::person::name); });
+        connect(p, &Character::colorChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QColor>(itemCtrl, Core::person::color); });
+        connect(p, &Character::currentHealthPointsChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<int>(itemCtrl, Core::person::healthPoints); });
+        connect(p, &Character::npcChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<bool>(itemCtrl, Core::person::isNpc); });
+        connect(p, &Character::maxHPChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<int>(itemCtrl, Core::person::maxHP); });
+        connect(p, &Character::minHPChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<int>(itemCtrl, Core::person::minHP); });
+        connect(p, &Character::distancePerTurnChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<int>(itemCtrl, Core::person::distancePerTurn); });
+
+        connect(p, &Character::initCommandChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QString>(itemCtrl, Core::person::initCommand); });
+        connect(p, &Character::hasInitScoreChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<bool>(itemCtrl, Core::person::hasInitiative); });
+        connect(p, &Character::initiativeChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<int>(itemCtrl, Core::person::initiative); });
+        connect(p, &Character::stateIdChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QString>(itemCtrl, Core::person::stateId); });
+        connect(p, &Character::lifeColorChanged, this,
+                [this, itemCtrl]() { sendOffCharacterChanges<QColor>(itemCtrl, Core::person::lifeColor); });
+    }
+
     connect(itemCtrl, &vmap::CharacterItemController::rectEditFinished, this,
             [this, itemCtrl]() { sendOffVMapChanges<QRectF>(itemCtrl, properties::thumnailRect); });
 
@@ -107,6 +140,10 @@ bool CharacterItemUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::V
     if(msg->action() == NetMsg::CharacterVisionChanged)
     {
         return updateVisionProperty(msg, ctrl);
+    }
+    else if(msg->action() == NetMsg::CharacterChanges)
+    {
+        return updateCharacterProperty(msg, ctrl);
     }
 
     auto datapos= msg->pos();
@@ -224,6 +261,65 @@ bool CharacterItemUpdater::updateVisionProperty(NetworkMessageReader* msg, vmap:
 
     m_updatingFromNetwork= true;
     auto feedback= vision->setProperty(property.toLocal8Bit().data(), var);
+    m_updatingFromNetwork= false;
+    updatingCtrl= nullptr;
+
+    return feedback;
+}
+
+bool CharacterItemUpdater::updateCharacterProperty(NetworkMessageReader* msg, vmap::VisualItemController* ctrl)
+{
+    if(nullptr == msg || nullptr == ctrl)
+        return false;
+
+    auto itemCtrl= dynamic_cast<vmap::CharacterItemController*>(ctrl);
+
+    if(nullptr == itemCtrl)
+        return false;
+
+    auto character= itemCtrl->character();
+
+    if(nullptr == character)
+        return false;
+
+    auto property= msg->string16();
+
+    QVariant var;
+    QSet<QString> integers{Core::person::healthPoints, Core::person::maxHP, Core::person::minHP,
+                           Core::person::distancePerTurn, Core::person::initiative};
+    QSet<QString> strings{Core::person::initCommand, Core::person::stateId, Core::person::name};
+    QSet<QString> colors{Core::person::lifeColor, Core::person::color};
+    QSet<QString> byteArray{Core::person::avatar};
+    QSet<QString> booleans{Core::person::isNpc, Core::person::hasInitiative};
+
+    if(integers.contains(property))
+    {
+        var= QVariant::fromValue(msg->int64());
+    }
+    else if(strings.contains(property))
+    {
+        var= QVariant::fromValue(msg->string32());
+    }
+    else if(colors.contains(property))
+    {
+        var= QVariant::fromValue(msg->rgb());
+    }
+    else if(byteArray.contains(property))
+    {
+        var= QVariant::fromValue(msg->byteArray32());
+    }
+    else if(booleans.contains(property))
+    {
+        var= QVariant::fromValue(static_cast<bool>(msg->uint8()));
+    }
+    else
+    {
+        qCWarning(MapCat) << "CharacterItem update -  Unmanaged property:" << property;
+        return false;
+    }
+
+    m_updatingFromNetwork= true;
+    auto feedback= character->setProperty(property.toLocal8Bit().data(), var);
     m_updatingFromNetwork= false;
     updatingCtrl= nullptr;
 

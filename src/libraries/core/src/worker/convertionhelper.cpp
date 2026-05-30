@@ -167,7 +167,7 @@ void variantToType<QStringList>(const QStringList& val, NetworkMessageWriter& ms
 {
     QJsonArray array;
 
-    for(auto str : val)
+    for(const auto &str : val)
         array.append(str);
 
     QJsonDocument doc;

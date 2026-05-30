@@ -34,9 +34,12 @@ public:
     void addItemController(vmap::VisualItemController* ctrl, bool sendOff= true) override;
     bool updateItemProperty(NetworkMessageReader* msg, vmap::VisualItemController* ctrl) override;
     bool updateVisionProperty(NetworkMessageReader* msg, vmap::VisualItemController* ctrl);
+    bool updateCharacterProperty(NetworkMessageReader* msg, vmap::VisualItemController* ctrl);
 
     template <typename T>
     void sendOffVisionChanges(vmap::CharacterItemController* ctrl, const QString& property);
+    template <typename T>
+    void sendOffCharacterChanges(vmap::CharacterItemController* ctrl, const QString& property);
 };
 
 template <typename T>
@@ -57,6 +60,28 @@ void CharacterItemUpdater::sendOffVisionChanges(vmap::CharacterItemController* c
     msg.string8(ctrl->uuid());
     msg.string16(property);
     auto val= vision->property(property.toLocal8Bit().data());
+    Helper::variantToType<T>(val.value<T>(), msg);
+    msg.sendToServer();
+}
+
+template <typename T>
+void CharacterItemUpdater::sendOffCharacterChanges(vmap::CharacterItemController* ctrl, const QString& property)
+{
+    if(nullptr == ctrl || property.isEmpty() || !m_synchronized || (m_updatingFromNetwork && updatingCtrl == ctrl)
+       || !ctrl->initialized())
+        return;
+
+    auto characater= ctrl->character();
+
+    if(!characater)
+        return;
+
+    NetworkMessageWriter msg(NetMsg::VMapCategory, NetMsg::CharacterChanges);
+    msg.string8(ctrl->mapUuid());
+    msg.uint8(ctrl->itemType());
+    msg.string8(ctrl->uuid());
+    msg.string16(property);
+    auto val= characater->property(property.toLocal8Bit().data());
     Helper::variantToType<T>(val.value<T>(), msg);
     msg.sendToServer();
 }

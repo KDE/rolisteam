@@ -293,7 +293,8 @@ NetWorkReceiver::SendType VMapUpdater::processMessage(NetworkMessageReader* msg)
         map->addRemoteItem(item);
     }
     else if(is(msg, NetMsg::VMapCategory, NetMsg::UpdateItem)
-            || is(msg, NetMsg::VMapCategory, NetMsg::CharacterVisionChanged))
+            || is(msg, NetMsg::VMapCategory, NetMsg::CharacterVisionChanged)
+            || is(msg, NetMsg::VMapCategory, NetMsg::CharacterChanges))
     {
         auto itemType= static_cast<vmap::VisualItemController::ItemType>(msg->uint8());
         QString itemId= msg->string8();

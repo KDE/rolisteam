@@ -395,8 +395,8 @@ QString MessageDispatcher::act2String(NetworkMessageHeader* head)
         case NetMsg::CharacterStateChanged:
             str= QStringLiteral("CharacterStateChanged");
             break;
-        case NetMsg::CharacterChanged:
-            str= QStringLiteral("CharacterChanged");
+        case NetMsg::CharacterChanges:
+            str= QStringLiteral("CharacterChanges");
             break;
         case NetMsg::SetParentItem:
             str= QStringLiteral("SetParentItem");

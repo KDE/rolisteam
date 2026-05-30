@@ -138,7 +138,7 @@ enum Action
     SetParentItem,
     CharacterVisionChanged,
     CharacterStateChanged,
-    CharacterChanged,
+    CharacterChanges,
     HighLightPosition,
     StackItems,
 
