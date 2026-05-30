@@ -183,9 +183,7 @@ void TestNetwork::channelTest()
     auto conn2= new ServerConnection(&socket2, nullptr);
     QPointer<ServerConnection> pConn2(conn2);
 
-    auto test = [pConn2](int i){
-        qDebug() << "conn2 is null : "<<i << pConn2.isNull();
-    };
+    auto test= [pConn2](int i) { qDebug() << "conn2 is null : " << i << pConn2.isNull(); };
 
     QCOMPARE(m_channel->getCurrentGmId(), QString());
     auto f= m_channel->getChildAt(0);
@@ -233,15 +231,13 @@ void TestNetwork::channelTest()
         m_channel->sendMessage(&msg, m_serverConnection.get(), true);
     }
 
-
-
     m_channel->updateNewClient(conn2);
     auto conn3= new ServerConnection(&socket2, nullptr);
     m_channel->updateNewClient(conn3);
 
     {
         NetworkMessageWriter writer(NetMsg::UserCategory, NetMsg::PlayerConnectionAction);
-        Player player(Helper::randomString(),Helper::randomColor(), true);
+        Player player(Helper::randomString(), Helper::randomColor(), true);
         PlayerMessageHelper::writePlayerIntoMessage(writer, &player);
 
         NetworkMessageReader reader;
@@ -575,26 +571,17 @@ void TestNetwork::passwordAccepterTest_data()
     QTest::addColumn<PasswordAccepter::Level>("level");
     QTest::addColumn<bool>("expected");
 
-    QTest::addRow("server") << "tagada"
-                            << "tagada" << PasswordAccepter::Connection << true;
-    QTest::addRow("server1") << "tagada"
-                             << "tagada1" << PasswordAccepter::Connection << false;
-    QTest::addRow("server2") << "tagada"
-                             << "" << PasswordAccepter::Connection << false;
+    QTest::addRow("server") << "tagada" << "tagada" << PasswordAccepter::Connection << true;
+    QTest::addRow("server1") << "tagada" << "tagada1" << PasswordAccepter::Connection << false;
+    QTest::addRow("server2") << "tagada" << "" << PasswordAccepter::Connection << false;
 
-    QTest::addRow("admin") << "tagada"
-                           << "tagada" << PasswordAccepter::Admin << true;
-    QTest::addRow("admin1") << "tagada"
-                            << "tagada1" << PasswordAccepter::Admin << false;
-    QTest::addRow("admin2") << "tagada"
-                            << "" << PasswordAccepter::Admin << false;
+    QTest::addRow("admin") << "tagada" << "tagada" << PasswordAccepter::Admin << true;
+    QTest::addRow("admin1") << "tagada" << "tagada1" << PasswordAccepter::Admin << false;
+    QTest::addRow("admin2") << "tagada" << "" << PasswordAccepter::Admin << false;
 
-    QTest::addRow("channel") << "tagada"
-                             << "tagada" << PasswordAccepter::Channel << true;
-    QTest::addRow("channel1") << "tagada"
-                              << "tagada1" << PasswordAccepter::Channel << false;
-    QTest::addRow("channel2") << "tagada"
-                              << "" << PasswordAccepter::Channel << false;
+    QTest::addRow("channel") << "tagada" << "tagada" << PasswordAccepter::Channel << true;
+    QTest::addRow("channel1") << "tagada" << "tagada1" << PasswordAccepter::Channel << false;
+    QTest::addRow("channel2") << "tagada" << "" << PasswordAccepter::Channel << false;
 }
 
 void TestNetwork::ipRangeAccepterTest()
@@ -617,15 +604,11 @@ void TestNetwork::ipRangeAccepterTest_data()
     QTest::addColumn<bool>("expected");
 
     // QTest::addRow("range1") << "80.80.80.80" << "80.0.0.0.0/255.0.0.0" << true;
-    QTest::addRow("range2") << "79.80.80.80"
-                            << "80.0.0.0.0/255.0.0.0" << false;
+    QTest::addRow("range2") << "79.80.80.80" << "80.0.0.0.0/255.0.0.0" << false;
 
-    QTest::addRow("range3") << "192.168.1.15"
-                            << "192.168.1.0/24" << true;
-    QTest::addRow("range3") << "192.168.0.15"
-                            << "192.168.1.0/24" << false;
-    QTest::addRow("no ip") << ""
-                           << "192.168.1.0/24" << false;
+    QTest::addRow("range3") << "192.168.1.15" << "192.168.1.0/24" << true;
+    QTest::addRow("range3") << "192.168.0.15" << "192.168.1.0/24" << false;
+    QTest::addRow("no ip") << "" << "192.168.1.0/24" << false;
     QTest::addRow("no range") << "192.168.0.15" << QString() << true;
 }
 void TestNetwork::timeAccepterTest()
@@ -664,8 +647,7 @@ void TestNetwork::timeAccepterTest_data()
             << (i == 23 ? QStringLiteral("23:59") : QStringLiteral("%1:00").arg(i + 1, 2, 10, QLatin1Char('0')));
     }
 
-    QTest::addRow("time_null") << ""
-                               << "";
+    QTest::addRow("time_null") << "" << "";
 }
 
 void TestNetwork::messageDispatcherTest()
@@ -821,7 +803,7 @@ void TestNetwork::messageHeaderTest_data()
         "SetParentItem",
         "CharacterVisionChanged",
         "CharacterStateChanged",
-        "CharacterChanged",
+        "CharacterChanges",
         "HighLightPosition",
     });
     actionPerCategorie.append({
