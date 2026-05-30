@@ -293,13 +293,13 @@ void CharacterItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* opt
             painter->restore();
         }
     }
-#ifdef QT_DEBUG
-    painter->save();
-    painter->setBrush(Qt::red);
-    painter->drawRoundedRect(-5, -5, 10, 10, 5, 5);
-    painter->restore();
-    paintCoord(painter);
-#endif
+    /*#ifdef QT_DEBUG
+        painter->save();
+        painter->setBrush(Qt::red);
+        painter->drawRoundedRect(-5, -5, 10, 10, 5, 5);
+        painter->restore();
+        paintCoord(painter);
+    #endif*/
 }
 
 void CharacterItem::updateChildPosition()
