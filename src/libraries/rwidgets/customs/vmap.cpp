@@ -471,7 +471,6 @@ void VMap::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
         QGraphicsScene::mouseMoveEvent(mouseEvent);
         return;
     }
-
     if(!m_currentItem.isNull())
     {
         m_currentItem->setModifiers(mouseEvent->modifiers());
@@ -624,6 +623,8 @@ void VMap::manageAnchor()
         if(parentChild)
             parent= parentChild->controller();
     }
+    if(child == parent)
+        return;
     m_ctrl->setParent(child, parent);
 }
 

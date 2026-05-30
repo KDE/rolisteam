@@ -27,7 +27,7 @@ AnchorItem::AnchorItem() : m_pen(QColor(Qt::darkGray)) {}
 AnchorItem::~AnchorItem() {}
 QRectF AnchorItem::boundingRect() const
 {
-    return QRectF(m_startPoint, m_endPoint);
+    return QRectF(m_startPoint, m_endPoint).normalized();
 }
 
 void AnchorItem::setNewEnd(const QPointF& nend)
@@ -36,6 +36,7 @@ void AnchorItem::setNewEnd(const QPointF& nend)
         return;
 
     m_endPoint+= nend;
+    update();
 }
 void AnchorItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
