@@ -223,6 +223,8 @@ void PathItem::setNewEnd(const QPointF& p)
     }
     else
         m_pathCtrl->setCorner(p, m_pathCtrl->pointCount() - 1);
+
+    update();
 }
 
 void PathItem::addActionContextMenu(QMenu& menu)

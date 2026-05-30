@@ -50,6 +50,7 @@ LineItem::LineItem(vmap::LineController* ctrl) : VisualItem(ctrl), m_lineCtrl(ct
 void LineItem::setNewEnd(const QPointF& nend)
 {
     m_lineCtrl->setCorner(nend, 1);
+    update();
     // m_rect.setBottomRight(nend);
 }
 QRectF LineItem::boundingRect() const
