@@ -8514,7 +8514,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Régua"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:321
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "Promover a"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-12 19:21+0200\n"
+"PO-Revision-Date: 2026-05-27 20:02+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1304,6 +1304,7 @@ msgctxt "ItemEditor|"
 msgid "Same Height"
 msgstr "Stessa altezza"
 
+# Error: Dupplicate >>> Duplicate
 #: src/binaries/rcse/itemeditor.cpp:74
 msgctxt "ItemEditor|"
 msgid "Dupplicate"
@@ -3164,7 +3165,7 @@ msgstr "Globale"
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
-msgstr ""
+msgstr "%1 # Azione %2"
 
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
@@ -3577,7 +3578,7 @@ msgstr ""
 #: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
 msgid "NPC"
-msgstr "NPC (personaggio non giocabile)"
+msgstr "NPC (personaggio non giocante)"
 
 #: src/libraries/core/src/model/playermodel.cpp:195
 msgctxt "PlayerModel|"
@@ -3813,12 +3814,12 @@ msgstr "Testo con bordo"
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
 msgctxt "QObject|"
 msgid "NPC Token"
-msgstr "Token NPC"
+msgstr "Pedina NPC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "PC Token"
-msgstr "Token PC"
+msgstr "Pedina PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
 msgctxt "QObject|"
@@ -4661,7 +4662,7 @@ msgstr "Giocatore"
 #: src/libraries/qml_views/views/ConnectionForm.qml:201
 msgctxt "ConnectionForm|"
 msgid "Campaign Root:"
-msgstr "Radice della campagna:"
+msgstr "Percorso della campagna:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:240
 msgctxt "ConnectionForm|"
@@ -5045,12 +5046,12 @@ msgstr "Cambia visibilità"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:313
 msgctxt "RGraphicsView|"
 msgid "Roll Init"
-msgstr "Tira inizializzazione"
+msgstr "Lancia iniziativa"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:319
 msgctxt "RGraphicsView|"
 msgid "Clear Init"
-msgstr "Cancella inizializzazione"
+msgstr "Cancella iniziativa"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:325
 msgctxt "RGraphicsView|"
@@ -5060,7 +5061,7 @@ msgstr "Ingrandimento"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:389
 msgctxt "RGraphicsView|"
 msgid "Rotation Value?"
-msgstr "Valore rotazione?"
+msgstr "Valore di rotazione?"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:390
 msgctxt "RGraphicsView|"
@@ -5215,7 +5216,7 @@ msgstr "Tutti gli NPC"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:686
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on All Npcs"
-msgstr "Tira iniziativa su tutti gli NPC"
+msgstr "Lancia iniziativa su tutti gli NPC"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:690
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:705
@@ -5226,7 +5227,7 @@ msgstr "Selezione"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:691
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on Selection"
-msgstr "Tira iniziativa sulla selezione"
+msgstr "Lancia iniziativa sulla selezione"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:695
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:710
@@ -5237,7 +5238,7 @@ msgstr "Tutti i personaggi"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:696
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on All Characters"
-msgstr "Tira iniziativa su tutti i personaggi"
+msgstr "Lancia iniziativa su tutti i personaggi"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:701
 msgctxt "RGraphicsView|"
@@ -6306,7 +6307,7 @@ msgstr "Modalità di visibilità:"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:111
 msgctxt "MapWizzardDialog|"
 msgid "Permission Mode:"
-msgstr "Modalità permesso:"
+msgstr "Modalità di permesso:"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:123
 msgctxt "MapWizzardDialog|"
@@ -6376,7 +6377,7 @@ msgstr "px"
 #: src/libraries/rwidgets/docks/antagonistboard.cpp:71
 msgctxt "campaign::AntagonistBoard|"
 msgid "Edit Token"
-msgstr "Modifica token"
+msgstr "Modifica pedina"
 
 #: src/libraries/rwidgets/docks/antagonistboard.cpp:72
 msgctxt "campaign::AntagonistBoard|"
@@ -6742,7 +6743,7 @@ msgstr "Testo"
 #: src/libraries/rwidgets/docks/campaigndock.cpp:63
 msgctxt "campaign::CampaignDock|"
 msgid "Token"
-msgstr "Token"
+msgstr "Pedina"
 
 #: src/libraries/rwidgets/docks/campaigndock.cpp:64
 msgctxt "campaign::CampaignDock|"
@@ -8525,7 +8526,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regola"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:321
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "Promuovi in"
@@ -9309,7 +9310,7 @@ msgstr "Regola"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
 msgctxt "ToolBox|"
 msgid "Path"
-msgstr "Percorso"
+msgstr "Tracciato"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:154
 msgctxt "ToolBox|"
@@ -9319,7 +9320,7 @@ msgstr "Ancora"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
 msgctxt "ToolBox|"
 msgid "Pipette"
-msgstr "Pipetta"
+msgstr "Contagocce"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
 msgctxt "ToolBox|"

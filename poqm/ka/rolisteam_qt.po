@@ -8514,7 +8514,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "წესი"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:321
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "დაწინაურება"

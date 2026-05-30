@@ -8898,7 +8898,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Правило"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:321
 #, fuzzy
 msgctxt "VisualItem|"
 msgid "Promote To"

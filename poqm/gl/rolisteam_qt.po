@@ -8829,7 +8829,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regra"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:318
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:321
 #, fuzzy
 #| msgctxt "ParticipantsPane|"
 #| msgid "Promote"
