@@ -58,8 +58,8 @@ RGraphicsView::RGraphicsView(VectorialMapController* ctrl, QWidget* parent)
     setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing | QPainter::SmoothPixmapTransform);
     setRubberBandSelectionMode(Qt::IntersectsItemBoundingRect);
     setOptimizationFlag(QGraphicsView::DontAdjustForAntialiasing);
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     createAction();
 }
@@ -108,19 +108,13 @@ void RGraphicsView::wheelEvent(QWheelEvent* event)
 {
     if(event->modifiers() & Qt::ShiftModifier)
     {
-        double angle= event->angleDelta().y();
-        double factor= qPow(1.0015, angle);
-
-        auto targetViewportPos= event->position();
-        auto targetScenePos= event->scenePosition();
+        setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+        QPoint degrees= event->angleDelta() / 8.0;
+        qreal factor= 1.0 + degrees.ry() / 100.0;
         m_ctrl->setZoomLevel(m_ctrl->zoomLevel() * factor);
         scale(factor, factor);
-        centerOn(targetScenePos);
-        QPointF deltaViewportPos= targetViewportPos - QPointF(viewport()->width() / 2.0, viewport()->height() / 2.0);
-        QPointF viewportCenter= mapFromScene(targetScenePos) - deltaViewportPos;
-        centerOn(mapToScene(viewportCenter.toPoint()));
-        updateSizeToController();
-        return;
+        event->accept();
+        setTransformationAnchor(QGraphicsView::AnchorViewCenter);
     }
     else
         QGraphicsView::wheelEvent(event);
@@ -567,9 +561,9 @@ void RGraphicsView::createAction()
                                       hash.insert(vItem->uuid(), vItem);
                               });
 
-                for(const auto &info : first)
+                for(const auto& info : first)
                 {
-                    for(const auto &data : second)
+                    for(const auto& data : second)
                     {
                         auto firstItem= hash.value(info);
                         auto secondItem= hash.value(data);
