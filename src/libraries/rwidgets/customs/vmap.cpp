@@ -387,13 +387,10 @@ void VMap::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
             return;
         }
 
-        if(item->getType() != vmap::VisualItemController::ItemType::IMAGE)
+        QColor color= item->color(item->mapFromScene(mouseEvent->scenePos()));
+        if(color.isValid())
         {
-            QColor color= item->color();
-            if(color.isValid())
-            {
-                m_ctrl->setToolColor(color);
-            }
+            m_ctrl->setToolColor(color);
         }
     }
     else if(Core::HIGHLIGHTER == m_ctrl->tool() && leftButton)
@@ -484,8 +481,7 @@ void VMap::mouseMoveEvent(QGraphicsSceneMouseEvent* mouseEvent)
     else if(!m_ruleItem.isNull())
     {
         mouseEvent->accept();
-        m_ruleItem->setNewEnd(mouseEvent->scenePos() - mouseEvent->lastScenePos(),
-                              mouseEvent->modifiers() & Qt::ControlModifier);
+        m_ruleItem->setNewEnd(mouseEvent->scenePos(), mouseEvent->modifiers() & Qt::ControlModifier);
     }
     else if(!m_parentItemAnchor.isNull())
     {

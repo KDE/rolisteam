@@ -97,61 +97,6 @@ void ImageItem::updateChildPosition()
     update();
 }
 
-void ImageItem::dataToMedia()
-{
-    /*  auto buf= new QBuffer(&m_data);
-      buf->open(QIODevice::ReadOnly);
-
-      m_movie= new QMovie(buf);
-      if((m_movie->isValid()) && (m_movie->frameCount() > 1))
-      {
-          connect(m_movie, &QMovie::updated, this, &ImageItem::updateImageFromMovie);
-          m_movie->start();
-          // m_rect= m_movie->frameRect();
-      }
-      else
-      {
-          delete m_movie;
-          m_movie= nullptr;
-          m_image.loadFromData(m_data);
-
-          initImage();
-      }*/
-}
-
-void ImageItem::initImage()
-{
-    /* if(m_image.isNull())
-         return;
-     //  m_rect= m_image.rect();
-     if(m_image.width() != 0)
-     {
-         m_ratio= m_image.height() / m_image.width();
-     }
-     QBuffer buffer;
-     m_image.save(&buffer, "png");
-     m_data= buffer.data();*/
-}
-
-void ImageItem::setModifiers(Qt::KeyboardModifiers modifiers)
-{
-    Q_UNUSED(modifiers)
-    // m_modifiers= modifiers;
-}
-
-/*void ImageItem::endOfGeometryChange(ChildPointItem::Change change)
-{
-    if(change == ChildPointItem::Resizing)
-    {
-        auto oldScenePos= scenePos();
-        setTransformOriginPoint(m_imgCtrl->rect().center());
-        auto newScenePos= scenePos();
-        auto oldPos= pos();
-        m_imgCtrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
-                                  oldPos.y() + (oldScenePos.y() - newScenePos.y())));
-    }
-    VisualItem::endOfGeometryChange(change);
-}*/
 VisualItem* ImageItem::promoteTo(vmap::VisualItemController::ItemType type)
 {
     Q_UNUSED(type)
@@ -167,4 +112,15 @@ VisualItem* ImageItem::promoteTo(vmap::VisualItemController::ItemType type)
         return item;
     }*/
     return nullptr;
+}
+
+QColor ImageItem::color(const QPointF& pos) const
+{
+    if(!m_imgCtrl)
+        return {};
+    auto rect= m_imgCtrl->rect();
+    auto img= m_imgCtrl->pixmap().toImage();
+    int x= pos.x() * img.width() / rect.width();
+    int y= pos.y() * img.height() / rect.height();
+    return img.pixelColor(QPoint{x, y});
 }

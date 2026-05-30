@@ -67,7 +67,7 @@ public:
 
     QString uuid() const;
 
-    QColor color() const;
+    virtual QColor color(const QPointF& pos) const;
     virtual bool canBeMoved() const;
 
     static int getHighlightWidth();

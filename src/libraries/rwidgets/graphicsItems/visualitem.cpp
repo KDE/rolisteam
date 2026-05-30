@@ -164,8 +164,9 @@ void VisualItem::updateItemFlags()
     }
 }
 
-QColor VisualItem::color() const
+QColor VisualItem::color(const QPointF& pos) const
 {
+    Q_UNUSED(pos);
     return m_ctrl->color();
 }
 

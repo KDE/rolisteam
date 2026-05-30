@@ -30,31 +30,15 @@ public:
      */
     virtual void setNewEnd(const QPointF& nend) override;
 
-    void setImageUri(QString uri);
-    /**
-     * @brief getImageUri
-     * @return
-     */
-    QString getImageUri();
-
-    virtual void setModifiers(Qt::KeyboardModifiers modifiers) override;
-
     VisualItem* promoteTo(vmap::VisualItemController::ItemType) override;
-    QImage getImage() const;
-    void setImage(const QImage& image);
 
-    // void endOfGeometryChange(ChildPointItem::Change change) override;
+    QColor color(const QPointF& pos) const override;
 
 protected:
     /**
      * @brief updateChildPosition
      */
     virtual void updateChildPosition() override;
-
-private:
-    void loadImage();
-    void dataToMedia();
-    void initImage();
 
 private:
     QPointer<vmap::ImageItemController> m_imgCtrl;
