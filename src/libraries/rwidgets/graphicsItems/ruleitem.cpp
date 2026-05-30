@@ -64,34 +64,38 @@ RuleItem::RuleItem(VectorialMapController* ctrl) : QGraphicsObject(), m_ctrl(ctr
 RuleItem::~RuleItem() {}
 QRectF RuleItem::boundingRect() const
 {
-    return QRectF(m_startPoint, m_endPoint);
+    return QRectF(m_startPoint, m_endPoint).normalized();
 }
 
 void RuleItem::setNewEnd(const QPointF& nendConst, bool onAxis)
 {
+
     if(nendConst.isNull())
         return;
+
+    auto pos= mapFromScene(nendConst);
+
     if(!onAxis)
     {
-        m_endPoint+= nendConst;
+        m_endPoint= pos;
+        update();
         return;
     }
-
-    QLineF line(m_startPoint, nendConst);
+    QLineF line(m_startPoint, pos);
     if(std::fabs(line.dx()) > std::fabs(line.dy()))
     {
-        m_endPoint= QPointF(m_endPoint.x() + nendConst.x(), 0);
+        m_endPoint= QPointF(pos.x(), m_startPoint.y());
     }
     else
     {
-        m_endPoint= QPointF(0, m_endPoint.y() + nendConst.y());
+        m_endPoint= QPointF(m_startPoint.x(), pos.y());
     }
+    update();
 }
 void RuleItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
-
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing, true);
 
