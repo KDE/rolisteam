@@ -390,7 +390,10 @@ void VMap::mousePressEvent(QGraphicsSceneMouseEvent* mouseEvent)
         QColor color= item->color(item->mapFromScene(mouseEvent->scenePos()));
         if(color.isValid())
         {
-            m_ctrl->setToolColor(color);
+            if(hasShift)
+                m_ctrl->setBackgroundColor(color);
+            else
+                m_ctrl->setToolColor(color);
         }
     }
     else if(Core::HIGHLIGHTER == m_ctrl->tool() && leftButton)
