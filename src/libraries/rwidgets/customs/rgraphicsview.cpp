@@ -343,10 +343,10 @@ void RGraphicsView::contextMenuEvent(QContextMenuEvent* event)
     {
         parentWid->addActionToMenu(menu);
     }
-    if(licenseToModify)
+    /*if(licenseToModify)
     {
         menu.addAction(m_properties);
-    }
+    }*/
 
     QAction* selectedAction= menu.exec(event->globalPos());
 
@@ -615,7 +615,7 @@ void RGraphicsView::createAction()
     addAction(m_dupplicate);
 
     // PROPERTIES
-    m_properties= new QAction(tr("Properties"), this);
+    // m_properties= new QAction(tr("Properties"), this);
     // connect(m_properties, &QAction::triggered, this, &RGraphicsView::showMapProperties);
 
     // Layers

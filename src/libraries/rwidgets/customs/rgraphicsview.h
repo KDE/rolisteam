@@ -87,7 +87,7 @@ private:
     QAction* m_zoomIn= nullptr;
     QAction* m_zoomOut= nullptr;
     QAction* m_zoomCenterOnItem= nullptr;
-    QAction* m_properties= nullptr;
+    //    QAction* m_properties= nullptr;
     QAction* m_editGroundLayer= nullptr;
     QAction* m_editObjectLayer= nullptr;
     QAction* m_editCharacterLayer= nullptr;
