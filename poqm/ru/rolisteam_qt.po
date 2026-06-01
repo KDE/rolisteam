@@ -5390,12 +5390,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "%1 дубликат"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-#, fuzzy
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Свойства"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 #, fuzzy
@@ -9839,6 +9833,11 @@ msgstr "в ожидании"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
+
+#, fuzzy
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Свойства"
 
 #, fuzzy
 #~ msgctxt "MindMap|"

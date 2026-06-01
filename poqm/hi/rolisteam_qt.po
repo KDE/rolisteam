@@ -5508,11 +5508,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "डुप्लिकेट आइटम"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "गुण"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9839,6 +9834,10 @@ msgstr "सोना"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "मोहित"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "गुण"
 
 #~ msgctxt "ChannelListPanel|"
 #~ msgid "Set/Unset Channel Password"

@@ -5510,11 +5510,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "डुप्लिकेट आइटम"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "गुणाः"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9845,6 +9840,10 @@ msgstr "शयन"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "मोहितः"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "गुणाः"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

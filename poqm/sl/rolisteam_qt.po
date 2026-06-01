@@ -5166,11 +5166,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Podvoji element"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Lastnosti"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9407,6 +9402,10 @@ msgstr "V spanju"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Začarani"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Lastnosti"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

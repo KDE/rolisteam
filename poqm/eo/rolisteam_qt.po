@@ -5497,11 +5497,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Duobligi Eron"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Propraĵoj"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9781,6 +9776,10 @@ msgstr "Dormanta"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Prisorĉita"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Propraĵoj"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

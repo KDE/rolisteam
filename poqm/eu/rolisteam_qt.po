@@ -5272,11 +5272,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Bikoiztu elementua"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Propietateak"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9533,6 +9528,10 @@ msgstr "Lotan"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Sorginduta"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Propietateak"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

@@ -5164,11 +5164,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Duplicar elemento"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Propiedades"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9406,3 +9401,7 @@ msgstr "Durmiente"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Hechizado"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Propiedades"

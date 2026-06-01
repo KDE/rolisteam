@@ -5156,11 +5156,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "اضاعف العنصر"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "الخصائص"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9395,6 +9390,10 @@ msgstr "نائم"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "بيويتشد"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "الخصائص"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

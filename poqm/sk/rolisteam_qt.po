@@ -5154,11 +5154,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Duplikovať položku"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Vlastnosti"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9395,6 +9390,10 @@ msgstr "Spiaci"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Očarený"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Vlastnosti"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

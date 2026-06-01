@@ -5502,11 +5502,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr ""
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "屬性"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9735,6 +9730,10 @@ msgstr "睡眠中"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr ""
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "屬性"
 
 #, fuzzy
 #~| msgctxt "DiceMessageDelegate|"

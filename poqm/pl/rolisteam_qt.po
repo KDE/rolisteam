@@ -5519,11 +5519,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Powiel rzecz"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Właściwości"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9834,6 +9829,10 @@ msgstr "Śpi"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Oczarowany"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Właściwości"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

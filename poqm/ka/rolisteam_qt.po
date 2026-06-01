@@ -5154,11 +5154,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "დუბლირება"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "თვისებები"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9393,6 +9388,10 @@ msgstr "მძინარე"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "აკეპილი"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "თვისებები"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

@@ -5168,11 +5168,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Дублювати запис"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Властивості"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9413,6 +9408,10 @@ msgstr "Сон"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Зачаровано"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Властивості"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

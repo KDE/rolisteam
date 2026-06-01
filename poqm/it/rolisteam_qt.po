@@ -5163,11 +5163,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Duplica elemento"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Proprietà"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9406,6 +9401,10 @@ msgstr "Addormentato"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Stregato"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Proprietà"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"

@@ -5492,11 +5492,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Monista kohde"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Ominaisuudet"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9779,6 +9774,10 @@ msgstr "Unessa"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Noiduttu"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Ominaisuudet"
 
 #, fuzzy
 #~| msgctxt "MindMap|"

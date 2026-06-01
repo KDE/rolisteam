@@ -5516,11 +5516,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Duplicate Item"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Properties"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9865,6 +9860,10 @@ msgstr "Sleeping"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Bewitched"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Properties"
 
 #~ msgctxt "ChannelListPanel|"
 #~ msgid "Set/Unset Channel Password"

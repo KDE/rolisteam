@@ -5154,11 +5154,6 @@ msgctxt "RGraphicsView|"
 msgid "Duplicate Item"
 msgstr "Ögeyi Çoğalt"
 
-#: src/libraries/rwidgets/customs/rgraphicsview.cpp:618
-msgctxt "RGraphicsView|"
-msgid "Properties"
-msgstr "Özellikler"
-
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:623
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:641
 msgctxt "RGraphicsView|"
@@ -9390,6 +9385,10 @@ msgstr "Uyuyor"
 msgctxt "TestCharacterStateModel|"
 msgid "Bewitched"
 msgstr "Efsunlanmış"
+
+#~ msgctxt "RGraphicsView|"
+#~ msgid "Properties"
+#~ msgstr "Özellikler"
 
 #~ msgctxt "SideMenu|"
 #~ msgid "disable mouseArea"
