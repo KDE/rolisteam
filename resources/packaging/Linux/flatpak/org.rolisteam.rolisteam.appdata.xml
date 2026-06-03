@@ -28,6 +28,7 @@
   <name xml:lang="sl">Odjemalec Rolisteam RPG</name>
   <name xml:lang="sv">Rolisteam rollspelsklient</name>
   <name xml:lang="tr">Rolisteam RPG İstemcisi</name>
+  <name xml:lang="ug">Rolisteam RPG خېرىدارى</name>
   <name xml:lang="uk">Клієнт RPG Rolisteam</name>
   <name xml:lang="zh-TW">Rolisteam RPG 用戶端</name>
   <developer_name>Rolisteam</developer_name>
@@ -59,6 +60,7 @@
   <developer_name xml:lang="sl">Rolisteam</developer_name>
   <developer_name xml:lang="sv">Rolisteam</developer_name>
   <developer_name xml:lang="tr">Rolistaem</developer_name>
+  <developer_name xml:lang="ug">Rolisteam</developer_name>
   <developer_name xml:lang="uk">Rolisteam</developer_name>
   <developer_name xml:lang="zh-TW">Rolisteam</developer_name>
   <summary>Client Companion to Rolisteam Server</summary>
