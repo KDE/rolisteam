@@ -205,6 +205,7 @@ bool ChannelModel::setData(const QModelIndex& index, const QVariant& value, int)
     if(rightToSetName)
     {
         tmp->setName(value.toString());
+        emit dataChanged(index, index);
         emit channelNameChanged(chan->uuid(), chan->name());
         return true;
     }
