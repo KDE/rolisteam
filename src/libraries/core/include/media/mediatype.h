@@ -448,6 +448,7 @@ constexpr auto JSON_NPC_NAME{"name"};
 constexpr auto JSON_NPC_DESCRIPTION{"description"};
 constexpr auto JSON_NPC_INITCOMMAND{"initCmd"};
 constexpr auto JSON_NPC_INITVALUE{"initVal"};
+constexpr auto JSON_NPC_HAS_INIT{"hasinitval"};
 constexpr auto JSON_NPC_COLOR{"color"};
 constexpr auto JSON_NPC_HP{"hp"};
 constexpr auto JSON_NPC_MAXHP{"maxhp"};

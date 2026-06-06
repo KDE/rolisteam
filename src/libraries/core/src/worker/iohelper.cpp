@@ -952,6 +952,7 @@ QJsonObject IOHelper::npcToJsonObject(const campaign::NonPlayableCharacter* npc,
 
     obj[Core::JsonKey::JSON_NPC_INITCOMMAND]= npc->initCommand();
     obj[Core::JsonKey::JSON_NPC_INITVALUE]= npc->getInitiativeScore();
+    obj[Core::JsonKey::JSON_NPC_HAS_INIT]= npc->hasInitScore();
     obj[Core::JsonKey::JSON_NPC_COLOR]= npc->getColor().name();
     obj[Core::JsonKey::JSON_NPC_HP]= npc->getHealthPointsCurrent();
     obj[Core::JsonKey::JSON_NPC_MAXHP]= npc->getHealthPointsMax();
@@ -1035,10 +1036,11 @@ campaign::NonPlayableCharacter* IOHelper::jsonObjectToNpc(const QJsonObject& obj
     npc->setHealthPointsCurrent(obj[Core::JsonKey::JSON_NPC_HP].toInt());
 
     npc->setInitiativeScore(obj[Core::JsonKey::JSON_NPC_INITVALUE].toInt());
+    npc->setHasInitiative(obj[Core::JsonKey::JSON_NPC_HAS_INIT].toBool());
     npc->setInitCommand(obj[Core::JsonKey::JSON_NPC_INITCOMMAND].toString());
 
     auto actionArray= obj[Core::JsonKey::JSON_NPC_ACTIONS].toArray();
-    for(auto act : actionArray)
+    for(auto act : std::as_const(actionArray))
     {
         auto actObj= act.toObject();
         auto action= new CharacterAction();
@@ -1048,7 +1050,7 @@ campaign::NonPlayableCharacter* IOHelper::jsonObjectToNpc(const QJsonObject& obj
     }
 
     auto propertyArray= obj[Core::JsonKey::JSON_NPC_PROPERTIES].toArray();
-    for(auto pro : propertyArray)
+    for(auto pro : std::as_const(propertyArray))
     {
         auto proObj= pro.toObject();
         auto property= new CharacterProperty();
@@ -1058,7 +1060,7 @@ campaign::NonPlayableCharacter* IOHelper::jsonObjectToNpc(const QJsonObject& obj
     }
 
     auto shapeArray= obj[Core::JsonKey::JSON_NPC_SHAPES].toArray();
-    for(auto sha : shapeArray)
+    for(auto sha : std::as_const(shapeArray))
     {
         auto objSha= sha.toObject();
         auto shape= new CharacterShape();

@@ -274,6 +274,7 @@ void VmapTopBar::setupUi()
     m_bgSelector->setColor(m_ctrl->backgroundColor());
     addWidget(m_bgSelector);
     connect(m_bgSelector, &ColorButton::colorChanged, m_ctrl, &VectorialMapController::setBackgroundColor);
+    connect(m_ctrl, &VectorialMapController::backgroundColorChanged, m_bgSelector, &ColorButton::setColor);
     addSeparator();
 
     // grid

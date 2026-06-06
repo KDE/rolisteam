@@ -148,19 +148,18 @@ void ImageItemController::checkMovie()
     auto movie= new QMovie(buf, QByteArray(), this);
     if((movie->isValid()) && (movie->frameCount() > 1))
     {
-        connect(movie, &QMovie::updated, this, [this, movie]() { setImage(movie->currentPixmap()); });
+        connect(movie, &QMovie::frameChanged, this, [this, movie]() { setImage(movie->currentPixmap()); });
         movie->start();
         // m_rect= m_movie->frameRect();
     }
     else
     {
         delete movie;
+        delete buf;
         QPixmap img;
         img.loadFromData(m_data);
         setImage(img);
     }
-
-    delete buf;
 }
 
 void ImageItemController::endGeometryChange()
