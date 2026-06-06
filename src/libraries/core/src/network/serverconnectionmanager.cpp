@@ -513,7 +513,7 @@ void ServerConnectionManager::disconnectedUser()
         return;
 
     emit eventOccured(tr("User %1 has been disconnected!").arg(client->playerName()), LogController::Info);
-    // removeClient(client);
+    removeSocket(client->getSocket());
 }
 
 void ServerConnectionManager::removeSocket(QTcpSocket* socket)
