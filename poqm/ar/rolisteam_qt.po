@@ -3624,12 +3624,12 @@ msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "م.بايت"
 
-#: src/libraries/core/src/network/channelmodel.cpp:452
+#: src/libraries/core/src/network/channelmodel.cpp:453
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "كلمة سر القناة"
 
-#: src/libraries/core/src/network/channelmodel.cpp:453
+#: src/libraries/core/src/network/channelmodel.cpp:454
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -6988,18 +6988,18 @@ msgctxt "VmapTopBar|"
 msgid "Show/Hide Initiative"
 msgstr "أظهر/أخفِ المبادرة"
 
-#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:295
+#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:296
 msgctxt "VmapTopBar|"
 msgid "inch"
 msgstr "بوصة"
 
-#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:295
+#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:296
 msgctxt "VmapTopBar|"
 msgid "foot"
 msgstr "قدم"
 
-#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:295
-#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:311
+#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:296
+#: src/libraries/rwidgets/docks/vmaptoolbar.cpp:312
 msgctxt "VmapTopBar|"
 msgid "px"
 msgstr "بكسل"
