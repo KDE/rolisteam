@@ -33,9 +33,7 @@ set(RC_FILE ${PROJECT_SOURCE_DIR}/resources/rolisteam/logo/rolisteam.rc)
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Core Widgets Gui Quick3D LinguistTools WebSockets Scxml MultimediaWidgets Multimedia Pdf)
 
-if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-    find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
-endif()
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS RemoteObjects)
 
 set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.rolisteam")
 set(RESOURCE_FILES ${CMAKE_SOURCE_DIR}/rolisteam.qrc  ${CMAKE_SOURCE_DIR}/resources/rolisteam/logo/logo.qrc)

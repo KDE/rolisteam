@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 project(rolisteam VERSION 1.10.0 LANGUAGES CXX)
+set(QT_REQUIRED_VERSION 6.8.0)
 
 if (MSVC AND CMAKE_CXX_COMPILER_VERSION VERSION_GREATER_EQUAL 19.14)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /experimental:external /external:W0 ")
