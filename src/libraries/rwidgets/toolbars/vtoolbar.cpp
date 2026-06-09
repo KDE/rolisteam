@@ -25,6 +25,8 @@
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "preferences/preferencesmanager.h"
 
+#include <QScrollArea>
+
 HiddingButton::HiddingButton(QWidget* w) : QToolButton(w) {}
 
 void HiddingButton::addAction(QAction* act)
@@ -161,7 +163,7 @@ void ToolBox::createActions()
     m_highlighterAct= new QAction(QIcon::fromTheme("marker-512"), tr("Highlighter"), m_toolsGroup);
     m_highlighterAct->setData(Core::HIGHLIGHTER);
 
-    m_lightAct= new QAction(tr("💡 Light"), m_toolsGroup);
+    m_lightAct= new QAction(QIcon::fromTheme("sun"), tr("Light"), m_toolsGroup);
     m_lightAct->setData(Core::LIGHT);
     m_lightAct->setToolTip(tr("Light Source"));
 
@@ -312,6 +314,7 @@ void ToolBox::makeTools()
     toolsLayout->addWidget(filledEllipseButton);
     toolsLayout->addWidget(textButton);
     toolsLayout->addWidget(handleButton);
+    toolsLayout->addWidget(addNpcButton);
     toolsLayout->addWidget(ruleButton);
     toolsLayout->addWidget(pathButton);
     toolsLayout->addWidget(anchorButton);
@@ -319,6 +322,14 @@ void ToolBox::makeTools()
     toolsLayout->addWidget(bucketButton);
     toolsLayout->addWidget(highlighterButton);
     toolsLayout->addWidget(lightButton);
+
+    QWidget* toolsContainerWidget= new QWidget();
+    toolsContainerWidget->setLayout(toolsLayout);
+    QScrollArea* toolsScrollArea= new QScrollArea();
+    toolsScrollArea->setWidget(toolsContainerWidget);
+    toolsScrollArea->setWidgetResizable(true);
+    toolsScrollArea->setStyleSheet("QScrollArea { border: none; }");
+    toolsScrollArea->setMaximumHeight(150);
 
     m_npcNameTextEdit= new QLineEdit();
     m_npcNameTextEdit->setToolTip(tr("NPC Name"));
@@ -374,7 +385,7 @@ void ToolBox::makeTools()
     line->setFrameShadow(QFrame::Sunken);
     toolsVerticalLayout->addWidget(m_editionModeCombo);
     toolsVerticalLayout->addWidget(line);
-    toolsVerticalLayout->addLayout(toolsLayout);
+    toolsVerticalLayout->addWidget(toolsScrollArea);
     toolsVerticalLayout->addWidget(m_lineDiameter);
     toolsVerticalLayout->addLayout(characterToolsLayout);
     toolsVerticalLayout->addWidget(m_npcNameTextEdit);

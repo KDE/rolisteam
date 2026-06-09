@@ -22,10 +22,7 @@ qreal LightController::radius() const
 
 QRectF LightController::rect() const
 {
-    return QRectF(pos().x() - m_radius,
-                  pos().y() - m_radius,
-                  m_radius * 2,
-                  m_radius * 2);
+    return QRectF(-m_radius, -m_radius, m_radius * 2, m_radius * 2);
 }
 
 void LightController::setRadius(qreal radius)
