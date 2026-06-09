@@ -61,6 +61,7 @@ ToolBox::ToolBox(VectorialMapController* ctrl, QWidget* parent) : QWidget(parent
                 m_pathAct->setChecked(tool == Core::PATH);
                 m_pipette->setChecked(tool == Core::PIPETTE);
                 m_highlighterAct->setChecked(tool == Core::HIGHLIGHTER);
+                m_lightAct->setChecked(tool == Core::LIGHT);
                 m_pencilAct->setChecked(tool == Core::PEN);
                 m_lineAct->setChecked(tool == Core::LINE);
                 m_rectAct->setChecked(tool == Core::EMPTYRECT);
@@ -160,6 +161,10 @@ void ToolBox::createActions()
     m_highlighterAct= new QAction(QIcon::fromTheme("marker-512"), tr("Highlighter"), m_toolsGroup);
     m_highlighterAct->setData(Core::HIGHLIGHTER);
 
+    m_lightAct= new QAction(tr("💡 Light"), m_toolsGroup);
+    m_lightAct->setData(Core::LIGHT);
+    m_lightAct->setToolTip(tr("Light Source"));
+
     m_bucketAct= new QAction(QIcon::fromTheme("paint-bucket"), tr("Paint Bucket"), m_toolsGroup);
     m_bucketAct->setData(Core::BUCKET);
 
@@ -184,6 +189,7 @@ void ToolBox::createActions()
     m_highlighterAct->setCheckable(true);
     m_bucketAct->setCheckable(true);
     m_anchorAct->setCheckable(true);
+    m_lightAct->setCheckable(true);
     m_handAct->setChecked(true);
 
     addAction(m_pencilAct);
@@ -198,6 +204,7 @@ void ToolBox::createActions()
     addAction(m_ruleAct);
     addAction(m_pathAct);
     addAction(m_highlighterAct);
+    addAction(m_lightAct);
     addAction(m_bucketAct);
     addAction(m_anchorAct);
     addAction(m_resetCountAct);
@@ -224,7 +231,7 @@ void ToolBox::makeTools()
     auto* pipetteButton= new HiddingButton(this);
     auto* bucketButton= new HiddingButton(this);
     auto* highlighterButton= new HiddingButton(this);
-
+    auto* lightButton= new HiddingButton(this);
     penButton->addAction(m_pencilAct);
     lineButton->addAction(m_lineAct);
     emptyRectButton->addAction(m_rectAct);
@@ -243,6 +250,7 @@ void ToolBox::makeTools()
     highlighterButton->addAction(m_highlighterAct);
     textButton->addAction(m_textWithBorderAct);
     bucketButton->addAction(m_bucketAct);
+    lightButton->addAction(m_lightAct);
     //  unveilRect->setDefaultAction(m_unmaskRectAct);
 
     connect(ruleButton, &QToolButton::triggered, ruleButton, &QToolButton::setDefaultAction);
@@ -266,6 +274,7 @@ void ToolBox::makeTools()
     pipetteButton->setAutoRaise(true);
     highlighterButton->setAutoRaise(true);
     bucketButton->setAutoRaise(true);
+    lightButton->setAutoRaise(true);
     //   unveilRect->setAutoRaise(true);
 
     auto pref= m_ctrl ? m_ctrl->preferences() : nullptr;
@@ -285,6 +294,7 @@ void ToolBox::makeTools()
     pathButton->setIconSize(iconSize);
     pipetteButton->setIconSize(iconSize);
     highlighterButton->setIconSize(iconSize);
+    lightButton->setIconSize(iconSize);
     bucketButton->setIconSize(iconSize);
 
     QVBoxLayout* toolsVerticalLayout= new QVBoxLayout();
@@ -308,6 +318,7 @@ void ToolBox::makeTools()
     toolsLayout->addWidget(pipetteButton);
     toolsLayout->addWidget(bucketButton);
     toolsLayout->addWidget(highlighterButton);
+    toolsLayout->addWidget(lightButton);
 
     m_npcNameTextEdit= new QLineEdit();
     m_npcNameTextEdit->setToolTip(tr("NPC Name"));
@@ -437,6 +448,7 @@ void ToolBox::updateUi()
     m_opacitySlider->setVisible((isGm || pcAll) && painting);
     m_textWithBorderAct->setVisible(isGm || pcAll);
     m_handAct->setVisible(isGm || pcAll || pcMove);
+    m_lightAct->setVisible(isGm || pcAll);
 }
 
 void ToolBox::setImage(const QPixmap& img)

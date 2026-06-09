@@ -71,6 +71,9 @@ vmap::VisualItemController* vmap::VmapItemFactory::createVMapItem(VectorialMapCo
     case Core::SelectableTool::BUCKET:
     case Core::SelectableTool::HIGHLIGHTER:
         break;
+    case Core::SelectableTool::LIGHT:
+        ctrl= new vmap::LightController(param, mapCtrl);
+        break;
     }
     if(ctrl == nullptr)
     {

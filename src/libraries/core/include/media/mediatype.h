@@ -188,7 +188,8 @@ NETWORK_EXPORT Q_ENUM_NS(TransformType)
         TEXTBORDER,
         PIPETTE,
         BUCKET,
-        HIGHLIGHTER
+        HIGHLIGHTER,
+        LIGHT
     };
 NETWORK_EXPORT Q_ENUM_NS(SelectableTool)
 

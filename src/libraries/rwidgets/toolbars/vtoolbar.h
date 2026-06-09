@@ -123,6 +123,7 @@ private:
     QAction* m_pipette= nullptr;
     QAction* m_bucketAct= nullptr;
     QAction* m_highlighterAct= nullptr;
+    QAction* m_lightAct= nullptr;
     QAction* m_textWithBorderAct= nullptr;
     QComboBox* m_editionModeCombo= nullptr;
     QLabel* m_opacityLabel= nullptr;
