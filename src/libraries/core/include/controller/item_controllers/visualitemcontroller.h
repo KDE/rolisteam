@@ -71,7 +71,8 @@ public:
         SIGHT,
         ANCHOR,
         GRID,
-        HIGHLIGHTER
+        HIGHLIGHTER,
+        LIGHT
     };
     Q_ENUM(ItemType)
 

@@ -27,7 +27,7 @@
 #include "controller/item_controllers/rectcontroller.h"
 #include "controller/item_controllers/textcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
-
+#include "controller/item_controllers/lightcontroller.h"
 #include "network/networkmessagereader.h"
 #include "worker/messagehelper.h"
 
@@ -107,6 +107,9 @@ vmap::VisualItemController* vmap::VmapItemFactory::createVMapItem(VectorialMapCo
             case vmap::VisualItemController::GRID:
             case vmap::VisualItemController::ANCHOR:
             case vmap::VisualItemController::SIGHT:
+                break;
+            case vmap::VisualItemController::LIGHT:
+                ctrl= new vmap::LightController(param, mapCtrl);
                 break;
             }
         }

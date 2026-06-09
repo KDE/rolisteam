@@ -14,6 +14,7 @@
 #include "graphicsItems/griditem.h"
 #include "graphicsItems/highlighteritem.h"
 #include "graphicsItems/imageitem.h"
+#include "graphicsItems/lightitem.h"
 #include "graphicsItems/lineitem.h"
 #include "graphicsItems/pathitem.h"
 #include "graphicsItems/rectitem.h"
@@ -194,6 +195,9 @@ void VMap::addVisualItem(vmap::VisualItemController* ctrl)
     case vmap::VisualItemController::CHARACTER:
         addCharaterItem(dynamic_cast<vmap::CharacterItemController*>(ctrl));
         break;
+    case vmap::VisualItemController::LIGHT:
+        addLightItem(dynamic_cast<vmap::LightController*>(ctrl));
+        break;
     default:
         break;
     }
@@ -247,6 +251,16 @@ void VMap::addImageItem(vmap::ImageItemController* imgCtrl)
     addAndInit(img);
     img->setPos(imgCtrl->pos());
     imgCtrl->endGeometryChange();
+}
+
+void VMap::addLightItem(vmap::LightController* lightCtrl)
+{
+    if(!lightCtrl)
+        return;
+    auto light= new LightItem(lightCtrl);
+    addAndInit(light);
+    light->setPos(lightCtrl->pos());
+    lightCtrl->endGeometryChange();
 }
 
 void VMap::addRectItem(vmap::RectController* rectCtrl, bool editing)

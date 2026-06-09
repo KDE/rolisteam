@@ -25,6 +25,7 @@
 #include <QUndoStack>
 
 #include "controller/view_controller/vectorialmapcontroller.h"
+#include "controller/item_controllers/lightcontroller.h"
 #include "data/person.h"
 #include "media/mediatype.h"
 #include "rwidgets/graphicsItems/griditem.h"
@@ -98,6 +99,7 @@ protected:
     void addPathItem(vmap::PathController* pathCtrl, bool editing);
     void addTextItem(vmap::TextController* textCtrl);
     void addCharaterItem(vmap::CharacterItemController* itemCtrl);
+    void addLightItem(vmap::LightController* lightCtrl);
 
 private:
     VisualItem* visualItemUnder(const QPointF& pos);

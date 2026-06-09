@@ -109,6 +109,7 @@ set(HEADERS
   graphicsItems/pathitem.h
   graphicsItems/rectitem.h
   graphicsItems/ruleitem.h
+  graphicsItems/lightitem.h
   graphicsItems/sightitem.h
   graphicsItems/textitem.h
   graphicsItems/visualitem.h
@@ -217,6 +218,7 @@ set(SOURCES
   graphicsItems/rectitem.cpp
   graphicsItems/ruleitem.cpp
   graphicsItems/sightitem.cpp
+  graphicsItems/lightitem.cpp
   graphicsItems/textitem.cpp
   graphicsItems/visualitem.cpp
   layouts/flowlayout.cpp
