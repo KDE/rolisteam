@@ -9230,127 +9230,143 @@ msgctxt "UserListView|"
 msgid "Shape"
 msgstr "Vorm"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:38
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:40
 msgctxt "ToolBox|"
 msgid "Tools"
 msgstr "Hulpmiddelen"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:121
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
 msgctxt "ToolBox|"
 msgid "Pen"
 msgstr "Pen"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
 msgctxt "ToolBox|"
 msgid "Line"
 msgstr "Lijn"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
 msgctxt "ToolBox|"
 msgid "Empty Rectangle"
 msgstr "Lege rechthoek"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
 msgctxt "ToolBox|"
 msgid "filled Rectangle"
 msgstr "gevulde rechthoek"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
 msgctxt "ToolBox|"
 msgid "Empty Ellipse"
 msgstr "Lege ellips"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
 msgctxt "ToolBox|"
 msgid "Filled Ellipse"
 msgstr "Gevulde ellips"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
 msgctxt "ToolBox|"
 msgid "Text"
 msgstr "Tekst"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:145
 msgctxt "ToolBox|"
 msgid "Hand"
 msgstr "Hand"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:146
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
 msgctxt "ToolBox|"
 msgid "Add NPC"
 msgstr "NPC toevoegen"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
 msgctxt "ToolBox|"
 msgid "Rule"
 msgstr "Regel"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:155
 msgctxt "ToolBox|"
 msgid "Path"
 msgstr "Pad"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:154
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
 msgctxt "ToolBox|"
 msgid "Anchor"
 msgstr "Anker"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
 msgctxt "ToolBox|"
 msgid "Pipette"
 msgstr "Pipet"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
 msgctxt "ToolBox|"
 msgid "Highlighter"
 msgstr "Accentuering"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#, fuzzy
+#| msgctxt "BorderListEditor|"
+#| msgid "Right"
+msgctxt "ToolBox|"
+msgid "Light"
+msgstr "Rechts"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
+#, fuzzy
+#| msgctxt "TestCharacterStateModel|"
+#| msgid "Lightly Wounded"
+msgctxt "ToolBox|"
+msgid "Light Source"
+msgstr "Licht gewond"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
 msgid "Paint Bucket"
 msgstr "Verfpot"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:173
 msgctxt "ToolBox|"
 msgid "Text With Border"
 msgstr "Tekst met omranding"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:176
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
 msgstr "NPC-teller resetten"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:335
 msgctxt "ToolBox|"
 msgid "NPC Name"
 msgstr "NPC-naam"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:318
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:340
 msgctxt "ToolBox|"
 msgid "NPC's number"
 msgstr "Nummer van NPC"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:324
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:346
 msgctxt "ToolBox|"
 msgid "Normal"
 msgstr "Normaal"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:326
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:348
 msgctxt "ToolBox|"
 msgid "Mask"
 msgstr "Masker"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:328
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:350
 msgctxt "ToolBox|"
 msgid "Unmask"
 msgstr "Masker wissen"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:358
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:380
 msgctxt "ToolBox|"
 msgid "height of the pen"
 msgstr "hoogte van de pen"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:370
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:392
 msgctxt "ToolBox|"
 msgid "Opacity:"
 msgstr "Dekking:"

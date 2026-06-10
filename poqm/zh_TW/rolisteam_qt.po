@@ -9576,127 +9576,143 @@ msgctxt "UserListView|"
 msgid "Shape"
 msgstr "形狀"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:38
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:40
 msgctxt "ToolBox|"
 msgid "Tools"
 msgstr "工具"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:121
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
 msgctxt "ToolBox|"
 msgid "Pen"
 msgstr "筆"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
 msgctxt "ToolBox|"
 msgid "Line"
 msgstr "線段"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
 msgctxt "ToolBox|"
 msgid "Empty Rectangle"
 msgstr "空白矩形"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
 msgctxt "ToolBox|"
 msgid "filled Rectangle"
 msgstr "填滿的矩形"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
 msgctxt "ToolBox|"
 msgid "Empty Ellipse"
 msgstr "空白橢圓"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
 msgctxt "ToolBox|"
 msgid "Filled Ellipse"
 msgstr "填滿的橢圓"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
 msgctxt "ToolBox|"
 msgid "Text"
 msgstr "文字"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:145
 msgctxt "ToolBox|"
 msgid "Hand"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:146
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
 msgctxt "ToolBox|"
 msgid "Add NPC"
 msgstr "新增 NPC"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
 msgctxt "ToolBox|"
 msgid "Rule"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:155
 msgctxt "ToolBox|"
 msgid "Path"
 msgstr "路徑"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:154
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
 msgctxt "ToolBox|"
 msgid "Anchor"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
 msgctxt "ToolBox|"
 msgid "Pipette"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
 msgctxt "ToolBox|"
 msgid "Highlighter"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#, fuzzy
+#| msgctxt "BorderListEditor|"
+#| msgid "Right"
+msgctxt "ToolBox|"
+msgid "Light"
+msgstr "右"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
+#, fuzzy
+#| msgctxt "TestCharacterStateModel|"
+#| msgid "Lightly Wounded"
+msgctxt "ToolBox|"
+msgid "Light Source"
+msgstr "輕傷"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
 msgid "Paint Bucket"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:173
 msgctxt "ToolBox|"
 msgid "Text With Border"
 msgstr "有邊框的文字"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:176
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
 msgstr "重設 NPC 計數"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:335
 msgctxt "ToolBox|"
 msgid "NPC Name"
 msgstr "NPC 名稱"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:318
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:340
 msgctxt "ToolBox|"
 msgid "NPC's number"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:324
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:346
 msgctxt "ToolBox|"
 msgid "Normal"
 msgstr "一般"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:326
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:348
 msgctxt "ToolBox|"
 msgid "Mask"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:328
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:350
 msgctxt "ToolBox|"
 msgid "Unmask"
 msgstr "為止"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:358
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:380
 msgctxt "ToolBox|"
 msgid "height of the pen"
 msgstr ""
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:370
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:392
 msgctxt "ToolBox|"
 msgid "Opacity:"
 msgstr "不透明度："

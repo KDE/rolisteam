@@ -9255,127 +9255,143 @@ msgctxt "UserListView|"
 msgid "Shape"
 msgstr "Forma"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:38
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:40
 msgctxt "ToolBox|"
 msgid "Tools"
 msgstr "Eines"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:121
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
 msgctxt "ToolBox|"
 msgid "Pen"
 msgstr "Llapis"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
 msgctxt "ToolBox|"
 msgid "Line"
 msgstr "Línia"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
 msgctxt "ToolBox|"
 msgid "Empty Rectangle"
 msgstr "Rectangle buit"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
 msgctxt "ToolBox|"
 msgid "filled Rectangle"
 msgstr "Rectangle emplenat"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
 msgctxt "ToolBox|"
 msgid "Empty Ellipse"
 msgstr "El·lipse buida"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
 msgctxt "ToolBox|"
 msgid "Filled Ellipse"
 msgstr "El·lipse emplenada"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
 msgctxt "ToolBox|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:145
 msgctxt "ToolBox|"
 msgid "Hand"
 msgstr "Mà"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:146
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
 msgctxt "ToolBox|"
 msgid "Add NPC"
 msgstr "Afig un PNJ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
 msgctxt "ToolBox|"
 msgid "Rule"
 msgstr "Regla"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:155
 msgctxt "ToolBox|"
 msgid "Path"
 msgstr "Camí"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:154
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
 msgctxt "ToolBox|"
 msgid "Anchor"
 msgstr "Àncora"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
 msgctxt "ToolBox|"
 msgid "Pipette"
 msgstr "Pipeta"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
 msgctxt "ToolBox|"
 msgid "Highlighter"
 msgstr "Marcador fluorescent"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#, fuzzy
+#| msgctxt "BorderListEditor|"
+#| msgid "Right"
+msgctxt "ToolBox|"
+msgid "Light"
+msgstr "Dreta"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
+#, fuzzy
+#| msgctxt "TestCharacterStateModel|"
+#| msgid "Lightly Wounded"
+msgctxt "ToolBox|"
+msgid "Light Source"
+msgstr "Ferit lleu"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
 msgid "Paint Bucket"
 msgstr "Cubeta de pintar"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:173
 msgctxt "ToolBox|"
 msgid "Text With Border"
 msgstr "Text amb vora"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:176
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
 msgstr "Restablix el comptador de PNJ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:335
 msgctxt "ToolBox|"
 msgid "NPC Name"
 msgstr "Nom del PNJ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:318
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:340
 msgctxt "ToolBox|"
 msgid "NPC's number"
 msgstr "Número de PNJ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:324
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:346
 msgctxt "ToolBox|"
 msgid "Normal"
 msgstr "Normal"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:326
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:348
 msgctxt "ToolBox|"
 msgid "Mask"
 msgstr "Màscara"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:328
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:350
 msgctxt "ToolBox|"
 msgid "Unmask"
 msgstr "Desemmascara"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:358
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:380
 msgctxt "ToolBox|"
 msgid "height of the pen"
 msgstr "Alçària del llapis"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:370
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:392
 msgctxt "ToolBox|"
 msgid "Opacity:"
 msgstr "Opacitat:"

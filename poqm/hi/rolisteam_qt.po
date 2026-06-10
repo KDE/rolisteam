@@ -9680,127 +9680,143 @@ msgctxt "UserListView|"
 msgid "Shape"
 msgstr "आकार"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:38
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:40
 msgctxt "ToolBox|"
 msgid "Tools"
 msgstr "औजार"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:121
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
 msgctxt "ToolBox|"
 msgid "Pen"
 msgstr "कलम"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
 msgctxt "ToolBox|"
 msgid "Line"
 msgstr "रेखा"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
 msgctxt "ToolBox|"
 msgid "Empty Rectangle"
 msgstr "खाली आयत"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:130
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
 msgctxt "ToolBox|"
 msgid "filled Rectangle"
 msgstr "भरा हुआ आयत"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:133
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
 msgctxt "ToolBox|"
 msgid "Empty Ellipse"
 msgstr "खाली दीर्घवृत्त"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:136
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
 msgctxt "ToolBox|"
 msgid "Filled Ellipse"
 msgstr "भरा हुआ दीर्घवृत्त"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:139
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
 msgctxt "ToolBox|"
 msgid "Text"
 msgstr "मूलपाठ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:142
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:145
 msgctxt "ToolBox|"
 msgid "Hand"
 msgstr "हाथ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:146
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
 msgctxt "ToolBox|"
 msgid "Add NPC"
 msgstr "एनपीसी जोड़ें"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:149
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
 msgctxt "ToolBox|"
 msgid "Rule"
 msgstr "नियम"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:152
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:155
 msgctxt "ToolBox|"
 msgid "Path"
 msgstr "पथ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:154
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
 msgctxt "ToolBox|"
 msgid "Anchor"
 msgstr "लंगर"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:157
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
 msgctxt "ToolBox|"
 msgid "Pipette"
 msgstr "विंदुक"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:160
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
 msgctxt "ToolBox|"
 msgid "Highlighter"
 msgstr "हाइलाइटर"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:163
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#, fuzzy
+#| msgctxt "BorderListEditor|"
+#| msgid "Right"
+msgctxt "ToolBox|"
+msgid "Light"
+msgstr "सही"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
+#, fuzzy
+#| msgctxt "TestCharacterStateModel|"
+#| msgid "Lightly Wounded"
+msgctxt "ToolBox|"
+msgid "Light Source"
+msgstr "हल्के से घायल"
+
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
 msgid "Paint Bucket"
 msgstr "पेंट बाल्टी"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:173
 msgctxt "ToolBox|"
 msgid "Text With Border"
 msgstr "बॉर्डर वाला पाठ"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:169
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:176
 msgctxt "ToolBox|"
 msgid "Reset NPC counter"
 msgstr "एनपीसी काउंटर रीसेट करें"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:313
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:335
 msgctxt "ToolBox|"
 msgid "NPC Name"
 msgstr "एनपीसी नाम"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:318
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:340
 msgctxt "ToolBox|"
 msgid "NPC's number"
 msgstr "एनपीसी की संख्या"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:324
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:346
 msgctxt "ToolBox|"
 msgid "Normal"
 msgstr "सामान्य"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:326
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:348
 msgctxt "ToolBox|"
 msgid "Mask"
 msgstr "नकाब"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:328
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:350
 msgctxt "ToolBox|"
 msgid "Unmask"
 msgstr "पोल खोलना"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:358
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:380
 msgctxt "ToolBox|"
 msgid "height of the pen"
 msgstr "कलम की ऊंचाई"
 
-#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:370
+#: src/libraries/rwidgets/toolbars/vtoolbar.cpp:392
 msgctxt "ToolBox|"
 msgid "Opacity:"
 msgstr "अपारदर्शिता:"
