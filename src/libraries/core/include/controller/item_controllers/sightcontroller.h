@@ -61,6 +61,7 @@ public slots:
     void setRect(const QRectF& rect);
     void setCharacterSight(bool b);
     void setFowPath(const QPainterPath& path);
+    void clearTempPolygons();
 
 signals:
     void fowPathChanged();

@@ -49,6 +49,7 @@ signals:
     void rectChanged();
 
 private:
+    void updateFogReveal();
     qreal m_radius = 200.0;
 };
 

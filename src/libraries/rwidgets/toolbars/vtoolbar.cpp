@@ -329,7 +329,7 @@ void ToolBox::makeTools()
     toolsScrollArea->setWidget(toolsContainerWidget);
     toolsScrollArea->setWidgetResizable(true);
     toolsScrollArea->setStyleSheet("QScrollArea { border: none; }");
-    toolsScrollArea->setMaximumHeight(150);
+    toolsScrollArea->setMaximumHeight(160);
 
     m_npcNameTextEdit= new QLineEdit();
     m_npcNameTextEdit->setToolTip(tr("NPC Name"));

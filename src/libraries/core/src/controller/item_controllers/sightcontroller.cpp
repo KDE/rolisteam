@@ -184,6 +184,14 @@ void SightController::removeCharacterVision(CharacterVision* vision)
         emit characterCountChanged();
 }
 
+void SightController::clearTempPolygons()
+{
+    if(m_tempSingularityList.empty())
+        return;
+    m_tempSingularityList.clear();
+    emit fowPathChanged();
+}
+
 const std::vector<std::pair<QPolygonF, bool>>& SightController::singularityList() const
 {
     return m_fogSingularityList;
