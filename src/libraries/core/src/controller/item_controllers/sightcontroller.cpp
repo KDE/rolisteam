@@ -196,4 +196,9 @@ const std::vector<std::pair<QPolygonF, bool>>& SightController::singularityList(
 {
     return m_fogSingularityList;
 }
+
+const std::vector<std::pair<QPolygonF, bool>>& SightController::tempSingularityList() const
+{
+    return m_tempSingularityList;
+}
 } // namespace vmap

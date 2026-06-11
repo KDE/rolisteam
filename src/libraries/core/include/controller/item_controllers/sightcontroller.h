@@ -53,6 +53,7 @@ public:
     bool characterSight() const;
     const QList<QPointer<CharacterVision>>& visionData() const;
     const std::vector<std::pair<QPolygonF, bool>>& singularityList() const;
+    const std::vector<std::pair<QPolygonF, bool>>& tempSingularityList() const;
 
 public slots:
     void addPolygon(const QPolygonF& poly, bool mask, bool temp= false);
