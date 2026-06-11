@@ -6,7 +6,9 @@
 #include <QPointF>
 #include <QRectF>
 #include <QVariant>
-
+#include "shadowcaster.h"
+#include <QVector>
+#include <QLineF>
 #include "visualitemcontroller.h"
 #include <core_global.h>
 
@@ -50,6 +52,7 @@ signals:
 
 private:
     void updateFogReveal();
+    QVector<QLineF> collectWallSegments() const;
     qreal m_radius = 200.0;
 };
 

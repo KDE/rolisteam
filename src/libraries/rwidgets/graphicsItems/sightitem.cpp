@@ -98,12 +98,8 @@ void SightItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
     Q_UNUSED(widget)
     painter->save();
     painter->setPen(Qt::NoPen);
+    m_sightCtrl->localIsGM() ? painter->setBrush(QColor(0, 0, 0, 125)) : painter->setBrush(QColor(0, 0, 0));
 
-    // Fog color: semi-transparent for GM, fully opaque for players
-    QColor fogColor= m_sightCtrl->localIsGM() ? QColor(0, 0, 0, 125) : QColor(0, 0, 0, 255);
-    painter->setBrush(fogColor);
-
-    // Draw the base fog path (with holes already cut by light/vision polygons)
     QPainterPath path= m_sightCtrl->fowPath();
 
     if(m_sightCtrl->characterSight())
@@ -146,39 +142,6 @@ void SightItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
     }
 
     painter->drawPath(path);
-
-    // Draw radial gradient halo for each light (temp polygon)
-    // This softens the hard edge where fog meets the lit area
-    const auto& tempPolys= m_sightCtrl->tempSingularityList();
-    for(const auto& [poly, mask] : tempPolys)
-    {
-        if(mask) // mask=true means adding fog, skip gradient for those
-            continue;
-
-        if(poly.isEmpty())
-            continue;
-
-        // Compute bounding circle of the polygon
-        QRectF bounds= poly.boundingRect();
-        QPointF center= bounds.center();
-        qreal radius= bounds.width() / 2.0;
-
-        // Radial gradient: transparent at center, fog color at edge
-        QRadialGradient gradient(center, radius);
-        QColor transparent= fogColor;
-        transparent.setAlpha(0);
-        gradient.setColorAt(0.0, transparent);   // fully transparent at light center
-        gradient.setColorAt(0.75, transparent);  // stay transparent through most of the radius
-        gradient.setColorAt(1.0, fogColor);      // full fog color at the edge
-
-        painter->setBrush(QBrush(gradient));
-
-        // Draw a rect covering the light area so the gradient renders
-        QPainterPath gradientPath;
-        gradientPath.addEllipse(center, radius, radius);
-        painter->drawPath(gradientPath);
-    }
-
     painter->restore();
 }
 
