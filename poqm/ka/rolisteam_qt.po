@@ -9310,20 +9310,14 @@ msgid "Highlighter"
 msgstr "გამომკვეთი"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "მარჯვენა"
+msgstr "სინათლე"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
-#, fuzzy
-#| msgctxt "TestCharacterStateModel|"
-#| msgid "Lightly Wounded"
 msgctxt "ToolBox|"
 msgid "Light Source"
-msgstr "ოდნავ დაჭრილი"
+msgstr "სინათლის წყარო"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"

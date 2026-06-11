@@ -9135,12 +9135,9 @@ msgid "Highlighter"
 msgstr ""
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "RightTop"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "右上"
+msgstr ""
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
 msgctxt "ToolBox|"
