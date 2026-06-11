@@ -1,8 +1,6 @@
 
 #include "controller/item_controllers/lightcontroller.h"
-#include "controller/view_controller/vectorialmapcontroller.h"
-#include <cmath>
-#include <QtMath>
+#include "controller/view_controller/vectorialmapcontroller.h">
 #include <QPainterPath>
 
 namespace vmap
