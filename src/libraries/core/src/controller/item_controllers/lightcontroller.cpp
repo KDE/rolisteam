@@ -3,6 +3,7 @@
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include <cmath>
 #include <QtMath>
+#include <QPainterPath>
 
 namespace vmap
 {
@@ -61,31 +62,18 @@ void LightController::setCorner(const QPointF& move, int corner, Core::Transform
 
 void LightController::updateFogReveal()
 {
-    if(!m_ctrl) // m_ctrl is the VectorialMapController* in VisualItemController base
+    if(!m_ctrl)
         return;
 
     auto* sightCtrl = m_ctrl->sightController();
     if(!sightCtrl)
         return;
 
-    // Clear all previous temp reveals (from all lights)
-    // then re-add this light's polygon
     sightCtrl->clearTempPolygons();
 
-    // Build circle polygon (32-sided approximation is smooth enough)
-    constexpr int segments = 32;
-    QPolygonF circle;
-    circle.reserve(segments);
-    const QPointF center = pos(); // pos() from VisualItemController/QGraphicsObject
-    for(int i = 0; i < segments; ++i)
-    {
-        double angle = 2.0 * M_PI * i / segments;
-        circle << QPointF(center.x() + m_radius * std::cos(angle),
-                          center.y() + m_radius * std::sin(angle));
-    }
-
-    // mask=false → subtract from fog (reveal), temp=true → dynamic, gets cleared on next update
-    sightCtrl->addPolygon(circle, false, true);
+    QPainterPath path;
+    path.addEllipse(pos(), m_radius, m_radius);
+    sightCtrl->addPolygon(path.toFillPolygon(), false, true);
 }
 
 } // namespace vmap
