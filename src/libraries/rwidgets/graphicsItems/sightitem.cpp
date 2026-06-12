@@ -92,6 +92,8 @@ void SightItem::setNewEnd(const QPointF& nend)
 
 void SightItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
+    if(!m_sightCtrl)
+        return;
     Q_UNUSED(option)
     Q_UNUSED(widget)
     painter->save();

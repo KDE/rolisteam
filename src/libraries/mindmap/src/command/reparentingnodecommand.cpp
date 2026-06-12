@@ -67,7 +67,8 @@ PositionedItem* ReparentingNodeCommand::reparenting(PositionedItem* newParent, c
             oldLink= (*idxLink);
     }
 
-    oldParent->removeLink(oldLink);
+    if(oldParent)
+        oldParent->removeLink(oldLink);
     m_nodeModel->removeItem(oldLink);
     auto newLink= new LinkController();
     newLink->setStart(newParent);

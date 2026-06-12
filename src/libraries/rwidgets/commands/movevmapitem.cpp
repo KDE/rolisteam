@@ -21,7 +21,8 @@
 #include "graphicsItems/visualitem.h"
 #include <QDebug>
 
-MoveItemCommand::MoveItemCommand(QList<VisualItem*> selection, QList<QPointF> oldPosition, QUndoCommand* parent)
+MoveItemCommand::MoveItemCommand(QList<QPointer<VisualItem>> selection, QList<QPointF> oldPosition,
+                                 QUndoCommand* parent)
     : QUndoCommand(parent), m_selection(selection), m_oldPoints(oldPosition)
 {
     if(m_selection.size() == m_oldPoints.size())
@@ -43,6 +44,11 @@ void MoveItemCommand::redo()
     int i= 0;
     for(auto& item : m_selection)
     {
+        if(!item)
+        {
+            ++i;
+            continue;
+        }
         item->setPos(m_newPoints.at(i));
         item->endOfGeometryChange(ChildPointItem::Moving);
         ++i;
@@ -57,6 +63,11 @@ void MoveItemCommand::undo()
     int i= 0;
     for(auto& item : m_selection)
     {
+        if(!item)
+        {
+            ++i;
+            continue;
+        }
         item->setPos(m_oldPoints.at(i));
         item->endOfGeometryChange(ChildPointItem::Moving);
         ++i;

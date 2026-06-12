@@ -84,6 +84,8 @@ Player* findPerson(const std::vector<std::unique_ptr<Player>>& data, Person* per
                               }
                               return val;
                           });
+    if(it == data.end())
+        return nullptr;
     return it->get();
 }
 

@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     if(parser.isSet(translation))
     {
         QTranslator* cliTranslator= new QTranslator();
-        if(cliTranslator->load(parser.value(translation)))
+        if(!cliTranslator->load(parser.value(translation)))
             qWarning() << QObject::tr("Load of translation %1 file failed").arg(parser.value(translation));
         a.installTranslator(cliTranslator);
     }

@@ -307,7 +307,8 @@ bool CharacterSheetModel::setData(const QModelIndex& index, const QVariant& valu
             return false;
 
         auto parentTarget= dynamic_cast<TableFieldController*>(targetItem->parentTreeItem());
-        Q_ASSERT(parentTarget->itemType() == TreeSheetItem::TableItem);
+        if(!parentTarget)
+            return false;
         auto model= parentTarget->model();
         model->setData(model->indexFromCell(targetItem), valueStr, role);
     }

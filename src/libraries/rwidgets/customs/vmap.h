@@ -24,8 +24,8 @@
 #include <QGraphicsScene>
 #include <QUndoStack>
 
-#include "controller/view_controller/vectorialmapcontroller.h"
 #include "controller/item_controllers/lightcontroller.h"
+#include "controller/view_controller/vectorialmapcontroller.h"
 #include "data/person.h"
 #include "media/mediatype.h"
 #include "rwidgets/graphicsItems/griditem.h"
@@ -113,7 +113,7 @@ private:
     QPointer<AnchorItem> m_parentItemAnchor;
     QPointer<RuleItem> m_ruleItem;
     QPointer<PathItem> m_currentPath;
-    QList<VisualItem*> m_movingItems;
+    QList<QPointer<VisualItem>> m_movingItems;
     QList<QPointF> m_oldPos;
 };
 #endif // VMAP_H

@@ -23,6 +23,7 @@
 #include "mindmap/mindmap_global.h"
 #include <QObject>
 #include <QPointer>
+#include <atomic>
 
 namespace mindmap
 {
@@ -55,7 +56,7 @@ private:
 
 private:
     QPointer<MindItemModel> m_model;
-    bool m_running= true;
+    std::atomic<bool> m_running{true};
 };
 } // namespace mindmap
 #endif // SPACINGCONTROLLER_H

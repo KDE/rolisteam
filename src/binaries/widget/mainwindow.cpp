@@ -311,13 +311,18 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
                 ctrl->setDisplayed(m_ui->m_showDice3D->isChecked());
             });
     auto ctrl= m_gameController->dicePhysicController();
-    connect(ctrl, &Dice3DController::displayedChanged, this,
-            [this]()
-            {
-                auto ctrl= m_gameController->dicePhysicController();
-                m_ui->m_showDice3D->setChecked(ctrl->displayed());
-            });
-    m_ui->m_showDice3D->setChecked(ctrl->displayed());
+    if(ctrl)
+    {
+        connect(ctrl, &Dice3DController::displayedChanged, this,
+                [this]()
+                {
+                    auto ctrl= m_gameController->dicePhysicController();
+                    if(!ctrl)
+                        return;
+                    m_ui->m_showDice3D->setChecked(ctrl->displayed());
+                });
+        m_ui->m_showDice3D->setChecked(ctrl->displayed());
+    }
 }
 
 MainWindow::~MainWindow()= default;
@@ -1132,7 +1137,9 @@ void MainWindow::postConnection()
 
 void MainWindow::openGenericContent()
 {
-    QAction* action= static_cast<QAction*>(sender());
+    QAction* action= qobject_cast<QAction*>(sender());
+    if(!action)
+        return;
     Core::ContentType type= static_cast<Core::ContentType>(action->data().toInt());
 
     QString folder= m_preferences->value(Core::preferences::KEY_OPEN_DIRECTORY, QDir::homePath()).toString();
@@ -1142,11 +1149,14 @@ void MainWindow::openGenericContent()
 
     for(auto const& path : list)
     {
+        auto* localPlayer= m_gameController->playerController()->localPlayer();
+        if(!localPlayer)
+            continue;
         m_gameController->openMedia(
             {{Core::keys::KEY_URL, QUrl::fromUserInput(path)},
              {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
              {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
-             {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()}});
+             {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
     }
 }
 
@@ -1157,10 +1167,13 @@ void MainWindow::openImage()
     if(QDialog::Accepted != dialog.exec())
         return;
 
+    auto* localPlayer= m_gameController->playerController()->localPlayer();
+    if(!localPlayer)
+        return;
     std::map<QString, QVariant> args(
         {{Core::keys::KEY_NAME, ctrl.title()},
          {Core::keys::KEY_URL, ctrl.address()},
-         {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()},
+         {Core::keys::KEY_OWNERID, localPlayer->uuid()},
          {Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
          {Core::keys::KEY_DATA, ctrl.finalImageData()}});
 
@@ -1198,6 +1211,8 @@ void MainWindow::updateFileHistoryMenu()
 void MainWindow::openFileFromHistory()
 {
     auto act= qobject_cast<QAction*>(sender());
+    if(!act)
+        return;
     auto id= act->data().toString();
     auto const& ctrl= m_gameController->contentController();
     auto const& model= ctrl->historyModel();
@@ -1303,12 +1318,15 @@ void MainWindow::dropEvent(QDropEvent* event)
                     continue;
                 qCInfo(WidgetClient)
                     << QStringLiteral("MainWindow: dropEvent for %1").arg(helper::utils::typeToString(type));
+                auto* localPlayer= m_gameController->playerController()->localPlayer();
+                if(!localPlayer)
+                    continue;
                 m_gameController->openMedia(
                     {{Core::keys::KEY_URL, url},
                      {Core::keys::KEY_DATA, utils::IOHelper::loadFile(path)},
                      {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
                      {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
-                     {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()}});
+                     {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
             }
             else // remote
             {
@@ -1323,13 +1341,16 @@ void MainWindow::dropEvent(QDropEvent* event)
                     downloader, &NetworkDownloader::finished, this,
                     [this, type, url, urltext, downloader](const QByteArray& data)
                     {
+                        auto* localPlayer= m_gameController->playerController()->localPlayer();
+                        if(!localPlayer)
+                            return;
                         m_gameController->openMedia(
                             {{Core::keys::KEY_URL, urltext},
                              {Core::keys::KEY_PATH, urltext},
                              {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
                              {Core::keys::KEY_DATA, data},
                              {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(url.fileName())},
-                             {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()}});
+                             {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
                         downloader->deleteLater();
                     });
                 downloader->download();

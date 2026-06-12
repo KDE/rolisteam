@@ -136,7 +136,7 @@ NetworkController::NetworkController(QObject* parent)
                     break;
                 }
             });
-    auto t= new QTimer();
+    auto t= new QTimer(this);
     connect(t, &QTimer::timeout, this, [this]() { runUpnpNat(); });
 
     t->start(500000);
@@ -306,7 +306,7 @@ void NetworkController::startServer()
             {
                 emit eventOccurs(tr("server thread has been closed"), LogController::LogLevel::Info);
                 m_serverThread->deleteLater(); // AS addition
-                m_server.release();
+                m_server.reset();
             });
 
     connect(m_server.get(), &RServer::stateChanged, this,

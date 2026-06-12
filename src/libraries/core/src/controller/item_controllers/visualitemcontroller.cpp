@@ -101,6 +101,8 @@ bool VisualItemController::selected() const
 
 bool VisualItemController::localIsGM() const
 {
+    if(!m_ctrl)
+        return false;
     return m_ctrl->localGM();
 }
 
@@ -111,6 +113,8 @@ bool VisualItemController::initialized() const
 
 bool VisualItemController::characterVisionEnabled() const
 {
+    if(!m_ctrl)
+        return false;
     return m_ctrl->characterVision();
 }
 
@@ -146,6 +150,8 @@ bool VisualItemController::editable() const
 
 bool VisualItemController::selectable() const
 {
+    if(!m_ctrl)
+        return false;
     return (m_ctrl->layer() == m_layer);
 }
 
@@ -160,6 +166,8 @@ qreal VisualItemController::opacity() const
 }
 Core::VisibilityMode VisualItemController::visibility() const
 {
+    if(!m_ctrl)
+        return Core::VisibilityMode::HIDDEN;
     return m_ctrl->visibility();
 }
 Core::Layer VisualItemController::layer() const
@@ -184,6 +192,8 @@ qreal VisualItemController::rotation() const
 
 int VisualItemController::gridSize() const
 {
+    if(!m_ctrl)
+        return 0;
     return m_ctrl->gridSize();
 }
 
@@ -194,6 +204,8 @@ bool VisualItemController::locked() const
 
 QString VisualItemController::getLayerText(Core::Layer layer) const
 {
+    if(!m_ctrl)
+        return {};
     return m_ctrl->layerToText(layer);
 }
 
@@ -215,6 +227,8 @@ void VisualItemController::endGeometryChange()
 
 const QString VisualItemController::mapUuid() const
 {
+    if(!m_ctrl)
+        return {};
     return m_ctrl->uuid();
 }
 

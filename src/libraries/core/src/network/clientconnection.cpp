@@ -73,7 +73,11 @@ ClientConnection::ClientConnection() : m_socketTcp(new QTcpSocket(this))
     m_headerRead= 0;
 }
 
-ClientConnection::~ClientConnection()= default;
+ClientConnection::~ClientConnection()
+{
+    delete[] m_buffer;
+    m_buffer= nullptr;
+}
 
 bool ClientConnection::connected() const
 {
@@ -153,6 +157,12 @@ void ClientConnection::receivingData()
             else
             {
                 m_headerRead= 0;
+            }
+            constexpr quint32 maxMessageSize= 100 * 1024 * 1024;
+            if(m_header.dataSize > maxMessageSize)
+            {
+                closeCommunicationWithServer();
+                return;
             }
             m_buffer= new char[m_header.dataSize];
             m_remainingData= m_header.dataSize;

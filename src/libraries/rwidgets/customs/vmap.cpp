@@ -145,7 +145,7 @@ void VMap::addExistingItems()
         hash.insert(vItem->uuid(), vItem);
 
         if(!vItem->controller()->parentUuid().isEmpty())
-            needParent.insert(needParent);
+            needParent.insert(vItem->uuid(), vItem);
     }
 
     for(auto const& item : std::as_const(needParent))

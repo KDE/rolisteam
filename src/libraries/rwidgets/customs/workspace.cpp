@@ -299,6 +299,8 @@ void Workspace::setTabbedMode(bool isTabbed)
 }
 bool Workspace::updateTitleTab()
 {
+    if(!m_ctrl)
+        return false;
     bool shortName= m_ctrl->shortTitleTab(); // m_preferences->value("shortNameInTabMode", false).toBool();
     int textLength= m_ctrl->maxLengthTabName();
     if((viewMode() == QMdiArea::TabbedView) && (shortName))

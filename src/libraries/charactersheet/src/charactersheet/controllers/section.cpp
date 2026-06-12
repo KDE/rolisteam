@@ -108,6 +108,8 @@ QList<CSItem*> Section::allChildren() const
     for(auto key : m_data)
     {
         auto item= key.second;
+        if(!item)
+            continue;
         switch(item->itemType())
         {
         case TreeSheetItem::SectionItem:
@@ -138,7 +140,8 @@ void Section::setFieldInDictionnary(QHash<QString, QString>& dict) const
 {
     for(auto value : m_data)
     {
-        value.second->setFieldInDictionnary(dict);
+        if(value.second)
+            value.second->setFieldInDictionnary(dict);
     }
 }
 

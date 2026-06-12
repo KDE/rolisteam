@@ -79,9 +79,11 @@ void NetworkMessageReader::setData(const QByteArray& bytes)
     const char* data= bytes.data();
 
     size_t headerSize= sizeof(NetworkMessageHeader);
+    delete[] reinterpret_cast<char*>(m_header);
+    m_header= nullptr;
     m_buffer= new char[size + static_cast<int>(headerSize)];
 
-    memcpy(m_buffer, data, static_cast<std::size_t>(size) + headerSize);
+    memcpy(m_buffer, data, static_cast<std::size_t>(size));
 
     m_header= reinterpret_cast<NetworkMessageHeader*>(m_buffer);
 

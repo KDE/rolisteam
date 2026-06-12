@@ -47,6 +47,8 @@ Canvas::Canvas(EditorController* ctrl, QObject* parent)
     m_bg->setFlag(QGraphicsItem::ItemIsMovable, false);
     m_bg->setFlag(QGraphicsItem::ItemIsFocusable, false);
     m_bg->setAcceptedMouseButtons(Qt::NoButton);
+    m_bg->setVisible(false);
+    addItem(m_bg);
 }
 
 void Canvas::dragEnterEvent(QGraphicsSceneDragDropEvent* event)
@@ -287,12 +289,8 @@ void Canvas::setPixmap(const QPixmap& pix)
     m_bg->setPixmap(pix);
     emit pixmapChanged();
 
-    if(pix.isNull())
-        removeItem(m_bg);
-    else
-    {
-        addItem(m_bg);
+    m_bg->setVisible(!pix.isNull());
+    if(!pix.isNull())
         setSceneRect(m_bg->boundingRect());
-    }
     md5= key;
 }

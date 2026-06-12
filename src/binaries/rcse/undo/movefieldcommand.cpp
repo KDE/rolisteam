@@ -24,9 +24,9 @@ MoveFieldCommand::MoveFieldCommand(QList<QGraphicsItem*> list, QList<QPointF> ol
 {
     if(m_list.size() == m_oldPoints.size())
     {
-        for(auto item : m_list)
+        for(auto item : std::as_const(m_list))
         {
-            m_newPoints.append(item->pos());
+            m_newPoints.append(item ? item->pos() : QPointF{});
         }
     }
     setText(QObject::tr("Move %n Field(s)", "", m_list.size()));
@@ -35,8 +35,13 @@ MoveFieldCommand::MoveFieldCommand(QList<QGraphicsItem*> list, QList<QPointF> ol
 void MoveFieldCommand::undo()
 {
     int i= 0;
-    for(auto item : m_list)
+    for(auto item : std::as_const(m_list))
     {
+        if(!item)
+        {
+            ++i;
+            continue;
+        }
         item->setPos(m_oldPoints.at(i));
         ++i;
     }
@@ -45,10 +50,15 @@ void MoveFieldCommand::undo()
 void MoveFieldCommand::redo()
 {
     int i= 0;
-    for(auto item : m_list)
+    for(auto item : std::as_const(m_list))
     {
         if(i >= m_newPoints.size())
             return;
+        if(!item)
+        {
+            ++i;
+            continue;
+        }
         item->setPos(m_newPoints.at(i));
         ++i;
     }

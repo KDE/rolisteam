@@ -50,12 +50,13 @@ bool RolisteamDaemon::readConfigFile(QString filepath)
     if(maxMemorySize.endsWith("G"))
     {
         factor= 1024 * 1024 * 1024;
+        maxMemorySize.chop(1);
     }
     else if(maxMemorySize.endsWith("M"))
     {
         factor= 1024 * 1024;
+        maxMemorySize.chop(1);
     }
-    maxMemorySize= maxMemorySize.remove(maxMemorySize.length() - 1, 1);
 
     memorySize= factor * maxMemorySize.toULongLong();
 

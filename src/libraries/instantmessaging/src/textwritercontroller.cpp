@@ -73,7 +73,7 @@ void TextWriterController::computeText()
     if(url.isValid())
     {
         setUrl(url);
-        auto n= new NetworkDownloader(url);
+        auto n= new NetworkDownloader(url, this);
 
         connect(n, &NetworkDownloader::finished, this,
                 [text, url, usedRE, replacePattern, n, this](const QByteArray& data, bool isImage)

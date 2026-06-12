@@ -246,7 +246,7 @@ QJsonObject FileSerializer::writeItemModel(MindItemModel* nodeModel, QJsonObject
     for(auto item : links)
     {
         auto link= dynamic_cast<LinkController*>(item);
-        if(!link)
+        if(!link || !link->start() || !link->end())
             continue;
         QJsonObject obj;
         obj["idStart"]= link->start()->id();

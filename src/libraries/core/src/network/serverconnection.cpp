@@ -47,6 +47,8 @@ ServerConnection::~ServerConnection()
         m_socket->deleteLater();
         m_socket= nullptr;
     }
+    delete[] m_buffer;
+    m_buffer= nullptr;
 }
 
 void ServerConnection::resetStateMachine()
@@ -56,7 +58,7 @@ void ServerConnection::resetStateMachine()
 
     m_heartBeat.reset(new HeartBeatSender);
     connect(m_heartBeat.get(), &HeartBeatSender::sendOff, this,
-            [this](NetworkMessageWriter* msg) { sendMessage(msg, false); });
+            [this](NetworkMessageWriter* msg) { sendMessage(msg, true); });
 
     m_stateMachine= new QStateMachine();
 
@@ -177,6 +179,11 @@ void ServerConnection::resetStateMachine()
 
 void ServerConnection::startReading()
 {
+    if(m_socket)
+    {
+        m_socket->deleteLater();
+        m_socket= nullptr;
+    }
     m_socket= new QTcpSocket();
     connect(m_socket, &QTcpSocket::disconnected, this, &ServerConnection::socketDisconnection);
     connect(m_socket, &QTcpSocket::connected, this, &ServerConnection::receivingData);
@@ -309,6 +316,12 @@ void ServerConnection::receivingData()
             {
                 m_headerRead= 0;
             }
+            constexpr quint32 maxMessageSize= 100 * 1024 * 1024;
+            if(m_header.dataSize > maxMessageSize)
+            {
+                emit protocolViolation();
+                return;
+            }
             m_buffer= new char[m_header.dataSize];
             m_remainingData= m_header.dataSize;
             emit readDataReceived(m_header.dataSize, m_header.dataSize);
@@ -368,16 +381,21 @@ void ServerConnection::forwardMessage()
     {
         NetworkMessageReader msg;
         msg.setData(array);
+        delete[] m_buffer;
+        m_buffer= nullptr;
         if(readAdministrationMessages(msg))
             emit dataReceived(array);
     }
     else if(!m_forwardMessage)
     {
         delete[] m_buffer;
+        m_buffer= nullptr;
         emit protocolViolation();
     }
     else
     {
+        delete[] m_buffer;
+        m_buffer= nullptr;
         emit dataReceived(array);
     }
 }

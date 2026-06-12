@@ -286,21 +286,29 @@ void Channel::kick(const QString& str, bool isAdmin, const QString& sourceId)
 
     bool hasRightToKick= isAdmin;
     QPointer<TreeItem> toKick;
+    QPointer<TreeItem> sourceItem;
+
     for(auto& item : m_child)
     {
         if(item == nullptr)
             continue;
-        if(!hasRightToKick && item->uuid() == sourceId)
-        {
-            ServerConnection* source= dynamic_cast<ServerConnection*>(toKick.data());
-            if(source)
-                hasRightToKick= source->isGM();
-        }
         if(item->uuid() == str)
-        {
             toKick= item;
-        }
+        if(item->uuid() == sourceId)
+            sourceItem= item;
+    }
 
+    if(!hasRightToKick && !sourceItem.isNull())
+    {
+        ServerConnection* source= dynamic_cast<ServerConnection*>(sourceItem.data());
+        if(source)
+            hasRightToKick= source->isGM();
+    }
+
+    for(auto& item : m_child)
+    {
+        if(item == nullptr)
+            continue;
         if(!item->isLeaf())
             item->kick(str, isAdmin, sourceId);
     }
@@ -324,7 +332,8 @@ void Channel::clear()
 {
     for(auto& item : m_child)
     {
-        item->clear();
+        if(item && !item->isLeaf())
+            item->clear();
     }
     qDeleteAll(m_child);
     m_child.clear();
@@ -392,7 +401,7 @@ bool Channel::removeClient(ServerConnection* client)
 
     auto msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
     msg->string8(id);
-    sendToAll(msg, client, false);
+    sendToAll(msg, client, true);
 
     auto removed= m_child.removeIf([id](const QPointer<TreeItem>& item) { return id == item->uuid(); });
 
@@ -403,7 +412,7 @@ bool Channel::removeClient(ServerConnection* client)
     {
         clearData();
     }
-    if((!m_currentGm) && (m_currentGm == client))
+    if((m_currentGm) && (m_currentGm == client))
     {
         findNewGM();
     }
@@ -417,6 +426,7 @@ bool Channel::removeClient(ServerConnection* client)
 void Channel::clearData()
 {
     qCInfo(ServerLogCat) << "Clear server data";
+    qDeleteAll(m_dataToSend);
     m_dataToSend.clear();
     setMemorySize(0);
 }
@@ -468,7 +478,7 @@ void Channel::sendOffGmStatus(ServerConnection* client)
     idList << client->playerId();
     message->setRecipientList(idList, NetworkMessage::OneOrMany);
     message->int8(static_cast<qint8>(isRealGM));
-    sendToMany(message, nullptr);
+    sendToMany(message, nullptr, true);
 }
 void Channel::findNewGM()
 {

@@ -2,6 +2,7 @@
 #include "network/networkmessagereader.h"
 
 #include "network/channel.h"
+#include <memory>
 
 MessageDispatcher::MessageDispatcher(QObject* parent) : QObject(parent) {}
 
@@ -12,7 +13,8 @@ void MessageDispatcher::dispatchMessage(QByteArray data, Channel* channel, Serve
 
     bool sendToAll= true;
     bool saveIt= true;
-    NetworkMessageReader* msg= new NetworkMessageReader();
+    auto msgOwner= std::make_unique<NetworkMessageReader>();
+    auto msg= msgOwner.get();
 
     msg->setData(data);
 

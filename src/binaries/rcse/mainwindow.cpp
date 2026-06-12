@@ -298,6 +298,8 @@ MainWindow::MainWindow(QWidget* parent)
     auto setCurrentTool= [this]()
     {
         QAction* action= dynamic_cast<QAction*>(sender());
+        if(!action)
+            return;
         auto tool= static_cast<Canvas::Tool>(action->data().toInt());
         m_mainCtrl->editCtrl()->setCurrentTool(tool);
     };
@@ -412,8 +414,7 @@ MainWindow::MainWindow(QWidget* parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    m_mainCtrl->deleteLater();
-    m_mainCtrl.release();
+    m_mainCtrl.reset();
 }
 
 void MainWindow::readSettings()
@@ -557,20 +558,20 @@ void MainWindow::openPDF()
     auto pdf= new PdfManager(this);
     if(pdf->exec())
     {
-        BusyIndicatorDialog dialog(tr("Image Generation"), tr("Image generation in progress"),
-                                   ":/rcstyle/busy_movie.gif", this);
+        auto* dialog= new BusyIndicatorDialog(tr("Image Generation"), tr("Image generation in progress"),
+                                              ":/rcstyle/busy_movie.gif", this);
 
         auto fvoid= QtConcurrent::run(
-            [pdf, this, &dialog]()
+            [pdf, this, dialog]()
             {
                 auto imgs= pdf->images();
                 m_mainCtrl->editCtrl()->loadImages(imgs);
                 pdf->deleteLater();
-                dialog.accept();
-                dialog.deleteLater();
+                QMetaObject::invokeMethod(dialog, "accept", Qt::QueuedConnection);
             });
 
-        dialog.exec();
+        dialog->exec();
+        dialog->deleteLater();
     }
 }
 
@@ -806,7 +807,7 @@ void MainWindow::addBackgroundImage()
 {
     QString supportedFormat("Supported files (*.jpg *.png);;All Files (*.*)");
     QString img= QFileDialog::getOpenFileName(this, tr("Open Background Image"), QDir::homePath(), supportedFormat);
-    if(!img.isEmpty())
+    if(img.isEmpty())
         return;
 
     QPixmap map(img);

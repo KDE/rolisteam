@@ -36,6 +36,8 @@ QRectF ImageItem::boundingRect() const
 }
 void ImageItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
+    if(!m_imgCtrl)
+        return;
     Q_UNUSED(widget)
     painter->save();
     auto img= m_imgCtrl->pixmap();

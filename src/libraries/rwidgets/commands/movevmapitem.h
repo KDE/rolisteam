@@ -22,6 +22,7 @@
 #include <QGraphicsItem>
 #include <QList>
 #include <QPointF>
+#include <QPointer>
 #include <QUndoCommand>
 
 #include "rwidgets_global.h"
@@ -31,13 +32,13 @@ class VisualItem;
 class RWIDGET_EXPORT MoveItemCommand : public QUndoCommand
 {
 public:
-    MoveItemCommand(QList<VisualItem*> item, QList<QPointF> oldPos, QUndoCommand* parent= nullptr);
+    MoveItemCommand(QList<QPointer<VisualItem>> item, QList<QPointF> oldPos, QUndoCommand* parent= nullptr);
 
     void redo() override;
     void undo() override;
 
 private:
-    QList<VisualItem*> m_selection;
+    QList<QPointer<VisualItem>> m_selection;
     QList<QPointF> m_oldPoints;
     QList<QPointF> m_newPoints;
     bool m_valid= false;

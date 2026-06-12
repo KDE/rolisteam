@@ -79,6 +79,8 @@ QRectF GridItem::boundingRect() const
 
 void GridItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
+    if(!m_gridCtrl)
+        return;
     Q_UNUSED(option)
     Q_UNUSED(widget)
     if(!m_gridCtrl->visible())

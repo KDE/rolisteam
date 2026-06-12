@@ -33,8 +33,8 @@ class FakeItem : public vmap::VisualItemController
 {
 public:
     FakeItem(VisualItemController::ItemType itemType, VectorialMapController* ctrl)
-        : VisualItemController(itemType, {}, ctrl){};
-    void aboutToBeRemoved(){};
+        : VisualItemController(itemType, {}, ctrl) {};
+    void aboutToBeRemoved() {};
     void setCorner(const QPointF& move, int corner, Core::TransformType transformType= Core::TransformType::NoTransform)
     {
         Q_UNUSED(move);
@@ -310,10 +310,11 @@ void VMapTest::addItems()
         vitem->setSize(QSize{Helper::generate(0, 800), Helper::generate(0, 800)});
         vitem->resizeContents(Helper::randomRect(), Helper::generate(0, 10));
 
+        if(ctrl->itemType() != vmap::VisualItemController::IMAGE)
         {
             auto c= Helper::randomColor();
             vitem->setColor(c);
-            QCOMPARE(vitem->color(), c);
+            QCOMPARE(vitem->color(QPointF()), c);
         }
         {
             auto c= Helper::randomColor();

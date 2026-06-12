@@ -100,6 +100,8 @@ TreeSheetItem* CharacterSheet::getFieldFromKey(QString key) const
     if(keyList.size() > 1)
     {
         CSItem* field= m_valuesMap[keyList.takeFirst()];
+        if(!field)
+            return nullptr;
         return field->childFromId(keyList.takeFirst());
     }
     else if(m_valuesMap.contains(key))
@@ -308,6 +310,8 @@ void CharacterSheet::save(QJsonObject& json) const
     for(const QString& key : keys)
     {
         QJsonObject item;
+        if(!m_valuesMap[key])
+            continue;
         m_valuesMap[key]->saveDataItem(item);
         array[key]= item;
     }

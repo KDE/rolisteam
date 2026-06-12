@@ -22,6 +22,7 @@
 
 #include <QGraphicsItem>
 #include <QList>
+#include <QPointer>
 #include <QUndoCommand>
 
 class MoveFieldCommand : public QUndoCommand

@@ -70,5 +70,6 @@ void HeartBeatSender::stop()
 
 void HeartBeatSender::receivedAnswer()
 {
-    --m_awaitingAnswer;
+    if(m_awaitingAnswer > 0)
+        --m_awaitingAnswer;
 }

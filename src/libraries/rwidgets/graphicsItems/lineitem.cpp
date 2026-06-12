@@ -84,6 +84,8 @@ QPainterPath LineItem::shape() const
 }
 void LineItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
+    if(!m_lineCtrl)
+        return;
     Q_UNUSED(widget)
     painter->save();
     auto pen= painter->pen();

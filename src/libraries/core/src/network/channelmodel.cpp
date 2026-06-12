@@ -65,13 +65,8 @@ ChannelModel::ChannelModel(bool isServer) : m_server(isServer) {}
 
 ChannelModel::~ChannelModel()
 {
-    qDeleteAll(m_root);
-    std::vector<Channel*> keys;
-
-    transform(std::begin(m_sizeMap), std::end(m_sizeMap), back_inserter(keys),
-              [](decltype(m_sizeMap)::value_type const& pair) { return pair.first; });
     m_sizeMap.clear();
-    qDeleteAll(keys);
+    qDeleteAll(m_root);
 }
 
 QModelIndex ChannelModel::index(int row, int column, const QModelIndex& parent) const

@@ -131,8 +131,6 @@ QString RichTextEditDialog::getText()
 //
 ///////////////////////
 
-RichTextEditDialog* TextItem::m_dialog= nullptr;
-
 TextItem::TextItem(vmap::TextController* ctrl)
     : VisualItem(ctrl)
     , m_textCtrl(ctrl)
@@ -143,8 +141,7 @@ TextItem::TextItem(vmap::TextController* ctrl)
     , m_edit(new QAction(tr("Edit Text…")))
     , m_adapt(new QAction(tr("Adapt to content")))
 {
-    if(nullptr == m_dialog)
-        m_dialog= new RichTextEditDialog();
+    m_dialog= new RichTextEditDialog();
 
     connect(m_edit.get(), &QAction::triggered, this, &TextItem::editText);
     connect(m_adapt.get(), &QAction::triggered, this, &TextItem::sizeToTheContent);

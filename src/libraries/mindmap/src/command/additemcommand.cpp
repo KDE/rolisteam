@@ -51,6 +51,8 @@ void AddItemCommand::redo()
     case MindItem::NodeType:
     {
         auto root= dynamic_cast<mindmap::MindNode*>(item);
+        if(!root)
+            break;
         auto data= m_nodeModel->positionnedItems();
         auto id= std::find_if(data.begin(), data.end(),
                               [this](const PositionedItem* node) { return m_idParent == node->id(); });
@@ -62,6 +64,8 @@ void AddItemCommand::redo()
             root->setPosition(pos);
 
             auto link= dynamic_cast<mindmap::LinkController*>(m_nodeModel->createItem(mindmap::MindItem::LinkType));
+            if(!link)
+                break;
             link->setStart((*id));
             link->setEnd(root);
             root->setParentNode(*id);

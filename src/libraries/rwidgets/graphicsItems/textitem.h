@@ -120,7 +120,7 @@ private:
     std::unique_ptr<QAction> m_edit;
     std::unique_ptr<QAction> m_adapt;
 
-    static RichTextEditDialog* m_dialog;
+    RichTextEditDialog* m_dialog= nullptr;
 };
 
 #endif // TEXTITEM_H

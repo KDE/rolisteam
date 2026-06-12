@@ -125,6 +125,9 @@ QVariant TableModel::data(const QModelIndex& index, int role) const
 
     auto item= m_data[index.row()][index.column()];
 
+    if(!item)
+        return QVariant();
+
     static QSet<int> acceptedRole{ValueRole, FormulaRole, Qt::DisplayRole, Qt::EditRole};
 
     if(!acceptedRole.contains(role))
@@ -537,6 +540,8 @@ bool TableModel::setData(const QModelIndex& index, const QVariant& data, int rol
         return false;
 
     auto& cell= m_data[index.row()][index.column()];
+    if(!cell)
+        return false;
 
     auto text= data.toString();
 
