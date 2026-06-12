@@ -170,8 +170,7 @@ set(HEADERS
   ${inc}/controller/item_controllers/pathcontroller.h
   ${inc}/controller/item_controllers/rectcontroller.h
   ${inc}/controller/item_controllers/sightcontroller.h
-  ${inc}/controller/item_controllers/lightcontroller.h
-  ${inc}/controller/item_controllers/shadowcaster.h 
+  ${inc}/controller/item_controllers/lightcontroller.h 
   ${inc}/controller/item_controllers/textcontroller.h
   ${inc}/controller/item_controllers/visualitemcontroller.h
   ${inc}/controller/item_controllers/vmapitemfactory.h
@@ -319,7 +318,6 @@ set(SOURCES
   src/controller/item_controllers/rectcontroller.cpp
   src/controller/item_controllers/sightcontroller.cpp
   src/controller/item_controllers/lightcontroller.cpp
-  src/controller/item_controllers/shadowcaster.cpp  
   src/controller/item_controllers/textcontroller.cpp
   src/controller/item_controllers/visualitemcontroller.cpp
   src/controller/item_controllers/vmapitemfactory.cpp

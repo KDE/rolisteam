@@ -6,8 +6,7 @@
 #include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/ellipsecontroller.h"
 #include "model/vmapitemmodel.h"
-#include <QTimer> 
-#include "controller/item_controllers/shadowcaster.h"
+#include "utils/shadowcaster.h"
 #include <QPainterPath>
 
 namespace vmap
@@ -22,26 +21,30 @@ LightController::LightController(const std::map<QString, QVariant>& params,
     if(it != params.end())
         m_radius = it->second.toReal();
 
-    connect(this, &VisualItemController::posChanged, this, &LightController::updateFogReveal);
-    connect(this, &LightController::radiusChanged,   this, &LightController::updateFogReveal);
+    connect(this, &VisualItemController::posChanged,   this, &LightController::updateFogReveal);
+    connect(this, &LightController::radiusChanged,     this, &LightController::updateFogReveal);
 
-    // Recalculate when items are added or removed from the map
     if(m_ctrl && m_ctrl->model())
-{
-    connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded,
-        this, [this](vmap::VisualItemController* item) {
-            // Update immediately and also when the new item finishes being placed
-            QTimer::singleShot(100, this, &LightController::updateFogReveal);
-            if(item)
-                connect(item, &vmap::VisualItemController::posEditFinished,
-                        this, &LightController::updateFogReveal,
-                        Qt::UniqueConnection);
-        });
-    connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved,
-            this, [this](const QStringList&) {
-                QTimer::singleShot(100, this, &LightController::updateFogReveal);
-            });
-}
+    {
+        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded,
+                this, [this](vmap::VisualItemController* item) {
+                    if(!item)
+                        return;
+                    // Update when item finishes initializing (geometry is final)
+                    connect(item, &vmap::VisualItemController::initializedChanged,
+                            this, &LightController::updateFogReveal,
+                            Qt::UniqueConnection);
+                    // For path items, also update when points are added
+                    if(auto* path = dynamic_cast<vmap::PathController*>(item))
+                    {
+                        connect(path, &vmap::PathController::pointCountChanged,
+                                this, &LightController::updateFogReveal,
+                                Qt::UniqueConnection);
+                    }
+                });
+        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved,
+                this, &LightController::updateFogReveal);
+    }
 
     updateFogReveal();
 }
@@ -94,15 +97,32 @@ void LightController::updateFogReveal()
 
     sightCtrl->clearTempPolygons();
 
-    QVector<QLineF> segments = collectWallSegments();
+    QList<QLineF> segments = collectWallSegments();
     QPolygonF visibilityPoly = ShadowCaster::computeVisibilityPolygon(pos(), m_radius, segments);
 
-    sightCtrl->addPolygon(visibilityPoly, false, true);
+    if(segments.isEmpty())
+    {
+        // No walls — just reveal the full circle
+        sightCtrl->addPolygon(visibilityPoly, false, true);
+        return;
+    }
+
+    // Use full circle minus visibility polygon to get smooth shadow edge:
+    // The circle gives smooth outer edge, visibility polygon cuts out the lit area
+    QPainterPath circlePath;
+    circlePath.addEllipse(pos(), m_radius, m_radius);
+
+    QPainterPath visPath;
+    visPath.addPolygon(visibilityPoly);
+
+    // Reveal = intersection of circle and visibility polygon
+    QPainterPath revealPath = circlePath.intersected(visPath);
+    sightCtrl->addPolygon(revealPath.toFillPolygon(), false, true);
 }
 
-QVector<QLineF> LightController::collectWallSegments() const
+QList<QLineF> LightController::collectWallSegments() const
 {
-    QVector<QLineF> segments;
+    QList<QLineF> segments;
     if(!m_ctrl || !m_ctrl->model())
         return segments;
 
@@ -111,66 +131,51 @@ QVector<QLineF> LightController::collectWallSegments() const
         if(!item || item->removed())
             continue;
 
-        // Only cast shadows from GROUND and OBJECT layers
         auto layer = item->layer();
         if(layer != Core::Layer::GROUND && layer != Core::Layer::OBJECT)
             continue;
 
-        QPointF offset = item->pos();
+        QPolygonF poly;
 
         switch(item->itemType())
         {
         case VisualItemController::LINE:
         {
-            auto* line = static_cast<LineController*>(item);
-            segments << QLineF(offset + line->startPoint(),
-                               offset + line->endPoint());
+            auto* line = dynamic_cast<LineController*>(item);
+            if(!line) continue;
+            poly = line->shape();
             break;
         }
         case VisualItemController::RECT:
         {
-            auto* rect = static_cast<RectController*>(item);
-            QRectF r = rect->rect().translated(offset);
-            segments << QLineF(r.topLeft(),     r.topRight());
-            segments << QLineF(r.topRight(),    r.bottomRight());
-            segments << QLineF(r.bottomRight(), r.bottomLeft());
-            segments << QLineF(r.bottomLeft(),  r.topLeft());
+            auto* rect = dynamic_cast<RectController*>(item);
+            if(!rect) continue;
+            poly = rect->shape();
             break;
         }
         case VisualItemController::PATH:
         {
-            auto* path = static_cast<PathController*>(item);
-            const auto& pts = path->points();
-            for(size_t i = 0; i + 1 < pts.size(); ++i)
-                segments << QLineF(offset + pts[i], offset + pts[i+1]);
-            if(path->closed() && pts.size() > 1)
-                segments << QLineF(offset + pts.back(), offset + pts.front());
+            auto* path = dynamic_cast<PathController*>(item);
+            if(!path) continue;
+            poly = path->shape();
             break;
         }
         case VisualItemController::ELLIPSE:
         {
-            auto* ellipse = static_cast<EllipseController*>(item);
-            QPointF center = offset + ellipse->rect().center();
-            qreal rx = ellipse->rx();
-            qreal ry = ellipse->ry();
-            // Approximate ellipse as 32-segment polygon of line segments
-            constexpr int N = 32;
-            for(int i = 0; i < N; ++i)
-            {
-                double a1 = 2.0 * M_PI * i / N;
-                double a2 = 2.0 * M_PI * (i + 1) / N;
-                QPointF p1(center.x() + rx * std::cos(a1),
-                        center.y() + ry * std::sin(a1));
-                QPointF p2(center.x() + rx * std::cos(a2),
-                        center.y() + ry * std::sin(a2));
-                segments << QLineF(p1, p2);
-            }
+            auto* ellipse = dynamic_cast<EllipseController*>(item);
+            if(!ellipse) continue;
+            poly = ellipse->shape();
             break;
         }
         default:
-            break;
+            continue;
         }
+
+        // Convert polygon points into line segments
+        for(int i = 0; i + 1 < poly.size(); ++i)
+            segments << QLineF(poly[i], poly[i + 1]);
     }
+
     return segments;
 }
 

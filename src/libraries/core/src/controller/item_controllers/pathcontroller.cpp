@@ -1,5 +1,6 @@
 #include "controller/item_controllers/pathcontroller.h"
-
+#include <QPolygonF>
+#include <QPainterPath>
 #include "worker/utilshelper.h"
 #include <QVariant>
 
@@ -170,6 +171,16 @@ void PathController::setPoint(const QPointF& p, int corner)
 QRectF PathController::rect() const
 {
     return path().boundingRect();
+}
+
+QPolygonF PathController::shape() const
+{
+    QPolygonF poly;
+    for(const auto& pt : m_points)
+        poly << pos() + pt;
+    if(m_closed && !m_points.empty())
+        poly << pos() + m_points.front();
+    return poly;
 }
 
 void PathController::setFilled(bool filled)

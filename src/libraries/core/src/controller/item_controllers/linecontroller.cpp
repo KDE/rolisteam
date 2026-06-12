@@ -20,7 +20,8 @@
 #include "controller/item_controllers/linecontroller.h"
 
 #include <QVariant>
-
+#include <QPolygonF>
+#include <QPainterPath>
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "media/mediatype.h"
 #include "worker/utilshelper.h"
@@ -62,6 +63,11 @@ QPointF LineController::endPoint() const
 QPointF LineController::startPoint() const
 {
     return m_start;
+}
+
+QPolygonF LineController::shape() const
+{
+    return QPolygonF({pos() + m_start, pos() + m_end});
 }
 
 void LineController::aboutToBeRemoved()

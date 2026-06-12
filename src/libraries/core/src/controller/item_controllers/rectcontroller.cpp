@@ -18,7 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "controller/item_controllers/rectcontroller.h"
-
+#include <QPolygonF>
+#include <QPainterPath>
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "worker/utilshelper.h"
 
@@ -61,6 +62,12 @@ bool RectController::filled() const
 QRectF RectController::rect() const
 {
     return m_rect;
+}
+
+QPolygonF RectController::shape() const
+{
+    QRectF r = m_rect.translated(pos());
+    return QPolygonF(r);
 }
 
 void RectController::setRect(QRectF rect)

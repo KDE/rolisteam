@@ -23,7 +23,7 @@ set(public_utils_header
     include/utils/iohelper.h
     include/utils/networkdownloader.h
     include/utils/mappinghelper.h
-
+    include/utils/shadowcaster.h
     include/utils/utils_global.h
     include/utils/directaccessdatastructure.h
 )
@@ -32,6 +32,7 @@ set(utils_src
     src/iohelper.cpp
     src/networkdownloader.cpp
     src/mappinghelper.cpp
+    src/shadowcaster.cpp
 )
 
 
