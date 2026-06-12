@@ -66,6 +66,20 @@ public:
     void setPenWidth(const quint16& penWidth);
 
     QString uuid() const;
+    QPainterPath obstaclePolygon() const
+    {
+        auto res = QGraphicsObject::shape();
+        if(m_ctrl)
+        {
+            auto s = m_ctrl->obstaclePolygon();
+            if(!s.isEmpty())
+            {
+                res = QPainterPath();
+                res.addPolygon(s);
+            }
+        }
+        return res;
+    }
 
     virtual QColor color(const QPointF& pos) const;
     virtual bool canBeMoved() const;

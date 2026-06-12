@@ -1,10 +1,6 @@
-
+#include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/lightcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
-#include "controller/item_controllers/linecontroller.h"
-#include "controller/item_controllers/rectcontroller.h"
-#include "controller/item_controllers/pathcontroller.h"
-#include "controller/item_controllers/ellipsecontroller.h"
 #include "model/vmapitemmodel.h"
 #include "utils/shadowcaster.h"
 #include <QPainterPath>
@@ -126,6 +122,13 @@ QList<QLineF> LightController::collectWallSegments() const
     if(!m_ctrl || !m_ctrl->model())
         return segments;
 
+    static QSet<vmap::VisualItemController::ItemType> accepted{
+        vmap::VisualItemController::ELLIPSE,
+        vmap::VisualItemController::LINE,
+        vmap::VisualItemController::RECT,
+        vmap::VisualItemController::PATH
+    };
+
     for(auto* item : m_ctrl->model()->items())
     {
         if(!item || item->removed())
@@ -135,43 +138,11 @@ QList<QLineF> LightController::collectWallSegments() const
         if(layer != Core::Layer::GROUND && layer != Core::Layer::OBJECT)
             continue;
 
-        QPolygonF poly;
-
-        switch(item->itemType())
-        {
-        case VisualItemController::LINE:
-        {
-            auto* line = dynamic_cast<LineController*>(item);
-            if(!line) continue;
-            poly = line->shape();
-            break;
-        }
-        case VisualItemController::RECT:
-        {
-            auto* rect = dynamic_cast<RectController*>(item);
-            if(!rect) continue;
-            poly = rect->shape();
-            break;
-        }
-        case VisualItemController::PATH:
-        {
-            auto* path = dynamic_cast<PathController*>(item);
-            if(!path) continue;
-            poly = path->shape();
-            break;
-        }
-        case VisualItemController::ELLIPSE:
-        {
-            auto* ellipse = dynamic_cast<EllipseController*>(item);
-            if(!ellipse) continue;
-            poly = ellipse->shape();
-            break;
-        }
-        default:
+        if(!accepted.contains(item->itemType()))
             continue;
-        }
 
-        // Convert polygon points into line segments
+        QPolygonF poly = item->obstaclePolygon();
+
         for(int i = 0; i + 1 < poly.size(); ++i)
             segments << QLineF(poly[i], poly[i + 1]);
     }

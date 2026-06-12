@@ -49,7 +49,7 @@ public:
     bool penLine() const;
     void addPoint(const QPointF& po);
     QPainterPath path() const;
-    QPolygonF shape() const;
+    QPolygonF obstaclePolygon() const override;
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     void setCorner(const QPointF& move, int corner, Core::TransformType tt= Core::TransformType::NoTransform) override;

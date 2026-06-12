@@ -41,7 +41,7 @@ public:
     bool filled() const;
     QRectF rect() const override;
     quint16 penWidth() const;
-    QPolygonF shape() const;
+    QPolygonF obstaclePolygon() const override;
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
 

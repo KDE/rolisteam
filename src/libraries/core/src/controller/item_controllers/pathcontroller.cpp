@@ -173,7 +173,7 @@ QRectF PathController::rect() const
     return path().boundingRect();
 }
 
-QPolygonF PathController::shape() const
+QPolygonF PathController::obstaclePolygon() const
 {
     QPolygonF poly;
     for(const auto& pt : m_points)

@@ -25,7 +25,7 @@
 #include <QPointF>
 #include <QPointer>
 #include <QUndoCommand>
-
+#include <QPolygonF>
 #include "media/mediatype.h"
 #include <core_global.h>
 
@@ -96,6 +96,7 @@ public:
     Core::SelectableTool tool() const;
     virtual QColor color() const;
     virtual QRectF rect() const= 0;
+    virtual QPolygonF obstaclePolygon() const { return QPolygonF(); }
     virtual ItemType itemType() const;
     bool remote() const;
     virtual QPointF rotationOriginPoint() const;

@@ -65,7 +65,7 @@ QPointF LineController::startPoint() const
     return m_start;
 }
 
-QPolygonF LineController::shape() const
+QPolygonF LineController::obstaclePolygon() const
 {
     return QPolygonF({pos() + m_start, pos() + m_end});
 }

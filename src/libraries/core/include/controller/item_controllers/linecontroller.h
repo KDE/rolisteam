@@ -47,7 +47,7 @@ public:
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     QRectF rect() const override;
-    QPolygonF shape() const;
+    QPolygonF obstaclePolygon() const override;
 
 signals:
     void penWidthChanged();

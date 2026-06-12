@@ -43,7 +43,7 @@ public:
     quint16 penWidth() const;
     qreal rx() const;
     qreal ry() const;
-    QPolygonF shape() const;
+    QPolygonF obstaclePolygon() const override;
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     QRectF rect() const override;

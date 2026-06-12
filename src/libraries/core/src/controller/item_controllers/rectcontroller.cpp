@@ -64,7 +64,7 @@ QRectF RectController::rect() const
     return m_rect;
 }
 
-QPolygonF RectController::shape() const
+QPolygonF RectController::obstaclePolygon() const
 {
     QRectF r = m_rect.translated(pos());
     return QPolygonF(r);
