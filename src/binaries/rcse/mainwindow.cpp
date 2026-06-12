@@ -848,7 +848,7 @@ void MainWindow::exportPDF()
                 QTimer timer;
                 timer.setSingleShot(true);
                 QEventLoop loop;
-                connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+                connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
                 timer.start(m_preferences->value("waitingTimeBetweenPage", 300).toInt());
                 loop.exec();
 

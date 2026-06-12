@@ -23,8 +23,8 @@ FindToolBar::FindToolBar(QWidget* parent) : QWidget(parent), ui(new Ui::FindTool
 {
     ui->setupUi(this);
 
-    connect(ui->lineEdit, SIGNAL(textEdited(QString)), this, SLOT(findTriggered(QString)));
-    connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(closeButtonClicked()));
+    connect(ui->lineEdit, &QLineEdit::textEdited, this, &FindToolBar::findTriggered);
+    connect(ui->pushButton, &QPushButton::clicked, this, &FindToolBar::closeButtonClicked);
 }
 
 FindToolBar::~FindToolBar()

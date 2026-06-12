@@ -18,9 +18,9 @@ CodeEditor::CodeEditor(SharedNoteController* ctrl, QWidget* parent) : QPlainText
     QPalette palette(Qt::white);
     setPalette(palette);
 
-    connect(this, SIGNAL(blockCountChanged(int)), this, SLOT(updateLineNumberAreaWidth(int)));
-    connect(this, SIGNAL(updateRequest(QRect, int)), this, SLOT(updateLineNumberArea(QRect, int)));
-    connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(highlightCurrentLine()));
+    connect(this, &QPlainTextEdit::blockCountChanged, this, &sharedNotes::CodeEditor::updateLineNumberAreaWidth);
+    connect(this, &QPlainTextEdit::updateRequest, this, &sharedNotes::CodeEditor::updateLineNumberArea);
+    connect(this, &QPlainTextEdit::cursorPositionChanged, this, &sharedNotes::CodeEditor::highlightCurrentLine);
     connect(this, &CodeEditor::textChanged, this, [this]() { m_sharedCtrl->setText(toPlainText()); });
     connect(m_sharedCtrl, &SharedNoteController::collabTextChanged, this, &CodeEditor::collabTextChange);
     connect(m_sharedCtrl, &SharedNoteController::permissionChanged, this,

@@ -10,8 +10,8 @@ Convertor::Convertor(QWidget* parent) : QWidget(parent), ui(new Ui::Convertor), 
     qRegisterMetaType<Unit>();
     // qRegisterMetaType<Unit*>();
     ui->setupUi(this);
-    connect(ui->m_categoryCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(categoryHasChanged(int)));
-    connect(ui->m_categoryCombo2, SIGNAL(currentIndexChanged(int)), this, SLOT(categoryHasChangedOnSecondPanel(int)));
+    connect(ui->m_categoryCombo, &QComboBox::currentIndexChanged, this, &Convertor::categoryHasChanged);
+    connect(ui->m_categoryCombo2, &QComboBox::currentIndexChanged, this, &Convertor::categoryHasChangedOnSecondPanel);
     connect(ui->m_reverseAct, &QAction::triggered, this,
             [=]()
             {
@@ -280,10 +280,10 @@ Convertor::Convertor(QWidget* parent) : QWidget(parent), ui(new Ui::Convertor), 
 
     ui->m_fromCombo->setModel(m_catModel.get());
     ui->m_toCombo->setModel(m_toModel.get());
-    connect(ui->m_fromLine, SIGNAL(textChanged(QString)), this, SLOT(convert()));
-    connect(ui->m_convert, SIGNAL(clicked(bool)), this, SLOT(convert()));
-    connect(ui->m_fromCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(convert()));
-    connect(ui->m_toCombo, SIGNAL(currentIndexChanged(int)), this, SLOT(convert()));
+    connect(ui->m_fromLine, &QLineEdit::textChanged, this, &Convertor::convert);
+    connect(ui->m_convert, &QPushButton::clicked, this, &Convertor::convert);
+    connect(ui->m_fromCombo, &QComboBox::currentIndexChanged, this, &Convertor::convert);
+    connect(ui->m_toCombo, &QComboBox::currentIndexChanged, this, &Convertor::convert);
 
     categoryHasChanged(0);
 

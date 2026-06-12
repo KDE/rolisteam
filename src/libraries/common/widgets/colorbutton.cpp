@@ -41,7 +41,7 @@ ColorButton::ColorButton(QWidget* parent, bool transparency)
     setAutoDefault(false);
     //  m_dialog.setCurrentColor(m_color);
 
-    connect(this, SIGNAL(pressed()), this, SLOT(openDialog()));
+    connect(this, &ColorButton::pressed, this, &ColorButton::openDialog);
     // connect(&m_dialog, SIGNAL(colorSelected(const QColor &)), this, SLOT(setColor(const QColor &)));
 }
 
@@ -57,7 +57,7 @@ ColorButton::ColorButton(const QColor& color, QWidget* parent)
     setDefault(false);
     setAutoDefault(false);
     // m_dialog.setCurrentColor(m_color);
-    connect(this, SIGNAL(clicked()), this, SLOT(openDialog()));
+    connect(this, &ColorButton::clicked, this, &ColorButton::openDialog);
     // connect(&m_dialog, SIGNAL(colorSelected(const QColor &)), this, SLOT(setColor(const QColor &)));
 }
 ColorButton::~ColorButton() {}

@@ -494,7 +494,7 @@ void CharacterSheetWindow::exportPDF()
                 QTimer timer;
                 timer.setSingleShot(true);
                 QEventLoop loop;
-                connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+                connect(&timer, &QTimer::timeout, &loop, &QEventLoop::quit);
                 auto pref= m_sheetCtrl->preferences();
                 timer.start(pref ? pref->value("waitingTimeBetweenPage", 300).toInt() : 300);
                 loop.exec();

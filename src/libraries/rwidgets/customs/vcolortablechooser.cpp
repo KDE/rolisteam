@@ -190,9 +190,9 @@ ColorTableChooser::ColorTableChooser(QWidget* parent) : QWidget(parent)
     setLayout(m_layout);
     setStyleSheet("background-color: rgb(0,0,0)");
 
-    connect(m_colorTable, SIGNAL(dataChanged(int, int)), this, SLOT(colorHasChanged(int, int)));
-    connect(m_colorTable, SIGNAL(dataChanged(int, int)), m_valueChooser, SLOT(colorHasChanged(int, int)));
-    connect(m_valueChooser, SIGNAL(valueChanged(int)), this, SLOT(valueHasChanged(int)));
+    connect(m_colorTable, &ColorTable::dataChanged, this, &ColorTableChooser::colorHasChanged);
+    connect(m_colorTable, &ColorTable::dataChanged, m_valueChooser, &SaturationChooser::colorHasChanged);
+    connect(m_valueChooser, &SaturationChooser::valueChanged, this, &ColorTableChooser::valueHasChanged);
     setMinimumSize(40, 45);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
 

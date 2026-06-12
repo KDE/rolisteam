@@ -100,7 +100,7 @@ VColorSelector::VColorSelector(QWidget* parent) : QWidget(parent)
     m_currentColorLabel->setPalette(QPalette(QColor(0, 0, 0)));
     m_currentColorLabel->setToolTip(tr("Predefine Color 1"));
     m_currentColorLabel->setAutoFillBackground(true);
-    connect(m_currentColorLabel, SIGNAL(doubledclicked()), this, SLOT(VColorSelectorDialog()));
+    connect(m_currentColorLabel, &VColorLabel::doubledclicked, this, &VColorSelector::VColorSelectorDialog);
 
     m_currentColor= QColor(0, 0, 0);
 
@@ -111,7 +111,7 @@ VColorSelector::VColorSelector(QWidget* parent) : QWidget(parent)
     selecteurLayout->addWidget(m_currentColorLabel, 1);
     // selecteurLayout->setAlignment(m_currentColorLabel, Qt::AlignHCenter | Qt::AlignTop);
     selecteurLayout->addWidget(m_colorTableChooser, 1);
-    connect(m_colorTableChooser, SIGNAL(currentColorChanged(QColor)), this, SLOT(selectColor(QColor)));
+    connect(m_colorTableChooser, &ColorTableChooser::currentColorChanged, this, &VColorSelector::selectColor);
 
     setLayout(selecteurLayout);
 }

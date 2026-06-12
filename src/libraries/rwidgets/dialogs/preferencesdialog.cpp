@@ -186,24 +186,24 @@ PreferencesDialog::PreferencesDialog(PreferencesController* controller, QWidget*
         QString("%1 - %2").arg(m_preferences->value("Application_Name", "rolisteam").toString(), tr("Preferences")));
     setWindowModality(Qt::ApplicationModal);
 
-    connect(ui->m_heartBeat, SIGNAL(clicked(bool)), this, SLOT(manageHeartBeat()));
-    connect(ui->m_hbFrequency, SIGNAL(valueChanged(int)), this, SLOT(manageHeartBeat()));
+    connect(ui->m_heartBeat, &QCheckBox::clicked, this, &PreferencesDialog::manageHeartBeat);
+    connect(ui->m_hbFrequency, &QSpinBox::valueChanged, this, &PreferencesDialog::manageHeartBeat);
     connect(ui->m_displayTimePage, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this,
             [=](int val) { m_preferences->registerValue("waitingTimeBetweenPage", val, true); });
     // Messaging
     connect(ui->m_saveChatRoomCB, &QCheckBox::toggled, this, &PreferencesDialog::manageMessagingPref);
 
     // background
-    connect(ui->m_positioningComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(backgroundChanged()));
-    connect(ui->m_bgColorPush, SIGNAL(colorChanged(QColor)), this, SLOT(backgroundChanged()));
+    connect(ui->m_positioningComboBox, &QComboBox::currentIndexChanged, this, &PreferencesDialog::backgroundChanged);
+    connect(ui->m_bgColorPush, &ColorButton::colorChanged, this, &PreferencesDialog::backgroundChanged);
     connect(ui->m_backgroundImage, &FileDirChooser::pathChanged, this, &PreferencesDialog::backgroundChanged);
     connect(ui->m_diceHighlightColorBtn, &ColorButton::colorChanged, m_ctrl,
             &PreferencesController::setDiceHighLightColor);
     // connect(ui->m_backgroundImage,ç)
 
     // themes
-    connect(ui->m_copyThemeButton, SIGNAL(clicked()), this, SLOT(dupplicateTheme()));
-    connect(ui->m_themeNameLineEdit, SIGNAL(textEdited(QString)), this, SLOT(setTitleAtCurrentTheme()));
+    connect(ui->m_copyThemeButton, &QPushButton::clicked, this, &PreferencesDialog::dupplicateTheme);
+    connect(ui->m_themeNameLineEdit, &QLineEdit::textEdited, this, &PreferencesDialog::setTitleAtCurrentTheme);
 
     connect(ui->m_paletteTableView, &QTableView::doubleClicked, this, &PreferencesDialog::editColor);
 

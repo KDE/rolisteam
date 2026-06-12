@@ -76,8 +76,8 @@ SharedNote::SharedNote(SharedNoteController* ctrl, QWidget* parent)
 
     auto localIsOwner= (m_sharedCtrl->ownerId() == m_sharedCtrl->localId());
 
-    connect(m_document, SIGNAL(undoAvailable(bool)), this, SLOT(setUndoability(bool)));
-    connect(m_document, SIGNAL(redoAvailable(bool)), this, SLOT(setRedoability(bool)));
+    connect(m_document, &Document::undoAvailable, this, &SharedNote::setUndoability);
+    connect(m_document, &Document::redoAvailable, this, &SharedNote::setRedoability);
 
     if(localIsOwner)
     {

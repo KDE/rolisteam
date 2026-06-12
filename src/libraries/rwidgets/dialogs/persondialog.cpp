@@ -27,8 +27,8 @@ PersonDialog::PersonDialog(QWidget* parent) : QDialog(parent), ui(new Ui::Person
 {
     ui->setupUi(this);
 
-    connect(ui->m_selectCharaterAvatar, SIGNAL(clicked()), this, SLOT(openImage()));
-    connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(clickOnBar(QAbstractButton*)));
+    connect(ui->m_selectCharaterAvatar, &QPushButton::clicked, this, &PersonDialog::openImage);
+    connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &PersonDialog::clickOnBar);
 }
 
 PersonDialog::~PersonDialog()

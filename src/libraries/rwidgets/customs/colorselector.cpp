@@ -123,7 +123,7 @@ ColorSelector::ColorSelector(QWidget* parent) : QWidget(parent)
         m_predefinedColor[i]->setFixedHeight(5);
         m_predefinedColor[i]->setFixedWidth(5);
         m_predefinedColor[i]->setToolTip(QStringLiteral("%2 %1 ").arg(i + 1).arg(m_predefineColor));
-        connect(m_predefinedColor[i], SIGNAL(clicked(QColor)), this, SLOT(changeCurrentColor(QColor)));
+        connect(m_predefinedColor[i], &ColorWidget::clicked, this, &ColorSelector::changeCurrentColor);
 
         QColorDialog::setStandardColor(x * 6 + y, couleur.rgb());
         m_predefinedGrid->addWidget(m_predefinedColor[i], y, x);
@@ -147,7 +147,7 @@ ColorSelector::ColorSelector(QWidget* parent) : QWidget(parent)
     {
         // Creation d'un widget de couleur blanche
         m_personalColor.append(new ColorWidget(wid));
-        connect(m_personalColor[i], SIGNAL(clicked(QColor)), this, SLOT(changeCurrentColor(QColor)));
+        connect(m_personalColor[i], &ColorWidget::clicked, this, &ColorSelector::changeCurrentColor);
         m_personalColor[i]->setAutoFillBackground(true);
         m_personalColor[i]->setFixedHeight(5);
         m_personalColor[i]->setFixedWidth(5);

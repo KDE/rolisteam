@@ -45,9 +45,9 @@ NameGeneratorWidget::NameGeneratorWidget(QWidget* parent)
     model << tr("Chinese Name") << tr("Elve Name") << tr("English Name") << tr("French Name") << tr("Japanese Name")
           << tr("Star Wars Name") << tr("Russian Name");
     ui->m_database->addItems(model);
-    connect(ui->m_database, SIGNAL(currentIndexChanged(int)), this, SLOT(checkFeatureAvailability()));
+    connect(ui->m_database, &QComboBox::currentIndexChanged, this, &NameGeneratorWidget::checkFeatureAvailability);
 
-    connect(ui->m_gen, SIGNAL(clicked()), this, SLOT(generateName()));
+    connect(ui->m_gen, &QPushButton::clicked, this, &NameGeneratorWidget::generateName);
 
     // Japanese
     DataBase jpMale;

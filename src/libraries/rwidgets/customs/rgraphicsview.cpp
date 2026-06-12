@@ -536,13 +536,13 @@ void RGraphicsView::createAction()
 
     m_importImage= new QAction(tr("Import Image"), this);
 
-    connect(m_zoomNormal, SIGNAL(triggered()), this, SLOT(setZoomFactor()));
-    connect(m_zoomCenterOnItem, SIGNAL(triggered(bool)), this, SLOT(centerOnItem()));
-    connect(m_zoomInMax, SIGNAL(triggered()), this, SLOT(setZoomFactor()));
-    connect(m_zoomOutMax, SIGNAL(triggered()), this, SLOT(setZoomFactor()));
+    connect(m_zoomNormal, &QAction::triggered, this, &RGraphicsView::setZoomFactor);
+    connect(m_zoomCenterOnItem, &QAction::triggered, this, &RGraphicsView::centerOnItem);
+    connect(m_zoomInMax, &QAction::triggered, this, &RGraphicsView::setZoomFactor);
+    connect(m_zoomOutMax, &QAction::triggered, this, &RGraphicsView::setZoomFactor);
     connect(m_importImage, &QAction::triggered, this, &RGraphicsView::addImageToMap);
-    connect(m_zoomOut, SIGNAL(triggered()), this, SLOT(setZoomFactor()));
-    connect(m_zoomIn, SIGNAL(triggered()), this, SLOT(setZoomFactor()));
+    connect(m_zoomOut, &QAction::triggered, this, &RGraphicsView::setZoomFactor);
+    connect(m_zoomIn, &QAction::triggered, this, &RGraphicsView::setZoomFactor);
 
     connect(m_ctrl, &VectorialMapController::itemHasBeenStacked, this,
             [this](const QStringList& first, const QStringList& second, bool network)

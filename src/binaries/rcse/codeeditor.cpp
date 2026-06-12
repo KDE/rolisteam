@@ -31,9 +31,9 @@ CodeEditor::CodeEditor(QWidget* parent) : QPlainTextEdit(parent)
     // setTabStopWidth(metrics.boundingRect("    ").width());
     lineNumberArea= new LineNumberArea(this);
 
-    connect(this, SIGNAL(blockCountChanged(int)), this, SLOT(updateLineNumberAreaWidth(int)));
-    connect(this, SIGNAL(updateRequest(QRect, int)), this, SLOT(updateLineNumberArea(QRect, int)));
-    connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(highlightCurrentLine()));
+    connect(this, &QPlainTextEdit::blockCountChanged, this, &CodeEditor::updateLineNumberAreaWidth);
+    connect(this, &QPlainTextEdit::updateRequest, this, &CodeEditor::updateLineNumberArea);
+    connect(this, &QPlainTextEdit::cursorPositionChanged, this, &CodeEditor::highlightCurrentLine);
 
     updateLineNumberAreaWidth(0);
     highlightCurrentLine();

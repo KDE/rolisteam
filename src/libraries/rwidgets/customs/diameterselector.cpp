@@ -72,8 +72,8 @@ DiameterSelector::DiameterSelector(QWidget* parent, bool plein, int min, int max
 
     layout->addWidget(m_diameterSlider);
 
-    connect(m_diameterSlider, SIGNAL(sliderMoved(int)), m_circle, SLOT(changeDiameter(int)));
-    connect(m_diameterSlider, SIGNAL(sliderMoved(int)), this, SIGNAL(diameterChanged(int)));
+    connect(m_diameterSlider, &QSlider::sliderMoved, m_circle, &CircleDisplayer::changeDiameter);
+    connect(m_diameterSlider, &QSlider::sliderMoved, this, &DiameterSelector::diameterChanged);
 }
 
 void DiameterSelector::setDiameter(int diameter)

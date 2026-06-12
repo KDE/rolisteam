@@ -87,7 +87,7 @@ FieldView::FieldView(QWidget* parent) : QTreeView(parent), m_mapper(new QSignalM
     setAlternatingRowColors(true);
 #endif
 
-    connect(this, SIGNAL(doubleClicked(QModelIndex)), this, SLOT(editColor(QModelIndex)));
+    connect(this, &QTreeView::doubleClicked, this, &FieldView::editColor);
 
     AlignmentDelegate* delegate= new AlignmentDelegate(this);
     setItemDelegateForColumn(static_cast<int>(TreeSheetItem::TEXT_ALIGN), delegate);
@@ -176,8 +176,7 @@ void FieldView::contextMenuEvent(QContextMenuEvent* event)
         auto act= hideSubMenu->addAction(name);
         act->setCheckable(true);
         act->setChecked(!isColumnHidden(i));
-        connect(act, SIGNAL(triggered(bool)), m_mapper, SLOT(map()));
-        m_mapper->setMapping(act, i);
+        connect(act, &QAction::triggered, this, [this, i]() { setColumnHidden(i, !isColumnHidden(i)); });
     }
 
     QAction* act= menu.exec(event->globalPos());

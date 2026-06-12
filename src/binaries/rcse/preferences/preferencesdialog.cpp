@@ -8,7 +8,7 @@ PreferencesDialog::PreferencesDialog(QWidget* parent) : QDialog(parent), ui(new 
 {
     ui->setupUi(this);
 
-    connect(ui->m_selectDirectory, SIGNAL(clicked(bool)), this, SLOT(selectDir()));
+    connect(ui->m_selectDirectory, &QPushButton::clicked, this, &rcse::PreferencesDialog::selectDir);
 }
 
 PreferencesDialog::~PreferencesDialog()
