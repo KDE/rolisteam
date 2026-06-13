@@ -13,8 +13,7 @@ void MessageDispatcher::dispatchMessage(QByteArray data, Channel* channel, Serve
 
     bool sendToAll= true;
     bool saveIt= true;
-    auto msgOwner= std::make_unique<NetworkMessageReader>();
-    auto msg= msgOwner.get();
+    NetworkMessageReader* msg= new NetworkMessageReader;
 
     msg->setData(data);
 

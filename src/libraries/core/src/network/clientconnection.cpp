@@ -75,8 +75,11 @@ ClientConnection::ClientConnection() : m_socketTcp(new QTcpSocket(this))
 
 ClientConnection::~ClientConnection()
 {
-    delete[] m_buffer;
-    m_buffer= nullptr;
+    if(m_buffer)
+    {
+        delete[] m_buffer;
+        m_buffer= nullptr;
+    }
 }
 
 bool ClientConnection::connected() const
@@ -183,6 +186,7 @@ void ClientConnection::receivingData()
             emit messageReceived(array);
 
             delete[] m_buffer;
+            m_buffer= nullptr;
             m_remainingData= 0;
             m_receivingData= false;
         }
