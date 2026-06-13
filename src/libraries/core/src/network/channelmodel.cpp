@@ -333,7 +333,7 @@ void ChannelModel::appendChannel(Channel* channel)
     m_root.append(channel);
     if(m_defaultChannel.isEmpty())
         setDefaultChannelId(channel->uuid());
-    connect(channel, &Channel::memorySizeChanged, this, &ChannelModel::modelChanged);
+    // connect(channel, &Channel::memorySizeChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::lockedChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::itemChanged, this, &ChannelModel::modelChanged);
     connect(channel, &Channel::nameChanged, this, &ChannelModel::modelChanged);
