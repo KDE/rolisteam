@@ -25,9 +25,7 @@ public:
     explicit LightItem(vmap::LightController* ctrl);
     virtual ~LightItem();
 
-    void paint(QPainter* painter,
-               const QStyleOptionGraphicsItem* option,
-               QWidget* widget) override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
     QRectF boundingRect() const override;
     virtual void setNewEnd(const QPointF& nend) override;
@@ -35,6 +33,7 @@ public:
 
 protected:
     virtual void updateChildPosition() override;
+    void initChildPointItem();
 
 private:
     QPointer<vmap::LightController> m_lightCtrl;

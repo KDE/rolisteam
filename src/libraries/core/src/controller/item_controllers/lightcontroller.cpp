@@ -1,22 +1,23 @@
-#include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/lightcontroller.h"
 #include "controller/item_controllers/rectcontroller.h"
+#include "controller/item_controllers/pathcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "model/vmapitemmodel.h"
 #include "utils/shadowcaster.h"
+#include "worker/utilshelper.h"
 #include <QPainterPath>
 
 namespace vmap
 {
 
-LightController::LightController(const std::map<QString, QVariant>& params,
-                                 VectorialMapController* ctrl,
+LightController::LightController(const std::map<QString, QVariant>& params, VectorialMapController* ctrl,
                                  QObject* parent)
     : VisualItemController(VisualItemController::LIGHT, params, ctrl, parent)
 {
-    auto it = params.find(QStringLiteral("radius"));
-    if(it != params.end())
-        m_radius = it->second.toReal();
+    namespace hu= helper::utils;
+    namespace cv= Core::vmapkeys;
+    using std::placeholders::_1;
+    hu::setParamIfAny<qreal>(cv::KEY_RADIUS, params, std::bind(&LightController::setRadius, this, _1));
 
     connect(this, &VisualItemController::posChanged,   this, &LightController::updateFogReveal);
     connect(this, &LightController::radiusChanged,     this, &LightController::updateFogReveal);
@@ -25,8 +26,9 @@ LightController::LightController(const std::map<QString, QVariant>& params,
 
     if(m_ctrl && m_ctrl->model())
     {
-        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded,
-                this, [this](vmap::VisualItemController* item) {
+        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded, this,
+                [this](vmap::VisualItemController* item)
+                {
                     if(!item)
                         return;
                     connect(item, &vmap::VisualItemController::initializedChanged,
@@ -34,14 +36,13 @@ LightController::LightController(const std::map<QString, QVariant>& params,
                     // Update shadow when obstacle is rotated
                     connect(item, &vmap::VisualItemController::rotationChanged,
                             this, &LightController::updateFogReveal);
-                    if(auto* path = dynamic_cast<vmap::PathController*>(item))
+                    if(auto* path= dynamic_cast<vmap::PathController*>(item))
                     {
                         connect(path, &vmap::PathController::pointCountChanged,
                                 this, &LightController::updateFogReveal);
                     }
                 });
-        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved,
-                this, &LightController::updateFogReveal);
+        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved, this, &LightController::updateFogReveal);
     }
 
     updateFogReveal();
@@ -61,9 +62,8 @@ void LightController::setRadius(qreal radius)
 {
     if(qFuzzyCompare(m_radius, radius))
         return;
-    m_radius = radius;
+    m_radius= radius;
     emit radiusChanged();
-    emit rectChanged();
 }
 
 void LightController::aboutToBeRemoved()
@@ -81,7 +81,7 @@ void LightController::setCorner(const QPointF& move, int corner, Core::Transform
 {
     Q_UNUSED(corner)
     Q_UNUSED(tt)
-    setRadius(move.x());
+    setRadius(radius() + move.x());
 }
 
 void LightController::updateFogReveal()
@@ -89,14 +89,14 @@ void LightController::updateFogReveal()
     if(!m_ctrl)
         return;
 
-    auto* sightCtrl = m_ctrl->sightController();
+    auto* sightCtrl= m_ctrl->sightController();
     if(!sightCtrl)
         return;
 
     sightCtrl->clearTempPolygons();
 
-    QList<QLineF> segments = collectWallSegments();
-    QPolygonF visibilityPoly = ShadowCaster::computeVisibilityPolygon(pos(), m_radius, segments);
+    QList<QLineF> segments= collectWallSegments();
+    QPolygonF visibilityPoly= ShadowCaster::computeVisibilityPolygon(pos(), m_radius, segments);
 
     if(segments.isEmpty())
     {
@@ -112,7 +112,7 @@ void LightController::updateFogReveal()
     visPath.setFillRule(Qt::WindingFill);
     visPath.addPolygon(visibilityPoly);
 
-    QPainterPath revealPath = circlePath.intersected(visPath);
+    QPainterPath revealPath= circlePath.intersected(visPath);
     sightCtrl->addPolygon(revealPath.toFillPolygon(), false, true);
 }
 
@@ -123,25 +123,22 @@ QList<QLineF> LightController::collectWallSegments() const
         return segments;
 
     static QSet<vmap::VisualItemController::ItemType> accepted{
-        vmap::VisualItemController::ELLIPSE,
-        vmap::VisualItemController::LINE,
-        vmap::VisualItemController::RECT,
-        vmap::VisualItemController::PATH
-    };
+        vmap::VisualItemController::ELLIPSE, vmap::VisualItemController::LINE, vmap::VisualItemController::RECT,
+        vmap::VisualItemController::PATH};
 
     for(auto* item : m_ctrl->model()->items())
     {
         if(!item || item->removed())
             continue;
 
-        auto layer = item->layer();
+        auto layer= item->layer();
         if(layer != Core::Layer::GROUND && layer != Core::Layer::OBJECT)
             continue;
 
         if(!accepted.contains(item->itemType()))
             continue;
 
-        QPolygonF poly = item->obstaclePolygon();
+        QPolygonF poly= item->obstaclePolygon();
 
         // Determine rotation center per item type:
         // RectItem rotates around rect().center() (setTransformOriginPoint)
@@ -161,7 +158,7 @@ QList<QLineF> LightController::collectWallSegments() const
         transform.translate(-rotationCenter.x(), -rotationCenter.y());
         poly = transform.map(poly);
 
-        for(int i = 0; i + 1 < poly.size(); ++i)
+        for(int i= 0; i + 1 < poly.size(); ++i)
             segments << QLineF(poly[i], poly[i + 1]);
     }
 
