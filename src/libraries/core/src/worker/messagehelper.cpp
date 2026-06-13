@@ -39,6 +39,7 @@
 #include "controller/item_controllers/ellipsecontroller.h"
 #include "controller/item_controllers/gridcontroller.h"
 #include "controller/item_controllers/imageitemcontroller.h"
+#include "controller/item_controllers/lightcontroller.h"
 #include "controller/item_controllers/linecontroller.h"
 #include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/rectcontroller.h"
@@ -927,7 +928,7 @@ void addSightController(vmap::SightController* ctrl, NetworkMessageWriter& msg)
     }*/
 }
 
-void addRectController(const vmap::RectController* ctrl, NetworkMessageWriter& msg)
+void MessageHelper::addRectController(const vmap::RectController* ctrl, NetworkMessageWriter& msg)
 {
     addVisualItemController(ctrl, msg);
     msg.uint8(ctrl->filled());
@@ -977,6 +978,23 @@ void MessageHelper::addLineController(const vmap::LineController* ctrl, NetworkM
     auto end= ctrl->endPoint();
     msg.real(end.x());
     msg.real(end.y());
+}
+
+void MessageHelper::addLightController(const vmap::LightController* ctrl, NetworkMessageWriter& msg)
+{
+    if(!ctrl)
+        return;
+    addVisualItemController(ctrl, msg);
+    msg.real(ctrl->radius());
+}
+
+const std::map<QString, QVariant> MessageHelper::readLight(NetworkMessageReader* msg)
+{
+    auto hash= readVisualItemController(msg);
+
+    auto rad= msg->real();
+    hash.insert({Core::vmapkeys::KEY_RADIUS, rad});
+    return hash;
 }
 
 const std::map<QString, QVariant> MessageHelper::readLine(NetworkMessageReader* msg)
@@ -1311,6 +1329,9 @@ void MessageHelper::convertVisualItemCtrlAndAdd(vmap::VisualItemController* ctrl
     case vmap::VisualItemController::LINE:
         addLineController(dynamic_cast<vmap::LineController*>(ctrl), msg);
         break;
+    case vmap::VisualItemController::LIGHT:
+        addLightController(dynamic_cast<vmap::LightController*>(ctrl), msg);
+        break;
     case vmap::VisualItemController::PATH:
         addPathController(dynamic_cast<vmap::PathController*>(ctrl), msg);
         break;
@@ -1390,6 +1411,14 @@ void MessageHelper::sendOffRect(const vmap::RectController* ctrl, const QString&
     msg.string8(mapId);
     // msg.uint8(ctrl->itemType());
     addRectController(ctrl, msg);
+    msg.sendToServer();
+}
+
+void MessageHelper::sendOffLight(const vmap::LightController* ctrl, const QString& mapId)
+{
+    NetworkMessageWriter msg(NetMsg::VMapCategory, NetMsg::AddItem);
+    msg.string8(mapId);
+    addLightController(ctrl, msg);
     msg.sendToServer();
 }
 

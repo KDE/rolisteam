@@ -22,12 +22,12 @@
 #include "controller/item_controllers/characteritemcontroller.h"
 #include "controller/item_controllers/ellipsecontroller.h"
 #include "controller/item_controllers/imageitemcontroller.h"
+#include "controller/item_controllers/lightcontroller.h"
 #include "controller/item_controllers/linecontroller.h"
 #include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/rectcontroller.h"
 #include "controller/item_controllers/textcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
-#include "controller/item_controllers/lightcontroller.h"
 #include "network/networkmessagereader.h"
 #include "worker/messagehelper.h"
 
@@ -135,6 +135,12 @@ vmap::VisualItemController* vmap::VmapItemFactory::createRemoteVMapItem(Vectoria
     {
         auto param= MessageHelper::readLine(msg);
         ctrl= new LineController(param, mapCtrl);
+    }
+    break;
+    case vmap::VisualItemController::LIGHT:
+    {
+        auto param= MessageHelper::readLine(msg);
+        ctrl= new LightController(param, mapCtrl);
     }
     break;
     case vmap::VisualItemController::ELLIPSE:

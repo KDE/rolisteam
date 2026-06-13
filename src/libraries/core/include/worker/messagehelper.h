@@ -37,6 +37,7 @@ namespace vmap
 class RectController;
 class TextController;
 class LineController;
+class LightController;
 class PathController;
 class ImageItemController;
 class CharacterItemController;
@@ -90,6 +91,7 @@ public:
 
     static const std::map<QString, QVariant> readRect(NetworkMessageReader* msg);
     static const std::map<QString, QVariant> readLine(NetworkMessageReader* msg);
+    static const std::map<QString, QVariant> readLight(NetworkMessageReader* msg);
     static const std::map<QString, QVariant> readEllipse(NetworkMessageReader* msg);
     static const std::map<QString, QVariant> readImage(NetworkMessageReader* msg);
     static const std::map<QString, QVariant> readText(NetworkMessageReader* msg);
@@ -97,6 +99,7 @@ public:
     static const std::map<QString, QVariant> readCharacter(NetworkMessageReader* msg);
 
     static void sendOffRect(const vmap::RectController* ctrl, const QString& mapId);
+    static void sendOffLight(const vmap::LightController* ctrl, const QString& mapId);
     static void sendOffLine(const vmap::LineController* ctrl, const QString& mapId);
     static void sendOffEllispe(const vmap::EllipseController* ctrl, const QString& mapId);
     static void sendOffText(const vmap::TextController* ctrl, const QString& mapId);
@@ -170,10 +173,12 @@ public:
     static void convertVisualItemCtrlAndAdd(vmap::VisualItemController* ctrl, NetworkMessageWriter& msg);
 
     static void addCharacterController(const vmap::CharacterItemController* ctrl, NetworkMessageWriter& msg);
+    static void addRectController(const vmap::RectController* ctrl, NetworkMessageWriter& msg);
     static void addPathController(const vmap::PathController* ctrl, NetworkMessageWriter& msg);
     static void addTextController(const vmap::TextController* ctrl, NetworkMessageWriter& msg);
     static void addImageController(const vmap::ImageItemController* ctrl, NetworkMessageWriter& msg);
     static void addLineController(const vmap::LineController* ctrl, NetworkMessageWriter& msg);
+    static void addLightController(const vmap::LightController* ctrl, NetworkMessageWriter& msg);
     static void addEllipseController(const vmap::EllipseController* ctrl, NetworkMessageWriter& msg);
 };
 

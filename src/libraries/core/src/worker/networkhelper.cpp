@@ -57,7 +57,6 @@ QJsonObject channelItemToJsonObject(const TreeItem* item)
         auto channel= dynamic_cast<const Channel*>(item);
         if(channel)
         {
-
             jsonObj[Core::jsonNetwork::JSON_TYPE]= Core::jsonNetwork::JSON_TYPE_CHANNEL;
             jsonObj[Core::jsonNetwork::JSON_NAME]= channel->name();
             jsonObj[Core::jsonNetwork::JSON_DESCRIPTION]= channel->description();

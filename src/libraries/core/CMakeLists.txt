@@ -301,6 +301,7 @@ set(HEADERS
   ${inc}/controller/applicationcontroller.h
   ${inc}/worker/mediahelper.h
   ${inc}/worker/campaignfinder.h
+  ${inc}/updater/vmapitem/lightcontrollerupdater.h
   )
 
 
@@ -445,7 +446,8 @@ set(SOURCES
   src/worker/characterfinder.cpp
   src/worker/mediahelper.cpp
   src/worker/campaignfinder.cpp
-  src/updater/controller/contentupdater.cpp)
+  src/updater/controller/contentupdater.cpp
+  src/updater/vmapitem/lightcontrollerupdater.cpp)
 
 add_library(core SHARED ${SOURCES} ${HEADERS} ${pdfSource} ${QRC_SOURCES})
 

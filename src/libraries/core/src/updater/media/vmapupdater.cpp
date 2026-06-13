@@ -36,6 +36,7 @@
 #include "updater/vmapitem/characteritemupdater.h"
 #include "updater/vmapitem/ellipsecontrollerupdater.h"
 #include "updater/vmapitem/imagecontrollerupdater.h"
+#include "updater/vmapitem/lightcontrollerupdater.h"
 #include "updater/vmapitem/linecontrollerupdater.h"
 #include "updater/vmapitem/pathcontrollerupdater.h"
 #include "updater/vmapitem/rectcontrollerupdater.h"
@@ -60,6 +61,8 @@ VMapUpdater::VMapUpdater(campaign::CampaignManager* manager, FilteredContentMode
 
     m_updaters.insert(
         {vmap::VisualItemController::LINE, std::unique_ptr<LineControllerUpdater>(new LineControllerUpdater)});
+    m_updaters.insert(
+        {vmap::VisualItemController::LIGHT, std::unique_ptr<LightControllerUpdater>(new LightControllerUpdater)});
     m_updaters.insert(
         {vmap::VisualItemController::PATH, std::unique_ptr<PathControllerUpdater>(new PathControllerUpdater)});
     m_updaters.insert(
