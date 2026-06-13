@@ -146,7 +146,7 @@ bool MindItemModel::setData(const QModelIndex& index, const QVariant& value, int
 {
     if(data(index, role) != value)
     {
-        emit dataChanged(index, index, QVector<int>() << role);
+        emit dataChanged(index, index, QList<int>() << role);
         return true;
     }
     return false;
@@ -196,7 +196,7 @@ void MindItemModel::setImageUriToNode(const QString& id)
         return;
 
     auto idx= index(dis, 0, QModelIndex());
-    emit dataChanged(idx, idx, QVector<int>());
+    emit dataChanged(idx, idx, QList<int>());
 }
 
 Qt::ItemFlags MindItemModel::flags(const QModelIndex& index) const
@@ -293,8 +293,8 @@ void MindItemModel::appendItem(const QList<MindItem*>& nodes, bool network)
                             auto idx1= index(offset, 0, parent);
                             auto start= link->start();
                             emit dataChanged(idx1, idx1,
-                                             start->isDragged() ? QVector<int>{Object, LinkStartPosition} :
-                                                                  QVector<int>{Object, LinkPositionFromSpacing});
+                                             start->isDragged() ? QList<int>{Object, LinkStartPosition} :
+                                                                  QList<int>{Object, LinkPositionFromSpacing});
                         });
             }
         }

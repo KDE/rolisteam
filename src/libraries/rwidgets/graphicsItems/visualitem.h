@@ -23,7 +23,7 @@
 #include <QAction>
 #include <QGraphicsObject>
 #include <QPointer>
-#include <QVector>
+#include <QList>
 
 #include "childpointitem.h"
 #include "controller/item_controllers/visualitemcontroller.h"
@@ -113,9 +113,9 @@ protected:
     static QColor m_highlightColor;
     static QColor m_selectedColor;
     static int m_highlightWidth;
-    QVector<ChildPointItem*> m_children;
+    QList<ChildPointItem*> m_children;
     QPoint m_menuPos;
-    QVector<vmap::VisualItemController::ItemType> m_promoteTypeList;
+    QList<vmap::VisualItemController::ItemType> m_promoteTypeList;
 
 private:
     static QStringList s_type2NameList;

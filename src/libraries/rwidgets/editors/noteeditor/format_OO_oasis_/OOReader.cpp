@@ -1577,7 +1577,7 @@ bool OOReader::convertTable(QTextCursor& cur, const QDomElement e, const int pro
 
     const QString tname= e.attribute("table:style-name", "default");
     /* column count and sett wi distance */
-    QVector<QTextLength> constraints;
+    QList<QTextLength> constraints;
     int colls= 0;
     QDomElement column= e.firstChildElement("table:table-column");
     const qreal defaultPercents= 99.9999;

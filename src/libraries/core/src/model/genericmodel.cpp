@@ -1,7 +1,7 @@
 #include "model/genericmodel.h"
 #include "data/character.h"
 
-GenericModel::GenericModel(QStringList cols, QVector<int> readOnlyCols, QObject* parent)
+GenericModel::GenericModel(QStringList cols, QList<int> readOnlyCols, QObject* parent)
     : QAbstractTableModel(parent), m_columnList(cols), m_readOnlyCols(readOnlyCols)
 {
 }
@@ -49,7 +49,7 @@ bool GenericModel::setData(const QModelIndex& index, const QVariant& value, int 
     auto item= m_data.at(index.row());
     if(item->setData(index.column(), value, role))
     {
-        emit dataChanged(index, index, QVector<int>() << role);
+        emit dataChanged(index, index, QList<int>() << role);
         return true;
     }
     return false;

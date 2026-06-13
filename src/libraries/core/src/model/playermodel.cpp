@@ -349,7 +349,7 @@ bool PlayerModel::setData(const QModelIndex& index, const QVariant& value, int r
 
     auto isCharacter= (character != nullptr);
 
-    QVector<int> roles;
+    QList<int> roles;
     switch(role)
     {
     case Qt::DisplayRole:

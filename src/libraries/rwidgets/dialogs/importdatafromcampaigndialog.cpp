@@ -81,7 +81,7 @@ void ImportDataFromCampaignDialog::setSource(const QString& newSource)
     }
 }
 
-const QVector<Core::CampaignDataCategory> ImportDataFromCampaignDialog::categoryList() const
+const QList<Core::CampaignDataCategory> ImportDataFromCampaignDialog::categoryList() const
 {
     return m_categoryList;
 }

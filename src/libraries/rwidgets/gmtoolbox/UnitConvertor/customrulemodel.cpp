@@ -208,7 +208,7 @@ bool CustomRuleModel::setData(const QModelIndex& idx, const QVariant& value, int
                 }
             }
         }
-        emit dataChanged(idx, idx, QVector<int>() << role);
+        emit dataChanged(idx, idx, QList<int>() << role);
         return true;
     }
     return false;

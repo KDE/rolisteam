@@ -416,7 +416,7 @@ void CampaignTest::importFromAnotherCampaign()
     QFETCH(TupleDice, dices);
     QFETCH(TupleState, states);
     QFETCH(TupleNPC, npcs);
-    QFETCH(QVector<Core::CampaignDataCategory>, categories);
+    QFETCH(QList<Core::CampaignDataCategory>, categories);
     QFETCH(bool, expectedEguality);
 
     QTemporaryDir root1;
@@ -529,34 +529,34 @@ void CampaignTest::importFromAnotherCampaign_data()
     QTest::addColumn<TupleDice>("dices");
     QTest::addColumn<TupleState>("states");
     QTest::addColumn<TupleNPC>("npcs");
-    QTest::addColumn<QVector<Core::CampaignDataCategory>>("categories");
+    QTest::addColumn<QList<Core::CampaignDataCategory>>("categories");
     QTest::addColumn<bool>("expectedEguality");
 
     QTest::addRow("cmd1") << TupleMedia{} << TupleDice{} << TupleState{} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{} << true;
+                          << QList<Core::CampaignDataCategory>{} << true;
 
     QTest::addRow("cmd2") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{} << TupleState{} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images} << true;
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images} << true;
 
     QTest::addRow("cmd3") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{} << TupleState{} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::PDFDoc} << false;
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::PDFDoc} << false;
 
     QTest::addRow("cmd4") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{{"pattern", "dicecommand", false}} << TupleState{} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
                                                                  Core::CampaignDataCategory::DiceAlias}
                           << true;
 
     QTest::addRow("cmd5") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{{"pattern", "dicecommand", false}} << TupleState{} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images} << false;
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images} << false;
 
     QTest::addRow("cmd6") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{{"pattern", "dicecommand", false}}
                           << TupleState{{"state1", "state1", QColor(Qt::blue)}} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
                                                                  Core::CampaignDataCategory::CharacterStates,
                                                                  Core::CampaignDataCategory::DiceAlias}
                           << true;
@@ -564,7 +564,7 @@ void CampaignTest::importFromAnotherCampaign_data()
     QTest::addRow("cmd7") << TupleMedia{{"girafe1", "girafe1.jpg", utils::IOHelper::loadFile(":/img/girafe.jpg")}}
                           << TupleDice{{"pattern", "dicecommand", false}}
                           << TupleState{{"state1", "state1", QColor(Qt::blue)}} << TupleNPC{}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
                                                                  Core::CampaignDataCategory::DiceAlias}
                           << false;
 
@@ -572,7 +572,7 @@ void CampaignTest::importFromAnotherCampaign_data()
                           << TupleDice{{"pattern", "dicecommand", false}}
                           << TupleState{{"state1", "state1", QColor(Qt::blue)}}
                           << TupleNPC{{"character1", "character1", "character1", QColor(Qt::blue)}}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
                                                                  Core::CampaignDataCategory::CharacterStates,
                                                                  Core::CampaignDataCategory::DiceAlias,
                                                                  Core::CampaignDataCategory::AntagonistList}
@@ -582,7 +582,7 @@ void CampaignTest::importFromAnotherCampaign_data()
                           << TupleDice{{"pattern", "dicecommand", false}}
                           << TupleState{{"state1", "state1", QColor(Qt::blue)}}
                           << TupleNPC{{"character1", "character1", "character1", QColor(Qt::blue)}}
-                          << QVector<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
+                          << QList<Core::CampaignDataCategory>{Core::CampaignDataCategory::Images,
                                                                  Core::CampaignDataCategory::CharacterStates,
                                                                  Core::CampaignDataCategory::DiceAlias}
                           << false;

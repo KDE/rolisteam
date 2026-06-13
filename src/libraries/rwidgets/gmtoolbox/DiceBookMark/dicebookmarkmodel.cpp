@@ -80,7 +80,7 @@ bool DiceBookMarkModel::setData(const QModelIndex& index, const QVariant& value,
         {
             pair.setAlias(value.toBool());
         }
-        emit dataChanged(index, index, QVector<int>() << role);
+        emit dataChanged(index, index, QList<int>() << role);
         return true;
     }
     return false;

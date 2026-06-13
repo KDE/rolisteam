@@ -34,7 +34,7 @@ class RWIDGET_EXPORT ImportDataFromCampaignDialog : public QDialog
     Q_OBJECT
     Q_PROPERTY(bool validSource READ validSource NOTIFY sourceChanged)
     Q_PROPERTY(QString source READ source NOTIFY sourceChanged)
-    Q_PROPERTY(QVector<Core::CampaignDataCategory> categoryList READ categoryList CONSTANT)
+    Q_PROPERTY(QList<Core::CampaignDataCategory> categoryList READ categoryList CONSTANT)
 
 public:
     explicit ImportDataFromCampaignDialog(const QString& campaignRoot, QWidget* parent= nullptr);
@@ -44,7 +44,7 @@ public:
 
     const QString source() const;
 
-    const QVector<Core::CampaignDataCategory> categoryList() const;
+    const QList<Core::CampaignDataCategory> categoryList() const;
 
 signals:
     void sourceChanged();
@@ -57,7 +57,7 @@ protected:
 
 private:
     Ui::ImportDataFromCampaignDialog* ui;
-    QVector<Core::CampaignDataCategory> m_categoryList;
+    QList<Core::CampaignDataCategory> m_categoryList;
     QString m_root;
 };
 

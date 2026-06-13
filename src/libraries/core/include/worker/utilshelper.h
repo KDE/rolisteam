@@ -55,7 +55,7 @@ CORE_EXPORT Core::ContentType mediaTypeToContentType(Core::MediaType type);
 CORE_EXPORT Core::ContentType extensionToContentType(const QString& filename);
 CORE_EXPORT QRectF computeRectangularCorner(const QPointF& move, int corner, Core::TransformType tt, const QRectF& rect,
                                             int min);
-CORE_EXPORT void updateChildPosition(QVector<ChildPointItem*>& children, vmap::VisualItemController* ctrl);
+CORE_EXPORT void updateChildPosition(QList<ChildPointItem*>& children, vmap::VisualItemController* ctrl);
 
 class QObjectLaterDeleter
 {

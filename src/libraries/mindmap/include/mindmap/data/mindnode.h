@@ -49,7 +49,7 @@ public:
     QString toString(bool withLabel);
 
     QString imageUri() const;
-    void setImageUri(const QString &newImageUri);
+    void setImageUri(const QString& newImageUri);
 
 public slots:
     void setTagsText(const QString& newTagsText);

@@ -119,7 +119,7 @@ bool HistoryModel::setData(const QModelIndex& idx, const QVariant& data, int rol
 
     auto& info= m_links[idx.row()];
 
-    QVector<int> roleVec;
+    QList<int> roleVec;
     switch(wantedData)
     {
     case PathRole:

@@ -73,7 +73,7 @@ public:
 public slots:
     void shareModels();
     void setLocalIsGM(bool b);
-    void importDataFrom(const QString& source, const QVector<Core::CampaignDataCategory>& categories);
+    void importDataFrom(const QString& source, const QList<Core::CampaignDataCategory>& categories);
 
 signals:
     void campaignChanged(const QString& str);

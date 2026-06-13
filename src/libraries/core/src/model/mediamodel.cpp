@@ -463,7 +463,7 @@ bool MediaModel::setData(const QModelIndex& index, const QVariant& value, int ro
         auto newPath= mediaNode->path().replace(name, value.toString());
         emit performCommand(new RenameCampaignMedia(mediaNode, newPath, mediaNode->path(), this, m_campaign));
 
-        emit dataChanged(index, index, QVector<int>() << role);
+        emit dataChanged(index, index, QList<int>() << role);
         res= true;
     }
     return res;
@@ -501,7 +501,7 @@ void MediaModel::dataChangedFor(MediaNode* node)
     }
     auto r= findIndexOf(parentNode, node);
     auto idx= index(r, 0, parentIdx);
-    emit dataChanged(idx, idx, QVector<int>());
+    emit dataChanged(idx, idx, QList<int>());
 }
 
 void MediaModel::setCampaign(Campaign* campaign)

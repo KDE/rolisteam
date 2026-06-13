@@ -76,7 +76,7 @@ public:
 public slots:
     void append(const QList<mindmap::Link*>& link, bool network= false);
     void removeLink(const QStringList& ids, bool network= false);
-    void linkHasChanged(mindmap::Link* link, QVector<int> roles);
+    void linkHasChanged(mindmap::Link* link, QList<int> roles);
 
 signals:
     void linkAdded(QList<mindmap::Link*> links);

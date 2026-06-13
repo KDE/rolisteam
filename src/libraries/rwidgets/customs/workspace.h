@@ -90,7 +90,7 @@ public:
 
     void preferencesHasChanged(const QString&);
     void removeMediaContainer(MediaContainer* mediac);
-    QVector<QMdiSubWindow*> getAllSubWindowFromId(const QString& id) const;
+    QList<QMdiSubWindow*> getAllSubWindowFromId(const QString& id) const;
     bool closeAllSubs();
 signals:
     void removedAction(QAction*);

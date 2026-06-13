@@ -109,7 +109,7 @@ protected:
 
     void highlightHeadline(QString text);
 
-    void highlightAdditionalRules(QVector<HighlightingRule>& rules, QString text);
+    void highlightAdditionalRules(QList<HighlightingRule>& rules, QString text);
 
     void highlightCodeBlock(QString text);
 
@@ -121,9 +121,9 @@ protected:
     void setCurrentBlockMargin(HighlighterState state);
 
 private:
-    QVector<HighlightingRule> m_highlightingRulesPre;
-    QVector<HighlightingRule> m_highlightingRulesAfter;
-    QVector<QTextBlock> m_dirtyTextBlocks;
+    QList<HighlightingRule> m_highlightingRulesPre;
+    QList<HighlightingRule> m_highlightingRulesAfter;
+    QList<QTextBlock> m_dirtyTextBlocks;
     QHash<HighlighterState, QTextCharFormat> m_formats;
     QTimer* m_timer;
     bool m_highlightingFinished;

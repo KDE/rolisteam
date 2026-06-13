@@ -50,7 +50,7 @@ MindMapController::MindMapController(const QString& id, QObject* parent) : MindM
                                  });
     MediaControllerBase::connect(m_itemModel.get(), &mindmap::MindItemModel::dataChanged,
                                  static_cast<MediaControllerBase*>(this),
-                                 [this](const QModelIndex&, const QModelIndex&, QVector<int> roles)
+                                 [this](const QModelIndex&, const QModelIndex&, QList<int> roles)
                                  {
                                      if(!roles.contains(mindmap::MindItemModel::LinkPositionFromSpacing))
                                      {

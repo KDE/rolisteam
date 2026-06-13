@@ -358,7 +358,7 @@ bool NonPlayableCharacterModel::setData(const QModelIndex& index, const QVariant
             break;
         }
         if(res)
-            emit dataChanged(index, index, QVector<int>() << role);
+            emit dataChanged(index, index, QList<int>() << role);
         return res;
     }
     return false;

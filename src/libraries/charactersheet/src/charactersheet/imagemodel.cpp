@@ -246,7 +246,7 @@ void ImageModel::setPathFor(const QModelIndex& idx, const QString& path)
         return;
     }
     info.pixmap= pix;
-    emit dataChanged(idx, idx, QVector<int>() << Qt::DisplayRole);
+    emit dataChanged(idx, idx, QList<int>() << Qt::DisplayRole);
 }
 
 void ImageModel::removeImageByKey(const QString& key)
@@ -304,7 +304,7 @@ void ImageModel::removeImage(int i)
     }
     // qDebug() << "reload image" << row;
     info.pixmap= pix;
-    emit dataChanged(idx, idx, QVector<int>() << Qt::DisplayRole);
+    emit dataChanged(idx, idx, QList<int>() << Qt::DisplayRole);
 }*/
 
 /*#ifndef RCSE

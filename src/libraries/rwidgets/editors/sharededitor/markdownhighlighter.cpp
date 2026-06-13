@@ -560,7 +560,7 @@ void MarkDownHighlighter::highlightCommentBlock(QString text)
     }
 }
 
-void MarkDownHighlighter::highlightAdditionalRules(QVector<HighlightingRule>& rules, QString text)
+void MarkDownHighlighter::highlightAdditionalRules(QList<HighlightingRule>& rules, QString text)
 {
     QTextCharFormat& maskedFormat= m_formats[HighlighterState::MaskedSyntax];
 

@@ -226,7 +226,7 @@ bool DiceAliasModel::setData(const QModelIndex& index, const QVariant& value, in
 
     if(result)
     {
-        emit dataChanged(index, index, QVector<int>() << role);
+        emit dataChanged(index, index, QList<int>() << role);
         emit aliasChanged(diceAlias.get(), index.row());
     }
 

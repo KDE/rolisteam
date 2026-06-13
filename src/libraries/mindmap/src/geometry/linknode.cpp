@@ -104,7 +104,7 @@ QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, 
     QLineF rect1Left(rect1.topLeft(), rect1.bottomLeft());
     QLineF rect1Right(rect1.topRight(), rect1.bottomRight());
 
-    QVector<QLineF> lines({rect1Bottom, rect1Top, rect1Left, rect1Right});
+    QList<QLineF> lines({rect1Bottom, rect1Top, rect1Left, rect1Right});
 
     QPointF intersection1;
     for(auto const& rectSide : std::as_const(lines))
@@ -119,7 +119,7 @@ QLineF LinkNode::update(const QRectF& rect, LinkController::Orientation orient, 
     QLineF rect2Left(rect2.topLeft(), rect2.bottomLeft());
     QLineF rect2Right(rect2.topRight(), rect2.bottomRight());
 
-    QVector<QLineF> lines2({rect2Bottom, rect2Top, rect2Left, rect2Right});
+    QList<QLineF> lines2({rect2Bottom, rect2Top, rect2Left, rect2Right});
 
     QPointF intersection2;
     for(auto const& rectSide : std::as_const(lines2))

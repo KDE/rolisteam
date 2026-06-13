@@ -53,7 +53,7 @@ void PlayerModelTest::addTest()
     QFETCH(QString, ownerId);
     QFETCH(int, idx);
     QFETCH(QString, name);
-    QFETCH(QVector<Player*>, players);
+    QFETCH(QList<Player*>, players);
 
     m_participantsModel->setOwner(ownerId);
 
@@ -89,32 +89,32 @@ void PlayerModelTest::addTest_data()
     QTest::addColumn<QString>("ownerId");
     QTest::addColumn<int>("idx");
     QTest::addColumn<QString>("name");
-    QTest::addColumn<QVector<Player*>>("players");
+    QTest::addColumn<QList<Player*>>("players");
 
-    QTest::addRow("cmd 1") << 0 << QString() << 0 << QString() << QVector<Player*>();
+    QTest::addRow("cmd 1") << 0 << QString() << 0 << QString() << QList<Player*>();
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         players.push_back(new Player("name", QColor(Qt::red), true));
         QTest::addRow("cmd 2") << 1 << players[0]->uuid() << 0 << players[0]->name() << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto p= new Player("name", QColor(Qt::red), true);
         players.push_back(p);
         QTest::addRow("cmd 3") << 1 << p->uuid() << 0 << p->name() << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto p= new Player("name", QColor(Qt::red), true);
         players.push_back(p);
         QTest::addRow("cmd 4") << 1 << "tata" << 2 << p->name() << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto owner= new Player("owner", QColor(Qt::red), true);
         players.push_back(owner);
         auto p= new Player("contributor", QColor(Qt::green), false);
@@ -123,7 +123,7 @@ void PlayerModelTest::addTest_data()
     }
 
     /*{
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         // player->addCharacter("character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
         players.push_back(player);
@@ -131,7 +131,7 @@ void PlayerModelTest::addTest_data()
     }
 
     {
-         QVector<Player*> players;
+         QList<Player*> players;
          auto player= new Player("name", QColor(Qt::red), true);
          player->addCharacter(new Character("character", QColor(Qt::blue), true));
          players.push_back(player);
@@ -139,7 +139,7 @@ void PlayerModelTest::addTest_data()
      }
 
      {
-         QVector<Player*> players;
+         QList<Player*> players;
          auto player= new Player("name", QColor(Qt::red), true);
          player->addCharacter(new Character("character", QColor(Qt::blue), false));
          player->addCharacter(new Character("character2", QColor(Qt::green), false));
@@ -148,7 +148,7 @@ void PlayerModelTest::addTest_data()
      }
 
      {
-         QVector<Player*> players;
+         QList<Player*> players;
          auto player= new Player("name", QColor(Qt::red), true);
          player->addCharacter(new Character("character", QColor(Qt::blue), false));
          players.push_back(player);
@@ -161,7 +161,7 @@ void PlayerModelTest::addTest_data()
      }
 
      {
-         QVector<Player*> players;
+         QList<Player*> players;
          auto player= new Player("name", QColor(Qt::red), true);
          players.push_back(player);
 
@@ -178,7 +178,7 @@ void PlayerModelTest::ownerTest()
     QFETCH(int, count);
     QFETCH(QString, ownerId);
     QFETCH(int, idx);
-    QFETCH(QVector<Player*>, players);
+    QFETCH(QList<Player*>, players);
 
     m_playerModel->clear();
     QVERIFY(m_playerModel->rowCount() == 0);
@@ -205,26 +205,26 @@ void PlayerModelTest::ownerTest_data()
     QTest::addColumn<int>("count");
     QTest::addColumn<QString>("ownerId");
     QTest::addColumn<int>("idx");
-    QTest::addColumn<QVector<Player*>>("players");
+    QTest::addColumn<QList<Player*>>("players");
 
-    QTest::addRow("cmd 1") << 0 << QString() << 0 << QVector<Player*>();
+    QTest::addRow("cmd 1") << 0 << QString() << 0 << QList<Player*>();
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto p= new Player("name", QColor(Qt::red), true);
         players.push_back(p);
         QTest::addRow("cmd 2") << 1 << p->uuid() << 0 << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto p= new Player("name", QColor(Qt::red), true);
         players.push_back(p);
         QTest::addRow("cmd 3") << 1 << "tata" << 2 << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto owner= new Player("owner", QColor(Qt::red), true);
         players.push_back(owner);
         auto p= new Player("contributor", QColor(Qt::green), false);

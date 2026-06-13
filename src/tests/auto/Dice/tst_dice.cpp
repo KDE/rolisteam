@@ -445,7 +445,7 @@ void TestDice::dangerousCommandsTest_data()
     // QTest::addRow("cmd5") << "10d10g10";
 }
 
-void makeResult(DiceResult& result, const QVector<int>& values)
+void makeResult(DiceResult& result, const QList<int>& values)
 {
     for(int val : values)
     {
@@ -469,7 +469,7 @@ Validator* makeValidator(int number, BooleanCondition::LogicOperator op)
 
 void TestDice::keepTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, keep);
     QFETCH(int, score);
     QFETCH(bool, error);
@@ -501,22 +501,22 @@ void TestDice::keepTest()
 
 void TestDice::keepTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("keep");
     QTest::addColumn<int>("score");
     QTest::addColumn<bool>("error");
 
-    QTest::addRow("cmd1") << QVector<int>({10, 9, 2}) << 1 << 10 << false;
-    QTest::addRow("cmd2") << QVector<int>({10, 9, 2}) << 2 << 19 << false;
-    QTest::addRow("cmd3") << QVector<int>({10, 9, 2}) << 3 << 21 << false;
-    QTest::addRow("cmd4") << QVector<int>({10, 9, 2}) << 4 << 0 << true;
+    QTest::addRow("cmd1") << QList<int>({10, 9, 2}) << 1 << 10 << false;
+    QTest::addRow("cmd2") << QList<int>({10, 9, 2}) << 2 << 19 << false;
+    QTest::addRow("cmd3") << QList<int>({10, 9, 2}) << 3 << 21 << false;
+    QTest::addRow("cmd4") << QList<int>({10, 9, 2}) << 4 << 0 << true;
 }
 
 void TestDice::sortTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(bool, ascending);
-    QFETCH(QVector<int>, scores);
+    QFETCH(QList<int>, scores);
 
     TestNode node;
     SortResultNode sortN;
@@ -547,21 +547,21 @@ void TestDice::sortTest()
 
 void TestDice::sortTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<bool>("ascending");
-    QTest::addColumn<QVector<int>>("scores");
+    QTest::addColumn<QList<int>>("scores");
 
-    QTest::addRow("cmd1") << QVector<int>({10, 9, 2}) << true << QVector<int>({2, 9, 10});
-    QTest::addRow("cmd2") << QVector<int>({1, 2, 3}) << false << QVector<int>({3, 2, 1});
-    QTest::addRow("cmd3") << QVector<int>({10, 9, 2}) << false << QVector<int>({10, 9, 2});
-    QTest::addRow("cmd4") << QVector<int>({2, 9, 10}) << true << QVector<int>({2, 9, 10});
-    QTest::addRow("cmd5") << QVector<int>({1, 25, 10}) << false << QVector<int>({25, 10, 1});
-    QTest::addRow("cmd6") << QVector<int>({10, 2, 100}) << false << QVector<int>({100, 10, 2});
+    QTest::addRow("cmd1") << QList<int>({10, 9, 2}) << true << QList<int>({2, 9, 10});
+    QTest::addRow("cmd2") << QList<int>({1, 2, 3}) << false << QList<int>({3, 2, 1});
+    QTest::addRow("cmd3") << QList<int>({10, 9, 2}) << false << QList<int>({10, 9, 2});
+    QTest::addRow("cmd4") << QList<int>({2, 9, 10}) << true << QList<int>({2, 9, 10});
+    QTest::addRow("cmd5") << QList<int>({1, 25, 10}) << false << QList<int>({25, 10, 1});
+    QTest::addRow("cmd6") << QList<int>({10, 2, 100}) << false << QList<int>({100, 10, 2});
 }
 
 void TestDice::countTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(int, score);
 
@@ -586,17 +586,17 @@ void TestDice::countTest()
 
 void TestDice::countTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<int>("score");
 
-    QTest::addRow("cmd1") << QVector<int>({10, 9, 2}) << 3 << 2;
-    QTest::addRow("cmd2") << QVector<int>({1, 2, 3}) << 3 << 0;
+    QTest::addRow("cmd1") << QList<int>({10, 9, 2}) << 3 << 2;
+    QTest::addRow("cmd2") << QList<int>({1, 2, 3}) << 3 << 0;
 }
 
 void TestDice::rerollTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(bool, different);
 
@@ -630,17 +630,17 @@ void TestDice::rerollTest()
 
 void TestDice::rerollTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<bool>("different");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 9, 2}) << 10 << false;
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << -1 << true;
+    QTest::addRow("cmd1") << QList<int>({8, 9, 2}) << 10 << false;
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << -1 << true;
 }
 
 void TestDice::explodeTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(bool, different);
 
@@ -674,17 +674,17 @@ void TestDice::explodeTest()
 
 void TestDice::explodeTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<bool>("different");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 9, 2}) << 10 << false;
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << 0 << true;
+    QTest::addRow("cmd1") << QList<int>({8, 9, 2}) << 10 << false;
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << 0 << true;
 }
 
 void TestDice::rerollUntilTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(bool, different);
 
@@ -717,17 +717,17 @@ void TestDice::rerollUntilTest()
 }
 void TestDice::rerollUntilTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<bool>("different");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 9, 2}) << 10 << false;
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << 0 << true;
+    QTest::addRow("cmd1") << QList<int>({8, 9, 2}) << 10 << false;
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << 0 << true;
 }
 
 void TestDice::rerollAddTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(bool, different);
 
@@ -760,12 +760,12 @@ void TestDice::rerollAddTest()
 }
 void TestDice::rerollAddTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<bool>("different");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 9, 2}) << 10 << false;
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << 0 << true;
+    QTest::addRow("cmd1") << QList<int>({8, 9, 2}) << 10 << false;
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << 0 << true;
 }
 
 void TestDice::mergeTest() {}
@@ -773,7 +773,7 @@ void TestDice::mergeTest_data() {}
 
 void TestDice::ifTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(int, valCondition);
     QFETCH(QString, expectedResult);
@@ -810,7 +810,7 @@ void TestDice::ifTest()
 }
 void TestDice::ifTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<int>("valCondition");
     QTest::addColumn<QString>("expectedResult");
@@ -820,19 +820,19 @@ void TestDice::ifTest_data()
     int allOfThem= 2;
     int onScalar= 3;
 
-    QTest::addRow("cmd1") << QVector<int>({8, 9, 2}) << onEach << 0 << "False";
-    QTest::addRow("cmd2") << QVector<int>({2, 2, 2}) << onEach << 2 << "True";
+    QTest::addRow("cmd1") << QList<int>({8, 9, 2}) << onEach << 0 << "False";
+    QTest::addRow("cmd2") << QList<int>({2, 2, 2}) << onEach << 2 << "True";
 
-    QTest::addRow("cmd3") << QVector<int>({0, 0, 0}) << oneOfThem << 10 << "False";
-    QTest::addRow("cmd4") << QVector<int>({10, 9, 5}) << oneOfThem << 10 << "True";
-    QTest::addRow("cmd5") << QVector<int>({9, 9, 9}) << oneOfThem << 9 << "True";
+    QTest::addRow("cmd3") << QList<int>({0, 0, 0}) << oneOfThem << 10 << "False";
+    QTest::addRow("cmd4") << QList<int>({10, 9, 5}) << oneOfThem << 10 << "True";
+    QTest::addRow("cmd5") << QList<int>({9, 9, 9}) << oneOfThem << 9 << "True";
 
-    QTest::addRow("cmd6") << QVector<int>({8, 9, 2}) << allOfThem << 1 << "False";
-    QTest::addRow("cmd7") << QVector<int>({8, 9, 2}) << allOfThem << 9 << "False";
-    QTest::addRow("cmd8") << QVector<int>({8, 8, 8}) << allOfThem << 8 << "True";
+    QTest::addRow("cmd6") << QList<int>({8, 9, 2}) << allOfThem << 1 << "False";
+    QTest::addRow("cmd7") << QList<int>({8, 9, 2}) << allOfThem << 9 << "False";
+    QTest::addRow("cmd8") << QList<int>({8, 8, 8}) << allOfThem << 8 << "True";
 
-    QTest::addRow("cmd9") << QVector<int>({25, 8, 14}) << onScalar << 1 << "False";
-    QTest::addRow("cmd10") << QVector<int>({25, 8, 14}) << onScalar << 47 << "True";
+    QTest::addRow("cmd9") << QList<int>({25, 8, 14}) << onScalar << 1 << "False";
+    QTest::addRow("cmd10") << QList<int>({25, 8, 14}) << onScalar << 47 << "True";
 }
 
 void TestDice::paintTest() {}
@@ -840,7 +840,7 @@ void TestDice::paintTest_data() {}
 
 void TestDice::filterTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(bool, different);
 
@@ -867,12 +867,12 @@ void TestDice::filterTest()
 
 void TestDice::filterTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<bool>("different");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 4, 2}) << 4 << true;
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << 1 << false;
+    QTest::addRow("cmd1") << QList<int>({8, 4, 2}) << 4 << true;
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << 1 << false;
 }
 
 void TestDice::splitTest() {}
@@ -889,7 +889,7 @@ void TestDice::bindTest_data() {}
 
 void TestDice::occurenceTest()
 {
-    QFETCH(QVector<int>, values);
+    QFETCH(QList<int>, values);
     QFETCH(int, condition);
     QFETCH(QString, expected);
 
@@ -912,12 +912,12 @@ void TestDice::occurenceTest()
 }
 void TestDice::occurenceTest_data()
 {
-    QTest::addColumn<QVector<int>>("values");
+    QTest::addColumn<QList<int>>("values");
     QTest::addColumn<int>("condition");
     QTest::addColumn<QString>("expected");
 
-    QTest::addRow("cmd1") << QVector<int>({8, 8, 2}) << 7 << "2x8";
-    QTest::addRow("cmd2") << QVector<int>({0, 0, 0}) << 1 << "No matching result";
+    QTest::addRow("cmd1") << QList<int>({8, 8, 2}) << 7 << "2x8";
+    QTest::addRow("cmd2") << QList<int>({0, 0, 0}) << 1 << "No matching result";
 }
 
 void TestDice::cleanupTestCase() {}

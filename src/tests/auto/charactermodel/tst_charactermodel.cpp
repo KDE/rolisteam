@@ -56,7 +56,7 @@ CharacterModelTest::CharacterModelTest()= default;
 void CharacterModelTest::addTest()
 {
     QFETCH(int, count);
-    QFETCH(QVector<Player*>, players);
+    QFETCH(QList<Player*>, players);
 
     m_playerModel->clear();
     QVERIFY(m_playerModel->rowCount() == 0);
@@ -70,18 +70,18 @@ void CharacterModelTest::addTest()
 void CharacterModelTest::addTest_data()
 {
     QTest::addColumn<int>("count");
-    QTest::addColumn<QVector<Player*>>("players");
+    QTest::addColumn<QList<Player*>>("players");
 
-    QTest::addRow("cmd 1") << 0 << QVector<Player*>();
+    QTest::addRow("cmd 1") << 0 << QList<Player*>();
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         players.push_back(new Player("name", QColor(Qt::red), true));
         QTest::addRow("cmd 2") << 0 << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter("bb", "character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
         players.push_back(player);
@@ -89,7 +89,7 @@ void CharacterModelTest::addTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter(new Character("character", QColor(Qt::blue), true));
         players.push_back(player);
@@ -97,7 +97,7 @@ void CharacterModelTest::addTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter(new Character("character", QColor(Qt::blue), false));
         player->addCharacter(new Character("character2", QColor(Qt::green), false));
@@ -106,7 +106,7 @@ void CharacterModelTest::addTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter(new Character("character", QColor(Qt::blue), false));
         players.push_back(player);
@@ -119,7 +119,7 @@ void CharacterModelTest::addTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         players.push_back(player);
 
@@ -136,7 +136,7 @@ void CharacterModelTest::nameTest()
     QFETCH(QString, name);
     QFETCH(QString, uuid);
     QFETCH(int, count);
-    QFETCH(QVector<Player*>, players);
+    QFETCH(QList<Player*>, players);
 
     m_playerModel->clear();
     QVERIFY(m_playerModel->rowCount() == 0);
@@ -160,12 +160,12 @@ void CharacterModelTest::nameTest_data()
     QTest::addColumn<QString>("uuid");
     QTest::addColumn<QString>("name");
     QTest::addColumn<int>("count");
-    QTest::addColumn<QVector<Player*>>("players");
+    QTest::addColumn<QList<Player*>>("players");
 
-    QTest::addRow("cmd 1") << QString() << QString() << 0 << QVector<Player*>();
+    QTest::addRow("cmd 1") << QString() << QString() << 0 << QList<Player*>();
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         auto character= new Character("character", QColor(Qt::blue), true);
         character->setUuid("character0");
@@ -176,7 +176,7 @@ void CharacterModelTest::nameTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         auto character= new Character("character", QColor(Qt::blue), true);
         character->setUuid("character0");
@@ -187,7 +187,7 @@ void CharacterModelTest::nameTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         auto character= new Character("character", QColor(Qt::blue), true);
         character->setUuid("character0");
@@ -199,7 +199,7 @@ void CharacterModelTest::nameTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         auto character= new Character("character", QColor(Qt::blue), true);
         character->setUuid("character0");
@@ -215,7 +215,7 @@ void CharacterModelTest::nameTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         players.push_back(player);
 
@@ -233,7 +233,7 @@ void CharacterModelTest::nameTest_data()
 void CharacterModelTest::localPersonTest()
 {
     QFETCH(int, count);
-    QFETCH(QVector<Player*>, players);
+    QFETCH(QList<Player*>, players);
 
     m_playerModel->clear();
     QVERIFY(m_playerModel->rowCount() == 0);
@@ -247,18 +247,18 @@ void CharacterModelTest::localPersonTest()
 void CharacterModelTest::localPersonTest_data()
 {
     QTest::addColumn<int>("count");
-    QTest::addColumn<QVector<Player*>>("players");
+    QTest::addColumn<QList<Player*>>("players");
 
-    QTest::addRow("cmd 1") << 0 << QVector<Player*>();
+    QTest::addRow("cmd 1") << 0 << QList<Player*>();
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         players.push_back(new Player("name", QColor(Qt::red), true));
         QTest::addRow("cmd 2") << 1 << players;
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter("nn", "character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
         players.push_back(player);
@@ -266,7 +266,7 @@ void CharacterModelTest::localPersonTest_data()
     }
 
     {
-        QVector<Player*> players;
+        QList<Player*> players;
         auto player= new Player("name", QColor(Qt::red), true);
         player->addCharacter("aa", "character", QColor(Qt::blue), "", QHash<QString, QVariant>(), false);
         players.push_back(player);

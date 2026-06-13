@@ -44,7 +44,7 @@ protected:
     void loadDictionary(QString filepath, HighlightingRule& rule);
 
 private:
-    QVector<HighlightingRule> m_highlightingRules;
+    QList<HighlightingRule> m_highlightingRules;
 
     QTextCharFormat keywordFormat;
     QTextCharFormat propertyFormat;

@@ -344,9 +344,9 @@ bool Workspace::eventFilter(QObject* object, QEvent* event)
     return QMdiArea::eventFilter(object, event);
 }
 
-QVector<QMdiSubWindow*> Workspace::getAllSubWindowFromId(const QString& id) const
+QList<QMdiSubWindow*> Workspace::getAllSubWindowFromId(const QString& id) const
 {
-    QVector<QMdiSubWindow*> vector;
+    QList<QMdiSubWindow*> vector;
 
     for(auto& tmp : subWindowList())
     {

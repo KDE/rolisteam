@@ -117,7 +117,7 @@ void WorkerTest::helperUtilsTest_data()
     QTest::addColumn<QRect>("rect");
     QTest::addColumn<qreal>("ratio");
 
-    QVector<qreal> ratios({1., 16. / 9., 4. / 3.});
+    QList<qreal> ratios({1., 16. / 9., 4. / 3.});
     long long int idx= 0;
 
     constexpr int k_width= 100;  // 1920

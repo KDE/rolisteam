@@ -50,7 +50,7 @@ bool FileSerializer::readTextFile(MindItemModel* nodeModel, const QString& filep
         return false;
     }
 
-    QVector<MindNode*> parent;
+    QList<MindNode*> parent;
     MindNode* previousNode= nullptr;
     int depth= 0;
     while(!file.atEnd())

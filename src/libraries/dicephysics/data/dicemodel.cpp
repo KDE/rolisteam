@@ -255,8 +255,8 @@ void DiceModel::fetchModel(const QByteArray& data, std::vector<std::unique_ptr<D
         auto ctrl= std::make_unique<DiceController>(static_cast<DiceController::DiceType>(obj[json::faces].toInt()));
         QVector3D rot{static_cast<float>(obj[json::rx].toDouble()), 0., static_cast<float>(obj[json::rz].toDouble())};
         QVector3D pos{static_cast<float>(obj[json::px].toDouble()) * (size.width() / 2),
-                      static_cast<float>(obj[json::py].toDouble()),
-                      static_cast<float>(obj[json::pz].toDouble()) * (size.height() / 2)};
+                    static_cast<float>(obj[json::py].toDouble()),
+                    static_cast<float>(obj[json::pz].toDouble()) * (size.height() / 2)};
 
         ctrl->setRotation(rot);
         ctrl->setColor(obj[json::color].toString());

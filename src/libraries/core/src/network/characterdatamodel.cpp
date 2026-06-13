@@ -128,7 +128,7 @@ connection::CharacterData CharacterDataModel::character(int i) const
             return false;
         }
         // m_profile->setCharacter(index.row(), character);
-        emit dataChanged(index, index, QVector<int>() << Qt::DisplayRole << Qt::BackgroundRole << Qt::DecorationRole);
+        emit dataChanged(index, index, QList<int>() << Qt::DisplayRole << Qt::BackgroundRole << Qt::DecorationRole);
         return true;
     }
     return false;

@@ -22,7 +22,7 @@
 #include <QModelIndexList>
 #include <QString>
 #include <QTest>
-#include <QVector>
+#include <QList>
 #include <memory>
 
 #include "charactersheetitem.h"
@@ -135,7 +135,7 @@ void TestCharacterSheetModel::addCharacter()
 
 void TestCharacterSheetModel::removeDataTest()
 {
-    QFETCH(QVector<Field*>, fields);
+    QFETCH(QList<Field*>, fields);
     QFETCH(int, expected);
 
     auto sheet= m_model->addCharacterSheet();
@@ -158,10 +158,10 @@ void TestCharacterSheetModel::removeDataTest()
 }
 void TestCharacterSheetModel::removeDataTest_data()
 {
-    QTest::addColumn<QVector<Field*>>("fields");
+    QTest::addColumn<QList<Field*>>("fields");
     QTest::addColumn<int>("expected");
 
-    QTest::addRow("remove0") << QVector<Field*>() << 0;
+    QTest::addRow("remove0") << QList<Field*>() << 0;
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
@@ -169,7 +169,7 @@ void TestCharacterSheetModel::removeDataTest_data()
          CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
          CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
-    QVector<Field*> list;
+    QList<Field*> list;
 
     int index= 0;
     for(std::size_t i= 0; i < data.size(); ++i)
@@ -191,7 +191,7 @@ void TestCharacterSheetModel::saveModelTest()
 {
     QJsonObject obj;
     {
-        QFETCH(QVector<Field*>, fields);
+        QFETCH(QList<Field*>, fields);
         QFETCH(int, expected);
 
         auto sheet= m_model->addCharacterSheet();
@@ -218,10 +218,10 @@ void TestCharacterSheetModel::saveModelTest()
 
 void TestCharacterSheetModel::saveModelTest_data()
 {
-    QTest::addColumn<QVector<Field*>>("fields");
+    QTest::addColumn<QList<Field*>>("fields");
     QTest::addColumn<int>("expected");
 
-    QTest::addRow("save0") << QVector<Field*>() << 0;
+    QTest::addRow("save0") << QList<Field*>() << 0;
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
@@ -229,7 +229,7 @@ void TestCharacterSheetModel::saveModelTest_data()
          CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
          CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
-    QVector<Field*> list;
+    QList<Field*> list;
 
     int index= 0;
     for(std::size_t i= 0; i < data.size(); ++i)
@@ -252,7 +252,7 @@ void TestCharacterSheetModel::readAndWriteModelTest()
 {
     NetworkMessageWriter msg(NetMsg::CharacterCategory, NetMsg::addCharacterSheet);
     {
-        QFETCH(QVector<Field*>, fields);
+        QFETCH(QList<Field*>, fields);
         QFETCH(int, expected);
 
         auto sheet= m_model->addCharacterSheet();
@@ -281,10 +281,10 @@ void TestCharacterSheetModel::readAndWriteModelTest()
 }
 void TestCharacterSheetModel::readAndWriteModelTest_data()
 {
-    QTest::addColumn<QVector<Field*>>("fields");
+    QTest::addColumn<QList<Field*>>("fields");
     QTest::addColumn<int>("expected");
 
-    QTest::addRow("network0") << QVector<Field*>() << 0;
+    QTest::addRow("network0") << QList<Field*>() << 0;
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
@@ -292,7 +292,7 @@ void TestCharacterSheetModel::readAndWriteModelTest_data()
          CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
          CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
-    QVector<Field*> list;
+    QList<Field*> list;
 
     int index= 0;
     for(std::size_t i= 0; i < data.size(); ++i)
@@ -312,7 +312,7 @@ void TestCharacterSheetModel::readAndWriteModelTest_data()
 }
 void TestCharacterSheetModel::clearModel()
 {
-    QFETCH(QVector<Field*>, fields);
+    QFETCH(QList<Field*>, fields);
     QFETCH(int, expected);
 
     QPointer<CharacterSheet> sheet= m_model->addCharacterSheet();
@@ -333,10 +333,10 @@ void TestCharacterSheetModel::clearModel()
 }
 void TestCharacterSheetModel::clearModel_data()
 {
-    QTest::addColumn<QVector<Field*>>("fields");
+    QTest::addColumn<QList<Field*>>("fields");
     QTest::addColumn<int>("expected");
 
-    QTest::addRow("clear0") << QVector<Field*>() << 0;
+    QTest::addRow("clear0") << QList<Field*>() << 0;
 
     std::vector<CharacterSheetItem::TypeField> data(
         {CharacterSheetItem::TEXTINPUT, CharacterSheetItem::TEXTFIELD, CharacterSheetItem::TEXTAREA,
@@ -344,7 +344,7 @@ void TestCharacterSheetModel::clearModel_data()
          CharacterSheetItem::DICEBUTTON, CharacterSheetItem::FUNCBUTTON, CharacterSheetItem::WEBPAGE,
          CharacterSheetItem::NEXTPAGE, CharacterSheetItem::PREVIOUSPAGE, CharacterSheetItem::TABLE});
 
-    QVector<Field*> list;
+    QList<Field*> list;
 
     int index= 0;
     for(std::size_t i= 0; i < data.size(); ++i)

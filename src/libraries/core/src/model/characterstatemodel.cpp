@@ -185,7 +185,7 @@ bool CharacterStateModel::setData(const QModelIndex& idx, const QVariant& value,
     if(role != Qt::EditRole)
         return result;
 
-    QVector<int> roles{LABEL, COLOR, PICTUREPATH, PICTURE, ID};
+    QList<int> roles{LABEL, COLOR, PICTUREPATH, PICTURE, ID};
 
     switch(roles[idx.column()])
     {
@@ -204,7 +204,7 @@ bool CharacterStateModel::setData(const QModelIndex& idx, const QVariant& value,
     }
 
     emit dataChanged(index(idx.row(), 0), index(idx.row(), columnCount()),
-                     QVector<int>() << role << roles[idx.column()]);
+                     QList<int>() << role << roles[idx.column()]);
     emit stateChanged();
     return result;
 }

@@ -30,7 +30,7 @@ Qt::ItemFlags CharacterList::flags(const QModelIndex& index) const
 
 QVariant CharacterList::data(const QModelIndex& index, int role) const
 {
-    QVector<int> roles({NameRole, UuidRole, Qt::DisplayRole, Qt::EditRole});
+    QList<int> roles({NameRole, UuidRole, Qt::DisplayRole, Qt::EditRole});
     if(!index.isValid() || !roles.contains(role))
         return QVariant();
 
