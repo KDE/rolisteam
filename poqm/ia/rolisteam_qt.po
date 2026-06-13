@@ -1276,12 +1276,12 @@ msgctxt "rcse::MainWindow|"
 msgid "&Redo"
 msgstr "&Reface"
 
-#: src/binaries/rcse/mainwindow.cpp:372
+#: src/binaries/rcse/mainwindow.cpp:374
 msgctxt "rcse::MainWindow|"
 msgid "Support"
 msgstr "Supporto"
 
-#: src/binaries/rcse/mainwindow.cpp:373
+#: src/binaries/rcse/mainwindow.cpp:375
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
@@ -1292,17 +1292,17 @@ msgstr ""
 "\"https://liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/"
 "donate</a>"
 
-#: src/binaries/rcse/mainwindow.cpp:448
+#: src/binaries/rcse/mainwindow.cpp:449
 msgctxt "rcse::MainWindow|"
 msgid "Untitled"
 msgstr "Sin titulo"
 
-#: src/binaries/rcse/mainwindow.cpp:485
+#: src/binaries/rcse/mainwindow.cpp:486
 msgctxt "rcse::MainWindow|"
 msgid "Help"
 msgstr "Adjuta"
 
-#: src/binaries/rcse/mainwindow.cpp:486
+#: src/binaries/rcse/mainwindow.cpp:487
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Documentation of Rcse can be found online at:<br> <a href=\"%1\">%1</a>"
@@ -1310,54 +1310,54 @@ msgstr ""
 "Documentation de Rcse pote esser trovate in linea a :<br> <a href=\"%1\">%1</"
 "a>"
 
-#: src/binaries/rcse/mainwindow.cpp:498
+#: src/binaries/rcse/mainwindow.cpp:499
 msgctxt "rcse::MainWindow|"
 msgid "The charactersheet has unsaved changes."
 msgstr ""
 "Le charactersheet (folio de personages) ha modificationes non salveguardate."
 
-#: src/binaries/rcse/mainwindow.cpp:505
+#: src/binaries/rcse/mainwindow.cpp:506
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Quit %1 "
 msgstr "Quita %1 "
 
-#: src/binaries/rcse/mainwindow.cpp:560
+#: src/binaries/rcse/mainwindow.cpp:561
 msgctxt "rcse::MainWindow|"
 msgid "Image Generation"
 msgstr "Generation de Imagine"
 
-#: src/binaries/rcse/mainwindow.cpp:560
+#: src/binaries/rcse/mainwindow.cpp:561
 msgctxt "rcse::MainWindow|"
 msgid "Image generation in progress"
 msgstr "Generation de imagines in curso"
 
-#: src/binaries/rcse/mainwindow.cpp:581 src/binaries/rcse/mainwindow.cpp:808
+#: src/binaries/rcse/mainwindow.cpp:582 src/binaries/rcse/mainwindow.cpp:809
 msgctxt "rcse::MainWindow|"
 msgid "Open Background Image"
 msgstr "Aperi Imagine de fundo"
 
-#: src/binaries/rcse/mainwindow.cpp:592
+#: src/binaries/rcse/mainwindow.cpp:593
 msgctxt "rcse::MainWindow|"
 msgid "Open Image"
 msgstr "Aperi imagine"
 
-#: src/binaries/rcse/mainwindow.cpp:617 src/binaries/rcse/mainwindow.cpp:660
+#: src/binaries/rcse/mainwindow.cpp:618 src/binaries/rcse/mainwindow.cpp:661
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet"
 msgstr "Salveguarda CharacterSheet (Folio de Personages)"
 
-#: src/binaries/rcse/mainwindow.cpp:618 src/binaries/rcse/mainwindow.cpp:661
+#: src/binaries/rcse/mainwindow.cpp:619 src/binaries/rcse/mainwindow.cpp:662
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr "Rolisteam CharacterSheet (*.rcs)"
 
-#: src/binaries/rcse/mainwindow.cpp:725
+#: src/binaries/rcse/mainwindow.cpp:726
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Tu vole rader le codice QML currente?"
 
-#: src/binaries/rcse/mainwindow.cpp:726
+#: src/binaries/rcse/mainwindow.cpp:727
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1366,72 +1366,72 @@ msgstr ""
 "Codice QML  generate ultrapassara ulle modification que tu ha facite in le "
 "QML.<br/> Tu vermente vole generar le codice QML?"
 
-#: src/binaries/rcse/mainwindow.cpp:791
+#: src/binaries/rcse/mainwindow.cpp:792
 msgctxt "rcse::MainWindow|"
 msgid "Save CharacterSheet View"
 msgstr "Salveguarda Vista de CharacterSheet (Folio de Personages)"
 
-#: src/binaries/rcse/mainwindow.cpp:792
+#: src/binaries/rcse/mainwindow.cpp:793
 msgctxt "rcse::MainWindow|"
 msgid "Rolisteam CharacterSheet View (*.qml)"
 msgstr "Vista de  CharacterSheet de Rolisteam (*.qml)"
 
-#: src/binaries/rcse/mainwindow.cpp:917
+#: src/binaries/rcse/mainwindow.cpp:918
 msgctxt "rcse::MainWindow|"
 msgid "Copy Path"
 msgstr "Copia Percurso"
 
-#: src/binaries/rcse/mainwindow.cpp:920
+#: src/binaries/rcse/mainwindow.cpp:921
 msgctxt "rcse::MainWindow|"
 msgid "Copy Url"
 msgstr "Copia URL"
 
-#: src/binaries/rcse/mainwindow.cpp:923
+#: src/binaries/rcse/mainwindow.cpp:924
 msgctxt "rcse::MainWindow|"
 msgid "Replace Image"
 msgstr "Reimplacia imagine"
 
-#: src/binaries/rcse/mainwindow.cpp:924
+#: src/binaries/rcse/mainwindow.cpp:925
 msgctxt "rcse::MainWindow|"
 msgid "Remove Image"
 msgstr "Remove imagine"
 
-#: src/binaries/rcse/mainwindow.cpp:925
+#: src/binaries/rcse/mainwindow.cpp:926
 msgctxt "rcse::MainWindow|"
 msgid "Reload image from file"
 msgstr "Recarga imagine ex file"
 
-#: src/binaries/rcse/mainwindow.cpp:934
+#: src/binaries/rcse/mainwindow.cpp:935
 msgctxt "rcse::MainWindow|"
 msgid "Load Image"
 msgstr "Carga image"
 
-#: src/binaries/rcse/mainwindow.cpp:935
+#: src/binaries/rcse/mainwindow.cpp:936
 msgctxt "rcse::MainWindow|"
 msgid "Supported Image Format (*.jpg *.png *.svg *.gif)"
 msgstr "Formato de immagine supportate (*.jpg *.png *.svg *.gif)"
 
-#: src/binaries/rcse/mainwindow.cpp:948
+#: src/binaries/rcse/mainwindow.cpp:949
 msgctxt "rcse::MainWindow|"
 msgid "Add character"
 msgstr "Adde Personage"
 
-#: src/binaries/rcse/mainwindow.cpp:949
+#: src/binaries/rcse/mainwindow.cpp:950
 msgctxt "rcse::MainWindow|"
 msgid "Delete character"
 msgstr "Dele personage"
 
-#: src/binaries/rcse/mainwindow.cpp:951
+#: src/binaries/rcse/mainwindow.cpp:952
 msgctxt "rcse::MainWindow|"
 msgid "Character's Name"
 msgstr "Nomine de Personage"
 
-#: src/binaries/rcse/mainwindow.cpp:953
+#: src/binaries/rcse/mainwindow.cpp:954
 msgctxt "rcse::MainWindow|"
 msgid "Apply on Selection"
 msgstr "Applica sur selection"
 
-#: src/binaries/rcse/mainwindow.cpp:954
+#: src/binaries/rcse/mainwindow.cpp:955
 msgctxt "rcse::MainWindow|"
 msgid "Apply on all characters"
 msgstr "Applica a omne personages"
@@ -1595,7 +1595,7 @@ msgstr "Edition"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:722
+#: src/binaries/widget/mainwindow.cpp:727
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Adjuta"
@@ -1754,13 +1754,13 @@ msgid "Check Validity"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:672
+#: src/binaries/widget/mainwindow.cpp:677
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "Ann&ulla"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:671
+#: src/binaries/widget/mainwindow.cpp:676
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Reface"
@@ -2136,7 +2136,7 @@ msgctxt "FieldView|"
 msgid "Show/Hide"
 msgstr "Monstra/Cela"
 
-#: src/binaries/rcse/widgets/fieldview.cpp:358
+#: src/binaries/rcse/widgets/fieldview.cpp:357
 msgctxt "FieldView|"
 msgid "Get Color"
 msgstr "Obtene Color"
@@ -2156,101 +2156,101 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Demanda contrasigno e retorna su clave hash."
 
-#: src/binaries/widget/mainwindow.cpp:456
+#: src/binaries/widget/mainwindow.cpp:461
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "PannellosLateral"
 
-#: src/binaries/widget/mainwindow.cpp:461
+#: src/binaries/widget/mainwindow.cpp:466
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:471
+#: src/binaries/widget/mainwindow.cpp:476
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Lista de Reproductores de audio"
 
-#: src/binaries/widget/mainwindow.cpp:472
+#: src/binaries/widget/mainwindow.cpp:477
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Omne documentos de campania"
 
-#: src/binaries/widget/mainwindow.cpp:473
+#: src/binaries/widget/mainwindow.cpp:478
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:474
+#: src/binaries/widget/mainwindow.cpp:479
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Reproductor musical"
 
-#: src/binaries/widget/mainwindow.cpp:475
+#: src/binaries/widget/mainwindow.cpp:480
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Pannello de Servitor"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:481
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona de Notification"
 
-#: src/binaries/widget/mainwindow.cpp:491
+#: src/binaries/widget/mainwindow.cpp:496
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Instrumentos GM"
 
-#: src/binaries/widget/mainwindow.cpp:532
+#: src/binaries/widget/mainwindow.cpp:537
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "Define nomine de documento"
 
-#: src/binaries/widget/mainwindow.cpp:532
+#: src/binaries/widget/mainwindow.cpp:537
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nomine:"
 
-#: src/binaries/widget/mainwindow.cpp:552
+#: src/binaries/widget/mainwindow.cpp:557
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Aperi pagina web"
 
-#: src/binaries/widget/mainwindow.cpp:552
+#: src/binaries/widget/mainwindow.cpp:557
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "Url de pagina web:"
 
-#: src/binaries/widget/mainwindow.cpp:560
+#: src/binaries/widget/mainwindow.cpp:565
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Aperi mappa"
 
-#: src/binaries/widget/mainwindow.cpp:560
+#: src/binaries/widget/mainwindow.cpp:565
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Mappa:"
 
-#: src/binaries/widget/mainwindow.cpp:574
-#: src/binaries/widget/mainwindow.cpp:613
-#: src/binaries/widget/mainwindow.cpp:843 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:579
+#: src/binaries/widget/mainwindow.cpp:618
+#: src/binaries/widget/mainwindow.cpp:848 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Aperi Campania"
 
-#: src/binaries/widget/mainwindow.cpp:723
+#: src/binaries/widget/mainwindow.cpp:728
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "Documentation de %1 pote esser trovate in linea a :<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:758
+#: src/binaries/widget/mainwindow.cpp:763
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Supporto"
 
-#: src/binaries/widget/mainwindow.cpp:759
+#: src/binaries/widget/mainwindow.cpp:764
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -2258,7 +2258,7 @@ msgstr ""
 "Le pagina de donation %1  pote esser trovate in linea a :<br> <a href=\"%2\">"
 "%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:823
+#: src/binaries/widget/mainwindow.cpp:828
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2268,23 +2268,23 @@ msgstr ""
 "Tu vole salveguardr le campania ?\n"
 "Ultine salvamento; %1 min(s) ante"
 
-#: src/binaries/widget/mainwindow.cpp:825
+#: src/binaries/widget/mainwindow.cpp:830
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:831
+#: src/binaries/widget/mainwindow.cpp:836
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Quita %1 "
 
-#: src/binaries/widget/mainwindow.cpp:911
+#: src/binaries/widget/mainwindow.cpp:916
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Actualisa Notification"
 
-#: src/binaries/widget/mainwindow.cpp:912
+#: src/binaries/widget/mainwindow.cpp:917
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2295,106 +2295,106 @@ msgstr ""
 "<a href=\"https://rolisteam.org/02_download/\"></a> pro obtener le ultime "
 "version."
 
-#: src/binaries/widget/mainwindow.cpp:920
+#: src/binaries/widget/mainwindow.cpp:925
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 actualmente se uni al joco"
 
-#: src/binaries/widget/mainwindow.cpp:924
+#: src/binaries/widget/mainwindow.cpp:929
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 non ha le correcte version: %2"
 
-#: src/binaries/widget/mainwindow.cpp:930
+#: src/binaries/widget/mainwindow.cpp:935
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 actualmente abbandona le joco."
 
-#: src/binaries/widget/mainwindow.cpp:1013
+#: src/binaries/widget/mainwindow.cpp:1018
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Configura rolisteam a usar <port> per le connexion"
 
-#: src/binaries/widget/mainwindow.cpp:1016
+#: src/binaries/widget/mainwindow.cpp:1021
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Configura rolisteam per connecter a <server>."
 
-#: src/binaries/widget/mainwindow.cpp:1019
+#: src/binaries/widget/mainwindow.cpp:1024
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Define le <role>: gm o pc"
 
-#: src/binaries/widget/mainwindow.cpp:1021
+#: src/binaries/widget/mainwindow.cpp:1026
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Rade le preferentias e usa le parametros predefinite"
 
-#: src/binaries/widget/mainwindow.cpp:1024
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Define le <username>"
 
-#: src/binaries/widget/mainwindow.cpp:1027
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1033
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Remove le limite al grandor de file PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1031
+#: src/binaries/widget/mainwindow.cpp:1036
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "percurso al file de traduction: <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:1034
+#: src/binaries/widget/mainwindow.cpp:1039
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Define URL per connecter a server:<url>"
 
-#: src/binaries/widget/mainwindow.cpp:1139
+#: src/binaries/widget/mainwindow.cpp:1146
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Aperi %1"
 
-#: src/binaries/widget/mainwindow.cpp:1236
+#: src/binaries/widget/mainwindow.cpp:1251
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connectite"
 
-#: src/binaries/widget/mainwindow.cpp:1236
+#: src/binaries/widget/mainwindow.cpp:1251
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Il non connecteva"
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1252
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Servitor"
 
-#: src/binaries/widget/mainwindow.cpp:1237
+#: src/binaries/widget/mainwindow.cpp:1252
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Cliente"
 
-#: src/binaries/widget/mainwindow.cpp:1244
+#: src/binaries/widget/mainwindow.cpp:1259
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "GM"
 
-#: src/binaries/widget/mainwindow.cpp:1250
+#: src/binaries/widget/mainwindow.cpp:1265
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Jocator"
 
-#: src/binaries/widget/mainwindow.cpp:1277
+#: src/binaries/widget/mainwindow.cpp:1292
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Incognite"
@@ -2937,18 +2937,18 @@ msgctxt "Tablev1|"
 msgid "Remove Last line"
 msgstr "Remove ultime rango"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:606
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:607
 msgctxt "CharacterSheetModel|"
 msgid "Fields name"
 msgstr "Nomine de campos"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:644
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:645
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Empty Section %1"
 msgstr "Vacua Section %1"
 
-#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:651
+#: src/libraries/charactersheet/src/charactersheet/charactersheetmodel.cpp:652
 #, qt-format
 msgctxt "CharacterSheetModel|"
 msgid "Section_%1"
@@ -3481,12 +3481,12 @@ msgctxt "PatternModel|"
 msgid "Hexagon"
 msgstr "Hexagono"
 
-#: src/libraries/core/src/model/playermodel.cpp:180
+#: src/libraries/core/src/model/playermodel.cpp:182
 msgctxt "PlayerModel|"
 msgid "Not defined"
 msgstr "Non definite"
 
-#: src/libraries/core/src/model/playermodel.cpp:183
+#: src/libraries/core/src/model/playermodel.cpp:185
 #, qt-format
 msgctxt "PlayerModel|"
 msgid ""
@@ -3504,22 +3504,22 @@ msgstr ""
 "Distantia Per Gyro: %6\n"
 "typo: %7\n"
 
-#: src/libraries/core/src/model/playermodel.cpp:195
+#: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
 msgid "NPC"
 msgstr "NPC"
 
-#: src/libraries/core/src/model/playermodel.cpp:195
+#: src/libraries/core/src/model/playermodel.cpp:197
 msgctxt "PlayerModel|"
 msgid "PC"
 msgstr "PC"
 
-#: src/libraries/core/src/model/playermodel.cpp:265
+#: src/libraries/core/src/model/playermodel.cpp:267
 msgctxt "PlayerModel|"
 msgid "Players List"
 msgstr "Lista de jocatores"
 
-#: src/libraries/core/src/model/playermodel.cpp:495
+#: src/libraries/core/src/model/playermodel.cpp:497
 msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr "Jocator o uuid duplicate"
@@ -3545,27 +3545,27 @@ msgctxt "StateModel|"
 msgid "Any State"
 msgstr "Ulle Stato"
 
-#: src/libraries/core/src/network/channelmodel.cpp:108
+#: src/libraries/core/src/network/channelmodel.cpp:103
 msgctxt "ChannelModel|"
 msgid "Bytes"
 msgstr "Bytes"
 
-#: src/libraries/core/src/network/channelmodel.cpp:108
+#: src/libraries/core/src/network/channelmodel.cpp:103
 msgctxt "ChannelModel|"
 msgid "KiB"
 msgstr "KiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:108
+#: src/libraries/core/src/network/channelmodel.cpp:103
 msgctxt "ChannelModel|"
 msgid "MiB"
 msgstr "MiB"
 
-#: src/libraries/core/src/network/channelmodel.cpp:453
+#: src/libraries/core/src/network/channelmodel.cpp:448
 msgctxt "ChannelModel|"
 msgid "Channel Password"
 msgstr "Contrasigno de canal"
 
-#: src/libraries/core/src/network/channelmodel.cpp:454
+#: src/libraries/core/src/network/channelmodel.cpp:449
 #, qt-format
 msgctxt "ChannelModel|"
 msgid "Channel %1 required password:"
@@ -3581,17 +3581,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Nove personage"
 
-#: src/libraries/core/src/network/clientconnection.cpp:90
+#: src/libraries/core/src/network/clientconnection.cpp:94
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Socket es nulle"
 
-#: src/libraries/core/src/network/clientconnection.cpp:95
+#: src/libraries/core/src/network/clientconnection.cpp:99
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Socket non es scribibile"
 
-#: src/libraries/core/src/network/clientconnection.cpp:117
+#: src/libraries/core/src/network/clientconnection.cpp:121
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Error de transmission :"
@@ -4333,7 +4333,7 @@ msgctxt "AddItemCommand|"
 msgid "Add item of type: %1 to mindmap"
 msgstr "Adde elemento de typo: %1 a mindmap (mappa de mente)"
 
-#: src/libraries/mindmap/src/command/additemcommand.cpp:95
+#: src/libraries/mindmap/src/command/additemcommand.cpp:99
 msgctxt "AddLinkCommand|"
 msgid "Add link"
 msgstr "Adde ligamine"
@@ -4618,7 +4618,7 @@ msgctxt "ChangeStackOrderVMapCommand|"
 msgid "Change stack order of %1 item(s)"
 msgstr "Modifica le ordine de pila per %1 elemento(s)"
 
-#: src/libraries/rwidgets/commands/movevmapitem.cpp:34
+#: src/libraries/rwidgets/commands/movevmapitem.cpp:35
 #, qt-format
 msgctxt "QObject|"
 msgid "Move %n item(s)"
@@ -8313,32 +8313,32 @@ msgctxt "PathItem|"
 msgid "Fill Path"
 msgstr "Reimple Percurso"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:141
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:139
 msgctxt "TextItem|"
 msgid "Increase Text Size"
 msgstr "Augmenta Grandor de Texto"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:142
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:140
 msgctxt "TextItem|"
 msgid "Decrease Text Size"
 msgstr "Diminue grandor de Texto"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:143
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:141
 msgctxt "TextItem|"
 msgid "Edit Text…"
 msgstr "Modifica texto…"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:144
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:142
 msgctxt "TextItem|"
 msgid "Adapt to content"
 msgstr "Adapta a Contento"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:206
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:203
 msgctxt "TextItem|"
 msgid "Text"
 msgstr "Texto"
 
-#: src/libraries/rwidgets/graphicsItems/textitem.cpp:333
+#: src/libraries/rwidgets/graphicsItems/textitem.cpp:330
 msgctxt "TextItem|"
 msgid "Font Size"
 msgstr "Dimension de Font"
@@ -8627,7 +8627,7 @@ msgctxt "MediaContainer|"
 msgid "Detach the view"
 msgstr "Distacca le vista"
 
-#: src/libraries/rwidgets/mediacontainers/mediacontainer.cpp:54
+#: src/libraries/rwidgets/mediacontainers/mediacontainer.cpp:57
 msgctxt "QObject|"
 msgid "Loading error"
 msgstr "Error de incargar"
