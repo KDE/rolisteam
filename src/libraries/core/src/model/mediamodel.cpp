@@ -474,8 +474,8 @@ Qt::ItemFlags MediaModel::flags(const QModelIndex& index) const
     if(!index.isValid())
         return Qt::NoItemFlags;
 
-    auto editable= Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
-    auto nonEditable= Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    auto editable= Qt::ItemIsDragEnabled | Qt::ItemIsEditable | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+    auto nonEditable= Qt::ItemIsDragEnabled | Qt::ItemIsEnabled | Qt::ItemIsSelectable;
 
     return index.column() == 0 ? editable : nonEditable;
 }

@@ -38,12 +38,13 @@ public:
     void setRcseAvailable(bool newRcseAvailable);
 
 public slots:
-    void setCampaign(Campaign* campaign);
+    void setCampaign(campaign::Campaign* campaign);
 
 protected:
-    void startDrag(Qt::DropActions supportedActions);
-    void contextMenuEvent(QContextMenuEvent* event);
-    void mouseDoubleClickEvent(QMouseEvent*);
+    void startDrag(Qt::DropActions supportedActions) override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
+    void mouseDoubleClickEvent(QMouseEvent*) override;
+    // void mouseMoveEvent(QMouseEvent* event) override;
 
 signals:
     void addDirectory(QModelIndex&);

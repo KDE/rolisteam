@@ -6,21 +6,23 @@
 #include <QMenu>
 
 #include "data/campaign.h"
-#include "data/media.h"
+#include "data/rolisteammimedata.h"
 #include "model/mediamodel.h"
 
+#include "worker/iohelper.h"
 #include "worker/utilshelper.h"
 
 namespace campaign
 {
 CampaignView::CampaignView(QWidget* parent) : QTreeView(parent)
 {
-    setAcceptDrops(true);
+    // drag and drop
     setDragEnabled(true);
+    setAcceptDrops(true);
+    setDragDropOverwriteMode(false);
     setDropIndicatorShown(true);
     setDefaultDropAction(Qt::MoveAction);
-
-    setDragDropMode(QAbstractItemView::InternalMove);
+    setDragDropMode(QAbstractItemView::DragDrop);
 
     m_addDirectoryAct= new QAction(tr("Add directory…"), this);
     m_deleteFileAct= new QAction(tr("Delete"), this);
@@ -61,7 +63,7 @@ CampaignView::CampaignView(QWidget* parent) : QTreeView(parent)
                 emit removeSelection(path);
             });
     connect(m_defineAsCurrent, &QAction::triggered, this,
-            [this]()
+            []()
             {
                 // TODO implementation ?
             });
@@ -143,15 +145,62 @@ void CampaignView::startDrag(Qt::DropActions supportedActions)
 {
     QModelIndexList indexes= selectionModel()->selectedRows();
 
-    QMimeData* mimeData= model()->mimeData(indexes);
-    if(nullptr == mimeData)
-        return;
+    QList<Core::MediaInfo> ids;
+    std::transform(std::begin(indexes), std::end(indexes), std::back_inserter(ids),
+                   [](const QModelIndex& index)
+                   {
+                       if(!index.isValid())
+                           return Core::MediaInfo();
+
+                       auto uuid= index.data(MediaModel::Role_Uuid).toString();
+                       auto filepath= index.data(MediaModel::Role_Path).toString();
+                       auto type= helper::utils::extensionToContentType(filepath);
+
+                       return Core::MediaInfo{uuid, filepath, type};
+                   });
+
+    QList<QUrl> urls;
+    std::transform(std::begin(indexes), std::end(indexes), std::back_inserter(urls),
+                   [](const QModelIndex& index)
+                   {
+                       if(!index.isValid())
+                           return QUrl();
+
+                       return QUrl::fromLocalFile(index.data(MediaModel::Role_Path).toString());
+                   });
 
     QDrag* drag= new QDrag(this);
-    drag->setMimeData(mimeData);
-    Qt::DropAction defaultDropAction= Qt::MoveAction;
+    RolisteamMimeData* mimeData= new RolisteamMimeData();
 
-    drag->exec(supportedActions, defaultDropAction);
+    mimeData->setMediaInfos(ids);
+    mimeData->setUrls(urls);
+    if(indexes.size() == 1)
+    {
+        auto element= indexes.front();
+        auto filepath= element.data(MediaModel::Role_Path).toString();
+        auto type= helper::utils::extensionToContentType(filepath);
+
+        qDebug() << "IMAGE PATH" << filepath;
+
+        if(type == Core::ContentType::PICTURE)
+        {
+            bool ok;
+            auto obj= IOHelper::loadJsonFileIntoObject(filepath, ok);
+            if(!ok)
+                qWarning() << "Json file can be read";
+            auto path= QUrl(obj[Core::jsonctrl::base::JSON_STATIC].toString());
+            qDebug() << "IMAGE PATH" << path.toLocalFile();
+            auto pix= IOHelper::readImageFromFile(path.toLocalFile());
+            if(!pix.isNull())
+            {
+                mimeData->setImageData(pix);
+                drag->setPixmap(QPixmap::fromImage(helper::utils::roundCornerImage(pix)));
+            }
+        }
+    }
+
+    drag->setMimeData(mimeData);
+    drag->exec(supportedActions);
 }
 void CampaignView::contextMenuEvent(QContextMenuEvent* event)
 {

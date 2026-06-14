@@ -23,8 +23,8 @@
 #include <QFuture>
 #include <QFutureWatcher>
 #include <QPixmap>
-#include <QRect>
 #include <QPointer>
+#include <QRect>
 #include <QString>
 #include <functional>
 
@@ -43,7 +43,8 @@ namespace utils
 {
 CORE_EXPORT QString allSupportedImageFormatFilter();
 CORE_EXPORT QRectF computerBiggerRectInside(const QRect& rect, qreal ratio);
-CORE_EXPORT QPixmap roundCornerImage(const QPixmap& source, int size= 80, int radius= 8);
+CORE_EXPORT QPixmap roundCornerPixmap(const QPixmap& source, int size= 80, int radius= 8);
+CORE_EXPORT QImage roundCornerImage(const QImage& source, int size= 80, int radius= 8);
 CORE_EXPORT bool isSquareImage(const QByteArray& array);
 CORE_EXPORT bool hasValidCharacter(const std::vector<connection::CharacterData>& characters, bool isGameMaster);
 
@@ -84,12 +85,9 @@ QFutureWatcher<T>* setContinuation(QFuture<T> future, QPointer<QObject> obj, std
                          watcher->waitForFinished();
                      });*/
 
-
     watcher->setFuture(future);
     return watcher;
 }
-
-
 
 template <typename T>
 void setParamIfAny(const QString& key, const std::map<QString, QVariant>& params, std::function<void(T)> setter)

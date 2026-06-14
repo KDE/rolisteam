@@ -52,7 +52,7 @@ public:
     virtual ~CampaignDock();
 
 public slots:
-    void setCampaign(CampaignEditor* campaign);
+    void setCampaign(campaign::CampaignEditor* campaign);
     void openExternally(const QString& id, const QString& path, Core::ContentType type);
 
 signals:

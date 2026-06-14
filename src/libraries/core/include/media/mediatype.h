@@ -799,6 +799,15 @@ constexpr auto KEY_COMMONNAME{"commonName"};
 constexpr auto KEY_LANGNAME{"langname"};
 } // namespace i18n
 
+struct MediaInfo
+{
+    QString id;
+    QString path;
+    Core::ContentType type;
+
+    bool operator==(const Core::MediaInfo& b) const { return id == b.id; }
+};
+
 } // namespace Core
 
 #endif // MEDIATYPE_H

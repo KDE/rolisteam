@@ -241,7 +241,7 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                 mimeData->setText(name);
                 drag->setMimeData(mimeData);
                 if(!pix.isNull())
-                    drag->setPixmap(helper::utils::roundCornerImage(pix));
+                    drag->setPixmap(helper::utils::roundCornerPixmap(pix));
 
                 auto camp= m_editor->campaign();
                 if(camp)
@@ -390,9 +390,8 @@ AntagonistBoard::AntagonistBoard(campaign::CampaignEditor* editor, QWidget* pare
                 model->setData(index, finalPath);
             });
 
-    connect(m_cloneCharacterAct.get(), &QAction::triggered, this, [this](){
-                m_ctrl->cloneCharacter(m_currentItemId);
-            });
+    connect(m_cloneCharacterAct.get(), &QAction::triggered, this,
+            [this]() { m_ctrl->cloneCharacter(m_currentItemId); });
 
     connect(ui->m_sizeEdit, QOverload<int>::of(&QSpinBox::valueChanged), this,
             [=]

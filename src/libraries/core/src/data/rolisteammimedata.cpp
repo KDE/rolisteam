@@ -17,7 +17,7 @@ bool RolisteamMimeData::hasFormat(const QString& mimeType) const
     }
     else if(mimeType == Core::mimedata::MIME_KEY_MEDIA_UUID)
     {
-        return !m_mediaUuid.isEmpty();
+        return !m_mediaInfos.isEmpty();
     }
     else if(mimeType == Core::mimedata::MIME_KEY_NPC_ID)
     {
@@ -36,7 +36,7 @@ QStringList RolisteamMimeData::formats() const
     if(!m_alias.text().isEmpty())
         res << Core::mimedata::MIME_KEY_DICE_ALIAS_DATA;
 
-    if(!m_mediaUuid.isEmpty())
+    if(!m_mediaInfos.isEmpty())
         res << Core::mimedata::MIME_KEY_MEDIA_UUID;
 
     if(!m_npcUuid.isEmpty())
@@ -72,12 +72,12 @@ void RolisteamMimeData::setNpcUuid(const QString& str)
     emit npcUuidChanged();
 }
 
-void RolisteamMimeData::setMediaUuid(const QString& uuid)
+void RolisteamMimeData::setMediaInfos(const QList<Core::MediaInfo>& uuid)
 {
-    if(m_mediaUuid == uuid)
+    if(m_mediaInfos == uuid)
         return;
-    m_mediaUuid= uuid;
-    emit mediaUuidChanged();
+    m_mediaInfos= uuid;
+    emit mediaInfosChanged();
 }
 
 Person* RolisteamMimeData::person() const
@@ -94,9 +94,9 @@ QString RolisteamMimeData::npcUuid() const
     return m_npcUuid;
 }
 
-QString RolisteamMimeData::mediaUuid() const
+QList<Core::MediaInfo> RolisteamMimeData::mediaInfos() const
 {
-    return m_mediaUuid;
+    return m_mediaInfos;
 }
 
 void RolisteamMimeData::setAlias(QString key, QString command, bool usedAlias)

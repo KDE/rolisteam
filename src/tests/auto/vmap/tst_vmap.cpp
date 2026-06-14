@@ -33,15 +33,17 @@ class FakeItem : public vmap::VisualItemController
 {
 public:
     FakeItem(VisualItemController::ItemType itemType, VectorialMapController* ctrl)
-        : VisualItemController(itemType, {}, ctrl) {};
-    void aboutToBeRemoved() {};
-    void setCorner(const QPointF& move, int corner, Core::TransformType transformType= Core::TransformType::NoTransform)
+        : VisualItemController(itemType, {}, ctrl){};
+    void aboutToBeRemoved() override {};
+    void setCorner(const QPointF& move, int corner,
+                   Core::TransformType transformType= Core::TransformType::NoTransform) override
     {
         Q_UNUSED(move);
         Q_UNUSED(corner);
         Q_UNUSED(transformType);
     };
-    QRectF rect() const { return {}; };
+    QRectF rect() const override { return {}; };
+    QPointF transformOrigin() const override { return {0, 0}; };
 };
 
 class VMapTest : public QObject

@@ -369,7 +369,7 @@ void UserListView::mouseMoveEvent(QMouseEvent* event)
 
             mimeData->setPerson(tmpperso);
             drag->setMimeData(mimeData);
-            drag->setPixmap(helper::utils::roundCornerImage(IOHelper::dataToPixmap(tmpperso->avatar())));
+            drag->setPixmap(helper::utils::roundCornerPixmap(IOHelper::dataToPixmap(tmpperso->avatar())));
             drag->exec();
         }
     }

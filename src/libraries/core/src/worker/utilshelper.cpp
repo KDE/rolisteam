@@ -66,13 +66,24 @@ QRectF computerBiggerRectInside(const QRect& rect, qreal ratio)
     return res;
 }
 
-QPixmap roundCornerImage(const QPixmap& source, int size, int radius)
+QPixmap roundCornerPixmap(const QPixmap& source, int size, int radius)
 {
     QPixmap img(size, size);
     img.fill(Qt::transparent);
     QPainter painter(&img);
     QBrush brush;
     brush.setTextureImage(source.toImage().scaled(size, size));
+    painter.setBrush(brush);
+    painter.drawRoundedRect(0, 0, size, size, radius, radius);
+    return img;
+}
+
+QImage roundCornerImage(const QImage& source, int size, int radius)
+{
+    QImage img(size, size, QImage::Format_ARGB32);
+    QPainter painter(&img);
+    QBrush brush;
+    brush.setTextureImage(source.scaled(size, size));
     painter.setBrush(brush);
     painter.drawRoundedRect(0, 0, size, size, radius, radius);
     return img;

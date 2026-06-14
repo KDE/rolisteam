@@ -41,6 +41,7 @@
 #include "worker/mediahelper.h"
 
 #include "common/logcategory.h"
+#include "worker/iohelper.h"
 
 void setNewParent(VisualItem* child, VisualItem* parent)
 {
@@ -728,10 +729,21 @@ void VMap::dragMoveEvent(QGraphicsSceneDragDropEvent* event)
 void VMap::dropEvent(QGraphicsSceneDragDropEvent* event)
 {
     auto data= event->mimeData();
-    if(data->hasFormat("rolisteam/userlist-item"))
+    const RolisteamMimeData* rolisteamData= qobject_cast<const RolisteamMimeData*>(data);
+
+    auto pixmap= data->imageData().value<QImage>();
+
+    if(!pixmap.isNull())
+    {
+        std::map<QString, QVariant> params;
+        params.insert({Core::vmapkeys::KEY_SCENE_POS, event->scenePos()});
+        params.insert({Core::vmapkeys::KEY_TOOL, Core::SelectableTool::IMAGE});
+        params.insert({Core::vmapkeys::KEY_DATA, IOHelper::imageToData(pixmap)});
+        m_ctrl->insertItemAt(params);
+    }
+    if(data->hasFormat("rolisteam/userlist-item") && rolisteamData)
     {
         qInfo() << "VMAP dropEvent character";
-        const RolisteamMimeData* rolisteamData= qobject_cast<const RolisteamMimeData*>(data);
         Person* item= rolisteamData->person();
         addCharacterItem(m_ctrl, event->scenePos(), dynamic_cast<Character*>(item));
     }
@@ -773,24 +785,11 @@ void VMap::dropEvent(QGraphicsSceneDragDropEvent* event)
 
         for(QUrl& url : data->urls())
         {
-            if(url.isLocalFile() && url.fileName().endsWith("rtok"))
-            {
-                qInfo() << "VMAP dropEvent: rtok from file";
-                std::map<QString, QVariant> params;
-                /*if(IOHelper::loadToken(url.toLocalFile(), params))
-                {
-                    params.insert({QStringLiteral("position"), event->scenePos()});
-                    params.insert({QStringLiteral("color"), m_ctrl->toolColor()});
-                    params.insert({QStringLiteral("penWidth"), m_ctrl->penSize()});
-                    params.insert({QStringLiteral("tool"), Core::SelectableTool::NonPlayableCharacter});
-                    m_ctrl->insertItemAt(params);
-                }*/
-            }
-            else if(url.isLocalFile())
+            if(url.isLocalFile())
             {
                 qInfo() << "VMAP dropEvent: Image from file";
                 std::map<QString, QVariant> params;
-                params.insert({Core::vmapkeys::KEY_POS, event->scenePos()});
+                params.insert({Core::vmapkeys::KEY_SCENE_POS, event->scenePos()});
                 params.insert({Core::vmapkeys::KEY_TOOL, Core::SelectableTool::IMAGE});
                 params.insert({Core::vmapkeys::KEY_PATH, url.toLocalFile()});
                 m_ctrl->insertItemAt(params);

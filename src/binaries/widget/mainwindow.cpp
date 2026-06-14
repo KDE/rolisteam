@@ -21,6 +21,7 @@
  *   Free Software Foundation, Inc.,                                     *
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.           *
  *************************************************************************/
+#include "data/rolisteammimedata.h"
 #include "dialogs/vmapwizzarddialog.h"
 #include <QApplication>
 #include <QBitmap>
@@ -232,8 +233,7 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
     };
     m_preferences->registerLambda(QStringLiteral("VMAP::highlightColor"), func2);
 
-    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this,
-            [this](bool b)
+    connect(m_ui->m_mediaTitleAct, &QAction::toggled, this, [this](bool b)
             { m_ui->m_toolBar->setToolButtonStyle(b ? Qt::ToolButtonTextBesideIcon : Qt::ToolButtonIconOnly); });
 
     auto setModified= [this] { setWindowModified(true); };
@@ -1013,30 +1013,21 @@ void MainWindow::parseCommandLineArguments(const QStringList& list)
     parser.addHelpOption();
     parser.addVersionOption();
 
-    QCommandLineOption port(QStringList() << "p"
-                                          << "port",
-                            tr("Set rolisteam to use <port> for the connection"), "port");
-    QCommandLineOption hostname(QStringList() << "s"
-                                              << "server",
-                                tr("Set rolisteam to connect to <server>."), "server");
-    QCommandLineOption role(QStringList() << "r"
-                                          << "role",
-                            tr("Define the <role>: gm or pc"), "role");
+    QCommandLineOption port(QStringList() << "p" << "port", tr("Set rolisteam to use <port> for the connection"),
+                            "port");
+    QCommandLineOption hostname(QStringList() << "s" << "server", tr("Set rolisteam to connect to <server>."),
+                                "server");
+    QCommandLineOption role(QStringList() << "r" << "role", tr("Define the <role>: gm or pc"), "role");
     QCommandLineOption reset(QStringList() << "reset-settings",
                              tr("Erase the settings and use the default parameters"));
-    QCommandLineOption user(QStringList() << "u"
-                                          << "user",
-                            tr("Define the <username>"), "username");
-    QCommandLineOption portws(QStringList() << "w"
-                                            << "websocket",
+    QCommandLineOption user(QStringList() << "u" << "user", tr("Define the <username>"), "username");
+    QCommandLineOption portws(QStringList() << "w" << "websocket",
                               tr("Define the <websocketport> useful for auto UI testing"), "websocket");
     QCommandLineOption websecurity(QStringList() << "disable-web-security", tr("Remove limit to PDF file size"));
-    QCommandLineOption translation(QStringList() << "t"
-                                                 << "translation",
+    QCommandLineOption translation(QStringList() << "t" << "translation",
                                    QObject::tr("path to the translation file: <translationfile>"), "translationfile");
-    QCommandLineOption url(QStringList() << "l"
-                                         << "link",
-                           QObject::tr("Define URL to connect to server: <url>"), "url");
+    QCommandLineOption url(QStringList() << "l" << "link", QObject::tr("Define URL to connect to server: <url>"),
+                           "url");
 
     parser.addOption(port);
     parser.addOption(portws);
@@ -1152,11 +1143,10 @@ void MainWindow::openGenericContent()
         auto* localPlayer= m_gameController->playerController()->localPlayer();
         if(!localPlayer)
             continue;
-        m_gameController->openMedia(
-            {{Core::keys::KEY_URL, QUrl::fromUserInput(path)},
-             {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
-             {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
-             {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
+        m_gameController->openMedia({{Core::keys::KEY_URL, QUrl::fromUserInput(path)},
+                                     {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
+                                     {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
+                                     {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
     }
 }
 
@@ -1170,12 +1160,11 @@ void MainWindow::openImage()
     auto* localPlayer= m_gameController->playerController()->localPlayer();
     if(!localPlayer)
         return;
-    std::map<QString, QVariant> args(
-        {{Core::keys::KEY_NAME, ctrl.title()},
-         {Core::keys::KEY_URL, ctrl.address()},
-         {Core::keys::KEY_OWNERID, localPlayer->uuid()},
-         {Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
-         {Core::keys::KEY_DATA, ctrl.finalImageData()}});
+    std::map<QString, QVariant> args({{Core::keys::KEY_NAME, ctrl.title()},
+                                      {Core::keys::KEY_URL, ctrl.address()},
+                                      {Core::keys::KEY_OWNERID, localPlayer->uuid()},
+                                      {Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
+                                      {Core::keys::KEY_DATA, ctrl.finalImageData()}});
 
     m_gameController->openMedia(args);
 }
@@ -1283,9 +1272,21 @@ void MainWindow::dropEvent(QDropEvent* event)
     if(!data->hasUrls() && !data->hasImage())
         return;
 
+    auto const roliMineData= dynamic_cast<const RolisteamMimeData*>(data);
+    std::map<QString, QVariant> res;
+    if(roliMineData)
+    {
+        auto infos= roliMineData->mediaInfos();
+        for(auto const& info : std::as_const(infos))
+        {
+            m_gameController->openInternalResources(info.id, info.path, info.type);
+        }
+        return;
+    }
+
     qCDebug(WidgetClient) << "data has url and image" << data->hasImage() << data->hasUrls();
 
-    if(data->hasImage())
+    if(data->hasImage() && !roliMineData)
     {
         auto img= qvariant_cast<QImage>(data->imageData());
 
@@ -1297,11 +1298,11 @@ void MainWindow::dropEvent(QDropEvent* event)
 
         if(!img.isNull() && m_gameController->playerController()->localPlayer())
         {
-            m_gameController->openMedia(
-                {{Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)},
-                 {Core::keys::KEY_DATA, IOHelper::imageToData(img)},
-                 {Core::keys::KEY_NAME, name},
-                 {Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()}});
+            res.insert({Core::keys::KEY_TYPE, QVariant::fromValue(Core::ContentType::PICTURE)});
+            res.insert({Core::keys::KEY_DATA, IOHelper::imageToData(img)});
+            res.insert({Core::keys::KEY_NAME, name});
+            res.insert({Core::keys::KEY_OWNERID, m_gameController->playerController()->localPlayer()->uuid()});
+            m_gameController->openMedia(res);
         }
     }
     else if(data->hasUrls())
@@ -1321,12 +1322,14 @@ void MainWindow::dropEvent(QDropEvent* event)
                 auto* localPlayer= m_gameController->playerController()->localPlayer();
                 if(!localPlayer)
                     continue;
-                m_gameController->openMedia(
-                    {{Core::keys::KEY_URL, url},
-                     {Core::keys::KEY_DATA, utils::IOHelper::loadFile(path)},
-                     {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
-                     {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)},
-                     {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
+
+                res.insert({Core::keys::KEY_URL, url});
+                res.insert({Core::keys::KEY_DATA, utils::IOHelper::loadFile(path)});
+                res.insert({Core::keys::KEY_TYPE, QVariant::fromValue(type)});
+                res.insert({Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(path)});
+                res.insert({Core::keys::KEY_OWNERID, localPlayer->uuid()});
+
+                m_gameController->openMedia(res);
             }
             else // remote
             {
@@ -1337,22 +1340,22 @@ void MainWindow::dropEvent(QDropEvent* event)
 
 #ifdef HAVE_QT_NETWORK
                 auto downloader= new NetworkDownloader(url);
-                connect(
-                    downloader, &NetworkDownloader::finished, this,
-                    [this, type, url, urltext, downloader](const QByteArray& data)
-                    {
-                        auto* localPlayer= m_gameController->playerController()->localPlayer();
-                        if(!localPlayer)
-                            return;
-                        m_gameController->openMedia(
-                            {{Core::keys::KEY_URL, urltext},
-                             {Core::keys::KEY_PATH, urltext},
-                             {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
-                             {Core::keys::KEY_DATA, data},
-                             {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(url.fileName())},
-                             {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
-                        downloader->deleteLater();
-                    });
+                connect(downloader, &NetworkDownloader::finished, this,
+                        [this, type, url, urltext, downloader](const QByteArray& data)
+                        {
+                            auto* localPlayer= m_gameController->playerController()->localPlayer();
+                            if(!localPlayer)
+                                return;
+
+                            m_gameController->openMedia(
+                                {{Core::keys::KEY_URL, urltext},
+                                 {Core::keys::KEY_PATH, urltext},
+                                 {Core::keys::KEY_TYPE, QVariant::fromValue(type)},
+                                 {Core::keys::KEY_DATA, data},
+                                 {Core::keys::KEY_NAME, utils::IOHelper::shortNameFromPath(url.fileName())},
+                                 {Core::keys::KEY_OWNERID, localPlayer->uuid()}});
+                            downloader->deleteLater();
+                        });
                 downloader->download();
 #endif
             }

@@ -48,10 +48,13 @@ void RolisteamMimeDataTest::testGetSet()
         m_data.hasFormat(s);
 
     auto uuid= Helper::randomString();
-    QSignalSpy spy(&m_data, &RolisteamMimeData::mediaUuidChanged);
-    m_data.setMediaUuid(uuid);
-    m_data.setMediaUuid(uuid);
-    QCOMPARE(m_data.mediaUuid(), uuid);
+    QSignalSpy spy(&m_data, &RolisteamMimeData::mediaInfosChanged);
+    Core::MediaInfo info{uuid, {}, {}};
+    m_data.setMediaInfos({info});
+    m_data.setMediaInfos({info});
+    QList<Core::MediaInfo> a;
+    a.append(info);
+    QCOMPARE(m_data.mediaInfos(), a);
     QCOMPARE(spy.count(), 1);
 
     uuid= Helper::randomString();
