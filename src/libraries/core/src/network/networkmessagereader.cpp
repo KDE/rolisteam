@@ -54,6 +54,11 @@ NetworkMessageReader::NetworkMessageReader(const NetworkMessageReader& other) : 
     readRecipient();
 }
 
+NetworkMessageReader::NetworkMessageReader(const NetworkMessage& msg)
+{
+    setData(msg.data());
+}
+
 NetworkMessageReader::~NetworkMessageReader()
 {
     delete[](reinterpret_cast<char*>(m_header));
@@ -103,6 +108,14 @@ void NetworkMessageReader::setInternalData(const QByteArray& bytes)
     size_t headerSize= sizeof(NetworkMessageHeader);
     m_pos= m_buffer + headerSize;
     m_end= m_buffer + headerSize + m_header->dataSize;
+}
+
+QByteArray NetworkMessageReader::data() const
+{
+    auto size= m_buffer - m_end;
+    m_header->dataSize= size - sizeof(NetworkMessageHeader);
+    QByteArray array(m_buffer, static_cast<int>(size));
+    return array;
 }
 
 NetMsg::Category NetworkMessageReader::category() const

@@ -80,16 +80,16 @@ public:
     void setRecipientList(QStringList, NetworkMessage::RecipientMode mode);
     virtual QStringList getRecipientList() const override;
     NetworkMessage::RecipientMode getRecipientMode() const override;
-    QByteArray data() const;
+    QByteArray data() const override;
 
     NetworkMessageHeader* buffer() const override;
 
 private:
     NetworkMessageHeader* m_header;
-    char* m_buffer;
-    char* m_begin;
-    char* m_currentPos;
-    char* m_end;
+    char* m_buffer{nullptr};
+    char* m_begin{nullptr};
+    char* m_currentPos{nullptr};
+    char* m_end{nullptr};
 
     void string(const QString& data, int sizeQChar);
     void makeRoom(int size);

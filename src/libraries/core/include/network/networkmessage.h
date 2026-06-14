@@ -202,6 +202,7 @@ public:
     virtual QStringList getRecipientList() const= 0;
     quint64 getSize() const;
     virtual NetworkMessageHeader* buffer() const= 0;
+    virtual QByteArray data() const= 0;
 
     static void setMessageSender(MessageSenderInterface*);
 

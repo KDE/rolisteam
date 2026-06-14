@@ -37,6 +37,7 @@ public:
     NetworkMessageReader();
     NetworkMessageReader(const NetworkMessageHeader& header, const char* buffer);
     NetworkMessageReader(const NetworkMessageReader& other);
+    NetworkMessageReader(const NetworkMessage& msg);
     virtual ~NetworkMessageReader() override;
 
     bool isValid() const;
@@ -90,6 +91,7 @@ public:
     virtual QStringList getRecipientList() const override;
 
     void setInternalData(const QByteArray& bytes);
+    QByteArray data() const override;
 
 protected:
     NetworkMessageHeader* buffer() const override;
