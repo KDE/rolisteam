@@ -37,9 +37,9 @@ signals:
     void radiusChanged();
 
 private:
-    void updateFogReveal();
+    void updateFogReveal(bool blockUpdate= true);
     QList<QLineF> collectWallSegments() const;
-    qreal m_radius = 200.0;
+    qreal m_radius= 200.0;
 };
 
 } // namespace vmap

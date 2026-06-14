@@ -1,6 +1,6 @@
 #include "controller/item_controllers/lightcontroller.h"
-#include "controller/item_controllers/rectcontroller.h"
 #include "controller/item_controllers/pathcontroller.h"
+#include "controller/item_controllers/rectcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "model/vmapitemmodel.h"
 #include "utils/shadowcaster.h"
@@ -19,35 +19,35 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
     using std::placeholders::_1;
     hu::setParamIfAny<qreal>(cv::KEY_RADIUS, params, std::bind(&LightController::setRadius, this, _1));
 
-    connect(this, &VisualItemController::posChanged,   this, &LightController::updateFogReveal);
-    connect(this, &LightController::radiusChanged,     this, &LightController::updateFogReveal);
-    connect(this, &VisualItemController::initializedChanged,
-            this, &LightController::updateFogReveal);
+    auto updateFog= [this]() { updateFogReveal(); }; // to use the default parameter
+
+    connect(this, &VisualItemController::posChanged, this, updateFog);
+    connect(this, &LightController::radiusChanged, this, updateFog);
+    connect(this, &VisualItemController::initializedChanged, this, [this]() { updateFogReveal(false); });
 
     if(m_ctrl && m_ctrl->model())
     {
+
         connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded, this,
-                [this](vmap::VisualItemController* item)
+                [this, updateFog](vmap::VisualItemController* item)
                 {
                     if(!item)
                         return;
-                    connect(item, &vmap::VisualItemController::initializedChanged,
-                            this, &LightController::updateFogReveal);
+
+                    connect(item, &vmap::VisualItemController::initializedChanged, this, updateFog);
                     // Update shadow when obstacle is rotated
-                    connect(item, &vmap::VisualItemController::rotationChanged,
-                            this, &LightController::updateFogReveal);
+                    connect(item, &vmap::VisualItemController::rotationChanged, this, updateFog);
                     if(auto* path= dynamic_cast<vmap::PathController*>(item))
                     {
-                        connect(path, &vmap::PathController::pointCountChanged,
-                                this, &LightController::updateFogReveal);
+                        connect(path, &vmap::PathController::pointCountChanged, this, updateFog);
                     }
                 });
-        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved, this, &LightController::updateFogReveal);
+        connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved, this, updateFog);
     }
 
     connect(this, &LightController::visibleChanged, this, [this]() { aboutToBeRemoved(); });
 
-    updateFogReveal();
+    updateFogReveal(false);
 }
 
 qreal LightController::radius() const
@@ -91,7 +91,7 @@ void LightController::setCorner(const QPointF& move, int corner, Core::Transform
     setRadius(std::max(radius() + move.x(), 10.));
 }
 
-void LightController::updateFogReveal()
+void LightController::updateFogReveal(bool blockUpdate)
 {
     if(!m_ctrl)
         return;
@@ -100,7 +100,7 @@ void LightController::updateFogReveal()
     if(!sightCtrl)
         return;
 
-    sightCtrl->setBlockU(true);
+    sightCtrl->setBlockU(blockUpdate);
     sightCtrl->clearTempPolygons();
 
     QList<QLineF> segments= collectWallSegments();
@@ -154,9 +154,9 @@ QList<QLineF> LightController::collectWallSegments() const
         QPointF rotationCenter(0, 0);
         if(item->itemType() == VisualItemController::RECT)
         {
-            auto* rectCtrl = dynamic_cast<RectController*>(item);
+            auto* rectCtrl= dynamic_cast<RectController*>(item);
             if(rectCtrl)
-                rotationCenter = rectCtrl->rect().center();
+                rotationCenter= rectCtrl->rect().center();
         }
 
         QTransform transform;
@@ -164,7 +164,7 @@ QList<QLineF> LightController::collectWallSegments() const
         transform.translate(rotationCenter.x(), rotationCenter.y());
         transform.rotate(item->rotation());
         transform.translate(-rotationCenter.x(), -rotationCenter.y());
-        poly = transform.map(poly);
+        poly= transform.map(poly);
 
         for(int i= 0; i + 1 < poly.size(); ++i)
             segments << QLineF(poly[i], poly[i + 1]);
