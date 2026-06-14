@@ -148,7 +148,7 @@ HELPER_EXPORT QByteArray randomData(int length= 1000);
 HELPER_EXPORT QColor randomColor();
 HELPER_EXPORT QPointF randomPoint();
 HELPER_EXPORT QRectF randomRect();
-HELPER_EXPORT QPolygonF randomPolygon();
+HELPER_EXPORT QPolygonF randomPolygon(int i= -1);
 HELPER_EXPORT QObject* initWebServer(int port= 9090);
 HELPER_EXPORT QUrl randomUrl();
 HELPER_EXPORT QMovie randomMovie();

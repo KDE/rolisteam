@@ -700,8 +700,7 @@ QObject* initWebServer(int port)
     auto server= new QHttpServer();
 
     server->route("/image/<arg>",
-                  [](const QUrl& url)
-                  {
+                  [](const QUrl& url) {
                       return QHttpServerResponse::fromFile(
                           QStringLiteral("%1/resources/img/%2").arg(tests::root_path, url.path()));
                   });
@@ -768,10 +767,12 @@ QString htmlCode()
     return utils::IOHelper::readTextFile(":/html/01_personnages.html");
 }
 
-QPolygonF randomPolygon()
+QPolygonF randomPolygon(int i)
 {
     QPolygonF res;
-    auto pCount= generate(1, 50);
+    int pCount= i;
+    if(pCount < 0)
+        pCount= generate(1, 50);
     for(int i= 0; i < pCount; ++i)
     {
         res.append(randomPoint());

@@ -701,9 +701,10 @@ void MindMapTest::linkGeometryTest()
     linkNode.update(Helper::randomRect(), mindmap::LinkController::RightTop, Helper::randomRect(),
                     Helper::randomRect());
     linkNode.update(Helper::randomRect(), mindmap::LinkController::LeftTop, Helper::randomRect(), Helper::randomRect());
-    linkNode.updateBox(Helper::randomPolygon());
-    linkNode.updateBox(Helper::randomPolygon());
-    linkNode.updateBox(Helper::randomPolygon());
+    int i= 5;
+    linkNode.updateBox(Helper::randomPolygon(i));
+    linkNode.updateBox(Helper::randomPolygon(i));
+    linkNode.updateBox(Helper::randomPolygon(i));
     linkNode.updateSelected(true);
     linkNode.updateSelected(false);
 }
