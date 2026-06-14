@@ -69,11 +69,16 @@ void LightController::setRadius(qreal radius)
 void LightController::aboutToBeRemoved()
 {
     if(m_ctrl && m_ctrl->sightController())
+    {
+        m_ctrl->sightController()->setBlockU(false);
         m_ctrl->sightController()->clearTempPolygons();
+    }
 }
 
 void LightController::endGeometryChange()
 {
+    if(m_ctrl && m_ctrl->sightController())
+        m_ctrl->sightController()->setBlockU(false);
     VisualItemController::endGeometryChange();
 }
 
@@ -93,6 +98,7 @@ void LightController::updateFogReveal()
     if(!sightCtrl)
         return;
 
+    sightCtrl->setBlockU(true);
     sightCtrl->clearTempPolygons();
 
     QList<QLineF> segments= collectWallSegments();
