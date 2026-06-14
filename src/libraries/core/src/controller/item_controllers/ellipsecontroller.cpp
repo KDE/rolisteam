@@ -105,7 +105,7 @@ QRectF EllipseController::rect() const
 QPolygonF EllipseController::obstaclePolygon() const
 {
     QPainterPath path;
-    path.addEllipse(pos(), m_rx, m_ry);
+    path.addEllipse(QPointF(0, 0), m_rx, m_ry);
     return path.toFillPolygon();
 }
 

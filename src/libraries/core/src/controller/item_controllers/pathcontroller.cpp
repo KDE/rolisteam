@@ -177,9 +177,9 @@ QPolygonF PathController::obstaclePolygon() const
 {
     QPolygonF poly;
     for(const auto& pt : m_points)
-        poly << pos() + pt;
+        poly << pt;
     if(m_closed && !m_points.empty())
-        poly << pos() + m_points.front();
+        poly << m_points.front();
     return poly;
 }
 

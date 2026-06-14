@@ -1,14 +1,10 @@
-
 #ifndef LIGHTCONTROLLER_H
 #define LIGHTCONTROLLER_H
 
-#include <QColor>
-#include <QPointF>
+#include <QLineF>
 #include <QRectF>
 #include <QVariant>
-#include "shadowcaster.h"
-#include <QVector>
-#include <QLineF>
+
 #include "visualitemcontroller.h"
 #include <core_global.h>
 
@@ -18,11 +14,6 @@ namespace vmap
 {
 /**
  * @brief Controller for a light source item on the vectorial map.
- *
- * Stores position, radius, and color of a light.
- * The corresponding LightItem (view) uses this data to
- * draw the light glow and compute the visibility polygon
- * for fog-of-war interaction.
  */
 class CORE_EXPORT LightController : public VisualItemController
 {
@@ -37,7 +28,6 @@ public:
 
     qreal radius() const;
     QRectF rect() const override;
-
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     void setCorner(const QPointF& move, int corner,
@@ -52,10 +42,9 @@ signals:
 
 private:
     void updateFogReveal();
-    QVector<QLineF> collectWallSegments() const;
+    QList<QLineF> collectWallSegments() const;
     qreal m_radius = 200.0;
 };
 
 } // namespace vmap
-
 #endif // LIGHTCONTROLLER_H

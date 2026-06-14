@@ -1,5 +1,6 @@
 #include "controller/item_controllers/pathcontroller.h"
 #include "controller/item_controllers/lightcontroller.h"
+#include "controller/item_controllers/rectcontroller.h"
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "model/vmapitemmodel.h"
 #include "utils/shadowcaster.h"
@@ -19,6 +20,8 @@ LightController::LightController(const std::map<QString, QVariant>& params,
 
     connect(this, &VisualItemController::posChanged,   this, &LightController::updateFogReveal);
     connect(this, &LightController::radiusChanged,     this, &LightController::updateFogReveal);
+    connect(this, &VisualItemController::initializedChanged,
+            this, &LightController::updateFogReveal);
 
     if(m_ctrl && m_ctrl->model())
     {
@@ -26,16 +29,15 @@ LightController::LightController(const std::map<QString, QVariant>& params,
                 this, [this](vmap::VisualItemController* item) {
                     if(!item)
                         return;
-                    // Update when item finishes initializing (geometry is final)
                     connect(item, &vmap::VisualItemController::initializedChanged,
-                            this, &LightController::updateFogReveal,
-                            Qt::UniqueConnection);
-                    // For path items, also update when points are added
+                            this, &LightController::updateFogReveal);
+                    // Update shadow when obstacle is rotated
+                    connect(item, &vmap::VisualItemController::rotationChanged,
+                            this, &LightController::updateFogReveal);
                     if(auto* path = dynamic_cast<vmap::PathController*>(item))
                     {
                         connect(path, &vmap::PathController::pointCountChanged,
-                                this, &LightController::updateFogReveal,
-                                Qt::UniqueConnection);
+                                this, &LightController::updateFogReveal);
                     }
                 });
         connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved,
@@ -98,20 +100,18 @@ void LightController::updateFogReveal()
 
     if(segments.isEmpty())
     {
-        // No walls — just reveal the full circle
         sightCtrl->addPolygon(visibilityPoly, false, true);
         return;
     }
 
-    // Use full circle minus visibility polygon to get smooth shadow edge:
-    // The circle gives smooth outer edge, visibility polygon cuts out the lit area
     QPainterPath circlePath;
+    circlePath.setFillRule(Qt::WindingFill);
     circlePath.addEllipse(pos(), m_radius, m_radius);
 
     QPainterPath visPath;
+    visPath.setFillRule(Qt::WindingFill);
     visPath.addPolygon(visibilityPoly);
 
-    // Reveal = intersection of circle and visibility polygon
     QPainterPath revealPath = circlePath.intersected(visPath);
     sightCtrl->addPolygon(revealPath.toFillPolygon(), false, true);
 }
@@ -142,6 +142,24 @@ QList<QLineF> LightController::collectWallSegments() const
             continue;
 
         QPolygonF poly = item->obstaclePolygon();
+
+        // Determine rotation center per item type:
+        // RectItem rotates around rect().center() (setTransformOriginPoint)
+        // all other items rotate around local origin (0,0)
+        QPointF rotationCenter(0, 0);
+        if(item->itemType() == VisualItemController::RECT)
+        {
+            auto* rectCtrl = dynamic_cast<RectController*>(item);
+            if(rectCtrl)
+                rotationCenter = rectCtrl->rect().center();
+        }
+
+        QTransform transform;
+        transform.translate(item->pos().x(), item->pos().y());
+        transform.translate(rotationCenter.x(), rotationCenter.y());
+        transform.rotate(item->rotation());
+        transform.translate(-rotationCenter.x(), -rotationCenter.y());
+        poly = transform.map(poly);
 
         for(int i = 0; i + 1 < poly.size(); ++i)
             segments << QLineF(poly[i], poly[i + 1]);
