@@ -3645,17 +3645,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Novo personagem"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "O soquete está nulo"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "O soquete não permite escrita"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Erro de transmissão:"

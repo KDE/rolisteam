@@ -3877,17 +3877,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Uusi hahmo"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Pistoke on tyhjä"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Pistokkeeseen ei voi kirjoittaa"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 #, fuzzy
 #| msgctxt "ClientConnection|"
 #| msgid "Transmission error :"

@@ -3655,17 +3655,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Personatge nou"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "El sòcol és nul"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "No es pot escriure al sòcol"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "S'ha produït un error de transmissió:"

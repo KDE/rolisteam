@@ -3644,17 +3644,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Nová postava"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Soket je null"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Do soketu nie je možné zapisovať"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Chyba prenosu :"

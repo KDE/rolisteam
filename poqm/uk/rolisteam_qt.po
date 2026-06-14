@@ -3653,17 +3653,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Новий персонаж"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Сокет є порожнім"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Сокет є непридатним до запису"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 msgctxt "ClientConnection|"
 msgid "Transmission error:"
 msgstr "Помилка передавання:"

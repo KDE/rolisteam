@@ -3902,17 +3902,17 @@ msgctxt "CharacterDataModel|"
 msgid "New Character"
 msgstr "Nowa postać"
 
-#: src/libraries/core/src/network/clientconnection.cpp:94
+#: src/libraries/core/src/network/clientconnection.cpp:97
 msgctxt "ClientConnection|"
 msgid "Socket is null"
 msgstr "Gniazdo jest zerowe"
 
-#: src/libraries/core/src/network/clientconnection.cpp:99
+#: src/libraries/core/src/network/clientconnection.cpp:102
 msgctxt "ClientConnection|"
 msgid "Socket is not writable"
 msgstr "Gniazdo nie jest do zapisu"
 
-#: src/libraries/core/src/network/clientconnection.cpp:121
+#: src/libraries/core/src/network/clientconnection.cpp:124
 #, fuzzy
 #| msgctxt "ClientConnection|"
 #| msgid "Transmission error :"
