@@ -173,7 +173,7 @@ QString convertToBase64(const T& data)
 {
     QByteArray res;
     {
-        QDataStream writer(res);
+        QDataStream writer(&res, QIODevice::WriteOnly);
         writer << data;
     }
     return res.toBase64();

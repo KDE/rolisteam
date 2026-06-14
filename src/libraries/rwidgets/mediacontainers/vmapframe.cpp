@@ -163,7 +163,7 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateFrame);
 
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateFrame);
-    connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateSmallImage);
+    connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateSmallImage, Qt::QueuedConnection);
     connect(m_graphicView->horizontalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage,
             Qt::QueuedConnection);
     connect(m_graphicView->verticalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage,
