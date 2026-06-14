@@ -47,6 +47,13 @@ SightController::SightController(VectorialMapController* ctrl, QObject* parent)
     connect(this, &SightController::characterCountChanged, this, [this] { setModified(); });
     setEditable(false);
     setInitialized(true);
+
+    connect(this, &SightController::blockUChanged, this,
+            [this]()
+            {
+                if(!m_blockUpdate)
+                    emit fowPathChanged();
+            });
 }
 
 void SightController::aboutToBeRemoved()
@@ -161,7 +168,8 @@ void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
     if(!temp)
         m_tempSingularityList.clear();
 
-    emit fowPathChanged();
+    if(!m_blockUpdate)
+        emit fowPathChanged();
 }
 
 void SightController::addCharacterVision(CharacterVision* vision)
@@ -201,4 +209,18 @@ const std::vector<std::pair<QPolygonF, bool>>& SightController::tempSingularityL
 {
     return m_tempSingularityList;
 }
+
+bool SightController::blockU() const
+{
+    return m_blockUpdate;
+}
+
+void SightController::setBlockU(bool newBlockUpdate)
+{
+    if(m_blockUpdate == newBlockUpdate)
+        return;
+    m_blockUpdate= newBlockUpdate;
+    emit blockUChanged();
+}
+
 } // namespace vmap

@@ -39,6 +39,7 @@ class CORE_EXPORT SightController : public VisualItemController
     Q_PROPERTY(QPainterPath fowPath READ fowPath WRITE setFowPath NOTIFY fowPathChanged)
     Q_PROPERTY(QRectF rect READ rect WRITE setRect NOTIFY rectChanged)
     Q_PROPERTY(int characterCount READ characterCount NOTIFY characterCountChanged) // only playable character
+    Q_PROPERTY(bool blockUpdate READ blockU WRITE setBlockU NOTIFY blockUChanged FINAL)
 public:
     SightController(VectorialMapController* ctrl, QObject* parent= nullptr);
 
@@ -54,6 +55,9 @@ public:
     const QList<QPointer<CharacterVision>>& visionData() const;
     const std::vector<std::pair<QPolygonF, bool>>& singularityList() const;
     const std::vector<std::pair<QPolygonF, bool>>& tempSingularityList() const;
+
+    bool blockU() const;
+    void setBlockU(bool newBlockUpdate);
 
 public slots:
     void addPolygon(const QPolygonF& poly, bool mask, bool temp= false);
@@ -71,6 +75,8 @@ signals:
     void characterCountChanged();
     void requiredUpdate();
 
+    void blockUChanged();
+
 private:
     std::vector<std::pair<QPolygonF, bool>> m_fogSingularityList;
     std::vector<std::pair<QPolygonF, bool>> m_tempSingularityList;
@@ -79,6 +85,7 @@ private:
     CharacterVision::SHAPE m_defaultShape= CharacterVision::ANGLE;
     QRectF m_rect= QRectF(0, 0, 1000, 1000);
     QPainterPath m_remoteFowPath;
+    bool m_blockUpdate;
 };
 } // namespace vmap
 
