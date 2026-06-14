@@ -45,6 +45,8 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
         connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved, this, &LightController::updateFogReveal);
     }
 
+    connect(this, &LightController::visibleChanged, this, [this]() { aboutToBeRemoved(); });
+
     updateFogReveal();
 }
 
@@ -86,7 +88,7 @@ void LightController::setCorner(const QPointF& move, int corner, Core::Transform
 {
     Q_UNUSED(corner)
     Q_UNUSED(tt)
-    setRadius(radius() + move.x());
+    setRadius(std::max(radius() + move.x(), 10.));
 }
 
 void LightController::updateFogReveal()

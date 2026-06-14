@@ -40,6 +40,7 @@ AddVmapItemCommand::AddVmapItemCommand(vmap::VmapItemModel* model, Core::Selecta
                                                {Core::SelectableTool::NonPlayableCharacter, QObject::tr("NPC Token")},
                                                {Core::SelectableTool::PlayableCharacter, QObject::tr("PC Token")},
                                                {Core::SelectableTool::IMAGE, QObject::tr("Image")},
+                                               {Core::SelectableTool::LIGHT, QObject::tr("Light")},
                                                {Core::SelectableTool::PEN, QObject::tr("Pen")},
                                                {Core::SelectableTool::PATH, QObject::tr("Path")}});
     auto string= data.value(tool);
