@@ -122,7 +122,7 @@ signals:
     void performCommand(QUndoCommand* cmd);
 
 private slots:
-    void addMediaNode(Media* media);
+    void addMediaNode(campaign::Media* media);
     void removeMediaNode(const QString& id);
 
     void initDataFromCampaign();

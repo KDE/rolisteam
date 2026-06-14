@@ -58,6 +58,7 @@ public:
 
     bool blockU() const;
     void setBlockU(bool newBlockUpdate);
+    QPointF transformOrigin() const override;
 
 public slots:
     void addPolygon(const QPolygonF& poly, bool mask, bool temp= false);

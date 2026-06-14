@@ -49,6 +49,7 @@ public:
 
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
+    QPointF transformOrigin() const override;
 
 signals:
     void pixmapChanged();

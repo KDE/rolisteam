@@ -47,6 +47,7 @@ public:
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     QRectF rect() const override;
+    QPointF transformOrigin() const override;
 
 signals:
     void filledChanged();

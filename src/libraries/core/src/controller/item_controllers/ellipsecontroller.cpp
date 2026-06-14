@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "controller/item_controllers/ellipsecontroller.h"
-#include <QPolygonF>
 #include <QPainterPath>
+#include <QPolygonF>
 #include <QVariant>
 
 namespace vmap
@@ -100,6 +100,11 @@ void EllipseController::endGeometryChange()
 QRectF EllipseController::rect() const
 {
     return QRectF(-rx(), -ry(), rx() * 2, ry() * 2);
+}
+
+QPointF EllipseController::transformOrigin() const
+{
+    return rect().center();
 }
 
 QPolygonF EllipseController::obstaclePolygon() const

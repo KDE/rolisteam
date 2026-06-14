@@ -107,6 +107,7 @@ public:
     QColor color() const override;
     void setColor(const QColor& color) override;
     QRectF rect() const override;
+    QPointF transformOrigin() const override;
 
     const QList<CharacterAction*> actionList() const;
     const QList<CharacterShape*> shapeList() const;

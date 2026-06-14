@@ -46,7 +46,6 @@ CharacterItemController::CharacterItemController(const std::map<QString, QVarian
         m_tool= params.at(Core::vmapkeys::KEY_PLAYABLECHARACTER).toBool() ? Core::SelectableTool::PlayableCharacter :
                                                                             Core::SelectableTool::NonPlayableCharacter;
 
-
     if(params.end() != params.find(Core::vmapkeys::KEY_CHARAC_ID))
     {
         m_characterId= params.at(Core::vmapkeys::KEY_CHARAC_ID).value<QString>();
@@ -419,6 +418,11 @@ qreal CharacterItemController::radius() const
 QRectF CharacterItemController::rect() const
 {
     return thumnailRect();
+}
+
+QPointF CharacterItemController::transformOrigin() const
+{
+    return rect().center();
 }
 
 QString CharacterItemController::stateId() const

@@ -29,6 +29,7 @@ public:
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
     void setCorner(const QPointF& move, int corner, Core::TransformType tt= Core::TransformType::NoTransform) override;
+    QPointF transformOrigin() const override;
 
 public slots:
     void setRadius(qreal radius);

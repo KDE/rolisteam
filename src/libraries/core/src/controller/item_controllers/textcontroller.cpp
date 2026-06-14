@@ -181,6 +181,11 @@ QRectF TextController::rect() const
     return borderRect();
 }
 
+QPointF TextController::transformOrigin() const
+{
+    return borderRect().center();
+}
+
 void TextController::setTextPos(QPointF textPos)
 {
     if(m_textPos == textPos)

@@ -48,6 +48,7 @@ public:
     void endGeometryChange() override;
     QRectF rect() const override;
     QPolygonF obstaclePolygon() const override;
+    QPointF transformOrigin() const override;
 
 signals:
     void penWidthChanged();

@@ -39,9 +39,9 @@ ChangeStackOrderVMapCommand::ChangeStackOrderVMapCommand(VectorialMapController*
 void ChangeStackOrderVMapCommand::undo()
 {
 
-    for(auto info : m_second)
+    for(auto info : std::as_const(m_second))
     {
-        for(auto data : m_first)
+        for(auto data : std::as_const(m_first))
         {
             info.item->stackBefore(data.item);
         }
@@ -51,9 +51,9 @@ void ChangeStackOrderVMapCommand::undo()
 
 void ChangeStackOrderVMapCommand::redo()
 {
-    for(auto info : m_first)
+    for(auto info : std::as_const(m_first))
     {
-        for(auto data : m_second)
+        for(auto data : std::as_const(m_second))
         {
             info.item->stackBefore(data.item);
         }

@@ -22,8 +22,8 @@
 
 #include <QAction>
 #include <QGraphicsObject>
-#include <QPointer>
 #include <QList>
+#include <QPointer>
 
 #include "childpointitem.h"
 #include "controller/item_controllers/visualitemcontroller.h"
@@ -60,7 +60,7 @@ public:
     virtual bool isLocal() const;
 
     QVariant itemChange(GraphicsItemChange change, const QVariant& value);
-    void initialize();
+    virtual void initialize();
 
     quint16 getPenWidth() const;
     void setPenWidth(const quint16& penWidth);
@@ -68,13 +68,13 @@ public:
     QString uuid() const;
     QPainterPath obstaclePolygon() const
     {
-        auto res = QGraphicsObject::shape();
+        auto res= QGraphicsObject::shape();
         if(m_ctrl)
         {
-            auto s = m_ctrl->obstaclePolygon();
+            auto s= m_ctrl->obstaclePolygon();
             if(!s.isEmpty())
             {
-                res = QPainterPath();
+                res= QPainterPath();
                 res.addPolygon(s);
             }
         }

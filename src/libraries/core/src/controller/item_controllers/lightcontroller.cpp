@@ -91,6 +91,11 @@ void LightController::setCorner(const QPointF& move, int corner, Core::Transform
     setRadius(std::max(radius() + move.x(), 10.));
 }
 
+QPointF LightController::transformOrigin() const
+{
+    return QPointF{0, 0};
+}
+
 void LightController::updateFogReveal(bool blockUpdate)
 {
     if(!m_ctrl)

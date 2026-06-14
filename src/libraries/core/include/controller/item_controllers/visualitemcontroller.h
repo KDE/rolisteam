@@ -20,13 +20,13 @@
 #ifndef VISUALITEMCONTROLLER_H
 #define VISUALITEMCONTROLLER_H
 
+#include "media/mediatype.h"
 #include <QColor>
 #include <QObject>
 #include <QPointF>
 #include <QPointer>
-#include <QUndoCommand>
 #include <QPolygonF>
-#include "media/mediatype.h"
+#include <QUndoCommand>
 #include <core_global.h>
 
 class VectorialMapController;
@@ -56,7 +56,6 @@ class CORE_EXPORT VisualItemController : public QObject
     Q_PROPERTY(QString parentUuid READ parentUuid WRITE setParentUuid NOTIFY parentUuidChanged)
     Q_PROPERTY(bool networkUpdate READ networkUpdate WRITE setNetworkUpdate NOTIFY networkUpdateChanged FINAL)
     Q_PROPERTY(QPointF scenePos READ scenePos WRITE setScenePos NOTIFY scenePosChanged FINAL)
-
 public:
     enum ItemType
     {
@@ -133,6 +132,8 @@ public:
 
     QPointF scenePos() const;
     void setScenePos(QPointF newScenePos);
+
+    virtual QPointF transformOrigin() const= 0;
 
 signals:
     void selectedChanged(bool b);

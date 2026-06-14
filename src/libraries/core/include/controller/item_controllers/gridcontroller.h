@@ -41,8 +41,9 @@ public:
     QRectF rect() const override;
 
     void aboutToBeRemoved() override;
-    void setCorner(const QPointF&, int, Core::TransformType = Core::TransformType::NoTransform) override;
+    void setCorner(const QPointF&, int, Core::TransformType= Core::TransformType::NoTransform) override;
     void endGeometryChange() override;
+    QPointF transformOrigin() const override;
 
 signals:
     void gmChanged(bool gm);

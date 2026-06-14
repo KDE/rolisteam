@@ -185,4 +185,9 @@ void ImageItemController::endGeometryChange()
     emit rectEditFinished();
     m_editingRect= false;
 }
+
+QPointF ImageItemController::transformOrigin() const
+{
+    return m_rect.center();
+}
 } // namespace vmap

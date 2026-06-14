@@ -224,8 +224,11 @@ QVariant VisualItem::itemChange(GraphicsItemChange change, const QVariant& value
 
 void VisualItem::initialize()
 {
-    qDebug() << "Initialize";
-    setPos(m_ctrl->pos());
+    auto oldScenePos= m_ctrl->scenePos();
+    setTransformOriginPoint(m_ctrl->transformOrigin());
+    auto newScenePos= scenePos();
+    auto oldPos= pos();
+    setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()), oldPos.y() + (oldScenePos.y() - newScenePos.y())));
     setRotation(m_ctrl->rotation());
     evaluateVisible();
     setOpacity(opacityValue());

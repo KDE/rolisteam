@@ -54,6 +54,7 @@ public:
     void endGeometryChange() override;
     void setCorner(const QPointF& move, int corner, Core::TransformType tt= Core::TransformType::NoTransform) override;
     QRectF rect() const override;
+    QPointF transformOrigin() const override;
 
     void setPoint(const QPointF& p, int corner);
 public slots:

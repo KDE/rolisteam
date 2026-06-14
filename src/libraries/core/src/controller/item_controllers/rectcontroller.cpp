@@ -18,10 +18,10 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 #include "controller/item_controllers/rectcontroller.h"
-#include <QPolygonF>
-#include <QPainterPath>
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "worker/utilshelper.h"
+#include <QPainterPath>
+#include <QPolygonF>
 
 namespace vmap
 {
@@ -114,6 +114,11 @@ void RectController::endGeometryChange()
         emit rectEditFinished();
         m_rectEdited= false;
     }
+}
+
+QPointF RectController::transformOrigin() const
+{
+    return m_rect.center();
 }
 
 quint16 RectController::penWidth() const

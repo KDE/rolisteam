@@ -1,7 +1,7 @@
 #include "controller/item_controllers/pathcontroller.h"
-#include <QPolygonF>
-#include <QPainterPath>
 #include "worker/utilshelper.h"
+#include <QPainterPath>
+#include <QPolygonF>
 #include <QVariant>
 
 namespace vmap
@@ -171,6 +171,11 @@ void PathController::setPoint(const QPointF& p, int corner)
 QRectF PathController::rect() const
 {
     return path().boundingRect();
+}
+
+QPointF PathController::transformOrigin() const
+{
+    return {0, 0};
 }
 
 QPolygonF PathController::obstaclePolygon() const

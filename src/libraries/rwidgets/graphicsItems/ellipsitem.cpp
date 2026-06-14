@@ -128,7 +128,7 @@ void EllipsItem::initChildPointItem()
 {
     if(!m_ellipseCtrl)
         return;
-    setTransformOriginPoint(boundingRect().center());
+    // setTransformOriginPoint(boundingRect().center());
 
     for(int i= 0; i < 2; ++i)
     {

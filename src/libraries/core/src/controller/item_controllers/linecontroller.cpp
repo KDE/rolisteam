@@ -19,12 +19,12 @@
  ***************************************************************************/
 #include "controller/item_controllers/linecontroller.h"
 
-#include <QVariant>
-#include <QPolygonF>
-#include <QPainterPath>
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "media/mediatype.h"
 #include "worker/utilshelper.h"
+#include <QPainterPath>
+#include <QPolygonF>
+#include <QVariant>
 
 namespace vmap
 {
@@ -68,6 +68,11 @@ QPointF LineController::startPoint() const
 QPolygonF LineController::obstaclePolygon() const
 {
     return QPolygonF({m_start, m_end});
+}
+
+QPointF LineController::transformOrigin() const
+{
+    return QPointF{0, 0};
 }
 
 void LineController::aboutToBeRemoved()

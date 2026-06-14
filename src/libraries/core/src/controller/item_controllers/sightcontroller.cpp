@@ -223,4 +223,9 @@ void SightController::setBlockU(bool newBlockUpdate)
     emit blockUChanged();
 }
 
+QPointF SightController::transformOrigin() const
+{
+    return m_rect.center();
+}
+
 } // namespace vmap

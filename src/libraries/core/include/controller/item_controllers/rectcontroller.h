@@ -44,6 +44,7 @@ public:
     QPolygonF obstaclePolygon() const override;
     void aboutToBeRemoved() override;
     void endGeometryChange() override;
+    QPointF transformOrigin() const override;
 
 signals:
     void filledChanged();

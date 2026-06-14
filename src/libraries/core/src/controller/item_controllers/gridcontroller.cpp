@@ -69,6 +69,11 @@ void GridController::setCorner(const QPointF&, int, Core::TransformType) {}
 
 void GridController::endGeometryChange() {}
 
+QPointF GridController::transformOrigin() const
+{
+    return m_rect.center();
+}
+
 void GridController::setGm(bool gm)
 {
     if(m_gm == gm)
