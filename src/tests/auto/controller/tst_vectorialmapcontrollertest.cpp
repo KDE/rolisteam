@@ -28,6 +28,7 @@
 #include "updater/vmapitem/characteritemupdater.h"
 #include "updater/vmapitem/ellipsecontrollerupdater.h"
 #include "updater/vmapitem/imagecontrollerupdater.h"
+#include "updater/vmapitem/lightcontrollerupdater.h"
 #include "updater/vmapitem/linecontrollerupdater.h"
 #include "updater/vmapitem/pathcontrollerupdater.h"
 #include "updater/vmapitem/rectcontrollerupdater.h"
@@ -66,10 +67,10 @@ public:
 private slots:
     void init();
     void cleanupTestCase();
-
+#ifdef FULL_TEST
     void serialization300();
     void serialization300_data();
-
+#endif
     void propertyTest();
     void propertiesTest();
 
@@ -112,6 +113,8 @@ void VectorialMapControllerTest::init()
 
     m_updaters.insert({Core::SelectableTool::LINE, std::unique_ptr<LineControllerUpdater>(new LineControllerUpdater)});
     m_updaters.insert({Core::SelectableTool::PATH, std::unique_ptr<PathControllerUpdater>(new PathControllerUpdater)});
+    m_updaters.insert(
+        {Core::SelectableTool::LIGHT, std::unique_ptr<LightControllerUpdater>(new LightControllerUpdater)});
     m_updaters.insert(
         {Core::SelectableTool::FILLRECT, std::unique_ptr<RectControllerUpdater>(new RectControllerUpdater)});
     m_updaters.insert(
@@ -1063,7 +1066,7 @@ void VectorialMapControllerTest::serialization_data()
         } while(Helper::next_combination(data.begin(), data.begin() + comb_size, data.end()));
     }
 }
-
+#ifdef FULL_TEST
 void VectorialMapControllerTest::serialization300()
 {
     using CustomMap= std::map<QString, QVariant>;
@@ -1173,7 +1176,7 @@ void VectorialMapControllerTest::serialization300_data()
         } while(Helper::next_combination(data.begin(), data.begin() + comb_size, data.end()));
     }
 }
-
+#endif
 void VectorialMapControllerTest::serialization_network()
 {
     using CustomMap= std::map<QString, QVariant>;
@@ -1452,10 +1455,11 @@ void VectorialMapControllerTest::updaterTest_data()
     using ValueList= QList<QVariantList>;
     QTest::addColumn<ValueList>("values");
 
-    std::vector<Core::SelectableTool> data(
-        {Core::SelectableTool::FILLRECT, Core::SelectableTool::LINE, Core::SelectableTool::EMPTYELLIPSE,
-         Core::SelectableTool::EMPTYRECT, Core::SelectableTool::FILLEDELLIPSE, Core::SelectableTool::IMAGE,
-         Core::SelectableTool::TEXT, Core::SelectableTool::TEXTBORDER, Core::SelectableTool::PATH});
+    std::vector<Core::SelectableTool> data({Core::SelectableTool::FILLRECT, Core::SelectableTool::LINE,
+                                            Core::SelectableTool::EMPTYELLIPSE, Core::SelectableTool::EMPTYRECT,
+                                            Core::SelectableTool::FILLEDELLIPSE, Core::SelectableTool::IMAGE,
+                                            Core::SelectableTool::LIGHT, Core::SelectableTool::TEXT,
+                                            Core::SelectableTool::TEXTBORDER, Core::SelectableTool::PATH});
 
     CustomMap params;
     QStringList properties;
@@ -1477,6 +1481,11 @@ void VectorialMapControllerTest::updaterTest_data()
             values= {{Helper::randomPoint(), Helper::randomPoint()},
                      {Helper::randomPoint(), Helper::randomPoint()},
                      {Helper::generate<int>(0, 20), Helper::generate<int>(0, 20)}};
+            break;
+        case Core::SelectableTool::LIGHT:
+            params= Helper::buildLightController(100., {});
+            properties= {"radius"};
+            values= {{Helper::generate<qreal>(0.1, 200.), Helper::generate<qreal>(0.1, 200.)}};
             break;
         case Core::SelectableTool::EMPTYELLIPSE:
             params= Helper::buildEllipseController(false, 200., 100., {500., 100.});
@@ -1533,14 +1542,7 @@ void VectorialMapControllerTest::updaterTest_data()
             break;
         }
 
-        properties << "visible"
-                   << "color"
-                   << "layer"
-                   << "pos"
-                   << "locked"
-                   << "scenePos"
-                   << "opacity"
-                   << "rotation";
+        properties << "visible" << "color" << "layer" << "pos" << "locked" << "scenePos" << "opacity" << "rotation";
 
         values.append({true, false});
         values.append({Helper::randomColor(), Helper::randomColor()});

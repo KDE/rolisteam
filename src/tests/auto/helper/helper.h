@@ -122,6 +122,7 @@ HELPER_EXPORT const std::map<QString, QVariant> buildPathController(bool filled,
                                                                     const QPointF& pos= QPointF(0, 0));
 HELPER_EXPORT const std::map<QString, QVariant> buildLineController(const QPointF& p1, const QPointF& p2,
                                                                     const QPointF& pos= QPointF(0, 0));
+HELPER_EXPORT const std::map<QString, QVariant> buildLightController(qreal radius, const QPointF& pos= QPointF(0, 0));
 HELPER_EXPORT const std::map<QString, QVariant> buildTokenController(bool isNpc, const QPointF& pos);
 
 HELPER_EXPORT const std::map<QString, QVariant> buildController(Core::ContentType type);

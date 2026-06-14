@@ -542,6 +542,10 @@ const std::map<QString, QVariant> buildLineController(const QPointF& p1, const Q
             {"end", QVariant::fromValue(p2)},
             {"position", pos}};
 }
+const std::map<QString, QVariant> buildLightController(qreal radius, const QPointF& pos)
+{
+    return {{"tool", Core::SelectableTool::LIGHT}, {"radius", QVariant::fromValue(radius)}, {"position", pos}};
+}
 
 TestMessageSender::TestMessageSender() {}
 
