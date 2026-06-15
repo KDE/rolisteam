@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-27 20:02+0200\n"
+"PO-Revision-Date: 2026-06-12 19:09+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -133,7 +133,7 @@ msgstr "predefinito"
 #: src/binaries/3DDicer/DiceRollPage.qml:9
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Lancio dei dadi"
+msgstr "Lanci dei dadi"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:18
 msgctxt "DiceRollPage|"
@@ -282,7 +282,7 @@ msgstr ""
 #: src/binaries/3DDicer/Main.qml:156
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Lancio dei dadi"
+msgstr "Lanci dei dadi"
 
 #: src/binaries/3DDicer/Main.qml:165
 msgctxt "Main|"
@@ -304,8 +304,8 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
-"Dado in 3D:\n"
-"lancia il tuo dado in 3D."
+"Dadi in 3D:\n"
+"lancia i tuoi dadi in 3D."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
@@ -1641,7 +1641,7 @@ msgstr "Scala:"
 #: src/binaries/rcse/mainwindow_rcse.ui:617
 msgctxt "MainWindow|"
 msgid "View"
-msgstr "Visualizza"
+msgstr "Vista"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:696
 msgctxt "MainWindow|"
@@ -1651,7 +1651,7 @@ msgstr "Personaggi"
 #: src/binaries/rcse/mainwindow_rcse.ui:716
 msgctxt "MainWindow|"
 msgid "Stored Images"
-msgstr "Immagini archiviate"
+msgstr "Immagini salvate"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:774
 msgctxt "MainWindow|"
@@ -2383,89 +2383,89 @@ msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 lascia il gioco."
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Imposta rolisteam per utilizzare <porta> per la connessione"
 
-#: src/binaries/widget/mainwindow.cpp:1021
+#: src/binaries/widget/mainwindow.cpp:1018
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Imposta rolisteam per la connessione a <server>."
 
-#: src/binaries/widget/mainwindow.cpp:1024
+#: src/binaries/widget/mainwindow.cpp:1020
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Definisci il <ruolo>: GM o PC"
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1022
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Cancella le impostazioni e utilizza i parametri predefiniti"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1023
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Definisci il <nomeutente>"
 
-#: src/binaries/widget/mainwindow.cpp:1032
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 "Definisci la <websocketport> utile per il test di interfaccia automatico"
 
-#: src/binaries/widget/mainwindow.cpp:1033
+#: src/binaries/widget/mainwindow.cpp:1026
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Rimuovi il limite alla dimensione del file PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1036
+#: src/binaries/widget/mainwindow.cpp:1028
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "percorso del file di traduzione: <filetraduzione>"
 
-#: src/binaries/widget/mainwindow.cpp:1039
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Definisci l'URL per la connessione al server: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1146
+#: src/binaries/widget/mainwindow.cpp:1137
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Apri %1"
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1240
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connesso"
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1240
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Non connesso"
 
-#: src/binaries/widget/mainwindow.cpp:1252
+#: src/binaries/widget/mainwindow.cpp:1241
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Server"
 
-#: src/binaries/widget/mainwindow.cpp:1252
+#: src/binaries/widget/mainwindow.cpp:1241
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
-#: src/binaries/widget/mainwindow.cpp:1259
+#: src/binaries/widget/mainwindow.cpp:1248
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "GM"
 
-#: src/binaries/widget/mainwindow.cpp:1265
+#: src/binaries/widget/mainwindow.cpp:1254
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Giocatore"
 
-#: src/binaries/widget/mainwindow.cpp:1292
+#: src/binaries/widget/mainwindow.cpp:1293
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Sconosciuto"
@@ -2883,7 +2883,7 @@ msgstr "Importa da un'altra campagna..."
 #: src/binaries/widget/mainwindow.ui:648
 msgctxt "MainWindow|"
 msgid "Dice3D"
-msgstr "Dice3D"
+msgstr "Dadi in 3D"
 
 #: src/libraries/charactersheet/qml/Rolisteam/ContextualMenu.qml:14
 msgctxt "ContextualMenu|"
@@ -3161,7 +3161,7 @@ msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr "Globale"
 
-#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:607
+#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:611
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
@@ -3822,17 +3822,25 @@ msgid "PC Token"
 msgstr "Pedina PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#, fuzzy
+#| msgctxt "ToolBox|"
+#| msgid "Light"
+msgctxt "QObject|"
+msgid "Light"
+msgstr "Luce"
+
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "Penna"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "Percorso"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"
@@ -3933,90 +3941,90 @@ msgctxt "QObject|"
 msgid "Error: %1 does not exist or it is not readable."
 msgstr "Errore: %1 non esiste o non è leggibile."
 
-#: src/libraries/core/src/worker/utilshelper.cpp:166
+#: src/libraries/core/src/worker/utilshelper.cpp:177
 #, qt-format
 msgctxt "QObject|"
 msgid "Character Sheets files  (%1)"
 msgstr "File di schede dei personaggi (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:169
+#: src/libraries/core/src/worker/utilshelper.cpp:180
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Image formats (%1)"
 msgstr "Formati di immagine supportati (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:172
+#: src/libraries/core/src/worker/utilshelper.cpp:183
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Text Files (%1)"
 msgstr "File di testo supportati (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:175
+#: src/libraries/core/src/worker/utilshelper.cpp:186
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Shared Note formats (%1)"
 msgstr "Formati di note condivise supportati (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:178
+#: src/libraries/core/src/worker/utilshelper.cpp:189
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported WebPage (%1)"
 msgstr "Pagina web supportata (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:181
+#: src/libraries/core/src/worker/utilshelper.cpp:192
 #, qt-format
 msgctxt "QObject|"
 msgid "Pdf File (%1)"
 msgstr "File PDF (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:184
+#: src/libraries/core/src/worker/utilshelper.cpp:195
 #, qt-format
 msgctxt "QObject|"
 msgid "Vectorial Map (%1)"
 msgstr "Mappa vettoriale (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:187
+#: src/libraries/core/src/worker/utilshelper.cpp:198
 #, qt-format
 msgctxt "QObject|"
 msgid "Mindmap (%1)"
 msgstr "Mappa mentale (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:201
+#: src/libraries/core/src/worker/utilshelper.cpp:212
 msgctxt "QObject|"
 msgid "Vectorial Map"
 msgstr "Mappa vettoriale"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:202
+#: src/libraries/core/src/worker/utilshelper.cpp:213
 msgctxt "QObject|"
 msgid "Picture"
 msgstr "Immagine"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:203
+#: src/libraries/core/src/worker/utilshelper.cpp:214
 msgctxt "QObject|"
 msgid "Minutes"
 msgstr "Verbali"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:204
+#: src/libraries/core/src/worker/utilshelper.cpp:215
 msgctxt "QObject|"
 msgid "Character Sheet"
 msgstr "Scheda del personaggio"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:205
+#: src/libraries/core/src/worker/utilshelper.cpp:216
 msgctxt "QObject|"
 msgid "Mindmap"
 msgstr "Mappa mentale"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:206
+#: src/libraries/core/src/worker/utilshelper.cpp:217
 msgctxt "QObject|"
 msgid "Shared Notes"
 msgstr "Note condivise"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:207
+#: src/libraries/core/src/worker/utilshelper.cpp:218
 msgctxt "QObject|"
 msgid "Pdf"
 msgstr "PDF"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:208
+#: src/libraries/core/src/worker/utilshelper.cpp:219
 msgctxt "QObject|"
 msgid "Webview"
 msgstr "Vista web"
@@ -4075,23 +4083,23 @@ msgstr "Comando dei dadi:"
 #: src/libraries/dicephysics/qml/SideMenu.qml:222
 msgctxt "SideMenu|"
 msgid "Show 3D dice in Dialog"
-msgstr "Mostra dado in 3D nella finestra di dialogo"
+msgstr "Mostra dadi in 3D nella finestra di dialogo"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:227
 msgctxt "SideMenu|"
 msgid "Keep 3D dice visible"
-msgstr "Mantieni visibile il dado in 3D"
+msgstr "Mantieni visibile i dadi in 3D"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:234
 #, qt-format
 msgctxt "SideMenu|"
 msgid "Hide 3D Dice after: %1s"
-msgstr "Nascondi il dado in 3D dopo: %1s"
+msgstr "Nascondi i dadi in 3D dopo: %1s"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:235
 msgctxt "SideMenu|"
 msgid "3D Dice panel disappear after a time."
-msgstr "Il pannello del dado in 3D scompare dopo un determinato tempo."
+msgstr "Il pannello dei dadi in 3D scompare dopo un determinato tempo."
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:256
 msgctxt "SideMenu|"
@@ -4303,7 +4311,7 @@ msgstr "Descrizione"
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:91
 msgctxt "NodeSettingPopup|"
 msgid "tags:"
-msgstr "etichette:"
+msgstr "tag:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
 msgctxt "NodeSettingPopup|"
@@ -4350,12 +4358,12 @@ msgstr "Modalità notturna"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:46
 msgctxt "SideMenu|"
 msgid "Link label visible:"
-msgstr "Etichetta del collegamento visibile:"
+msgstr "Etichette dei collegamenti visibili:"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:54
 msgctxt "SideMenu|"
 msgid "Hide empty label"
-msgstr "Nascondi etichetta vuota"
+msgstr "Nascondi etichette vuote"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
@@ -4391,7 +4399,7 @@ msgstr "Seleziona"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:197
 msgctxt "SideMenu|"
 msgid "Tags"
-msgstr "Etichette"
+msgstr "Tag"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
 msgctxt "AddChildToPackageCommand|"
@@ -4799,7 +4807,7 @@ msgstr "Silenzia volume"
 #: src/libraries/rwidgets/customs/playerwidget.cpp:77
 msgctxt "PlayerWidget|"
 msgid "load TableTopAudio.com playlist"
-msgstr "load TableTopAudio.com playlist"
+msgstr "Carica scaletta TableTopAudio.com"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:79
 msgctxt "PlayerWidget|"
@@ -5894,8 +5902,8 @@ msgstr "s"
 msgctxt "PreferencesDialogBox|"
 msgid "All subwindows will have a short title (making tab shorter)"
 msgstr ""
-"Tutte le sotto-finestre avranno un titolo abbreviato (ciò rende la scheda "
-"più corta)"
+"Tutte le sottofinestre avranno un titolo abbreviato (ciò rende la scheda più "
+"corta)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:215
 msgctxt "PreferencesDialogBox|"
@@ -6029,7 +6037,7 @@ msgstr "Editor di testo"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:534
 msgctxt "PreferencesDialogBox|"
 msgid "TextLabel"
-msgstr "EtichettaDiTesto"
+msgstr "Etichetta di testo"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:574
 #, qt-format
@@ -6145,7 +6153,7 @@ msgstr "Ripetuto"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
 msgid "Dice Highlight Color"
-msgstr "Colore evidenziatore dado"
+msgstr "Colore evidenziatore dadi"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:825
 msgctxt "PreferencesDialogBox|"
@@ -6195,7 +6203,7 @@ msgstr "Nuovo personaggio"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:40
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Remove character"
-msgstr "Rimuovi il carattere"
+msgstr "Rimuovi personaggio"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:45
 msgctxt "SelectConnectionProfileDialog|"
@@ -6210,7 +6218,7 @@ msgstr "ferma"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:55
 msgctxt "SelectConnectionProfileDialog|"
 msgid "playerAvatar"
-msgstr "Avatar giocatore"
+msgstr "Avatar_giocatore"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:64
 msgctxt "SelectConnectionProfileDialog|"
@@ -6399,7 +6407,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Salva"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:579
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:578
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Mostra colonne"
@@ -6407,7 +6415,7 @@ msgstr "Mostra colonne"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:14
 msgctxt "AntagonistBoard|"
 msgid "NpcMaker"
-msgstr "NpcMaker"
+msgstr "Creatore NPC"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:65
 msgctxt "AntagonistBoard|"
@@ -6462,7 +6470,7 @@ msgstr "escludi:"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:151
 msgctxt "AntagonistBoard|"
 msgid "tags: "
-msgstr "etichette: "
+msgstr "tag: "
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:161
 msgctxt "AntagonistBoard|"
@@ -6486,7 +6494,7 @@ msgstr "senza"
 #: src/libraries/rwidgets/docks/antagonistboard.ui:205
 msgctxt "AntagonistBoard|"
 msgid "exclude tags:"
-msgstr "escludi etichette:"
+msgstr "escludi tag:"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:218
 msgctxt "AntagonistBoard|"
@@ -7252,7 +7260,7 @@ msgstr "XML valido."
 #, qt-format
 msgctxt "XMLTextEdit|"
 msgid "All tag are valid size %1."
-msgstr "Tutte le etichette hanno una dimensione valida %1."
+msgstr "Tutti i tag hanno una dimensione %1 valida."
 
 #: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/XML_Editor.cpp:72
 msgctxt "XMLTextEdit|"
@@ -8521,7 +8529,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regola"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:322
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:325
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "Promuovi in"
@@ -8660,17 +8668,17 @@ msgstr "Ctrl+-"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:240
 msgctxt "Image|"
 msgid "Fit the workspace"
-msgstr "Adatta l'area di lavoro"
+msgstr "Adatta allo spazio di lavoro"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:242
 msgctxt "Image|"
 msgid "The window and the image fit the workspace"
-msgstr "La finestra e l'immagine si adattano all'area di lavoro"
+msgstr "La finestra e l'immagine si adattano allo spazio di lavoro"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:245
 msgctxt "Image|Fit the workspace"
 msgid "Ctrl+m"
-msgstr "Ctrl+m"
+msgstr "Ctrl+M"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:252
 msgctxt "Image|"
@@ -8686,7 +8694,7 @@ msgstr ""
 #: src/libraries/rwidgets/mediacontainers/image.cpp:260
 msgctxt "Image|Fit the window"
 msgid "Ctrl+f"
-msgstr "Ctrl+f"
+msgstr "Ctrl+F"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:267
 msgctxt "Image|"
@@ -9082,77 +9090,77 @@ msgctxt "WebView|"
 msgid "Share Html"
 msgstr "Condividi HTML"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:25
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:27
 msgctxt "campaign::CampaignView|"
 msgid "Add directory…"
 msgstr "Aggiungi cartella…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:26
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:28
 msgctxt "campaign::CampaignView|"
 msgid "Delete"
 msgstr "Elimina"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:27
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:29
 msgctxt "campaign::CampaignView|"
 msgid "Current Directory"
 msgstr "Cartella attuale"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:28
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:30
 msgctxt "campaign::CampaignView|"
 msgid "Open"
 msgstr "Apri"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:29
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:31
 msgctxt "campaign::CampaignView|"
 msgid "Rename Media"
 msgstr "Rinomina media"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:31
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:33
 msgctxt "campaign::CampaignView|"
 msgid "Name"
 msgstr "Nome"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:32
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:34
 msgctxt "campaign::CampaignView|"
 msgid "Size"
 msgstr "Dimensione"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:33
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:35
 msgctxt "campaign::CampaignView|"
 msgid "Type"
 msgstr "Tipo"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:34
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:36
 msgctxt "campaign::CampaignView|"
 msgid "Date Added"
 msgstr "Data di aggiunta"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:35
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:37
 msgctxt "campaign::CampaignView|"
 msgid "Date Modified"
-msgstr "Data modifica"
+msgstr "Data di modifica"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:36
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:38
 msgctxt "campaign::CampaignView|"
 msgid "Open Externally"
 msgstr "Apri esternamente"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:117
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:119
 msgctxt "campaign::CampaignView|"
 msgid "Notes"
 msgstr "Note"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:120
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:122
 msgctxt "campaign::CampaignView|"
 msgid "Shared Notes"
 msgstr "Note condivise"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:181
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:230
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
 msgstr "Apri come…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:193
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:242
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
 msgstr "Mostra/nascondi colonna"
@@ -9323,20 +9331,14 @@ msgid "Highlighter"
 msgstr "Evidenziatore"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "Destra"
+msgstr "Luce"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
-#, fuzzy
-#| msgctxt "TestCharacterStateModel|"
-#| msgid "Lightly Wounded"
 msgctxt "ToolBox|"
 msgid "Light Source"
-msgstr "Ferito leggermente"
+msgstr "Sorgente luminosa"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"

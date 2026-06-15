@@ -2371,88 +2371,88 @@ msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 heeft nu net het spel verlaten."
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Stel rolisteam in om <port> voor de verbinding te gebruiken"
 
-#: src/binaries/widget/mainwindow.cpp:1021
+#: src/binaries/widget/mainwindow.cpp:1018
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Stel rolisteam in om met <server> te verbinden."
 
-#: src/binaries/widget/mainwindow.cpp:1024
+#: src/binaries/widget/mainwindow.cpp:1020
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Definieer de <role>: sm of pc"
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1022
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "De instellingen wissen en de standaard parameters gebruiken"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1023
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Definieer de <username>"
 
-#: src/binaries/widget/mainwindow.cpp:1032
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr "Definieer de <websocketport> nuttig voor automatisch testen van UI"
 
-#: src/binaries/widget/mainwindow.cpp:1033
+#: src/binaries/widget/mainwindow.cpp:1026
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Limiet van PDF-bestandsgrootte verwijderen"
 
-#: src/binaries/widget/mainwindow.cpp:1036
+#: src/binaries/widget/mainwindow.cpp:1028
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "pad naar het vertaalbestand: <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:1039
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "URL definiëren om met de server te verbinden: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1146
+#: src/binaries/widget/mainwindow.cpp:1137
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "%1 openen"
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1240
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Verbonden"
 
-#: src/binaries/widget/mainwindow.cpp:1251
+#: src/binaries/widget/mainwindow.cpp:1240
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Niet verbonden"
 
-#: src/binaries/widget/mainwindow.cpp:1252
+#: src/binaries/widget/mainwindow.cpp:1241
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Server"
 
-#: src/binaries/widget/mainwindow.cpp:1252
+#: src/binaries/widget/mainwindow.cpp:1241
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
-#: src/binaries/widget/mainwindow.cpp:1259
+#: src/binaries/widget/mainwindow.cpp:1248
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "SM"
 
-#: src/binaries/widget/mainwindow.cpp:1265
+#: src/binaries/widget/mainwindow.cpp:1254
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Speler"
 
-#: src/binaries/widget/mainwindow.cpp:1292
+#: src/binaries/widget/mainwindow.cpp:1293
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Onbekend"
@@ -3148,7 +3148,7 @@ msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr "Globaal"
 
-#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:607
+#: src/libraries/core/src/controller/item_controllers/characteritemcontroller.cpp:611
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
@@ -3809,17 +3809,25 @@ msgid "PC Token"
 msgstr "PC-token"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#, fuzzy
+#| msgctxt "ToolBox|"
+#| msgid "Light"
+msgctxt "QObject|"
+msgid "Light"
+msgstr "Licht"
+
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "Pen"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "Pad"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"
@@ -3918,90 +3926,90 @@ msgctxt "QObject|"
 msgid "Error: %1 does not exist or it is not readable."
 msgstr "Fout: %1 bestaat niet of is niet te lezen."
 
-#: src/libraries/core/src/worker/utilshelper.cpp:166
+#: src/libraries/core/src/worker/utilshelper.cpp:177
 #, qt-format
 msgctxt "QObject|"
 msgid "Character Sheets files  (%1)"
 msgstr "Bestanden met bladen met karakters  (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:169
+#: src/libraries/core/src/worker/utilshelper.cpp:180
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Image formats (%1)"
 msgstr "Ondersteunde afbeeldingsformaten (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:172
+#: src/libraries/core/src/worker/utilshelper.cpp:183
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Text Files (%1)"
 msgstr "Ondersteunde tekstbestanden (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:175
+#: src/libraries/core/src/worker/utilshelper.cpp:186
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported Shared Note formats (%1)"
 msgstr "Ondersteunde formaten van gedeelde notities (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:178
+#: src/libraries/core/src/worker/utilshelper.cpp:189
 #, qt-format
 msgctxt "QObject|"
 msgid "Supported WebPage (%1)"
 msgstr "Ondersteunde webpagina (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:181
+#: src/libraries/core/src/worker/utilshelper.cpp:192
 #, qt-format
 msgctxt "QObject|"
 msgid "Pdf File (%1)"
 msgstr "PDF-bestand (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:184
+#: src/libraries/core/src/worker/utilshelper.cpp:195
 #, qt-format
 msgctxt "QObject|"
 msgid "Vectorial Map (%1)"
 msgstr "Vectoriële kaart (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:187
+#: src/libraries/core/src/worker/utilshelper.cpp:198
 #, qt-format
 msgctxt "QObject|"
 msgid "Mindmap (%1)"
 msgstr "Mindmap (%1)"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:201
+#: src/libraries/core/src/worker/utilshelper.cpp:212
 msgctxt "QObject|"
 msgid "Vectorial Map"
 msgstr "Vectoriële kaart"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:202
+#: src/libraries/core/src/worker/utilshelper.cpp:213
 msgctxt "QObject|"
 msgid "Picture"
 msgstr "Afbeelding"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:203
+#: src/libraries/core/src/worker/utilshelper.cpp:214
 msgctxt "QObject|"
 msgid "Minutes"
 msgstr "Minuten"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:204
+#: src/libraries/core/src/worker/utilshelper.cpp:215
 msgctxt "QObject|"
 msgid "Character Sheet"
 msgstr "Blad met karakters"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:205
+#: src/libraries/core/src/worker/utilshelper.cpp:216
 msgctxt "QObject|"
 msgid "Mindmap"
 msgstr "Mindmap"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:206
+#: src/libraries/core/src/worker/utilshelper.cpp:217
 msgctxt "QObject|"
 msgid "Shared Notes"
 msgstr "Gedeelde notities"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:207
+#: src/libraries/core/src/worker/utilshelper.cpp:218
 msgctxt "QObject|"
 msgid "Pdf"
 msgstr "PDF"
 
-#: src/libraries/core/src/worker/utilshelper.cpp:208
+#: src/libraries/core/src/worker/utilshelper.cpp:219
 msgctxt "QObject|"
 msgid "Webview"
 msgstr "Webweergave"
@@ -6384,7 +6392,7 @@ msgctxt "campaign::AntagonistBoard|"
 msgid "Save"
 msgstr "Opslaan"
 
-#: src/libraries/rwidgets/docks/antagonistboard.cpp:579
+#: src/libraries/rwidgets/docks/antagonistboard.cpp:578
 msgctxt "campaign::AntagonistBoard|"
 msgid "Show Columns"
 msgstr "Kolommen tonen"
@@ -8505,7 +8513,7 @@ msgctxt "QObject|"
 msgid "Rule"
 msgstr "Regel"
 
-#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:322
+#: src/libraries/rwidgets/graphicsItems/visualitem.cpp:325
 msgctxt "VisualItem|"
 msgid "Promote To"
 msgstr "Promoveren naar"
@@ -9065,77 +9073,77 @@ msgctxt "WebView|"
 msgid "Share Html"
 msgstr "Html delen"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:25
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:27
 msgctxt "campaign::CampaignView|"
 msgid "Add directory…"
 msgstr "Map toevoegen…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:26
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:28
 msgctxt "campaign::CampaignView|"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:27
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:29
 msgctxt "campaign::CampaignView|"
 msgid "Current Directory"
 msgstr "Huidige map"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:28
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:30
 msgctxt "campaign::CampaignView|"
 msgid "Open"
 msgstr "Openen"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:29
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:31
 msgctxt "campaign::CampaignView|"
 msgid "Rename Media"
 msgstr "Media hernoemen"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:31
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:33
 msgctxt "campaign::CampaignView|"
 msgid "Name"
 msgstr "Naam"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:32
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:34
 msgctxt "campaign::CampaignView|"
 msgid "Size"
 msgstr "Grootte"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:33
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:35
 msgctxt "campaign::CampaignView|"
 msgid "Type"
 msgstr "Type"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:34
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:36
 msgctxt "campaign::CampaignView|"
 msgid "Date Added"
 msgstr "Datum toegevoegd"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:35
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:37
 msgctxt "campaign::CampaignView|"
 msgid "Date Modified"
 msgstr "Datum gewijzigd"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:36
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:38
 msgctxt "campaign::CampaignView|"
 msgid "Open Externally"
 msgstr "Extern openen"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:117
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:119
 msgctxt "campaign::CampaignView|"
 msgid "Notes"
 msgstr "Notities"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:120
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:122
 msgctxt "campaign::CampaignView|"
 msgid "Shared Notes"
 msgstr "Gedeelde notities"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:181
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:230
 msgctxt "campaign::CampaignView|"
 msgid "Open As…"
 msgstr "Openen als…"
 
-#: src/libraries/rwidgets/modelviews/campaignview.cpp:193
+#: src/libraries/rwidgets/modelviews/campaignview.cpp:242
 msgctxt "campaign::CampaignView|"
 msgid "Show/hide Column"
 msgstr "Kolom tonen/verbergen"
