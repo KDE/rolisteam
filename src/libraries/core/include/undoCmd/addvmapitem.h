@@ -40,5 +40,6 @@ private:
     std::map<QString, QVariant> m_params;
     Core::SelectableTool m_tool;
     QString m_uuid;
+    std::map<QString, QVariant> m_allParams;
 };
 #endif // ADDFIELDCOMMAND_H

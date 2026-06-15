@@ -25,6 +25,8 @@
 #include "controller/view_controller/vectorialmapcontroller.h"
 #include "model/vmapitemmodel.h"
 
+#include "worker/vectorialmapmessagehelper.h"
+
 AddVmapItemCommand::AddVmapItemCommand(vmap::VmapItemModel* model, Core::SelectableTool tool,
                                        VectorialMapController* mapCtrl, const std::map<QString, QVariant>& args,
                                        QUndoCommand* parent)
@@ -52,6 +54,18 @@ void AddVmapItemCommand::undo()
 {
     if(m_model.isNull())
         return;
+
+    if(m_allParams.empty())
+    {
+        namespace cv= Core::vmapkeys;
+        auto item= m_model->item(m_uuid);
+        if(item)
+        {
+            m_allParams
+                = VectorialMapMessageHelper::readItemController(VectorialMapMessageHelper::saveItemController(item));
+        }
+    }
+
     m_model->removeItemController({m_uuid});
 }
 void AddVmapItemCommand::redo()
@@ -62,11 +76,19 @@ void AddVmapItemCommand::redo()
     if(m_model.isNull())
         return;
 
-    auto item= vmap::VmapItemFactory::createVMapItem(m_mapCtrl, m_tool, m_params);
-    if(!item)
-        return;
+    if(m_allParams.empty())
+    {
+        auto item= vmap::VmapItemFactory::createVMapItem(m_mapCtrl, m_tool, m_params);
+        if(!item)
+            return;
 
-    auto id= item->uuid();
-    if(m_model->appendItemController(item))
-        m_uuid= id;
+        auto id= item->uuid();
+
+        if(m_model->appendItemController(item))
+            m_uuid= id;
+    }
+    else
+    {
+        m_mapCtrl->addItemController(m_allParams, true, false);
+    }
 }

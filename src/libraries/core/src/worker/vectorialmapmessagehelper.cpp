@@ -625,7 +625,7 @@ void VectorialMapMessageHelper::fetchCharacterVision(const std::map<QString, QVa
     // clang-format on
 }
 
-std::map<QString, QVariant> readItemController(const QJsonObject& input)
+std::map<QString, QVariant> VectorialMapMessageHelper::readItemController(const QJsonObject& input)
 {
     std::map<QString, QVariant> maps;
 
@@ -665,11 +665,11 @@ void readModel(VectorialMapController* ctrl, const QJsonArray& items)
 {
     for(auto ref : items)
     {
-        ctrl->addItemController(readItemController(ref.toObject()), true, false);
+        ctrl->addItemController(VectorialMapMessageHelper::readItemController(ref.toObject()), true, false);
     }
 }
 
-QJsonObject saveItemController(vmap::VisualItemController* itemCtrl)
+QJsonObject VectorialMapMessageHelper::saveItemController(vmap::VisualItemController* itemCtrl)
 {
     using vv= vmap::VisualItemController;
     if(itemCtrl->removed())
@@ -705,6 +705,9 @@ QJsonObject saveItemController(vmap::VisualItemController* itemCtrl)
     case vv::ANCHOR:
     case vv::GRID:
     case vv::HIGHLIGHTER:
+        break;
+    case vmap::VisualItemController::LIGHT:
+        // TODO
         break;
     }
 

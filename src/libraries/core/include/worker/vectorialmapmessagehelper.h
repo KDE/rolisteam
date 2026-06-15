@@ -48,6 +48,8 @@ public:
     static void sendOffRemoveItems(const QStringList ids, const QString& mapId);
     static void sendOffStackItems(const QStringList& first, const QStringList& second, const QString& mapId);
     static QStringList readRemoveItems(NetworkMessageReader* msg);
+    static QJsonObject saveItemController(vmap::VisualItemController* itemCtrl);
+    static std::map<QString, QVariant> readItemController(const QJsonObject& input);
 
     // read message items
     static void readVectorialMapController(VectorialMapController* ctrl, const QByteArray& array);
