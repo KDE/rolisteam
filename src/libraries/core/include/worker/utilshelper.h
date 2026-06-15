@@ -95,7 +95,9 @@ void setParamIfAny(const QString& key, const std::map<QString, QVariant>& params
     auto it= params.find(key);
     if(params.end() != it)
     {
-        setter(it->second.value<T>());
+        auto var= it->second;
+        if(var.canConvert<T>())
+            setter(var.value<T>());
     }
 }
 
@@ -105,9 +107,12 @@ void setParamIfAny(const QString& key, const QHash<QString, QVariant>& params, s
     auto it= params.find(key);
     if(params.end() != it)
     {
-        setter(it.value().value<T>());
+        auto var= it.value();
+        if(var.canConvert<T>())
+            setter(var.value<T>());
     }
 }
+
 } // namespace utils
 } // namespace helper
 

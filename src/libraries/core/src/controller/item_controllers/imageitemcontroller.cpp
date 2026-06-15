@@ -60,7 +60,7 @@ ImageItemController::ImageItemController(const std::map<QString, QVariant>& para
 
     hu::setParamIfAny<QRectF>(cv::KEY_RECT, params, std::bind(&ImageItemController::setRect, this, _1));
 
-    if(rect().isNull())
+    if(m_rect.isNull())
         setRect(m_pix.rect());
 
     connect(this, &vmap::ImageItemController::pixmapChanged, this, [this] { setModified(); });
