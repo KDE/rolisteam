@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-10 10:16+0200\n"
+"PO-Revision-Date: 2026-06-15 15:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3809,9 +3809,6 @@ msgid "PC Token"
 msgstr "PC-token"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Licht"

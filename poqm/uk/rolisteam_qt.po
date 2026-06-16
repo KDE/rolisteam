@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-10 09:46+0300\n"
+"PO-Revision-Date: 2026-06-15 09:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -3824,9 +3824,6 @@ msgid "PC Token"
 msgstr "Жетон ІП"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Світло"

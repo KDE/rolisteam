@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-10 07:46-0300\n"
+"PO-Revision-Date: 2026-06-15 06:22-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -3813,9 +3813,6 @@ msgid "PC Token"
 msgstr "Toke de PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Luz"

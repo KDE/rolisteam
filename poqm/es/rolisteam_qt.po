@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-06-10 17:59+0100\n"
+"PO-Revision-Date: 2026-06-15 15:55+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3823,9 +3823,6 @@ msgid "PC Token"
 msgstr "Token del PJ"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Luz"
