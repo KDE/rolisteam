@@ -143,18 +143,18 @@ QPainterPath SightController::fowPath() const
     else
     {
         path.addRect(rect());
-        for(auto& fogs : m_fogSingularityList)
+        for(auto const& fogs : m_fogSingularityList)
         {
             QPainterPath subPoly;
             subPoly.addPolygon(fogs.first);
             path= fogs.second ? path.united(subPoly) : path.subtracted(subPoly);
         }
 
-        for(auto& fog : m_tempSingularityList)
+        for(auto it= m_tempPolygons.cbegin(); it != m_tempPolygons.cend(); ++it)
         {
             QPainterPath subPoly;
-            subPoly.addPolygon(fog.first);
-            path= fog.second ? path.united(subPoly) : path.subtracted(subPoly);
+            subPoly.addPolygon(it.value().first);
+            path= it.value().second ? path.united(subPoly) : path.subtracted(subPoly);
         }
     }
     return path;
@@ -162,14 +162,35 @@ QPainterPath SightController::fowPath() const
 
 void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
 {
-    temp ? m_tempSingularityList.push_back(std::make_pair(poly, mask)) :
-           m_fogSingularityList.push_back(std::make_pair(poly, mask));
-
-    if(!temp)
-        m_tempSingularityList.clear();
+    // Legacy path used by character vision and old callers.
+    // Temp polygons are stored under a fixed key so they don't collide
+    // with per-light entries inserted via setLightPolygon().
+    if(temp)
+    {
+        m_tempPolygons.insert(QStringLiteral("__legacy__"), std::make_pair(poly, mask));
+    }
+    else
+    {
+        m_fogSingularityList.push_back(std::make_pair(poly, mask));
+        // A permanent fog change invalidates any legacy temp entry,
+        // but must NOT clear per-light entries — lights are still present.
+        m_tempPolygons.remove(QStringLiteral("__legacy__"));
+    }
 
     if(!m_blockUpdate)
         emit fowPathChanged();
+}
+
+void SightController::setLightPolygon(const QString& lightId, const QPolygonF& poly, bool mask)
+{
+    m_tempPolygons.insert(lightId, std::make_pair(poly, mask));
+    if(!m_blockUpdate)
+        emit fowPathChanged();
+}
+
+QMap<QString, std::pair<QPolygonF, bool>> SightController::tempPolygons() const
+{
+    return m_tempPolygons;
 }
 
 void SightController::addCharacterVision(CharacterVision* vision)
@@ -192,22 +213,26 @@ void SightController::removeCharacterVision(CharacterVision* vision)
         emit characterCountChanged();
 }
 
+void SightController::removeLightPolygon(const QString& lightId)
+{
+    Q_ASSERT(!m_blockUpdate);
+    if(m_tempPolygons.remove(lightId) > 0)
+        emit fowPathChanged();
+}
+
 void SightController::clearTempPolygons()
 {
-    if(m_tempSingularityList.empty())
+    // Only clears the legacy single-vision entry, not per-light entries.
+    // Call removeLightPolygon(uuid) to remove a specific light.
+    if(!m_tempPolygons.contains(QStringLiteral("__legacy__")))
         return;
-    m_tempSingularityList.clear();
+    m_tempPolygons.remove(QStringLiteral("__legacy__"));
     emit fowPathChanged();
 }
 
 const std::vector<std::pair<QPolygonF, bool>>& SightController::singularityList() const
 {
     return m_fogSingularityList;
-}
-
-const std::vector<std::pair<QPolygonF, bool>>& SightController::tempSingularityList() const
-{
-    return m_tempSingularityList;
 }
 
 bool SightController::blockU() const

@@ -34,6 +34,7 @@ public:
 protected:
     virtual void updateChildPosition() override;
     void initChildPointItem();
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* event) override;
 
 private:
     QPointer<vmap::LightController> m_lightCtrl;

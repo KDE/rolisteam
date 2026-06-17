@@ -27,7 +27,6 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
 
     if(m_ctrl && m_ctrl->model())
     {
-
         connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllerAdded, this,
                 [this, updateFog](vmap::VisualItemController* item)
                 {
@@ -73,7 +72,8 @@ void LightController::aboutToBeRemoved()
     if(m_ctrl && m_ctrl->sightController())
     {
         m_ctrl->sightController()->setBlockU(false);
-        m_ctrl->sightController()->clearTempPolygons();
+        m_ctrl->sightController()->removeLightPolygon(uuid());
+        // m_ctrl->sightController()->clearTempPolygons();
     }
 }
 
@@ -101,32 +101,38 @@ void LightController::updateFogReveal(bool blockUpdate)
     if(!m_ctrl)
         return;
 
+    if(uuid().isEmpty())
+        return;
+
     auto* sightCtrl= m_ctrl->sightController();
     if(!sightCtrl)
         return;
 
     sightCtrl->setBlockU(blockUpdate);
-    sightCtrl->clearTempPolygons();
+    // sightCtrl->clearTempPolygons();
 
     QList<QLineF> segments= collectWallSegments();
     QPolygonF visibilityPoly= ShadowCaster::computeVisibilityPolygon(pos(), m_radius, segments);
 
+    QPolygonF finalPoly;
     if(segments.isEmpty())
     {
-        sightCtrl->addPolygon(visibilityPoly, false, true);
-        return;
+        finalPoly= visibilityPoly;
+    }
+    else
+    {
+        QPainterPath circlePath;
+        circlePath.setFillRule(Qt::WindingFill);
+        circlePath.addEllipse(pos(), m_radius, m_radius);
+
+        QPainterPath visPath;
+        visPath.setFillRule(Qt::WindingFill);
+        visPath.addPolygon(visibilityPoly);
+
+        finalPoly= circlePath.intersected(visPath).toFillPolygon();
     }
 
-    QPainterPath circlePath;
-    circlePath.setFillRule(Qt::WindingFill);
-    circlePath.addEllipse(pos(), m_radius, m_radius);
-
-    QPainterPath visPath;
-    visPath.setFillRule(Qt::WindingFill);
-    visPath.addPolygon(visibilityPoly);
-
-    QPainterPath revealPath= circlePath.intersected(visPath);
-    sightCtrl->addPolygon(revealPath.toFillPolygon(), false, true);
+    sightCtrl->setLightPolygon(uuid(), finalPoly, false);
 }
 
 QList<QLineF> LightController::collectWallSegments() const

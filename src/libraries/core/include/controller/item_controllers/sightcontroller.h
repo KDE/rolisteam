@@ -54,7 +54,7 @@ public:
     bool characterSight() const;
     const QList<QPointer<CharacterVision>>& visionData() const;
     const std::vector<std::pair<QPolygonF, bool>>& singularityList() const;
-    const std::vector<std::pair<QPolygonF, bool>>& tempSingularityList() const;
+    QMap<QString, std::pair<QPolygonF, bool>> tempPolygons() const;
 
     bool blockU() const;
     void setBlockU(bool newBlockUpdate);
@@ -62,6 +62,8 @@ public:
 
 public slots:
     void addPolygon(const QPolygonF& poly, bool mask, bool temp= false);
+    void setLightPolygon(const QString& lightId, const QPolygonF& poly, bool mask);
+    void removeLightPolygon(const QString& lightId);
     void addCharacterVision(CharacterVision* vision);
     void removeCharacterVision(CharacterVision* vision);
     void setRect(const QRectF& rect);
@@ -75,18 +77,17 @@ signals:
     void characterSightChanged();
     void characterCountChanged();
     void requiredUpdate();
-
     void blockUChanged();
 
 private:
     std::vector<std::pair<QPolygonF, bool>> m_fogSingularityList;
-    std::vector<std::pair<QPolygonF, bool>> m_tempSingularityList;
+    QMap<QString, std::pair<QPolygonF, bool>> m_tempPolygons;
     QList<QPointer<CharacterVision>> m_visions;
     bool m_characterSight= false;
     CharacterVision::SHAPE m_defaultShape= CharacterVision::ANGLE;
     QRectF m_rect= QRectF(0, 0, 1000, 1000);
     QPainterPath m_remoteFowPath;
-    bool m_blockUpdate;
+    bool m_blockUpdate{false};
 };
 } // namespace vmap
 
