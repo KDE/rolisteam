@@ -1395,8 +1395,7 @@ void MessageHelper::sendOffVMap(VectorialMapController* ctrl)
                                     return i + (ctrl->removed() ? 0 : 1);
                                 });
 
-    qDebug() << "Before sending map: " << count << "vs" << data.size();
-
+    Q_UNUSED(count)
     msg.uint64(data.size());
 
     std::for_each(data.begin(), data.end(),

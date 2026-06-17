@@ -112,10 +112,9 @@ void NetworkMessageReader::setInternalData(const QByteArray& bytes)
 
 QByteArray NetworkMessageReader::data() const
 {
-    auto size= m_buffer - m_end;
-    m_header->dataSize= size - sizeof(NetworkMessageHeader);
-    QByteArray array(m_buffer, static_cast<int>(size));
-    return array;
+    auto headerPtr= reinterpret_cast<const char*>(m_header);
+    auto size= static_cast<int>(m_end - headerPtr);
+    return QByteArray(headerPtr, size);
 }
 
 NetMsg::Category NetworkMessageReader::category() const

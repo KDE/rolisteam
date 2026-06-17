@@ -314,8 +314,7 @@ void NetworkMessageWriter::dateTime(const QDateTime& time)
 
 QByteArray NetworkMessageWriter::data() const
 {
-    auto size= getDataSize() + sizeof(NetworkMessageHeader);
     m_header->dataSize= getDataSize();
-    QByteArray array(m_buffer, static_cast<int>(size));
-    return array;
+    auto size= static_cast<int>(m_currentPos - m_buffer);
+    return QByteArray(m_buffer, size);
 }
