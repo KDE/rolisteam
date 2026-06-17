@@ -173,8 +173,9 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
         emit themeChanged(c->currentTheme());
     });
     connect(this, &GameController::themeChanged, this, [this](const QString& uuid){
-        auto theme= m_preferencesDialogController->theme(uuid);
-        m_contentCtrl->setCurrentTheme(theme);
+        m_preferencesDialogController->setCurrentthemeByUUid(uuid);
+        //auto theme= m_preferencesDialogController->theme(uuid);
+        //m_contentCtrl->setCurrentTheme(theme);
     });
     connect(m_preferencesDialogController.get(), &PreferencesController::currentThemeIndexChanged, this, [this](){
         m_contentCtrl->setCurrentTheme(m_preferencesDialogController->currentTheme());
@@ -519,8 +520,7 @@ void GameController::setDataFromProfile(int profileIndex)
     {
         auto characters= profile->characters();
         std::for_each(
-            characters.begin(), characters.end(),
-            [local](const connection::CharacterData& data)
+            characters.begin(), characters.end(), [local](const connection::CharacterData& data)
             { local->addCharacter(data.m_uuid, data.m_name, data.m_color, data.m_avatarData, data.m_params, false); });
     }
     else

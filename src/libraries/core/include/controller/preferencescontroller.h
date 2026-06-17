@@ -84,6 +84,8 @@ public:
 
     GameController* gameCtrl() const;
 
+    void setCurrentthemeByUUid(const QString& uuid);
+
 signals:
     void currentThemeIndexChanged();
     void currentLangIndexChanged();

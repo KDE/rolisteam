@@ -363,7 +363,7 @@ void MainWindow::setupUi()
 
     connect(prefCtrl, &PreferencesController::currentThemeIndexChanged, this, updateUI);
     connect(prefCtrl, &PreferencesController::currentThemeChanged, this, updateUI);
-    connect(m_gameController, &GameController::themeChanged, this,
+    /*connect(m_gameController, &GameController::themeChanged, this,
             [this](const QString& uuid)
             {
                 auto prefCtrl= m_gameController->preferencesController();
@@ -374,7 +374,7 @@ void MainWindow::setupUi()
                 qApp->setStyle(theme->getStyle());
                 qApp->setPalette(theme->getPalette());
                 qApp->setStyleSheet(theme->getCss());
-            });
+            });*/
 
     linkActionToMenu();
     createTabs();

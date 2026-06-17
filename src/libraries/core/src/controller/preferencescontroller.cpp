@@ -512,6 +512,14 @@ GameController* PreferencesController::gameCtrl() const
     return m_gameCtrl;
 }
 
+void PreferencesController::setCurrentthemeByUUid(const QString& uuid)
+{
+    auto index= m_themeModel->indexOf(uuid);
+    if(index < 0)
+        return;
+    setCurrentThemeIndex(index);
+}
+
 void PreferencesController::setGameCtrl(GameController* newGameCtrl)
 {
     if(m_gameCtrl == newGameCtrl)
