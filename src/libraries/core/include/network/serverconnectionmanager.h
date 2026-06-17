@@ -75,8 +75,8 @@ public slots:
 
 protected:
     void removeSocket(QTcpSocket* socket);
-    void kickClient(QString id, bool isAdmin, QString senderId);
-    void banClient(QString id, bool isAdmin, QString senderId);
+    void kickClient(const QString& id, bool isAdmin, const QString& senderId);
+    void banClient(const QString& id, bool isAdmin, const QString& senderId);
 
 protected slots:
     // admin

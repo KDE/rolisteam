@@ -199,7 +199,7 @@ public:
     virtual NetMsg::Action action() const= 0;
     void setLinkToServer(NetworkLink* server);
     virtual NetworkMessage::RecipientMode getRecipientMode() const= 0;
-    virtual QStringList getRecipientList() const= 0;
+    virtual const QStringList& getRecipientList() const= 0;
     quint64 getSize() const;
     virtual NetworkMessageHeader* buffer() const= 0;
     virtual QByteArray data() const= 0;

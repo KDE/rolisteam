@@ -25,7 +25,7 @@
 quint64 computeTotalSize(const std::map<Channel*, quint64>& map)
 {
     quint64 totalSize= 0;
-    for(auto pair : map)
+    for(const auto& pair : map)
     {
         totalSize+= pair.second;
     }
@@ -679,7 +679,7 @@ void ChannelModel::setChannelMemorySize(Channel* chan, quint64 size)
 void ChannelModel::emptyChannelMemory()
 {
     m_shield= true;
-    for(auto pair : m_sizeMap)
+    for(auto& pair : m_sizeMap)
     {
         QMetaObject::invokeMethod(pair.first, "clearData", Qt::QueuedConnection);
         pair.second= 0;

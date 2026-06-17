@@ -39,7 +39,8 @@ class NETWORK_EXPORT NetworkMessageWriter : public NetworkMessage
 {
 public:
     NetworkMessageWriter(NetMsg::Category categorie, NetMsg::Action action,
-                         NetworkMessage::RecipientMode mode= NetworkMessage::All, int size= 128);
+                         NetworkMessage::RecipientMode mode= NetworkMessage::All, int size= 512);
+    void reserve(int size);
     virtual ~NetworkMessageWriter() override;
 
     NetMsg::Category category() const override;
@@ -78,7 +79,7 @@ public:
     void real(qreal data);
 
     void setRecipientList(QStringList, NetworkMessage::RecipientMode mode);
-    virtual QStringList getRecipientList() const override;
+    virtual const QStringList& getRecipientList() const override;
     NetworkMessage::RecipientMode getRecipientMode() const override;
     QByteArray data() const override;
 

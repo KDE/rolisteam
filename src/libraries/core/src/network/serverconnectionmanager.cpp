@@ -264,12 +264,10 @@ void ServerConnectionManager::sendOffAuthFail()
         LogController::Info);
 }
 
-void ServerConnectionManager::kickClient(QString id, bool isAdmin, QString senderId)
+void ServerConnectionManager::kickClient(const QString& id, bool isAdmin, const QString& senderId)
 {
-    auto keys= m_connections.keys();
-    for(auto& key : keys)
+    for(auto* value : std::as_const(m_connections))
     {
-        auto value= m_connections[key];
         if(value && value->uuid() == id)
         {
             emit eventOccured(tr("User has been kick out: %2 - %1.").arg(value->name(), value->getIpAddress()),
@@ -280,12 +278,10 @@ void ServerConnectionManager::kickClient(QString id, bool isAdmin, QString sende
     m_model->kick(id, isAdmin, senderId);
 }
 
-void ServerConnectionManager::banClient(QString id, bool isAdmin, QString senderId)
+void ServerConnectionManager::banClient(const QString& id, bool isAdmin, const QString& senderId)
 {
-    auto keys= m_connections.keys();
-    for(auto& key : keys)
+    for(auto* value : std::as_const(m_connections))
     {
-        auto value= m_connections[key];
         if(value && value->uuid() == id)
         {
             emit eventOccured(tr("User has been ban: %2 - %1.").arg(value->name(), value->getIpAddress()),

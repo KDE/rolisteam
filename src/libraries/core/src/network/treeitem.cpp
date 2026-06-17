@@ -64,7 +64,7 @@ QString TreeItem::uuid() const
 {
     return m_id;
 }
-TreeItem* TreeItem::getChildById(QString)
+TreeItem* TreeItem::getChildById(const QString&)
 {
     return nullptr;
 }
@@ -83,7 +83,7 @@ void TreeItem::setUuid(const QString& id)
     emit uuidChanged();
 }
 
-bool TreeItem::addChildInto(QString, TreeItem*)
+bool TreeItem::addChildInto(const QString&, TreeItem*)
 {
     return false;
 }

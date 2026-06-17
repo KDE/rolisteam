@@ -88,7 +88,7 @@ public:
 
     NetworkMessage::RecipientMode getRecipientMode() const override;
 
-    virtual QStringList getRecipientList() const override;
+    virtual const QStringList& getRecipientList() const override;
 
     void setInternalData(const QByteArray& bytes);
     QByteArray data() const override;

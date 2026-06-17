@@ -26,7 +26,7 @@ signals:
     void playerNameChanged(const QString& uuid, const QString& name);
 
 public slots:
-    void dispatchMessage(QByteArray msg, Channel* channel, ServerConnection* emitter);
+    void dispatchMessage(const QByteArray& msg, Channel* channel, ServerConnection* emitter);
 };
 
 #endif // MESSAGEDISPATCHER_H

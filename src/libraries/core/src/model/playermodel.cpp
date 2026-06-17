@@ -143,23 +143,22 @@ QVariant PlayerModel::data(const QModelIndex& index, int role) const
     if(!person)
         return {};
 
-    Character* character= dynamic_cast<Character*>(person);
-    Player* player= dynamic_cast<Player*>(person);
+    bool isCharacter= person->isLeaf();
+    Player* player= isCharacter ? nullptr : static_cast<Player*>(person);
+    Character* character= isCharacter ? static_cast<Character*>(person) : nullptr;
     bool isGM= false;
-    bool isCharacter= (character != nullptr);
     bool isNPC= false;
 
     if(isCharacter)
         isNPC= character->isNpc();
 
-    if((player != nullptr))
-    {
+    if(player)
         isGM= player->isGM();
-    }
+
     if(isGM && (role == Qt::BackgroundRole))
     {
-        QPalette pal;
-        return QVariant(pal.color(QPalette::Active, QPalette::Dark));
+        static const QColor gmColor= QPalette().color(QPalette::Active, QPalette::Dark);
+        return QVariant(gmColor);
     }
     QVariant var;
     switch(role)

@@ -28,7 +28,7 @@
 
 Channel::Channel(QString str)
 {
-    m_name= str;
+    m_name= std::move(str);
 
     connect(this, &Channel::currentGMChanged, this, &Channel::gameMasterHasChanged);
 }
@@ -94,7 +94,7 @@ TreeItem* Channel::getChildAt(int row)
     return nullptr;
 }
 
-const QList<QPointer<TreeItem>> Channel::childrenItem() const
+const QList<QPointer<TreeItem>>& Channel::childrenItem() const
 {
     return m_child;
 }
@@ -118,45 +118,40 @@ void Channel::sendMessage(NetworkMessage* msg, ServerConnection* emitter, bool m
 }
 void Channel::sendToMany(NetworkMessage* msg, ServerConnection* tcp, bool deleteMsg)
 {
-    auto const recipient= msg->getRecipientList();
-    int i= 0;
-    for(auto& client : m_child)
+    const QStringList& recipientList= msg->getRecipientList();
+    const QSet<QString> recipientSet(recipientList.cbegin(), recipientList.cend());
+
+    ServerConnection* lastRecipient= nullptr;
+    for(auto* conn : m_connections)
+        if(conn && conn != tcp && recipientSet.contains(conn->uuid()))
+            lastRecipient= conn;
+
+    for(auto* conn : m_connections)
     {
-        auto other= dynamic_cast<ServerConnection*>(client.data());
-
-        if((nullptr != other) && (other != tcp) && (recipient.contains(other->uuid())))
-        {
-            bool b= false;
-            if(i + 1 == recipient.size())
-                b= deleteMsg;
-
-            QMetaObject::invokeMethod(other, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
-                                      Q_ARG(bool, b));
-            ++i;
-        }
+        if(!conn || conn == tcp || !recipientSet.contains(conn->uuid()))
+            continue;
+        QMetaObject::invokeMethod(conn, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
+                                  Q_ARG(bool, deleteMsg && conn == lastRecipient));
     }
 }
 
 void Channel::sendToAll(NetworkMessage* msg, ServerConnection* tcp, bool deleteMsg)
 {
-    int i= 0;
-    for(auto& client : m_child)
-    {
-        ServerConnection* other= dynamic_cast<ServerConnection*>(client.data());
-        if((nullptr != other) && (other != tcp))
-        {
-            bool b= false;
-            if(i + 1 == m_child.size())
-                b= deleteMsg;
+    ServerConnection* lastRecipient= nullptr;
+    for(auto* conn : m_connections)
+        if(conn && conn != tcp)
+            lastRecipient= conn;
 
-            QMetaObject::invokeMethod(other, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
-                                      Q_ARG(bool, b));
-        }
-        ++i;
+    for(auto* conn : m_connections)
+    {
+        if(!conn || conn == tcp)
+            continue;
+        QMetaObject::invokeMethod(conn, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
+                                  Q_ARG(bool, deleteMsg && conn == lastRecipient));
     }
 }
 
-bool Channel::contains(QString id)
+bool Channel::contains(const QString& id)
 {
     auto dupplicate= std::find_if(m_child.begin(), m_child.end(), [id](TreeItem* item) { return item->uuid() == id; });
 
@@ -180,6 +175,8 @@ int Channel::addChild(TreeItem* item)
         QPointer<TreeItem> itemp= item;
         if(tcp.isNull())
             return result;
+
+        m_connections.append(tcp);
 
         auto disconnect= [this, itemp, tcp]()
         {
@@ -222,7 +219,7 @@ int Channel::addChild(TreeItem* item)
     return result;
 }
 
-bool Channel::addChildInto(QString id, TreeItem* child)
+bool Channel::addChildInto(const QString& id, TreeItem* child)
 {
     if(m_id == id)
     {
@@ -339,7 +336,7 @@ void Channel::clear()
     qDeleteAll(m_child);
     m_child.clear();
 }
-TreeItem* Channel::getChildById(QString id)
+TreeItem* Channel::getChildById(const QString& id)
 {
     for(auto& item : m_child)
     {
@@ -362,7 +359,7 @@ TreeItem* Channel::getChildById(QString id)
     return nullptr;
 }
 
-ServerConnection* Channel::getClientById(QString id)
+ServerConnection* Channel::getClientById(const QString& id)
 {
     ServerConnection* result= nullptr;
     for(auto& item : m_child)
@@ -399,6 +396,7 @@ bool Channel::removeClient(ServerConnection* client)
 
     auto id= client->uuid();
     disconnect(client);
+    m_connections.removeOne(client);
 
     auto msg= new NetworkMessageWriter(NetMsg::UserCategory, NetMsg::DelPlayerAction);
     msg->string8(id);

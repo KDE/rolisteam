@@ -372,7 +372,9 @@ QString ServerConnection::getServerPassword() const
 
 void ServerConnection::forwardMessage()
 {
-    QByteArray array(reinterpret_cast<char*>(&m_header), sizeof(NetworkMessageHeader));
+    QByteArray array;
+    array.reserve(static_cast<int>(sizeof(NetworkMessageHeader)) + static_cast<int>(m_header.dataSize));
+    array.append(reinterpret_cast<char*>(&m_header), sizeof(NetworkMessageHeader));
     array.append(m_buffer, static_cast<int>(m_header.dataSize));
     if(isCurrentState(m_disconnected))
         return;

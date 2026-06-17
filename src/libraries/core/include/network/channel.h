@@ -70,11 +70,11 @@ public:
     void sendToMany(NetworkMessage* msg, ServerConnection* sender, bool deleteMsg= false);
 
     TreeItem* getChildAt(int row) override;
-    const QList<QPointer<TreeItem>> childrenItem() const;
+    const QList<QPointer<TreeItem>>& childrenItem() const;
 
     int addChild(TreeItem*) override;
 
-    bool addChildInto(QString id, TreeItem* child) override;
+    bool addChildInto(const QString& id, TreeItem* child) override;
 
     virtual void clear() override;
 
@@ -90,8 +90,8 @@ public:
     QString getCurrentGmId();
 
     virtual void kick(const QString& str, bool isAdmin, const QString& sourceId) override;
-    TreeItem* getChildById(QString id) override;
-    ServerConnection* getClientById(QString id);
+    TreeItem* getChildById(const QString& id) override;
+    ServerConnection* getClientById(const QString& id);
 
     quint64 memorySize() const;
     void setMemorySize(quint64 size);
@@ -99,7 +99,7 @@ public:
     bool locked() const;
     void setLocked(bool locked);
 
-    bool contains(QString id);
+    bool contains(const QString& id);
 
 public slots:
     void clearData();
@@ -125,6 +125,7 @@ private:
     bool m_usersListed= false;
 
     QList<QPointer<TreeItem>> m_child;
+    QList<ServerConnection*> m_connections;
     QList<NetworkMessage*> m_dataToSend;
     quint64 m_memorySize= 0;
     QPointer<ServerConnection> m_currentGm;

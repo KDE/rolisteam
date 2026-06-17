@@ -201,6 +201,12 @@ void NetworkMessageWriter::rgb(unsigned int color)
     m_currentPos+= size;
 }
 
+void NetworkMessageWriter::reserve(int size)
+{
+    if(m_buffer + size > m_end)
+        makeRoom(size - static_cast<int>(m_end - m_currentPos));
+}
+
 void NetworkMessageWriter::makeRoom(int size)
 {
     while(m_currentPos + size > m_end)
@@ -286,7 +292,7 @@ void NetworkMessageWriter::setRecipientList(QStringList list, NetworkMessage::Re
     }
 }
 
-QStringList NetworkMessageWriter::getRecipientList() const
+const QStringList& NetworkMessageWriter::getRecipientList() const
 {
     return m_recipientList;
 }

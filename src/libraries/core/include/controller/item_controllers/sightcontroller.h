@@ -88,6 +88,8 @@ private:
     QRectF m_rect= QRectF(0, 0, 1000, 1000);
     QPainterPath m_remoteFowPath;
     bool m_blockUpdate{false};
+    mutable QPainterPath m_cachedFowPath;
+    mutable bool m_fowPathDirty{true};
 };
 } // namespace vmap
 

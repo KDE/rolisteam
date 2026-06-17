@@ -115,13 +115,11 @@ bool vmap::VmapItemModel::appendItemController(vmap::VisualItemController* item)
     if(!item)
         return false;
 
-    if(std::end(m_items)
-       != std::find_if(std::begin(m_items), std::end(m_items),
-                       [item](const std::unique_ptr<vmap::VisualItemController>& ctrl)
-                       { return item->uuid() == ctrl->uuid(); }))
+    if(m_itemIndex.contains(item->uuid()))
         return false;
 
     auto size= static_cast<int>(m_items.size());
+    m_itemIndex.insert(item->uuid(), item);
     std::unique_ptr<vmap::VisualItemController> ctrl(item);
     beginInsertRows(QModelIndex(), size, size);
     m_items.push_back(std::move(ctrl));
@@ -142,29 +140,35 @@ void vmap::VmapItemModel::setModifiedToAllItem()
 
 bool vmap::VmapItemModel::removeItemController(const QSet<QString>& ids, bool fromNetwork)
 {
-    auto s= m_items.size();
+    std::vector<int> toRemove;
+    for(int i= 0; i < static_cast<int>(m_items.size()); ++i)
+        if(ids.contains(m_items[static_cast<std::size_t>(i)]->uuid()))
+            toRemove.push_back(i);
 
-    beginResetModel();
-    m_items.erase(std::remove_if(std::begin(m_items), std::end(m_items),
-                                 [ids](const std::unique_ptr<vmap::VisualItemController>& itemCtrl)
-                                 {
-                                     auto res= ids.contains(itemCtrl->uuid());
-                                     if(res)
-                                         itemCtrl->aboutToBeRemoved();
-                                     return res;
-                                 }),
-                  std::end(m_items));
-    endResetModel();
+    if(toRemove.empty())
+        return false;
+
+    for(int i= static_cast<int>(toRemove.size()) - 1; i >= 0; --i)
+    {
+        auto row= toRemove[static_cast<std::size_t>(i)];
+        auto& ctrl= m_items[static_cast<std::size_t>(row)];
+        ctrl->aboutToBeRemoved();
+        beginRemoveRows(QModelIndex(), row, row);
+        m_itemIndex.remove(ctrl->uuid());
+        m_items.erase(m_items.begin() + row);
+        endRemoveRows();
+    }
 
     if(!fromNetwork)
         emit itemControllersRemoved(ids.values());
-    return s > m_items.size();
+    return true;
 }
 
 void vmap::VmapItemModel::clearData()
 {
     beginResetModel();
     m_items.clear();
+    m_itemIndex.clear();
     endResetModel();
 }
 
@@ -179,16 +183,14 @@ std::vector<VisualItemController*> VmapItemModel::items() const
     return vec;
 }
 
+const std::vector<std::unique_ptr<vmap::VisualItemController>>& VmapItemModel::itemControllers() const
+{
+    return m_items;
+}
+
 VisualItemController* VmapItemModel::item(const QString& id) const
 {
-    auto it= std::find_if(std::begin(m_items), std::end(m_items),
-                          [id](const std::unique_ptr<vmap::VisualItemController>& itemCtrl)
-                          { return id == itemCtrl->uuid(); });
-
-    if(it == std::end(m_items))
-        return nullptr;
-
-    return it->get();
+    return m_itemIndex.value(id, nullptr);
 }
 
 } // namespace vmap

@@ -138,7 +138,7 @@ bool NetworkMessageReader::isSizeReadable(size_t size)
     return !m_outMemory;
 }
 
-QStringList NetworkMessageReader::getRecipientList() const
+const QStringList& NetworkMessageReader::getRecipientList() const
 {
     return m_recipientList;
 }

@@ -35,13 +35,13 @@ public:
     QString uuid() const;
     void setUuid(const QString& id);
 
-    virtual bool addChildInto(QString id, TreeItem* child);
+    virtual bool addChildInto(const QString& id, TreeItem* child);
 
     virtual void clear();
 
     virtual void kick(const QString& str, bool isAdmin, const QString& senderId);
 
-    virtual TreeItem* getChildById(QString id);
+    virtual TreeItem* getChildById(const QString& id);
     virtual bool removeChild(TreeItem*);
 
 signals:

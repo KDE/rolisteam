@@ -2,11 +2,12 @@
 #include "network/networkmessagereader.h"
 
 #include "network/channel.h"
+#include <QLoggingCategory>
 #include <memory>
 
 MessageDispatcher::MessageDispatcher(QObject* parent) : QObject(parent) {}
 
-void MessageDispatcher::dispatchMessage(QByteArray data, Channel* channel, ServerConnection* emitter)
+void MessageDispatcher::dispatchMessage(const QByteArray& data, Channel* channel, ServerConnection* emitter)
 {
     if(data.isEmpty())
         return;
@@ -22,7 +23,7 @@ void MessageDispatcher::dispatchMessage(QByteArray data, Channel* channel, Serve
         qWarning() << "####\nchannel is nullptr\n####";
     }
 
-    if(emitter)
+    if(emitter && QLoggingCategory::defaultCategory()->isInfoEnabled())
         qInfo() << "[Server][Received Message]" << cat2String(msg->header()) << act2String(msg->header()) << channel
                 << emitter->name() << msg->getSize();
 

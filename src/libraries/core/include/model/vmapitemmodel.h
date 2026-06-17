@@ -22,6 +22,7 @@
 
 #include "controller/item_controllers/visualitemcontroller.h"
 #include <QAbstractListModel>
+#include <QHash>
 #include <core_global.h>
 #include <memory>
 #include <vector>
@@ -65,6 +66,7 @@ public:
     void clearData();
 
     std::vector<vmap::VisualItemController*> items() const;
+    const std::vector<std::unique_ptr<vmap::VisualItemController>>& itemControllers() const;
     vmap::VisualItemController* item(const QString& id) const;
 
 public slots:
@@ -77,6 +79,7 @@ signals:
 
 private:
     std::vector<std::unique_ptr<vmap::VisualItemController>> m_items;
+    QHash<QString, vmap::VisualItemController*> m_itemIndex;
 };
 } // namespace vmap
 

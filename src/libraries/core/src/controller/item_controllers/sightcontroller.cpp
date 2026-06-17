@@ -52,7 +52,10 @@ SightController::SightController(VectorialMapController* ctrl, QObject* parent)
             [this]()
             {
                 if(!m_blockUpdate)
+                {
+                    m_fowPathDirty= true;
                     emit fowPathChanged();
+                }
             });
 }
 
@@ -98,6 +101,7 @@ void SightController::setRect(const QRectF& rect)
         return;
 
     m_rect= rect;
+    m_fowPathDirty= true;
     emit rectChanged(m_rect);
 }
 
@@ -114,11 +118,15 @@ void SightController::setFowPath(const QPainterPath& path)
     if(m_remoteFowPath == path)
         return;
     m_remoteFowPath= path;
+    m_fowPathDirty= true;
     emit fowPathChanged();
 }
 
 QPainterPath SightController::fowPath() const
 {
+    if(!m_fowPathDirty)
+        return m_cachedFowPath;
+
     QPainterPath path;
     if(remote())
     {
@@ -157,7 +165,9 @@ QPainterPath SightController::fowPath() const
             path= it.value().second ? path.united(subPoly) : path.subtracted(subPoly);
         }
     }
-    return path;
+    m_cachedFowPath= path;
+    m_fowPathDirty= false;
+    return m_cachedFowPath;
 }
 
 void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
@@ -178,14 +188,20 @@ void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
     }
 
     if(!m_blockUpdate)
+    {
+        m_fowPathDirty= true;
         emit fowPathChanged();
+    }
 }
 
 void SightController::setLightPolygon(const QString& lightId, const QPolygonF& poly, bool mask)
 {
     m_tempPolygons.insert(lightId, std::make_pair(poly, mask));
     if(!m_blockUpdate)
+    {
+        m_fowPathDirty= true;
         emit fowPathChanged();
+    }
 }
 
 QMap<QString, std::pair<QPolygonF, bool>> SightController::tempPolygons() const
@@ -217,7 +233,10 @@ void SightController::removeLightPolygon(const QString& lightId)
 {
     Q_ASSERT(!m_blockUpdate);
     if(m_tempPolygons.remove(lightId) > 0)
+    {
+        m_fowPathDirty= true;
         emit fowPathChanged();
+    }
 }
 
 void SightController::clearTempPolygons()
@@ -227,6 +246,7 @@ void SightController::clearTempPolygons()
     if(!m_tempPolygons.contains(QStringLiteral("__legacy__")))
         return;
     m_tempPolygons.remove(QStringLiteral("__legacy__"));
+    m_fowPathDirty= true;
     emit fowPathChanged();
 }
 
