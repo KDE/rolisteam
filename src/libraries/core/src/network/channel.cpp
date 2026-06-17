@@ -106,8 +106,8 @@ void Channel::sendMessage(NetworkMessage* msg, ServerConnection* emitter, bool m
         sendToAll(msg, emitter, !mustBeSaved);
         if(mustBeSaved)
         {
-            auto msg2= new NetworkMessageReader(*msg);
-            m_dataToSend.append(msg2);
+            /*auto msg2= new NetworkMessageReader(*msg);
+            m_dataToSend.append(msg2);*/
             setMemorySize(m_memorySize + msg->getSize());
         }
     }
