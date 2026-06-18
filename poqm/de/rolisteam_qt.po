@@ -2070,7 +2070,7 @@ msgstr "Tabelle"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:78
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:69
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Image"
@@ -3903,54 +3903,54 @@ msgctxt "QObject|"
 msgid "Add character to %1"
 msgstr "Charakter zu %1 hinzufügen"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:33
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Line"
 msgstr "Linie"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:34
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
 msgctxt "QObject|"
 msgid "Filled Ellipse"
 msgstr "Gefüllte Ellipse"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
 msgctxt "QObject|"
 msgid "Empty Ellipse"
 msgstr "Leere Ellipse"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
 msgctxt "QObject|"
 msgid "Empty Rectangle"
 msgstr "Leeres Rechteck"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
 msgctxt "QObject|"
 msgid "Filled Rectangle"
 msgstr "Gefülltes Rechteck"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Text"
 msgstr "Text"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "Text with border"
 msgstr "Text mit Umrandung"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
 msgctxt "QObject|"
 msgid "NPC Token"
 msgstr "NSC-Token"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
 msgctxt "QObject|"
 msgid "PC Token"
 msgstr "SC-Token"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 #, fuzzy
 #| msgctxt "BorderListEditor|"
 #| msgid "Right"
@@ -3958,18 +3958,18 @@ msgctxt "QObject|"
 msgid "Light"
 msgstr "Rechts"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "Stift"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "Pfad"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:50
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"

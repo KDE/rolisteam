@@ -2004,7 +2004,7 @@ msgstr "Таблиця"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:78
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:69
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Image"
@@ -3776,70 +3776,70 @@ msgctxt "QObject|"
 msgid "Add character to %1"
 msgstr "Додати персонаж до %1"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:33
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Line"
 msgstr "Рядок"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:34
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
 msgctxt "QObject|"
 msgid "Filled Ellipse"
 msgstr "Заповнений еліпс"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
 msgctxt "QObject|"
 msgid "Empty Ellipse"
 msgstr "Порожній еліпс"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
 msgctxt "QObject|"
 msgid "Empty Rectangle"
 msgstr "Порожній прямокутник"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
 msgctxt "QObject|"
 msgid "Filled Rectangle"
 msgstr "Заповнений прямокутник"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Text"
 msgstr "Текст"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "Text with border"
 msgstr "Текст із рамкою"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
 msgctxt "QObject|"
 msgid "NPC Token"
 msgstr "Жетон НІП"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
 msgctxt "QObject|"
 msgid "PC Token"
 msgstr "Жетон ІП"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Світло"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "Перо"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "Шлях"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:50
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"

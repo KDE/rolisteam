@@ -2164,7 +2164,7 @@ msgstr "表格"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:78
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:69
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Image"
@@ -4001,54 +4001,54 @@ msgctxt "QObject|"
 msgid "Add character to %1"
 msgstr "新增角色到 %1"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:33
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Line"
 msgstr "線段"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:34
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
 msgctxt "QObject|"
 msgid "Filled Ellipse"
 msgstr "填滿的橢圓"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
 msgctxt "QObject|"
 msgid "Empty Ellipse"
 msgstr "空白橢圓"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
 msgctxt "QObject|"
 msgid "Empty Rectangle"
 msgstr "空白矩形"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
 msgctxt "QObject|"
 msgid "Filled Rectangle"
 msgstr "填滿的矩形"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Text"
 msgstr "文字"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "Text with border"
 msgstr "有邊框的文字"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
 msgctxt "QObject|"
 msgid "NPC Token"
 msgstr "NPC 權杖"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
 msgctxt "QObject|"
 msgid "PC Token"
 msgstr "玩家角色權杖"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 #, fuzzy
 #| msgctxt "BorderListEditor|"
 #| msgid "Right"
@@ -4056,18 +4056,18 @@ msgctxt "QObject|"
 msgid "Light"
 msgstr "右"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "筆"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "路徑"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:50
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"

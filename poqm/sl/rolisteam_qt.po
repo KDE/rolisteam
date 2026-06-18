@@ -2008,7 +2008,7 @@ msgstr "Tabela"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:78
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:69
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Image"
@@ -3775,70 +3775,70 @@ msgctxt "QObject|"
 msgid "Add character to %1"
 msgstr "Dodaj lik v %1"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:33
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Line"
 msgstr "Črta"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:34
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
 msgctxt "QObject|"
 msgid "Filled Ellipse"
 msgstr "Zapolnjena elipsa"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
 msgctxt "QObject|"
 msgid "Empty Ellipse"
 msgstr "Prazna elipsa"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:36
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
 msgctxt "QObject|"
 msgid "Empty Rectangle"
 msgstr "Prazen pravokotnik"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:37
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
 msgctxt "QObject|"
 msgid "Filled Rectangle"
 msgstr "Zapolnjen pravokotnik"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:38
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:43
 msgctxt "QObject|"
 msgid "Text"
 msgstr "Besedilo"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:39
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
 msgctxt "QObject|"
 msgid "Text with border"
 msgstr "Besedilo z obrobo"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:40
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:42
 msgctxt "QObject|"
 msgid "NPC Token"
 msgstr "Žeton NPC"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:41
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
 msgctxt "QObject|"
 msgid "PC Token"
 msgstr "Žeton PC"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:43
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Svetloba"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:44
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
 msgid "Pen"
 msgstr "Pero"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
 msgid "Path"
 msgstr "Pot"
 
-#: src/libraries/core/src/undoCmd/addvmapitem.cpp:48
+#: src/libraries/core/src/undoCmd/addvmapitem.cpp:50
 #, qt-format
 msgctxt "QObject|"
 msgid "add %1 item"
