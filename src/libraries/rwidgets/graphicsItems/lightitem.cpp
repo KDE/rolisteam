@@ -97,7 +97,7 @@ void LightItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
 
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing);
-
+    setChildrenVisible(hasFocusOrChild());
     const qreal radius= m_lightCtrl->radius();
     const QPointF center(0, 0);
 
