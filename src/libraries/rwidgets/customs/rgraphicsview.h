@@ -54,10 +54,11 @@ public slots:
     void centerOnItem();
 
 protected:
-    void mousePressEvent(QMouseEvent* event);
-    void wheelEvent(QWheelEvent* event);
-    void contextMenuEvent(QContextMenuEvent* event);
-    void resizeEvent(QResizeEvent* event);
+    void mousePressEvent(QMouseEvent* event) override;
+    void wheelEvent(QWheelEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event) override;
+    void resizeEvent(QResizeEvent* event) override;
+    void scrollContentsBy(int dx, int dy) override;
 
     void createAction();
     void lockItems(const QList<vmap::VisualItemController*>& list);

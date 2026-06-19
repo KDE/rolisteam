@@ -109,11 +109,18 @@ void RGraphicsView::wheelEvent(QWheelEvent* event)
     if(event->modifiers() & Qt::ShiftModifier)
     {
         setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-        QPoint degrees= event->angleDelta() / 8.0;
-        qreal factor= 1.0 + degrees.ry() / 100.0;
-        m_ctrl->setZoomLevel(m_ctrl->zoomLevel() * factor);
-        scale(factor, factor);
-        event->accept();
+
+        constexpr double zoomStep= 1.15;
+
+        if(event->angleDelta().y() > 0)
+            m_ctrl->setZoomLevel(m_ctrl->zoomLevel() * zoomStep);
+        else
+            m_ctrl->setZoomLevel(m_ctrl->zoomLevel() / zoomStep);
+
+        QTransform t;
+        t.scale(m_ctrl->zoomLevel(), m_ctrl->zoomLevel());
+        setTransform(t);
+
         setTransformationAnchor(QGraphicsView::AnchorViewCenter);
     }
     else
@@ -817,6 +824,12 @@ void RGraphicsView::resizeEvent(QResizeEvent* event)
     setResizeAnchor(QGraphicsView::NoAnchor);
     setTransformationAnchor(QGraphicsView::NoAnchor);
     QGraphicsView::resizeEvent(event);
+}
+
+void RGraphicsView::scrollContentsBy(int dx, int dy)
+{
+    QGraphicsView::scrollContentsBy(dx, dy);
+    updateSizeToController();
 }
 
 void RGraphicsView::addImageToMap()

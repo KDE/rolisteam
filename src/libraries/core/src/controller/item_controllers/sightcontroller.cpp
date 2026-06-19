@@ -27,6 +27,7 @@
 
 namespace vmap
 {
+constexpr auto geometryVisions{"geometryVisions"};
 /////////////////////////////
 SightController::SightController(VectorialMapController* ctrl, QObject* parent)
     : VisualItemController(VisualItemController::SIGHT, std::map<QString, QVariant>(), ctrl, parent)
@@ -38,12 +39,17 @@ SightController::SightController(VectorialMapController* ctrl, QObject* parent)
             [this]() { setVisible(m_ctrl->visibility() == Core::VisibilityMode::FOGOFWAR); });
     connect(m_ctrl, &VectorialMapController::characterVisionChanged, this, &SightController::setCharacterSight);
 
-    connect(m_ctrl, &VectorialMapController::visualRectChanged, this, &vmap::SightController::rectChanged);
+    connect(m_ctrl, &VectorialMapController::visualRectChanged, this, &vmap::SightController::setRect);
     setVisible(m_ctrl->visibility() == Core::VisibilityMode::FOGOFWAR);
 
     connect(this, &SightController::characterSightChanged, this, [this] { setModified(); });
     connect(this, &SightController::fowPathChanged, this, [this] { setModified(); });
-    connect(this, &SightController::rectChanged, this, [this] { setModified(); });
+    connect(this, &SightController::rectChanged, this,
+            [this]
+            {
+                m_fowPathDirty= true;
+                setModified();
+            });
     connect(this, &SightController::characterCountChanged, this, [this] { setModified(); });
     setEditable(false);
     setInitialized(true);
@@ -177,19 +183,18 @@ void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
     // with per-light entries inserted via setLightPolygon().
     if(temp)
     {
-        m_tempPolygons.insert(QStringLiteral("__legacy__"), std::make_pair(poly, mask));
+        m_tempPolygons.insert(geometryVisions, std::make_pair(poly, mask));
     }
     else
     {
         m_fogSingularityList.push_back(std::make_pair(poly, mask));
         // A permanent fog change invalidates any legacy temp entry,
         // but must NOT clear per-light entries — lights are still present.
-        m_tempPolygons.remove(QStringLiteral("__legacy__"));
+        m_tempPolygons.remove(geometryVisions);
     }
-
+    m_fowPathDirty= true;
     if(!m_blockUpdate)
     {
-        m_fowPathDirty= true;
         emit fowPathChanged();
     }
 }
@@ -197,9 +202,9 @@ void SightController::addPolygon(const QPolygonF& poly, bool mask, bool temp)
 void SightController::setLightPolygon(const QString& lightId, const QPolygonF& poly, bool mask)
 {
     m_tempPolygons.insert(lightId, std::make_pair(poly, mask));
+    m_fowPathDirty= true;
     if(!m_blockUpdate)
     {
-        m_fowPathDirty= true;
         emit fowPathChanged();
     }
 }
@@ -243,9 +248,9 @@ void SightController::clearTempPolygons()
 {
     // Only clears the legacy single-vision entry, not per-light entries.
     // Call removeLightPolygon(uuid) to remove a specific light.
-    if(!m_tempPolygons.contains(QStringLiteral("__legacy__")))
+    if(!m_tempPolygons.contains(geometryVisions))
         return;
-    m_tempPolygons.remove(QStringLiteral("__legacy__"));
+    m_tempPolygons.remove(geometryVisions);
     m_fowPathDirty= true;
     emit fowPathChanged();
 }

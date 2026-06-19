@@ -61,12 +61,12 @@ SightItem::SightItem(vmap::SightController* ctrl) : VisualItem(ctrl), m_sightCtr
         m_ctrl->setLayer(Core::Layer::FOG);
     setFlags(QGraphicsItem::ItemSendsGeometryChanges);
 
-    connect(this, &QGraphicsObject::parentChanged, this,
+    /*connect(this, &QGraphicsObject::parentChanged, this,
             [this]()
             {
                 connect(scene(), &QGraphicsScene::sceneRectChanged, m_sightCtrl, &vmap::SightController::setRect);
                 m_sightCtrl->setRect(scene()->sceneRect());
-            });
+            });*/
 }
 
 SightItem::~SightItem() {}

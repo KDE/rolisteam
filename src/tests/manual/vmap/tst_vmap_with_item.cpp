@@ -56,10 +56,11 @@ int main(int argc, char* argv[])
     ctrl.setOwnerId("uuid");
 
     Character character("aaa", "Lynn Gray-Rike", QColor("#0000DD"), false, 0);
-    character.setAvatar(utils::IOHelper::loadFile(QString("%1/resources/lynn_gray_rike.jpg").arg(tests::root_path)));
+    character.setAvatar(
+        utils::IOHelper::loadFile(QString("%1/resources/img/lynn_gray_rike.jpg").arg(tests::root_path)));
 
     Character characterB("bb", "Toku Kahime", QColor("#FF00DD"), false, 0);
-    characterB.setAvatar(utils::IOHelper::loadFile(QString("%1/resources/predateur.jpg").arg(tests::root_path)));
+    characterB.setAvatar(utils::IOHelper::loadFile(QString("%1/resources/img/predateur.jpg").arg(tests::root_path)));
 
     QList<CharacterAction*> acts;
 
@@ -68,14 +69,14 @@ int main(int argc, char* argv[])
 
     std::map<QString, QVariant> params;
     params.insert({Core::vmapkeys::KEY_CHARACTER, QVariant::fromValue(&character)});
-    params.insert({Core::vmapkeys::KEY_POS, pos});
+    params.insert({Core::vmapkeys::KEY_SCENE_POS, pos});
     params.insert({Core::vmapkeys::KEY_TOOL, Core::SelectableTool::PlayableCharacter});
 
     auto c= new vmap::CharacterItemController(params, &ctrl);
 
     std::map<QString, QVariant> params2;
     params2.insert({Core::vmapkeys::KEY_CHARACTER, QVariant::fromValue(&characterB)});
-    params2.insert({Core::vmapkeys::KEY_POS, QPointF{300, 200}});
+    params2.insert({Core::vmapkeys::KEY_SCENE_POS, QPointF{300, 200}});
     params2.insert({Core::vmapkeys::KEY_TOOL, Core::SelectableTool::PlayableCharacter});
 
     auto d= new vmap::CharacterItemController(params2, &ctrl);

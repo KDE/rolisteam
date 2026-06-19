@@ -153,16 +153,15 @@ VMapFrame::VMapFrame(VectorialMapController* ctrl, QWidget* parent)
     auto updateFrame= [this]()
     {
         auto rect= m_vmap->sceneRect();
-        auto frame= m_graphicView->frameRect();
+        auto frame= m_graphicView->viewport()->rect();
         auto poly= m_graphicView->mapToScene(frame).boundingRect();
-
         m_ctrl->setVisualRect(rect.united(poly));
     };
 
-    connect(m_vmap.get(), &VMap::sceneRectChanged, m_ctrl, updateFrame);
-    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateFrame);
+    connect(m_vmap.get(), &VMap::sceneRectChanged, m_ctrl, updateFrame, Qt::QueuedConnection);
+    connect(m_ctrl, &VectorialMapController::zoomLevelChanged, this, updateFrame, Qt::QueuedConnection);
 
-    connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateFrame);
+    connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateFrame, Qt::QueuedConnection);
     connect(m_graphicView.get(), &RGraphicsView::updateVisualZone, m_ctrl, updateSmallImage, Qt::QueuedConnection);
     connect(m_graphicView->horizontalScrollBar(), &QScrollBar::valueChanged, this, updateSmallImage,
             Qt::QueuedConnection);
