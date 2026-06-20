@@ -23,7 +23,6 @@ class RWIDGET_EXPORT LightItem : public VisualItem
     Q_OBJECT
 public:
     explicit LightItem(vmap::LightController* ctrl);
-    virtual ~LightItem();
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
 
@@ -38,6 +37,7 @@ protected:
 
 private:
     QPointer<vmap::LightController> m_lightCtrl;
+    QMetaObject::Connection m_connect;
 };
 
 #endif // LIGHTITEM_H

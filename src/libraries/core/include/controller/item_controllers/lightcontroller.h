@@ -33,6 +33,7 @@ public:
 
 public slots:
     void setRadius(qreal radius);
+    void parentMoved();
 
 signals:
     void radiusChanged();

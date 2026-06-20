@@ -19,6 +19,19 @@ LightItem::LightItem(vmap::LightController* ctrl) : VisualItem(ctrl), m_lightCtr
 {
     auto updateFunc= [this]() { updateChildPosition(); };
     connect(m_lightCtrl, &vmap::LightController::radiusChanged, this, updateFunc);
+    connect(this, &LightItem::parentChanged, this,
+            [this]
+            {
+                disconnect(m_connect);
+
+                auto p= dynamic_cast<VisualItem*>(parentItem());
+                if(!p)
+                    return;
+
+                auto ctrl= p->controller();
+                m_connect= connect(ctrl, &vmap::VisualItemController::posEditFinished, m_lightCtrl,
+                                   [this]() { m_lightCtrl->setScenePos(scenePos()); });
+            });
     initChildPointItem();
 
     // Make sure Qt knows only the center area is interactive,
@@ -27,8 +40,6 @@ LightItem::LightItem(vmap::LightController* ctrl) : VisualItem(ctrl), m_lightCtr
     setFlag(QGraphicsItem::ItemIsMovable, true);
     setAcceptHoverEvents(true);
 }
-
-LightItem::~LightItem() {}
 
 QRectF LightItem::boundingRect() const
 {
@@ -69,7 +80,6 @@ void LightItem::initChildPointItem()
     if(!m_lightCtrl)
         return;
     auto rect= computeBoundingRect(m_lightCtrl->radius());
-    ;
 
     setTransformOriginPoint(rect.center());
 

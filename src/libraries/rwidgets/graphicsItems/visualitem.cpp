@@ -361,7 +361,6 @@ void VisualItem::endOfGeometryChange(ChildPointItem::Change change)
         setTransformOriginPoint(m_ctrl->rect().center());
         auto newScenePos= scenePos();
         auto oldPos= pos();
-        qDebug() << "VisualItem endOfGeometryChange setPos";
         m_ctrl->setPos(QPointF(oldPos.x() + (oldScenePos.x() - newScenePos.x()),
                                oldPos.y() + (oldScenePos.y() - newScenePos.y())));
     }

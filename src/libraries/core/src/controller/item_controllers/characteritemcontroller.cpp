@@ -252,12 +252,10 @@ void CharacterItemController::setCorner(const QPointF& move, int corner, Core::T
         y2= y + minimalSize;
     }
 
-    qDebug() << "set corner:" << x << y << x2 << y2 << corner;
     rect.setCoords(x, y, x2, y2);
     if(!rect.isValid())
         rect= rect.normalized();
 
-    qDebug() << "set corner: normalized" << rect;
     setRect(rect);
     setSide(rect.width());
     refreshTextRect();

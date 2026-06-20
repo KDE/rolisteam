@@ -21,6 +21,7 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
 
     auto updateFog= [this]() { updateFogReveal(); }; // to use the default parameter
 
+    connect(this, &VisualItemController::scenePosChanged, this, updateFog);
     connect(this, &VisualItemController::posChanged, this, updateFog);
     connect(this, &LightController::radiusChanged, this, updateFog);
     connect(this, &VisualItemController::initializedChanged, this, [this]() { updateFogReveal(false); });
@@ -44,9 +45,12 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
         connect(m_ctrl->model(), &vmap::VmapItemModel::itemControllersRemoved, this, updateFog);
     }
 
-    connect(this, &LightController::visibleChanged, this, [this]() { aboutToBeRemoved(); });
-
-    updateFogReveal(false);
+    connect(this, &LightController::visibleChanged, this,
+            [this]()
+            {
+                if(visible())
+                    updateFogReveal(false);
+            });
 }
 
 qreal LightController::radius() const
@@ -73,8 +77,8 @@ void LightController::aboutToBeRemoved()
     {
         m_ctrl->sightController()->setBlockU(false);
         m_ctrl->sightController()->removeLightPolygon(uuid());
-        // m_ctrl->sightController()->clearTempPolygons();
     }
+    emit removeItem();
 }
 
 void LightController::endGeometryChange()
@@ -96,6 +100,11 @@ QPointF LightController::transformOrigin() const
     return QPointF{0, 0};
 }
 
+void LightController::parentMoved()
+{
+    updateFogReveal(false);
+}
+
 void LightController::updateFogReveal(bool blockUpdate)
 {
     if(!m_ctrl)
@@ -112,7 +121,7 @@ void LightController::updateFogReveal(bool blockUpdate)
     // sightCtrl->clearTempPolygons();
 
     QList<QLineF> segments= collectWallSegments();
-    QPolygonF visibilityPoly= ShadowCaster::computeVisibilityPolygon(pos(), m_radius, segments);
+    QPolygonF visibilityPoly= ShadowCaster::computeVisibilityPolygon(scenePos(), m_radius, segments);
 
     QPolygonF finalPoly;
     if(segments.isEmpty())
