@@ -19,7 +19,7 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
     using std::placeholders::_1;
     hu::setParamIfAny<qreal>(cv::KEY_RADIUS, params, std::bind(&LightController::setRadius, this, _1));
 
-    auto updateFog= [this]() { updateFogReveal(); }; // to use the default parameter
+    auto updateFog= [this]() { updateFogReveal(!remote()); }; // to use the default parameter
 
     connect(this, &VisualItemController::scenePosChanged, this, updateFog);
     connect(this, &VisualItemController::posChanged, this, updateFog);
@@ -50,6 +50,11 @@ LightController::LightController(const std::map<QString, QVariant>& params, Vect
             {
                 if(visible())
                     updateFogReveal(false);
+                else if(m_ctrl && m_ctrl->sightController())
+                {
+                    m_ctrl->sightController()->setBlockU(false);
+                    m_ctrl->sightController()->removeLightPolygon(uuid());
+                }
             });
 }
 
@@ -110,7 +115,7 @@ void LightController::updateFogReveal(bool blockUpdate)
     if(!m_ctrl)
         return;
 
-    if(uuid().isEmpty())
+    if(uuid().isEmpty() || !visible())
         return;
 
     auto* sightCtrl= m_ctrl->sightController();
@@ -132,7 +137,7 @@ void LightController::updateFogReveal(bool blockUpdate)
     {
         QPainterPath circlePath;
         circlePath.setFillRule(Qt::WindingFill);
-        circlePath.addEllipse(pos(), m_radius, m_radius);
+        circlePath.addEllipse(scenePos(), m_radius, m_radius);
 
         QPainterPath visPath;
         visPath.setFillRule(Qt::WindingFill);

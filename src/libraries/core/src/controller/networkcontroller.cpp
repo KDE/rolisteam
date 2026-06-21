@@ -176,7 +176,6 @@ void NetworkController::dispatchMessage(QByteArray array)
         {
             if(!tmp)
                 continue;
-            qCDebug(NetworkCat) << "send message to" << tmp << tmp->objectName();
             tmp->processMessage(&data);
         }
     }

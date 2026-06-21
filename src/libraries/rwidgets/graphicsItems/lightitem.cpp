@@ -30,7 +30,11 @@ LightItem::LightItem(vmap::LightController* ctrl) : VisualItem(ctrl), m_lightCtr
 
                 auto ctrl= p->controller();
                 m_connect= connect(ctrl, &vmap::VisualItemController::posEditFinished, m_lightCtrl,
-                                   [this]() { m_lightCtrl->setScenePos(scenePos()); });
+                                   [this]()
+                                   {
+                                       m_lightCtrl->setScenePos(scenePos());
+                                       m_lightCtrl->parentMoved();
+                                   });
             });
     initChildPointItem();
 

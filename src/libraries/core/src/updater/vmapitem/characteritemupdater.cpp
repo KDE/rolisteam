@@ -136,7 +136,6 @@ bool CharacterItemUpdater::updateItemProperty(NetworkMessageReader* msg, vmap::V
     if(nullptr == msg || nullptr == ctrl)
         return false;
 
-    qDebug() << "update Character Item property" << msg->action();
     if(msg->action() == NetMsg::CharacterVisionChanged)
     {
         return updateVisionProperty(msg, ctrl);

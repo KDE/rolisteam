@@ -62,7 +62,7 @@ void addCharacterItem(VectorialMapController* ctrl, const QPointF& pos, Characte
     std::map<QString, QVariant> params;
     params.insert({Core::vmapkeys::KEY_CHARACTER, QVariant::fromValue(character)});
     params.insert({Core::vmapkeys::KEY_CHARAC_ID, character->uuid()});
-    params.insert({Core::vmapkeys::KEY_POS, pos});
+    params.insert({Core::vmapkeys::KEY_SCENE_POS, pos});
     params.insert({Core::vmapkeys::KEY_TOOL, character->isNpc() ? Core::SelectableTool::NonPlayableCharacter :
                                                                   Core::SelectableTool::PlayableCharacter});
 
@@ -733,7 +733,7 @@ void VMap::dropEvent(QGraphicsSceneDragDropEvent* event)
 
     auto pixmap= data->imageData().value<QImage>();
 
-    if(!pixmap.isNull())
+    if(!pixmap.isNull() && !data->hasFormat("rolisteam/userlist-item"))
     {
         std::map<QString, QVariant> params;
         params.insert({Core::vmapkeys::KEY_SCENE_POS, event->scenePos()});
@@ -741,7 +741,7 @@ void VMap::dropEvent(QGraphicsSceneDragDropEvent* event)
         params.insert({Core::vmapkeys::KEY_DATA, IOHelper::imageToData(pixmap)});
         m_ctrl->insertItemAt(params);
     }
-    if(data->hasFormat("rolisteam/userlist-item") && rolisteamData)
+    else if(data->hasFormat("rolisteam/userlist-item") && rolisteamData)
     {
         qInfo() << "VMAP dropEvent character";
         Person* item= rolisteamData->person();
