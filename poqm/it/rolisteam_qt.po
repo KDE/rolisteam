@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-12 19:09+0200\n"
+"PO-Revision-Date: 2026-06-16 11:10+0200\n"
 "Last-Translator: Valter Mura <valtermura@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -3822,9 +3822,6 @@ msgid "PC Token"
 msgstr "Pedina PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Luce"
