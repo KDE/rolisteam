@@ -3402,7 +3402,7 @@ msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:201
+#: src/libraries/core/src/controller/networkcontroller.cpp:200
 #, fuzzy
 #| msgctxt "RServer|"
 #| msgid "[Upnp] Port mapping has been done"
@@ -3410,7 +3410,7 @@ msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[अपएनपी] पोर्ट मैपिंग का काम पूरा हो चुका है"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:307
+#: src/libraries/core/src/controller/networkcontroller.cpp:306
 #, fuzzy
 #| msgctxt "ClientManager|"
 #| msgid "Connection to the server has been closed."
@@ -3418,7 +3418,7 @@ msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "सर्वर से कनेक्शन बंद कर दिया गया है."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:318
+#: src/libraries/core/src/controller/networkcontroller.cpp:317
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "Server"
@@ -3426,12 +3426,12 @@ msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "सर्वर"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:322
+#: src/libraries/core/src/controller/networkcontroller.cpp:321
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr ""
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:333
+#: src/libraries/core/src/controller/networkcontroller.cpp:332
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"

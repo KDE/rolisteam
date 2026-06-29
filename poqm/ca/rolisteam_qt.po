@@ -3176,27 +3176,27 @@ msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
 msgstr "[Upnp] Port de mapatge correcte: "
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:201
+#: src/libraries/core/src/controller/networkcontroller.cpp:200
 msgctxt "NetworkController|"
 msgid "[Upnp] No ip address has been found."
 msgstr "[Upnp] No s'ha trobat cap adreça IP."
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:307
+#: src/libraries/core/src/controller/networkcontroller.cpp:306
 msgctxt "NetworkController|"
 msgid "server thread has been closed"
 msgstr "S'ha tancat el fil del servidor"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:318
+#: src/libraries/core/src/controller/networkcontroller.cpp:317
 msgctxt "NetworkController|"
 msgid "Server is off"
 msgstr "El servidor està inactiu"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:322
+#: src/libraries/core/src/controller/networkcontroller.cpp:321
 msgctxt "NetworkController|"
 msgid "server is on"
 msgstr "El servidor està actiu"
 
-#: src/libraries/core/src/controller/networkcontroller.cpp:333
+#: src/libraries/core/src/controller/networkcontroller.cpp:332
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
