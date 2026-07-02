@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-05-12 12:32+0200\n"
+"PO-Revision-Date: 2026-07-01 15:48+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -3094,7 +3094,7 @@ msgstr "Global"
 #, qt-format
 msgctxt "CharacterItemController|"
 msgid "%1 # Action %2"
-msgstr ""
+msgstr "%1 # Action %2"
 
 #: src/libraries/core/src/controller/item_controllers/textcontroller.cpp:58
 msgctxt "TextController|"
@@ -3750,12 +3750,9 @@ msgid "PC Token"
 msgstr "Indicio de PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "QObject|"
 msgid "Light"
-msgstr "Dextera"
+msgstr "Lumine"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
@@ -9167,20 +9164,14 @@ msgid "Highlighter"
 msgstr "Evidentiator"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "Dextera"
+msgstr "Lumine"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
-#, fuzzy
-#| msgctxt "TestCharacterStateModel|"
-#| msgid "Lightly Wounded"
 msgctxt "ToolBox|"
 msgid "Light Source"
-msgstr "Ferite legiermente"
+msgstr "Fonte de lumine"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
