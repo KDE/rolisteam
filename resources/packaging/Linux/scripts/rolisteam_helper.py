@@ -411,21 +411,33 @@ def build_tarball(path, version, app_name):
 
 
 def build_deb(path, version, app_name):
-    dir_path = os.path.dirname(os.path.realpath(__file__))
-    print("Build_deb:",dir_path, " path:",path)
+    # Packaging metadata lives inside the cloned source tree itself
+    # (resources/packaging/Linux/...), not next to this helper script,
+    # so it always matches the sources being packaged.
+    packaging_dir = os.path.join(path, "resources", "packaging", "Linux")
+    ubuntu_dir = os.path.join(packaging_dir, "deb", app_name, "ubuntu")
+    print("Build_deb: packaging_dir:", packaging_dir, " path:", path)
 
-    #currentDir="{}-{}/".format(path, app_name)
-    if app_name == "rolisteam":
-        shutil.copy("{}/../rolisteam.desktop".format(dir_path), path)
-    shutil.copytree("{}/ubuntu/debian".format(dir_path), "{}/debian".format(path))
-    shutil.copy("{}/changelog".format(dir_path), path)
+    debian_dir = os.path.join(path, "debian")
+    shutil.copytree(ubuntu_dir, debian_dir)
+    # debuild/dpkg-buildpackage require the changelog at debian/changelog.
+    shutil.copy(os.path.join(packaging_dir, "changelog"), os.path.join(debian_dir, "changelog"))
+
+    # debian/source/format is "3.0 (native)": dpkg-source requires the
+    # source directory to be named "<name>-<full-version>", where the full
+    # version (e.g. "1.10.0ubuntu1") is the one from the top debian/changelog
+    # entry, which may differ from the plain --Version value.
+    changelog_result = run_process(
+        ["dpkg-parsechangelog", "-l", os.path.join(debian_dir, "changelog"), "-S", "Version"], debian_dir)
+    changelog_version = changelog_result.stdout.strip()
+    print("Build_deb: version from debian/changelog:", changelog_version)
 
     # moving to the temp dir
 
     os.chdir(path)
 
     os.chdir("..")
-    dest_dir="{}-{}/".format(app_name, version)
+    dest_dir="{}-{}/".format(app_name, changelog_version)
     print("Build_deb: rename file:",dest_dir)
     os.rename(app_name, dest_dir)
     os.chdir(dest_dir)
