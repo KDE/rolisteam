@@ -1,3 +1,13 @@
+rolisteam (1.10.0ubuntu1) noble; urgency=medium
+
+  [Renaud Guezennec]
+  * Port packaging to CMake and Qt6 (dh + cmake buildsystem) for recent
+    Ubuntu releases
+  * Refresh Build-Depends/Depends to Qt6 dev packages and QML6 modules
+  * Declare native source format and modern debhelper compat level
+
+ -- Renaud Guezennec <renaud@rolisteam.org>  Fri, 03 Jul 2026 12:00:00 +0200
+
 rolisteam (1.9.3ubuntu2) focal; urgency=medium
 
   [Renaud Guezennec]

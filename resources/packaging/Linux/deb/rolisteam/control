@@ -1,0 +1,46 @@
+Source: rolisteam
+Section: games
+Priority: optional
+Maintainer: Renaud Guezennec <renaud@rolisteam.org>
+Uploaders: Alban Crommer <alban@albancrommer.com>
+Build-Depends: debhelper-compat (= 13),
+               cmake (>= 3.16),
+               qt6-base-dev,
+               qt6-base-dev-tools,
+               qt6-declarative-dev,
+               qt6-declarative-dev-tools,
+               qt6-tools-dev,
+               qt6-tools-dev-tools,
+               qt6-svg-dev,
+               qt6-multimedia-dev,
+               qt6-quick3d-dev,
+               qt6-pdf-dev,
+               qt6-scxml-dev,
+               qt6-websockets-dev,
+               qt6-webengine-dev,
+               qt6-remoteobjects-dev,
+               zlib1g-dev
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+Homepage: https://www.rolisteam.org
+
+Package: rolisteam
+Section: games
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         qml6-module-qtqml-workerscript,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-templates,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick3d,
+         qml6-module-qtmultimedia,
+         qml6-module-qtwebengine
+Description: Manage easily your role playing games
+ Rolisteam can help you to manage a role playing game. It allows you to share
+ maps with your players, private or global chat and control music player.
+ .
+ This package also ships the companion tools built from the same source
+ tree: the character sheet editor (rcse), the mindmap editor and the
+ standalone multi-room server (roliserver).
