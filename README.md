@@ -55,7 +55,7 @@ More information about building Rolisteam, see:
 
 # Downloads
 
--Latest full release : https://rolisteam.org/download.html
+-Latest full release : https://rolisteam.org/02_download/
 
 # Get Involved
 
