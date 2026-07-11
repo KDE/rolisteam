@@ -188,24 +188,14 @@ GameController* RolisteamApplication::gameCtrl()
 
 void RolisteamApplication::readSettings()
 {
-    QSettings settings(applicationName(), QString("%1_%2/preferences").arg(applicationName(), applicationVersion()));
-    settings.beginGroup("rolisteam/preferences");
-    int size= settings.beginReadArray("preferenceMap");
-    QHash<QString, QVariant> optionDictionary;
-    for(int i= 0; i < size; ++i)
-    {
-        settings.setArrayIndex(i);
-        QString key= settings.value("key").toString();
-        QVariant value= settings.value("value");
-        optionDictionary.insert(key, value);
-    }
-    settings.endArray();
-    settings.endGroup();
+    auto pref= m_game.preferencesManager();
+    if(!pref)
+        return;
 
-    auto system= optionDictionary.value("i18n_system").toBool();
-    auto paths= optionDictionary.value("i18n_path").toStringList();
-    auto hasCustomfile= optionDictionary.value("i18n_hasCustomfile").toBool();
-    auto customFile= optionDictionary.value("i18n_customfile").toString();
+    auto system= pref->value("i18n_system", true).toBool();
+    auto paths= pref->value("i18n_path", {}).toStringList();
+    auto hasCustomfile= pref->value("i18n_hasCustomfile", false).toBool();
+    auto customFile= pref->value("i18n_customfile", {}).toString();
 
     QList<QPair<QString, bool>> params;
 
