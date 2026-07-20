@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2022-2026 Xavier Besnard <xavier.besnard@kde.org>
 # SPDX-FileCopyrightText: 2025 Renaud Guezennec <renaud.guezennec@gmail.com>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 # SPDX-FileCopyrightText: 2026 Renaud Guezennec <renaud@rolisteam.org>
@@ -6,15 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2026-05-27 00:45+0200\n"
-"Last-Translator: Renaud Guezennec <renaud@rolisteam.org>\n"
-"Language-Team: English <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-07-18 11:09+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 26.04.3\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
@@ -2354,19 +2354,14 @@ msgid "Update Notification"
 msgstr "Notification de mise à jour"
 
 #: src/binaries/widget/mainwindow.cpp:917
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 version has been released. Please take a look at <a href=\"https://"
-#| "www.rolisteam.org/download\">Download page</a> for more information"
+#, qt-format
 msgctxt "MainWindow|"
 msgid ""
 "The %1 version has been released. Please, visit the <a href=\"https://"
 "rolisteam.org/02_download/\">Download page</a> to get the latest version."
 msgstr ""
-"La version %1 a été publiée. Veuillez prendre connaissance de la <a href="
-"\"http://www.rolisteam.org/download\">page de téléchargement</a> pour plus "
-"d'informations."
+"La version %1 a été publiée. Veuillez consulter la <a href=\"http://www."
+"rolisteam.org/download\">page de téléchargement</a> pour plus d'informations."
 
 #: src/binaries/widget/mainwindow.cpp:925
 #, qt-format
@@ -3714,9 +3709,7 @@ msgid "User has been kick out: %2 - %1."
 msgstr "L'utilisateur a été exclus : %2 - %1."
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:287
-#, fuzzy, qt-format
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
+#, qt-format
 msgctxt "ServerConnectionManager|"
 msgid "User has been ban: %2 - %1."
 msgstr "L'utilisateur a été exclus : %2 - %1."
@@ -3835,12 +3828,9 @@ msgid "PC Token"
 msgstr "Jeton de PJ"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "QObject|"
 msgid "Light"
-msgstr "Droite"
+msgstr "Clair"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
@@ -3920,20 +3910,14 @@ msgid "Close %1"
 msgstr "Fermer %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Ajouter un canal"
+msgstr "Nouveau canal"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "L'utilisateur a été exclus : %2 - %1."
+msgstr "Vous avez été exclus de la partie."
 
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
@@ -4055,12 +4039,9 @@ msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
 msgstr "# Lancer en 3D : selon Distance %1 - Durée %2 - Rotation %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:41
-#, fuzzy
-#| msgctxt "ColumnDefinitionDialog|"
-#| msgid "Dialog"
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "Boîte de dialogue"
+msgstr "(Boîte de dialogue)"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
@@ -4256,28 +4237,19 @@ msgstr ""
 "%1"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:74
-#, fuzzy
-#| msgctxt "Link|"
-#| msgid "is linked"
 msgctxt "MindMap|"
 msgid "is linked"
-msgstr "est lié"
+msgstr "est lié à"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Reset Settings"
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "Réinitialiser la configuration"
+msgstr "Configuration des paquets"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:226
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add subchannel"
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "Ajouter un sous-canal"
+msgstr "Ajouter un sous-noeud"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4315,20 +4287,14 @@ msgid "Automatic Spacing"
 msgstr "Espacement automatique"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "Modifier une image"
+msgstr "Sélectionner une image..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "Sélectionner une image"
+msgstr "Sélectionner une URL d'image"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
@@ -4351,33 +4317,21 @@ msgid "tags:"
 msgstr "Étiquettes :"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "Avatar:"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
 msgstr "Avatar :"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Load QML"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "Charger en QML"
+msgstr "Charger"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Set Layer"
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "Définir un calque"
+msgstr "Définir une URL"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "AutoFillerDialog|"
-#| msgid "Remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
 msgstr "Supprimer"
@@ -4451,12 +4405,9 @@ msgid "Tags"
 msgstr "Étiquettes"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Add Package"
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "Ajouter un paquet"
+msgstr "Ajouter un nœud au paquet"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format
@@ -6838,12 +6789,9 @@ msgstr "Modifier un canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Verrouiller / Déverrouiller un canal"
+msgstr "Verrouiller un canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -6851,12 +6799,9 @@ msgid "Switch to channel"
 msgstr "Basculer vers le canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Mot de passe du canal"
+msgstr "Définir un mot de passe pour le canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -6904,12 +6849,9 @@ msgid "Move User"
 msgstr "Déplacer un utilisateur"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Unlock channel"
-msgstr "Verrouiller / Déverrouiller un canal"
+msgstr "Déverrouiller un canal"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:248
 msgctxt "ChannelListPanel|"
@@ -6924,7 +6866,7 @@ msgstr "Mot de passe"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:333
 msgctxt "ChannelListPanel|"
 msgid "Only empty channel can be removed"
-msgstr "Seulement les channels vides peuvent être supprimé"
+msgstr "Seuls les canaux vides peuvent être supprimés"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:351
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
@@ -6939,12 +6881,9 @@ msgid "Password for channel: %1 - leave empty for no password"
 msgstr "Mot de passe pour un canal : %1 - Laissez vide pour aucun mot de passe"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:375
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel %1 required password:"
 msgctxt "ChannelListPanel|"
 msgid "Destination Channel required password"
-msgstr "Mot de passe requis pour le canal %1 :"
+msgstr "Le canal de destination Mot de passe requis pour le canal %1 :"
 
 #: src/libraries/rwidgets/docks/channellistpanel.ui:14
 msgctxt "ChannelListPanel|"
@@ -8606,12 +8545,9 @@ msgid "Rule"
 msgstr "Règle"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:325
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Promouvoir"
+msgstr "Promouvoir auprès"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, qt-format
@@ -9409,20 +9345,14 @@ msgid "Highlighter"
 msgstr "Surligneur"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "Droite"
+msgstr "Clair"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
-#, fuzzy
-#| msgctxt "TestCharacterStateModel|"
-#| msgid "Lightly Wounded"
 msgctxt "ToolBox|"
 msgid "Light Source"
-msgstr "Blessé légèrement"
+msgstr "Source claire"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
