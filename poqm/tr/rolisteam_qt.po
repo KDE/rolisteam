@@ -3,16 +3,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-15 19:23+0300\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2026-07-23 22:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Qt-Contexts: true\n"
+"X-Generator: Poedit 3.9\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -2237,12 +2238,12 @@ msgstr "Oyuncular Listesi"
 #: src/binaries/widget/mainwindow.cpp:477
 msgctxt "MainWindow|"
 msgid "All campaign documents"
-msgstr "Tüm sefer belgeleri"
+msgstr "Tüm Sefer Belgeleri"
 
 #: src/binaries/widget/mainwindow.cpp:478
 msgctxt "MainWindow|"
 msgid "List of antagonists"
-msgstr "Rakipler listesi"
+msgstr "Rakipler Listesi"
 
 #: src/binaries/widget/mainwindow.cpp:479
 msgctxt "MainWindow|"
@@ -2767,7 +2768,7 @@ msgstr "Geçerli Ortamı Farklı…"
 #: src/binaries/widget/mainwindow.ui:503
 msgctxt "MainWindow|"
 msgid "Media title in toolbar"
-msgstr "Ortam başlığı araç çubuğunda"
+msgstr "Ortam Başlığını Araç Çubuğunda Göster"
 
 #: src/binaries/widget/mainwindow.ui:512 src/binaries/widget/mainwindow.ui:524
 msgctxt "MainWindow|"
@@ -2782,7 +2783,7 @@ msgstr "Kontrol+Üst Karakter+O"
 #: src/binaries/widget/mainwindow.ui:539
 msgctxt "MainWindow|"
 msgid "Instant messaging"
-msgstr "Anlık iletileşme"
+msgstr "Anlık İletileşme"
 
 #: src/binaries/widget/mainwindow.ui:542
 msgctxt "MainWindow|"
@@ -3128,7 +3129,7 @@ msgstr "Bilgi"
 #: src/libraries/common/widgets/logpanel.ui:60
 msgctxt "LogPanel|"
 msgid "Debug"
-msgstr "Hata Ayıkla"
+msgstr "Hata Ayıklama İletisi"
 
 #: src/libraries/common/widgets/logpanel.ui:104
 msgctxt "LogPanel|"
@@ -3990,7 +3991,7 @@ msgstr "Resim"
 #: src/libraries/core/src/worker/utilshelper.cpp:214
 msgctxt "QObject|"
 msgid "Minutes"
-msgstr "Dakika"
+msgstr "Tutanak"
 
 #: src/libraries/core/src/worker/utilshelper.cpp:215
 msgctxt "QObject|"
@@ -4623,7 +4624,7 @@ msgstr "Profili kaldır"
 #: src/libraries/qml_views/views/ConnectionForm.qml:112
 msgctxt "ConnectionForm|"
 msgid "Profile Name:"
-msgstr "Profil Adı:"
+msgstr "Profil adı:"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:125
 msgctxt "ConnectionForm|"
@@ -4668,7 +4669,7 @@ msgstr "Karakterler"
 #: src/libraries/qml_views/views/ConnectionForm.qml:316
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
-msgstr "Profilleri kaydet"
+msgstr "Profilleri Kaydet"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:324
 msgctxt "ConnectionForm|"
@@ -4785,17 +4786,17 @@ msgstr "Döngüde çal"
 #: src/libraries/rwidgets/customs/playerwidget.cpp:69
 msgctxt "PlayerWidget|"
 msgid "Shuffle Mode"
-msgstr "Karıştır Kipi"
+msgstr "Karıştırma kipi"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:73
 msgctxt "PlayerWidget|"
 msgid "Mute Volume"
-msgstr "Sesi Kapat"
+msgstr "Sesi kapat"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:77
 msgctxt "PlayerWidget|"
 msgid "load TableTopAudio.com playlist"
-msgstr "TableTopAudio.com çalma listesi yükle"
+msgstr "TableTopAudio.com Çalma Listesi Yükle"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:79
 msgctxt "PlayerWidget|"
@@ -4805,7 +4806,7 @@ msgstr "Çalma Listesi Aç"
 #: src/libraries/rwidgets/customs/playerwidget.cpp:82
 msgctxt "PlayerWidget|"
 msgid "Save Playlist"
-msgstr "Çalma Listesini Kaydet"
+msgstr "Çalma listesini kaydet"
 
 #: src/libraries/rwidgets/customs/playerwidget.cpp:85
 msgctxt "PlayerWidget|"
@@ -6247,17 +6248,17 @@ msgstr "Bir daha gösterme!"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
 msgid "No Right"
-msgstr "Hak Yok"
+msgstr "Hak yok"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
 msgid "His character"
-msgstr "Onun Karakteri"
+msgstr "Onun karakteri"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
 msgid "All Permissions"
-msgstr "Tüm İzinler"
+msgstr "Tüm izinler"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
@@ -9159,12 +9160,12 @@ msgstr "Kaldır…"
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:53
 msgctxt "UserListView|"
 msgid "Edit name"
-msgstr "Adı düzenle"
+msgstr "Adı Düzenle"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:54
 msgctxt "UserListView|"
 msgid "Change color…"
-msgstr "Rengi değiştir…"
+msgstr "Rengi Reğiştir…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:64
 msgctxt "UserListView|"
