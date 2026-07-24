@@ -147,7 +147,7 @@ public:
     void clear();
 
     const std::vector<std::unique_ptr<NonPlayableCharacter>>& npcList() const;
-    QStringList headers();
+    QStringList headers() const;
 
     QModelIndex indexFromUuid(const QString& id);
     NonPlayableCharacter* characterFromUuid(const QString& id);

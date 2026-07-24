@@ -89,7 +89,7 @@ QVariant CharacterStateModel::headerData(int section, Qt::Orientation orientatio
     {
         if(orientation == Qt::Horizontal)
         {
-            return m_header.at(section);
+            return tr(m_header.at(section).toStdString().c_str());
         }
     }
     return QVariant();
@@ -203,8 +203,7 @@ bool CharacterStateModel::setData(const QModelIndex& idx, const QVariant& value,
         break;
     }
 
-    emit dataChanged(index(idx.row(), 0), index(idx.row(), columnCount()),
-                     QList<int>() << role << roles[idx.column()]);
+    emit dataChanged(index(idx.row(), 0), index(idx.row(), columnCount()), QList<int>() << role << roles[idx.column()]);
     emit stateChanged();
     return result;
 }

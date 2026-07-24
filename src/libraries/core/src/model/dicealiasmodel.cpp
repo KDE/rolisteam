@@ -122,7 +122,7 @@ QVariant DiceAliasModel::headerData(int section, Qt::Orientation orientation, in
     {
         if(orientation == Qt::Horizontal)
         {
-            return m_header.at(section);
+            return tr(m_header.at(section).toStdString().c_str());
         }
     }
     return QVariant();

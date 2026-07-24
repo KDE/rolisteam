@@ -3,8 +3,7 @@
 #include <QCryptographicHash>
 #include <QDebug>
 
-ConnectionProfile::ConnectionProfile()
-    : m_title(QObject::tr("Unknown")), m_playerName(QObject::tr("Player")), m_playerColor(Qt::red)
+ConnectionProfile::ConnectionProfile() : m_playerName(QObject::tr("Player")), m_playerColor(Qt::red)
 {
     auto updateValid= [this]() {
         setValid(m_validConnectionInfo && m_validPlayerInfo && m_validCharacter && m_validCampaign
@@ -75,7 +74,7 @@ void ConnectionProfile::setGm(bool b)
 }
 QString ConnectionProfile::profileTitle() const
 {
-    return m_title;
+    return m_title.isEmpty() ? tr("Unknown") : m_title;
 }
 QString ConnectionProfile::playerName() const
 {
