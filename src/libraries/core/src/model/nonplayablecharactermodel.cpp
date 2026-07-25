@@ -503,7 +503,7 @@ const std::vector<std::unique_ptr<NonPlayableCharacter>>& NonPlayableCharacterMo
     return m_data;
 }
 
-QStringList NonPlayableCharacterModel::headers()
+QStringList NonPlayableCharacterModel::headers() const
 {
     return m_header;
 }
