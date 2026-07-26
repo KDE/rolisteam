@@ -2057,7 +2057,6 @@ msgid "Previous Page Button"
 msgstr "Botó de pàgina anterior"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -3676,10 +3675,18 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "S'ha tancat la connexió amb el servidor."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:6
 msgctxt "QObject|"
 msgid "Player"
 msgstr "Jugador"
+
+#: src/libraries/core/src/network/connectionprofile.cpp:77
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Unknown"
+msgctxt "ConnectionProfile|"
+msgid "Unknown"
+msgstr "Desconegut"
 
 #: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"

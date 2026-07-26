@@ -2222,7 +2222,6 @@ msgid "Previous Page Button"
 msgstr "Edellinen sivu -painike"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -3900,10 +3899,18 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "Palvelinyhteys on katkaistu."
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:6
 msgctxt "QObject|"
 msgid "Player"
 msgstr "Pelaaja"
+
+#: src/libraries/core/src/network/connectionprofile.cpp:77
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Unknown"
+msgctxt "ConnectionProfile|"
+msgid "Unknown"
+msgstr "Tuntematon"
 
 #: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"

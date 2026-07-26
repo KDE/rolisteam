@@ -2215,7 +2215,6 @@ msgid "Previous Page Button"
 msgstr "上一頁按鈕"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:120
-#: src/libraries/core/src/network/connectionprofile.cpp:7
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:84
 msgctxt "QObject|"
 msgid "Unknown"
@@ -3891,10 +3890,18 @@ msgctxt "ClientManager|"
 msgid "Connection to the server has been closed."
 msgstr "與伺服器的連線已關閉。"
 
-#: src/libraries/core/src/network/connectionprofile.cpp:7
+#: src/libraries/core/src/network/connectionprofile.cpp:6
 msgctxt "QObject|"
 msgid "Player"
 msgstr "玩家"
+
+#: src/libraries/core/src/network/connectionprofile.cpp:77
+#, fuzzy
+#| msgctxt "QObject|"
+#| msgid "Unknown"
+msgctxt "ConnectionProfile|"
+msgid "Unknown"
+msgstr "未知"
 
 #: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"
