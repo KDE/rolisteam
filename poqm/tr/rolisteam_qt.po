@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-07-23 22:23+0300\n"
+"PO-Revision-Date: 2026-07-26 19:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3672,12 +3672,9 @@ msgid "Player"
 msgstr "Oyuncu"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
-msgstr "Bilinmiyor"
+msgstr "Bilinmeyen"
 
 #: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"

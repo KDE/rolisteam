@@ -3671,9 +3671,6 @@ msgid "Player"
 msgstr "დამკვრელი"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "უცნობი"

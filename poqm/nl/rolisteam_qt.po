@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-06-15 15:56+0200\n"
+"PO-Revision-Date: 2026-07-26 09:32+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3664,9 +3664,6 @@ msgid "Player"
 msgstr "Speler"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "Onbekend"

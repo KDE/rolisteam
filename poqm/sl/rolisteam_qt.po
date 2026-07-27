@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2026-06-15 06:31+0200\n"
+"PO-Revision-Date: 2026-07-26 07:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -3176,7 +3176,7 @@ msgstr "Besedilo"
 #: src/libraries/core/src/controller/networkcontroller.cpp:132
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr "[Upnp] Uspešno preslikana vrata:"
+msgstr "[Upnp] Neuspešno preslikana vrata: "
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:200
 msgctxt "NetworkController|"
@@ -3679,9 +3679,6 @@ msgid "Player"
 msgstr "Igralec"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "Neznano"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-06-15 15:55+0100\n"
+"PO-Revision-Date: 2026-07-27 01:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -3675,9 +3675,6 @@ msgid "Player"
 msgstr "Jugador"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "Desconocido"
