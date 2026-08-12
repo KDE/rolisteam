@@ -1101,7 +1101,7 @@ msgstr "خصائص الورقة"
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr "ملء العرض مبدئياً"
+msgstr "ملء العرض مبدئيًا"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
@@ -1424,7 +1424,7 @@ msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
 "really want to generate QML code?"
 msgstr ""
-"إنشاء وسم QML سيلغي أي تغيير أجريته في QML.<br/>هل تريد حقاً إنشاء وسم QML؟"
+"إنشاء وسم QML سيلغي أي تغيير أجريته في QML.<br/>هل تريد حقًا إنشاء وسم QML؟"
 
 #: src/binaries/rcse/mainwindow.cpp:792
 msgctxt "rcse::MainWindow|"
@@ -2335,7 +2335,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.cpp:830
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
-msgstr "هل تريد حقاً الخروج من Rolisteam؟"
+msgstr "هل تريد حقًا الخروج من Rolisteam؟"
 
 #: src/binaries/widget/mainwindow.cpp:836
 #, qt-format
@@ -5552,12 +5552,12 @@ msgstr "Ctrl+V"
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:199
 msgctxt "ImageSelectorDialog|"
 msgid "OpenFile"
-msgstr "افتح ملفاً"
+msgstr "افتح ملفًا"
 
 #: src/libraries/rwidgets/dialogs/imageselectordialog.ui:202
 msgctxt "ImageSelectorDialog|"
 msgid "Open file from your hard drive"
-msgstr "افتح ملفاً من قرصك الصلب"
+msgstr "افتح ملفًا من قرصك الصلب"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:14
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5897,7 +5897,7 @@ msgstr "ث"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:212
 msgctxt "PreferencesDialogBox|"
 msgid "All subwindows will have a short title (making tab shorter)"
-msgstr "كل النوافذ الفرعية ستحمل عنواناً قصيراً (يجعل لسان التبويب أقصر)"
+msgstr "كل النوافذ الفرعية ستحمل عنوانًا قصيرًا (يجعل لسان التبويب أقصر)"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:215
 msgctxt "PreferencesDialogBox|"
@@ -6187,7 +6187,7 @@ msgstr "اختر الدليل"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:14
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Welcome To Rolisteam - Connection Dialog"
-msgstr "أهلاً بك في روليستيم - حوار الاتصال"
+msgstr "أهلًا بك في روليستيم - حوار الاتصال"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:31
 msgctxt "SelectConnectionProfileDialog|"
@@ -6249,7 +6249,7 @@ msgstr "حوار"
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
-msgstr "لا تعرضه مرة أخرى أبداً!"
+msgstr "لا تعرضه مرة أخرى أبدًا!"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
@@ -7066,7 +7066,7 @@ msgstr "مصدر الوثيقة"
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
 msgid "Create a link"
-msgstr "أنشئ رابطاً"
+msgstr "أنشئ رابطًا"
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:299
 msgctxt "MRichTextEdit|"
@@ -7448,7 +7448,7 @@ msgid ""
 "This example demonstrates Qt's rich text editing facilities in action, "
 "providing an example document for you to experiment with."
 msgstr ""
-"يُوضح هذا المثال مزايا كيوت (Qt) لتحرير النص المنسق أثناء العمل، مُوفِّراً مستندًا "
+"يُوضح هذا المثال مزايا كيوت (Qt) لتحرير النص المنسق أثناء العمل، مُوفِّرًا مستندًا "
 "مثالًا لكي تجرِّب عليه."
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:673
@@ -8833,7 +8833,7 @@ msgid ""
 "PDF transfer can be really heavy.\n"
 "Do you want to continue and share the PDF?"
 msgstr ""
-"قد يكون نقل PDF ثقيلاً حقًا.\n"
+"قد يكون نقل PDF ثقيلًا حقًا.\n"
 "أتريد الاستمرار ومشاركة PDF؟"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:14
@@ -9063,7 +9063,7 @@ msgstr "التالي"
 #: src/libraries/rwidgets/mediacontainers/webview.ui:138
 msgctxt "WebView|"
 msgid "Reload"
-msgstr "اِحمِل مجدداً"
+msgstr "اِحمِل مجددًا"
 
 #: src/libraries/rwidgets/mediacontainers/webview.ui:150
 msgctxt "WebView|"
