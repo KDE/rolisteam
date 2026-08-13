@@ -94,7 +94,7 @@
   <summary xml:lang="zh-TW">Rolisteam 伺服器的用戶端幫手</summary>
   <description>
     <p>This is the Rolisteam Client Binary which can be used either standalone as a server/client or connect to a Roliserver instance (currently a docker image)</p>
-    <p xml:lang="ar">هذا هو Rolisteam Client Binary الذي يمكن استخدامه إما بشكل مستقل كخادم/عميل أو للاتصال بمثيل Roliserver (حالياً صورة دوكر).</p>
+    <p xml:lang="ar">هذا هو Rolisteam Client Binary الذي يمكن استخدامه إما بشكل مستقل كخادم/عميل أو للاتصال بمثيل Roliserver (حاليًا صورة دوكر).</p>
     <p xml:lang="ca">Aquest és l'executable del client Rolisteam que es pot usar autònomament com un servidor/client o connectar amb una instància de Roliserver (actualment una imatge Docker)</p>
     <p xml:lang="ca-valencia">Este és l'executable del client Rolisteam que es pot utilitzar autònomament com un servidor/client o connectar amb una instància de Roliserver (actualment una imatge Docker)</p>
     <p xml:lang="de">Dies ist das Rolisteam-Client-Programm, das entweder eigenständig als Server/Client verwendet werden kann oder sich mit einer Roliserver-Instanz (derzeit ein Docker-Image) verbinden kann</p>
