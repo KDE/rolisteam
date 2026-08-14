@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-08-12 09:16+0300\n"
+"PO-Revision-Date: 2026-08-13 09:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -5152,7 +5152,7 @@ msgstr "בתור הקטן יותר"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:614
 msgctxt "RGraphicsView|"
 msgid "Lock/Unlock Item Geometry"
-msgstr ""
+msgstr "נעילה/שחרור של ממדי פריט"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:615
 msgctxt "RGraphicsView|"
@@ -5278,6 +5278,10 @@ msgid ""
 "See the 'COPYRIGHT' file for the complete list of contributors. We provide "
 "no warranty for this program."
 msgstr ""
+"אפשר לשנות ולהפיץ את התוכנית מחדש בכפוף לתנאי הרישיון הציבורי הכללי (גרסה 2 "
+"ואילך). אפשר למצוא עותק של הרישיון הציבורי הכללי בקובץ ‚COPYING’ שמצורף ל־"
+"Rolisteam. זכויות היוצרים של Rolisteam שמורות לתורמיה. בקובץ ‚COPYRIGHT’ "
+"מופיעה רשימת היוצרים המלאה. אנחנו לא מספקים שום אחריות על התוכנית הזאת."
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:66
 msgctxt "AboutRolisteam|"
@@ -7952,7 +7956,7 @@ msgstr "שמירה של הכול"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:283
 msgctxt "SharedNote|"
 msgid "Announce Document"
-msgstr ""
+msgstr "הכרזה על מסמך"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:286
 msgctxt "SharedNote|"
