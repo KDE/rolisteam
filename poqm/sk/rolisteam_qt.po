@@ -3669,9 +3669,6 @@ msgid "Player"
 msgstr "Hráč"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "Neznáme"
@@ -3820,9 +3817,6 @@ msgid "PC Token"
 msgstr "Token PC"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Light"
 msgctxt "QObject|"
 msgid "Light"
 msgstr "Svetlo"
