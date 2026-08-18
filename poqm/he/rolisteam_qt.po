@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-08-13 09:44+0300\n"
+"PO-Revision-Date: 2026-08-17 09:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -577,12 +577,12 @@ msgstr "פתיחת <קובץ>."
 #: src/binaries/mindmap/Main.qml:23 src/binaries/mindmap/Main.qml:31
 msgctxt "Main|"
 msgid "MindMap (*.rmindmap *.rmap)"
-msgstr ""
+msgstr "רשת קשרים (‎*.rmindmap‏ ‎*.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
 msgctxt "Main|"
 msgid "Open MindMap"
-msgstr ""
+msgstr "פתיחת מפת קשרים"
 
 #: src/binaries/mindmap/MindMap.qml:69
 msgctxt "MindMap|"
