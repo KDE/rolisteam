@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-08-17 09:45+0300\n"
+"PO-Revision-Date: 2026-08-17 10:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -2767,7 +2767,7 @@ msgstr "כותרת המדיה בסרגל הכלים"
 #: src/binaries/widget/mainwindow.ui:512 src/binaries/widget/mainwindow.ui:524
 msgctxt "MainWindow|"
 msgid "Mindmap"
-msgstr ""
+msgstr "מפת קשרים"
 
 #: src/binaries/widget/mainwindow.ui:527
 msgctxt "MainWindow|"
@@ -3974,7 +3974,7 @@ msgstr "מפה וקטורית (%1)"
 #, qt-format
 msgctxt "QObject|"
 msgid "Mindmap (%1)"
-msgstr ""
+msgstr "מפת קשרים (%1)"
 
 #: src/libraries/core/src/worker/utilshelper.cpp:212
 msgctxt "QObject|"
@@ -3999,7 +3999,7 @@ msgstr "גיליון דמויות"
 #: src/libraries/core/src/worker/utilshelper.cpp:216
 msgctxt "QObject|"
 msgid "Mindmap"
-msgstr ""
+msgstr "מפת קשרים"
 
 #: src/libraries/core/src/worker/utilshelper.cpp:217
 msgctxt "QObject|"
@@ -4399,10 +4399,10 @@ msgid "Add %1 image"
 msgstr "הוספת תמונת %1"
 
 #: src/libraries/mindmap/src/command/additemcommand.cpp:33
-#, fuzzy, qt-format
+#, qt-format
 msgctxt "AddItemCommand|"
 msgid "Add item of type: %1 to mindmap"
-msgstr "הוספת פריט מסוג: %1"
+msgstr "הוספת פריט מסוג: %1 למפת הקשרים"
 
 #: src/libraries/mindmap/src/command/additemcommand.cpp:99
 msgctxt "AddLinkCommand|"
@@ -5567,7 +5567,7 @@ msgstr "נתונים לייבוא"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:61
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Mindmaps"
-msgstr ""
+msgstr "מפות קשרים"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:68
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5667,7 +5667,7 @@ msgstr "פתקיות"
 #: src/libraries/rwidgets/dialogs/newfiledialog.cpp:37
 msgctxt "NewFileDialog|"
 msgid "MindMap"
-msgstr ""
+msgstr "מפת קשרים"
 
 #: src/libraries/rwidgets/dialogs/newfiledialog.ui:14
 msgctxt "NewFileDialog|"
@@ -5995,7 +5995,7 @@ msgstr "%1"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 msgctxt "PreferencesDialogBox|"
 msgid "MindMap"
-msgstr ""
+msgstr "מפת קשרים"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:501
 msgctxt "PreferencesDialogBox|"
@@ -6705,7 +6705,7 @@ msgstr "מפה"
 #: src/libraries/rwidgets/docks/campaigndock.cpp:59
 msgctxt "campaign::CampaignDock|"
 msgid "Mindmap"
-msgstr ""
+msgstr "מפת קשרים"
 
 #: src/libraries/rwidgets/docks/campaigndock.cpp:60
 msgctxt "campaign::CampaignDock|"
@@ -8705,13 +8705,13 @@ msgstr "שגיאת טעינה"
 #, qt-format
 msgctxt "MindMapView|"
 msgid "%1 - Mindmap"
-msgstr ""
+msgstr "%1 - מפת קשרים"
 
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:155
 #, qt-format
 msgctxt "MindMapView|"
 msgid "%1 [%2] - Mindmap"
-msgstr ""
+msgstr "%1 [%2] - מפת קשרים"
 
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:157
 msgctxt "MindMapView|"
