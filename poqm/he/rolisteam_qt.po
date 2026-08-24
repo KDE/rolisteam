@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-08-17 10:57+0300\n"
+"PO-Revision-Date: 2026-08-23 11:20+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -604,7 +604,7 @@ msgstr "כמות: %1"
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr ""
+msgstr "חלונית מסייע מילוי"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
 msgctxt "AutoFillerDialog|"
@@ -820,7 +820,7 @@ msgstr "תמונה"
 #: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
 msgid "RLabel"
-msgstr ""
+msgstr "RLabel"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:28
 msgctxt "TypeDelegate|"
@@ -981,7 +981,7 @@ msgstr "כמות עמודות:"
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:44
 msgctxt "ColumnDefinitionDialog|"
 msgid "Control Position"
-msgstr ""
+msgstr "נקודת בקרה"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:52
 msgctxt "ColumnDefinitionDialog|"
@@ -2152,7 +2152,7 @@ msgstr "החלה על כל השורות"
 #: src/binaries/rcse/widgets/fieldview.cpp:30
 msgctxt "FieldView|"
 msgid "Open filler assistant"
-msgstr ""
+msgstr "פתיחת מסייע מילוי"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:31
 msgctxt "FieldView|"
@@ -2242,7 +2242,7 @@ msgstr "כל מסמכי המערכה"
 #: src/binaries/widget/mainwindow.cpp:478
 msgctxt "MainWindow|"
 msgid "List of antagonists"
-msgstr ""
+msgstr "רשימת אנטגוניסטים"
 
 #: src/binaries/widget/mainwindow.cpp:479
 msgctxt "MainWindow|"
@@ -2359,7 +2359,7 @@ msgstr ""
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
-msgstr ""
+msgstr "%1 הצטרף או הצטרפה למשחק הרגע."
 
 #: src/binaries/widget/mainwindow.cpp:929
 #, qt-format
@@ -2371,7 +2371,7 @@ msgstr "ל־%1 אין את הגרסה הנכונה: %2."
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
-msgstr ""
+msgstr "%1 עזב או עזבה את המשחק כרגע."
 
 #: src/binaries/widget/mainwindow.cpp:1016
 msgctxt "MainWindow|"
@@ -3328,12 +3328,12 @@ msgstr "תמונה"
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:183
 msgctxt "ChatroomSplitterModel|"
 msgid "[move right] Source or destination chatroom does not exist."
-msgstr ""
+msgstr "[העברה ימינה] חדר שיח המקור או היעד לא קיים."
 
 #: src/libraries/core/src/model/chatroomsplittermodel.cpp:206
 msgctxt "ChatroomSplitterModel|"
 msgid "[move left] Source or destination chatroom does not exist."
-msgstr ""
+msgstr "[העברה שמאלה] חדר שיח המקור או היעד לא קיים."
 
 #: src/libraries/core/src/model/colormodel.cpp:44
 msgctxt "ColorModel|"
@@ -3813,7 +3813,6 @@ msgid "PC Token"
 msgstr "אסימון ד״ש"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
 msgctxt "QObject|"
 msgid "Light"
 msgstr "תאורה"
@@ -4020,7 +4019,7 @@ msgstr "תצוגת דפדפן"
 #, qt-format
 msgctxt "DiceModel|"
 msgid "# 3D Roll: Distance %1 - Time %2 - Rotation %3"
-msgstr ""
+msgstr "# הטלה תלת־ממדית: מרחק %1 - זמן %2 - סיבוב %3"
 
 #: src/libraries/dicephysics/qml/Main.qml:41
 msgctxt "Main|"
@@ -4136,7 +4135,7 @@ msgstr "פתיחת מגירה"
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:57
 msgctxt "ButtonGrid|"
 msgid "Add Root"
-msgstr ""
+msgstr "הוספת שורש"
 
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:66
 msgctxt "ButtonGrid|"
@@ -4237,7 +4236,7 @@ msgstr "הוספת תת־מפרק"
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
 msgid "Add Root"
-msgstr ""
+msgstr "הוספת שורש"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:17
 msgctxt "MindMenu|"
@@ -5022,7 +5021,7 @@ msgstr "הגדרת שכבה"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:274
 msgctxt "RGraphicsView|"
 msgid "Normalize Size"
-msgstr ""
+msgstr "נרמול גודל"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:285
 msgctxt "RGraphicsView|"
@@ -5042,12 +5041,12 @@ msgstr "שינוי מצב חשיפה"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:314
 msgctxt "RGraphicsView|"
 msgid "Roll Init"
-msgstr ""
+msgstr "אתחול הטלה"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:320
 msgctxt "RGraphicsView|"
 msgid "Clear Init"
-msgstr ""
+msgstr "איפוס אתחול"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:326
 msgctxt "RGraphicsView|"
@@ -5207,7 +5206,7 @@ msgstr "כל הדב״שים"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:687
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on All Npcs"
-msgstr ""
+msgstr "הטלת היוזמה לכל הדב״שים"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:691
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:706
@@ -5218,7 +5217,7 @@ msgstr "בחירה"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:692
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on Selection"
-msgstr ""
+msgstr "הטלת היוזמה לבחירה"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:696
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:711
@@ -5229,7 +5228,7 @@ msgstr "כל הדמויות"
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:697
 msgctxt "RGraphicsView|"
 msgid "Roll Initiative on All Characters"
-msgstr ""
+msgstr "הטלת היוזמה לכל הדמויות"
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:702
 msgctxt "RGraphicsView|"
@@ -5268,6 +5267,13 @@ msgid ""
 "Existing features : Map sharing (with permission management), Image sharing, "
 "background music, dice roll and so on. Rolisteam is written with Qt"
 msgstr ""
+"Rolisteam מסייע לך לנהל משחקי תפקידים שולחניים עם חברים/שחקנים מרוחקים. הוא "
+"מספק מגוון יכולות לשיתוף מפות, תמונות והוא גם כולל כלי תקשורת עם "
+"החברים/השחקנים שלך. היעד הוא להפוך משחקי תפקידים שמנוהלים על ידי Rolisteam "
+"לטובים לא פחות ממשחקי תפקידים מסביב לשולחן שלך. כדי להגיע למטרה הזאת, אנו "
+"עמלים קשה כדי לספק לך יותר ויותר יכולות. יכולות קיימות: שיתוף מפות (עם ניהול "
+"הרשאות), שיתוף תמונות, מוזיקת רקע, הטלת קוביות ועוד. התוכנה Rolisteam נכתב "
+"עם Qt"
 
 #: src/libraries/rwidgets/dialogs/aboutrolisteam.cpp:61
 msgctxt "AboutRolisteam|"
@@ -5351,7 +5357,7 @@ msgstr "בדיקה"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:75
 msgctxt "CampaignProperties|"
 msgid "Converted"
-msgstr ""
+msgstr "הומר"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:133
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:136
@@ -5612,7 +5618,7 @@ msgstr "רשימת נגינה לנגן שמע 1"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:124
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Antagonist list"
-msgstr ""
+msgstr "רשימת אנטגוניסטים"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:131
 msgctxt "ImportDataFromCampaignDialog|"
@@ -6239,7 +6245,7 @@ msgstr "לא להציג שוב לעולם!"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
 msgid "No Right"
-msgstr ""
+msgstr "אין זכות"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:40
 msgctxt "MapWizzardDialog|"
@@ -6264,7 +6270,7 @@ msgstr "ערפל קרב"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.cpp:43
 msgctxt "MapWizzardDialog|"
 msgid "All visible"
-msgstr ""
+msgstr "כל מה שגלוי"
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:14
 msgctxt "MapWizzardDialog|"
@@ -6870,7 +6876,7 @@ msgstr "רשימת שחקנים"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:33
 msgctxt "VmapTopBar|"
 msgid "TopBar for VMap"
-msgstr ""
+msgstr "סרגל עליון למפה הווקטורית"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:61
 msgctxt "VmapTopBar|"
@@ -7444,7 +7450,7 @@ msgstr "תסדיר קובץ OASIS של OpenOffice 2.4 "
 #: src/libraries/rwidgets/editors/sharededitor/announcedocumentdialog.ui:14
 msgctxt "AnnounceDocumentDialog|"
 msgid "Announce Document"
-msgstr ""
+msgstr "הכרזה על מסמך"
 
 #: src/libraries/rwidgets/editors/sharededitor/announcedocumentdialog.ui:35
 msgctxt "AnnounceDocumentDialog|"
@@ -7509,7 +7515,7 @@ msgstr "3000"
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:190
 msgctxt "ConnectToDocument|"
 msgid "LAN Cahoots Documents:"
-msgstr ""
+msgstr "מסמכי Cahoot ברשת המקומית:"
 
 #: src/libraries/rwidgets/editors/sharededitor/document.cpp:295
 msgctxt "Document|"
@@ -7673,6 +7679,42 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">- Chris, Anandi, and "
 "David</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Lucida Grande'; font-size:13pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:28pt; font-weight:600;\">ברוך בואך ל־Cahoots! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:16pt; font-weight:600;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Cahoots הוא עורך טקסט בקוד "
+"פתוח, חוצה מערכות ושיתופי שנוצר כמיזם של Pepperdine Computer Science 2010 "
+"Senior Capstone.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">חיבור והכרזה על מסמכים "
+"לשיתוף זמין תחת תפריט <span style=\" font-weight:600;\">כלים</span>.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Cahoots כפוף לרישיון LGPL "
+"<a href=\"http://code.google.com/p/cahootseditor/\"><span style=\" text-"
+"decoration: underline; color:#0000ff;\">כאן</span></a>.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">- כריס, אננדי ודיויד</p></"
+"body></html>"
 
 #: src/libraries/rwidgets/editors/sharededitor/firstrundialog.ui:106
 msgctxt "FirstRunDialog|"
@@ -7720,6 +7762,46 @@ msgid ""
 "size:10pt; font-weight:400;\">- Chris, Anandi, and David</span></p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:28pt; "
+"font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:20pt;\">ברוך בואך ל־Cahoots! </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:400;\">Cahoots הוא עורך טקסט בקוד פתוח, חוצה מערכות "
+"ושיתופי שנוצר כמיזם של Pepperdine Computer Science 2010 Senior Capstone.</"
+"span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; font-weight:400;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:400;\">חיבור והכרזה על מסמכים לשיתוף זמין תחת תפריט "
+"כלים.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; font-weight:400;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:400;\">Cahoots כפוף לרישיון LGPL </span><a href="
+"\"http://code.google.com/p/cahootseditor/\"><span style=\" font-size:10pt; "
+"font-weight:400; text-decoration: underline; color:#0000ff;\">כאן</span></"
+"a><span style=\" font-size:10pt; font-weight:400;\">.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; font-weight:400;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:400;\">- כריס, אננדי ודיויד</span></p></body></html>"
 
 #: src/libraries/rwidgets/editors/sharededitor/participantspane.ui:26
 msgctxt "ParticipantsPane|"
@@ -8887,12 +8969,12 @@ msgstr "ערפל קרב"
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
 msgid "All visible"
-msgstr ""
+msgstr "כל מה שגלוי"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
 msgid "No Right"
-msgstr ""
+msgstr "אין זכות"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:50
 msgctxt "QObject|"
