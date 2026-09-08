@@ -605,7 +605,7 @@ msgstr "Compteur : %1"
 #: src/binaries/rcse/autofillerdialog.ui:14
 msgctxt "AutoFillerDialog|"
 msgid "Filler Assistant Dialog"
-msgstr "Boîte de dialogue d'assistance au remplissage"
+msgstr "Boite de dialogue d'assistance au remplissage"
 
 #: src/binaries/rcse/autofillerdialog.ui:35
 msgctxt "AutoFillerDialog|"
@@ -968,7 +968,7 @@ msgstr "Propriétés de table"
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:14
 msgctxt "ColumnDefinitionDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/binaries/rcse/dialog/columndefinitiondialog.ui:24
 msgctxt "ColumnDefinitionDialog|"
@@ -1043,7 +1043,7 @@ msgstr "Fichiers PDF (*.pdf)"
 #: src/binaries/rcse/dialog/pdfmanager.ui:14
 msgctxt "PdfManager|"
 msgid "Export PDF background Dialog"
-msgstr "Boîte de dialogue d'exportation en arrière-plan au format « PDF »"
+msgstr "Boite de dialogue d'exportation en arrière-plan au format « PDF »"
 
 #: src/binaries/rcse/dialog/pdfmanager.ui:26
 msgctxt "PdfManager|"
@@ -1882,7 +1882,7 @@ msgstr "Emplacement pour l'enregistrement des fichiers générés"
 #: src/binaries/rcse/preferences/preferencesdialog.ui:14
 msgctxt "PreferencesDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/binaries/rcse/preferences/preferencesdialog.ui:20
 msgctxt "PreferencesDialog|"
@@ -2131,7 +2131,7 @@ msgstr "Définir une propriété pour tous les personnages : %1"
 #: src/binaries/rcse/widgets/codeedit.ui:14
 msgctxt "CodeEdit|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:26
 msgctxt "FieldView|"
@@ -4045,7 +4045,7 @@ msgstr "# Lancer en 3D : selon Distance %1 - Durée %2 - Rotation %3"
 #: src/libraries/dicephysics/qml/Main.qml:41
 msgctxt "Main|"
 msgid "(Dialog)"
-msgstr "(Boîte de dialogue)"
+msgstr "(Boite de dialogue)"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
 msgctxt "Main|"
@@ -5364,7 +5364,7 @@ msgstr[1] "%n fichier(s)"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:14
 msgctxt "CampaignProperties|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:24
 msgctxt "CampaignProperties|"
@@ -5494,7 +5494,7 @@ msgstr "Nouvelle tentative de connexion"
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:14
 msgctxt "HistoryViewerDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:27
 #: src/libraries/rwidgets/dialogs/historyviewerdialog.ui:34
@@ -5581,7 +5581,7 @@ msgstr "Ouvrir un fichier à partir de votre disque dur"
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:14
 msgctxt "ImportDataFromCampaignDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/importdatafromcampaigndialog.ui:22
 msgctxt "ImportDataFromCampaignDialog|"
@@ -5707,7 +5707,7 @@ msgstr "Carte mentale"
 #: src/libraries/rwidgets/dialogs/newfiledialog.ui:14
 msgctxt "NewFileDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/newfiledialog.ui:22
 msgctxt "NewFileDialog|"
@@ -5727,7 +5727,7 @@ msgstr "Type"
 #: src/libraries/rwidgets/dialogs/persondialog.ui:14
 msgctxt "PersonDialog|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/persondialog.ui:40
 msgctxt "PersonDialog|"
@@ -5836,7 +5836,7 @@ msgstr "Importer un thème de Rolisteam"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:14
 msgctxt "PreferencesDialogBox|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:27
 msgctxt "PreferencesDialogBox|"
@@ -6210,7 +6210,7 @@ msgstr "Sélectionnez un dossier"
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:14
 msgctxt "SelectConnectionProfileDialog|"
 msgid "Welcome To Rolisteam - Connection Dialog"
-msgstr "Bienvenue dans Rolisteam - Boîte de dialogue « Connexion »"
+msgstr "Bienvenue dans Rolisteam - Boite de dialogue « Connexion »"
 
 #: src/libraries/rwidgets/dialogs/selectconnectionprofiledialog.ui:31
 msgctxt "SelectConnectionProfileDialog|"
@@ -6267,7 +6267,7 @@ msgstr "Veuillez trouver le type ici : <a href=\"%1\">%1</a>"
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:14
 msgctxt "TipOfDayViewer|"
 msgid "Dialog"
-msgstr "Boîte de dialogue"
+msgstr "Boite de dialogue"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
 msgctxt "TipOfDayViewer|"
