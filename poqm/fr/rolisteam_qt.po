@@ -3199,7 +3199,7 @@ msgstr "Le serveur est activé"
 #, qt-format
 msgctxt "NetworkController|"
 msgid "IP Address changed (v4): %1"
-msgstr "L’adresse IP (v4) a changé: %1"
+msgstr "L'adresse IP (v4) a changé: %1"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
@@ -4177,7 +4177,7 @@ msgstr "Supprimer les fichiers sélectionnés"
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:100
 msgctxt "ButtonGrid|"
 msgid "Refresh"
-msgstr "Rafraîchir"
+msgstr "Rafraichir"
 
 #: src/libraries/mindmap/resources/qml/ButtonGrid.qml:106
 msgctxt "ButtonGrid|"
@@ -8192,7 +8192,7 @@ msgstr "« CTRL » + « P »"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:422
 msgctxt "SharedNote|"
 msgid "Refresh"
-msgstr "Rafraîchir"
+msgstr "Rafraichir"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:434
 msgctxt "SharedNote|"
