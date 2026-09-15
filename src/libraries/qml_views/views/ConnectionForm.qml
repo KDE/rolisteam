@@ -30,6 +30,15 @@ Item {
         onTriggered: ProfileController.removeProfile(_list.currentIndex)
     }
 
+    Shortcut {
+        sequence: ["Return", "Enter"]//StandardKey.InsertParagraphSeparator
+        onActivated: {
+            if(_connectBtn.enabled)
+                _connectBtn.clicked()
+        }
+    }
+
+
     SplitView {
         id: splitView
         anchors.fill: parent
