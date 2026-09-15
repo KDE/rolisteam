@@ -23,7 +23,7 @@
 #ifndef PLAYERS_LIST_H
 #define PLAYERS_LIST_H
 
-//#include "data/player.h"
+// #include "data/player.h"
 #include <QAbstractItemModel>
 #include <QPointer>
 #include <core_global.h>
@@ -92,6 +92,8 @@ public slots:
 signals:
     void playerJoin(Player* player);
     void playerLeft(Player* player);
+    void characterAdded(Player* player, Character* character);
+    void characterRemoved(Player* player, const QString& uuid);
     void gameMasterIdChanged(const QString& gameMasterId);
     void localPlayerIdChanged(const QString& localId);
 

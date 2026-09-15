@@ -73,6 +73,8 @@ private:
     std::unique_ptr<QAction> m_addAvatarAct;
     std::unique_ptr<QAction> m_removeAvatarAct;
     std::unique_ptr<QAction> m_changeName;
+    std::unique_ptr<QAction> m_addCharacter;
+    std::unique_ptr<QAction> m_removeCharacter;
     std::unique_ptr<QAction> m_changeColor;
     std::vector<QAction*> m_propertyActions;
 };

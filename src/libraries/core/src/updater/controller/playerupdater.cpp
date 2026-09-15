@@ -28,6 +28,8 @@ PlayerUpdater::PlayerUpdater(PlayerController* ctrl, QObject* parent) : NetWorkR
 
     connect(model, &PlayerModel::playerJoin, this, &PlayerUpdater::updateNewPlayer);
     connect(model, &PlayerModel::playerLeft, this, &PlayerUpdater::playerLeft);
+    connect(model, &PlayerModel::characterAdded, this, &PlayerUpdater::addCharacter);
+    connect(model, &PlayerModel::characterRemoved, this, &PlayerUpdater::removeCharacter);
 }
 
 NetWorkReceiver::SendType PlayerUpdater::processMessage(NetworkMessageReader* msg)
@@ -52,7 +54,19 @@ NetWorkReceiver::SendType PlayerUpdater::processMessage(NetworkMessageReader* ms
     {
         switch(msg->action())
         {
-
+        case NetMsg::AddCharacterToPlayerAct:
+        {
+            m_updating= true;
+            msg->string8();
+            MessageHelper::addCharacterIntoModel(*msg, m_ctrl->model());
+            m_updating= false;
+        }
+        break;
+        case NetMsg::RemoveCharacterToPlayerAct:
+            m_updating= true;
+            MessageHelper::removeCharacterIntoModel(*msg, m_ctrl->model());
+            m_updating= false;
+            break;
         case NetMsg::ChangePlayerPropertyAct:
         case NetMsg::ChangeCharacterPropertyAct:
             m_updating= true;
@@ -191,4 +205,47 @@ void PlayerUpdater::updateNewPlayer(Player* player)
 void PlayerUpdater::playerLeft(Player* player)
 {
     disconnect(player, 0, this, 0);
+}
+
+void PlayerUpdater::addCharacter(Player* player, Character* character)
+{
+    connect(character, &Character::avatarChanged, this,
+            [this, character]() { sendOffChanges<QByteArray>(character, true, Core::person::avatar); });
+    connect(character, &Character::nameChanged, this,
+            [this, character]() { sendOffChanges<QString>(character, true, Core::person::name); });
+    connect(character, &Character::colorChanged, this,
+            [this, character]() { sendOffChanges<QColor>(character, true, Core::person::color); });
+    connect(character, &Character::currentHealthPointsChanged, this,
+            [this, character]() { sendOffChanges<int>(character, true, Core::person::healthPoints); });
+    connect(character, &Character::npcChanged, this,
+            [this, character]() { sendOffChanges<bool>(character, true, Core::person::isNpc); });
+    connect(character, &Character::maxHPChanged, this,
+            [this, character]() { sendOffChanges<int>(character, true, Core::person::maxHP); });
+    connect(character, &Character::minHPChanged, this,
+            [this, character]() { sendOffChanges<int>(character, true, Core::person::minHP); });
+    connect(character, &Character::distancePerTurnChanged, this,
+            [this, character]() { sendOffChanges<int>(character, true, Core::person::distancePerTurn); });
+
+    connect(character, &Character::initCommandChanged, this,
+            [this, character]() { sendOffChanges<QString>(character, true, Core::person::initCommand); });
+    connect(character, &Character::hasInitScoreChanged, this,
+            [this, character]() { sendOffChanges<bool>(character, true, Core::person::hasInitiative); });
+    connect(character, &Character::initiativeChanged, this,
+            [this, character]() { sendOffChanges<int>(character, true, Core::person::initiative); });
+    connect(character, &Character::stateIdChanged, this,
+            [this, character]() { sendOffChanges<QString>(character, true, Core::person::stateId); });
+    connect(character, &Character::lifeColorChanged, this,
+            [this, character]() { sendOffChanges<QColor>(character, true, Core::person::lifeColor); });
+
+    NetworkMessageWriter msg(NetMsg::PlayerCharacterCategory, NetMsg::AddCharacterToPlayerAct);
+    msg.string8(player->uuid());
+    PlayerMessageHelper::writeCharacterIntoMessage(msg, character);
+    msg.sendToServer();
+}
+void PlayerUpdater::removeCharacter(Player* player, const QString& uuid)
+{
+    NetworkMessageWriter msg(NetMsg::PlayerCharacterCategory, NetMsg::RemoveCharacterToPlayerAct);
+    msg.string8(player->uuid());
+    msg.string8(uuid);
+    msg.sendToServer();
 }

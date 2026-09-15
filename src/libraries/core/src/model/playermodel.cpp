@@ -253,7 +253,9 @@ Qt::ItemFlags PlayerModel::flags(const QModelIndex& index) const
     if(!index.isValid())
         return Qt::NoItemFlags;
 
-    if(index.row() == 0 || gameMasterId() == localPlayerId())
+    auto isLocal= index.data(PlayerModel::LocalRole).toBool();
+
+    if(isLocal || gameMasterId() == localPlayerId())
         return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable;
     else
         return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
@@ -304,9 +306,8 @@ QModelIndex PlayerModel::parent(const QModelIndex& index) const
     {
         return QModelIndex();
     }
-    auto it
-        = std::find_if(m_players.begin(), m_players.end(),
-                       [parentPerson](const std::unique_ptr<Player>& person) { return parentPerson == person.get(); });
+    auto it= std::find_if(m_players.begin(), m_players.end(), [parentPerson](const std::unique_ptr<Player>& person)
+                          { return parentPerson == person.get(); });
 
     return createIndex(static_cast<int>(std::distance(m_players.begin(), it)), 0, parentPerson);
 }
@@ -463,9 +464,8 @@ Person* PlayerModel::personById(const QString& id) const
 
 Character* PlayerModel::characterById(const QString& id) const
 {
-    const auto& it
-        = std::find_if(m_players.begin(), m_players.end(),
-                       [id](const std::unique_ptr<Player>& player) { return (nullptr != player->characterById(id)); });
+    const auto& it= std::find_if(m_players.begin(), m_players.end(), [id](const std::unique_ptr<Player>& player)
+                                 { return (nullptr != player->characterById(id)); });
 
     if(it != m_players.end())
         return it->get()->characterById(id);
@@ -475,7 +475,7 @@ Character* PlayerModel::characterById(const QString& id) const
 
 QHash<QString, QString> PlayerModel::variableDictionnary(const QString& characterId) const
 {
-    auto character = characterById(characterId);
+    auto character= characterById(characterId);
     if(!character)
         return {};
 
@@ -487,8 +487,7 @@ void PlayerModel::addPlayer(Player* player)
     if(nullptr == player)
         return;
 
-    auto it= std::find_if(m_players.begin(), m_players.end(),
-                          [player](const std::unique_ptr<Player>& t)
+    auto it= std::find_if(m_players.begin(), m_players.end(), [player](const std::unique_ptr<Player>& t)
                           { return (t.get() == player || t->uuid() == player->uuid()); });
 
     if(it != m_players.end())
@@ -529,6 +528,9 @@ void PlayerModel::addCharacter(const QModelIndex& parent, Character* character, 
     beginInsertRows(parent, size, size);
     player->addCharacter(character);
     endInsertRows();
+
+    if(player->uuid() == m_localPlayerId)
+        emit characterAdded(player, character);
 }
 
 void PlayerModel::removeCharacter(Character* character)
@@ -543,10 +545,14 @@ void PlayerModel::removeCharacter(Character* character)
 
     auto parent= personToIndex(player);
     auto idx= player->indexOf(character);
+    auto uuid= character->uuid();
 
     beginRemoveRows(parent, idx, idx);
     player->removeChild(character);
     endRemoveRows();
+
+    if(player->uuid() == m_localPlayerId)
+        emit characterRemoved(player, uuid);
 }
 
 void PlayerModel::setLocalPlayerId(const QString& uuid)

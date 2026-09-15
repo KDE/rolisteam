@@ -52,11 +52,27 @@ UserListView::UserListView(QWidget* parent) : QTreeView(parent)
     m_removeAvatarAct= std::make_unique<QAction>(tr("Remove..."), this);
     m_changeName= std::make_unique<QAction>(tr("Edit name"), this);
     m_changeColor= std::make_unique<QAction>(tr("Change color…"), this);
+    m_addCharacter= std::make_unique<QAction>(tr("Add Local character"), this);
+    m_removeCharacter= std::make_unique<QAction>(tr("Remove character"), this);
 
     connect(m_addAvatarAct.get(), &QAction::triggered, this, &UserListView::addAvatar);
     connect(m_removeAvatarAct.get(), &QAction::triggered, this, &UserListView::deleteAvatar);
     connect(m_changeName.get(), &QAction::triggered, this, [this]() { edit(currentIndex()); });
     connect(m_changeColor.get(), &QAction::triggered, this, &UserListView::editCurrentItemColor);
+
+    connect(m_addCharacter.get(), &QAction::triggered, this, [this]() { m_ctrl->addLocalCharacter(); });
+    connect(m_removeCharacter.get(), &QAction::triggered, this,
+            [this]()
+            {
+                auto index= currentIndex();
+                auto tmpperso= index.data(PlayerModel::PersonPtrRole).value<Person*>();
+                auto local= index.data(PlayerModel::LocalRole).toBool();
+
+                if(!tmpperso || !local)
+                    return;
+
+                m_ctrl->removeLocalCharacter(index);
+            });
 
     setIconSize(QSize(64, 64));
 
@@ -200,6 +216,9 @@ void UserListView::contextMenuEvent(QContextMenuEvent* e)
 
     auto tmpperso= index.data(PlayerModel::PersonPtrRole).value<Person*>();
 
+    auto isLocal= index.data(PlayerModel::LocalRole).toBool();
+    auto isGm= index.data(PlayerModel::GmRole).toBool();
+
     auto flags= index.flags();
 
     if(!(flags & Qt::ItemIsEditable) || tmpperso == nullptr)
@@ -274,7 +293,7 @@ void UserListView::contextMenuEvent(QContextMenuEvent* e)
         if(!actionList.isEmpty())
         {
             auto actionMenu= popMenu.addMenu(tr("Action"));
-            for(auto action : actionList)
+            for(auto action : std::as_const(actionList))
             {
                 auto act= actionMenu->addAction(action->name());
                 connect(act, &QAction::triggered, this,
@@ -286,7 +305,7 @@ void UserListView::contextMenuEvent(QContextMenuEvent* e)
         if(!shapeList.isEmpty())
         {
             auto shapeMenu= popMenu.addMenu(tr("Shape"));
-            for(auto shape : shapeList)
+            for(auto shape : std::as_const(shapeList))
             {
                 auto act= shapeMenu->addAction(shape->name());
                 act->setCheckable(true);
@@ -302,6 +321,14 @@ void UserListView::contextMenuEvent(QContextMenuEvent* e)
             }
         }
     }
+
+    popMenu.addSeparator();
+
+    // add remove character
+    if(!m_ctrl->localIsGm())
+        popMenu.addAction(m_addCharacter.get());
+    if((m_ctrl->localIsGm() || isLocal) && index.row() > 0)
+        popMenu.addAction(m_removeCharacter.get());
     popMenu.exec(e->globalPos());
 }
 

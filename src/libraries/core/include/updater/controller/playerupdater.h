@@ -28,6 +28,8 @@ public:
 public slots:
     void updateNewPlayer(Player* player);
     void playerLeft(Player* player);
+    void addCharacter(Player* player, Character* character);
+    void removeCharacter(Player* player, const QString& uuid);
 
 private:
     template <typename T>

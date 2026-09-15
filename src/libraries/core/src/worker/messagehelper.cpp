@@ -329,6 +329,28 @@ void MessageHelper::updatePerson(NetworkMessageReader& data, PlayerModel* player
     }
 }
 
+void MessageHelper::addCharacterIntoModel(NetworkMessageReader& data, PlayerModel* playerModel)
+{
+    QString playerId;
+    auto character= PlayerMessageHelper::readCharacter(data, playerId);
+    if(!character)
+        return;
+    auto idx= playerModel->personToIndex(playerModel->playerById(playerId));
+    playerModel->addCharacter(idx, character);
+}
+
+void MessageHelper::removeCharacterIntoModel(NetworkMessageReader& data, PlayerModel* playerModel)
+{
+    auto playerId= data.string8();
+    auto characterId= data.string8();
+
+    auto character= playerModel->characterById(characterId);
+
+    if(!character)
+        return;
+    playerModel->removeCharacter(character);
+}
+
 void MessageHelper::stopSharingSheet(const QString& sheetId, const QString& ctrlId, const QString& characterId)
 {
     NetworkMessageWriter msg(NetMsg::CharacterSheetCategory, NetMsg::closeCharacterSheet);

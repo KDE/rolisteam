@@ -157,6 +157,8 @@ public:
     static QStringList readIdList(NetworkMessageReader& data);
     static void fetchCharacterStatesFromNetwork(NetworkMessageReader* data, CharacterStateModel* model);
     static void fetchDiceAliasFromNetwork(NetworkMessageReader* data, QList<DiceAlias*>* list);
+    static void addCharacterIntoModel(NetworkMessageReader& data, PlayerModel* playerModel);
+    static void removeCharacterIntoModel(NetworkMessageReader& data, PlayerModel* playerModel);
 
     // ImageModel
     static void sendOffImageInfo(const mindmap::ImageInfo& info, MediaControllerBase* ctrl);
