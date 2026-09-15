@@ -8,6 +8,8 @@ Frame {
     property QtObject message: model.message
     property QtObject styleSheet: Theme.styleSheet("InstantMessaging")
 
+    signal copyCommand(msg : string)
+
     padding: frame.styleSheet.padding+10
     Layout.minimumWidth: iconPart.implicitWidth + mainText.implicitWidth + details.implicitWidth + 2 * spacing + 50
     ColumnLayout {
@@ -90,6 +92,13 @@ Frame {
             sourceSize.height: layout.implicitHeight
             opacity: 0.4
             fillMode: Image.PreserveAspectFit
+        }
+    }
+
+    TapHandler {
+
+        onLongPressed: {
+            frame.copyCommand("!%1".arg(frame.message.command))
         }
     }
 }

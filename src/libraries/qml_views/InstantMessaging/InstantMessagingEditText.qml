@@ -9,9 +9,12 @@ Frame {
     property alias model: selector.model
     property alias currentPersonId: selector.currentValue
     property alias currentPersonName: selector.currentText
+    property alias text: edit.text
+
     signal sendClicked(string text, url imageLink)
     signal focusGained()
     padding: 0
+
 
     TextWriterController {
         id: textCtrl

@@ -181,6 +181,7 @@ Item {
                     delegate: Component {
                         id: delegateComponent
                         Loader {
+
                             property string writerIdldr: model.writerId
                             property string messageTextldr: model.text
                             property bool localldr: model.local
@@ -199,6 +200,11 @@ Item {
                             source: isTextMessage ? "TextMessageDelegate.qml" :
                                     isCommandMessage ? "CommandMessageDelegate.qml" :
                                     isDiceMessage ? "DiceMessageDelegate.qml" : "ErrorMessageDelegate.qml"
+
+                            onLoaded: {
+                                if(item && isDiceMessage)
+                                    item.copyCommand.connect(imEditText.setText)
+                            }
                         }
                     }
                 }
@@ -213,6 +219,9 @@ Item {
 
             InstantMessagingEditText {
                 id: imEditText
+                function setText(msg) {
+                    imEditText.text = msg
+                }
                 SplitView.fillWidth: true
                 SplitView.preferredHeight: root.styleSheet.preferredHeight
 
