@@ -19,6 +19,8 @@
  ***************************************************************************/
 #include "controller/instantmessagingcontroller.h"
 
+#include <QApplication>
+#include <QClipboard>
 #include <QJSEngine>
 #include <QQmlEngine>
 #include <QQuickStyle>
@@ -192,6 +194,14 @@ void InstantMessagingController::openLink(const QString& link)
 {
     qCDebug(MessagingCat) << "open link" << link;
     emit openWebPage(link);
+}
+
+void InstantMessagingController::copyText(const QString& text)
+{
+    QClipboard* clipboard= QApplication::clipboard();
+    if(!clipboard)
+        return;
+    clipboard->setText(text);
 }
 
 void InstantMessagingController::setDiceParser(DiceRoller* diceParser)

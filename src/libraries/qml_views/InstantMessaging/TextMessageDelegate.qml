@@ -59,11 +59,19 @@ ColumnLayout {
                 textFormat: Text.StyledText
                 wrapMode: Text.WordWrap
                 onLinkActivated:(link) => InstantMessagerManager.ctrl.openLink(link)
+                ToolTip.text: qsTr("Text has been copied!")
+                ToolTip.visible: copier.pressed
                 background: Rectangle {
                     id: bubble
                     color: root.local ? root.styleSheet.localMsgColor : root.styleSheet.RemoteMsgColor
                     opacity: 0.3
                     radius: root.styleSheet.radiusSize
+                }
+                TapHandler {
+                    id: copier
+                    onPressedChanged: {
+                        InstantMessagerManager.ctrl.copyText(root.text)
+                    }
                 }
             }
             Image {
