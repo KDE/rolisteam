@@ -3273,7 +3273,7 @@ msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Bild kopiert"
 
-#: src/libraries/core/src/controller/instantmessagingcontroller.cpp:138
+#: src/libraries/core/src/controller/instantmessagingcontroller.cpp:140
 msgctxt "InstantMessagingController|"
 msgid "Global"
 msgstr "Global "
@@ -3708,12 +3708,12 @@ msgctxt "PlayerModel|"
 msgid "PC"
 msgstr "SC"
 
-#: src/libraries/core/src/model/playermodel.cpp:266
+#: src/libraries/core/src/model/playermodel.cpp:268
 msgctxt "PlayerModel|"
 msgid "Players List"
 msgstr "Spielerliste"
 
-#: src/libraries/core/src/model/playermodel.cpp:496
+#: src/libraries/core/src/model/playermodel.cpp:495
 msgctxt "PlayerModel|"
 msgid "Duplicated player or uuid"
 msgstr ""
@@ -4726,24 +4726,24 @@ msgctxt "ChatView|"
 msgid "close"
 msgstr "Schließen"
 
-#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:61
+#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:63
 msgctxt "DiceMessageDelegate|"
 msgid "Details"
 msgstr "Details"
 
-#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:68
+#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:70
 #, qt-format
 msgctxt "DiceMessageDelegate|"
 msgid "Details: %1"
 msgstr "Details: %1"
 
-#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:74
+#: src/libraries/qml_views/InstantMessaging/DiceMessageDelegate.qml:76
 #, qt-format
 msgctxt "DiceMessageDelegate|"
 msgid "Command: %1"
 msgstr "Befehl: %1"
 
-#: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:166
+#: src/libraries/qml_views/InstantMessaging/InstantMessagingEditText.qml:169
 msgctxt "InstantMessagingEditText|"
 msgid "Send"
 msgstr ""
@@ -4811,82 +4811,90 @@ msgctxt "SideMenu|"
 msgid "Font size Factor:"
 msgstr "Schriftgröße:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:78
+#: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
+#, fuzzy
+#| msgctxt "ClientManager|"
+#| msgid "Connection to the server has been closed."
+msgctxt "TextMessageDelegate|"
+msgid "Text has been copied!"
+msgstr "Die Verbindung zum Server wurde getrennt."
+
+#: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
 msgid "New profile"
 msgstr "Neues Profil"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:88
+#: src/libraries/qml_views/views/ConnectionForm.qml:97
 msgctxt "ConnectionForm|"
 msgid "Clone profile"
 msgstr "Profil klonen"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:98
+#: src/libraries/qml_views/views/ConnectionForm.qml:107
 msgctxt "ConnectionForm|"
 msgid "Remove profile"
 msgstr "Profil entfernen"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:112
+#: src/libraries/qml_views/views/ConnectionForm.qml:121
 msgctxt "ConnectionForm|"
 msgid "Profile Name:"
 msgstr "Profilname:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:125
+#: src/libraries/qml_views/views/ConnectionForm.qml:134
 msgctxt "ConnectionForm|"
 msgid "Connection"
 msgstr "Verbindung"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:130
+#: src/libraries/qml_views/views/ConnectionForm.qml:139
 msgctxt "ConnectionForm|"
 msgid "Address:"
 msgstr "Adresse:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:142
+#: src/libraries/qml_views/views/ConnectionForm.qml:151
 msgctxt "ConnectionForm|"
 msgid "Port:"
 msgstr "Port:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:154
+#: src/libraries/qml_views/views/ConnectionForm.qml:163
 msgctxt "ConnectionForm|"
 msgid "Host the game"
 msgstr "Das Spiel ausrichten"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:161
+#: src/libraries/qml_views/views/ConnectionForm.qml:170
 msgctxt "ConnectionForm|"
 msgid "Password:"
 msgstr "Passwort:"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:176
+#: src/libraries/qml_views/views/ConnectionForm.qml:185
 msgctxt "ConnectionForm|"
 msgid "Player"
 msgstr "Spieler"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:201
+#: src/libraries/qml_views/views/ConnectionForm.qml:210
 msgctxt "ConnectionForm|"
 msgid "Campaign Root:"
 msgstr ""
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:240
+#: src/libraries/qml_views/views/ConnectionForm.qml:249
 msgctxt "ConnectionForm|"
 msgid "Characters"
 msgstr "Charaktere"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:316
+#: src/libraries/qml_views/views/ConnectionForm.qml:325
 msgctxt "ConnectionForm|"
 msgid "Save profiles"
 msgstr "Profile speichern"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:324
+#: src/libraries/qml_views/views/ConnectionForm.qml:333
 msgctxt "ConnectionForm|"
 msgid "Please, set data where you see red borders."
 msgstr ""
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:350
+#: src/libraries/qml_views/views/ConnectionForm.qml:359
 msgctxt "ConnectionForm|"
 msgid "Connect"
 msgstr "Verbinden"
 
-#: src/libraries/qml_views/views/ConnectionForm.qml:361
+#: src/libraries/qml_views/views/ConnectionForm.qml:370
 msgctxt "ConnectionForm|"
 msgid "Cancel"
 msgstr "Abbrechen"
@@ -9450,72 +9458,88 @@ msgctxt "UserListView|"
 msgid "Change color…"
 msgstr "Farbe ändern …"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:64
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:55
+#, fuzzy
+#| msgctxt "rcse::MainWindow|"
+#| msgid "Add character"
+msgctxt "UserListView|"
+msgid "Add Local character"
+msgstr "Charakter hinzufügen"
+
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:56
+#, fuzzy
+#| msgctxt "SelectConnectionProfileDialog|"
+#| msgid "Remove character"
+msgctxt "UserListView|"
+msgid "Remove character"
+msgstr "Charakter entfernen"
+
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:80
 msgctxt "UserListView|"
 msgid "Health Points"
 msgstr "Gesundheitspunkte"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:64
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:80
 msgctxt "UserListView|"
 msgid "Health Points Maximum"
 msgstr "Gesundheitspunkte Maximum"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:65
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:81
 msgctxt "UserListView|"
 msgid "Health Points Minimum"
 msgstr "Gesundheitspunkte Minimum"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:65
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:81
 msgctxt "UserListView|"
 msgid "Distance per turn"
 msgstr "Distanz pro Runde"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:66
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:82
 msgctxt "UserListView|"
 msgid "Initiative Command"
 msgstr "Initiativbefehl"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:66
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:82
 msgctxt "UserListView|"
 msgid "Has initiative"
 msgstr "Hat Initiative"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:67
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:83
 msgctxt "UserListView|"
 msgid "Life bar color"
 msgstr "Farbe des Lebensbalkens"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:140
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:144
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:148
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:156
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:160
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:164
 #, qt-format
 msgctxt "UserListView|"
 msgid "Get value for %1 property"
 msgstr "Wert für Eigenschaft %1 abrufen"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:140
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:144
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:148
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:156
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:160
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:164
 msgctxt "UserListView|"
 msgid "Value:"
 msgstr "Wert:"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:241
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:260
 msgctxt "UserListView|"
 msgid "Set Property"
 msgstr "Eigenschaft festlegen"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:255
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:274
 msgctxt "UserListView|"
 msgid "State"
 msgstr "Status"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:276
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:295
 msgctxt "UserListView|"
 msgid "Action"
 msgstr "Aktion"
 
-#: src/libraries/rwidgets/modelviews/userlistview.cpp:288
+#: src/libraries/rwidgets/modelviews/userlistview.cpp:307
 msgctxt "UserListView|"
 msgid "Shape"
 msgstr "Form"
