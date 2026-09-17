@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-07-27 01:02+0100\n"
+"PO-Revision-Date: 2026-09-17 00:12+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -4620,12 +4620,9 @@ msgid "Font size Factor:"
 msgstr "Factor de tamaño del texto:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "El hilo del servidor se ha cerrado"
+msgstr "El texto se ha copiado."
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9195,17 +9192,11 @@ msgid "Change color…"
 msgstr "Cambiar color…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Añadir personaje"
+msgstr "Añadir personaje local"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "Eliminar personaje"

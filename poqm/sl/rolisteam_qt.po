@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rolisteam\n"
 "POT-Creation-Date: 2022-08-03 00:45+0000\n"
-"PO-Revision-Date: 2026-07-26 07:30+0200\n"
+"PO-Revision-Date: 2026-09-16 07:08+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4618,12 +4618,9 @@ msgid "Font size Factor:"
 msgstr "Faktor velikost pisave:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "nit strežnika je bila zaprta"
+msgstr "Besedilo je bilo kopirano!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9196,17 +9193,11 @@ msgid "Change color…"
 msgstr "Spremeni barvo…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Dodaj karakterja"
+msgstr "Dodaj lokalni lik"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "Odstrani lik"

@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-09-06 16:44+0200\n"
+"PO-Revision-Date: 2026-09-16 10:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -4625,12 +4625,9 @@ msgid "Font size Factor:"
 msgstr "Factor de la mida de la lletra:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "S'ha tancat el fil del servidor"
+msgstr "S'ha copiat el text!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9203,17 +9200,11 @@ msgid "Change color…"
 msgstr "Canvia el color…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Afegeix un personatge"
+msgstr "Afegeix un personatge local"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "Elimina el personatge"

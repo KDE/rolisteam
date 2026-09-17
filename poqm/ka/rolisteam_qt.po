@@ -4610,12 +4610,9 @@ msgid "Font size Factor:"
 msgstr "ფონტის ზომის კოეფიციენტი:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "სერვერამდე კავშირი დაიხურა"
+msgstr "ტექსტი დაკოპირდა!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9182,17 +9179,11 @@ msgid "Change color…"
 msgstr "ფერის შეცვლა…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "სიმბოლოს დამატება"
+msgstr "ლოკალური სიმბოლოს დამატება"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "სიმბოლოს წაშლა"

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-07-26 14:38+0300\n"
+"PO-Revision-Date: 2026-09-16 15:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1479,7 +1479,7 @@ msgstr "підтримувані формати зображень (*.jpg *.png 
 #: src/binaries/rcse/mainwindow.cpp:949
 msgctxt "rcse::MainWindow|"
 msgid "Add character"
-msgstr "Додати персонаж"
+msgstr "Додати персонажа"
 
 #: src/binaries/rcse/mainwindow.cpp:950
 msgctxt "rcse::MainWindow|"
@@ -1970,7 +1970,7 @@ msgstr "Тип поля:"
 #, qt-format
 msgctxt "QObject|"
 msgid "Add Character #%1"
-msgstr "Додати персонаж %1"
+msgstr "Додати персонажа %1"
 
 #: src/binaries/rcse/undo/addfieldcommand.cpp:56
 #: src/libraries/core/src/undoCmd/addfieldcommand.cpp:47
@@ -3778,7 +3778,7 @@ msgstr "Розкрити векторну карту"
 #, qt-format
 msgctxt "QObject|"
 msgid "Add character to %1"
-msgstr "Додати персонаж до %1"
+msgstr "Додати персонажа до %1"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:35
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
@@ -4620,12 +4620,9 @@ msgid "Font size Factor:"
 msgstr "Коефіцієнт розміру шрифту:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "потік обробки сервера було закрито"
+msgstr "Текст скопійовано!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9202,20 +9199,14 @@ msgid "Change color…"
 msgstr "Змінити колір…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Додати персонаж"
+msgstr "Додати локального персонажа"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
-msgstr "Вилучити символ"
+msgstr "Вилучити персонажа"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:80
 msgctxt "UserListView|"
