@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-08-10 18:35+0400\n"
+"PO-Revision-Date: 2026-09-17 08:29+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -4606,12 +4606,9 @@ msgid "Font size Factor:"
 msgstr "معامل حجم الخط:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "خيط الخادم مُغلق"
+msgstr "نُسخ  النص!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9184,17 +9181,11 @@ msgid "Change color…"
 msgstr "غيِّر اللون..."
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "أضف شخصية"
+msgstr "أضف شخصية محلية"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "أزل الشخصية"
