@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1099,12 +1099,12 @@ msgstr "تۈرى"
 #: src/binaries/rcse/fieldmodel.cpp:68
 msgctxt "FieldModel|"
 msgid "x"
-msgstr "x"
+msgstr ""
 
 #: src/binaries/rcse/fieldmodel.cpp:69
 msgctxt "FieldModel|"
 msgid "y"
-msgstr "y"
+msgstr ""
 
 #: src/binaries/rcse/fieldmodel.cpp:70
 msgctxt "FieldModel|"
@@ -1311,7 +1311,7 @@ msgstr ""
 #, qt-format
 msgctxt "rcse::MainWindow|"
 msgid "Quit %1 "
-msgstr ""
+msgstr "%1‎‏ دىن چېكىن "
 
 #: src/binaries/rcse/mainwindow.cpp:561
 msgctxt "rcse::MainWindow|"
@@ -2009,7 +2009,6 @@ msgctxt "QObject|"
 msgid "Delete %n Field(s)"
 msgid_plural "Delete %n Field(s)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/binaries/rcse/undo/deletepagecommand.cpp:37
 #, qt-format
@@ -2023,7 +2022,6 @@ msgctxt "QObject|"
 msgid "Move %n Field(s)"
 msgid_plural "Move %n Field(s)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/binaries/rcse/undo/setbackgroundimage.cpp:51
 #, qt-format
@@ -2260,7 +2258,7 @@ msgstr ""
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
-msgstr ""
+msgstr "%1‎‏ دىن چېكىن "
 
 #: src/binaries/widget/mainwindow.cpp:916
 msgctxt "MainWindow|"
@@ -2352,7 +2350,7 @@ msgstr "باغلاندى"
 #: src/binaries/widget/mainwindow.cpp:1240
 msgctxt "MainWindow|"
 msgid "Not Connected"
-msgstr ""
+msgstr "باغلانمىغان"
 
 #: src/binaries/widget/mainwindow.cpp:1241
 msgctxt "MainWindow|"
@@ -2382,7 +2380,7 @@ msgstr "يوچۇن"
 #: src/binaries/widget/mainwindow.ui:14
 msgctxt "MainWindow|"
 msgid "Rolisteam"
-msgstr "Rolisteam"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:32
 msgctxt "MainWindow|"
@@ -2457,12 +2455,12 @@ msgstr ""
 #: src/binaries/widget/mainwindow.ui:200
 msgctxt "MainWindow|"
 msgid "Tab"
-msgstr "Tab"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:203
 msgctxt "MainWindow|"
 msgid "F2"
-msgstr "F2"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:208
 msgctxt "MainWindow|"
@@ -2502,7 +2500,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.ui:235
 msgctxt "MainWindow|"
 msgid "F1"
-msgstr "F1"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:243
 msgctxt "MainWindow|"
@@ -2557,7 +2555,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.ui:323
 msgctxt "MainWindow|"
 msgid "F8"
-msgstr "F8"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:332 src/binaries/widget/mainwindow.ui:344
 msgctxt "MainWindow|"
@@ -2582,7 +2580,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.ui:358
 msgctxt "MainWindow|"
 msgid "F6"
-msgstr "F6"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:363
 msgctxt "MainWindow|"
@@ -2612,7 +2610,7 @@ msgstr ""
 #: src/binaries/widget/mainwindow.ui:397
 msgctxt "MainWindow|"
 msgid "F10"
-msgstr "F10"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:406 src/binaries/widget/mainwindow.ui:418
 msgctxt "MainWindow|"
@@ -2647,7 +2645,7 @@ msgstr "تولۇق ئېكران"
 #: src/binaries/widget/mainwindow.ui:448
 msgctxt "MainWindow|"
 msgid "F11"
-msgstr "F11"
+msgstr ""
 
 #: src/binaries/widget/mainwindow.ui:457
 msgctxt "MainWindow|"
@@ -3527,12 +3525,12 @@ msgstr "بايت"
 #: src/libraries/core/src/network/channelmodel.cpp:103
 msgctxt "ChannelModel|"
 msgid "KiB"
-msgstr "KiB"
+msgstr ""
 
 #: src/libraries/core/src/network/channelmodel.cpp:103
 msgctxt "ChannelModel|"
 msgid "MiB"
-msgstr "MiB"
+msgstr ""
 
 #: src/libraries/core/src/network/channelmodel.cpp:448
 msgctxt "ChannelModel|"
@@ -3581,9 +3579,6 @@ msgid "Player"
 msgstr "قويغۇچ"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "يوچۇن"
@@ -3730,17 +3725,14 @@ msgid "PC Token"
 msgstr ""
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:45
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "QObject|"
 msgid "Light"
-msgstr "ئوڭ"
+msgstr "ئاق"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:46
 msgctxt "QObject|"
 msgid "Pen"
-msgstr ""
+msgstr "قەلەم"
 
 #: src/libraries/core/src/undoCmd/addvmapitem.cpp:47
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
@@ -4615,7 +4607,6 @@ msgctxt "QObject|"
 msgid "Move %n item(s)"
 msgid_plural "Move %n item(s)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/libraries/rwidgets/customs/colorselector.cpp:154
 #, qt-format
@@ -4898,7 +4889,6 @@ msgctxt "RGraphicsView|"
 msgid "%n item(s)"
 msgid_plural "%n item(s)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/libraries/rwidgets/customs/rgraphicsview.cpp:251
 msgctxt "RGraphicsView|"
@@ -5236,7 +5226,6 @@ msgctxt "CampaignProperties|"
 msgid "%n file(s)"
 msgid_plural "%n file(s)"
 msgstr[0] ""
-msgstr[1] ""
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:14
 msgctxt "CampaignProperties|"
@@ -5784,7 +5773,7 @@ msgstr "ھەر "
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:199
 msgctxt "PreferencesDialogBox|"
 msgid "s"
-msgstr "s"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:212
 msgctxt "PreferencesDialogBox|"
@@ -5854,7 +5843,7 @@ msgstr ""
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:397
 msgctxt "PreferencesDialogBox|"
 msgid "ms"
-msgstr "ms"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
 msgctxt "PreferencesDialogBox|"
@@ -5897,7 +5886,7 @@ msgstr "پارامېتىرلار:"
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
-msgstr "%1"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 msgctxt "PreferencesDialogBox|"
@@ -6226,7 +6215,7 @@ msgstr "نىسبىتى:"
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:249
 msgctxt "MapWizzardDialog|"
 msgid "m"
-msgstr "m"
+msgstr ""
 
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:254
 msgctxt "MapWizzardDialog|"
@@ -6261,7 +6250,7 @@ msgstr ""
 #: src/libraries/rwidgets/dialogs/vmapwizzarddialog.ui:284
 msgctxt "MapWizzardDialog|"
 msgid "px"
-msgstr "px"
+msgstr ""
 
 #: src/libraries/rwidgets/docks/antagonistboard.cpp:71
 msgctxt "campaign::AntagonistBoard|"
@@ -6617,7 +6606,7 @@ msgstr ""
 #: src/libraries/rwidgets/docks/campaigndock.cpp:60
 msgctxt "campaign::CampaignDock|"
 msgid "PDF"
-msgstr "PDF"
+msgstr ""
 
 #: src/libraries/rwidgets/docks/campaigndock.cpp:61
 msgctxt "campaign::CampaignDock|"
@@ -6903,7 +6892,7 @@ msgstr ""
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:312
 msgctxt "VmapTopBar|"
 msgid "px"
-msgstr "px"
+msgstr ""
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:65
 msgctxt "MRichTextEdit|"
@@ -6933,7 +6922,7 @@ msgstr ""
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:66
 msgctxt "MRichTextEdit|"
 msgid "Monospace"
-msgstr "Monospace"
+msgstr ""
 
 #: src/libraries/rwidgets/editors/mrichtextedit.cpp:122
 msgctxt "MRichTextEdit|"
@@ -7804,7 +7793,7 @@ msgstr ""
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:241
 msgctxt "SharedNote|"
 msgid "Markdown"
-msgstr "Markdown"
+msgstr ""
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:246
 msgctxt "SharedNote|"
@@ -8158,7 +8147,7 @@ msgstr ""
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:332
 msgctxt "Convertor|"
 msgid "Return"
-msgstr "Return"
+msgstr ""
 
 #: src/libraries/rwidgets/gmtoolbox/UnitConvertor/convertor.ui:335
 msgctxt "Convertor|"
@@ -8366,7 +8355,7 @@ msgstr "سانلىق مەلۇمات"
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:80
 msgctxt "CharacterSheetWindow|"
 msgid "Add Section"
-msgstr ""
+msgstr "بۆلەك قوش"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.ui:85
 msgctxt "CharacterSheetWindow|"
@@ -8682,7 +8671,7 @@ msgstr ""
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:164
 msgctxt "PdfViewer|"
 msgid "100%"
-msgstr "100%"
+msgstr ""
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:169
 msgctxt "PdfViewer|"
@@ -8974,20 +8963,14 @@ msgid "Change color…"
 msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "All Characters"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "بارلىق ھەرپ"
+msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Remove Page"
 msgctxt "UserListView|"
 msgid "Remove character"
-msgstr "بەتنى چىقىرىۋەت"
+msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:80
 msgctxt "UserListView|"
@@ -9067,7 +9050,7 @@ msgstr "قورال"
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:124
 msgctxt "ToolBox|"
 msgid "Pen"
-msgstr ""
+msgstr "قەلەم"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
 msgctxt "ToolBox|"
@@ -9135,12 +9118,9 @@ msgid "Highlighter"
 msgstr "يورۇتقۇچ"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:166
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "Right"
 msgctxt "ToolBox|"
 msgid "Light"
-msgstr "ئوڭ"
+msgstr "ئاق"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
 msgctxt "ToolBox|"
