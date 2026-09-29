@@ -225,6 +225,10 @@ Item {
                 SplitView.fillWidth: true
                 SplitView.preferredHeight: root.styleSheet.preferredHeight
 
+                onCurrentPersonIdChanged: {
+                    chatRoom.speakingPersonId = imEditText.currentPersonId
+                }
+
                 onSendClicked: (text, imageLink) => {
                    root.chatRoom.addMessage(text,imageLink, imEditText.currentPersonId, imEditText.currentPersonName)
                 }

@@ -4,7 +4,7 @@ project(dicelyVerse VERSION 7 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Quick Quick3D QuickControls2 Quick3DPhysics LinguistTools)
+find_package(Qt6 REQUIRED COMPONENTS Core Quick Quick3D QuickControls2 Quick3DPhysics WebSockets LinguistTools)
 find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup(REQUIRES 6.8 I18N_SOURCE_LANGUAGE en I18N_TRANSLATED_LANGUAGES de fr it es pt)
@@ -142,6 +142,7 @@ PRIVATE
     Qt::Quick3D
     Qt::Quick3DPhysics
     Qt6::QuickControls2
+    Qt6::WebSockets
     diceparser_shared
     dice3d
     WalkerComponent

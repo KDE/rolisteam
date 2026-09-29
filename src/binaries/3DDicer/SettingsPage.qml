@@ -110,6 +110,41 @@ Panel {
                         WalkerItem.weight: 605
                     }
                     Label {
+                        text: qsTr("Roll on rolisteam:")
+                    }
+                    Switch {
+                        id: remoteRollSw
+                        checked: DiceMainController.remoteRoll
+                        onCheckedChanged: {
+                            DiceMainController.remoteRoll = remoteRollSw.checked
+                        }
+                    }
+                    Label {
+                        text: qsTr("Ip:")
+                    }
+                    TextField {
+                        id: ipField
+
+                        text: DiceMainController.ipAddress
+                        onTextChanged: {
+                            DiceMainController.ipAddress = ipField.text
+                        }
+                    }
+                    Label {
+                        text: qsTr("Port:")
+                    }
+                    SpinBox {
+                        from: 1000
+                        to: 20000
+                        value: DiceMainController.port
+                        onValueChanged: {
+                            DiceMainController.port = value
+                        }
+                    }
+                    
+                    
+
+                    Label {
                         Layout.leftMargin: Theme.margin
                         text: qsTr("Ui Tour:")
                         font.pixelSize: Theme.finalDiceResultFontSize

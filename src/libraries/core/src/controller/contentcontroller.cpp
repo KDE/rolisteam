@@ -398,7 +398,10 @@ int ContentController::workspacePositioning() const
                             m_preferences->value(QStringLiteral("BackGroundPositioning"), 0).toInt();
 }
 
-void ContentController::copyData() {}
+void ContentController::copyData(const QString& text)
+{
+    m_clipboard->setText(text);
+}
 
 void ContentController::pasteData()
 {

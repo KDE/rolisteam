@@ -253,4 +253,18 @@ void ChatRoom::setDiceParser(DiceRoller* diceParser)
 {
     m_diceParser= diceParser;
 }
+
+QString ChatRoom::speakingPersonId() const
+{
+    return m_speakingPersonId;
+}
+
+void ChatRoom::setSpeakingPersonId(const QString &newSpeakingPersonId)
+{
+    if (m_speakingPersonId == newSpeakingPersonId)
+        return;
+    m_speakingPersonId = newSpeakingPersonId;
+    emit speakingPersonIdChanged();
+}
+
 } // namespace InstantMessaging

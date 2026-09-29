@@ -21,34 +21,51 @@
 #include "websocketserver.h"
 #include <QWebSocket>
 
-namespace {
+namespace
+{
 constexpr auto show{"show"};
 constexpr auto hide{"hide"};
-}
-WebSocketServer::WebSocketServer(QObject* parent) : QObject{parent},
-    m_server("Rolisteam",QWebSocketServer::NonSecureMode)
+constexpr auto roll{"roll"};
+} // namespace
+
+WebSocketServer::WebSocketServer(QObject* parent)
+    : QObject{parent}, m_server("Rolisteam", QWebSocketServer::NonSecureMode)
 {
-    connect(&m_server, &QWebSocketServer::newConnection, this, [this](){
-        QWebSocket *pSocket = m_server.nextPendingConnection();
+    connect(&m_server, &QWebSocketServer::newConnection, this,
+            [this]()
+            {
+                QWebSocket* pSocket= m_server.nextPendingConnection();
 
-        //connect(pSocket, &QWebSocket::binaryMessageReceived, this, &EchoServer::processBinaryMessage);
-        connect(pSocket, &QWebSocket::textMessageReceived, this, [this](const QString& message){
-            if(message.contains(show))
-                emit showWindow();
-            else if(message.contains(hide))
-                emit hideWindow();
-        });
+                // connect(pSocket, &QWebSocket::binaryMessageReceived, this, &EchoServer::processBinaryMessage);
+                connect(pSocket, &QWebSocket::textMessageReceived, this,
+                        [this](const QString& message)
+                        {
+                            if(message.contains(show))
+                                emit showWindow();
+                            else if(message.contains(hide))
+                                emit hideWindow();
+                            else if(message.contains(roll))
+                            {
+                                auto v= message;
+                                v.remove(0, QString(roll).size() + 1);
+                                qDebug() << "CMD:" << v;
+                                emit rollDice(v);
+                            }
+                        });
 
-        connect(pSocket, &QWebSocket::disconnected, this, [this](){
-            QWebSocket *pClient = qobject_cast<QWebSocket *>(sender());
-            if (pClient) {
-                m_clients.removeAll(pClient);
-                pClient->deleteLater();
-            }
-        });
+                connect(pSocket, &QWebSocket::disconnected, this,
+                        [this]()
+                        {
+                            QWebSocket* pClient= qobject_cast<QWebSocket*>(sender());
+                            if(pClient)
+                            {
+                                m_clients.removeAll(pClient);
+                                pClient->deleteLater();
+                            }
+                        });
 
-        m_clients << pSocket;
-        });
+                m_clients << pSocket;
+            });
 }
 
 void WebSocketServer::startConnection()

@@ -143,7 +143,7 @@ public slots:
     void setMediaRoot(const QString& path);
     void renameMedia(const QString& id, const QString& path);
 
-    void copyData();
+    void copyData(const QString& text);
     void pasteData();
 
 private:

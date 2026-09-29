@@ -47,6 +47,8 @@ class CORE_EXPORT ChatRoom : public QObject
     Q_PROPERTY(QString uuid READ uuid WRITE setUuid NOTIFY uuidChanged)
     Q_PROPERTY(QString localId READ localId WRITE setLocalId NOTIFY localIdChanged)
     Q_PROPERTY(PlayerModel* players READ players CONSTANT)
+    Q_PROPERTY(
+        QString speakingPersonId READ speakingPersonId WRITE setSpeakingPersonId NOTIFY speakingPersonIdChanged FINAL)
 public:
     enum ChatRoomType
     {
@@ -73,6 +75,9 @@ public:
     bool hasRecipiant(const QString& id);
     void setDiceParser(DiceRoller* diceParser);
 
+    QString speakingPersonId() const;
+    void setSpeakingPersonId(const QString& newSpeakingPersonId);
+
 public slots:
     void setUuid(const QString& id);
     void setTitle(const QString& title);
@@ -89,6 +94,8 @@ signals:
     void uuidChanged(QString);
     void localIdChanged(QString);
 
+    void speakingPersonIdChanged();
+
 private:
     bool runCommand(const QString& command, const QString& personId, const QString& personName);
 
@@ -101,6 +108,7 @@ private:
     bool m_unreadMessage= false;
     QPointer<DiceRoller> m_diceParser;
     QPointer<PlayerModel> m_players;
+    QString m_speakingPersonId;
 };
 } // namespace InstantMessaging
 #endif // CHATROOM_H

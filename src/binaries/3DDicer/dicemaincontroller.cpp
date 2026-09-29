@@ -37,6 +37,7 @@ DiceMainController::DiceMainController(QObject* parent)
     , m_aliases{new DiceAliasModel}
     , m_settingsCtrl{new SettingController}
     , m_propertiesModel{new PropertiesModel}
+    , m_socket{new QWebSocket}
     , m_macros{new MacrosModel}
 {
 
@@ -73,6 +74,14 @@ DiceMainController::DiceMainController(QObject* parent)
 
     m_langModel.reset(new QRangeModel(res));
     m_langModel->setRoleNames({{Qt::UserRole, "code"}, {Qt::DisplayRole, "display"}});
+
+    connect(this, &DiceMainController::remoteRollChanged, this,
+            [this]() { m_socket->open(QString("ws://%1:%2/").arg(m_ipAddress).arg(m_port)); });
+
+    connect(m_socket.get(), &QWebSocket::textMessageReceived, this,
+            [this]() {
+
+            });
 }
 
 DiceMainController::Page DiceMainController::currentPage() const
@@ -100,6 +109,15 @@ int DiceMainController::profileCount() const
 
 void DiceMainController::runCommand(const QString& cmd)
 {
+    if(cmd.isEmpty())
+        return;
+
+    if(m_remoteRoll)
+    {
+        m_socket->sendTextMessage(QString("roll %1").arg(cmd));
+        return;
+    }
+
     auto it= QtConcurrent::run(
         [this, cmd]()
         {
@@ -469,4 +487,43 @@ void DiceMainController::setUiTourStatus(DiceMainController::UiTourStatus newUiT
         return;
     m_uiTour= newUiTour;
     emit uiTourStatusChanged();
+}
+
+bool DiceMainController::remoteRoll() const
+{
+    return m_remoteRoll;
+}
+
+void DiceMainController::setRemoteRoll(bool newRemoteRoll)
+{
+    if(m_remoteRoll == newRemoteRoll)
+        return;
+    m_remoteRoll= newRemoteRoll;
+    emit remoteRollChanged();
+}
+
+QString DiceMainController::ipAddress() const
+{
+    return m_ipAddress;
+}
+
+void DiceMainController::setIpAddress(const QString& newIpAddress)
+{
+    if(m_ipAddress == newIpAddress)
+        return;
+    m_ipAddress= newIpAddress;
+    emit ipAddressChanged();
+}
+
+int DiceMainController::port() const
+{
+    return m_port;
+}
+
+void DiceMainController::setPort(int newPort)
+{
+    if(m_port == newPort)
+        return;
+    m_port= newPort;
+    emit portChanged();
 }

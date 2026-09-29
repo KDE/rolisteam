@@ -41,6 +41,7 @@ signals:
     void showWindow();
     void hideWindow();
     void portwsChanged();
+    void rollDice(const QString& msg);
 
 private:
     QWebSocketServer m_server;

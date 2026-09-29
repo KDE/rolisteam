@@ -13,6 +13,7 @@
 #include <QQmlEngine>
 #include <QQuick3DTextureData>
 #include <QRangeModel>
+#include <QWebSocket>
 #include <memory>
 
 class DiceMainController : public QObject
@@ -40,6 +41,9 @@ class DiceMainController : public QObject
     Q_PROPERTY(QRangeModel* langModel READ langModel CONSTANT)
     Q_PROPERTY(QString lang READ lang WRITE setLang NOTIFY langChanged FINAL)
     Q_PROPERTY(UiTourStatus uiTourStatus READ uiTourStatus WRITE setUiTourStatus NOTIFY uiTourStatusChanged FINAL)
+    Q_PROPERTY(bool remoteRoll READ remoteRoll WRITE setRemoteRoll NOTIFY remoteRollChanged FINAL)
+    Q_PROPERTY(QString ipAddress READ ipAddress WRITE setIpAddress NOTIFY ipAddressChanged FINAL)
+    Q_PROPERTY(int port READ port WRITE setPort NOTIFY portChanged FINAL)
     // clang-format on
 public:
     enum Page
@@ -122,6 +126,15 @@ public:
     UiTourStatus uiTourStatus() const;
     void setUiTourStatus(UiTourStatus newUiTour);
 
+    bool remoteRoll() const;
+    void setRemoteRoll(bool newRemoteRoll);
+
+    QString ipAddress() const;
+    void setIpAddress(const QString& newIpAddress);
+
+    int port() const;
+    void setPort(int newPort);
+
 public slots:
     void runCommand(const QString& cmd);
     void addAlias();
@@ -141,6 +154,9 @@ signals:
     void themeCtrlChanged();
     void langChanged();
     void uiTourStatusChanged();
+    void remoteRollChanged();
+    void ipAddressChanged();
+    void portChanged();
 
 private:
     void saveInCurrentProfile();
@@ -154,6 +170,7 @@ private:
     std::unique_ptr<SettingController> m_settingsCtrl;
     std::unique_ptr<PropertiesModel> m_propertiesModel;
     std::unique_ptr<QRangeModel> m_langModel;
+    std::unique_ptr<QWebSocket> m_socket;
     DiceMainController::Page m_currentPage{CommandsPage};
     QString m_errorHumanReadable;
     QSize m_dice3dSize;
@@ -165,6 +182,9 @@ private:
     QPointer<ThemeController> m_themeCtrl;
     QString m_lang;
     UiTourStatus m_uiTour{UnDone};
+    bool m_remoteRoll{false};
+    QString m_ipAddress{"192.168.1.2"};
+    int m_port{4030};
 };
 
 #endif // DICEMAINCONTROLLER_H

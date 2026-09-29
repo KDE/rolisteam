@@ -93,7 +93,7 @@ InstantMessagingController::InstantMessagingController(DiceRoller* diceRoller, P
     registerType();
     addChatroomSplitterModel();
 
-    m_localPersonModel->setSourceModel(m_players);
+    m_localPersonModel->setPlayerModel(m_players);
 
     connect(m_model.get(), &InstantMessaging::InstantMessagingModel::unreadChanged, this,
             &InstantMessagingController::unreadChanged);

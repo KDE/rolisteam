@@ -85,7 +85,7 @@ Pane {
                 tabBarRightMargin: index == reaper.count-1 ? listButton.width : 0
                 Component.onCompleted: reaper.headerHeight = tabBarHeight
                 onTabBarHeightChanged: reaper.headerHeight = tabBarHeight
-                localPersonModel: {InstantMessagerManager.ctrl.localPersonModel}
+                localPersonModel: InstantMessagerManager.ctrl.localPersonModel
                 onAddChat: (title, all, recipiant) => {
                     InstantMessagerManager.ctrl.addExtraChatroom(title, all, recipiants)
                 }

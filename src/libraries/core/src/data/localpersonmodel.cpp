@@ -68,7 +68,7 @@ QHash<int, QByteArray> LocalPersonModel::roleNames() const
     return sourceModel()->roleNames();
 }
 
-void LocalPersonModel::setSourceModel(QAbstractItemModel* sourceModel)
+void LocalPersonModel::setPlayerModel(PlayerModel* sourceModel)
 {
     beginResetModel();
     QAbstractProxyModel::setSourceModel(sourceModel);
@@ -76,13 +76,65 @@ void LocalPersonModel::setSourceModel(QAbstractItemModel* sourceModel)
 
     auto func= [this]()
     {
+        qDebug() << "[LOCALPERSONMODEL] func called";
         beginResetModel();
 
         endResetModel();
     };
     connect(sourceModel, &QAbstractItemModel::dataChanged, this, func);
     connect(sourceModel, &QAbstractItemModel::rowsInserted, this, func);
+    connect(sourceModel, &QAbstractItemModel::rowsRemoved, this, func);
     connect(sourceModel, &QAbstractItemModel::modelReset, this, func);
+    connect(sourceModel, &PlayerModel::characterAdded, this, func);
+    connect(sourceModel, &PlayerModel::characterAdded, this,
+            [this, func](Player*, Character* c)
+            {
+                if(!c)
+                    return;
+                connect(c, &Character::nameChanged, this, func);
+                connect(c, &Character::colorChanged, this, func);
+                connect(c, &Character::avatarChanged, this, func);
+            });
+    connect(sourceModel, &PlayerModel::characterRemoved, this, func);
+    connect(sourceModel, &PlayerModel::playerJoin, this,
+            [this, func](Player* p)
+            {
+                if(!p)
+                    return;
+                connect(p, &Player::nameChanged, this, func);
+                connect(p, &Player::colorChanged, this, func);
+                connect(p, &Player::avatarChanged, this, func);
+
+                auto ids= p->characterIds();
+                for(auto const& id : std::as_const(ids))
+                {
+                    auto c= p->characterById(id);
+                    if(!c)
+                        continue;
+                    connect(c, &Character::nameChanged, this, func);
+                    connect(c, &Character::colorChanged, this, func);
+                    connect(c, &Character::avatarChanged, this, func);
+                }
+            });
+
+    auto p= sourceModel->localPlayerId();
+    auto player= sourceModel->playerById(p);
+    if(!player)
+        return;
+    connect(player, &Player::nameChanged, this, func);
+    connect(player, &Player::colorChanged, this, func);
+    connect(player, &Player::avatarChanged, this, func);
+
+    auto ids= player->characterIds();
+    for(auto const& id : std::as_const(ids))
+    {
+        auto c= player->characterById(id);
+        if(!c)
+            continue;
+        connect(c, &Character::nameChanged, this, func);
+        connect(c, &Character::colorChanged, this, func);
+        connect(c, &Character::avatarChanged, this, func);
+    }
 }
 
 QModelIndex LocalPersonModel::index(int r, int c, const QModelIndex&) const

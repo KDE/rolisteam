@@ -39,7 +39,7 @@ public:
 
     QHash<int, QByteArray> roleNames() const override;
 
-    virtual void setSourceModel(QAbstractItemModel* sourceModel) override;
+    virtual void setPlayerModel(PlayerModel* sourceModel);
     virtual QModelIndex index(int, int, const QModelIndex&) const override;
     virtual QModelIndex parent(const QModelIndex& idx= QModelIndex()) const override;
     virtual int rowCount(const QModelIndex& parent= QModelIndex()) const override;

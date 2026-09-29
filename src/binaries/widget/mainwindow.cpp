@@ -140,6 +140,15 @@ MainWindow::MainWindow(GameController* game, const QStringList& args)
                 lower();
                 setVisible(false);
             });
+
+    connect(m_webSocketServer.get(), &WebSocketServer::rollDice, this,
+            [this](const QString& cmd)
+            {
+                qDebug() << "mainWindow: " << cmd;
+                auto imCtrl= m_gameController->instantMessagingController();
+                auto chr= imCtrl->globalChatroom();
+                imCtrl->rollDiceCommand(cmd, false, chr->speakingPersonId());
+            });
 #endif
 
     // ALLOCATIONS
