@@ -77,7 +77,7 @@ QVariant DiceAliasModel::data(const QModelIndex& index, int role) const
             res= diceAlias->command();
             break;
         case METHOD:
-            res= diceAlias->isReplace();
+            res= !diceAlias->isReplace();
             break;
         case DISABLE:
             res= diceAlias->isDisable();

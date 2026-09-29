@@ -30,6 +30,13 @@ namespace InstantMessaging
 {
 namespace
 {
+QString replaceNewLine(const QString& str)
+{
+    auto result= str;
+    result= result.replace("\n", "<br/>");
+    return result;
+}
+
 QString replacePlaceHolder(const QString& str, const QJsonObject& obj)
 {
     auto result= str;
@@ -59,7 +66,7 @@ QString replacePlaceHolder(const QString& str, const QJsonObject& obj)
                    });
 
     QMap<Dice::ERROR_CODE, QString> errorMap;
-    qDebug() << "values" << values;
+
     result= ParsingToolBox::replaceVariableToValue(result, values, errorMap);
     result= ParsingToolBox::replacePlaceHolderFromJson(result, obj);
 
@@ -116,7 +123,7 @@ void DiceMessage::computeResult()
     auto instructions= obj["instructions"].toArray();
 
     QStringList diceArray;
-    for(auto instruction : instructions)
+    for(auto instruction : std::as_const(instructions))
     {
         auto objInst= instruction.toObject();
         auto dicevalues= objInst["diceval"].toArray();
@@ -124,7 +131,7 @@ void DiceMessage::computeResult()
         int previousFace= -1;
         QStringList vec;
         int i= dicevalues.count() - 1;
-        for(auto val : dicevalues)
+        for(auto val : std::as_const(dicevalues))
         {
             bool islast= (i == 0);
             auto objVal= val.toObject();
@@ -154,7 +161,7 @@ void DiceMessage::computeResult()
 
         if(!string.isEmpty())
         {
-            m_result= replacePlaceHolder(string, obj);
+            m_result= replaceNewLine(replacePlaceHolder(string, obj));
         }
     }
 
