@@ -70,7 +70,7 @@ private:
 private:
     QPointer<Campaign> m_campaign;
     QPointer<DiceRoller> m_dice;
-    bool m_localIsGm= true;
+    bool m_localIsGm{false};
     bool m_updatingModel= false;
     bool m_ready{false};
 };

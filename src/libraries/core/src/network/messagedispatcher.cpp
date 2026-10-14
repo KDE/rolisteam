@@ -23,10 +23,6 @@ void MessageDispatcher::dispatchMessage(const QByteArray& data, Channel* channel
         qWarning() << "####\nchannel is nullptr\n####";
     }
 
-    if(emitter && QLoggingCategory::defaultCategory()->isInfoEnabled())
-        qInfo() << "[Server][Received Message]" << cat2String(msg->header()) << act2String(msg->header()) << channel
-                << emitter->name() << msg->getSize();
-
     if(msg->category() == NetMsg::AdministrationCategory)
     {
         emit messageForAdmin(msg, channel, emitter);
@@ -71,6 +67,10 @@ void MessageDispatcher::dispatchMessage(const QByteArray& data, Channel* channel
             }
         }
     }
+
+    if(emitter && QLoggingCategory::defaultCategory()->isInfoEnabled())
+        qInfo() << "[Server][Received Message]" << cat2String(msg->header()) << act2String(msg->header())
+                << emitter->name() << msg->getSize() << sendToAll << "channel" << channel << "saveIt" << saveIt;
 
     if((sendToAll) && (nullptr != channel))
     {

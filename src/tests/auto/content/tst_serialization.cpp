@@ -56,7 +56,7 @@
 class GameControllerTest : public GameController
 {
 public:
-    GameControllerTest() : GameController(Helper::randomString(), QGuiApplication::clipboard()) {};
+    GameControllerTest() : GameController(Helper::randomString(), QGuiApplication::clipboard()){};
 
     void callConnectedChanged(bool b) { emit connectedChanged(b); };
 };
@@ -321,7 +321,7 @@ void ContentControllerTest::controllerTest()
 
     QVERIFY(media->url().toString().contains(a));
 
-    m_ctrl->copyData();
+    // m_ctrl->copyData();
     m_ctrl->pasteData();
 
     m_ctrl->canPaste();

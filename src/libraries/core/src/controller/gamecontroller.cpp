@@ -88,6 +88,15 @@ GameController::GameController(const QString& appname, QClipboard* clipboard, QO
                 emit connectedChanged(b);
             });
 
+    connect(m_networkCtrl.get(), &NetworkController::localJoinChannel, this,
+            [this]()
+            {
+                if(m_playerController->localIsGm())
+                {
+                    m_campaignManager->shareModels();
+                }
+            });
+
     auto updateCampaign= [this]()
     {
         auto cm= m_campaignManager->campaign();

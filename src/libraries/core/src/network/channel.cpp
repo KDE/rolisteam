@@ -122,32 +122,32 @@ void Channel::sendToMany(NetworkMessage* msg, ServerConnection* tcp, bool delete
     const QSet<QString> recipientSet(recipientList.cbegin(), recipientList.cend());
 
     ServerConnection* lastRecipient= nullptr;
-    for(auto* conn : m_connections)
+    for(auto& conn : std::as_const(m_connections))
         if(conn && conn != tcp && recipientSet.contains(conn->uuid()))
             lastRecipient= conn;
 
-    for(auto* conn : m_connections)
+    for(auto& conn : std::as_const(m_connections))
     {
         if(!conn || conn == tcp || !recipientSet.contains(conn->uuid()))
             continue;
-        QMetaObject::invokeMethod(conn, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
-                                  Q_ARG(bool, deleteMsg && conn == lastRecipient));
+        QMetaObject::invokeMethod(conn.get(), "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
+                                  Q_ARG(bool, deleteMsg&& conn == lastRecipient));
     }
 }
 
 void Channel::sendToAll(NetworkMessage* msg, ServerConnection* tcp, bool deleteMsg)
 {
     ServerConnection* lastRecipient= nullptr;
-    for(auto* conn : m_connections)
+    for(auto& conn : std::as_const(m_connections))
         if(conn && conn != tcp)
             lastRecipient= conn;
 
-    for(auto* conn : m_connections)
+    for(auto& conn : std::as_const(m_connections))
     {
         if(!conn || conn == tcp)
             continue;
         QMetaObject::invokeMethod(conn, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
-                                  Q_ARG(bool, deleteMsg && conn == lastRecipient));
+                                  Q_ARG(bool, deleteMsg&& conn == lastRecipient));
     }
 }
 
@@ -166,6 +166,8 @@ int Channel::addChild(TreeItem* item)
     m_child.append(item);
     item->uuid();
     item->setParentItem(this);
+
+    m_connections.removeIf([](const QPointer<ServerConnection>& serverConn) { return serverConn.isNull(); });
 
     auto result= m_child.size();
 
@@ -189,7 +191,7 @@ int Channel::addChild(TreeItem* item)
             removeClient(tcp);
         };
 
-        // connect(tcp, &ServerConnection::clientSaysGoodBye, this, disconnect);
+        connect(tcp, &ServerConnection::clientSaysGoodBye, this, disconnect);
         connect(tcp, &ServerConnection::socketDisconnection, this, disconnect);
 
         // TODO make this connection as oneshot
@@ -275,6 +277,11 @@ void Channel::updateNewClient(ServerConnection* newComer)
         QMetaObject::invokeMethod(newComer, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg),
                                   Q_ARG(bool, false));
     }
+
+    NetworkMessageWriter* msg2= new NetworkMessageWriter(NetMsg::AdministrationCategory, NetMsg::JoinChannel);
+    msg2->string8(newComer->uuid());
+    QMetaObject::invokeMethod(newComer, "sendMessage", Qt::QueuedConnection, Q_ARG(NetworkMessage*, msg2),
+                              Q_ARG(bool, true));
 }
 
 void Channel::kick(const QString& str, bool isAdmin, const QString& sourceId)
@@ -391,7 +398,7 @@ ServerConnection* Channel::getClientById(const QString& id)
 
 bool Channel::removeClient(ServerConnection* client)
 {
-    if(!client)
+    if(!client || m_connections.indexOf(client) < 0)
         return false;
 
     auto id= client->uuid();
@@ -547,7 +554,7 @@ void Channel::gameMasterHasChanged()
     auto id= m_currentGm->uuid();
     auto now= QDateTime::currentDateTime();
     auto d= m_gmInfo.second.addDays(1);
-    if(m_gmInfo.first != id || d < now)
+    if((!m_gmInfo.first.isEmpty() && d.isValid()) && (m_gmInfo.first != id || d < now))
         clearData();
 
     m_gmInfo.first= id;

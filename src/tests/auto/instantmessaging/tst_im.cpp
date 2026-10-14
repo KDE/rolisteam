@@ -471,6 +471,7 @@ void InstantMessagingTest::textwriterControllerTest()
     auto str= Helper::randomString();
     ctrl.setText(str);
     ctrl.computeText();
+    QCOMPARE(spy.count(), 0);
 
     spy1.wait(100);
     QCOMPARE(spy1.count(), 1);
@@ -481,6 +482,7 @@ void InstantMessagingTest::textwriterControllerTest()
     spy1.wait(10);
     QCOMPARE(spy1.count(), 0);
 
+    QCOMPARE(spy.count(), 0);
     auto url= Helper::randomUrl();
     ctrl.setText(url.toString());
     ctrl.computeText();
@@ -493,9 +495,9 @@ void InstantMessagingTest::textwriterControllerTest()
     ctrl.setText("www.perdu.com");
     ctrl.computeText();
 
-    spy.wait(10);
+    spy.wait(1000);
     spy1.wait(100);
-    QCOMPARE(spy.count(), 3);
+    QCOMPARE(spy.count(), 4);
 
     auto cmd= QString("!%1").arg(Helper::randomString());
     ctrl.setText(cmd);

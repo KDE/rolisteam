@@ -142,6 +142,7 @@ signals:
     void definePasswordOnChannel(const QString& channelId, const QByteArray& password);
     void saveData();
     void joinChannel(const QString& userId, const QString& channelId, const QByteArray& password);
+    void localJoinChannel();
 
 public slots:
     // network

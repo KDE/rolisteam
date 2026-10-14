@@ -159,6 +159,9 @@ NetWorkReceiver::SendType NetworkUpdater::processMessage(NetworkMessageReader* m
     case NetMsg::UserKicked:
         m_ctrl->setLastError(tr("You have been kicked out of the game."));
         break;
+    case NetMsg::JoinChannel:
+        m_ctrl->localJoinChannel();
+        break;
     case NetMsg::HeartbeatAsk:
     {
         NetworkMessageWriter msg(NetMsg::AdministrationCategory, NetMsg::HeartbeatAnswer);

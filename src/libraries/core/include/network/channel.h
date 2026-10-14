@@ -125,7 +125,7 @@ private:
     bool m_usersListed= false;
 
     QList<QPointer<TreeItem>> m_child;
-    QList<ServerConnection*> m_connections;
+    QList<QPointer<ServerConnection>> m_connections;
     QList<NetworkMessage*> m_dataToSend;
     quint64 m_memorySize= 0;
     QPointer<ServerConnection> m_currentGm;
