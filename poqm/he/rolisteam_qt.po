@@ -124,8 +124,8 @@ msgctxt "AliasesPage|"
 msgid "Add alias"
 msgstr "הוספת כינוי"
 
-#: src/binaries/3DDicer/dicemaincontroller.cpp:327
-#: src/binaries/3DDicer/dicemaincontroller.cpp:349
+#: src/binaries/3DDicer/dicemaincontroller.cpp:345
+#: src/binaries/3DDicer/dicemaincontroller.cpp:367
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "ברירת מחדל"
@@ -479,47 +479,68 @@ msgctxt "SettingsPage|"
 msgid "Change language."
 msgstr "החלפת שפה."
 
-#: src/binaries/3DDicer/SettingsPage.qml:114
+#: src/binaries/3DDicer/SettingsPage.qml:113
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Rolisteam"
+msgctxt "SettingsPage|"
+msgid "Roll on rolisteam:"
+msgstr "Rolisteam"
+
+#: src/binaries/3DDicer/SettingsPage.qml:123
+msgctxt "SettingsPage|"
+msgid "Ip:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:134
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Port:"
+msgctxt "SettingsPage|"
+msgid "Port:"
+msgstr "פתחה:"
+
+#: src/binaries/3DDicer/SettingsPage.qml:149
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
 msgstr "סיור בממשק המשתמש:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:119
+#: src/binaries/3DDicer/SettingsPage.qml:154
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "התחלה"
 
-#: src/binaries/3DDicer/SettingsPage.qml:128
+#: src/binaries/3DDicer/SettingsPage.qml:163
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "על אודות"
 
-#: src/binaries/3DDicer/SettingsPage.qml:131
+#: src/binaries/3DDicer/SettingsPage.qml:166
 msgctxt "SettingsPage|"
 msgid "Version information."
 msgstr "פרטי גרסה."
 
-#: src/binaries/3DDicer/SettingsPage.qml:144
+#: src/binaries/3DDicer/SettingsPage.qml:179
 msgctxt "SettingsPage|"
 msgid "Version:"
 msgstr "גרסה:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:152
+#: src/binaries/3DDicer/SettingsPage.qml:187
 msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "תאריך:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:160
+#: src/binaries/3DDicer/SettingsPage.qml:195
 msgctxt "SettingsPage|"
 msgid "Sha1:"
 msgstr "Sha1:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:187
+#: src/binaries/3DDicer/SettingsPage.qml:222
 msgctxt "SettingsPage|"
 msgid "Add Profile."
 msgstr "הוספת פרופיל."
 
-#: src/binaries/3DDicer/SettingsPage.qml:206
+#: src/binaries/3DDicer/SettingsPage.qml:241
 msgctxt "SettingsPage|"
 msgid "Documentation."
 msgstr "תיעוד."
@@ -1655,7 +1676,7 @@ msgstr "מהדורה"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:727
+#: src/binaries/widget/mainwindow.cpp:736
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "עזרה"
@@ -1814,13 +1835,13 @@ msgid "Check Validity"
 msgstr "בדיקת תוקף"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:677
+#: src/binaries/widget/mainwindow.cpp:686
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "ה&סגה"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:676
+#: src/binaries/widget/mainwindow.cpp:685
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&ביצוע מחדש"
@@ -2219,107 +2240,107 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "לבקש סיסמה ולהחזיר את מפתח הגיבוב שלה."
 
-#: src/binaries/widget/mainwindow.cpp:461
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "לוחות צד"
 
-#: src/binaries/widget/mainwindow.cpp:466
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "לוחות צד"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:485
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "רשימת השחקנים"
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "כל מסמכי המערכה"
 
-#: src/binaries/widget/mainwindow.cpp:478
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "רשימת אנטגוניסטים"
 
-#: src/binaries/widget/mainwindow.cpp:479
+#: src/binaries/widget/mainwindow.cpp:488
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "נגן מוזיקה"
 
-#: src/binaries/widget/mainwindow.cpp:480
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "לוח שרת"
 
-#: src/binaries/widget/mainwindow.cpp:481
+#: src/binaries/widget/mainwindow.cpp:490
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "אזור הודעות"
 
-#: src/binaries/widget/mainwindow.cpp:496
+#: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "כלי הנחיה"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "הגדרת שם המסמך"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "שם:"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "פתיחת עמוד באתר"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "כתובת עמוד באתר:"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "פתיחת מפה"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "מפה:"
 
-#: src/binaries/widget/mainwindow.cpp:579
-#: src/binaries/widget/mainwindow.cpp:618
-#: src/binaries/widget/mainwindow.cpp:848 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:627
+#: src/binaries/widget/mainwindow.cpp:857 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "פתיחת מערכה"
 
-#: src/binaries/widget/mainwindow.cpp:728
+#: src/binaries/widget/mainwindow.cpp:737
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr "אפשר למצוא את התיעוד של %1 ברשת בכתובת:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:763
+#: src/binaries/widget/mainwindow.cpp:772
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "תמיכה"
 
-#: src/binaries/widget/mainwindow.cpp:764
+#: src/binaries/widget/mainwindow.cpp:773
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "אפשר למצוא את עמוד התרומות של %1 ברשת בכתובת:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:828
+#: src/binaries/widget/mainwindow.cpp:837
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2329,23 +2350,23 @@ msgstr ""
 "לשמור את המערכה?\n"
 "שמירה אחרונה: לפני %1 דקות"
 
-#: src/binaries/widget/mainwindow.cpp:830
+#: src/binaries/widget/mainwindow.cpp:839
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "לצאת מ־Rolisteam?"
 
-#: src/binaries/widget/mainwindow.cpp:836
+#: src/binaries/widget/mainwindow.cpp:845
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "יציאה מ־%1 "
 
-#: src/binaries/widget/mainwindow.cpp:916
+#: src/binaries/widget/mainwindow.cpp:925
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "הודעת עדכון"
 
-#: src/binaries/widget/mainwindow.cpp:917
+#: src/binaries/widget/mainwindow.cpp:926
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2355,106 +2376,106 @@ msgstr ""
 "גרסה %1 יצאה לאור. נא לבקר ב<a href=\"https://rolisteam.org/02_download/"
 "\">עמוד ההורדות</a> כדי לקבל את הגרסה העדכנית ביותר."
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:934
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 הצטרף או הצטרפה למשחק הרגע."
 
-#: src/binaries/widget/mainwindow.cpp:929
+#: src/binaries/widget/mainwindow.cpp:938
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "ל־%1 אין את הגרסה הנכונה: %2."
 
-#: src/binaries/widget/mainwindow.cpp:935
+#: src/binaries/widget/mainwindow.cpp:944
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 עזב או עזבה את המשחק כרגע."
 
-#: src/binaries/widget/mainwindow.cpp:1016
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "הגדרת rolisteam כך שישתמש ב<פתחה> לחיבור"
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "הגדרת rolisteam כך שיתחבר אל <שרת>."
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "הגדרת ה<תפקיד>: מנחה או ד״ש"
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "מחיקת ההגדרות ושימוש במשתני ברירת המחדל"
 
-#: src/binaries/widget/mainwindow.cpp:1023
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "הגדרת <שם_המשתמש>"
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr "הגדרת <פתחת_שקע_אינטרנט> שחיוני לבדיקות ממשק משתמש אוטומטיות"
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1035
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "הסרת מגבלה על גודל קובץ PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1037
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "נתיב לקובץ התרגום: <קובץ_תרגום>"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1038
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "הגדרת כתובת כדי להתחבר לשרת: <כתובת>"
 
-#: src/binaries/widget/mainwindow.cpp:1137
+#: src/binaries/widget/mainwindow.cpp:1146
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "פתיחת %1"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "מחובר"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "לא מחובר"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "שרת"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "לקוח"
 
-#: src/binaries/widget/mainwindow.cpp:1248
+#: src/binaries/widget/mainwindow.cpp:1257
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "מנחה"
 
-#: src/binaries/widget/mainwindow.cpp:1254
+#: src/binaries/widget/mainwindow.cpp:1263
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "נגן"
 
-#: src/binaries/widget/mainwindow.cpp:1293
+#: src/binaries/widget/mainwindow.cpp:1302
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "לא ידוע"
@@ -3140,7 +3161,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "יש לספק את הקובץ הזה למפתחים של Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:428
+#: src/libraries/core/src/controller/contentcontroller.cpp:431
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "תמונה שהועתקה"

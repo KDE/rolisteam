@@ -128,8 +128,8 @@ msgctxt "AliasesPage|"
 msgid "Add alias"
 msgstr "Afig un àlies"
 
-#: src/binaries/3DDicer/dicemaincontroller.cpp:327
-#: src/binaries/3DDicer/dicemaincontroller.cpp:349
+#: src/binaries/3DDicer/dicemaincontroller.cpp:345
+#: src/binaries/3DDicer/dicemaincontroller.cpp:367
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "predeterminat"
@@ -483,47 +483,68 @@ msgctxt "SettingsPage|"
 msgid "Change language."
 msgstr "Canvi d'idioma."
 
-#: src/binaries/3DDicer/SettingsPage.qml:114
+#: src/binaries/3DDicer/SettingsPage.qml:113
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Rolisteam"
+msgctxt "SettingsPage|"
+msgid "Roll on rolisteam:"
+msgstr "Rolisteam"
+
+#: src/binaries/3DDicer/SettingsPage.qml:123
+msgctxt "SettingsPage|"
+msgid "Ip:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:134
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Port:"
+msgctxt "SettingsPage|"
+msgid "Port:"
+msgstr "Port:"
+
+#: src/binaries/3DDicer/SettingsPage.qml:149
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
 msgstr "Recorregut Ui:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:119
+#: src/binaries/3DDicer/SettingsPage.qml:154
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Inici"
 
-#: src/binaries/3DDicer/SettingsPage.qml:128
+#: src/binaries/3DDicer/SettingsPage.qml:163
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Quant a"
 
-#: src/binaries/3DDicer/SettingsPage.qml:131
+#: src/binaries/3DDicer/SettingsPage.qml:166
 msgctxt "SettingsPage|"
 msgid "Version information."
 msgstr "Informació de la versió."
 
-#: src/binaries/3DDicer/SettingsPage.qml:144
+#: src/binaries/3DDicer/SettingsPage.qml:179
 msgctxt "SettingsPage|"
 msgid "Version:"
 msgstr "Versió:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:152
+#: src/binaries/3DDicer/SettingsPage.qml:187
 msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "Data:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:160
+#: src/binaries/3DDicer/SettingsPage.qml:195
 msgctxt "SettingsPage|"
 msgid "Sha1:"
 msgstr "SHA1:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:187
+#: src/binaries/3DDicer/SettingsPage.qml:222
 msgctxt "SettingsPage|"
 msgid "Add Profile."
 msgstr "Afig un perfil."
 
-#: src/binaries/3DDicer/SettingsPage.qml:206
+#: src/binaries/3DDicer/SettingsPage.qml:241
 msgctxt "SettingsPage|"
 msgid "Documentation."
 msgstr "Documentació."
@@ -1662,7 +1683,7 @@ msgstr "Edició"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:727
+#: src/binaries/widget/mainwindow.cpp:736
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Ajuda"
@@ -1821,13 +1842,13 @@ msgid "Check Validity"
 msgstr "Comprova la validesa"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:677
+#: src/binaries/widget/mainwindow.cpp:686
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&Desfés"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:676
+#: src/binaries/widget/mainwindow.cpp:685
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Refés"
@@ -2222,108 +2243,108 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Demana una contrasenya i retorna la seua clau de resum."
 
-#: src/binaries/widget/mainwindow.cpp:461
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "Quadros laterals"
 
-#: src/binaries/widget/mainwindow.cpp:466
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Quadros laterals"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:485
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Llista de jugadors"
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Documents de totes les campanyes"
 
-#: src/binaries/widget/mainwindow.cpp:478
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Llista d'antagonistes"
 
-#: src/binaries/widget/mainwindow.cpp:479
+#: src/binaries/widget/mainwindow.cpp:488
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Reproductor musical"
 
-#: src/binaries/widget/mainwindow.cpp:480
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Quadro del servidor"
 
-#: src/binaries/widget/mainwindow.cpp:481
+#: src/binaries/widget/mainwindow.cpp:490
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Zona de notificacions"
 
-#: src/binaries/widget/mainwindow.cpp:496
+#: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Eines del DJ"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "Establix el nom del document"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nom:"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Obri la pàgina web"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "URL de la pàgina web:"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Obri un mapa"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Mapa:"
 
-#: src/binaries/widget/mainwindow.cpp:579
-#: src/binaries/widget/mainwindow.cpp:618
-#: src/binaries/widget/mainwindow.cpp:848 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:627
+#: src/binaries/widget/mainwindow.cpp:857 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Obri una campanya"
 
-#: src/binaries/widget/mainwindow.cpp:728
+#: src/binaries/widget/mainwindow.cpp:737
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "La documentació de %1 es pot trobar en línia a:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:763
+#: src/binaries/widget/mainwindow.cpp:772
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Assistència"
 
-#: src/binaries/widget/mainwindow.cpp:764
+#: src/binaries/widget/mainwindow.cpp:773
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr ""
 "La pàgina de donació a %1 es pot trobar en línia a:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:828
+#: src/binaries/widget/mainwindow.cpp:837
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2333,23 +2354,23 @@ msgstr ""
 "Voleu guardar la campanya?\n"
 "Últim guardada: fa %1 mins"
 
-#: src/binaries/widget/mainwindow.cpp:830
+#: src/binaries/widget/mainwindow.cpp:839
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Segur que voleu eixir de Rolisteam?"
 
-#: src/binaries/widget/mainwindow.cpp:836
+#: src/binaries/widget/mainwindow.cpp:845
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Ix de %1 "
 
-#: src/binaries/widget/mainwindow.cpp:916
+#: src/binaries/widget/mainwindow.cpp:925
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Notificació d'actualització"
 
-#: src/binaries/widget/mainwindow.cpp:917
+#: src/binaries/widget/mainwindow.cpp:926
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2359,107 +2380,107 @@ msgstr ""
 "S'ha publicat la versió %1. Visiteu la <a href=\"https://www.rolisteam.org/"
 "download\">pàgina de baixades</a> per a aconseguir l'última versió."
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:934
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 acaba d'unir-se al joc."
 
-#: src/binaries/widget/mainwindow.cpp:929
+#: src/binaries/widget/mainwindow.cpp:938
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 no té la versió correcta: %2."
 
-#: src/binaries/widget/mainwindow.cpp:935
+#: src/binaries/widget/mainwindow.cpp:944
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 acaba d'eixir del joc."
 
-#: src/binaries/widget/mainwindow.cpp:1016
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Establix que Rolisteam utilitze <port> per a la connexió"
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "Establix que Rolisteam es connecte a <servidor>."
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Establix el <rol>: dj o pj"
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Esborra la configuració i utilitza els paràmetres predeterminats"
 
-#: src/binaries/widget/mainwindow.cpp:1023
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Definix el <nom_usuari>"
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr "Definix el <websocketport> útil per a provar la IU automàticament"
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1035
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Elimina el límit de la mida del fitxer PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1037
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "camí cap al fitxer de traducció: <fitxer_traducció>"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1038
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Definix un URL per a connectar amb el servidor: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1137
+#: src/binaries/widget/mainwindow.cpp:1146
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Obri %1"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "Connectat"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "No connectat"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Servidor"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Client"
 
 # Traducció GM (Game Master) = DJ (Director de joc)
-#: src/binaries/widget/mainwindow.cpp:1248
+#: src/binaries/widget/mainwindow.cpp:1257
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "DJ"
 
-#: src/binaries/widget/mainwindow.cpp:1254
+#: src/binaries/widget/mainwindow.cpp:1263
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Jugador"
 
-#: src/binaries/widget/mainwindow.cpp:1293
+#: src/binaries/widget/mainwindow.cpp:1302
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Desconegut"
@@ -3148,7 +3169,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Proporcioneu este fitxer als desenvolupadors de Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:428
+#: src/libraries/core/src/controller/contentcontroller.cpp:431
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Imatge copiada"

@@ -123,8 +123,8 @@ msgctxt "AliasesPage|"
 msgid "Add alias"
 msgstr "Додати альтернативу"
 
-#: src/binaries/3DDicer/dicemaincontroller.cpp:327
-#: src/binaries/3DDicer/dicemaincontroller.cpp:349
+#: src/binaries/3DDicer/dicemaincontroller.cpp:345
+#: src/binaries/3DDicer/dicemaincontroller.cpp:367
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "типовий"
@@ -478,47 +478,68 @@ msgctxt "SettingsPage|"
 msgid "Change language."
 msgstr "Змінити мовую"
 
-#: src/binaries/3DDicer/SettingsPage.qml:114
+#: src/binaries/3DDicer/SettingsPage.qml:113
+#, fuzzy
+#| msgctxt "PreferencesDialogBox|"
+#| msgid "May slow down rolisteam"
+msgctxt "SettingsPage|"
+msgid "Roll on rolisteam:"
+msgstr "Може уповільнити rolisteam"
+
+#: src/binaries/3DDicer/SettingsPage.qml:123
+msgctxt "SettingsPage|"
+msgid "Ip:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:134
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Port:"
+msgctxt "SettingsPage|"
+msgid "Port:"
+msgstr "Порт:"
+
+#: src/binaries/3DDicer/SettingsPage.qml:149
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
 msgstr "Огляд інтерфейсу:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:119
+#: src/binaries/3DDicer/SettingsPage.qml:154
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Почати"
 
-#: src/binaries/3DDicer/SettingsPage.qml:128
+#: src/binaries/3DDicer/SettingsPage.qml:163
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Про програму"
 
-#: src/binaries/3DDicer/SettingsPage.qml:131
+#: src/binaries/3DDicer/SettingsPage.qml:166
 msgctxt "SettingsPage|"
 msgid "Version information."
 msgstr "Дані щодо версії."
 
-#: src/binaries/3DDicer/SettingsPage.qml:144
+#: src/binaries/3DDicer/SettingsPage.qml:179
 msgctxt "SettingsPage|"
 msgid "Version:"
 msgstr "Версія:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:152
+#: src/binaries/3DDicer/SettingsPage.qml:187
 msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "Дата:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:160
+#: src/binaries/3DDicer/SettingsPage.qml:195
 msgctxt "SettingsPage|"
 msgid "Sha1:"
 msgstr "SHA1:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:187
+#: src/binaries/3DDicer/SettingsPage.qml:222
 msgctxt "SettingsPage|"
 msgid "Add Profile."
 msgstr "Додати профіль."
 
-#: src/binaries/3DDicer/SettingsPage.qml:206
+#: src/binaries/3DDicer/SettingsPage.qml:241
 msgctxt "SettingsPage|"
 msgid "Documentation."
 msgstr "Документація."
@@ -1660,7 +1681,7 @@ msgstr "Видання"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:727
+#: src/binaries/widget/mainwindow.cpp:736
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "Довідка"
@@ -1819,13 +1840,13 @@ msgid "Check Validity"
 msgstr "Перевірити чинність"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:677
+#: src/binaries/widget/mainwindow.cpp:686
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&Вернути"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:676
+#: src/binaries/widget/mainwindow.cpp:685
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&Повторити"
@@ -2224,89 +2245,89 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "Запитати пароль і повернути його хешований ключ."
 
-#: src/binaries/widget/mainwindow.cpp:461
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "Бічні панелі"
 
-#: src/binaries/widget/mainwindow.cpp:466
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "Бічні панелі"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:485
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "Список гравців"
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "Усі документи кампанії"
 
-#: src/binaries/widget/mainwindow.cpp:478
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "Список антагоністів"
 
-#: src/binaries/widget/mainwindow.cpp:479
+#: src/binaries/widget/mainwindow.cpp:488
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "Програвач музики"
 
-#: src/binaries/widget/mainwindow.cpp:480
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "Панель сервера"
 
-#: src/binaries/widget/mainwindow.cpp:481
+#: src/binaries/widget/mainwindow.cpp:490
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Зона сповіщень"
 
-#: src/binaries/widget/mainwindow.cpp:496
+#: src/binaries/widget/mainwindow.cpp:505
 msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "Інструменти ВГ"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "Визначте назву документа"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Назва:"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "Відкрити сторінку"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "Адреса сторінки:"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "Відкрити карту"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "Карта:"
 
-#: src/binaries/widget/mainwindow.cpp:579
-#: src/binaries/widget/mainwindow.cpp:618
-#: src/binaries/widget/mainwindow.cpp:848 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:627
+#: src/binaries/widget/mainwindow.cpp:857 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "Відкрити шампанське"
 
-#: src/binaries/widget/mainwindow.cpp:728
+#: src/binaries/widget/mainwindow.cpp:737
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
@@ -2314,12 +2335,12 @@ msgstr ""
 "Документацію до %1 можна знайти в інтернеті за адресою:<br> <a href=\"%2\">"
 "%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:763
+#: src/binaries/widget/mainwindow.cpp:772
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "Підтримка"
 
-#: src/binaries/widget/mainwindow.cpp:764
+#: src/binaries/widget/mainwindow.cpp:773
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
@@ -2327,7 +2348,7 @@ msgstr ""
 "Сторінку фінансової підтримки %1 можна знайти в інтернеті за адресою:<br> <a "
 "href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:828
+#: src/binaries/widget/mainwindow.cpp:837
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2337,23 +2358,23 @@ msgstr ""
 "Хочете зберегти кампанію?\n"
 "Останнє збереження: %1 хв. тому"
 
-#: src/binaries/widget/mainwindow.cpp:830
+#: src/binaries/widget/mainwindow.cpp:839
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr "Ви справді хочете вийти з Rolisteam?"
 
-#: src/binaries/widget/mainwindow.cpp:836
+#: src/binaries/widget/mainwindow.cpp:845
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "Вийти з %1 "
 
-#: src/binaries/widget/mainwindow.cpp:916
+#: src/binaries/widget/mainwindow.cpp:925
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "Сповіщення щодо оновлення"
 
-#: src/binaries/widget/mainwindow.cpp:917
+#: src/binaries/widget/mainwindow.cpp:926
 #, qt-format
 msgctxt "MainWindow|"
 msgid ""
@@ -2363,107 +2384,107 @@ msgstr ""
 "Випущено версію %1. Будь ласка, зазирніть на <a href=\"https://rolisteam."
 "org/02_download/\">сторінку пакунка</a>, щоб отримати найсвіжішу версію."
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:934
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 щойно долучено до гри."
 
-#: src/binaries/widget/mainwindow.cpp:929
+#: src/binaries/widget/mainwindow.cpp:938
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "У %1 не та версія: %2."
 
-#: src/binaries/widget/mainwindow.cpp:935
+#: src/binaries/widget/mainwindow.cpp:944
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 щойно полишено гру."
 
-#: src/binaries/widget/mainwindow.cpp:1016
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "Наказати rolisteam використовувати для з'єднання <порт>"
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "З'єднатися rolisteam із <сервером>."
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "Визначити <роль>: gm або pc"
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "Вилучити значення параметрів і скористатися типовими"
 
-#: src/binaries/widget/mainwindow.cpp:1023
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "Визначити <користувача>"
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 "Визначити <websocketport> корисне для автоматичного тестування інтерфейсу"
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1035
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "Вилучити обмеження на розмір файла PDF"
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1037
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "шлях до файла перекладу: <файл_перекладу>"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1038
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "Визначити адресу для з'єднання із сервером: <адреса>"
 
-#: src/binaries/widget/mainwindow.cpp:1137
+#: src/binaries/widget/mainwindow.cpp:1146
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "Відкрити %1"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "З'єднано"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "Не з'єднано"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "Сервер"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "Клієнт"
 
-#: src/binaries/widget/mainwindow.cpp:1248
+#: src/binaries/widget/mainwindow.cpp:1257
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "ВГ"
 
-#: src/binaries/widget/mainwindow.cpp:1254
+#: src/binaries/widget/mainwindow.cpp:1263
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "Гравець"
 
-#: src/binaries/widget/mainwindow.cpp:1293
+#: src/binaries/widget/mainwindow.cpp:1302
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "Невідомий"
@@ -3149,7 +3170,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "Надайте цей файл розробникам Rolisteam"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:428
+#: src/libraries/core/src/controller/contentcontroller.cpp:431
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "Скопійоване зображення"
@@ -9769,10 +9790,6 @@ msgstr "Зачаровано"
 #~ msgctxt "PreferencesDialogBox|"
 #~ msgid "All Usages"
 #~ msgstr "Усі використання"
-
-#~ msgctxt "PreferencesDialogBox|"
-#~ msgid "May slow down rolisteam"
-#~ msgstr "Може уповільнити rolisteam"
 
 #~ msgctxt "PreferencesDialogBox|"
 #~ msgid "Include Debug data*"

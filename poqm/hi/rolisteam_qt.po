@@ -173,8 +173,8 @@ msgctxt "AliasesPage|"
 msgid "Add alias"
 msgstr "उपनाम"
 
-#: src/binaries/3DDicer/dicemaincontroller.cpp:327
-#: src/binaries/3DDicer/dicemaincontroller.cpp:349
+#: src/binaries/3DDicer/dicemaincontroller.cpp:345
+#: src/binaries/3DDicer/dicemaincontroller.cpp:367
 #, fuzzy
 #| msgctxt "ThemeModel|"
 #| msgid "default"
@@ -574,12 +574,33 @@ msgctxt "SettingsPage|"
 msgid "Change language."
 msgstr "छवि बदलें"
 
-#: src/binaries/3DDicer/SettingsPage.qml:114
+#: src/binaries/3DDicer/SettingsPage.qml:113
+#, fuzzy
+#| msgctxt "MainWindow|"
+#| msgid "Rolisteam"
+msgctxt "SettingsPage|"
+msgid "Roll on rolisteam:"
+msgstr "रोलिस्टीम"
+
+#: src/binaries/3DDicer/SettingsPage.qml:123
+msgctxt "SettingsPage|"
+msgid "Ip:"
+msgstr ""
+
+#: src/binaries/3DDicer/SettingsPage.qml:134
+#, fuzzy
+#| msgctxt "ConnectionForm|"
+#| msgid "Port:"
+msgctxt "SettingsPage|"
+msgid "Port:"
+msgstr "पत्तन:"
+
+#: src/binaries/3DDicer/SettingsPage.qml:149
 msgctxt "SettingsPage|"
 msgid "Ui Tour:"
 msgstr ""
 
-#: src/binaries/3DDicer/SettingsPage.qml:119
+#: src/binaries/3DDicer/SettingsPage.qml:154
 #, fuzzy
 #| msgctxt "PreferencesDialogBox|"
 #| msgid "Start"
@@ -587,7 +608,7 @@ msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "शुरू"
 
-#: src/binaries/3DDicer/SettingsPage.qml:128
+#: src/binaries/3DDicer/SettingsPage.qml:163
 #, fuzzy
 #| msgctxt "TextEdit|"
 #| msgid "About"
@@ -595,12 +616,12 @@ msgctxt "SettingsPage|"
 msgid "About"
 msgstr "के बारे में"
 
-#: src/binaries/3DDicer/SettingsPage.qml:131
+#: src/binaries/3DDicer/SettingsPage.qml:166
 msgctxt "SettingsPage|"
 msgid "Version information."
 msgstr ""
 
-#: src/binaries/3DDicer/SettingsPage.qml:144
+#: src/binaries/3DDicer/SettingsPage.qml:179
 #, fuzzy
 #| msgctxt "PermissionFrame|"
 #| msgid "Permission"
@@ -608,7 +629,7 @@ msgctxt "SettingsPage|"
 msgid "Version:"
 msgstr "अनुमति"
 
-#: src/binaries/3DDicer/SettingsPage.qml:152
+#: src/binaries/3DDicer/SettingsPage.qml:187
 #, fuzzy
 #| msgctxt "AntagonistBoard|"
 #| msgid "State:"
@@ -616,12 +637,12 @@ msgctxt "SettingsPage|"
 msgid "Date:"
 msgstr "राज्य:"
 
-#: src/binaries/3DDicer/SettingsPage.qml:160
+#: src/binaries/3DDicer/SettingsPage.qml:195
 msgctxt "SettingsPage|"
 msgid "Sha1:"
 msgstr ""
 
-#: src/binaries/3DDicer/SettingsPage.qml:187
+#: src/binaries/3DDicer/SettingsPage.qml:222
 #, fuzzy
 #| msgctxt "SheetProperties|"
 #| msgid "Add Font file"
@@ -629,7 +650,7 @@ msgctxt "SettingsPage|"
 msgid "Add Profile."
 msgstr "फ़ॉन्ट फ़ाइल जोड़ें"
 
-#: src/binaries/3DDicer/SettingsPage.qml:206
+#: src/binaries/3DDicer/SettingsPage.qml:241
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "online documentation"
@@ -1840,7 +1861,7 @@ msgstr "संस्करण"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:809
 #: src/binaries/rcse/mainwindow_rcse.ui:1012
-#: src/binaries/widget/mainwindow.cpp:727
+#: src/binaries/widget/mainwindow.cpp:736
 msgctxt "MainWindow|"
 msgid "Help"
 msgstr "मदद"
@@ -1999,13 +2020,13 @@ msgid "Check Validity"
 msgstr "वैधता जांचें"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1099
-#: src/binaries/widget/mainwindow.cpp:677
+#: src/binaries/widget/mainwindow.cpp:686
 msgctxt "MainWindow|"
 msgid "&Undo"
 msgstr "&पूर्ववत करें"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:1104
-#: src/binaries/widget/mainwindow.cpp:676
+#: src/binaries/widget/mainwindow.cpp:685
 msgctxt "MainWindow|"
 msgid "&Redo"
 msgstr "&फिर से करें"
@@ -2406,42 +2427,42 @@ msgctxt "QObject|"
 msgid "Ask for password and return its hash key."
 msgstr "पासवर्ड पूछें और उसकी हैश कुंजी लौटाएं।"
 
-#: src/binaries/widget/mainwindow.cpp:461
+#: src/binaries/widget/mainwindow.cpp:470
 msgctxt "MainWindow|"
 msgid "SidePanels"
 msgstr "साइड पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:466
+#: src/binaries/widget/mainwindow.cpp:475
 msgctxt "MainWindow|"
 msgid "Side Panels"
 msgstr "साइड पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:476
+#: src/binaries/widget/mainwindow.cpp:485
 msgctxt "MainWindow|"
 msgid "List of Players"
 msgstr "खिलाड़ियों की सूची"
 
-#: src/binaries/widget/mainwindow.cpp:477
+#: src/binaries/widget/mainwindow.cpp:486
 msgctxt "MainWindow|"
 msgid "All campaign documents"
 msgstr "सभी अभियान दस्तावेज़"
 
-#: src/binaries/widget/mainwindow.cpp:478
+#: src/binaries/widget/mainwindow.cpp:487
 msgctxt "MainWindow|"
 msgid "List of antagonists"
 msgstr "प्रतिपक्षियों की सूची"
 
-#: src/binaries/widget/mainwindow.cpp:479
+#: src/binaries/widget/mainwindow.cpp:488
 msgctxt "MainWindow|"
 msgid "Music Player"
 msgstr "संगीत बजाने वाला"
 
-#: src/binaries/widget/mainwindow.cpp:480
+#: src/binaries/widget/mainwindow.cpp:489
 msgctxt "MainWindow|"
 msgid "Server Panel"
 msgstr "सर्वर पैनल"
 
-#: src/binaries/widget/mainwindow.cpp:481
+#: src/binaries/widget/mainwindow.cpp:490
 #, fuzzy
 #| msgctxt "NotificationZone|"
 #| msgid "Notification Zone"
@@ -2449,7 +2470,7 @@ msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "अधिसूचना क्षेत्र"
 
-#: src/binaries/widget/mainwindow.cpp:496
+#: src/binaries/widget/mainwindow.cpp:505
 #, fuzzy
 #| msgctxt "MainWindow|"
 #| msgid "GM Tools"
@@ -2457,7 +2478,7 @@ msgctxt "MainWindow|"
 msgid "GM Tools"
 msgstr "जीएम उपकरण"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 #, fuzzy
 #| msgctxt "Image|"
 #| msgid "Define the new name"
@@ -2465,7 +2486,7 @@ msgctxt "MainWindow|"
 msgid "Define document's name"
 msgstr "नया नाम परिभाषित करें"
 
-#: src/binaries/widget/mainwindow.cpp:537
+#: src/binaries/widget/mainwindow.cpp:546
 #, fuzzy
 #| msgctxt "PersonEdit|"
 #| msgid "Name:"
@@ -2473,34 +2494,34 @@ msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "नाम:"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Open Webpage"
 msgstr "वेबपेज खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:557
+#: src/binaries/widget/mainwindow.cpp:566
 msgctxt "MainWindow|"
 msgid "Webpage url:"
 msgstr "वेबपेज यूआरएल:"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Open Map"
 msgstr "मानचित्र खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:565
+#: src/binaries/widget/mainwindow.cpp:574
 msgctxt "MainWindow|"
 msgid "Map:"
 msgstr "मानचित्र:"
 
-#: src/binaries/widget/mainwindow.cpp:579
-#: src/binaries/widget/mainwindow.cpp:618
-#: src/binaries/widget/mainwindow.cpp:848 src/binaries/widget/mainwindow.ui:284
+#: src/binaries/widget/mainwindow.cpp:588
+#: src/binaries/widget/mainwindow.cpp:627
+#: src/binaries/widget/mainwindow.cpp:857 src/binaries/widget/mainwindow.ui:284
 msgctxt "MainWindow|"
 msgid "Open Campaign"
 msgstr "खुला अभियान"
 
-#: src/binaries/widget/mainwindow.cpp:728
+#: src/binaries/widget/mainwindow.cpp:737
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2509,18 +2530,18 @@ msgctxt "MainWindow|"
 msgid "Documentation of %1 can be found online at:<br> <a href=\"%2\">%2</a>"
 msgstr "%1 का दस्तावेज़ीकरण ऑनलाइन यहां पाया जा सकता है:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:763
+#: src/binaries/widget/mainwindow.cpp:772
 msgctxt "MainWindow|"
 msgid "Support"
 msgstr "सहायता"
 
-#: src/binaries/widget/mainwindow.cpp:764
+#: src/binaries/widget/mainwindow.cpp:773
 #, qt-format
 msgctxt "MainWindow|"
 msgid "The %1 donation page can be found online at :<br> <a href=\"%2\">%2</a>"
 msgstr "%1 दान पृष्ठ ऑनलाइन यहां पाया जा सकता है:<br> <a href=\"%2\">%2</a>"
 
-#: src/binaries/widget/mainwindow.cpp:828
+#: src/binaries/widget/mainwindow.cpp:837
 #, fuzzy, qt-format
 #| msgctxt "rcse::MainWindow|"
 #| msgid "Do you want to erase current QML code ?"
@@ -2530,23 +2551,23 @@ msgid ""
 "Last save: %1 min(s) ago"
 msgstr "क्या आप वर्तमान QML कोड मिटाना चाहते हैं?"
 
-#: src/binaries/widget/mainwindow.cpp:830
+#: src/binaries/widget/mainwindow.cpp:839
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:836
+#: src/binaries/widget/mainwindow.cpp:845
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Quit %1 "
 msgstr "%1छोड़ो"
 
-#: src/binaries/widget/mainwindow.cpp:916
+#: src/binaries/widget/mainwindow.cpp:925
 msgctxt "MainWindow|"
 msgid "Update Notification"
 msgstr "अद्यतन अधिसूचना"
 
-#: src/binaries/widget/mainwindow.cpp:917
+#: src/binaries/widget/mainwindow.cpp:926
 #, fuzzy, qt-format
 #| msgctxt "MainWindow|"
 #| msgid ""
@@ -2560,106 +2581,106 @@ msgstr ""
 "%1 संस्करण जारी कर दिया गया है। कृपया अधिक जानकारी के लिए <a href=\"https://www."
 "rolisteam.org/download\">डाउनलोड पृष्ठ</a> देखें"
 
-#: src/binaries/widget/mainwindow.cpp:925
+#: src/binaries/widget/mainwindow.cpp:934
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just joins the game."
 msgstr "%1 अभी खेल में शामिल हुआ है."
 
-#: src/binaries/widget/mainwindow.cpp:929
+#: src/binaries/widget/mainwindow.cpp:938
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 has not the right version: %2."
 msgstr "%1 का सही संस्करण नहीं है: %2."
 
-#: src/binaries/widget/mainwindow.cpp:935
+#: src/binaries/widget/mainwindow.cpp:944
 #, qt-format
 msgctxt "MainWindow|"
 msgid "%1 just leaves the game."
 msgstr "%1 बस खेल छोड़ देता है."
 
-#: src/binaries/widget/mainwindow.cpp:1016
+#: src/binaries/widget/mainwindow.cpp:1025
 msgctxt "MainWindow|"
 msgid "Set rolisteam to use <port> for the connection"
 msgstr "कनेक्शन के लिए <port> का उपयोग करने के लिए rolisteam सेट करें"
 
-#: src/binaries/widget/mainwindow.cpp:1018
+#: src/binaries/widget/mainwindow.cpp:1027
 msgctxt "MainWindow|"
 msgid "Set rolisteam to connect to <server>."
 msgstr "rolisteam को <server> से कनेक्ट करने के लिए सेट करें."
 
-#: src/binaries/widget/mainwindow.cpp:1020
+#: src/binaries/widget/mainwindow.cpp:1029
 msgctxt "MainWindow|"
 msgid "Define the <role>: gm or pc"
 msgstr "<भूमिका> परिभाषित करें: gm या pc"
 
-#: src/binaries/widget/mainwindow.cpp:1022
+#: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
 msgstr "सेटिंग्स मिटाएँ और डिफ़ॉल्ट पैरामीटर का उपयोग करें"
 
-#: src/binaries/widget/mainwindow.cpp:1023
+#: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
 msgid "Define the <username>"
 msgstr "<उपयोगकर्ता नाम> परिभाषित करें"
 
-#: src/binaries/widget/mainwindow.cpp:1025
+#: src/binaries/widget/mainwindow.cpp:1034
 msgctxt "MainWindow|"
 msgid "Define the <websocketport> useful for auto UI testing"
 msgstr ""
 
-#: src/binaries/widget/mainwindow.cpp:1026
+#: src/binaries/widget/mainwindow.cpp:1035
 msgctxt "MainWindow|"
 msgid "Remove limit to PDF file size"
 msgstr "पीडीएफ फाइल आकार की सीमा हटाएँ"
 
-#: src/binaries/widget/mainwindow.cpp:1028
+#: src/binaries/widget/mainwindow.cpp:1037
 msgctxt "QObject|"
 msgid "path to the translation file: <translationfile>"
 msgstr "अनुवाद फ़ाइल का पथ: <translationfile>"
 
-#: src/binaries/widget/mainwindow.cpp:1029
+#: src/binaries/widget/mainwindow.cpp:1038
 msgctxt "QObject|"
 msgid "Define URL to connect to server: <url>"
 msgstr "सर्वर से कनेक्ट करने के लिए URL निर्धारित करें: <url>"
 
-#: src/binaries/widget/mainwindow.cpp:1137
+#: src/binaries/widget/mainwindow.cpp:1146
 #, qt-format
 msgctxt "MainWindow|"
 msgid "Open %1"
 msgstr "%1खोलें"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Connected"
 msgstr "जुड़े हुए"
 
-#: src/binaries/widget/mainwindow.cpp:1240
+#: src/binaries/widget/mainwindow.cpp:1249
 msgctxt "MainWindow|"
 msgid "Not Connected"
 msgstr "जुड़े नहीं हैं"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Server"
 msgstr "सर्वर"
 
-#: src/binaries/widget/mainwindow.cpp:1241
+#: src/binaries/widget/mainwindow.cpp:1250
 msgctxt "MainWindow|"
 msgid "Client"
 msgstr "ग्राहक"
 
-#: src/binaries/widget/mainwindow.cpp:1248
+#: src/binaries/widget/mainwindow.cpp:1257
 msgctxt "MainWindow|"
 msgid "GM"
 msgstr "जीएम"
 
-#: src/binaries/widget/mainwindow.cpp:1254
+#: src/binaries/widget/mainwindow.cpp:1263
 msgctxt "MainWindow|"
 msgid "Player"
 msgstr "खिलाड़ी"
 
-#: src/binaries/widget/mainwindow.cpp:1293
+#: src/binaries/widget/mainwindow.cpp:1302
 msgctxt "MainWindow|"
 msgid "Unknown"
 msgstr "अज्ञात"
@@ -3375,7 +3396,7 @@ msgctxt "LogPanel|"
 msgid "Provide this file to Rolisteam developers"
 msgstr "यह फ़ाइल रोलिस्टीम डेवलपर्स को उपलब्ध कराएं"
 
-#: src/libraries/core/src/controller/contentcontroller.cpp:428
+#: src/libraries/core/src/controller/contentcontroller.cpp:431
 msgctxt "ContentController|"
 msgid "Copied Image"
 msgstr "कॉपी की गई छवि"
