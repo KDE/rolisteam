@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-09 00:48+0100\n"
-"PO-Revision-Date: 2026-09-17 00:12+0100\n"
+"PO-Revision-Date: 2026-10-15 20:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Qt-Contexts: true\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -484,22 +484,16 @@ msgid "Change language."
 msgstr "Cambiar idioma."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr "Tiradas en Rolisteam:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "IP:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Puerto:"

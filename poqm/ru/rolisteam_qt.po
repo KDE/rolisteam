@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-09-28 18:57+0200\n"
-"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-10-15 12:00+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -479,22 +479,16 @@ msgid "Change language."
 msgstr "Смена языка."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr "Бросать в Rolisteam:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "IP:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Порт:"

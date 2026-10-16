@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-09-16 10:47+0200\n"
+"PO-Revision-Date: 2026-10-15 09:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -484,22 +484,16 @@ msgid "Change language."
 msgstr "Canvi d'idioma."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr "Tirada a Rolisteam:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "IP:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Port:"
@@ -8739,7 +8733,7 @@ msgstr "Xicoteta"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:268
 msgctxt "Image|"
 msgid "Set the zoom level at 20% "
-msgstr "Establix el nivell de zoom al 20%"
+msgstr "Establix el nivell de zoom al 20 %"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:271
 msgctxt "Image|Set the zoom level at 20%"
@@ -8769,7 +8763,7 @@ msgstr "Gran"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:290
 msgctxt "Image|"
 msgid "Set the zoom level at 400%"
-msgstr "Establix el nivell de zoom al 400%"
+msgstr "Establix el nivell de zoom al 400 %"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:293
 msgctxt "Image|Zoom Out"
@@ -8914,32 +8908,32 @@ msgstr "Ajusta a la vista"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:149
 msgctxt "PdfViewer|"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:154
 msgctxt "PdfViewer|"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:159
 msgctxt "PdfViewer|"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:164
 msgctxt "PdfViewer|"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:169
 msgctxt "PdfViewer|"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:174
 msgctxt "PdfViewer|"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:212
 msgctxt "PdfViewer|"

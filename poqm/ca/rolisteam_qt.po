@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-09-16 10:47+0200\n"
+"PO-Revision-Date: 2026-10-15 09:13+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -484,22 +484,16 @@ msgid "Change language."
 msgstr "Canvi d'idioma."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr "Tirada al Rolisteam:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "IP:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Port:"
