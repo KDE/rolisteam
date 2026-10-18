@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam_qt\n"
-"PO-Revision-Date: 2026-09-18 08:58+0200\n"
+"PO-Revision-Date: 2026-10-16 17:57+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
@@ -481,22 +481,16 @@ msgid "Change language."
 msgstr "Modifier la langue."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "May slow down rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Pourrait conduire à un ralentissement de Rolisteam"
+msgstr "Lancer les dés sous  de Rolisteam :"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "Adresse IP :"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Port :"
