@@ -482,22 +482,16 @@ msgid "Change language."
 msgstr "Zmeniť jazyk."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr "Hádzať na rolisteam:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
 msgid "Ip:"
-msgstr ""
+msgstr "IP:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:134
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Port:"
 msgctxt "SettingsPage|"
 msgid "Port:"
 msgstr "Port:"
@@ -4629,12 +4623,9 @@ msgid "Font size Factor:"
 msgstr "Faktor veľkosti písma:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "NetworkController|"
-#| msgid "server thread has been closed"
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "Vlákno servera bolo ukončené."
+msgstr "Text bol skopírovaný!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -9205,17 +9196,11 @@ msgid "Change color…"
 msgstr "Zmeniť farbu…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Pridať postavu"
+msgstr "Pridať lokálnu postavu"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "Odstrániť znak"
