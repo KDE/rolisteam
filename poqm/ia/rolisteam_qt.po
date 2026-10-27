@@ -6096,7 +6096,7 @@ msgstr "Reimplite"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:781
 msgctxt "PreferencesDialogBox|"
 msgid "Repeated"
-msgstr "Repetite"
+msgstr "Repetete"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:796
 msgctxt "PreferencesDialogBox|"
