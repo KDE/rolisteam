@@ -864,9 +864,7 @@ msgid "None"
 msgstr "Ningunha"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "A imaxe %1 non ten o mesmo tamaño que as outras."
@@ -4784,9 +4782,6 @@ msgid "Color:"
 msgstr "Cor:"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:81
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "I'm the Game Master"
 msgctxt "PersonEdit|"
 msgid "I'm the Game Master"
 msgstr "Dirixo"
@@ -4858,9 +4853,6 @@ msgid "Attach on Main"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
-#, fuzzy
-#| msgctxt "MindMap|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Desprender"
