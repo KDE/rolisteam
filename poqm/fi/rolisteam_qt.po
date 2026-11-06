@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2025-02-21 11:49+0200\n"
+"PO-Revision-Date: 2026-10-11 16:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -10,51 +10,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 "X-Qt-Contexts: true\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Aliases"
-msgstr "Alias"
+msgstr "Aliakset"
 
 #: src/binaries/3DDicer/AliasesPage.qml:20
-#, fuzzy
-#| msgctxt "PlayerModel|"
-#| msgid "Players List"
 msgctxt "AliasesPage|"
 msgid "Alias List"
-msgstr "Pelaajaluettelo"
+msgstr "Aliasluettelo"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
 #, qt-format
 msgctxt "AliasesPage|"
 msgid "<b>%1</b><br/>%2 => %3<br/>Regex: %4"
-msgstr ""
+msgstr "<b>%1</b><br/>%2 => %3<br/>Sääntölauseke: %4"
 
 #: src/binaries/3DDicer/AliasesPage.qml:36
-#, fuzzy, qt-format
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
+#, qt-format
 msgctxt "AliasesPage|"
 msgid "Alias #%1"
-msgstr "Alias"
+msgstr "Alias %1"
 
 #: src/binaries/3DDicer/AliasesPage.qml:37
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern"
 msgstr "Kuvio"
 
 #: src/binaries/3DDicer/AliasesPage.qml:38
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command"
 msgstr "Komento"
@@ -62,47 +48,32 @@ msgstr "Komento"
 #: src/binaries/3DDicer/AliasesPage.qml:39
 msgctxt "AliasesPage|"
 msgid "Off"
-msgstr ""
+msgstr "Ei käytössä"
 
 #: src/binaries/3DDicer/AliasesPage.qml:39
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Open"
 msgctxt "AliasesPage|"
 msgid "On"
-msgstr "Avaa"
+msgstr "Käytössä"
 
 #: src/binaries/3DDicer/AliasesPage.qml:55
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Edit Channel"
 msgctxt "AliasesPage|"
 msgid "Edit alias"
-msgstr "Muokkaa kanavaa"
+msgstr "Muokkaa aliasta"
 
 #: src/binaries/3DDicer/AliasesPage.qml:85
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "AliasesPage|"
 msgid "Name:"
 msgstr "Nimi:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:95
-#, fuzzy
-#| msgctxt "CharacterSheetModel|"
-#| msgid "Fields name"
 msgctxt "AliasesPage|"
 msgid "Set alias name"
-msgstr "Kentän nimi"
+msgstr "Aseta aliaksen nimi"
 
 #: src/binaries/3DDicer/AliasesPage.qml:101
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Pattern"
 msgctxt "AliasesPage|"
 msgid "Pattern:"
-msgstr "Kuvio"
+msgstr "Kuvio:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:112
 msgctxt "AliasesPage|"
@@ -110,34 +81,22 @@ msgid "Pattern which triggers the replace."
 msgstr ""
 
 #: src/binaries/3DDicer/AliasesPage.qml:118
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Command:"
-msgstr "Komento"
+msgstr "Komento:"
 
 #: src/binaries/3DDicer/AliasesPage.qml:129
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "AliasesPage|"
 msgid "Real command"
-msgstr "Komento"
+msgstr "Todellinen komento"
 
 #: src/binaries/3DDicer/AliasesPage.qml:135
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Regular Expression"
 msgctxt "AliasesPage|"
 msgid "Regular expression"
 msgstr "Säännöllinen lauseke"
 
 #: src/binaries/3DDicer/AliasesPage.qml:142
 #: src/binaries/3DDicer/AliasesPage.qml:147
-#, fuzzy
-#| msgctxt "DiceAliasModel|"
-#| msgid "Disable"
 msgctxt "AliasesPage|"
 msgid "Disable"
 msgstr "Poista käytöstä"
@@ -145,49 +104,34 @@ msgstr "Poista käytöstä"
 #: src/binaries/3DDicer/AliasesPage.qml:154
 msgctxt "AliasesPage|"
 msgid "Save and back"
-msgstr ""
+msgstr "Tallenna ja palaa"
 
 #: src/binaries/3DDicer/AliasesPage.qml:165
-#, fuzzy
-#| msgctxt "PlayerWidget|"
-#| msgid "Save Playlist"
 msgctxt "AliasesPage|"
 msgid "Save the alias"
-msgstr "Tallenna soittolista"
+msgstr "Tallenna alias"
 
 #: src/binaries/3DDicer/AliasesPage.qml:175
 #: src/binaries/3DDicer/AliasesPage.qml:190
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "AliasesPage|"
 msgid "Delete"
 msgstr "Poista"
 
 #: src/binaries/3DDicer/AliasesPage.qml:214
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "AliasesPage|"
 msgid "Add alias"
-msgstr "Alias"
+msgstr "Lisää alias"
 
 #: src/binaries/3DDicer/dicemaincontroller.cpp:345
 #: src/binaries/3DDicer/dicemaincontroller.cpp:367
-#, fuzzy
-#| msgctxt "ThemeModel|"
-#| msgid "default"
 msgctxt "DiceMainController|"
 msgid "default"
 msgstr "oletus"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:9
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "DiceRollPage|"
 msgid "Dice Rolls"
-msgstr "Nopan alias"
+msgstr "Nopanheitot"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:18
 msgctxt "DiceRollPage|"
@@ -202,6 +146,8 @@ msgid ""
 "Result of our first roll.\n"
 "Press and Hold to rework this command."
 msgstr ""
+"Ensimmäisen heiton tulos.\n"
+"Tee komento uudelleen napsauttamalla ja pitämällä."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:50
 msgctxt "DiceRollPage|"
@@ -209,6 +155,8 @@ msgid ""
 "Click here\n"
 "to display all details about the result."
 msgstr ""
+"Katso kaikki\n"
+"tuloksen tiedot napsauttamalla tästä."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:69
 msgctxt "DiceRollPage|"
@@ -216,24 +164,23 @@ msgid ""
 "Click here\n"
 "to roll again the command."
 msgstr ""
+"Heitä uudelleen\n"
+"napsauttamalla tästä."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:133
 msgctxt "DiceRollPage|"
 msgid "Type your command e.g: 3d10…"
-msgstr ""
+msgstr "Syötä komento, esim. 3d10…"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:142
 msgctxt "DiceRollPage|"
 msgid "Type command here."
-msgstr ""
+msgstr "Syötä komento tähän."
 
 #: src/binaries/3DDicer/DiceRollPage.qml:149
-#, fuzzy
-#| msgctxt "Convertor|"
-#| msgid "Return"
 msgctxt "DiceRollPage|"
 msgid "Run"
-msgstr "Palaa"
+msgstr "Suorita"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:165
 msgctxt "DiceRollPage|"
@@ -241,24 +188,20 @@ msgid ""
 "Click here\n"
 "to run the command."
 msgstr ""
+"Suorita komento\n"
+"napsauttamalla tästä."
 
 #: src/binaries/3DDicer/MacrosPage.qml:9
 msgctxt "MacrosPage|"
 msgid "Macros"
-msgstr ""
+msgstr "Makrot"
 
 #: src/binaries/3DDicer/MacrosPage.qml:18
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Character List"
 msgctxt "MacrosPage|"
 msgid "Macro List"
-msgstr "Hahmoluettelo"
+msgstr "Makroluettelo"
 
 #: src/binaries/3DDicer/MacrosPage.qml:35
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "MacrosPage|"
 msgid "Name"
 msgstr "Nimi"
@@ -266,38 +209,32 @@ msgstr "Nimi"
 #: src/binaries/3DDicer/MacrosPage.qml:37
 msgctxt "MacrosPage|"
 msgid "Set macro name."
-msgstr ""
+msgstr "Aseta makron nimi."
 
 #: src/binaries/3DDicer/MacrosPage.qml:40
 msgctxt "MacrosPage|"
 msgid "Attack"
-msgstr ""
+msgstr "Hyökkää"
 
 #: src/binaries/3DDicer/MacrosPage.qml:49
-#, fuzzy
-#| msgctxt "Campaign|"
-#| msgid "Command"
 msgctxt "MacrosPage|"
 msgid "command"
-msgstr "Komento"
+msgstr "komento"
 
 #: src/binaries/3DDicer/MacrosPage.qml:51
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "MacrosPage|"
 msgid "Set macro value."
-msgstr "Kaikki sivut"
+msgstr "Aseta makron arvo."
 
 #: src/binaries/3DDicer/MacrosPage.qml:54
 msgctxt "MacrosPage|"
 msgid "1d20+3"
-msgstr ""
+msgstr "1d20+3"
 
 #: src/binaries/3DDicer/MacrosPage.qml:70
 msgctxt "MacrosPage|"
 msgid "Edit/Save current Macro"
-msgstr ""
+msgstr "Muokkaa tai tallenna nykyinen makro"
 
 #: src/binaries/3DDicer/MacrosPage.qml:78
 msgctxt "MacrosPage|"
@@ -306,11 +243,11 @@ msgid ""
 "\n"
 "To remove it: Swipe right."
 msgstr ""
+"Lisää makroluettelo\n"
+"\n"
+"Poista pyyhkäisemällä oikealle."
 
 #: src/binaries/3DDicer/MacrosPage.qml:84
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "MacrosPage|"
 msgid "Delete"
 msgstr "Poista"
@@ -321,11 +258,13 @@ msgid ""
 "To remove it:\n"
 " Swipe right and click on the button."
 msgstr ""
+"Poista se:\n"
+"Pyyhkäise oikealle ja napsauta painiketta."
 
 #: src/binaries/3DDicer/MacrosPage.qml:127
 msgctxt "MacrosPage|"
 msgid "Add empty macro"
-msgstr ""
+msgstr "Lisää tyhjä makro"
 
 #: src/binaries/3DDicer/Main.qml:152
 msgctxt "Main|"
@@ -333,14 +272,13 @@ msgid ""
 "Tabbar:\n"
 "Each tab manages one main feature."
 msgstr ""
+"Välilehtirivi:\n"
+"Kukin välilehti hallinnoi yhtä pääominaisuutta."
 
 #: src/binaries/3DDicer/Main.qml:156
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Dice Alias"
 msgctxt "Main|"
 msgid "Dice Rolls"
-msgstr "Nopan alias"
+msgstr "Nopanheitot"
 
 #: src/binaries/3DDicer/Main.qml:165
 msgctxt "Main|"
@@ -348,11 +286,13 @@ msgid ""
 "Roll dice:\n"
 "All results are displayed here."
 msgstr ""
+"Nopanheitto:\n"
+"Kaikki tulokset näkyvät tässä."
 
 #: src/binaries/3DDicer/Main.qml:174
 msgctxt "Main|"
 msgid "3D Dice"
-msgstr ""
+msgstr "3D-noppa"
 
 #: src/binaries/3DDicer/Main.qml:182
 msgctxt "Main|"
@@ -360,11 +300,13 @@ msgid ""
 "3D Dice:\n"
 "Roll your dice in 3D."
 msgstr ""
+"3D-noppa:\n"
+"Heitä noppaa 3D:nä."
 
 #: src/binaries/3DDicer/Main.qml:190
 msgctxt "Main|"
 msgid "Macros"
-msgstr ""
+msgstr "Makrot"
 
 #: src/binaries/3DDicer/Main.qml:198
 msgctxt "Main|"
@@ -372,14 +314,13 @@ msgid ""
 "Macros:\n"
 "Preset of often used commands."
 msgstr ""
+"Makrot:\n"
+"Usein käytettyjen komentojen esiasetukset."
 
 #: src/binaries/3DDicer/Main.qml:206
-#, fuzzy
-#| msgctxt "DiceBookMarkModel|"
-#| msgid "Alias"
 msgctxt "Main|"
 msgid "Aliases"
-msgstr "Alias"
+msgstr "Aliakset"
 
 #: src/binaries/3DDicer/Main.qml:214
 msgctxt "Main|"
@@ -387,6 +328,8 @@ msgid ""
 "Aliases:\n"
 "Shortcut commands"
 msgstr ""
+"Aliakset:\n"
+"Pikakomennot"
 
 #: src/binaries/3DDicer/Main.qml:222
 #, fuzzy
@@ -404,22 +347,18 @@ msgid ""
 msgstr ""
 
 #: src/binaries/3DDicer/Main.qml:238
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Settings"
 msgstr "Asetukset"
 
 #: src/binaries/3DDicer/Main.qml:246
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Application Language*"
 msgctxt "Main|"
 msgid ""
 "Application Settings:\n"
 "Language, Version…"
-msgstr "Sovelluskieli*"
+msgstr ""
+"Sovellusasetuket:\n"
+"kieli, versio…"
 
 #: src/binaries/3DDicer/model/dicealiasmodel.cpp:37
 #: src/libraries/core/src/model/dicealiasmodel.cpp:37
@@ -454,12 +393,9 @@ msgstr "Kommentit"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:12
 msgctxt "PhysicsDicePage|"
 msgid "3D Dice"
-msgstr ""
+msgstr "3D-noppa"
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:79
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Dice Size:"
 msgctxt "PhysicsDicePage|"
 msgid "Dice Size:"
 msgstr "Nopan koko:"
@@ -467,108 +403,78 @@ msgstr "Nopan koko:"
 #: src/binaries/3DDicer/PhysicsDicePage.qml:91
 msgctxt "PhysicsDicePage|"
 msgid "Change dice size."
-msgstr ""
+msgstr "Muuta nopan kokoa."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:133
 msgctxt "PhysicsDicePage|"
 msgid "Add or remove any type of dice."
-msgstr ""
+msgstr "Lisää tai poista millainen tahansa noppa."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:216
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "PhysicsDicePage|"
 msgid "Select all dice."
-msgstr "Valitse kuva"
+msgstr "Valitse kaikki nopat."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:230
 msgctxt "PhysicsDicePage|"
 msgid "Selection by rectangle."
-msgstr ""
+msgstr "Valinta nelikulmiolla."
 
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
-#, fuzzy
-#| msgctxt "AudioPlayer|"
-#| msgid "Show/hide Player %1"
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Näytä tai piilota pelaaja %1"
+msgstr "Näytä tai piilota valikko."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Save profiles"
 msgctxt "ProfileSelector|"
 msgid "Last Profile"
-msgstr "Tallenna profiilit"
+msgstr "Viimeisin profiili"
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "ProfileSelector|"
 msgid "Delete"
 msgstr "Poista"
 
 #: src/binaries/3DDicer/SettingsPage.qml:9
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Settings"
 msgstr "Asetukset"
 
 #: src/binaries/3DDicer/SettingsPage.qml:38
 #: src/binaries/3DDicer/SettingsPage.qml:47
-#, fuzzy
-#| msgctxt "ConnectionForm|"
-#| msgid "Clone profile"
 msgctxt "SettingsPage|"
 msgid "Select Profile"
-msgstr "Monista profiili"
+msgstr "Valitse profiili"
 
 #: src/binaries/3DDicer/SettingsPage.qml:56
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "App Settings"
-msgstr "Asetukset"
+msgstr "Sovellusasetukset"
 
 #: src/binaries/3DDicer/SettingsPage.qml:60
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "SettingsPage|"
 msgid "Application Settings"
-msgstr "Asetukset"
+msgstr "Sovellusasetukset"
 
 #: src/binaries/3DDicer/SettingsPage.qml:74
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Date Modified"
 msgctxt "SettingsPage|"
 msgid "Dark Mode:"
-msgstr "Muutospäivä"
+msgstr "Tumma tila:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:83
 msgctxt "SettingsPage|"
 msgid "Set/Unset dark mode."
-msgstr ""
+msgstr "Aseta tai poista käytöstä tumma tila."
 
 #: src/binaries/3DDicer/SettingsPage.qml:94
 msgctxt "SettingsPage|"
 msgid "Language:"
-msgstr ""
+msgstr "Kieli:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:109
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "SettingsPage|"
 msgid "Change language."
-msgstr "Vaihda kuva"
+msgstr "Vaihda kieltä."
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
 #, fuzzy
@@ -597,17 +503,11 @@ msgid "Ui Tour:"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:154
-#, fuzzy
-#| msgctxt "PreferencesDialogBox|"
-#| msgid "Start"
 msgctxt "SettingsPage|"
 msgid "Start"
 msgstr "Käynnistä"
 
 #: src/binaries/3DDicer/SettingsPage.qml:163
-#, fuzzy
-#| msgctxt "TextEdit|"
-#| msgid "About"
 msgctxt "SettingsPage|"
 msgid "About"
 msgstr "Tietoa"
@@ -615,23 +515,17 @@ msgstr "Tietoa"
 #: src/binaries/3DDicer/SettingsPage.qml:166
 msgctxt "SettingsPage|"
 msgid "Version information."
-msgstr ""
+msgstr "Versiotiedot."
 
 #: src/binaries/3DDicer/SettingsPage.qml:179
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "SettingsPage|"
 msgid "Version:"
-msgstr "Käyttöoikeus"
+msgstr "Versio:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:187
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "State:"
 msgctxt "SettingsPage|"
 msgid "Date:"
-msgstr "Tila:"
+msgstr "Päiväys:"
 
 #: src/binaries/3DDicer/SettingsPage.qml:195
 msgctxt "SettingsPage|"
@@ -639,20 +533,14 @@ msgid "Sha1:"
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:222
-#, fuzzy
-#| msgctxt "SheetProperties|"
-#| msgid "Add Font file"
 msgctxt "SettingsPage|"
 msgid "Add Profile."
-msgstr "Lisää fonttitiedosto"
+msgstr "Lisää profiili."
 
 #: src/binaries/3DDicer/SettingsPage.qml:241
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "online documentation"
 msgctxt "SettingsPage|"
 msgid "Documentation."
-msgstr "verkko-ohjeistus"
+msgstr "Ohjeistus."
 
 #: src/binaries/3DDicer/SheetPage.qml:9
 #, fuzzy
@@ -671,9 +559,6 @@ msgid "Sheet Item"
 msgstr "Poista kohde"
 
 #: src/binaries/3DDicer/SheetPage.qml:39
-#, fuzzy
-#| msgctxt "ImageModel|"
-#| msgid "Key"
 msgctxt "SheetPage|"
 msgid "Key"
 msgstr "Avain"
@@ -689,7 +574,7 @@ msgstr "Muokkaa nimeä"
 #: src/binaries/3DDicer/SheetPage.qml:45
 msgctxt "SheetPage|"
 msgid "Intelligence"
-msgstr ""
+msgstr "Älykkyys"
 
 #: src/binaries/3DDicer/SheetPage.qml:54
 #, fuzzy
@@ -708,9 +593,6 @@ msgid "Save Sheet item"
 msgstr "Hahmo"
 
 #: src/binaries/3DDicer/SheetPage.qml:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Delete"
 msgctxt "SheetPage|"
 msgid "Delete"
 msgstr "Poista"
@@ -731,9 +613,6 @@ msgid "MindMap (*.rmindmap *.rmap)"
 msgstr "Miellekartta (*.rmindmap *.rmap)"
 
 #: src/binaries/mindmap/Main.qml:59
-#, fuzzy
-#| msgctxt "Main|"
-#| msgid "Open MindMap"
 msgctxt "Main|"
 msgid "Open MindMap"
 msgstr "Avaa miellekartta"
@@ -776,17 +655,14 @@ msgid "Counter Step:"
 msgstr ""
 
 #: src/binaries/rcse/autofillerdialog.ui:82
-#, fuzzy
-#| msgctxt "PageDelegate|"
-#| msgid "All pages"
 msgctxt "AutoFillerDialog|"
 msgid "Set All values"
-msgstr "Kaikki sivut"
+msgstr "Aseta kaikki arvot"
 
 #: src/binaries/rcse/autofillerdialog.ui:95
 msgctxt "AutoFillerDialog|"
 msgid "Replacement Rules"
-msgstr ""
+msgstr "Korvaussäännöt"
 
 #: src/binaries/rcse/autofillerdialog.ui:109
 #: src/binaries/rcse/autofillerdialog.ui:116
@@ -800,20 +676,14 @@ msgstr "…"
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr ""
+msgstr "Tuloksen esikatselu:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
-#, fuzzy
-#| msgctxt "CampaignProperties|"
-#| msgid "Add"
 msgctxt "AutoFillerDialog|"
 msgid "Add"
 msgstr "Lisää"
 
 #: src/binaries/rcse/autofillerdialog.ui:188
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "AutoFillerDialog|"
 msgid "Remove"
 msgstr "Poista"
@@ -849,9 +719,7 @@ msgid "None"
 msgstr "Ei mitään"
 
 #: src/binaries/rcse/controllers/imagecontroller.cpp:49
-#, fuzzy, qt-format
-#| msgctxt "ImageController|"
-#| msgid "Image %1 has not the same size than the others"
+#, qt-format
 msgctxt "rcse::ImageController|"
 msgid "Image %1 has not the same size than the others"
 msgstr "Kuva %1 ei ole saman kokoinen kuin muut"
@@ -897,7 +765,7 @@ msgstr "punainen"
 #, qt-format
 msgctxt "MockCharacter|"
 msgid "Shape has been added [name: %1, path: %2]"
-msgstr ""
+msgstr "Kuviota on muutettu [nimi: %1, polku: %2]"
 
 #: src/binaries/rcse/delegate/alignmentdelegate.cpp:34
 msgctxt "AlignmentDelegate|"
@@ -1031,9 +899,6 @@ msgid "Previous Page Button"
 msgstr "Edellinen sivu -painike"
 
 #: src/binaries/rcse/delegate/typedelegate.cpp:85
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Table"
 msgctxt "TypeDelegate|"
 msgid "Table"
 msgstr "Taulukko"
@@ -1305,7 +1170,7 @@ msgstr "Mahdolliset arvot"
 #: src/binaries/rcse/fieldmodel.cpp:66
 msgctxt "FieldModel|"
 msgid "Formula"
-msgstr ""
+msgstr "Kaava"
 
 #: src/binaries/rcse/fieldmodel.cpp:67
 msgctxt "FieldModel|"
@@ -1490,20 +1355,12 @@ msgid "&Redo"
 msgstr "T&ee uudelleen"
 
 #: src/binaries/rcse/mainwindow.cpp:374
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Support"
 msgctxt "rcse::MainWindow|"
 msgid "Support"
 msgstr "Tuki"
 
 #: src/binaries/rcse/mainwindow.cpp:375
-#, fuzzy, qt-format
-#| msgctxt "MainWindow|"
-#| msgid ""
-#| "The %1 donation page can be found online at :<br> <a href=\"https://"
-#| "liberapay.com/Rolisteam/donate\">https://liberapay.com/Rolisteam/donate</"
-#| "a>"
+#, qt-format
 msgctxt "rcse::MainWindow|"
 msgid ""
 "The %1 donation page can be found online at:<br> <a href=\"https://liberapay."
@@ -1580,19 +1437,11 @@ msgid "Rolisteam CharacterSheet (*.rcs)"
 msgstr ""
 
 #: src/binaries/rcse/mainwindow.cpp:726
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Do you want to erase current QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid "Do you want to erase current QML code?"
 msgstr "Haluatko tyhjentää nykyisen QML-koodin?"
 
 #: src/binaries/rcse/mainwindow.cpp:727
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid ""
-#| "Generate QML code will override any change you made in the QML.<br/>Do "
-#| "you really want to generate QML code ?"
 msgctxt "rcse::MainWindow|"
 msgid ""
 "Generate QML code will override any change you made in the QML.<br/>Do you "
@@ -1720,9 +1569,6 @@ msgid "Dice Button"
 msgstr "Noppapainike"
 
 #: src/binaries/rcse/mainwindow_rcse.ui:234
-#, fuzzy
-#| msgctxt "TypeDelegate|"
-#| msgid "Function Button"
 msgctxt "MainWindow|"
 msgid "Function btn"
 msgstr "Toimintopainike"
@@ -2046,17 +1892,11 @@ msgid "Hidden Field (for intermediate calculations)"
 msgstr "Piilokenttä (välituloksille)"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:36
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Directory to save QML file"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Directory to save QML file"
 msgstr "Kansio, johon QML-tiedosto tallennetaan"
 
 #: src/binaries/rcse/preferences/preferencesdialog.cpp:37
-#, fuzzy
-#| msgctxt "PreferencesDialog|"
-#| msgid "Place to save Generated files"
 msgctxt "rcse::PreferencesDialog|"
 msgid "Place to save Generated files"
 msgstr "Luotujen tiedostojen tallennuspaikka"
@@ -2447,33 +2287,21 @@ msgid "Server Panel"
 msgstr "Palvelinpaneeli"
 
 #: src/binaries/widget/mainwindow.cpp:490
-#, fuzzy
-#| msgctxt "NotificationZone|"
-#| msgid "Notification Zone"
 msgctxt "MainWindow|"
 msgid "Notification Zone"
 msgstr "Ilmoitusalue"
 
 #: src/binaries/widget/mainwindow.cpp:505
-#, fuzzy
-#| msgctxt "ToolBox|"
-#| msgid "Tools"
 msgctxt "MainWindow|"
 msgid "GM Tools"
-msgstr "Työkalut"
+msgstr "GM-työkalut"
 
 #: src/binaries/widget/mainwindow.cpp:546
-#, fuzzy
-#| msgctxt "Image|"
-#| msgid "Define the new name"
 msgctxt "MainWindow|"
 msgid "Define document's name"
-msgstr "Määritä uusi nimi"
+msgstr "Määritä tiedoston nimi"
 
 #: src/binaries/widget/mainwindow.cpp:546
-#, fuzzy
-#| msgctxt "PersonEdit|"
-#| msgid "Name:"
 msgctxt "MainWindow|"
 msgid "Name:"
 msgstr "Nimi:"
@@ -2542,7 +2370,7 @@ msgstr "Haluatko tyhjentää nykyisen QML-koodin?"
 #: src/binaries/widget/mainwindow.cpp:839
 msgctxt "MainWindow|"
 msgid "Do you really want to quit Rolisteam?"
-msgstr ""
+msgstr "Haluatko varmasti lopettaa Rolisteamin?"
 
 #: src/binaries/widget/mainwindow.cpp:845
 #, qt-format
@@ -3414,7 +3242,7 @@ msgstr "Teksti"
 #: src/libraries/core/src/controller/networkcontroller.cpp:132
 msgctxt "NetworkController|"
 msgid "[Upnp] Successful mapping port: "
-msgstr ""
+msgstr "[UPnP] Porttiohjaus onnistui: "
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:200
 #, fuzzy
@@ -3443,7 +3271,7 @@ msgstr "Palvelin"
 #: src/libraries/core/src/controller/networkcontroller.cpp:321
 msgctxt "NetworkController|"
 msgid "server is on"
-msgstr ""
+msgstr "palvelin on käytössä"
 
 #: src/libraries/core/src/controller/networkcontroller.cpp:332
 #, qt-format
@@ -3926,9 +3754,6 @@ msgid "Player"
 msgstr "Pelaaja"
 
 #: src/libraries/core/src/network/connectionprofile.cpp:77
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Unknown"
 msgctxt "ConnectionProfile|"
 msgid "Unknown"
 msgstr "Tuntematon"
@@ -3936,7 +3761,7 @@ msgstr "Tuntematon"
 #: src/libraries/core/src/network/rserver.cpp:66
 msgctxt "RServer|"
 msgid "[Server] Start Listening"
-msgstr ""
+msgstr "[Palvelin] Aloitetaan kuuntelu"
 
 #: src/libraries/core/src/network/serverconnectionmanager.cpp:237
 #, qt-format
@@ -3994,12 +3819,9 @@ msgid "Unable to read the end of server answer"
 msgstr "Palvelimen vastauksesta ei saatu luetuksi verkko-osoitetta"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:139
-#, fuzzy
-#| msgctxt "NodeSettingPopup|"
-#| msgid "Description: "
 msgctxt "UpnpNat|"
 msgid "Description file is empty"
-msgstr "Kuvaus:"
+msgstr "Kuvaustiedosto on tyhjä"
 
 #: src/libraries/core/src/network/upnp/upnpnat.cpp:199
 msgctxt "UpnpNat|"
@@ -4115,7 +3937,7 @@ msgstr ""
 #, qt-format
 msgctxt "QObject|"
 msgid "Change Item Color to %1"
-msgstr ""
+msgstr "Muuta kohteen väriksi %1"
 
 #: src/libraries/core/src/undoCmd/changesizevmapitem.cpp:98
 #, qt-format
@@ -4133,25 +3955,25 @@ msgstr ""
 #, qt-format
 msgctxt "ImportDataMedia|"
 msgid "Import media: %1"
-msgstr ""
+msgstr "Tuo media: %1"
 
 #: src/libraries/core/src/undoCmd/importimagestate.cpp:37
 #, qt-format
 msgctxt "ImportImageState|"
 msgid "Import media: %1"
-msgstr ""
+msgstr "Tuo media: %1"
 
 #: src/libraries/core/src/undoCmd/importmedia.cpp:43
 #, qt-format
 msgctxt "ImportMedia|"
 msgid "Import media: %1"
-msgstr ""
+msgstr "Tuo media: %1"
 
 #: src/libraries/core/src/undoCmd/newmediacontroller.cpp:65
 #, qt-format
 msgctxt "QObject|"
 msgid "Create new %1 %2"
-msgstr ""
+msgstr "Luo uusi %1 %2"
 
 #: src/libraries/core/src/undoCmd/openmediacontroller.cpp:43
 #, qt-format
@@ -4163,7 +3985,7 @@ msgstr "Avaa %1"
 #, qt-format
 msgctxt "QObject|"
 msgid "Remove character %1"
-msgstr ""
+msgstr "Poista hahmo %1"
 
 #: src/libraries/core/src/undoCmd/removemediacontrollercommand.cpp:40
 #, qt-format
@@ -4172,20 +3994,14 @@ msgid "Close %1"
 msgstr "Sulje %1"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:90
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add channel"
 msgctxt "NetworkUpdater|"
 msgid "New channel"
-msgstr "Lisää kanava"
+msgstr "Uusi kanava"
 
 #: src/libraries/core/src/updater/controller/networkupdater.cpp:160
-#, fuzzy
-#| msgctxt "ServerConnectionManager|"
-#| msgid "User has been kick out: %2 - %1."
 msgctxt "NetworkUpdater|"
 msgid "You have been kicked out of the game."
-msgstr "Käyttäjä on potkaistu ulos: %2 – %1."
+msgstr "Sinut on potkaistu ulos pelistä."
 
 #: src/libraries/core/src/updater/controller/playerupdater.cpp:24
 msgctxt "PlayerUpdater|"
@@ -4313,17 +4129,11 @@ msgid "(Dialog)"
 msgstr "Kyselyikkuna"
 
 #: src/libraries/dicephysics/qml/Main.qml:52
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "Main|"
 msgid "Select All dice"
-msgstr "Valitse kuva"
+msgstr "Valitse kaikki nopat"
 
 #: src/libraries/dicephysics/qml/Main.qml:59
-#, fuzzy
-#| msgctxt "MindMenu|"
-#| msgid "Remove Selection"
 msgctxt "Main|"
 msgid "Remove Selection"
 msgstr "Poista valinta"
@@ -4337,20 +4147,14 @@ msgid "Selection by zone"
 msgstr "Valinta"
 
 #: src/libraries/dicephysics/qml/Main.qml:73
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "Main|"
 msgid "Remove all dice"
-msgstr "Valitse kuva"
+msgstr "Poista kaikki nopat"
 
 #: src/libraries/dicephysics/qml/Main.qml:80
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "Main|"
 msgid "Reset Settings"
-msgstr "Asetukset"
+msgstr "Palauta asetukset"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:63
 msgctxt "SideMenu|"
@@ -4389,12 +4193,9 @@ msgid "3D Dice panel disappear after a time."
 msgstr ""
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:256
-#, fuzzy
-#| msgctxt "QObject|"
-#| msgid "Shared Notes"
 msgctxt "SideMenu|"
 msgid "Share rolls"
-msgstr "Jaetut muistiinpanot"
+msgstr "Jaa nopat"
 
 #: src/libraries/dicephysics/qml/SideMenu.qml:257
 msgctxt "SideMenu|"
@@ -4526,20 +4327,14 @@ msgid "is linked"
 msgstr "on linkitetty"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:217
-#, fuzzy
-#| msgctxt "InstantMessagingMain|"
-#| msgid "Settings"
 msgctxt "MindMap|"
 msgid "Package Settings"
-msgstr "Asetukset"
+msgstr "Paketin asetukset"
 
 #: src/libraries/mindmap/resources/qml/MindMap.qml:226
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Add subchannel"
 msgctxt "MindMap|"
 msgid "Add Subnode"
-msgstr "Lisää alikanava"
+msgstr "Lisää alisolmu"
 
 #: src/libraries/mindmap/resources/qml/MindMenu.qml:11
 msgctxt "MindMenu|"
@@ -4577,25 +4372,19 @@ msgid "Automatic Spacing"
 msgstr "Automaattivälistys"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:22
-#, fuzzy
-#| msgctxt "campaign::AntagonistBoard|"
-#| msgid "Change Image"
 msgctxt "NodeSettingPopup|"
 msgid "Choose Image..."
-msgstr "Vaihda kuva"
+msgstr "Valitse kuva..."
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:34
-#, fuzzy
-#| msgctxt "MRichTextEdit|"
-#| msgid "Select an image"
 msgctxt "NodeSettingPopup|"
 msgid "Set image url"
-msgstr "Valitse kuva"
+msgstr "Aseta kuvan verkko-osoite"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:40
 msgctxt "NodeSettingPopup|"
 msgid "Url"
-msgstr ""
+msgstr "Verkko-osoite"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:77
 msgctxt "NodeSettingPopup|"
@@ -4613,33 +4402,21 @@ msgid "tags:"
 msgstr "luokitukset:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:99
-#, fuzzy
-#| msgctxt "AntagonistBoard|"
-#| msgid "Avatar:"
 msgctxt "NodeSettingPopup|"
 msgid "Avatar:"
 msgstr "Avatar:"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:104
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Load View"
 msgctxt "NodeSettingPopup|"
 msgid "Load"
-msgstr "Lataa näkymä"
+msgstr "Lataa"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:108
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Set Layer"
 msgctxt "NodeSettingPopup|"
 msgid "Set URL"
-msgstr "Aseta kerros"
+msgstr "Aseta verkko-osoite"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:113
-#, fuzzy
-#| msgctxt "RGraphicsView|"
-#| msgid "Remove"
 msgctxt "NodeSettingPopup|"
 msgid "Remove"
 msgstr "Poista"
@@ -4713,15 +4490,12 @@ msgstr "Valitse"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:197
 msgctxt "SideMenu|"
 msgid "Tags"
-msgstr ""
+msgstr "Luokitukset"
 
 #: src/libraries/mindmap/src/command/AddChildToPackageCommand.cpp:30
-#, fuzzy
-#| msgctxt "ButtonGrid|"
-#| msgid "Add Package"
 msgctxt "AddChildToPackageCommand|"
 msgid "Add Node to Package"
-msgstr "Lisää paketti"
+msgstr "Lisää pakettiin solmu"
 
 #: src/libraries/mindmap/src/command/addimagetonodecommand.cpp:59
 #, qt-format
@@ -4746,13 +4520,10 @@ msgid "Removing image from node"
 msgstr "Poistetaan kuvaa solmusta"
 
 #: src/libraries/mindmap/src/command/removenodecommand.cpp:45
-#, fuzzy, qt-format
-#| msgctxt "QObject|"
-#| msgid "Move %n item(s)"
-#| msgid_plural "Move %n item(s)"
+#, qt-format
 msgctxt "RemoveNodeCommand|"
 msgid "Remove %1 Item(s)"
-msgstr "Siirrä %n kohde"
+msgstr "Poista %1 kohde(tta)"
 
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
@@ -4787,7 +4558,7 @@ msgstr ""
 #: src/libraries/qml_views/Campaign/IntegrityPage.qml:44
 msgctxt "IntegrityPage|"
 msgid "Create blank document"
-msgstr ""
+msgstr "Luo tyhjä tiedosto"
 
 #: src/libraries/qml_views/Campaign/IntegrityPage.qml:56
 msgctxt "IntegrityPage|"
@@ -4797,12 +4568,12 @@ msgstr ""
 #: src/libraries/qml_views/Campaign/IntegrityPage.qml:82
 msgctxt "IntegrityPage|"
 msgid "Add file into project"
-msgstr ""
+msgstr "Lisää projektiin tiedosto"
 
 #: src/libraries/qml_views/Campaign/IntegrityPage.qml:88
 msgctxt "IntegrityPage|"
 msgid "Delete file from Disk"
-msgstr ""
+msgstr "Poista tiedosto levyltä"
 
 #: src/libraries/qml_views/CustomItems/PermissionFrame.qml:8
 msgctxt "PermissionFrame|"
@@ -4815,12 +4586,9 @@ msgid "All"
 msgstr "Kaikki"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:50
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Load Image"
 msgctxt "PersonEdit|"
 msgid "No Image"
-msgstr "Lataa kuva"
+msgstr "Ei kuvaa"
 
 #: src/libraries/qml_views/CustomItems/PersonEdit.qml:60
 msgctxt "PersonEdit|"
@@ -4891,12 +4659,9 @@ msgid "Add chatroom"
 msgstr "Lisää keskusteluhuone"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Set Default"
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Aseta oletukseksi"
+msgstr "Palauta oletusnäkymä"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
@@ -4904,36 +4669,24 @@ msgid "Attach on Main"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
-#, fuzzy
-#| msgctxt "MindMap|"
-#| msgid "Detach"
 msgctxt "InstantMessagingMain|"
 msgid "Detach"
 msgstr "Irrota"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:35
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Player"
 msgctxt "RecipiantsView|"
 msgid "Players:"
-msgstr "Pelaaja"
+msgstr "Pelaajia:"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:38
-#, fuzzy
-#| msgctxt "BorderListEditor|"
-#| msgid "All"
 msgctxt "RecipiantsView|"
 msgid "All"
 msgstr "Kaikki"
 
 #: src/libraries/qml_views/InstantMessaging/RecipiantsView.qml:79
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Ban User"
 msgctxt "RecipiantsView|"
 msgid "Add User"
-msgstr "Estä käyttäjä"
+msgstr "Lisää käyttäjä"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:46
 msgctxt "SideMenu|"
@@ -4951,20 +4704,14 @@ msgid "Font Family:"
 msgstr ""
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:82
-#, fuzzy
-#| msgctxt "SideMenu|"
-#| msgid "Font size:"
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Fonttikoko:"
+msgstr "Fonttikokokerroin:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
-#, fuzzy
-#| msgctxt "ClientManager|"
-#| msgid "Connection to the server has been closed."
 msgctxt "TextMessageDelegate|"
 msgid "Text has been copied!"
-msgstr "Palvelinyhteys on katkaistu."
+msgstr "Teksti on kopioitu!"
 
 #: src/libraries/qml_views/views/ConnectionForm.qml:87
 msgctxt "ConnectionForm|"
@@ -5792,7 +5539,7 @@ msgstr "Juurikansio:"
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:442
 msgctxt "CampaignProperties|"
 msgid "Theme*:"
-msgstr ""
+msgstr "Teema*:"
 
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:452
 msgctxt "CampaignProperties|"
@@ -5812,7 +5559,7 @@ msgstr "Lataa kaikki viime istunnossa avoimet tiedostot."
 #: src/libraries/rwidgets/dialogs/campaignproperties.ui:483
 msgctxt "CampaignProperties|"
 msgid "Restore session at startup"
-msgstr ""
+msgstr "Palauta istunto käynnistettäessä"
 
 #: src/libraries/rwidgets/dialogs/connectionretrydialog.cpp:28
 #, qt-format
@@ -6087,12 +5834,9 @@ msgid "Color:"
 msgstr "Väri:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:71
-#, fuzzy
-#| msgctxt "ParticipantModel|"
-#| msgid "Read Only"
 msgctxt "PreferencesDialog|"
 msgid "GM Only"
-msgstr "Vain luku"
+msgstr "Vain GM"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:72
 #, fuzzy
@@ -6344,12 +6088,9 @@ msgid "ms"
 msgstr "ms"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:419
-#, fuzzy
-#| msgctxt "InstantMessagingView|"
-#| msgid "Instant Messaging"
 msgctxt "PreferencesDialogBox|"
 msgid "Messaging"
-msgstr "Pikaviestintä"
+msgstr "Viestintä"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:425
 msgctxt "PreferencesDialogBox|"
@@ -6364,12 +6105,12 @@ msgstr "*: tarvitaan uudelleenkäynnistys"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:456
 msgctxt "PreferencesDialogBox|"
 msgid "External Editors"
-msgstr ""
+msgstr "Ulkoiset muokkaimet"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:462
 msgctxt "PreferencesDialogBox|"
 msgid "RCSE"
-msgstr ""
+msgstr "RCSE"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:468
 msgctxt "PreferencesDialogBox|"
@@ -6387,7 +6128,7 @@ msgstr "Parametrit:"
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:495
 msgctxt "PreferencesDialogBox|"
@@ -6419,7 +6160,7 @@ msgstr "Tekstiselite"
 #, qt-format
 msgctxt "PreferencesDialogBox|"
 msgid "%1 is a placeholder for the filename of the file."
-msgstr ""
+msgstr "%1 on paikkamerkki tiedoston nimelle."
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:582
 msgctxt "PreferencesDialogBox|"
@@ -6633,9 +6374,6 @@ msgid "Dialog"
 msgstr "Kyselyikkuna"
 
 #: src/libraries/rwidgets/dialogs/tipofdayviewer.ui:42
-#, fuzzy
-#| msgctxt "TipOfDayViewer|"
-#| msgid "Never show it again !"
 msgctxt "TipOfDayViewer|"
 msgid "Never show it again!"
 msgstr "Älä näytä enää koskaan!"
@@ -6956,7 +6694,7 @@ msgstr ""
 #: src/libraries/rwidgets/docks/antagonistboard.ui:556
 msgctxt "AntagonistBoard|"
 msgid "2d10"
-msgstr ""
+msgstr "2d10"
 
 #: src/libraries/rwidgets/docks/antagonistboard.ui:580
 msgctxt "AntagonistBoard|"
@@ -7151,7 +6889,7 @@ msgstr ""
 #: src/libraries/rwidgets/docks/campaigndock.ui:31
 msgctxt "CampaignDock|"
 msgid "Search"
-msgstr ""
+msgstr "Etsi"
 
 #: src/libraries/rwidgets/docks/campaigndock.ui:51
 msgctxt "CampaignDock|"
@@ -7165,12 +6903,9 @@ msgstr "Muokkaa kanavaa"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:37
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Lock/Unlock Channel"
 msgctxt "ChannelListPanel|"
 msgid "Lock Channel"
-msgstr "Lukitse kanava tai avaa lukitus"
+msgstr "Lukitse kanava"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:38
 msgctxt "ChannelListPanel|"
@@ -7178,12 +6913,9 @@ msgid "Switch to channel"
 msgstr "Vaihda kanavalle"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:39
-#, fuzzy
-#| msgctxt "ChannelListPanel|"
-#| msgid "Channel Password"
 msgctxt "ChannelListPanel|"
 msgid "Set Channel Password"
-msgstr "Kanavan salasana"
+msgstr "Aseta kanavan salasana"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:40
 msgctxt "ChannelListPanel|"
@@ -7228,7 +6960,7 @@ msgstr ""
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:48
 msgctxt "ChannelListPanel|"
 msgid "Move User"
-msgstr ""
+msgstr "Siirrä käyttäjä"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:144
 #, fuzzy
@@ -7310,12 +7042,9 @@ msgid "Grid Above"
 msgstr "Ruudukko yllä"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:90
-#, fuzzy
-#| msgctxt "PermissionFrame|"
-#| msgid "Permission"
 msgctxt "VmapTopBar|"
 msgid "Permission: GM only"
-msgstr "Käyttöoikeus"
+msgstr "Käyttöoikeus: vain GM"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:96
 #, fuzzy
@@ -7740,12 +7469,9 @@ msgid "&Save"
 msgstr "&Tallenna"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:188
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "&Name..."
-msgstr "Nimi"
+msgstr "&Nimi…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
 #, fuzzy
@@ -7756,9 +7482,6 @@ msgid "Change note file name"
 msgstr "Muuta profiilia…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:192
-#, fuzzy
-#| msgctxt "MediaModel|"
-#| msgid "Name"
 msgctxt "TextEdit|"
 msgid "Name"
 msgstr "Nimi"
@@ -8038,7 +7761,7 @@ msgstr ""
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:186
 msgctxt "FindDialog|"
 msgid "Find && Replace"
-msgstr ""
+msgstr "Etsi ja korvaa"
 
 #: src/libraries/rwidgets/editors/sharededitor/finddialog.ui:196
 msgctxt "FindDialog|"
@@ -8058,7 +7781,7 @@ msgstr ""
 #: src/libraries/rwidgets/editors/sharededitor/findtoolbar.ui:35
 msgctxt "FindToolBar|"
 msgid "✖"
-msgstr ""
+msgstr "✖"
 
 #: src/libraries/rwidgets/editors/sharededitor/firstrundialog.ui:17
 msgctxt "FirstRunDialog|"
@@ -8260,17 +7983,11 @@ msgid "%1[*] - Shared Note Editor (%2)"
 msgstr "Jaetut muistiinpanot"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:57
-#, fuzzy
-#| msgctxt "ParticipantModel|"
-#| msgid "Read Write"
 msgctxt "SharedNote|"
 msgid "ReadWrite"
 msgstr "Luku ja kirjoitus"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:58
-#, fuzzy
-#| msgctxt "ParticipantModel|"
-#| msgid "Read Only"
 msgctxt "SharedNote|"
 msgid "ReadOnly"
 msgstr "Vain luku"
@@ -8892,12 +8609,9 @@ msgid "Rule"
 msgstr "Sääntö"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:325
-#, fuzzy
-#| msgctxt "ParticipantsPane|"
-#| msgid "Promote"
 msgctxt "VisualItem|"
 msgid "Promote To"
-msgstr "Ylennä"
+msgstr "Korota"
 
 #: src/libraries/rwidgets/mediacontainers/charactersheetwindow.cpp:109
 #, fuzzy, qt-format
@@ -9001,20 +8715,14 @@ msgid "%1 - (Picture : %2)"
 msgstr "%1 – (kuva)"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Shared"
-msgstr "Jaa"
+msgstr "Jaettu"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:209
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Unshared"
-msgstr "Jaa"
+msgstr "Jako peruttu"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:214
 msgctxt "Image|"
@@ -9155,17 +8863,11 @@ msgstr "Tauko"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:334
 #: src/libraries/rwidgets/mediacontainers/image.cpp:348
-#, fuzzy
-#| msgctxt "PdfViewer|"
-#| msgid "Share"
 msgctxt "Image|"
 msgid "Share"
 msgstr "Jaa"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:346
-#, fuzzy
-#| msgctxt "CharacterSheetWindow|"
-#| msgid "Stop Sharing"
 msgctxt "Image|"
 msgid "Stop Sharing"
 msgstr "Lopeta jakaminen"
@@ -9205,23 +8907,18 @@ msgstr "%1 [%2] – miellekartta"
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:157
 msgctxt "MindMapView|"
 msgid "ReadWrite"
-msgstr ""
+msgstr "Luku ja kirjoitus"
 
 #: src/libraries/rwidgets/mediacontainers/mindmapview.cpp:157
-#, fuzzy
-#| msgctxt "ParticipantModel|"
-#| msgid "Read Only"
 msgctxt "MindMapView|"
 msgid "ReadOnly"
 msgstr "Vain luku"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:98
-#, fuzzy, qt-format
-#| msgctxt "PdfViewer|"
-#| msgid "%1 - (PDF)"
+#, qt-format
 msgctxt "PdfViewer|"
 msgid "%1 - PDFViewer"
-msgstr "%1 – (PDF)"
+msgstr "%1 – PDF-katselin"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.cpp:346
 msgctxt "PdfViewer|"
@@ -9369,12 +9066,9 @@ msgid "Text"
 msgstr "Teksti"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:381
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Side Panels"
 msgctxt "PdfViewer|"
 msgid "Hide Side Panel"
-msgstr "Sivupaneelit"
+msgstr "Piilota sivupaneeli"
 
 #: src/libraries/rwidgets/mediacontainers/vmapframe.cpp:38
 msgctxt "QObject|"
@@ -9580,17 +9274,11 @@ msgid "Change color…"
 msgstr "Vaihda väri…"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "rcse::MainWindow|"
-#| msgid "Add character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "Lisää hahmo"
+msgstr "Lisää paikallinen hahmo"
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
 msgstr "Poista hahmo"
@@ -9679,9 +9367,6 @@ msgid "Pen"
 msgstr "Kynä"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:127
-#, fuzzy
-#| msgctxt "VToolsBar|"
-#| msgid "Line"
 msgctxt "ToolBox|"
 msgid "Line"
 msgstr "Viiva"
@@ -9755,12 +9440,9 @@ msgid "Light"
 msgstr "Oikealle"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:168
-#, fuzzy
-#| msgctxt "TestCharacterStateModel|"
-#| msgid "Lightly Wounded"
 msgctxt "ToolBox|"
 msgid "Light Source"
-msgstr "Kevyesti haavoittunut"
+msgstr "Valolähde"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:170
 msgctxt "ToolBox|"
@@ -9778,20 +9460,14 @@ msgid "Reset NPC counter"
 msgstr ""
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:335
-#, fuzzy
-#| msgctxt "DrawerMenu|"
-#| msgid "Name"
 msgctxt "ToolBox|"
 msgid "NPC Name"
-msgstr "Nimi"
+msgstr "NPC-nimi"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:340
-#, fuzzy
-#| msgctxt "campaign::CampaignView|"
-#| msgid "Show/hide Column"
 msgctxt "ToolBox|"
 msgid "NPC's number"
-msgstr "Näytä tai piilota sarake"
+msgstr "NPC:n numero"
 
 #: src/libraries/rwidgets/toolbars/vtoolbar.cpp:346
 msgctxt "ToolBox|"
