@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2026-10-15 12:00+0300\n"
+"PO-Revision-Date: 2026-11-11 20:48+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -8721,7 +8721,7 @@ msgstr "Маленький"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:268
 msgctxt "Image|"
 msgid "Set the zoom level at 20% "
-msgstr "Установить масштаб 20 % "
+msgstr "Установить масштаб 20 % "
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:271
 msgctxt "Image|Set the zoom level at 20%"
@@ -8751,7 +8751,7 @@ msgstr "Большие"
 #: src/libraries/rwidgets/mediacontainers/image.cpp:290
 msgctxt "Image|"
 msgid "Set the zoom level at 400%"
-msgstr "Установить масштаб 400 %"
+msgstr "Установить масштаб 400 %"
 
 #: src/libraries/rwidgets/mediacontainers/image.cpp:293
 msgctxt "Image|Zoom Out"
@@ -8896,32 +8896,32 @@ msgstr "Вписать в окно"
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:149
 msgctxt "PdfViewer|"
 msgid "25%"
-msgstr "25%"
+msgstr "25 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:154
 msgctxt "PdfViewer|"
 msgid "50%"
-msgstr "50%"
+msgstr "50 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:159
 msgctxt "PdfViewer|"
 msgid "75%"
-msgstr "75%"
+msgstr "75 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:164
 msgctxt "PdfViewer|"
 msgid "100%"
-msgstr "100%"
+msgstr "100 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:169
 msgctxt "PdfViewer|"
 msgid "150%"
-msgstr "150%"
+msgstr "150 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:174
 msgctxt "PdfViewer|"
 msgid "200%"
-msgstr "200%"
+msgstr "200 %"
 
 #: src/libraries/rwidgets/mediacontainers/pdfviewer.ui:212
 msgctxt "PdfViewer|"

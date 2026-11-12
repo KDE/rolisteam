@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-10-15 21:03+0300\n"
+"PO-Revision-Date: 2026-11-10 21:36+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Qt-Contexts: true\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: src/binaries/3DDicer/AliasesPage.qml:9
 msgctxt "AliasesPage|"
@@ -4223,7 +4223,7 @@ msgstr "Gece Kipi"
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:36
 msgctxt "DrawerMenu|"
 msgid "Default Style"
-msgstr "Öntanımlı Biçem"
+msgstr "Öntanımlı Stil"
 
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:57
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:80
@@ -4344,7 +4344,7 @@ msgstr "Kaldır"
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:122
 msgctxt "NodeSettingPopup|"
 msgid "Node Styles"
-msgstr "Düğüm Biçemleri"
+msgstr "Düğüm Stilleri"
 
 #: src/libraries/mindmap/resources/qml/NodeSettingPopup.qml:149
 msgctxt "NodeSettingPopup|"
@@ -4376,7 +4376,7 @@ msgstr "Boş Etiketi Gizle"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
 msgid "Default Style"
-msgstr "Öntanımlı Biçem"
+msgstr "Öntanımlı Stil"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:84
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:107
@@ -6080,7 +6080,7 @@ msgstr "Tema adı"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:612
 msgctxt "PreferencesDialogBox|"
 msgid "Styles:"
-msgstr "Biçemler:"
+msgstr "Stiller:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:628
 msgctxt "PreferencesDialogBox|"
