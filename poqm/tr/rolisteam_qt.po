@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-11-10 21:36+0300\n"
+"PO-Revision-Date: 2026-11-15 20:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1107,7 +1107,7 @@ msgstr "Geçerli sayfa"
 #: src/binaries/rcse/dialog/sheetproperties.cpp:19
 msgctxt "SheetProperties|"
 msgid "Add Font file"
-msgstr "Yazıtipi Dosyası Ekle"
+msgstr "Yazı Tipi Dosyası Ekle"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:14
 msgctxt "SheetProperties|"
@@ -1142,7 +1142,7 @@ msgstr "Ek alt kodu:"
 #: src/binaries/rcse/dialog/sheetproperties.ui:171
 msgctxt "SheetProperties|"
 msgid "Embedded Fonts:"
-msgstr "Gömülü yazıtipleri:"
+msgstr "Gömülü yazı tipleri:"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:182
 #: src/binaries/rcse/dialog/sheetproperties.ui:193
@@ -1203,12 +1203,12 @@ msgstr "Yükseklik"
 #: src/binaries/rcse/fieldmodel.cpp:72
 msgctxt "FieldModel|"
 msgid "Font Adaptation"
-msgstr "Yazıtipi Adaptasyonu"
+msgstr "Yazı Tipi Adaptasyonu"
 
 #: src/binaries/rcse/fieldmodel.cpp:73
 msgctxt "FieldModel|"
 msgid "Font"
-msgstr "Yazıtipi"
+msgstr "Yazı Tipi"
 
 #: src/binaries/rcse/fieldmodel.cpp:74
 msgctxt "FieldModel|"
@@ -4613,17 +4613,17 @@ msgstr "Sesli Bildirim"
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:63
 msgctxt "SideMenu|"
 msgid "Select Font…"
-msgstr "Yazıtipi Seç…"
+msgstr "Yazı Tipi Seç…"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:71
 msgctxt "SideMenu|"
 msgid "Font Family:"
-msgstr "Yazıtipi ailesi:"
+msgstr "Yazı tipi ailesi:"
 
 #: src/libraries/qml_views/InstantMessaging/SideMenu.qml:82
 msgctxt "SideMenu|"
 msgid "Font size Factor:"
-msgstr "Yazıtipi puntosu çarpanı:"
+msgstr "Yazı tipi puntosu çarpanı:"
 
 #: src/libraries/qml_views/InstantMessaging/TextMessageDelegate.qml:62
 msgctxt "TextMessageDelegate|"
@@ -5796,12 +5796,12 @@ msgstr "</ul>Görsel biçimi sonu"
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:476
 msgctxt "PreferencesDialog|"
 msgid "<h2>Font families:</h2><ul>"
-msgstr "<h2>Yazıtipi aileleri:</h2><ul>"
+msgstr "<h2>Yazı tipi aileleri:</h2><ul>"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:483
 msgctxt "PreferencesDialog|"
 msgid "</ul>End of Font families"
-msgstr "</ul>Yazıtipi ailelerinin sonu"
+msgstr "</ul>Yazı tipi ailelerinin sonu"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialog.cpp:486
 msgctxt "PreferencesDialog|"
@@ -7245,7 +7245,7 @@ msgstr "Metin arka plan rengi"
 #: src/libraries/rwidgets/editors/mrichtextedit.ui:491
 msgctxt "MRichTextEdit|"
 msgid "Font size"
-msgstr "Yazıtipi puntosu"
+msgstr "Yazı tipi puntosu"
 
 #: src/libraries/rwidgets/editors/noteeditor/format_OO_oasis_/OOReader.cpp:272
 msgctxt "OOReader|"
@@ -7853,7 +7853,7 @@ msgstr "Tanıtma"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:27
 msgctxt "PreferencesDialog|"
 msgid "Fonts"
-msgstr "Yazıtipleri"
+msgstr "Yazı Tipleri"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:39
 msgctxt "PreferencesDialog|"
@@ -7872,7 +7872,7 @@ msgstr "Courier 12"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:234
 msgctxt "PreferencesDialog|"
 msgid "Set Font"
-msgstr "Yazıtipini Ayarla"
+msgstr "Yazı Tipini Ayarla"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:97
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:173
@@ -8519,7 +8519,7 @@ msgstr "Metin"
 #: src/libraries/rwidgets/graphicsItems/textitem.cpp:330
 msgctxt "TextItem|"
 msgid "Font Size"
-msgstr "Yazıtipi Puntosu"
+msgstr "Yazı Tipi Puntosu"
 
 #: src/libraries/rwidgets/graphicsItems/visualitem.cpp:42
 msgctxt "QObject|"
