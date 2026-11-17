@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-11-15 20:20+0300\n"
+"PO-Revision-Date: 2026-11-16 18:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -650,7 +650,7 @@ msgstr "…"
 #: src/binaries/rcse/autofillerdialog.ui:144
 msgctxt "AutoFillerDialog|"
 msgid "Result preview:"
-msgstr "Sonuç önizlemesi:"
+msgstr "Sonuç ön izlemesi:"
 
 #: src/binaries/rcse/autofillerdialog.ui:176
 msgctxt "AutoFillerDialog|"
@@ -7343,7 +7343,7 @@ msgstr "&Yazdır…"
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:208
 msgctxt "TextEdit|"
 msgid "Print Preview..."
-msgstr "Yazdırma Önizlemesi…"
+msgstr "Yazdırma Ön İzlemesi…"
 
 #: src/libraries/rwidgets/editors/noteeditor/src/textedit.cpp:213
 msgctxt "TextEdit|"
@@ -8185,7 +8185,7 @@ msgstr "Yenile"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:434
 msgctxt "SharedNote|"
 msgid "Markdown Preview"
-msgstr "Markdown Önizlemesi"
+msgstr "Markdown Ön İzlemesi"
 
 #: src/libraries/rwidgets/gmtoolbox/DiceBookMark/dicebookmarkmodel.cpp:16
 msgctxt "DiceBookMarkModel|"
