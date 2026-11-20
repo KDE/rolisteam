@@ -27,6 +27,10 @@
   <name xml:lang="sa">रोलिस्टीम् RPG क्लाइंट</name>
   <name xml:lang="sk">Klient Rolisteam RPG</name>
   <name xml:lang="sl">Odjemalec Rolisteam RPG</name>
+  <name xml:lang="sr">Rolisteam клијент за игре улога</name>
+  <name xml:lang="sr-Latn">Rolisteam klijent za igre uloga</name>
+  <name xml:lang="sr-ijekavian">Rolisteam клијент за игре улога</name>
+  <name xml:lang="sr-ijekavianlatin">Rolisteam klijent za igre uloga</name>
   <name xml:lang="sv">Rolisteam rollspelsklient</name>
   <name xml:lang="tr">Rolisteam RPG İstemcisi</name>
   <name xml:lang="ug">Rolisteam RPG خېرىدارى</name>
@@ -60,6 +64,10 @@
   <developer_name xml:lang="sa">रोलिस्टीम्</developer_name>
   <developer_name xml:lang="sk">Rolisteam</developer_name>
   <developer_name xml:lang="sl">Rolisteam</developer_name>
+  <developer_name xml:lang="sr">Rolisteam</developer_name>
+  <developer_name xml:lang="sr-Latn">Rolisteam</developer_name>
+  <developer_name xml:lang="sr-ijekavian">Rolisteam</developer_name>
+  <developer_name xml:lang="sr-ijekavianlatin">Rolisteam</developer_name>
   <developer_name xml:lang="sv">Rolisteam</developer_name>
   <developer_name xml:lang="tr">Rolistaem</developer_name>
   <developer_name xml:lang="uk">Rolisteam</developer_name>
@@ -90,6 +98,10 @@
   <summary xml:lang="sa">Rolisteam Server कृते Client Companion इति</summary>
   <summary xml:lang="sk">Sprievodca klienta k serveru Rolisteam</summary>
   <summary xml:lang="sl">Spremljevalec odjemalca za strežnik Rolisteam</summary>
+  <summary xml:lang="sr">Клијент који иде уз сервер Rolisteam</summary>
+  <summary xml:lang="sr-Latn">Klijent koji ide uz server Rolisteam</summary>
+  <summary xml:lang="sr-ijekavian">Клијент који иде уз сервер Rolisteam</summary>
+  <summary xml:lang="sr-ijekavianlatin">Klijent koji ide uz server Rolisteam</summary>
   <summary xml:lang="sv">Klientföljeslagare till Rolisteam-server</summary>
   <summary xml:lang="tr">Rolisteam Sunucusu için Yardımcı İstemci</summary>
   <summary xml:lang="uk">Компаньйон-клієнт сервера Rolisteam</summary>
@@ -121,6 +133,10 @@
     <p xml:lang="sa">इदं Rolisteam Client Binary अस्ति यस्य उपयोगः सर्वर/क्लायन्ट् इत्यस्य रूपेण स्वतन्त्रः अथवा Roliserver उदाहरणेन सह सम्बद्धं कर्तुं शक्यते (वर्तमानं docker छवि) ।</p>
     <p xml:lang="sk">Toto je spustiteľný súbor klienta Rolisteam, ktorý možno použiť buď samostatne ako server/klient, alebo sa pripojiť k inštancii Roliserver (aktuálne docker obraz)</p>
     <p xml:lang="sl">To je binarni odjemalc Rolisteam, ki se lahko uporablja samostojno kot strežnik/odjemalec ali pa se poveže s pojavkom Roliserver (trenutno slika Dockerja).</p>
+    <p xml:lang="sr">Ово је извршни фајл клијента Rolisteam, који се може користити самостално као сервер/клијент или се повезати на примерак Roliserver‑а (тренутно одраз Docker‑а)</p>
+    <p xml:lang="sr-Latn">Ovo je izvršni fajl klijenta Rolisteam, koji se može koristiti samostalno kao server/klijent ili se povezati na primerak Roliserver‑a (trenutno odraz Docker‑a)</p>
+    <p xml:lang="sr-ijekavian">Ово је извршни фајл клијента Rolisteam, који се може користити самостално као сервер/клијент или се повезати на примјерак Roliserver‑а (тренутно одраз Docker‑а)</p>
+    <p xml:lang="sr-ijekavianlatin">Ovo je izvršni fajl klijenta Rolisteam, koji se može koristiti samostalno kao server/klijent ili se povezati na primjerak Roliserver‑a (trenutno odraz Docker‑a)</p>
     <p xml:lang="sv">Detta är Rolisteam klientbinärfilen som antingen kan användas fristående som en server/klient eller ansluta till en Roliserver-instans (för närvarande en Docker-avbild)</p>
     <p xml:lang="tr">Bu, bir Roliserver örneğine bağlanabilen veya tek başına bir sunucu veya istemci olarak çalışabiler Rolisteam İstemci İkilisidir (şu anda bir Docker yansısı olarak)</p>
     <p xml:lang="uk">Це виконуваний файл клієнта Rolisteam, яким можна скористатися як окремим сервером/клієнтом або для з'єднання із екземпляром Roliserver (у поточній версії — образом docker)</p>
