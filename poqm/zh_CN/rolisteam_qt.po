@@ -451,12 +451,9 @@ msgid "Change language."
 msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:113
-#, fuzzy
-#| msgctxt "MainWindow|"
-#| msgid "Rolisteam"
 msgctxt "SettingsPage|"
 msgid "Roll on rolisteam:"
-msgstr "Rolisteam"
+msgstr ""
 
 #: src/binaries/3DDicer/SettingsPage.qml:123
 msgctxt "SettingsPage|"
@@ -9022,20 +9019,14 @@ msgid "Change color…"
 msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:55
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Add Local character"
-msgstr "删除角色"
+msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:56
-#, fuzzy
-#| msgctxt "SelectConnectionProfileDialog|"
-#| msgid "Remove character"
 msgctxt "UserListView|"
 msgid "Remove character"
-msgstr "删除角色"
+msgstr ""
 
 #: src/libraries/rwidgets/modelviews/userlistview.cpp:80
 msgctxt "UserListView|"
