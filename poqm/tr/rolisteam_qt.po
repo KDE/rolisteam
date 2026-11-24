@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-11-18 19:25+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -128,7 +128,7 @@ msgstr "Arma ekle"
 #: src/binaries/3DDicer/dicemaincontroller.cpp:367
 msgctxt "DiceMainController|"
 msgid "default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: src/binaries/3DDicer/DiceRollPage.qml:9
 msgctxt "DiceRollPage|"
@@ -1117,12 +1117,12 @@ msgstr "Sayfa Özellikleri"
 #: src/binaries/rcse/dialog/sheetproperties.ui:26
 msgctxt "SheetProperties|"
 msgid "Fill width by default"
-msgstr "Genişliği öntanımlı olarak doldur"
+msgstr "Genişliği varsayılan olarak doldur"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:36
 msgctxt "SheetProperties|"
 msgid "Default scale:"
-msgstr "Öntanımlı ölçek:"
+msgstr "Varsayılan ölçek:"
 
 #: src/binaries/rcse/dialog/sheetproperties.ui:85
 msgctxt "SheetProperties|"
@@ -2227,7 +2227,7 @@ msgstr "Yapılandırma dosyası yolunu ayarlayın [zorunlu]"
 #: src/binaries/server/main.cpp:100
 msgctxt "QObject|"
 msgid "Print a default configuration file into Standard output"
-msgstr "Standart çıktıya bir öntanımlı yapılandırma dosyası yazdır"
+msgstr "Standart çıktıya bir varsayılan yapılandırma dosyası yazdır"
 
 #: src/binaries/server/main.cpp:103
 msgctxt "QObject|"
@@ -2409,7 +2409,7 @@ msgstr "<rol> tanımla: oy veya ok"
 #: src/binaries/widget/mainwindow.cpp:1031
 msgctxt "MainWindow|"
 msgid "Erase the settings and use the default parameters"
-msgstr "Ayarları silin ve öntanımlı parametreleri kullan"
+msgstr "Ayarları silin ve varsayılan parametreleri kullan"
 
 #: src/binaries/widget/mainwindow.cpp:1032
 msgctxt "MainWindow|"
@@ -3215,7 +3215,7 @@ msgstr "IP adresi (v4) değişti: %1"
 #: src/libraries/core/src/controller/preferencescontroller.cpp:48
 msgctxt "ThemeModel|"
 msgid "default"
-msgstr "öntanımlı"
+msgstr "varsayılan"
 
 #: src/libraries/core/src/controller/preferencescontroller.cpp:54
 msgctxt "ThemeModel|"
@@ -4223,7 +4223,7 @@ msgstr "Gece Kipi"
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:36
 msgctxt "DrawerMenu|"
 msgid "Default Style"
-msgstr "Öntanımlı Stil"
+msgstr "Varsayılan Stil"
 
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:57
 #: src/libraries/mindmap/resources/qml/DrawerMenu.qml:80
@@ -4376,7 +4376,7 @@ msgstr "Boş Etiketi Gizle"
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:64
 msgctxt "SideMenu|"
 msgid "Default Style"
-msgstr "Öntanımlı Stil"
+msgstr "Varsayılan Stil"
 
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:84
 #: src/libraries/mindmap/resources/qml/SideMenu.qml:107
@@ -4578,7 +4578,7 @@ msgstr "Sohbet Odası Ekle"
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:59
 msgctxt "InstantMessagingMain|"
 msgid "Reset to Default View"
-msgstr "Öntanımlı Görünüme Sıfırla"
+msgstr "Varsayılan Görünüme Sıfırla"
 
 #: src/libraries/qml_views/InstantMessaging/InstantMessagingMain.qml:63
 msgctxt "InstantMessagingMain|"
@@ -5848,7 +5848,7 @@ msgstr "Harita"
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:41
 msgctxt "PreferencesDialogBox|"
 msgid "Default Map Permission:"
-msgstr "Öntanımlı harita izinleri:"
+msgstr "Varsayılan harita izinleri:"
 
 #: src/libraries/rwidgets/dialogs/preferencesdialogbox.ui:70
 msgctxt "PreferencesDialogBox|"
@@ -6820,7 +6820,7 @@ msgstr "Kanalı Sil"
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:43
 msgctxt "ChannelListPanel|"
 msgid "Set Default"
-msgstr "Öntanımlı Olarak Ayarla"
+msgstr "Varsayılan Olarak Ayarla"
 
 #: src/libraries/rwidgets/docks/channellistpanel.cpp:44
 msgctxt "ChannelListPanel|"
@@ -7517,7 +7517,7 @@ msgstr "Kullanıcı adı:"
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:88
 msgctxt "ConnectToDocument|"
 msgid "DefaultName"
-msgstr "Öntanımlı Ad"
+msgstr "Varsayılan Ad"
 
 #: src/libraries/rwidgets/editors/sharededitor/connecttodocument.ui:98
 msgctxt "ConnectToDocument|"
@@ -7879,7 +7879,7 @@ msgstr "Yazı Tipini Ayarla"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:249
 msgctxt "PreferencesDialog|"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:115
 msgctxt "PreferencesDialog|"
@@ -7904,12 +7904,12 @@ msgstr "Duyurma:"
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:311
 msgctxt "PreferencesDialog|"
 msgid "Default Name:"
-msgstr "Öntanımlı ad:"
+msgstr "Varsayılan ad:"
 
 #: src/libraries/rwidgets/editors/sharededitor/preferencesdialog.ui:338
 msgctxt "PreferencesDialog|"
 msgid "Always use default name "
-msgstr "Her zaman öntanımlı adı kullan "
+msgstr "Her zaman varsayılan adı kullan "
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.cpp:55
 #, qt-format
