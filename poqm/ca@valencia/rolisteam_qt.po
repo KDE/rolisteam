@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: rolisteam\n"
-"PO-Revision-Date: 2026-10-15 09:13+0200\n"
+"PO-Revision-Date: 2026-11-24 20:54+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -430,7 +430,7 @@ msgstr "Selecció per rectangle."
 #: src/binaries/3DDicer/PhysicsDicePage.qml:243
 msgctxt "PhysicsDicePage|"
 msgid "Show/Hide menu."
-msgstr "Mostra/Oculta el menú."
+msgstr "Mostra o oculta el menú."
 
 #: src/binaries/3DDicer/ProfileSelector.qml:66
 msgctxt "ProfileSelector|"
@@ -2215,7 +2215,7 @@ msgstr "Mostra"
 #: src/binaries/rcse/widgets/fieldview.cpp:171
 msgctxt "FieldView|"
 msgid "Show/Hide"
-msgstr "Mostra/Oculta"
+msgstr "Mostra o oculta"
 
 #: src/binaries/rcse/widgets/fieldview.cpp:357
 msgctxt "FieldView|"
@@ -4459,7 +4459,7 @@ msgstr "Elimina %1 elements"
 #: src/libraries/mindmap/src/command/reparentingnodecommand.cpp:34
 msgctxt "ReparentingNodeCommand|"
 msgid "Reparenting item"
-msgstr "Torna a emparent un element"
+msgstr "Torna a emparentar un element"
 
 #: src/libraries/mindmap/src/data/link.cpp:35
 msgctxt "Link|"
@@ -7003,32 +7003,32 @@ msgstr "Mostra l'element transparent"
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:220
 msgctxt "VmapTopBar|PC = playable character"
 msgid "Show/Hide PC name"
-msgstr "Mostra/Oculta el nom del PJ"
+msgstr "Mostra o oculta el nom del PJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:224
 msgctxt "VmapTopBar|NPC = non-playable character"
 msgid "Show/Hide NPC name"
-msgstr "Mostra/Oculta el nom del PNJ"
+msgstr "Mostra o oculta el nom del PNJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:227
 msgctxt "VmapTopBar|"
 msgid "Show/Hide NPC number"
-msgstr "Mostra/Oculta el número del PNJ"
+msgstr "Mostra o oculta el número del PNJ"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:230
 msgctxt "VmapTopBar|"
 msgid "Show/Hide State"
-msgstr "Mostra/Oculta l'estat"
+msgstr "Mostra o oculta l'estat"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:233
 msgctxt "VmapTopBar|"
 msgid "Show/Hide Health Bar"
-msgstr "Mostra/Oculta la barra d'estat"
+msgstr "Mostra o oculta la barra d'estat"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:236
 msgctxt "VmapTopBar|"
 msgid "Show/Hide Initiative"
-msgstr "Mostra/Oculta la iniciativa"
+msgstr "Mostra o oculta la iniciativa"
 
 #: src/libraries/rwidgets/docks/vmaptoolbar.cpp:296
 msgctxt "VmapTopBar|"
@@ -8097,12 +8097,12 @@ msgstr "Ctrl+Majús+A"
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:294
 msgctxt "SharedNote|"
 msgid "Show/Hide Participants"
-msgstr "Mostra/Oculta els participants"
+msgstr "Mostra o oculta els participants"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:299
 msgctxt "SharedNote|"
 msgid "Show/Hide Chat"
-msgstr "Mostra/Oculta el xat"
+msgstr "Mostra o oculta el xat"
 
 #: src/libraries/rwidgets/editors/sharededitor/sharednote.ui:304
 msgctxt "SharedNote|"
